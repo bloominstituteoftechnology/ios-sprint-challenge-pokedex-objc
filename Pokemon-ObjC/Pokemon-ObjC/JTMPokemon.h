@@ -12,10 +12,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JTMPokemon : NSObject
 
-@property NSString *name;
-@property NSString *identifier;
-@property NSData *sprite;
-@property NSArray<NSString *> *abilities;
+- (instancetype)initWithName:(NSString *)name
+                  identifier:(NSString *)identifier
+                      sprite:(NSData *)sprite
+                   abilities:(NSArray<NSString *> *)abilities;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
+@property (nonatomic, copy, readonly, nullable) NSString *name;
+@property (nonatomic, copy, readonly, nullable) NSString *identifier;
+@property (nonatomic, copy, readonly, nullable) NSData *sprite;
+@property (nonatomic, copy, readonly, nullable) NSArray<NSString *> *abilities;
 
 @end
 
