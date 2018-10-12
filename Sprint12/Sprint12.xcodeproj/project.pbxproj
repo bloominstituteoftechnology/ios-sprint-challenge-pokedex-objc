@@ -13,6 +13,9 @@
 		49DAB06E2170F0B200E58966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DAB06C2170F0B200E58966 /* LaunchScreen.storyboard */; };
 		49DAB0712170F0B200E58966 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB0702170F0B200E58966 /* main.m */; };
 		49DAB0812170F36000E58966 /* DODPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB0802170F36000E58966 /* DODPokemon.m */; };
+		49DAB0842170FAEC00E58966 /* DODPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB0832170FAEC00E58966 /* DODPokemonTableViewController.m */; };
+		49DAB0872170FC1F00E58966 /* PokemonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB0862170FC1F00E58966 /* PokemonClient.swift */; };
+		49DAB08D2171009000E58966 /* DODPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB08C2171009000E58966 /* DODPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		49DAB0702170F0B200E58966 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49DAB07F2170F36000E58966 /* DODPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DODPokemon.h; sourceTree = "<group>"; };
 		49DAB0802170F36000E58966 /* DODPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DODPokemon.m; sourceTree = "<group>"; };
+		49DAB0822170FAEC00E58966 /* DODPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DODPokemonTableViewController.h; sourceTree = "<group>"; };
+		49DAB0832170FAEC00E58966 /* DODPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DODPokemonTableViewController.m; sourceTree = "<group>"; };
+		49DAB0852170FC1F00E58966 /* Sprint12-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sprint12-Bridging-Header.h"; sourceTree = "<group>"; };
+		49DAB0862170FC1F00E58966 /* PokemonClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonClient.swift; sourceTree = "<group>"; };
+		49DAB08B2171009000E58966 /* DODPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DODPokemonDetailViewController.h; sourceTree = "<group>"; };
+		49DAB08C2171009000E58966 /* DODPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DODPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +67,7 @@
 		49DAB0602170F0B000E58966 /* Sprint12 */ = {
 			isa = PBXGroup;
 			children = (
-				49DAB0612170F0B000E58966 /* AppDelegate.h */,
-				49DAB0622170F0B000E58966 /* AppDelegate.m */,
-				49DAB06F2170F0B200E58966 /* Info.plist */,
-				49DAB0702170F0B200E58966 /* main.m */,
-				49DAB0672170F0B000E58966 /* Main.storyboard */,
+				49DAB0882170FF3E00E58966 /* Resources */,
 				49DAB0772170F0C200E58966 /* Model */,
 				49DAB0792170F0D400E58966 /* Views */,
 				49DAB07A2170F0D900E58966 /* Controllers */,
@@ -92,6 +97,10 @@
 		49DAB07A2170F0D900E58966 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				49DAB0822170FAEC00E58966 /* DODPokemonTableViewController.h */,
+				49DAB0832170FAEC00E58966 /* DODPokemonTableViewController.m */,
+				49DAB08B2171009000E58966 /* DODPokemonDetailViewController.h */,
+				49DAB08C2171009000E58966 /* DODPokemonDetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -99,8 +108,22 @@
 		49DAB07B2170F0DF00E58966 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				49DAB0862170FC1F00E58966 /* PokemonClient.swift */,
+				49DAB0852170FC1F00E58966 /* Sprint12-Bridging-Header.h */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		49DAB0882170FF3E00E58966 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				49DAB0612170F0B000E58966 /* AppDelegate.h */,
+				49DAB0622170F0B000E58966 /* AppDelegate.m */,
+				49DAB06F2170F0B200E58966 /* Info.plist */,
+				49DAB0702170F0B200E58966 /* main.m */,
+				49DAB0672170F0B000E58966 /* Main.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +157,7 @@
 				TargetAttributes = {
 					49DAB05D2170F0B000E58966 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -174,6 +198,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DAB0712170F0B200E58966 /* main.m in Sources */,
+				49DAB0872170FC1F00E58966 /* PokemonClient.swift in Sources */,
+				49DAB08D2171009000E58966 /* DODPokemonDetailViewController.m in Sources */,
+				49DAB0842170FAEC00E58966 /* DODPokemonTableViewController.m in Sources */,
 				49DAB0812170F36000E58966 /* DODPokemon.m in Sources */,
 				49DAB0632170F0B000E58966 /* AppDelegate.m in Sources */,
 			);
@@ -317,15 +344,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WEBVY2C5S6;
-				INFOPLIST_FILE = Sprint12/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint12/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.doswelloliverdavid.Sprint12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sprint12/Networking/Sprint12-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -334,15 +365,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WEBVY2C5S6;
-				INFOPLIST_FILE = Sprint12/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint12/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.doswelloliverdavid.Sprint12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sprint12/Networking/Sprint12-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
