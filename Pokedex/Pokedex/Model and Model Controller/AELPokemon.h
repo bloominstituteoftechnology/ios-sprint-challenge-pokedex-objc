@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *name;
 @property (nullable) NSString *id;
 @property (nullable) NSString *abilities;
-@property (nullable) UIImage *sprite;
+@property (nullable) NSString *sprite;
 
 @property NSString *url;
 
