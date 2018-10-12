@@ -11,7 +11,7 @@
 @interface Pokemon ()
 
 @property (nonatomic, readwrite, copy) NSString *name;
-@property (nonatomic, readwrite, copy, nullable) NSString *identifier;
+@property (nonatomic, readwrite) NSInteger identifier;
 @property (nonatomic, readwrite, copy, nullable) NSArray<NSString *> *abilities;
 @property (nonatomic, readwrite, nullable) NSURL *spriteURL;
 
@@ -36,7 +36,7 @@
 
 - (void)fillWithDictionary:(NSDictionary *)fillDictionary
 {
-    self.identifier = fillDictionary[@"id"];
+    self.identifier = [fillDictionary[@"id"] integerValue];
     
     NSDictionary *abilityDicts = fillDictionary[@"abilities"];
     NSMutableArray *abilityStrings = [[NSMutableArray alloc] init];

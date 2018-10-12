@@ -8,6 +8,7 @@
 
 #import "PokemonTableViewController.h"
 #import "PokemonDetailViewController.h"
+#import "Pokemon.h"
 
 @interface PokemonTableViewController ()
 
@@ -19,13 +20,17 @@
 {
     [super viewDidLoad];
     self.title = @"Pokedex";
+    [PokemonController.sharedController fetchAllPokemonWithCompletion:^(NSArray<Pokemon *> *pokemons, NSError *error)
+    {
+        [self.tableView reloadData];
+    }];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return PokemonController.sharedController.pokemons.count;
 }
 
 
@@ -33,7 +38,9 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = @"Pokemon";
+    Pokemon *pokemon = [PokemonController.sharedController.pokemons objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = pokemon.name;
     
     return cell;
 }
