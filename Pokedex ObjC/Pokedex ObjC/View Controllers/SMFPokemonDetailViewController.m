@@ -23,6 +23,20 @@ void *KVOContext = &KVOContext;
 
 @implementation SMFPokemonDetailViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self.pokemonController fillInDetailsFor:_pokemon];
+}
+
+- (void)dealloc
+{
+    [_pokemon removeObserver:self forKeyPath:@"image"];
+    [_pokemon removeObserver:self forKeyPath:@"identifier"];
+    [_pokemon removeObserver:self forKeyPath:@"abilities"];
+}
+
 - (void)setPokemon:(SMFPokemon *)pokemon
 {
     if (_pokemon) {
@@ -30,14 +44,12 @@ void *KVOContext = &KVOContext;
         [_pokemon removeObserver:self forKeyPath:@"identifier"];
         [_pokemon removeObserver:self forKeyPath:@"abilities"];
     }
-    
+
     _pokemon = pokemon;
     
     [_pokemon addObserver:self forKeyPath:@"image" options:0 context:KVOContext];
     [_pokemon addObserver:self forKeyPath:@"identifier" options:0 context:KVOContext];
     [_pokemon addObserver:self forKeyPath:@"abilities" options:0 context:KVOContext];
-    
-    [self.pokemonController fillInDetailsFor:_pokemon];
 }
 
 - (void)updateViewForImg:(BOOL)img identifier:(BOOL)identifier abilities:(BOOL)abilities
