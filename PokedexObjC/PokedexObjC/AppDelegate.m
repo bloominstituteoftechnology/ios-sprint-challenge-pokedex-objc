@@ -19,10 +19,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    _pokemonController = [PokemonController shared];
+    _pokemonController = [PokemonController sharedController];
     [_pokemonController fetchAllPokemonWithCompletion:^(NSArray<Pokemon *> *pokemons, NSError *error)
     {
         self.pokemons = pokemons;
+        NSLog(@"%@", pokemons);
     }];
     return YES;
 }

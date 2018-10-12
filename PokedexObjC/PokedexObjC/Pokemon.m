@@ -19,19 +19,6 @@
 
 @implementation Pokemon
 
-//-(instancetype)initWithName:(NSString *)name identifier:(NSInteger)identifier abilities:(NSArray *)abilities sprite:(NSString *)sprite
-//{
-//    self = [super init];
-//    if(self)
-//    {
-//        _name = [name copy];
-//        _identifier = identifier;
-//        _abilities = [abilities copy];
-//        _sprite = [sprite copy];
-//    }
-//    return self;
-//}
-
 -(instancetype)initWithName:(NSString *)name
 {
     if (self = [super init])
@@ -46,21 +33,6 @@
     NSString *name = dictionary[@"name"];
     return [self initWithName:name];
 }
-//-(instancetype)initWithDictionary:(NSDictionary *)dictionary
-//{
-//    NSString *name = dictionary[@"name"];
-//    NSString *identifierString = dictionary[@"id"];
-//    NSInteger idenitifier = identifierString.integerValue;
-//    NSArray *abilities = dictionary[@"abilities"];
-//    NSString *sprite = dictionary[@"front_default"];
-//
-//    if(!name || !identifierString || !abilities || !sprite)
-//    {
-//        return  nil;
-//    }
-//
-//    return [self initWithName:name identifier:idenitifier abilities:abilities sprite:sprite];
-//}
 
 - (void)fillWithDictionary:(NSDictionary *)fillDictionary
 {

@@ -14,12 +14,12 @@ class PokemonController: NSObject
 {
     @objc(sharedController) static let shared: PokemonController = PokemonController()
     
-    var pokemons: [Pokemon] = []
+    @objc var pokemons: [Pokemon] = []
     
     
 @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void)
 {
-    let url = baseURL.appendingPathExtension("json")
+    let url = baseURL
     
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
@@ -95,7 +95,7 @@ class PokemonController: NSObject
 
 @objc func fillInDetails(for pokemon: Pokemon)
 {
-    let url = baseURL.appendingPathComponent(pokemon.name).appendingPathExtension("json")
+    let url = baseURL.appendingPathComponent(pokemon.name)
     
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
