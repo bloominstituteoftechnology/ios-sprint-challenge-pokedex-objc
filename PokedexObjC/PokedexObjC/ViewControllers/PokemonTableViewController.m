@@ -12,6 +12,8 @@
 
 @interface PokemonTableViewController ()
 
+@property (nonatomic, strong) Pokemon *pokemon;
+
 @end
 
 @implementation PokemonTableViewController
@@ -38,9 +40,9 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
-    Pokemon *pokemon = [PokemonController.sharedController.pokemons objectAtIndex:indexPath.row];
+    self.pokemon = [PokemonController.sharedController.pokemons objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = pokemon.name;
+    cell.textLabel.text = self.pokemon.name;
     
     return cell;
 }
@@ -53,7 +55,10 @@
 {
     if ([segue.identifier isEqualToString:@"ShowDetailView"])
     {
-        
+        PokemonDetailViewController *detailView = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        self.pokemon = PokemonController.sharedController.pokemons[indexPath.row];
+        detailView.pokemon = self.pokemon;
     }
  
 }

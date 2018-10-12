@@ -36,8 +36,6 @@
 
 - (void)fillWithDictionary:(NSDictionary *)fillDictionary
 {
-    self.identifier = [fillDictionary[@"id"] integerValue];
-    
     NSDictionary *abilityDicts = fillDictionary[@"abilities"];
     NSMutableArray *abilityStrings = [[NSMutableArray alloc] init];
     
@@ -48,11 +46,11 @@
         [abilityStrings addObject:abilityString];
     }
     
-    self.abilities = abilityStrings;
-    
     NSDictionary *spritesDicts = fillDictionary[@"sprites"];
     NSString *spriteURLString = spritesDicts[@"front_default"];
     
+    self.identifier = [fillDictionary[@"id"] integerValue];
+    self.abilities = abilityStrings;
     self.spriteURL = [[NSURL alloc] initWithString:spriteURLString];
 }
 

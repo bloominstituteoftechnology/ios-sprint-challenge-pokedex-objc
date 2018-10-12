@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 private let baseURL = URL(string:"http://pokeapi.co/api/v2/pokemon")!
 
+@objc(PokemonController)
 class PokemonController: NSObject
 {
     @objc(sharedController) static let shared: PokemonController = PokemonController()
@@ -111,7 +113,7 @@ class PokemonController: NSObject
         
         do
         {
-            guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [AnyHashable : Any] else { return }
+            guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else { return }
             
             DispatchQueue.main.async {
                 
@@ -121,10 +123,46 @@ class PokemonController: NSObject
         catch
         {
             NSLog("Unable to encode name: \(error)")
+            return
         }
-        return
+        
     }.resume()
 }
 
-
+  @objc func getSprite(url: URL, completion: @escaping (UIImage?, Error?) -> Void)
+    {
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            
+            if let error = error
+            {
+                NSLog("Error retrieving sprite from server: \(error)")
+                DispatchQueue.main.async {
+                    
+                    completion(nil, error)
+                }
+                return
+            }
+            
+            guard let data = data else {
+                
+                DispatchQueue.main.async {
+                    
+                    completion(nil, error)
+                }
+                return
+            }
+            
+            let image = UIImage(data: data)
+            
+            DispatchQueue.main.async {
+                
+                completion(image, nil)
+            }
+        }.resume()
+    }
 }
+
+

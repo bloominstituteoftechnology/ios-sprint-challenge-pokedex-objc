@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSInteger identifier;
 @property (nonatomic, copy, readonly, nullable) NSArray *abilities;
 @property (nonatomic, readonly, nullable) NSURL *spriteURL;
+@property (nullable) UIImage *image;
 
 -(instancetype)initWithName: (NSString *)name;
 

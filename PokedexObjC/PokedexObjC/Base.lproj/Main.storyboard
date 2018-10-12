@@ -100,10 +100,10 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon Ablilities" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnP-A1-Uvh">
-                                <rect key="frame" x="16" y="452" width="343" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon Ablilities" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnP-A1-Uvh">
+                                <rect key="frame" x="16" y="441" width="220" height="141"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="AMn-9o-DwM"/>
+                                    <constraint firstAttribute="height" constant="141" id="AMn-9o-DwM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -118,14 +118,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xnP-A1-Uvh" secondAttribute="trailing" constant="16" id="7X2-SZ-0YU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xnP-A1-Uvh" secondAttribute="trailing" constant="139" id="7X2-SZ-0YU"/>
                             <constraint firstItem="is7-ZK-1IP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="CUh-od-qPb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tr3-OC-7On" secondAttribute="trailing" constant="16" id="CsJ-Ak-iU2"/>
                             <constraint firstItem="xnP-A1-Uvh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="For-9i-CX0"/>
-                            <constraint firstItem="xnP-A1-Uvh" firstAttribute="top" secondItem="is7-ZK-1IP" secondAttribute="bottom" constant="11" id="HI0-bN-5lV"/>
+                            <constraint firstItem="xnP-A1-Uvh" firstAttribute="top" secondItem="is7-ZK-1IP" secondAttribute="bottom" id="HI0-bN-5lV"/>
                             <constraint firstItem="is7-ZK-1IP" firstAttribute="top" secondItem="Tr3-OC-7On" secondAttribute="bottom" constant="11" id="NxG-Md-iG3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="is7-ZK-1IP" secondAttribute="trailing" constant="259" id="X6F-OM-qcY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xnP-A1-Uvh" secondAttribute="bottom" constant="155" id="Xm8-uf-dkd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xnP-A1-Uvh" secondAttribute="bottom" constant="85" id="Xm8-uf-dkd"/>
                             <constraint firstItem="Tr3-OC-7On" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ecQ-A7-GCY"/>
                             <constraint firstItem="Tr3-OC-7On" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="pQX-D8-i2Y"/>
                         </constraints>

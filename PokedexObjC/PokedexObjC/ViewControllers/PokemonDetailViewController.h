@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PokedexObjC-Swift.h"
+#import "Pokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *idLabel;
 @property (strong, nonatomic) IBOutlet UILabel *abilitiesLabel;
-
+@property (nonatomic, strong) Pokemon *pokemon;
 
 @end
 
