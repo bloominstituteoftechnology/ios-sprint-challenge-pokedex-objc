@@ -37,7 +37,7 @@ class PokemonAPI: NSObject {
                 completion(nil, error)
             }
             completion(pokeArray,nil)
-        }.resume()
+            }.resume()
         
         
     }
@@ -58,18 +58,22 @@ class PokemonAPI: NSObject {
                 let dictionary = try JSONSerialization.jsonObject(with: data, options:[] ) as! [String: Any]
                 
                 if let intID = dictionary["id"] as? Int{
-                pokemon.id = String( intID)
+                    pokemon.id = String( intID)
                 }
                 
                 guard let abilitiesArray = dictionary["abilities"] as? [[String: Any]] else {return}
                 
                 pokemon.loadAbilities(from: abilitiesArray)
                 
+                if let spritesDictionary = dictionary["sprites"] as? [String:String] {
+                    let spriteURL = spritesDictionary["front_default"]
+                    pokemon.sprite = spriteURL
+                }
                 
             } catch {
                 NSLog("Error filling details: \(error)" )
                 return
             }
-        }.resume()
+            }.resume()
     }
 }

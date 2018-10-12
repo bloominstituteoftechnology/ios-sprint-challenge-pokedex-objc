@@ -21,31 +21,52 @@
 @implementation AELDetailViewController
 
 
+//- (void)viewDidLoad
+//{
+//    //TEST loadimage function
+//    [super viewDidLoad];
+//    [self loadImageWithStringPath:@"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"];
+//    [PokemonAPI.sharedController fillInDetailsFor:self.pokemon];
+//}
+
 - (void)viewDidLoad
 {
-    //TEST loadimage function
     [super viewDidLoad];
-    [self loadImageWithStringPath:@"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"];
-    [PokemonAPI.sharedController fillInDetailsFor:self.pokemon];
+    [self.pokemon addObserver:self forKeyPath:@"id" options:0 context:NULL];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    [self updateName];
+    [PokemonAPI.sharedController fillInDetailsFor: self.pokemon];
 }
 
+-(void) updateName{
+    if (![self isViewLoaded] && [self pokemon]){
+        return;
+    }
+    
+    [self setTitle:[self.pokemon name]];
+    [[self nameLabel] setText:[self.pokemon name]];
+}
 -(void) updateViews
 {
     if (![self isViewLoaded] && [self pokemon]){
         return;
     }
-    [self setTitle:[self.pokemon name]];
-    [[self nameLabel] setText:[self.pokemon name]];
+    
     [[self idLabel] setText: [self.pokemon id]];
     [[self abilitiesTextView] setText:[self.pokemon abilities]];
-    
     [self loadImageWithStringPath:[self.pokemon sprite]];
 }
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    [self updateViews];
+    NSLog(@"%@", [object valueForKeyPath:keyPath]);
+}
+
+
 
 -(void) loadImageWithStringPath: (NSString *) path{
     
