@@ -9,8 +9,15 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+NS_SWIFT_NAME(Pokemon)
 @interface STDPokemon : NSObject
+
+- (instancetype)initWithName:(NSString *)name;
+
+@property NSString *name;
+@property (nullable) NSString *identifier;
+@property (nullable) NSURL *sprite;
+@property (nullable) NSArray *abilities;
 
 @end
 

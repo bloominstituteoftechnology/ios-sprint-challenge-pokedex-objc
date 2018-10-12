@@ -7,35 +7,76 @@
 //
 
 #import "STDPokemonTableViewController.h"
+#import "STDPokemon.h"
 #import "ios_sprint12_challenge-Swift.h"
 
 @interface STDPokemonTableViewController ()
 
 @property PokemonAPI *pokemonApi;
+@property NSMutableArray *pokemons;
 
 @end
 
 @implementation STDPokemonTableViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _pokemonApi = [PokemonAPI shared];
+        _pokemons = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        _pokemonApi = [PokemonAPI shared];
+        _pokemons = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //PokemonAPI *pokemonApi = [PokemonAPI shared];
+    
+    [self.pokemonApi fetchAllPokemonWithCompletion:^(NSArray * pokemonList, NSError * error) {
+        if (error) {
+            NSLog(@"Error fetching pokemons %@", error);
+            return;
+        }
+        
+        for (STDPokemon *pokemon in pokemonList) {
+            [self.pokemons addObject:pokemon];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            [self.tableView reloadData];
+        });
+        
+    }];
     
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.pokemons.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    STDPokemon *pokemon = self.pokemons[indexPath.row];
+
+    cell.textLabel.text = pokemon.name;
     
     return cell;
 }
