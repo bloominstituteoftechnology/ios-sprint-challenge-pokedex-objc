@@ -11,10 +11,44 @@ import Foundation
 @objc(SMFPokemonController)
 class PokemonController : NSObject {
     
-    @objc var pokemons: [SMFPokemon] = []
+    @objc(sharedController) static let shared = PokemonController()
     
-    @objc func fetchAllPokemon() {
-        pokemons = [] // Result of fetch request
+    private static let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
+    
+    @objc func fetchAllPokemon(completion: @escaping ([SMFPokemon]?, Error?) -> Void) {
+        URLSession.shared.dataTask(with: PokemonController.baseURL) { (data, _, error) in
+            if let error = error {
+                NSLog("Error fetching all pokemon: \(error)")
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil, NSError())
+                return
+            }
+            
+            do {
+                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                let results = dictionary["results"] as? [[String: String]] else {
+                    
+                        NSLog("JSON was not a dictionary")
+                    completion(nil, NSError())
+                    return
+                }
+                
+                var pokemons: [SMFPokemon] = []
+                for pokemonDict in results {
+                    let pokemon = SMFPokemon(dictionary: pokemonDict)
+                    pokemons.append(pokemon)
+                }
+                completion(pokemons, nil)
+            } catch {
+                NSLog("Error decoding data: \(error)")
+                completion(nil, error)
+                return
+            }
+        }
     }
     
     @objc func fillInDetails(for pokemon: SMFPokemon) {

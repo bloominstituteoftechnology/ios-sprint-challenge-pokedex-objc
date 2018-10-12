@@ -15,29 +15,53 @@
 @interface SMFPokedexTableViewController ()
 
 @property SMFPokemonController *pokemonController;
+@property NSArray<SMFPokemon *> *pokemons;
 
 @end
 
 @implementation SMFPokedexTableViewController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        _pokemonController = [SMFPokemonController sharedController];
+    }
+    return self;
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _pokemonController = [SMFPokemonController sharedController];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [self.pokemonController fetchAllPokemon];
+    [self.pokemonController fetchAllPokemonWithCompletion:^(NSArray<SMFPokemon *> *pokemons, NSError *error) {
+        self.pokemons = pokemons;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.pokemonController.pokemons.count;
+    return self.pokemons.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
-    SMFPokemon *pokemon = self.pokemonController.pokemons[indexPath.row];
+    SMFPokemon *pokemon = self.pokemons[indexPath.row];
     cell.textLabel.text = pokemon.name;
     
     return cell;
@@ -50,9 +74,9 @@
     if ([segue.identifier isEqualToString: @"ShowPokemonDetail"]) {
         SMFPokemonDetailViewController *destination = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        SMFPokemon *pokemon = self.pokemonController.pokemons[indexPath.row];
+        SMFPokemon *pokemon = self.pokemons[indexPath.row];
         destination.pokemon = pokemon;
-        destination.pokemonController = self.pokemonController;
+        destination.pokemonController = [SMFPokemonController sharedController];
     }
 }
 
