@@ -48,7 +48,7 @@ class PokemonController : NSObject {
                 completion(nil, error)
                 return
             }
-        }
+        }.resume()
     }
     
     @objc func fillInDetails(for pokemon: SMFPokemon) {

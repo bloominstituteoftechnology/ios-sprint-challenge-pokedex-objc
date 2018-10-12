@@ -28,13 +28,13 @@ void *KVOContext = &KVOContext;
     [super viewWillAppear:animated];
     
     self.title = self.pokemon.name;
-    self.nameLabel.text = self.pokemon.name;
+    self.nameLabel.text = [NSString stringWithFormat:@"Name: %@", self.pokemon.name];
     [self.pokemonController fillInDetailsFor:self.pokemon];
 }
 
 - (void)setPokemon:(SMFPokemon *)pokemon
 {
-    if (_pokemon) {
+    if (!_pokemon) {
         _pokemon = pokemon;
         [_pokemon addObserver:self forKeyPath:@"image" options:0 context:KVOContext];
         [_pokemon addObserver:self forKeyPath:@"identifier" options:0 context:KVOContext];
@@ -48,10 +48,10 @@ void *KVOContext = &KVOContext;
         self.pokemonImg.image = self.pokemon.image;
     }
     if (identifier == YES) {
-        self.idLabel.text = self.pokemon.identifier;
+        self.idLabel.text = [NSString stringWithFormat:@"Id: %@", self.pokemon.identifier];
     }
     if (abilities == YES) {
-        self.abilitiesLabel.text = self.pokemon.abilities;
+        self.abilitiesLabel.text = [NSString stringWithFormat:@"Abilities: %@", self.pokemon.abilities];
     }
 }
 
