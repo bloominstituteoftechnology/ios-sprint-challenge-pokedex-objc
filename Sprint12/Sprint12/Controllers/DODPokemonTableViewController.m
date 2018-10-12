@@ -8,6 +8,25 @@
 
 #import "DODPokemonTableViewController.h"
 
+@interface DODPokemonTableViewController ()
+
+@end
+
 @implementation DODPokemonTableViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    return cell;
+}
 
 @end

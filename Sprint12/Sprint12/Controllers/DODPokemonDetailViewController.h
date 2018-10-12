@@ -6,11 +6,13 @@
 //  Copyright © 2018 David Doswell. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DODPokemonDetailViewController : NSObject
+@interface DODPokemonDetailViewController : UIViewController
+
+
 
 @end
 

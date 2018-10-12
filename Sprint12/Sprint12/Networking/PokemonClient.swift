@@ -9,17 +9,30 @@
 import UIKit
 
 @objcMembers
-
 class PokemonAPI: NSObject {
     
-    @objc(sharedController) static let shared: PokemonAPI
+    let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon")!
     
+//    @objc(sharedController) static let shared: PokemonAPI
     
-    @objc func fetchAllPokemon(completion: @escaping ([DODPokemon]?, Error?) -> Void)
+    @objc func fetchAllPokemon(completion: @escaping ([DODPokemon]?, Error?) -> Void) {
+        
+        let request = URLRequest(url: baseURL)
+        
+    }
     
+    var name: String?
+    var identifier: String?
+    var sprite: String?
+    var abilities: String?
     
     @objc func fillInDetails(for pokemon: DODPokemon) {
-       
+        
+        self.name = pokemon.name
+        self.identifier = pokemon.identifier
+        self.sprite = pokemon.sprite
+        self.abilities = pokemon.abilities
+        
     }
-
+    
 }

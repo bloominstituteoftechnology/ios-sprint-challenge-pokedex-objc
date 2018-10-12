@@ -13,9 +13,9 @@
 		49DAB06E2170F0B200E58966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DAB06C2170F0B200E58966 /* LaunchScreen.storyboard */; };
 		49DAB0712170F0B200E58966 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB0702170F0B200E58966 /* main.m */; };
 		49DAB0812170F36000E58966 /* DODPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB0802170F36000E58966 /* DODPokemon.m */; };
-		49DAB0842170FAEC00E58966 /* DODPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB0832170FAEC00E58966 /* DODPokemonTableViewController.m */; };
 		49DAB0872170FC1F00E58966 /* PokemonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB0862170FC1F00E58966 /* PokemonClient.swift */; };
-		49DAB08D2171009000E58966 /* DODPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB08C2171009000E58966 /* DODPokemonDetailViewController.m */; };
+		49DAB09321710F5900E58966 /* DODPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB09221710F5900E58966 /* DODPokemonTableViewController.m */; };
+		49DAB0962171110900E58966 /* DODPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB0952171110900E58966 /* DODPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,12 +29,12 @@
 		49DAB0702170F0B200E58966 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49DAB07F2170F36000E58966 /* DODPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DODPokemon.h; sourceTree = "<group>"; };
 		49DAB0802170F36000E58966 /* DODPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DODPokemon.m; sourceTree = "<group>"; };
-		49DAB0822170FAEC00E58966 /* DODPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DODPokemonTableViewController.h; sourceTree = "<group>"; };
-		49DAB0832170FAEC00E58966 /* DODPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DODPokemonTableViewController.m; sourceTree = "<group>"; };
 		49DAB0852170FC1F00E58966 /* Sprint12-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sprint12-Bridging-Header.h"; sourceTree = "<group>"; };
 		49DAB0862170FC1F00E58966 /* PokemonClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonClient.swift; sourceTree = "<group>"; };
-		49DAB08B2171009000E58966 /* DODPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DODPokemonDetailViewController.h; sourceTree = "<group>"; };
-		49DAB08C2171009000E58966 /* DODPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DODPokemonDetailViewController.m; sourceTree = "<group>"; };
+		49DAB09121710F5900E58966 /* DODPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DODPokemonTableViewController.h; sourceTree = "<group>"; };
+		49DAB09221710F5900E58966 /* DODPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DODPokemonTableViewController.m; sourceTree = "<group>"; };
+		49DAB0942171110900E58966 /* DODPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DODPokemonDetailViewController.h; sourceTree = "<group>"; };
+		49DAB0952171110900E58966 /* DODPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DODPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +97,10 @@
 		49DAB07A2170F0D900E58966 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				49DAB0822170FAEC00E58966 /* DODPokemonTableViewController.h */,
-				49DAB0832170FAEC00E58966 /* DODPokemonTableViewController.m */,
-				49DAB08B2171009000E58966 /* DODPokemonDetailViewController.h */,
-				49DAB08C2171009000E58966 /* DODPokemonDetailViewController.m */,
+				49DAB09121710F5900E58966 /* DODPokemonTableViewController.h */,
+				49DAB09221710F5900E58966 /* DODPokemonTableViewController.m */,
+				49DAB0942171110900E58966 /* DODPokemonDetailViewController.h */,
+				49DAB0952171110900E58966 /* DODPokemonDetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -198,9 +198,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DAB0712170F0B200E58966 /* main.m in Sources */,
+				49DAB09321710F5900E58966 /* DODPokemonTableViewController.m in Sources */,
+				49DAB0962171110900E58966 /* DODPokemonDetailViewController.m in Sources */,
 				49DAB0872170FC1F00E58966 /* PokemonClient.swift in Sources */,
-				49DAB08D2171009000E58966 /* DODPokemonDetailViewController.m in Sources */,
-				49DAB0842170FAEC00E58966 /* DODPokemonTableViewController.m in Sources */,
 				49DAB0812170F36000E58966 /* DODPokemon.m in Sources */,
 				49DAB0632170F0B000E58966 /* AppDelegate.m in Sources */,
 			);

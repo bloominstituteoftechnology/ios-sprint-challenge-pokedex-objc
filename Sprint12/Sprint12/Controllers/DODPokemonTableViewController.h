@@ -6,13 +6,11 @@
 //  Copyright © 2018 David Doswell. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DODPokemonTableViewController : NSObject
-
-@property (nonatomic, readonly) NSString *pokemonName;
+@interface DODPokemonTableViewController : UITableViewController
 
 @end
 

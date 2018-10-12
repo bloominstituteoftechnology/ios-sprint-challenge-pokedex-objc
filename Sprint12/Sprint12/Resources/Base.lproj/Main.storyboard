@@ -12,7 +12,7 @@
         <!--Pokedex-->
         <scene sceneID="lJR-E4-IhE">
             <objects>
-                <tableViewController id="8af-Ag-MWI" sceneMemberID="viewController">
+                <tableViewController id="8af-Ag-MWI" customClass="DODPokemonTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0UA-7D-hn6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="330" y="115"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="YPC-C9-WNH">
             <objects>
-                <viewController id="3fP-49-Laq" sceneMemberID="viewController">
+                <viewController id="3fP-49-Laq" customClass="DODPokemonDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GhV-zk-zm4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,6 +125,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kAZ-ym-OKT"/>
                     </view>
+                    <connections>
+                        <outlet property="pokemonAbilitiesLabel" destination="tem-zk-H9t" id="Sl0-NG-qT3"/>
+                        <outlet property="pokemonIDLabel" destination="3XL-lU-De5" id="v5M-cM-rW0"/>
+                        <outlet property="pokemonImageView" destination="c6h-XS-6Lo" id="YlD-IN-BRv"/>
+                        <outlet property="pokemonNameLabel" destination="ref-GD-mLS" id="dwC-dA-k5C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JvJ-1m-xqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

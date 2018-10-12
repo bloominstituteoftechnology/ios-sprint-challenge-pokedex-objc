@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Your model must support at least: pokemon name, identifier, sprite, and abilities.
 
+@property (nonatomic, readonly) NSData *image;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSString *sprite;
