@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype) initWithDictionary: (NSDictionary *) dictionary;
 
 
+-(void) loadAbilitiesFromArray: (NSArray *) array;
+
 @property NSString *name;
 @property (nullable) NSString *id;
 @property (nullable) NSString *abilities;

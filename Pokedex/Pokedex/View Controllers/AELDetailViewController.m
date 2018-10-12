@@ -7,6 +7,7 @@
 //
 
 #import "AELDetailViewController.h"
+#import "Pokedex-Swift.h"
 #import "AELPokemon.h"
 
 @interface AELDetailViewController ()
@@ -25,6 +26,7 @@
     //TEST loadimage function
     [super viewDidLoad];
     [self loadImageWithStringPath:@"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"];
+    [PokemonAPI.sharedController fillInDetailsFor:self.pokemon];
 }
 - (void)viewWillAppear:(BOOL)animated
 {

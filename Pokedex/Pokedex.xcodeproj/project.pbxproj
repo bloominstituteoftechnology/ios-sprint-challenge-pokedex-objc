@@ -16,6 +16,7 @@
 		1089EE732170F4A40043AC5E /* AELDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089EE722170F4A40043AC5E /* AELDetailViewController.m */; };
 		1089EE762170F5B10043AC5E /* AELPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089EE752170F5B10043AC5E /* AELPokemon.m */; };
 		1089EE7D2170F9020043AC5E /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089EE7C2170F9020043AC5E /* PokemonAPI.swift */; };
+		1089EE8221710E0C0043AC5E /* AELPokemonReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089EE8121710E0C0043AC5E /* AELPokemonReference.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		1089EE752170F5B10043AC5E /* AELPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AELPokemon.m; sourceTree = "<group>"; };
 		1089EE782170F8CF0043AC5E /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
 		1089EE7C2170F9020043AC5E /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		1089EE8021710E0C0043AC5E /* AELPokemonReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AELPokemonReference.h; sourceTree = "<group>"; };
+		1089EE8121710E0C0043AC5E /* AELPokemonReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AELPokemonReference.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 			children = (
 				1089EE742170F5B10043AC5E /* AELPokemon.h */,
 				1089EE752170F5B10043AC5E /* AELPokemon.m */,
+				1089EE8021710E0C0043AC5E /* AELPokemonReference.h */,
+				1089EE8121710E0C0043AC5E /* AELPokemonReference.m */,
 			);
 			path = "Model and Model Controller";
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				1089EE7D2170F9020043AC5E /* PokemonAPI.swift in Sources */,
 				1089EE552170F1A70043AC5E /* AppDelegate.m in Sources */,
 				1089EE762170F5B10043AC5E /* AELPokemon.m in Sources */,
+				1089EE8221710E0C0043AC5E /* AELPokemonReference.m in Sources */,
 				1089EE732170F4A40043AC5E /* AELDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

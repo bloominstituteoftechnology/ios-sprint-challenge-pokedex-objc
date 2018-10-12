@@ -43,6 +43,33 @@ class PokemonAPI: NSObject {
     }
     
     @objc func fillInDetails(for pokemon: AELPokemon){
+        let url = URL(string: pokemon.url)!
         
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                NSLog("Error with dataTask: \(error)")
+                return
+            }
+            guard let data = data else {
+                return
+            }
+            
+            do{
+                let dictionary = try JSONSerialization.jsonObject(with: data, options:[] ) as! [String: Any]
+                
+                if let intID = dictionary["id"] as? Int{
+                pokemon.id = String( intID)
+                }
+                
+                guard let abilitiesArray = dictionary["abilities"] as? [[String: Any]] else {return}
+                
+                pokemon.loadAbilities(from: abilitiesArray)
+                
+                
+            } catch {
+                NSLog("Error filling details: \(error)" )
+                return
+            }
+        }.resume()
     }
 }

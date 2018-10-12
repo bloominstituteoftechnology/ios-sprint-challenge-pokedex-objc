@@ -23,9 +23,24 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
     NSString *name = dictionary[@"name"];
-    NSString *url = dictionary[@"dictionary"];
+    NSString *url = dictionary[@"url"];
     return [self initWithName:name url:url];
 }
+
+- (void)loadAbilitiesFromArray:(NSArray *) array
+{
+    //abilities
+    NSMutableArray<NSString*> *abilities = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *index in array){
+        NSDictionary *ability = index[@"ability"];
+        [abilities addObject: ability[@"name"]];
+    }
+    [self setAbilities:[abilities componentsJoinedByString:@", "]];
+}
+
+
+
 
 
 @end
