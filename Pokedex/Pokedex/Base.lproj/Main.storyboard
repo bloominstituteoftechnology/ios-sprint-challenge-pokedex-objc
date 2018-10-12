@@ -63,7 +63,7 @@
                                 <rect key="frame" x="25" y="166" width="325" height="222.5"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Abx-bs-3In">
-                                <rect key="frame" x="25" y="404.5" width="325" height="185"/>
+                                <rect key="frame" x="25" y="404.5" width="325" height="77.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SFF-9l-7Op">
                                         <rect key="frame" x="0.0" y="0.0" width="94" height="77.5"/>
@@ -89,7 +89,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fqv-RJ-8xi">
-                                        <rect key="frame" x="102" y="0.0" width="223" height="185"/>
+                                        <rect key="frame" x="102" y="0.0" width="223" height="77.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMv-jR-sGP">
                                                 <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
@@ -103,12 +103,12 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pIl-bo-PVu">
-                                                <rect key="frame" x="0.0" y="57" width="207" height="128"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laX-BH-g4h">
+                                                <rect key="frame" x="0.0" y="57" width="42" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -129,7 +129,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="fAD-aD-paw"/>
                     <connections>
-                        <outlet property="abilitiesTextView" destination="pIl-bo-PVu" id="NC1-Wf-tI7"/>
+                        <outlet property="abilitiesLabel" destination="laX-BH-g4h" id="qpX-d0-tTU"/>
                         <outlet property="idLabel" destination="tNB-xA-Oyq" id="bjS-kI-baK"/>
                         <outlet property="nameLabel" destination="jMv-jR-sGP" id="qc4-Nc-NuK"/>
                         <outlet property="spriteImageView" destination="SZu-wE-ilI" id="C0P-IT-qhW"/>

@@ -14,37 +14,25 @@
 @property (weak, nonatomic) IBOutlet UIImageView *spriteImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *idLabel;
-@property (weak, nonatomic) IBOutlet UITextView *abilitiesTextView;
+@property (weak, nonatomic) IBOutlet UILabel *abilitiesLabel;
+
 
 @end
 
 @implementation AELDetailViewController
 
 
-//- (void)viewDidLoad
-//{
-//    //TEST loadimage function
-//    [super viewDidLoad];
-//    [self loadImageWithStringPath:@"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"];
-//    [PokemonAPI.sharedController fillInDetailsFor:self.pokemon];
-//}
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-}
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.pokemon addObserver:self forKeyPath:@"id" options:0 context:NULL];
-    [self.pokemon addObserver:self forKeyPath:@"sprite" options:0 context:NULL];
+    [self.pokemon addObserver:self forKeyPath:@"abilities" options:0 context:NULL];
     
-    [self updateName];
+    [self updateTitle];
     [PokemonAPI.sharedController fillInDetailsFor: self.pokemon];
 }
 
--(void) updateName{
+-(void) updateTitle{
     if (![self isViewLoaded] && [self pokemon]){
         return;
     }
@@ -59,23 +47,18 @@
     }
     dispatch_async(dispatch_get_main_queue(), ^{
         [[self idLabel] setText: [self.pokemon id]];
-        [[self abilitiesTextView] setText:[self.pokemon abilities]];
+        [[self abilitiesLabel] setText: [self.pokemon abilities]];
+        [self loadImageWithStringPath:[self.pokemon sprite]];
     });
     
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
-    if([keyPath isEqualToString:@"id"]){
-        
+  
         [self updateViews];
-        NSLog(@"ID %@", [object valueForKeyPath:keyPath]);
-    }
-    if([keyPath isEqualToString:@"sprite"]){
-        [self loadImageWithStringPath:[self.pokemon sprite]];
-    }
-    
-    
+        NSLog(@"ID %@", [object valueForKeyPath:@"abilities"]);
+
 }
 
 
