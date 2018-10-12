@@ -12,8 +12,10 @@
 		1089EE5D2170F1A80043AC5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1089EE5C2170F1A80043AC5E /* Assets.xcassets */; };
 		1089EE602170F1A80043AC5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1089EE5E2170F1A80043AC5E /* LaunchScreen.storyboard */; };
 		1089EE632170F1A80043AC5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089EE622170F1A80043AC5E /* main.m */; };
-		1089EE6C2170F4390043AC5E /* PokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089EE6B2170F4390043AC5E /* PokedexTableViewController.m */; };
-		1089EE732170F4A40043AC5E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089EE722170F4A40043AC5E /* DetailViewController.m */; };
+		1089EE6C2170F4390043AC5E /* AELPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089EE6B2170F4390043AC5E /* AELPokedexTableViewController.m */; };
+		1089EE732170F4A40043AC5E /* AELDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089EE722170F4A40043AC5E /* AELDetailViewController.m */; };
+		1089EE762170F5B10043AC5E /* AELPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089EE752170F5B10043AC5E /* AELPokemon.m */; };
+		1089EE7D2170F9020043AC5E /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089EE7C2170F9020043AC5E /* PokemonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +27,14 @@
 		1089EE5F2170F1A80043AC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1089EE612170F1A80043AC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1089EE622170F1A80043AC5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1089EE6A2170F4390043AC5E /* PokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokedexTableViewController.h; sourceTree = "<group>"; };
-		1089EE6B2170F4390043AC5E /* PokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokedexTableViewController.m; sourceTree = "<group>"; };
-		1089EE712170F4A40043AC5E /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		1089EE722170F4A40043AC5E /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		1089EE6A2170F4390043AC5E /* AELPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AELPokedexTableViewController.h; sourceTree = "<group>"; };
+		1089EE6B2170F4390043AC5E /* AELPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AELPokedexTableViewController.m; sourceTree = "<group>"; };
+		1089EE712170F4A40043AC5E /* AELDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AELDetailViewController.h; sourceTree = "<group>"; };
+		1089EE722170F4A40043AC5E /* AELDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AELDetailViewController.m; sourceTree = "<group>"; };
+		1089EE742170F5B10043AC5E /* AELPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AELPokemon.h; sourceTree = "<group>"; };
+		1089EE752170F5B10043AC5E /* AELPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AELPokemon.m; sourceTree = "<group>"; };
+		1089EE782170F8CF0043AC5E /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
+		1089EE7C2170F9020043AC5E /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +68,11 @@
 			isa = PBXGroup;
 			children = (
 				1089EE592170F1A70043AC5E /* Main.storyboard */,
+				1089EE772170F5B60043AC5E /* Model and Model Controller */,
 				1089EE702170F44A0043AC5E /* View Controllers */,
+				1089EE7B2170F8D40043AC5E /* Networking */,
 				1089EE692170F1CE0043AC5E /* Resources */,
+				1089EE782170F8CF0043AC5E /* Pokedex-Bridging-Header.h */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -84,12 +93,29 @@
 		1089EE702170F44A0043AC5E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1089EE6A2170F4390043AC5E /* PokedexTableViewController.h */,
-				1089EE6B2170F4390043AC5E /* PokedexTableViewController.m */,
-				1089EE712170F4A40043AC5E /* DetailViewController.h */,
-				1089EE722170F4A40043AC5E /* DetailViewController.m */,
+				1089EE6A2170F4390043AC5E /* AELPokedexTableViewController.h */,
+				1089EE6B2170F4390043AC5E /* AELPokedexTableViewController.m */,
+				1089EE712170F4A40043AC5E /* AELDetailViewController.h */,
+				1089EE722170F4A40043AC5E /* AELDetailViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1089EE772170F5B60043AC5E /* Model and Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1089EE742170F5B10043AC5E /* AELPokemon.h */,
+				1089EE752170F5B10043AC5E /* AELPokemon.m */,
+			);
+			path = "Model and Model Controller";
+			sourceTree = "<group>";
+		};
+		1089EE7B2170F8D40043AC5E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1089EE7C2170F9020043AC5E /* PokemonAPI.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,11 +144,13 @@
 		1089EE482170F1A70043AC5E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = AEL;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Andrew Liao";
 				TargetAttributes = {
 					1089EE4F2170F1A70043AC5E = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -163,9 +191,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1089EE632170F1A80043AC5E /* main.m in Sources */,
-				1089EE6C2170F4390043AC5E /* PokedexTableViewController.m in Sources */,
+				1089EE6C2170F4390043AC5E /* AELPokedexTableViewController.m in Sources */,
+				1089EE7D2170F9020043AC5E /* PokemonAPI.swift in Sources */,
 				1089EE552170F1A70043AC5E /* AppDelegate.m in Sources */,
-				1089EE732170F4A40043AC5E /* DetailViewController.m in Sources */,
+				1089EE762170F5B10043AC5E /* AELPokemon.m in Sources */,
+				1089EE732170F4A40043AC5E /* AELDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +337,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 579Y2HH9JP;
 				INFOPLIST_FILE = "$(SRCROOT)/Pokedex/Resources/Info.plist";
@@ -316,6 +347,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex/Pokedex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -324,6 +358,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 579Y2HH9JP;
 				INFOPLIST_FILE = "$(SRCROOT)/Pokedex/Resources/Info.plist";
@@ -333,6 +368,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex/Pokedex-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

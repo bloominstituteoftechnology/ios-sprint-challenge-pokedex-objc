@@ -6,9 +6,9 @@
 //  Copyright © 2018 Andrew Liao. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "AELDetailViewController.h"
 
-@interface DetailViewController ()
+@interface AELDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *spriteImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *idLabel;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation DetailViewController
+@implementation AELDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

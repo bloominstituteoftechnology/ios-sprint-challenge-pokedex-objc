@@ -1,5 +1,5 @@
 //
-//  PokedexTableViewController.h
+//  DetailViewController.h
 //  Pokedex
 //
 //  Created by Andrew Dhan on 10/12/18.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PokedexTableViewController : UITableViewController
+@interface AELDetailViewController : UIViewController
 
 @end
 

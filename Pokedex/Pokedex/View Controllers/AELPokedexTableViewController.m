@@ -6,22 +6,29 @@
 //  Copyright © 2018 Andrew Liao. All rights reserved.
 //
 
-#import "PokedexTableViewController.h"
+#import "AELPokedexTableViewController.h"
+#import "AELPokemon.h"
+#import "Pokedex-Swift.h"
 
-@interface PokedexTableViewController ()
+@interface AELPokedexTableViewController ()
+
+@property NSMutableArray <AELPokemon *> *pokemonList;
 
 @end
 
-@implementation PokedexTableViewController
+@implementation AELPokedexTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [[PokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<AELPokemon *> * _Nullable array, NSError * error) {
+        if (error){
+            NSLog(@"Error fetching: %@", error);
+        }
+        self.pokemonList = [array mutableCopy];
+    }];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 #pragma mark - Table view data source
