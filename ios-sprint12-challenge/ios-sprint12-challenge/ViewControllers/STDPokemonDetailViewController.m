@@ -14,23 +14,40 @@
 @property (weak, nonatomic) IBOutlet UILabel *identifierLabel;
 @property (weak, nonatomic) IBOutlet UILabel *abilitiesLabel;
 
+@property UIImage *image;
+
+- (void)updateViews;
+
 @end
 
 @implementation STDPokemonDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.pokemon addObserver:self forKeyPath:@"identifier" options:0 context:NULL];
+    [self addObserver:self forKeyPath:@"image" options:0 context:NULL];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        self.updateViews;
+    });
+    NSLog(@"Pokemon with id %@ has updated", [object valueForKeyPath:keyPath]);
+    
 }
-*/
+
+- (void)updateViews
+{
+    NSURL *imageUrl = [NSURL URLWithString:self.pokemon.sprite];
+    NSData *data = [NSData dataWithContentsOfURL:imageUrl];
+    UIImage *image = [UIImage imageWithData:data];
+    [self.imageView setImage:image];
+    [self.nameLabel setText:self.pokemon.name];
+    [self.identifierLabel setText:self.pokemon.identifier];
+    NSString *abilities = [self.pokemon.abilities componentsJoinedByString:@", "];
+    [self.abilitiesLabel setText:[NSString stringWithFormat:@"Abilities: %@", abilities]];
+}
+
 
 @end

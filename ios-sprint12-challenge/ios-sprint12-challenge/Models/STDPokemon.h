@@ -16,7 +16,7 @@ NS_SWIFT_NAME(Pokemon)
 
 @property NSString *name;
 @property (nullable) NSString *identifier;
-@property (nullable) NSURL *sprite;
+@property NSString *sprite;
 @property (nullable) NSArray *abilities;
 
 @end

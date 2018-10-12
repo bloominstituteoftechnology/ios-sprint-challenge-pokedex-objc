@@ -17,8 +17,10 @@ import Foundation
     
      @objc func fillInDetails(for pokemon: Pokemon) {
         let name = pokemon.name
+        var url = baseUrl
+        url.appendPathComponent(name)
         
-        URLSession.shared.dataTask(with: baseUrl) { (data, _, error) in
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 NSLog("Could not fetch data: \(error)")
                 return
@@ -33,11 +35,11 @@ import Foundation
             guard let pokemon = jsonDict as? [String : Any] else { return }
             
             if let name = pokemon["name"] as? String,
-                let identifer = pokemon["id"] as? String,
+                let identifer = pokemon["id"] as? Int,
                 let sprites = pokemon["sprites"] as? [String : Any],
                 let abilitiesDicts = pokemon["abilities"] as? [[String : Any]] {
                 
-                guard let sprite = sprites["front_default"] as? URL else { return }
+                guard let sprite = sprites["front_default"] as? String else { return }
                 let abilities = abilitiesDicts.compactMap({ (abilitiesDict) -> String? in
                     if let ability = abilitiesDict["ability"] as? [String : Any],
                         let abilityName = ability["name"] as? String {
@@ -48,16 +50,16 @@ import Foundation
                 
                 if let pokemonDict = self.pokemonsList[name] {
                     let retrievedPokemon = pokemonDict.1
-                    retrievedPokemon.identifier = identifer
-                    retrievedPokemon.sprite = sprite
-                    retrievedPokemon.abilities = abilities
-                    
-                    // KVO stuff
+                    if retrievedPokemon.identifier == nil {
+                        retrievedPokemon.sprite = sprite
+                        retrievedPokemon.abilities = abilities
+                        retrievedPokemon.identifier = String(identifer)
+                    }
                 }
                 
             }
             
-            }.resume()
+        }.resume()
     }
     
     @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {

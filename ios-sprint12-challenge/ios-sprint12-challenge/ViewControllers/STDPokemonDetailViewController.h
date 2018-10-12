@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STDPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface STDPokemonDetailViewController : UIViewController
+
+@property STDPokemon *pokemon;
 
 @end
 

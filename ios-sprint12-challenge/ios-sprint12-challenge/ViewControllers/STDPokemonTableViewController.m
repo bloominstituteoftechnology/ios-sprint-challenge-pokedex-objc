@@ -8,11 +8,11 @@
 
 #import "STDPokemonTableViewController.h"
 #import "STDPokemon.h"
+#import "STDPokemonDetailViewController.h"
 #import "ios_sprint12_challenge-Swift.h"
 
 @interface STDPokemonTableViewController ()
 
-@property PokemonAPI *pokemonApi;
 @property NSMutableArray *pokemons;
 
 @end
@@ -23,7 +23,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _pokemonApi = [PokemonAPI shared];
         _pokemons = [[NSMutableArray alloc] init];
     }
     return self;
@@ -33,7 +32,6 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        _pokemonApi = [PokemonAPI shared];
         _pokemons = [[NSMutableArray alloc] init];
     }
     return self;
@@ -41,9 +39,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //PokemonAPI *pokemonApi = [PokemonAPI shared];
+    PokemonAPI *pokemonApi = [PokemonAPI shared];
     
-    [self.pokemonApi fetchAllPokemonWithCompletion:^(NSArray * pokemonList, NSError * error) {
+    [pokemonApi fetchAllPokemonWithCompletion:^(NSArray * pokemonList, NSError * error) {
         if (error) {
             NSLog(@"Error fetching pokemons %@", error);
             return;
@@ -81,14 +79,20 @@
     return cell;
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ShowPokemonDetail"]) {
+        STDPokemonDetailViewController *detailVC = segue.destinationViewController;
+        PokemonAPI *pokemonApi = [PokemonAPI shared];
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        STDPokemon *pokemon = self.pokemons[indexPath.row];
+        [pokemonApi fillInDetailsFor:pokemon];
+        
+        [detailVC setPokemon:pokemon];
+    }
+    
 }
-*/
 
 @end
