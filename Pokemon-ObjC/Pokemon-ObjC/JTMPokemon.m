@@ -10,7 +10,7 @@
 
 @implementation JTMPokemon
 
-- (instancetype)initWithName:(NSString *)name identifier:(NSString *)identifier sprite:(NSData *)sprite abilities:(NSArray<NSString *> *)abilities
+- (instancetype)initWithName:(NSString *)name identifier:(NSString *)identifier sprite:(NSURL *)sprite abilities:(NSArray<NSString *> *)abilities
 {
     self = [super init];
     if (self) {
@@ -25,8 +25,11 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
     NSString *name = dictionary[@"name"];
+    NSString *identifier = dictionary[@"identifier"];
+    NSURL *sprite = dictionary[@"sprite"];
+    NSArray<NSString *> *abilities = dictionary[@"abilities"];
     
-    return [self initWithName:name identifier:<#(nonnull NSString *)#> sprite:<#(nonnull NSData *)#> abilities:<#(nonnull NSArray<NSString *> *)#>]
+    return [self initWithName:name identifier:identifier sprite:sprite abilities:abilities];
 }
 
 @end

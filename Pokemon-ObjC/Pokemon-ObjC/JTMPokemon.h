@@ -14,13 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithName:(NSString *)name
                   identifier:(NSString *)identifier
-                      sprite:(NSData *)sprite
+                      sprite:(NSURL *)sprite
                    abilities:(NSArray<NSString *> *)abilities;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @property (nonatomic, copy, readonly, nullable) NSString *name;
 @property (nonatomic, copy, readonly, nullable) NSString *identifier;
-@property (nonatomic, copy, readonly, nullable) NSData *sprite;
+@property (nonatomic, copy, readonly, nullable) NSURL *sprite;
 @property (nonatomic, copy, readonly, nullable) NSArray<NSString *> *abilities;
 
 @end
