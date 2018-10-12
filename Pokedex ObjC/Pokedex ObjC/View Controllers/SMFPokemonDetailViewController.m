@@ -7,13 +7,76 @@
 //
 
 #import "SMFPokemonDetailViewController.h"
+#import "SMFPokemon.h"
+#import "Pokedex_ObjC-Swift.h"
 
 @interface SMFPokemonDetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *pokemonImg;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *idLabel;
+@property (weak, nonatomic) IBOutlet UILabel *abilitiesLabel;
+
 @end
+
+void *KVOContext = &KVOContext;
 
 @implementation SMFPokemonDetailViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.title = self.pokemon.name;
+    self.nameLabel.text = self.pokemon.name;
+    [self.pokemonController fillInDetailsFor:self.pokemon];
+}
 
+- (void)setPokemon:(SMFPokemon *)pokemon
+{
+    if (_pokemon) {
+        _pokemon = pokemon;
+        [_pokemon addObserver:self forKeyPath:@"image" options:0 context:KVOContext];
+        [_pokemon addObserver:self forKeyPath:@"identifier" options:0 context:KVOContext];
+        [_pokemon addObserver:self forKeyPath:@"abilities" options:0 context:KVOContext];
+    }
+}
+
+- (void)updateViewForImg:(BOOL)img identifier:(BOOL)identifier abilities:(BOOL)abilities
+{
+    if (img == YES) {
+        self.pokemonImg.image = self.pokemon.image;
+    }
+    if (identifier == YES) {
+        self.idLabel.text = self.pokemon.identifier;
+    }
+    if (abilities == YES) {
+        self.abilitiesLabel.text = self.pokemon.abilities;
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (context != KVOContext) {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        return;
+    }
+    
+    BOOL img = NO;
+    BOOL identifier = NO;
+    BOOL abilities = NO;
+    
+    if ([keyPath isEqualToString: @"image"]) {
+        img = YES;
+    }
+    if ([keyPath isEqualToString: @"identifier"]) {
+        identifier = YES;
+    }
+    if ([keyPath isEqualToString: @"abilities"]) {
+        abilities = YES;
+    }
+    
+    [self updateViewForImg:img identifier:identifier abilities:abilities];
+}
 
 @end

@@ -103,6 +103,12 @@
                         <viewLayoutGuide key="safeArea" id="vAF-xK-L6b"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pokémon Name" id="yrV-n8-xfR"/>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="q7e-li-hQ3" id="GDc-zE-nwm"/>
+                        <outlet property="idLabel" destination="Tfa-Tj-lsc" id="oif-qZ-yUp"/>
+                        <outlet property="nameLabel" destination="xKc-Ba-1P1" id="Nmg-EF-fNk"/>
+                        <outlet property="pokemonImg" destination="D2l-9q-9qH" id="W37-4i-Swj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0S-Vn-7WD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

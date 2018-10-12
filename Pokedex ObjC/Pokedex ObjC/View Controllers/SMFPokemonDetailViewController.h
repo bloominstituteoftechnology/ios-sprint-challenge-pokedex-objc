@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class SMFPokemon;
+@class SMFPokemonController;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SMFPokemonDetailViewController : UIViewController
+
+@property (nonatomic, nullable) SMFPokemon *pokemon;
+@property (nullable) SMFPokemonController *pokemonController;
 
 @end
 
