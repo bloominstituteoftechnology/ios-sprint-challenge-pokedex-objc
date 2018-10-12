@@ -7,16 +7,23 @@
 //
 
 #import "AppDelegate.h"
+#import "PokedexObjC-Swift.h"
 
 @interface AppDelegate ()
 
+@property PokemonController *pokemonController;
+@property (nonatomic, strong) NSArray<Pokemon *> *pokemons;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    _pokemonController = [PokemonController shared];
+    [_pokemonController fetchAllPokemonWithCompletion:^(NSArray<Pokemon *> *pokemons, NSError *error)
+    {
+        self.pokemons = pokemons;
+    }];
     return YES;
 }
 
