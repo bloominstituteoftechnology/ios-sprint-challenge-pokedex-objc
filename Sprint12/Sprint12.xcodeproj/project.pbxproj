@@ -16,6 +16,7 @@
 		49DAB0872170FC1F00E58966 /* PokemonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB0862170FC1F00E58966 /* PokemonClient.swift */; };
 		49DAB09321710F5900E58966 /* DODPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB09221710F5900E58966 /* DODPokemonTableViewController.m */; };
 		49DAB0962171110900E58966 /* DODPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB0952171110900E58966 /* DODPokemonDetailViewController.m */; };
+		49DAB09D21711CF500E58966 /* DODPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DAB09C21711CF500E58966 /* DODPokemonController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		49DAB09221710F5900E58966 /* DODPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DODPokemonTableViewController.m; sourceTree = "<group>"; };
 		49DAB0942171110900E58966 /* DODPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DODPokemonDetailViewController.h; sourceTree = "<group>"; };
 		49DAB0952171110900E58966 /* DODPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DODPokemonDetailViewController.m; sourceTree = "<group>"; };
+		49DAB09B21711CF500E58966 /* DODPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DODPokemonController.h; sourceTree = "<group>"; };
+		49DAB09C21711CF500E58966 /* DODPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DODPokemonController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,7 @@
 			children = (
 				49DAB0882170FF3E00E58966 /* Resources */,
 				49DAB0772170F0C200E58966 /* Model */,
+				49DAB09A21711CCD00E58966 /* Model Controller */,
 				49DAB0792170F0D400E58966 /* Views */,
 				49DAB07A2170F0D900E58966 /* Controllers */,
 				49DAB07B2170F0DF00E58966 /* Networking */,
@@ -124,6 +128,15 @@
 				49DAB0672170F0B000E58966 /* Main.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		49DAB09A21711CCD00E58966 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49DAB09B21711CF500E58966 /* DODPokemonController.h */,
+				49DAB09C21711CF500E58966 /* DODPokemonController.m */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DAB0712170F0B200E58966 /* main.m in Sources */,
+				49DAB09D21711CF500E58966 /* DODPokemonController.m in Sources */,
 				49DAB09321710F5900E58966 /* DODPokemonTableViewController.m in Sources */,
 				49DAB0962171110900E58966 /* DODPokemonDetailViewController.m in Sources */,
 				49DAB0872170FC1F00E58966 /* PokemonClient.swift in Sources */,
