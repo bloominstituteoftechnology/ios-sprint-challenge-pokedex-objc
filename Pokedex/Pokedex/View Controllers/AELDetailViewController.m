@@ -32,11 +32,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.pokemon addObserver:self forKeyPath:@"id" options:0 context:NULL];
+
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.pokemon addObserver:self forKeyPath:@"id" options:0 context:NULL];
+    [self.pokemon addObserver:self forKeyPath:@"sprite" options:0 context:NULL];
+    
     [self updateName];
     [PokemonAPI.sharedController fillInDetailsFor: self.pokemon];
 }
@@ -57,17 +60,23 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [[self idLabel] setText: [self.pokemon id]];
         [[self abilitiesTextView] setText:[self.pokemon abilities]];
-        [self loadImageWithStringPath:[self.pokemon sprite]];
     });
-
+    
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
-    [self updateViews];
-    NSLog(@"%@", [object valueForKeyPath:keyPath]);
+    if([keyPath isEqualToString:@"id"]){
+        
+        [self updateViews];
+        NSLog(@"ID %@", [object valueForKeyPath:keyPath]);
+    }
+    if([keyPath isEqualToString:@"sprite"]){
+        [self loadImageWithStringPath:[self.pokemon sprite]];
+    }
+    
+    
 }
-
 
 
 -(void) loadImageWithStringPath: (NSString *) path{

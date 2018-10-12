@@ -61,13 +61,13 @@ class PokemonAPI: NSObject {
                     pokemon.id = String( intID)
                 }
                 
-                guard let abilitiesArray = dictionary["abilities"] as? [[String: Any]] else {return}
-                
-                pokemon.loadAbilities(from: abilitiesArray)
-                
-                if let spritesDictionary = dictionary["sprites"] as? [String:String] {
+                if let abilitiesArray = dictionary["abilities"] as? [[String: Any]] {
+                    
+                    pokemon.loadAbilities(from: abilitiesArray)
+                }
+                if let spritesDictionary = dictionary["sprites"] as? [String:String?] {
                     let spriteURL = spritesDictionary["front_default"]
-                    pokemon.sprite = spriteURL
+                    pokemon.sprite = spriteURL!
                 }
                 
             } catch {
