@@ -28,7 +28,7 @@ Please view the screen recordings so you will know what your finished project sh
 
 ## Requirements
 
-The goal of this sprint challenge is to create an app that fetches a song's lyrics.
+The goal of this sprint challenge is to create a viewer for the Pokedex Pokemon API.
 
 The requirements for this project are as follows:
 
