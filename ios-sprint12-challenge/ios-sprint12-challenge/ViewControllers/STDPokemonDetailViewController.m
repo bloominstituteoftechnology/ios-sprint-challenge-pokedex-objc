@@ -25,13 +25,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.pokemon addObserver:self forKeyPath:@"identifier" options:0 context:NULL];
-    [self addObserver:self forKeyPath:@"image" options:0 context:NULL];
+    
+    if (self.pokemon.identifier != NULL) {
+        [self updateViews];
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
     dispatch_async(dispatch_get_main_queue(), ^(void){
-        self.updateViews;
+        [self updateViews];
     });
     NSLog(@"Pokemon with id %@ has updated", [object valueForKeyPath:keyPath]);
     
