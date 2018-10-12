@@ -75,8 +75,9 @@
         SMFPokemonDetailViewController *destination = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         SMFPokemon *pokemon = self.pokemons[indexPath.row];
-        destination.pokemon = pokemon;
         destination.pokemonController = [SMFPokemonController sharedController];
+        // needs to be after pokemonController is set
+        destination.pokemon = pokemon;
     }
 }
 

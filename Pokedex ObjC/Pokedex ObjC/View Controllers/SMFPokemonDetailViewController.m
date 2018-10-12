@@ -23,36 +23,36 @@ void *KVOContext = &KVOContext;
 
 @implementation SMFPokemonDetailViewController
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    self.title = self.pokemon.name;
-    self.nameLabel.text = [NSString stringWithFormat:@"Name: %@", self.pokemon.name];
-    [self.pokemonController fillInDetailsFor:self.pokemon];
-}
-
 - (void)setPokemon:(SMFPokemon *)pokemon
 {
-    if (!_pokemon) {
-        _pokemon = pokemon;
-        [_pokemon addObserver:self forKeyPath:@"image" options:0 context:KVOContext];
-        [_pokemon addObserver:self forKeyPath:@"identifier" options:0 context:KVOContext];
-        [_pokemon addObserver:self forKeyPath:@"abilities" options:0 context:KVOContext];
+    if (_pokemon) {
+        [_pokemon removeObserver:self forKeyPath:@"image"];
+        [_pokemon removeObserver:self forKeyPath:@"identifier"];
+        [_pokemon removeObserver:self forKeyPath:@"abilities"];
     }
+    
+    _pokemon = pokemon;
+    
+    [_pokemon addObserver:self forKeyPath:@"image" options:0 context:KVOContext];
+    [_pokemon addObserver:self forKeyPath:@"identifier" options:0 context:KVOContext];
+    [_pokemon addObserver:self forKeyPath:@"abilities" options:0 context:KVOContext];
+    
+    [self.pokemonController fillInDetailsFor:_pokemon];
 }
 
 - (void)updateViewForImg:(BOOL)img identifier:(BOOL)identifier abilities:(BOOL)abilities
 {
-    if (img == YES) {
-        self.pokemonImg.image = self.pokemon.image;
-    }
-    if (identifier == YES) {
-        self.idLabel.text = [NSString stringWithFormat:@"Id: %@", self.pokemon.identifier];
-    }
-    if (abilities == YES) {
-        self.abilitiesLabel.text = [NSString stringWithFormat:@"Abilities: %@", self.pokemon.abilities];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (img == YES) {
+            self.pokemonImg.image = self.pokemon.image;
+        }
+        if (identifier == YES) {
+            self.idLabel.text = [NSString stringWithFormat:@"Id: %@", self.pokemon.identifier];
+        }
+        if (abilities == YES) {
+            self.abilitiesLabel.text = [NSString stringWithFormat:@"Abilities: %@", self.pokemon.abilities];
+        }
+    });
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

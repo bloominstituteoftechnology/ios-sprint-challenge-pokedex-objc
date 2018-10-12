@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSString *name;
 @property NSURL *url;
+@property (readonly, nullable) NSURL *imageURL;
 @property (nullable) UIImage *image;
 @property (readonly, nullable) NSString *identifier;
 @property (readonly, nullable) NSString *abilities;

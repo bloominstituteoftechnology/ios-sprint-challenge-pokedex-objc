@@ -11,7 +11,7 @@
 
 @interface SMFPokemon ()
 
-@property NSURL *imageURL;
+@property (readwrite, nullable) NSURL *imageURL;
 @property (readwrite, nullable) NSString *identifier;
 @property (readwrite, nullable) NSString *abilities;
 
@@ -50,7 +50,7 @@
         abilitiesString = [NSString stringWithFormat:@"%@, %@", abilitiesString, abilityName];
     }
     if (![abilitiesString isEqualToString:@""]) {
-        abilitiesString = [abilitiesString substringFromIndex:abilitiesString.length-1];
+        abilitiesString = [abilitiesString substringFromIndex:2];
     }
     
     NSDictionary<NSString *, id> *sprites = dictionary[@"sprites"];
