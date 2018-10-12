@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AELPokemon;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AELDetailViewController : UIViewController
+
+@property (nullable) AELPokemon *pokemon;
 
 @end
 
