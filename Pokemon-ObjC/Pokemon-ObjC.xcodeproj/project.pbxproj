@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		F88EB4EE2170F0A100B68F46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F88EB4ED2170F0A100B68F46 /* AppDelegate.m */; };
-		F88EB4F12170F0A200B68F46 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F88EB4F02170F0A200B68F46 /* ViewController.m */; };
 		F88EB4F42170F0A200B68F46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88EB4F22170F0A200B68F46 /* Main.storyboard */; };
 		F88EB4F62170F0A200B68F46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88EB4F52170F0A200B68F46 /* Assets.xcassets */; };
 		F88EB4F92170F0A200B68F46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88EB4F72170F0A200B68F46 /* LaunchScreen.storyboard */; };
 		F88EB4FC2170F0A200B68F46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F88EB4FB2170F0A200B68F46 /* main.m */; };
 		F88EB5042170F0E200B68F46 /* JTMPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = F88EB5032170F0E200B68F46 /* JTMPokemon.m */; };
+		F88EB5072170F23D00B68F46 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EB5062170F23D00B68F46 /* NetworkController.swift */; };
+		F88EB50A2170F5CD00B68F46 /* JTMPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F88EB5092170F5CD00B68F46 /* JTMPokemonDetailViewController.m */; };
+		F88EB50D2170F5E800B68F46 /* JTMPokemonListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F88EB50C2170F5E800B68F46 /* JTMPokemonListTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F88EB4E92170F0A100B68F46 /* Pokemon-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88EB4EC2170F0A100B68F46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F88EB4ED2170F0A100B68F46 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F88EB4EF2170F0A200B68F46 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F88EB4F02170F0A200B68F46 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F88EB4F32170F0A200B68F46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F88EB4F52170F0A200B68F46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F88EB4F82170F0A200B68F46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -29,6 +29,12 @@
 		F88EB4FB2170F0A200B68F46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F88EB5022170F0E200B68F46 /* JTMPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTMPokemon.h; sourceTree = "<group>"; };
 		F88EB5032170F0E200B68F46 /* JTMPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTMPokemon.m; sourceTree = "<group>"; };
+		F88EB5052170F23D00B68F46 /* Pokemon-ObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokemon-ObjC-Bridging-Header.h"; sourceTree = "<group>"; };
+		F88EB5062170F23D00B68F46 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		F88EB5082170F5CD00B68F46 /* JTMPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTMPokemonDetailViewController.h; sourceTree = "<group>"; };
+		F88EB5092170F5CD00B68F46 /* JTMPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTMPokemonDetailViewController.m; sourceTree = "<group>"; };
+		F88EB50B2170F5E800B68F46 /* JTMPokemonListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTMPokemonListTableViewController.h; sourceTree = "<group>"; };
+		F88EB50C2170F5E800B68F46 /* JTMPokemonListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTMPokemonListTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,15 +69,19 @@
 			children = (
 				F88EB4EC2170F0A100B68F46 /* AppDelegate.h */,
 				F88EB4ED2170F0A100B68F46 /* AppDelegate.m */,
-				F88EB4EF2170F0A200B68F46 /* ViewController.h */,
-				F88EB4F02170F0A200B68F46 /* ViewController.m */,
 				F88EB4F22170F0A200B68F46 /* Main.storyboard */,
+				F88EB5082170F5CD00B68F46 /* JTMPokemonDetailViewController.h */,
+				F88EB5092170F5CD00B68F46 /* JTMPokemonDetailViewController.m */,
+				F88EB50B2170F5E800B68F46 /* JTMPokemonListTableViewController.h */,
+				F88EB50C2170F5E800B68F46 /* JTMPokemonListTableViewController.m */,
 				F88EB4F52170F0A200B68F46 /* Assets.xcassets */,
 				F88EB4F72170F0A200B68F46 /* LaunchScreen.storyboard */,
 				F88EB4FA2170F0A200B68F46 /* Info.plist */,
 				F88EB4FB2170F0A200B68F46 /* main.m */,
 				F88EB5022170F0E200B68F46 /* JTMPokemon.h */,
 				F88EB5032170F0E200B68F46 /* JTMPokemon.m */,
+				F88EB5062170F23D00B68F46 /* NetworkController.swift */,
+				F88EB5052170F23D00B68F46 /* Pokemon-ObjC-Bridging-Header.h */,
 			);
 			path = "Pokemon-ObjC";
 			sourceTree = "<group>";
@@ -108,6 +118,7 @@
 				TargetAttributes = {
 					F88EB4E82170F0A100B68F46 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -147,10 +158,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F88EB4F12170F0A200B68F46 /* ViewController.m in Sources */,
+				F88EB50A2170F5CD00B68F46 /* JTMPokemonDetailViewController.m in Sources */,
+				F88EB5072170F23D00B68F46 /* NetworkController.swift in Sources */,
 				F88EB4FC2170F0A200B68F46 /* main.m in Sources */,
 				F88EB4EE2170F0A100B68F46 /* AppDelegate.m in Sources */,
 				F88EB5042170F0E200B68F46 /* JTMPokemon.m in Sources */,
+				F88EB50D2170F5E800B68F46 /* JTMPokemonListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8J9VUCBX92;
 				INFOPLIST_FILE = "Pokemon-ObjC/Info.plist";
@@ -301,6 +315,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jonathantmiles.Pokemon-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokemon-ObjC/Pokemon-ObjC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -309,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8J9VUCBX92;
 				INFOPLIST_FILE = "Pokemon-ObjC/Info.plist";
@@ -318,6 +336,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jonathantmiles.Pokemon-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokemon-ObjC/Pokemon-ObjC-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
