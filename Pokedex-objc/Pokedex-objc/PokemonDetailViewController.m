@@ -32,6 +32,10 @@ void *KVOContext = &KVOContext;
     [pokemonController fillInDetailsFor:self.pokemon];
 }
 
+- (void)dealloc
+{
+    self.pokemon = nil;
+}
 
 -(void)updateViews {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -44,11 +48,16 @@ void *KVOContext = &KVOContext;
 
 - (void)setPokemon:(VUKPokemon *)pokemon
 {
-    if (!_pokemon) {
+    if (pokemon != _pokemon) {
+        
+        [_pokemon removeObserver:self forKeyPath:@"sprite" context:KVOContext];
+        [_pokemon removeObserver:self forKeyPath:@"identifier" context:KVOContext];
+        [_pokemon removeObserver:self forKeyPath:@"abilities" context:KVOContext];
         _pokemon = pokemon;
-        [_pokemon addObserver:self forKeyPath:@"sprite" options:0 context:KVOContext];
-        [_pokemon addObserver:self forKeyPath:@"identifier" options:0 context:KVOContext];
-        [_pokemon addObserver:self forKeyPath:@"abilities" options:0 context:KVOContext];
+        
+        [_pokemon addObserver:self forKeyPath:@"sprite" options:NSKeyValueObservingOptionInitial context:KVOContext];
+        [_pokemon addObserver:self forKeyPath:@"identifier" options:NSKeyValueObservingOptionInitial context:KVOContext];
+        [_pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionInitial context:KVOContext];
     }
 }
 
