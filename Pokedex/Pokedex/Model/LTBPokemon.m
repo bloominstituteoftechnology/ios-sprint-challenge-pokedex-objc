@@ -11,7 +11,7 @@
 @interface LTBPokemon ()
 
 @property (nonatomic, readwrite, copy) NSString *name;
-@property (nonatomic, readwrite, copy, nullable) NSString *identifier;
+@property (nonatomic, readwrite) NSInteger identifier;
 @property (nonatomic, readwrite, copy, nullable) NSArray<NSString *> *abilities;
 @property (nonatomic, readwrite, nullable) NSURL *spriteURL;
 
@@ -36,7 +36,12 @@
 
 - (void)updateWithDictionary:(NSDictionary *)dict
 {
-    self.identifier = dict[@"id"];
+    self.identifier = [dict[@"id"] integerValue];
+    
+    NSDictionary *spritesDicts = dict[@"sprites"];
+    NSString *spriteURLString = spritesDicts[@"front_default"];
+    
+    self.spriteURL = [[NSURL alloc] initWithString:spriteURLString];
     
     NSDictionary *abilityDicts = dict[@"abilities"];
     NSMutableArray *abilityStrings = [[NSMutableArray alloc] init];
@@ -47,12 +52,7 @@
         [abilityStrings addObject:abilityString];
     }
     
-    self.abilities = abilityStrings;
-    
-    NSDictionary *spritesDicts = dict[@"sprites"];
-    NSString *spriteURLString = spritesDicts[@"front_default"];
-    
-    self.spriteURL = [[NSURL alloc] initWithString:spriteURLString];
+    self.abilities = abilityStrings; // set abilities last, so we only need to observer abilities to know when everything else is updated
 }
 
 @end
