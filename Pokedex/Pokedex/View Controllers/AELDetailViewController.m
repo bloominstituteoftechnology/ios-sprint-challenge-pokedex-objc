@@ -54,10 +54,12 @@
     if (![self isViewLoaded] && [self pokemon]){
         return;
     }
-    
-    [[self idLabel] setText: [self.pokemon id]];
-    [[self abilitiesTextView] setText:[self.pokemon abilities]];
-    [self loadImageWithStringPath:[self.pokemon sprite]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[self idLabel] setText: [self.pokemon id]];
+        [[self abilitiesTextView] setText:[self.pokemon abilities]];
+        [self loadImageWithStringPath:[self.pokemon sprite]];
+    });
+
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
