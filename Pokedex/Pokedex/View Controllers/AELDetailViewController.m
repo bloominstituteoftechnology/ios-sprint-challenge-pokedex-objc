@@ -26,13 +26,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.pokemon addObserver:self forKeyPath:@"abilities" options:0 context:NULL];
+    [self.pokemon addObserver:self forKeyPath:@"sprite" options:0 context:NULL];
     
-    [self updateTitle];
+    [self updateDepends];
     [PokemonAPI.sharedController fillInDetailsFor: self.pokemon];
 }
 
--(void) updateTitle{
+-(void) updateDepends{
     if (![self isViewLoaded] && [self pokemon]){
         return;
     }

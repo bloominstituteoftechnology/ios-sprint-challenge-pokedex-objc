@@ -44,6 +44,7 @@ class PokemonAPI: NSObject {
     
     @objc func fillInDetails(for pokemon: AELPokemon){
         let url = URL(string: pokemon.url)!
+        guard pokemon.sprite == nil else {return }
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
@@ -68,6 +69,7 @@ class PokemonAPI: NSObject {
                 if let spritesDictionary = dictionary["sprites"] as? [String:String?] {
                     let spriteURL = spritesDictionary["front_default"]
                     pokemon.sprite = spriteURL!
+                    print("SPRITE DICT LIVES!")
                 }
                 
             } catch {
