@@ -25,7 +25,7 @@ class FAFPokemonAPI: NSObject {
             }
             
             guard let data = data else {
-                NSLog("Data unavailable: \(error)")
+                NSLog("Data unavailable: \(String(describing: error))")
                 return completion(nil, error)
             }
             

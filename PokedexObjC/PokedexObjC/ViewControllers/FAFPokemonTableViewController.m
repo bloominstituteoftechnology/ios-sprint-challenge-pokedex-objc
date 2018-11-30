@@ -55,19 +55,28 @@
     
     FAFPokemon *pokemon = [self.internalPokemons objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = pokemon.name;
+    [[cell textLabel] setTextColor:[UIColor colorNamed:@"white"]];
+    cell.textLabel.text = pokemon.name.capitalizedString;
     
     return cell;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier]isEqualToString:@"ViewPokemon"]){
+        
+        PokemonDetailViewController *destVC = segue.destinationViewController;
+        
+        NSIndexPath *indexPath = [[self tableView] indexPathForSelectedRow];
+        destVC.pokemon = [[self internalPokemons] objectAtIndex:indexPath.row];
+        
+    }
+    
 }
-*/
+
 
 @end
