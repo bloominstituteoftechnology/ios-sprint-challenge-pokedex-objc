@@ -15,6 +15,7 @@
 		7B3AAE4221B19EF70098CD16 /* DYPPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3AAE4121B19EF70098CD16 /* DYPPokedexTableViewController.m */; };
 		7B3AAE4521B19F110098CD16 /* DYPPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3AAE4421B19F110098CD16 /* DYPPokemonDetailViewController.m */; };
 		7B3AAE4821B19FE80098CD16 /* DYPPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3AAE4721B19FE80098CD16 /* DYPPokemon.m */; };
+		7B3AAE4B21B1AA1D0098CD16 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3AAE4A21B1AA1D0098CD16 /* PokemonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		7B3AAE4421B19F110098CD16 /* DYPPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYPPokemonDetailViewController.m; sourceTree = "<group>"; };
 		7B3AAE4621B19FE80098CD16 /* DYPPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYPPokemon.h; sourceTree = "<group>"; };
 		7B3AAE4721B19FE80098CD16 /* DYPPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYPPokemon.m; sourceTree = "<group>"; };
+		7B3AAE4921B1AA1C0098CD16 /* PokedexObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokedexObjC-Bridging-Header.h"; sourceTree = "<group>"; };
+		7B3AAE4A21B1AA1D0098CD16 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,7 @@
 				7B3AAE3021B19BF40098CD16 /* Main.storyboard */,
 				7B3AAE4621B19FE80098CD16 /* DYPPokemon.h */,
 				7B3AAE4721B19FE80098CD16 /* DYPPokemon.m */,
+				7B3AAE4A21B1AA1D0098CD16 /* PokemonAPI.swift */,
 				7B3AAE4021B19EF70098CD16 /* DYPPokedexTableViewController.h */,
 				7B3AAE4121B19EF70098CD16 /* DYPPokedexTableViewController.m */,
 				7B3AAE4321B19F110098CD16 /* DYPPokemonDetailViewController.h */,
@@ -77,6 +81,7 @@
 				7B3AAE3521B19C020098CD16 /* LaunchScreen.storyboard */,
 				7B3AAE3821B19C030098CD16 /* Info.plist */,
 				7B3AAE3921B19C030098CD16 /* main.m */,
+				7B3AAE4921B1AA1C0098CD16 /* PokedexObjC-Bridging-Header.h */,
 			);
 			path = PokedexObjC;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 				TargetAttributes = {
 					7B3AAE2621B19BF40098CD16 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -154,6 +160,7 @@
 			files = (
 				7B3AAE3A21B19C030098CD16 /* main.m in Sources */,
 				7B3AAE2C21B19BF40098CD16 /* AppDelegate.m in Sources */,
+				7B3AAE4B21B1AA1D0098CD16 /* PokemonAPI.swift in Sources */,
 				7B3AAE4521B19F110098CD16 /* DYPPokemonDetailViewController.m in Sources */,
 				7B3AAE4821B19FE80098CD16 /* DYPPokemon.m in Sources */,
 				7B3AAE4221B19EF70098CD16 /* DYPPokedexTableViewController.m in Sources */,
@@ -298,6 +305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PokedexObjC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -306,6 +314,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Daniela.PokedexObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokedexObjC/PokedexObjC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -314,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PokedexObjC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,6 +334,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Daniela.PokedexObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokedexObjC/PokedexObjC-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
