@@ -98,9 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				D8BF461921B19D4000E699A6 /* FAFPokemon.h */,
+				D8BF461A21B19D4000E699A6 /* FAFPokemon.m */,
 				D8BF462221B1AAAA00E699A6 /* FAFPokemonController.h */,
 				D8BF462321B1AAAA00E699A6 /* FAFPokemonController.m */,
-				D8BF461A21B19D4000E699A6 /* FAFPokemon.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";

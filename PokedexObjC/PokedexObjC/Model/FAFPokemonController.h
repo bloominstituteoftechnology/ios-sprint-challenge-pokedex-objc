@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FAFPokemonController : NSObject
     
-    @property (nonatomic, strong, readonly) NSArray *pokemons;
-
 @end
 
 NS_ASSUME_NONNULL_END

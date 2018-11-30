@@ -12,81 +12,53 @@
 #import "FAFPokemonController.h"
 
 @interface FAFPokemonTableViewController ()
+    
+    @property (nonatomic, strong, readwrite) NSMutableArray<FAFPokemon *> *internalPokemons;
 
 @end
 
 @implementation FAFPokemonTableViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
     
-    //Testing fetchAllPokemon()
     
-//    [FAFPokemonAPI.sharedController fetchAllPokemonWithCompletion:^(NSArray<FAFPokemon *> * pokemons, NSError * error) {
-//
-//        FAFPokemon *pokemon = pokemons[0];
-//
-//        NSLog(@"\(%@)", pokemon.name);
-//        NSLog(@"\(%@)", pokemon.detailURL);
-//        NSLog(@"\(%@)", pokemon.weight);
-////        NSLog(@"\(%@)", pokemons[1]);
-//    }];
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+    {
+        self = [super initWithCoder:aDecoder];
+        if (self) {
+            [[FAFPokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<FAFPokemon *> * pokemons, NSError * error) {
+                self->_internalPokemons = [NSMutableArray arrayWithArray:pokemons];
+            }];
+        }
+        return self;
+    }
     
-}
+    
+-(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+    {
+        self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+        if (self) {
+            [[FAFPokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<FAFPokemon *> * pokemons, NSError * error) {
+                self->_internalPokemons = [NSMutableArray arrayWithArray:pokemons];
+            }];
+        }
+        return self;
+    }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.internalPokemons.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    FAFPokemon *pokemon = [self.internalPokemons objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = pokemon.name;
     
     return cell;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation

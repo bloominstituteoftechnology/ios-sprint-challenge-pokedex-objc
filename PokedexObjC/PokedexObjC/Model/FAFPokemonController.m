@@ -11,32 +11,13 @@
 #import "PokedexObjC-Swift.h"
 
 @interface FAFPokemonController ()
-
+    
     @property (nonatomic, strong, readwrite) NSMutableArray<FAFPokemon *> *internalPokemons;
     
-@end
+    @end
 
 @implementation FAFPokemonController
     
-+ (id)sharedInstance {
-    static FAFPokemonController *sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[self alloc] init];
-    });
-    return sharedInstance;
-}
-- (id)init {
-    if (self = [super init]) {
-        [[FAFPokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<FAFPokemon *> * pokemons, NSError * error) {
-            self->_internalPokemons = [NSMutableArray arrayWithArray:pokemons];
-        }];
-    }
-    return self;
-}
+
     
--(NSArray *)pokemons{
-    return [self internalPokemons];
-}
-    
-@end
+    @end
