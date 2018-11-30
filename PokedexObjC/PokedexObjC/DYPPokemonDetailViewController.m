@@ -21,7 +21,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+}
+
+- (void)updateViews
+{
+    if (self.pokemon) {
+        
+        [self.imageView setImage:self.pokemon.sprite];
+        [self.nameLabel setText:self.pokemon.name];
+        [self.idLabel setText:[self.pokemon.identifier stringValue]];
+        [self.abilitiesTextView setText:self.pokemon.abilities];
+        
+    }
+}
+
+- (void)setPokemon:(DYPPokemon *)pokemon
+{
+    _pokemon = pokemon;
+    [self updateViews];
 }
 
 @end

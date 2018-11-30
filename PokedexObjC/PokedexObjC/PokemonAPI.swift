@@ -32,6 +32,8 @@ class PokemonAPI: NSObject {
                 
                 let pokemon = pokemonDictionaries.compactMap{ DYPPokemon(dictionary: $0) }
                 
+                //memory management here?
+                
                 completion(pokemon, nil)
                 
             } catch {

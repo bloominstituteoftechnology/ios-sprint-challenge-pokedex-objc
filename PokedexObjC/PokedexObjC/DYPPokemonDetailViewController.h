@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import "DYPPokemon.h"
 
 @interface DYPPokemonDetailViewController : UIViewController
 
-@end
+@property (nonatomic, nullable) DYPPokemon *pokemon;
 
-NS_ASSUME_NONNULL_END
+@end
