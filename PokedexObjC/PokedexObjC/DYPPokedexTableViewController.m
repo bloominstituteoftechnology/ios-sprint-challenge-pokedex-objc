@@ -58,6 +58,8 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         DYPPokemon *pokemon = [self.pokemon objectAtIndex:[indexPath row]];
         [[PokemonAPI sharedController] fillInDetailsFor:pokemon];
+        
+        //do i set pokemon here?
     }
 }
 

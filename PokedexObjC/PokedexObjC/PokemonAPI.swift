@@ -66,8 +66,6 @@ class PokemonAPI: NSObject {
                     pokemon.sprite = scratchPokemon.sprite
                 }
                 
-                //trigger KVO?
-                
             } catch {
                 NSLog("Error decoding pokemon.")
             }

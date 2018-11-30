@@ -45,8 +45,24 @@
 
 - (UIImage *)imageFromURL:(NSURL *)url
 {
-    //url session for image
-    return
+    __block UIImage *image;
+    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error fetching image from URL: %@", error);
+            return;
+        }
+        
+        if (!data) {
+            NSLog(@"No data returned from data task");
+            return;
+        }
+        
+        image = [UIImage imageWithData:data];
+        
+    }] resume];
+    
+    return image;
 }
 
 @end
