@@ -12,6 +12,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SLBPokemon : NSObject
 
+- (instancetype)initWithName:(NSString *)name
+                  identifier:(NSString *)identier;
+
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
+@property (nonatomic, copy, readonly) NSString *name;
+@property (nonatomic, copy, readonly) NSString *identifier;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
