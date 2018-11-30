@@ -12,6 +12,8 @@
 		A193380921B1995200300578 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A193380821B1995200300578 /* Assets.xcassets */; };
 		A193380C21B1995200300578 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A193380A21B1995200300578 /* LaunchScreen.storyboard */; };
 		A193380F21B1995200300578 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A193380E21B1995200300578 /* main.m */; };
+		A193381721B19A0D00300578 /* MUPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A193381621B19A0D00300578 /* MUPokemonTableViewController.m */; };
+		A193381A21B19A2800300578 /* MUPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A193381921B19A2800300578 /* MUPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,10 @@
 		A193380B21B1995200300578 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A193380D21B1995200300578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A193380E21B1995200300578 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A193381521B19A0D00300578 /* MUPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUPokemonTableViewController.h; sourceTree = "<group>"; };
+		A193381621B19A0D00300578 /* MUPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUPokemonTableViewController.m; sourceTree = "<group>"; };
+		A193381821B19A2800300578 /* MUPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUPokemonDetailViewController.h; sourceTree = "<group>"; };
+		A193381921B19A2800300578 /* MUPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 				A19337FF21B1995100300578 /* AppDelegate.h */,
 				A193380021B1995100300578 /* AppDelegate.m */,
 				A193380521B1995100300578 /* Main.storyboard */,
+				A193381821B19A2800300578 /* MUPokemonDetailViewController.h */,
+				A193381921B19A2800300578 /* MUPokemonDetailViewController.m */,
+				A193381521B19A0D00300578 /* MUPokemonTableViewController.h */,
+				A193381621B19A0D00300578 /* MUPokemonTableViewController.m */,
 				A193380821B1995200300578 /* Assets.xcassets */,
 				A193380A21B1995200300578 /* LaunchScreen.storyboard */,
 				A193380D21B1995200300578 /* Info.plist */,
@@ -137,7 +147,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A193380F21B1995200300578 /* main.m in Sources */,
+				A193381721B19A0D00300578 /* MUPokemonTableViewController.m in Sources */,
 				A193380121B1995100300578 /* AppDelegate.m in Sources */,
+				A193381A21B19A2800300578 /* MUPokemonDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
