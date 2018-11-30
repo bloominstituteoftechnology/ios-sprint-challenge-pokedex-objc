@@ -30,9 +30,11 @@ class PokemonAPI: NSObject {
                 guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
                     let pokemonDictionaries = dictionary["results"] as? [[String: Any]] else { throw NSError() }
                 
-                let pokemon = pokemonDictionaries.compactMap{ DYPPokemon(dictionary: $0) }
-                
-                //memory management here?
+                let pokemon = pokemonDictionaries.compactMap{ pokemon in
+                    autoreleasepool { () -> DYPPokemon in
+                        DYPPokemon(dictionary: pokemon)
+                    }
+                }
                 
                 completion(pokemon, nil)
                 
