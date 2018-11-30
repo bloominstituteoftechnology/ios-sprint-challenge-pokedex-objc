@@ -65,8 +65,8 @@ class PokemonAPI: NSObject {
                 
                 if pokemon != scratchPokemon {
                     pokemon.abilities = scratchPokemon.abilities
-                    pokemon.sprite = scratchPokemon.sprite
                     pokemon.identifier = scratchPokemon.identifier
+                    pokemon.sprite = scratchPokemon.sprite
                 }
                 
             } catch {

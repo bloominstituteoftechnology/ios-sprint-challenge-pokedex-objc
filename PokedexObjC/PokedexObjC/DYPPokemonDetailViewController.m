@@ -31,7 +31,15 @@
 {
     if (self.pokemon) {
         
-       // [self.imageView setImage:self.pokemon.sprite];
+        [self imageFromURL:self.pokemon.sprite completionBlock:^(UIImage *image, NSError *error) {
+            if (error) {
+                //nslog
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.imageView setImage:image];
+            });
+        }];
         NSString *name = self.pokemon.name;
         [self.nameLabel setText:name];
         NSString *identifer = [self.pokemon.identifier stringValue];
@@ -40,6 +48,28 @@
         [self.abilitiesTextView setText:abilities];
         
     }
+}
+
+- (void)imageFromURL:(NSURL *)url completionBlock:(void (^)(UIImage *image, NSError *error))completion
+{
+    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error fetching image from URL: %@", error);
+            completion(nil, error);
+            return;
+        }
+        
+        if (!data) {
+            NSLog(@"No data returned from data task");
+            completion(nil, [[NSError alloc] init]);
+            return;
+        }
+        
+        UIImage *image = [UIImage imageWithData:data];
+        completion(image, nil);
+        
+    }] resume];
 }
 
 - (void)setPokemon:(DYPPokemon *)pokemon

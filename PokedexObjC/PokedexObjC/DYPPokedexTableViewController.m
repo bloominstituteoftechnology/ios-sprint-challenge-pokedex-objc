@@ -62,7 +62,7 @@ void *KVOContext2 = &KVOContext2;
 {
     if (context == KVOContext2) {
         DYPPokemon *pokemon = (DYPPokemon *)object;
-        if (pokemon.identifier) {
+        if (pokemon.sprite) {
             [self performSegueWithIdentifier:@"ShowPokemon" sender:self];
         }
     } else {
@@ -95,11 +95,11 @@ void *KVOContext2 = &KVOContext2;
 {
     if (pokemonSelected != _pokemonSelected) {
         
-        [_pokemonSelected removeObserver:self forKeyPath:@"identifier" context:KVOContext2];
+        [_pokemonSelected removeObserver:self forKeyPath:@"sprite" context:KVOContext2];
         
         _pokemonSelected = pokemonSelected;
         
-        [_pokemonSelected addObserver:self forKeyPath:@"identifier" options:NSKeyValueObservingOptionInitial context:KVOContext2];
+        [_pokemonSelected addObserver:self forKeyPath:@"sprite" options:NSKeyValueObservingOptionInitial context:KVOContext2];
     }
 }
 

@@ -10,7 +10,7 @@
 
 @implementation DYPPokemon
 
-- (instancetype)initWithName:(NSString *)name identifier:(NSNumber *)identifier abilities:(NSString *)abilities sprite:(UIImage *)sprite
+- (instancetype)initWithName:(NSString *)name identifier:(NSNumber *)identifier abilities:(NSString *)abilities sprite:(NSURL *)sprite
 {
     self = [super init];
     if (self) {
@@ -42,34 +42,17 @@
         
         NSString *spriteURLString = spritesDictionary[@"front_default"];
         NSURL *spriteURL = [NSURL URLWithString:spriteURLString];
-        UIImage *spriteImage = [self imageFromURL:spriteURL];
+//        __block UIImage *spriteImage;
+//        @synchronized (spriteImage) {
+//            [self imageFromURL:spriteURL completionBlock:^(UIImage *image, NSError *error) {
+//                spriteImage = image;
+//            }];
+//        }
         
-        return [self initWithName:name identifier:identifier abilities:abilities sprite:spriteImage];
+        return [self initWithName:name identifier:identifier abilities:abilities sprite:spriteURL];
     }
     
     return [self initWithName:name identifier:NULL abilities:NULL sprite:NULL];
-}
-
-- (UIImage *)imageFromURL:(NSURL *)url
-{
-    __block UIImage *image;
-    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        if (error) {
-            NSLog(@"Error fetching image from URL: %@", error);
-            return;
-        }
-        
-        if (!data) {
-            NSLog(@"No data returned from data task");
-            return;
-        }
-        
-        image = [UIImage imageWithData:data];
-        
-    }] resume];
-    
-    return image;
 }
 
 @end
