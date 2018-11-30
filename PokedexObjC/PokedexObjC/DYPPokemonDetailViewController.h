@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DYPPokemonDetailViewController.h
 //  PokedexObjC
 //
 //  Created by Daniela Parra on 11/30/18.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface DYPPokemonDetailViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

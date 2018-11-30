@@ -8,24 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		7B3AAE2C21B19BF40098CD16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3AAE2B21B19BF40098CD16 /* AppDelegate.m */; };
-		7B3AAE2F21B19BF40098CD16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3AAE2E21B19BF40098CD16 /* ViewController.m */; };
 		7B3AAE3221B19BF40098CD16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B3AAE3021B19BF40098CD16 /* Main.storyboard */; };
 		7B3AAE3421B19C020098CD16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B3AAE3321B19C020098CD16 /* Assets.xcassets */; };
 		7B3AAE3721B19C020098CD16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B3AAE3521B19C020098CD16 /* LaunchScreen.storyboard */; };
 		7B3AAE3A21B19C030098CD16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3AAE3921B19C030098CD16 /* main.m */; };
+		7B3AAE4221B19EF70098CD16 /* DYPPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3AAE4121B19EF70098CD16 /* DYPPokedexTableViewController.m */; };
+		7B3AAE4521B19F110098CD16 /* DYPPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3AAE4421B19F110098CD16 /* DYPPokemonDetailViewController.m */; };
+		7B3AAE4821B19FE80098CD16 /* DYPPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3AAE4721B19FE80098CD16 /* DYPPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B3AAE2721B19BF40098CD16 /* PokedexObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokedexObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3AAE2A21B19BF40098CD16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7B3AAE2B21B19BF40098CD16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7B3AAE2D21B19BF40098CD16 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7B3AAE2E21B19BF40098CD16 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7B3AAE3121B19BF40098CD16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B3AAE3321B19C020098CD16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B3AAE3621B19C020098CD16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B3AAE3821B19C030098CD16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B3AAE3921B19C030098CD16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7B3AAE4021B19EF70098CD16 /* DYPPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYPPokedexTableViewController.h; sourceTree = "<group>"; };
+		7B3AAE4121B19EF70098CD16 /* DYPPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYPPokedexTableViewController.m; sourceTree = "<group>"; };
+		7B3AAE4321B19F110098CD16 /* DYPPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYPPokemonDetailViewController.h; sourceTree = "<group>"; };
+		7B3AAE4421B19F110098CD16 /* DYPPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYPPokemonDetailViewController.m; sourceTree = "<group>"; };
+		7B3AAE4621B19FE80098CD16 /* DYPPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYPPokemon.h; sourceTree = "<group>"; };
+		7B3AAE4721B19FE80098CD16 /* DYPPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYPPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +66,13 @@
 			children = (
 				7B3AAE2A21B19BF40098CD16 /* AppDelegate.h */,
 				7B3AAE2B21B19BF40098CD16 /* AppDelegate.m */,
-				7B3AAE2D21B19BF40098CD16 /* ViewController.h */,
-				7B3AAE2E21B19BF40098CD16 /* ViewController.m */,
 				7B3AAE3021B19BF40098CD16 /* Main.storyboard */,
+				7B3AAE4621B19FE80098CD16 /* DYPPokemon.h */,
+				7B3AAE4721B19FE80098CD16 /* DYPPokemon.m */,
+				7B3AAE4021B19EF70098CD16 /* DYPPokedexTableViewController.h */,
+				7B3AAE4121B19EF70098CD16 /* DYPPokedexTableViewController.m */,
+				7B3AAE4321B19F110098CD16 /* DYPPokemonDetailViewController.h */,
+				7B3AAE4421B19F110098CD16 /* DYPPokemonDetailViewController.m */,
 				7B3AAE3321B19C020098CD16 /* Assets.xcassets */,
 				7B3AAE3521B19C020098CD16 /* LaunchScreen.storyboard */,
 				7B3AAE3821B19C030098CD16 /* Info.plist */,
@@ -97,6 +107,7 @@
 		7B3AAE1F21B19BF40098CD16 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = DYP;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Daniela Parra";
 				TargetAttributes = {
@@ -141,9 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B3AAE2F21B19BF40098CD16 /* ViewController.m in Sources */,
 				7B3AAE3A21B19C030098CD16 /* main.m in Sources */,
 				7B3AAE2C21B19BF40098CD16 /* AppDelegate.m in Sources */,
+				7B3AAE4521B19F110098CD16 /* DYPPokemonDetailViewController.m in Sources */,
+				7B3AAE4821B19FE80098CD16 /* DYPPokemon.m in Sources */,
+				7B3AAE4221B19EF70098CD16 /* DYPPokedexTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
