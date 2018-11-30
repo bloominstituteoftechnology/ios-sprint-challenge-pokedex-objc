@@ -8,24 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		82DAE04E21B199990082E829 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DAE04D21B199990082E829 /* AppDelegate.m */; };
-		82DAE05121B199990082E829 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DAE05021B199990082E829 /* ViewController.m */; };
 		82DAE05421B199990082E829 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DAE05221B199990082E829 /* Main.storyboard */; };
 		82DAE05621B1999A0082E829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82DAE05521B1999A0082E829 /* Assets.xcassets */; };
 		82DAE05921B1999A0082E829 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DAE05721B1999A0082E829 /* LaunchScreen.storyboard */; };
 		82DAE05C21B1999A0082E829 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DAE05B21B1999A0082E829 /* main.m */; };
+		82DAE06421B19CA20082E829 /* IIIPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DAE06321B19CA20082E829 /* IIIPokedexTableViewController.m */; };
+		82DAE06721B19CC00082E829 /* IIIPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DAE06621B19CC00082E829 /* IIIPokemonDetailViewController.m */; };
+		82DAE06A21B1A11A0082E829 /* IIIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DAE06921B1A11A0082E829 /* IIIPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		82DAE04921B199990082E829 /* Pokedex Objc Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex Objc Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DAE04C21B199990082E829 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		82DAE04D21B199990082E829 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		82DAE04F21B199990082E829 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		82DAE05021B199990082E829 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		82DAE05321B199990082E829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82DAE05521B1999A0082E829 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82DAE05821B1999A0082E829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82DAE05A21B1999A0082E829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82DAE05B21B1999A0082E829 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		82DAE06221B19CA20082E829 /* IIIPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIPokedexTableViewController.h; sourceTree = "<group>"; };
+		82DAE06321B19CA20082E829 /* IIIPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIPokedexTableViewController.m; sourceTree = "<group>"; };
+		82DAE06521B19CC00082E829 /* IIIPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIPokemonDetailViewController.h; sourceTree = "<group>"; };
+		82DAE06621B19CC00082E829 /* IIIPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIPokemonDetailViewController.m; sourceTree = "<group>"; };
+		82DAE06821B1A11A0082E829 /* IIIPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIPokemon.h; sourceTree = "<group>"; };
+		82DAE06921B1A11A0082E829 /* IIIPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +64,12 @@
 		82DAE04B21B199990082E829 /* Pokedex Objc Swift */ = {
 			isa = PBXGroup;
 			children = (
-				82DAE04F21B199990082E829 /* ViewController.h */,
-				82DAE05021B199990082E829 /* ViewController.m */,
+				82DAE06821B1A11A0082E829 /* IIIPokemon.h */,
+				82DAE06921B1A11A0082E829 /* IIIPokemon.m */,
+				82DAE06221B19CA20082E829 /* IIIPokedexTableViewController.h */,
+				82DAE06321B19CA20082E829 /* IIIPokedexTableViewController.m */,
+				82DAE06521B19CC00082E829 /* IIIPokemonDetailViewController.h */,
+				82DAE06621B19CC00082E829 /* IIIPokemonDetailViewController.m */,
 				82DAE05221B199990082E829 /* Main.storyboard */,
 				82DAE05721B1999A0082E829 /* LaunchScreen.storyboard */,
 				82DAE04C21B199990082E829 /* AppDelegate.h */,
@@ -97,6 +107,7 @@
 		82DAE04121B199990082E829 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = III;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Lambda School";
 				TargetAttributes = {
@@ -141,9 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82DAE05121B199990082E829 /* ViewController.m in Sources */,
 				82DAE05C21B1999A0082E829 /* main.m in Sources */,
+				82DAE06421B19CA20082E829 /* IIIPokedexTableViewController.m in Sources */,
 				82DAE04E21B199990082E829 /* AppDelegate.m in Sources */,
+				82DAE06721B19CC00082E829 /* IIIPokemonDetailViewController.m in Sources */,
+				82DAE06A21B1A11A0082E829 /* IIIPokemon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,7 @@
         <!--Pokedex-->
         <scene sceneID="uPd-QG-ZS8">
             <objects>
-                <tableViewController id="0XR-n7-ePv" sceneMemberID="viewController">
+                <tableViewController id="0XR-n7-ePv" customClass="IIIPokedexTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NUw-9a-PIZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,8 +57,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HC8-A6-QrH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a9B-sq-VE1">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="a9B-sq-VE1">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -70,22 +70,22 @@
             </objects>
             <point key="canvasLocation" x="310" y="164"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="9lS-gZ-fOH">
             <objects>
-                <viewController id="QQU-67-0Rm" sceneMemberID="viewController">
+                <viewController id="QQU-67-0Rm" customClass="IIIPokemonDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hnX-wM-F0B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yDN-JK-0kn">
-                                <rect key="frame" x="16" y="84" width="343" height="343"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yDN-JK-0kn">
+                                <rect key="frame" x="16" y="136" width="343" height="343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yDN-JK-0kn" secondAttribute="height" multiplier="1:1" id="k35-Cu-n7o"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QMc-wN-mkk">
-                                <rect key="frame" x="16" y="435" width="343" height="216"/>
+                                <rect key="frame" x="16" y="487" width="343" height="164"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6oW-yi-4g5">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
@@ -128,7 +128,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="analytic stardy rain-dish" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FgY-LI-MF0">
-                                        <rect key="frame" x="0.0" y="85.5" width="343" height="130.5"/>
+                                        <rect key="frame" x="0.0" y="85.5" width="343" height="78.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -151,6 +151,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ila-72-m8p"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="aVa-oG-cMt"/>
+                    <connections>
+                        <outlet property="pokemonAbilitiesTextView" destination="FgY-LI-MF0" id="fjR-zw-8sK"/>
+                        <outlet property="pokemonIdLabel" destination="Prg-uR-sWA" id="lEY-fM-4wI"/>
+                        <outlet property="pokemonImageView" destination="yDN-JK-0kn" id="NqU-VJ-yps"/>
+                        <outlet property="pokemonNameLabel" destination="Nt8-yr-65T" id="cHH-AR-vEs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LiE-x4-hXz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
