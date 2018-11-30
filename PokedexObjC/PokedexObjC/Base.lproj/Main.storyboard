@@ -13,7 +13,7 @@
         <!--Pokémons-->
         <scene sceneID="G8y-hr-82G">
             <objects>
-                <tableViewController id="59m-tc-gpO" sceneMemberID="viewController">
+                <tableViewController id="59m-tc-gpO" customClass="FAFPokemonTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f9S-UF-mr0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="756" y="162"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="o5l-mp-kv0">
             <objects>
-                <viewController id="tss-xr-bkX" sceneMemberID="viewController">
+                <viewController id="tss-xr-bkX" customClass="PokemonDetailViewController" customModule="PokedexObjC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6sp-KN-5iP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -7,6 +7,8 @@
 //
 
 #import "FAFPokemonTableViewController.h"
+#import "PokedexObjC-Swift.h"
+#import "FAFPokemon.h"
 
 @interface FAFPokemonTableViewController ()
 
@@ -17,11 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [FAFPokemonAPI.sharedController fetchAllPokemonWithCompletion:^(NSArray<FAFPokemon *> * pokemons, NSError * error) {
+        
+        FAFPokemon *pokemon = pokemons[0];
+        
+        NSLog(@"\(%@)", pokemon.name);
+        NSLog(@"\(%@)", pokemon.detailURL);
+        NSLog(@"\(%@)", pokemon.weight);
+//        NSLog(@"\(%@)", pokemons[1]);
+    }];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 #pragma mark - Table view data source
