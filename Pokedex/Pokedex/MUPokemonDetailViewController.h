@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MUPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MUPokemonDetailViewController : UIViewController
+
+-(void) updateViews;
+
+@property (nonatomic) MUPokemon *pokemon;
 
 @end
 

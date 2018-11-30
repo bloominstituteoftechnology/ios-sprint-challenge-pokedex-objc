@@ -48,6 +48,7 @@ class PokemonAPI: NSObject {
             }.resume()
     }
     
+    
     @objc func fillInDetails(for pokemon: Pokemon) {
         let url = URL(string: pokemon.pokemonUrl.absoluteString)!
         let request = URLRequest(url: url)
