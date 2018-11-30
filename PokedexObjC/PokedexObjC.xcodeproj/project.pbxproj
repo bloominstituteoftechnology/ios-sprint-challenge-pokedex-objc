@@ -15,6 +15,7 @@
 		D8BF461421B19CAB00E699A6 /* FAFPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BF461321B19CAB00E699A6 /* FAFPokemonTableViewController.m */; };
 		D8BF461821B19CC500E699A6 /* FAFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BF461721B19CC500E699A6 /* FAFDetailViewController.m */; };
 		D8BF461B21B19D4000E699A6 /* FAFPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BF461A21B19D4000E699A6 /* FAFPokemon.m */; };
+		D8BF461E21B1A09E00E699A6 /* FAFPokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF461D21B1A09E00E699A6 /* FAFPokemonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		D8BF461721B19CC500E699A6 /* FAFDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAFDetailViewController.m; sourceTree = "<group>"; };
 		D8BF461921B19D4000E699A6 /* FAFPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAFPokemon.h; sourceTree = "<group>"; };
 		D8BF461A21B19D4000E699A6 /* FAFPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAFPokemon.m; sourceTree = "<group>"; };
+		D8BF461C21B1A09E00E699A6 /* PokedexObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokedexObjC-Bridging-Header.h"; sourceTree = "<group>"; };
+		D8BF461D21B1A09E00E699A6 /* FAFPokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAFPokemonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +71,14 @@
 				D8BF45FD21B19C5300E699A6 /* AppDelegate.m */,
 				D8BF460221B19C5300E699A6 /* Main.storyboard */,
 				D8BF461921B19D4000E699A6 /* FAFPokemon.h */,
+				D8BF461D21B1A09E00E699A6 /* FAFPokemonAPI.swift */,
 				D8BF461A21B19D4000E699A6 /* FAFPokemon.m */,
 				D8BF461521B19CB300E699A6 /* ViewControllers */,
 				D8BF460521B19C5500E699A6 /* Assets.xcassets */,
 				D8BF460721B19C5500E699A6 /* LaunchScreen.storyboard */,
 				D8BF460A21B19C5500E699A6 /* Info.plist */,
 				D8BF460B21B19C5500E699A6 /* main.m */,
+				D8BF461C21B1A09E00E699A6 /* PokedexObjC-Bridging-Header.h */,
 			);
 			path = PokedexObjC;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 				TargetAttributes = {
 					D8BF45F821B19C5300E699A6 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -164,6 +170,7 @@
 				D8BF45FE21B19C5300E699A6 /* AppDelegate.m in Sources */,
 				D8BF461421B19CAB00E699A6 /* FAFPokemonTableViewController.m in Sources */,
 				D8BF461B21B19D4000E699A6 /* FAFPokemon.m in Sources */,
+				D8BF461E21B1A09E00E699A6 /* FAFPokemonAPI.swift in Sources */,
 				D8BF461821B19CC500E699A6 /* FAFDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +313,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AL899TPVP;
 				INFOPLIST_FILE = PokedexObjC/Info.plist;
@@ -315,6 +323,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farhanf.PokedexObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokedexObjC/PokedexObjC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -323,6 +334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AL899TPVP;
 				INFOPLIST_FILE = PokedexObjC/Info.plist;
@@ -332,6 +344,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farhanf.PokedexObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokedexObjC/PokedexObjC-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

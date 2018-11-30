@@ -13,15 +13,18 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FAFPokemon : NSObject
     
 
-    
-    @property (nonatomic, strong) NSString *name;
-    @property (nonatomic) NSInteger id;
-    @property (nonatomic) NSInteger weight;
-    @property (nonatomic, strong) NSString *imageURL;
-    @property (nonatomic, strong) NSArray *abilities;
-    @property (nonatomic, strong) NSArray *types;
-    
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *detailURL;
+@property (nonatomic) NSInteger id;
+@property (nonatomic) NSInteger weight;
+@property (nonatomic, strong) NSString *imageURL;
+@property (nonatomic, strong) NSArray *abilities;
+@property (nonatomic, strong) NSArray *types;
 
+- (instancetype)initWithName:(NSString *)name detailURL:(NSString *)detailURL;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+    
 @end
 
 NS_ASSUME_NONNULL_END
