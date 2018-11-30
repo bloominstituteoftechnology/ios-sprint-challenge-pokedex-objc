@@ -15,6 +15,7 @@
 		A193381721B19A0D00300578 /* MUPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A193381621B19A0D00300578 /* MUPokemonTableViewController.m */; };
 		A193381A21B19A2800300578 /* MUPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A193381921B19A2800300578 /* MUPokemonDetailViewController.m */; };
 		A193381D21B19B2600300578 /* MUPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = A193381C21B19B2600300578 /* MUPokemon.m */; };
+		A193382021B19E9D00300578 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193381F21B19E9D00300578 /* PokemonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		A193381921B19A2800300578 /* MUPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUPokemonDetailViewController.m; sourceTree = "<group>"; };
 		A193381B21B19B2600300578 /* MUPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUPokemon.h; sourceTree = "<group>"; };
 		A193381C21B19B2600300578 /* MUPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUPokemon.m; sourceTree = "<group>"; };
+		A193381E21B19E9C00300578 /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
+		A193381F21B19E9D00300578 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,7 @@
 				A193380521B1995100300578 /* Main.storyboard */,
 				A193381B21B19B2600300578 /* MUPokemon.h */,
 				A193381C21B19B2600300578 /* MUPokemon.m */,
+				A193381F21B19E9D00300578 /* PokemonAPI.swift */,
 				A193381821B19A2800300578 /* MUPokemonDetailViewController.h */,
 				A193381921B19A2800300578 /* MUPokemonDetailViewController.m */,
 				A193381521B19A0D00300578 /* MUPokemonTableViewController.h */,
@@ -77,6 +81,7 @@
 				A193380A21B1995200300578 /* LaunchScreen.storyboard */,
 				A193380D21B1995200300578 /* Info.plist */,
 				A193380E21B1995200300578 /* main.m */,
+				A193381E21B19E9C00300578 /* Pokedex-Bridging-Header.h */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 				TargetAttributes = {
 					A19337FB21B1995100300578 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -153,6 +159,7 @@
 			files = (
 				A193380F21B1995200300578 /* main.m in Sources */,
 				A193381721B19A0D00300578 /* MUPokemonTableViewController.m in Sources */,
+				A193382021B19E9D00300578 /* PokemonAPI.swift in Sources */,
 				A193380121B1995100300578 /* AppDelegate.m in Sources */,
 				A193381A21B19A2800300578 /* MUPokemonDetailViewController.m in Sources */,
 				A193381D21B19B2600300578 /* MUPokemon.m in Sources */,
@@ -297,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7WH6XTF8JG;
 				INFOPLIST_FILE = Pokedex/Info.plist;
@@ -306,6 +314,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.moinuddin.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex/Pokedex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -314,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7WH6XTF8JG;
 				INFOPLIST_FILE = Pokedex/Info.plist;
@@ -323,6 +335,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.moinuddin.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex/Pokedex-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
