@@ -28,19 +28,25 @@
     NSNumber *identifier = dictionary[@"id"];
     
     NSArray *abilitiesArray = dictionary[@"abilities"];
-    NSMutableString *abilities = [NSMutableString string];
-    for (NSDictionary *dictionary in abilitiesArray) {
-        NSDictionary *abilityDictionary = dictionary[@"ability"];
-        NSString *abilityName = abilityDictionary[@"name"];
-        [abilities appendString:[NSString stringWithFormat:@"%@,", abilityName]];
+    if (abilitiesArray) {
+        NSMutableString *abilities = [NSMutableString string];
+        
+        for (NSDictionary *dictionary in abilitiesArray) {
+            NSDictionary *abilityDictionary = dictionary[@"ability"];
+            NSString *abilityName = abilityDictionary[@"name"];
+            [abilities appendString:[NSString stringWithFormat:@"%@,", abilityName]];
+        }
+        
+        NSDictionary *spritesDictionary = dictionary[@"sprites"];
+        
+        NSString *spriteURLString = spritesDictionary[@"front_default"];
+        NSURL *spriteURL = [NSURL URLWithString:spriteURLString];
+        UIImage *spriteImage = [self imageFromURL:spriteURL];
+        
+        return [self initWithName:name identifier:identifier abilities:abilities sprite:spriteImage];
     }
     
-    NSDictionary *spritesDictionary = dictionary[@"sprites"];
-    NSString *spriteURLString = spritesDictionary[@"front_default"];
-    NSURL *spriteURL = [NSURL URLWithString:spriteURLString];
-    UIImage *spriteImage = [self imageFromURL:spriteURL];
-    
-    return [self initWithName:name identifier:identifier abilities:abilities sprite:spriteImage];
+    return [self initWithName:name identifier:identifier abilities:NULL sprite:NULL];
 }
 
 - (UIImage *)imageFromURL:(NSURL *)url
