@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8233686421B1AC0000AEF6BD /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8233686321B1AC0000AEF6BD /* PokemonController.swift */; };
 		82DAE04E21B199990082E829 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DAE04D21B199990082E829 /* AppDelegate.m */; };
 		82DAE05421B199990082E829 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DAE05221B199990082E829 /* Main.storyboard */; };
 		82DAE05621B1999A0082E829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82DAE05521B1999A0082E829 /* Assets.xcassets */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8233686221B1ABFF00AEF6BD /* Pokedex Objc Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex Objc Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		8233686321B1AC0000AEF6BD /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 		82DAE04921B199990082E829 /* Pokedex Objc Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex Objc Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DAE04C21B199990082E829 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		82DAE04D21B199990082E829 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 			children = (
 				82DAE06821B1A11A0082E829 /* IIIPokemon.h */,
 				82DAE06921B1A11A0082E829 /* IIIPokemon.m */,
+				8233686321B1AC0000AEF6BD /* PokemonController.swift */,
 				82DAE06221B19CA20082E829 /* IIIPokedexTableViewController.h */,
 				82DAE06321B19CA20082E829 /* IIIPokedexTableViewController.m */,
 				82DAE06521B19CC00082E829 /* IIIPokemonDetailViewController.h */,
@@ -77,6 +81,7 @@
 				82DAE05B21B1999A0082E829 /* main.m */,
 				82DAE05A21B1999A0082E829 /* Info.plist */,
 				82DAE05521B1999A0082E829 /* Assets.xcassets */,
+				8233686221B1ABFF00AEF6BD /* Pokedex Objc Swift-Bridging-Header.h */,
 			);
 			path = "Pokedex Objc Swift";
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 				TargetAttributes = {
 					82DAE04821B199990082E829 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -157,6 +163,7 @@
 				82DAE04E21B199990082E829 /* AppDelegate.m in Sources */,
 				82DAE06721B19CC00082E829 /* IIIPokemonDetailViewController.m in Sources */,
 				82DAE06A21B1A11A0082E829 /* IIIPokemon.m in Sources */,
+				8233686421B1AC0000AEF6BD /* PokemonController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Pokedex Objc Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -306,6 +314,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaschool.Pokedex-Objc-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex Objc Swift/Pokedex Objc Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -314,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Pokedex Objc Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,6 +334,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaschool.Pokedex-Objc-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex Objc Swift/Pokedex Objc Swift-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
