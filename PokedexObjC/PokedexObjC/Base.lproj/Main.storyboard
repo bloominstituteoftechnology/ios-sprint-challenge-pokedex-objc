@@ -37,7 +37,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.85490196080000003" green="0.074509803920000006" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="tss-xr-bkX" kind="show" identifier="ViewPokemon" id="Kko-r5-4Aj"/>
                                 </connections>
@@ -63,7 +62,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="05D-it-MIf">
-                                <rect key="frame" x="8" y="72" width="359" height="202"/>
+                                <rect key="frame" x="8" y="72" width="359" height="240.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="E4q-SZ-lGh">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="125"/>
@@ -112,6 +111,12 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BaseXP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBn-34-wC0">
+                                        <rect key="frame" x="0.0" y="220" width="359" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -123,6 +128,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a4v-xJ-apf"/>
                     </view>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="fmR-Sa-PpH" id="ccp-uT-BYu"/>
+                        <outlet property="baseXPLabel" destination="WBn-34-wC0" id="Kxp-sF-pBt"/>
+                        <outlet property="idLabel" destination="xJv-fD-Jvr" id="ugs-0k-sO1"/>
+                        <outlet property="nameLabel" destination="OIB-KA-Xer" id="UiF-Rr-doA"/>
+                        <outlet property="pokemonImageView" destination="EYZ-J1-Dnk" id="jva-VB-iFD"/>
+                        <outlet property="typeLabel" destination="Esk-o5-1zc" id="2Jn-Am-vhE"/>
+                        <outlet property="weightLabel" destination="jPV-en-LsC" id="6yz-OG-BhL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xg-MY-tQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

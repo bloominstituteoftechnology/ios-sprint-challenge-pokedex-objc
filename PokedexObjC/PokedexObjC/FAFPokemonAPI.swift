@@ -11,6 +11,8 @@ import UIKit
 private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
 
 class FAFPokemonAPI: NSObject {
+    
+    @objc(pokemons) var pokemons = [FAFPokemon]()
 
     @objc(sharedController) static let shared = FAFPokemonAPI()
     
@@ -49,7 +51,56 @@ class FAFPokemonAPI: NSObject {
     
     @objc func fillInDetails(for pokemon: FAFPokemon)
     {
+        let requestURL = URL(string: pokemon.detailURL)!
+        let request = URLRequest(url: requestURL);
         
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                NSLog("Error fetch pokemon details: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("Data for pokemon details unavailible: \(String(describing: error))")
+                return
+            }
+            
+            do{
+                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                    
+                    let weight = dictionary["weight"] as? Int,
+                    let baseXP = dictionary["base_experience"] as? Int,
+                    let pokemonID = dictionary["id"] as? Int,
+                    var spritesDict = dictionary["sprites"] as? [String: Any],
+                    let abilitiesDict = dictionary["abilities"] as? [[String: Any]] else
+                {
+                        throw NSError()
+                        
+                }
+                
+                let photoURL = spritesDict["front_default"] as! String
+                
+//                var abilitiesArray = [String]()
+//
+//                for abilityDict in abilitiesDict
+//                {
+//                    let name = abilityDict["name"] as? String
+//                    abilitiesArray.append(name!)
+//                }
+                
+                self.pokemons[pokemonID] = FAFPokemon(name: pokemon.name, pokemonID: pokemon.pokemonID, detailURL: pokemon.detailURL, weight: weight, baseXP: baseXP, imageURL: photoURL, abilities: [], types: [])
+                
+//                pokemon.imageURL = photoURL
+//                pokemon.pokemonID = pokemonID
+//                pokemon.baseXP = baseXP
+//                pokemon.weight = weight
+                
+            }catch {
+                NSLog("Error getting dictionary of results: \(error)")
+                return
+            }
+            
+        }.resume()
     }
     
 }

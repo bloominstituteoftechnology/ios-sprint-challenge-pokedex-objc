@@ -9,11 +9,8 @@
 #import "FAFPokemonTableViewController.h"
 #import "PokedexObjC-Swift.h"
 #import "FAFPokemon.h"
-#import "FAFPokemonController.h"
 
 @interface FAFPokemonTableViewController ()
-    
-    @property (nonatomic, strong, readwrite) NSMutableArray<FAFPokemon *> *internalPokemons;
 
 @end
 
@@ -24,8 +21,8 @@
     {
         self = [super initWithCoder:aDecoder];
         if (self) {
-            [[FAFPokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<FAFPokemon *> * pokemons, NSError * error) {
-                self->_internalPokemons = [NSMutableArray arrayWithArray:pokemons];
+            [[FAFPokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<FAFPokemon *> * fetchedPokemons, NSError * error) {
+                FAFPokemonAPI.sharedController.pokemons = fetchedPokemons;
             }];
         }
         return self;
@@ -36,8 +33,8 @@
     {
         self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
         if (self) {
-            [[FAFPokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<FAFPokemon *> * pokemons, NSError * error) {
-                self->_internalPokemons = [NSMutableArray arrayWithArray:pokemons];
+            [[FAFPokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<FAFPokemon *> * fetchedPokemons, NSError * error) {
+                FAFPokemonAPI.sharedController.pokemons = fetchedPokemons;
             }];
         }
         return self;
@@ -46,14 +43,14 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.internalPokemons.count;
+    return FAFPokemonAPI.sharedController.pokemons.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
-    FAFPokemon *pokemon = [self.internalPokemons objectAtIndex:indexPath.row];
+    FAFPokemon *pokemon = [[[FAFPokemonAPI sharedController] pokemons] objectAtIndex:indexPath.row];
     
     [[cell textLabel] setTextColor:[UIColor colorNamed:@"white"]];
     cell.textLabel.text = pokemon.name.capitalizedString;
@@ -72,7 +69,12 @@
         PokemonDetailViewController *destVC = segue.destinationViewController;
         
         NSIndexPath *indexPath = [[self tableView] indexPathForSelectedRow];
-        destVC.pokemon = [[self internalPokemons] objectAtIndex:indexPath.row];
+        
+        FAFPokemon *pokemonToFill = [[[FAFPokemonAPI sharedController] pokemons] objectAtIndex:indexPath.row];
+        
+//        [[FAFPokemonAPI sharedController] fillInDetailsFor: pokemonToFill];
+        
+        destVC.pokemon = pokemonToFill;
         
     }
     
