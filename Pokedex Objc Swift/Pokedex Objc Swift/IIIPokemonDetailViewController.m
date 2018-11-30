@@ -27,6 +27,12 @@ void *pokemonContext = &pokemonContext;
     [self updateViews];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self updateViews];
+}
+
 - (void)dealloc
 {
     self.pokemon = nil;
@@ -35,10 +41,10 @@ void *pokemonContext = &pokemonContext;
 - (void)updateViews
 {
     if (self.isViewLoaded && self.pokemon) {
-        self.title = self.pokemon.pokemonName;
-        self.pokemonNameLabel.text = self.pokemon.pokemonName;
+        self.title = [self.pokemon.pokemonName capitalizedString];
+        self.pokemonNameLabel.text = [self.pokemon.pokemonName capitalizedString];
         self.pokemonIdLabel.text = [self.pokemon.pokemonID stringValue];
-        self.pokemonAbilitiesTextView.text = [self.pokemon.pokemonAbilities componentsJoinedByString:@"\n"];
+        self.pokemonAbilitiesTextView.text = [[self.pokemon.pokemonAbilities componentsJoinedByString:@"\n"] capitalizedString];
         
         NSData *imageData = [NSData dataWithContentsOfURL:self.pokemon.pokemonFrontDefaultImageURL];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -67,9 +73,9 @@ void *pokemonContext = &pokemonContext;
         [PokemonController.sharedController fillInDetailsFor:pokemon];
         [self updateViews];
         
-        [_pokemon addObserver:self forKeyPath:@"pokemonID" options:NSKeyValueObservingOptionInitial context:pokemonContext];
-        [_pokemon addObserver:self forKeyPath:@"pokemonAbilities" options:NSKeyValueObservingOptionInitial context:pokemonContext];
-        [_pokemon addObserver:self forKeyPath:@"pokemonFrontDefaultImageURL" options:NSKeyValueObservingOptionInitial context:pokemonContext];
+        [_pokemon addObserver:self forKeyPath:@"pokemonID" options:NSKeyValueObservingOptionNew context:pokemonContext];
+        [_pokemon addObserver:self forKeyPath:@"pokemonAbilities" options:NSKeyValueObservingOptionNew context:pokemonContext];
+        [_pokemon addObserver:self forKeyPath:@"pokemonFrontDefaultImageURL" options:NSKeyValueObservingOptionNew context:pokemonContext];
     }
 }
 

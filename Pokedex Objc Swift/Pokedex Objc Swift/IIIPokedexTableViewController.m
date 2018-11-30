@@ -33,7 +33,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     IIIPokemon *pokemon = PokemonController.sharedController.pokedex[indexPath.row];
     
-    cell.textLabel.text = pokemon.pokemonName;
+    cell.textLabel.text = [pokemon.pokemonName capitalizedString];
     
     return cell;
 }
