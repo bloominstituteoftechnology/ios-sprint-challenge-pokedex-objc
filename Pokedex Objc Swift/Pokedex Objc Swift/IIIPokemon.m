@@ -19,10 +19,11 @@
     self = [super init];
     if (self) {
         _pokemonName = dictionary[@"name"];
-        _pokemonURLString = dictionary[@"url"];
+        NSString *urlString = dictionary[@"url"];
+        _pokemonURL = [NSURL URLWithString:urlString];
         _pokemonID = nil;
         _pokemonAbilities = nil;
-        _pokemonFrontDefaultImageURLString = nil;
+        _pokemonFrontDefaultImageURL = nil;
     }
     return self;
 }
@@ -32,12 +33,13 @@
     _pokemonID = dictionary[@"id"];
     
     NSDictionary *spritesDictionary = dictionary[@"sprites"];
-    _pokemonFrontDefaultImageURLString = spritesDictionary[@"front_default"];
+    NSString *urlString = spritesDictionary[@"front_default"];
+    _pokemonFrontDefaultImageURL = [NSURL URLWithString:urlString];
     
     NSMutableArray<NSString *> *internalAbilities = [[NSMutableArray alloc] init];
     NSArray *abilities = dictionary[@"abilities"];
-    for (NSDictionary *everyAbility in abilities) {
-        NSDictionary *ability = everyAbility[@"ability"];
+    for (NSDictionary *everyDictionary in abilities) {
+        NSDictionary *ability = everyDictionary[@"ability"];
         NSString *abilityName = ability[@"name"];
         [internalAbilities addObject:abilityName];
     }

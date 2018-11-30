@@ -12,10 +12,10 @@ class PokemonController: NSObject {
     
     @objc(sharedController) static let shared: PokemonController = PokemonController()
     @objc private(set) var pokedex = [IIIPokemon]()
-    static let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
+    private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     
     @objc func fetchAllPokemon(completion: @escaping ([IIIPokemon]?, Error?) -> Void) {
-        var request = URLRequest(url: PokemonController.baseURL)
+        var request = URLRequest(url: baseURL)
         request.httpMethod = "GET"
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
@@ -63,7 +63,7 @@ class PokemonController: NSObject {
     }
     
     @objc func fillInDetails(for pokemon: IIIPokemon) {
-        let url = PokemonController.baseURL.appendingPathComponent(pokemon.pokemonName)
+        let url = baseURL.appendingPathComponent(pokemon.pokemonName)
 //        let url = URL(string: pokemon.pokemonURLString)!
         
         var request = URLRequest(url: url)
@@ -92,30 +92,6 @@ class PokemonController: NSObject {
             } catch {
                 NSLog("fillInDetails: Unable encode json data: \(error)")
                 return
-            }
-        }.resume()
-    }
-    
-    @objc func fetchPokemonImage(url: URL, completion: @escaping (UIImage?, Error?) -> Void) {
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
-            if let error = error {
-                NSLog("fetchPokemonImage: Error fetching pokedex: \(error)")
-                completion(nil, error)
-                return
-            }
-            
-            guard let data = data else {
-                NSLog("fetchPokemonImage: No data returned from Url Session")
-                completion(nil, NSError())
-                return
-            }
-            
-            let image = UIImage(data: data)
-            DispatchQueue.main.async {
-                completion(image, nil)
             }
         }.resume()
     }
