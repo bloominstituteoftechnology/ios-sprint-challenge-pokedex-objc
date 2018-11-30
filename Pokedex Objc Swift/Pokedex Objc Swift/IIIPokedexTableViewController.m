@@ -44,7 +44,9 @@
     if ([segue.identifier isEqualToString:@"CellSegue"]) {
         IIIPokemonDetailViewController *destVC = segue.destinationViewController;
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-        destVC.pokemon = PokemonController.sharedController.pokedex[indexPath.row];
+        IIIPokemon *pokemon = PokemonController.sharedController.pokedex[indexPath.row];
+        [PokemonController.sharedController fillInDetailsFor:pokemon];
+        destVC.pokemon = pokemon;
     }
 }
 

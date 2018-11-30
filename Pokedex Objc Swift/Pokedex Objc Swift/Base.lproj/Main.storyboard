@@ -130,7 +130,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="analytic stardy rain-dish" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FgY-LI-MF0">
                                         <rect key="frame" x="0.0" y="85.5" width="343" height="78.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
