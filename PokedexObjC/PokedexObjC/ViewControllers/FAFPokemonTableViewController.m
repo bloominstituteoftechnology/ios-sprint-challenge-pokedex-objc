@@ -9,6 +9,7 @@
 #import "FAFPokemonTableViewController.h"
 #import "PokedexObjC-Swift.h"
 #import "FAFPokemon.h"
+#import "FAFPokemonController.h"
 
 @interface FAFPokemonTableViewController ()
 
@@ -19,27 +20,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [FAFPokemonAPI.sharedController fetchAllPokemonWithCompletion:^(NSArray<FAFPokemon *> * pokemons, NSError * error) {
-        
-        FAFPokemon *pokemon = pokemons[0];
-        
-        NSLog(@"\(%@)", pokemon.name);
-        NSLog(@"\(%@)", pokemon.detailURL);
-        NSLog(@"\(%@)", pokemon.weight);
-//        NSLog(@"\(%@)", pokemons[1]);
-    }];
+    //Testing fetchAllPokemon()
+    
+//    [FAFPokemonAPI.sharedController fetchAllPokemonWithCompletion:^(NSArray<FAFPokemon *> * pokemons, NSError * error) {
+//
+//        FAFPokemon *pokemon = pokemons[0];
+//
+//        NSLog(@"\(%@)", pokemon.name);
+//        NSLog(@"\(%@)", pokemon.detailURL);
+//        NSLog(@"\(%@)", pokemon.weight);
+////        NSLog(@"\(%@)", pokemons[1]);
+//    }];
     
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return 0;
 }
 

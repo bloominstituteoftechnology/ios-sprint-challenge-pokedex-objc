@@ -16,6 +16,7 @@
 		D8BF461B21B19D4000E699A6 /* FAFPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BF461A21B19D4000E699A6 /* FAFPokemon.m */; };
 		D8BF461E21B1A09E00E699A6 /* FAFPokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF461D21B1A09E00E699A6 /* FAFPokemonAPI.swift */; };
 		D8BF462021B1A39E00E699A6 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BF461F21B1A39E00E699A6 /* PokemonDetailViewController.swift */; };
+		D8BF462421B1AAAA00E699A6 /* FAFPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BF462321B1AAAA00E699A6 /* FAFPokemonController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		D8BF461C21B1A09E00E699A6 /* PokedexObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokedexObjC-Bridging-Header.h"; sourceTree = "<group>"; };
 		D8BF461D21B1A09E00E699A6 /* FAFPokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAFPokemonAPI.swift; sourceTree = "<group>"; };
 		D8BF461F21B1A39E00E699A6 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
+		D8BF462221B1AAAA00E699A6 /* FAFPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAFPokemonController.h; sourceTree = "<group>"; };
+		D8BF462321B1AAAA00E699A6 /* FAFPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAFPokemonController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +72,8 @@
 				D8BF45FC21B19C5300E699A6 /* AppDelegate.h */,
 				D8BF45FD21B19C5300E699A6 /* AppDelegate.m */,
 				D8BF460221B19C5300E699A6 /* Main.storyboard */,
-				D8BF461921B19D4000E699A6 /* FAFPokemon.h */,
+				D8BF462121B1A9CA00E699A6 /* Model */,
 				D8BF461D21B1A09E00E699A6 /* FAFPokemonAPI.swift */,
-				D8BF461A21B19D4000E699A6 /* FAFPokemon.m */,
 				D8BF461521B19CB300E699A6 /* ViewControllers */,
 				D8BF460521B19C5500E699A6 /* Assets.xcassets */,
 				D8BF460721B19C5500E699A6 /* LaunchScreen.storyboard */,
@@ -90,6 +92,17 @@
 				D8BF461F21B1A39E00E699A6 /* PokemonDetailViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D8BF462121B1A9CA00E699A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D8BF461921B19D4000E699A6 /* FAFPokemon.h */,
+				D8BF462221B1AAAA00E699A6 /* FAFPokemonController.h */,
+				D8BF462321B1AAAA00E699A6 /* FAFPokemonController.m */,
+				D8BF461A21B19D4000E699A6 /* FAFPokemon.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8BF460C21B19C5500E699A6 /* main.m in Sources */,
+				D8BF462421B1AAAA00E699A6 /* FAFPokemonController.m in Sources */,
 				D8BF45FE21B19C5300E699A6 /* AppDelegate.m in Sources */,
 				D8BF461421B19CAB00E699A6 /* FAFPokemonTableViewController.m in Sources */,
 				D8BF461B21B19D4000E699A6 /* FAFPokemon.m in Sources */,

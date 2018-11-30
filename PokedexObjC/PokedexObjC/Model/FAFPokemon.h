@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FAFPokemon : NSObject
     
-
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *detailURL;
+    
 @property (nonatomic) NSInteger id;
 @property (nonatomic) NSInteger weight;
 @property (nonatomic, strong) NSString *imageURL;
