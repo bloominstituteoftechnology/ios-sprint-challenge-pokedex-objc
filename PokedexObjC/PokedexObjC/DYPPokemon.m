@@ -27,8 +27,9 @@
     NSString *name = dictionary[@"name"];
     NSNumber *identifier = dictionary[@"id"];
     
-    NSArray *abilitiesArray = dictionary[@"abilities"];
-    if (abilitiesArray) {
+    if (identifier) {
+        
+        NSArray *abilitiesArray = dictionary[@"abilities"];
         NSMutableString *abilities = [NSMutableString string];
         
         for (NSDictionary *dictionary in abilitiesArray) {
@@ -46,7 +47,7 @@
         return [self initWithName:name identifier:identifier abilities:abilities sprite:spriteImage];
     }
     
-    return [self initWithName:name identifier:identifier abilities:NULL sprite:NULL];
+    return [self initWithName:name identifier:NULL abilities:NULL sprite:NULL];
 }
 
 - (UIImage *)imageFromURL:(NSURL *)url

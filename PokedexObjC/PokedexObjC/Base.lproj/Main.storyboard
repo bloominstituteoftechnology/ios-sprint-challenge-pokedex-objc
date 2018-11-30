@@ -35,9 +35,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="PlR-Qg-Scd" kind="show" identifier="ShowPokemon" id="GI3-2q-VBo"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -46,10 +43,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Pokedex" id="squ-de-cyq"/>
+                    <connections>
+                        <segue destination="PlR-Qg-Scd" kind="show" identifier="ShowPokemon" id="IJG-kV-De4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5Q-JX-kw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="170"/>
+            <point key="canvasLocation" x="150" y="170"/>
         </scene>
         <!--Pokemon Detail View Controller-->
         <scene sceneID="xqW-lO-LUH">
