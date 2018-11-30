@@ -10,8 +10,6 @@
 
 @interface IIIPokemon ()
 
-@property (nonatomic, nullable, readwrite, copy) NSMutableArray<NSString *> *internalAbilities;
-
 @end
 
 @implementation IIIPokemon
@@ -21,10 +19,10 @@
     self = [super init];
     if (self) {
         _pokemonName = dictionary[@"name"];
-        _pokemonURL = dictionary[@"url"];
+        _pokemonURLString = dictionary[@"url"];
         _pokemonID = nil;
         _pokemonAbilities = nil;
-        _pokemonFrontDefaultImageURL = nil;
+        _pokemonFrontDefaultImageURLString = nil;
     }
     return self;
 }
@@ -34,14 +32,16 @@
     _pokemonID = dictionary[@"id"];
     
     NSDictionary *spritesDictionary = dictionary[@"sprites"];
-    _pokemonFrontDefaultImageURL = spritesDictionary[@"front_default"];
+    _pokemonFrontDefaultImageURLString = spritesDictionary[@"front_default"];
     
+    NSMutableArray<NSString *> *internalAbilities = [[NSMutableArray alloc] init];
     NSArray *abilities = dictionary[@"abilities"];
-    for (NSDictionary *ability in abilities) {
+    for (NSDictionary *everyAbility in abilities) {
+        NSDictionary *ability = everyAbility[@"ability"];
         NSString *abilityName = ability[@"name"];
-        [self.internalAbilities addObject:abilityName];
+        [internalAbilities addObject:abilityName];
     }
-    _pokemonAbilities = self.internalAbilities;
+    _pokemonAbilities = internalAbilities;
 }
 
 @end

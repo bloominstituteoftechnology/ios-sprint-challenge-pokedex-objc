@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Pokedex_Objc_Swift-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface IIIPokemonDetailViewController : UIViewController
 
 @property (nonatomic, nullable, readwrite) IIIPokemon *pokemon;
-@property (nonatomic, nullable, readwrite) IIIPokemonController *pokemonController;
 
 @end
 

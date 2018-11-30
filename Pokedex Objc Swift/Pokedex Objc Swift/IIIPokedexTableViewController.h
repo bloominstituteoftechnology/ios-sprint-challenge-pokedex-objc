@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pokedex_Objc_Swift-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

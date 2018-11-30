@@ -14,11 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface IIIPokemon : NSObject
 
 @property (nonatomic, readwrite, copy) NSString *pokemonName;
-@property (nonatomic, readwrite) NSURL *pokemonURL;
+@property (nonatomic, readwrite, copy) NSString *pokemonURLString;
 
-@property (nonatomic, nullable, readwrite) NSNumber *pokemonID;
+@property (nonatomic, readwrite) NSNumber *pokemonID;
 @property (nonatomic, nullable, readonly, copy) NSArray<NSString *> *pokemonAbilities;
-@property (nonatomic, nullable, readwrite) NSURL *pokemonFrontDefaultImageURL;
+@property (nonatomic, nullable, readwrite, copy) NSString *pokemonFrontDefaultImageURLString;
 
 - (instancetype)initPokemonWithDictionary:(NSDictionary *)dictionary;
 - (void)updatePokemonWithDictionary:(NSDictionary*)dictionary;

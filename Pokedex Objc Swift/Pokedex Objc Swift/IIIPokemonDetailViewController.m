@@ -7,6 +7,7 @@
 //
 
 #import "IIIPokemonDetailViewController.h"
+#import "IIIPokemon.h"
 
 @interface IIIPokemonDetailViewController ()
 
@@ -29,17 +30,22 @@
     if (!self.isViewLoaded) { return; }
     
     if (self.pokemon) {
-//        self.title = self.pokemon.name;
-//        self.pokemonImageView.image = self.pokemon.image;
-//        self.pokemonNameLabel.text = self.pokemon.name;
-//        self.pokemonIdLabel.text = self.pokemon.identifier;
-//        self.pokemonAbilitiesTextView.text = self.pokemon.abilities;
+        self.title = self.pokemon.pokemonName;
+        self.pokemonNameLabel.text = self.pokemon.pokemonName;
+        self.pokemonIdLabel.text = [self.pokemon.pokemonID stringValue];
+        self.pokemonAbilitiesTextView.text = [self.pokemon.pokemonAbilities componentsJoinedByString:@", "];
+        
+//        NSURL *url = [NSURL URLWithString:self.pokemon.pokemonFrontDefaultImageURLString];
+//        [PokemonController.sharedController fetchPokemonImageWithUrl:url completion:^(UIImage * image, NSError * error) {
+//            self.pokemonImageView.image = image;
+//        }];
     }
 }
 
 - (void)setPokemon:(IIIPokemon *)pokemon
 {
     _pokemon = pokemon;
+    [PokemonController.sharedController fillInDetailsFor:pokemon];
     [self updateViews];
 }
 

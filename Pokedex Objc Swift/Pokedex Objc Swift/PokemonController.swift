@@ -64,6 +64,7 @@ class PokemonController: NSObject {
     
     @objc func fillInDetails(for pokemon: IIIPokemon) {
         let url = PokemonController.baseURL.appendingPathComponent(pokemon.pokemonName)
+//        let url = URL(string: pokemon.pokemonURLString)!
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
