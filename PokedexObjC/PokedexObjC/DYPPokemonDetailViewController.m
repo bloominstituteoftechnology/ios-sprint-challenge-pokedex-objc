@@ -8,6 +8,8 @@
 
 #import "DYPPokemonDetailViewController.h"
 
+void *KVOContext = &KVOContext;
+
 @interface DYPPokemonDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -19,9 +21,18 @@
 
 @implementation DYPPokemonDetailViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
+- (void)dealloc
+{
+    self.pokemon = nil;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (context == KVOContext) {
+        [self updateViews];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 
 - (void)updateViews
@@ -38,8 +49,16 @@
 
 - (void)setPokemon:(DYPPokemon *)pokemon
 {
-    _pokemon = pokemon;
-    [self updateViews];
+    if (pokemon != _pokemon) {
+    
+        [_pokemon removeObserver:self forKeyPath:@"sprite" context:KVOContext];
+        [_pokemon removeObserver:self forKeyPath:@"abilities" context:KVOContext];
+    
+        _pokemon = pokemon;
+    
+        [_pokemon addObserver:self forKeyPath:@"sprite" options:NSKeyValueObservingOptionInitial context:KVOContext];
+        [_pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionInitial context:KVOContext];
+    }
 }
 
 @end

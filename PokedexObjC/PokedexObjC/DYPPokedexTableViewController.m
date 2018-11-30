@@ -53,7 +53,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
     if ([segue.identifier isEqualToString:@"ViewPokemon"]) {
-        DYPPokemonDetailViewController *destinationVC = (DYPPokemonDetailViewController *)[segue destinationViewController];
+//        DYPPokemonDetailViewController *destinationVC = (DYPPokemonDetailViewController *)[segue destinationViewController];
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         DYPPokemon *pokemon = [self.pokemon objectAtIndex:[indexPath row]];
