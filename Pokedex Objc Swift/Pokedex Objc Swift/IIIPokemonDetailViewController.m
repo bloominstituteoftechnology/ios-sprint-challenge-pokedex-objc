@@ -32,13 +32,6 @@ void *pokemonContext = &pokemonContext;
 {
     [super viewDidAppear:animated];
     [self updateViews];
-    NSData *imageData = [NSData dataWithContentsOfURL:self.pokemon.pokemonFrontDefaultImageURL];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.pokemonImageView.image = [UIImage imageWithData:imageData];
-    });
-//    [PokemonController.sharedController fetchPokemonImageWithUrl:self.pokemon.pokemonFrontDefaultImageURL completion:^(UIImage * image, NSError * error) {
-//        self.pokemonImageView.image = image;
-//    }];
 }
 
 - (void)dealloc
