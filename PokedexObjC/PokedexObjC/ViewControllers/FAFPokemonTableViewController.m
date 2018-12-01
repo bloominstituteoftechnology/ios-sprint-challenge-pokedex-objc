@@ -7,6 +7,7 @@
 //
 
 #import "FAFPokemonTableViewController.h"
+#import "FAFDetailViewController.h"
 #import "PokedexObjC-Swift.h"
 #import "FAFPokemon.h"
 
@@ -66,15 +67,13 @@
     
     if ([[segue identifier]isEqualToString:@"ViewPokemon"]){
         
-        PokemonDetailViewController *destVC = segue.destinationViewController;
+        FAFDetailViewController *destVC = segue.destinationViewController;
         
         NSIndexPath *indexPath = [[self tableView] indexPathForSelectedRow];
         
-        FAFPokemon *pokemonToFill = [[[FAFPokemonAPI sharedController] pokemons] objectAtIndex:indexPath.row];
+        FAFPokemon *pokemon = [[[FAFPokemonAPI sharedController] pokemons] objectAtIndex:indexPath.row];
         
-//        [[FAFPokemonAPI sharedController] fillInDetailsFor: pokemonToFill];
-        
-        destVC.pokemon = pokemonToFill;
+        destVC.pokemon = pokemon;
         
     }
     
