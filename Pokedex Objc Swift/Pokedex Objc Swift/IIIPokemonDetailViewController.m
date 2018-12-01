@@ -31,7 +31,7 @@ void *pokemonContext = &pokemonContext;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self updateViews];
+    [self updateViewsAfterFetch];
 }
 
 - (void)dealloc
@@ -44,14 +44,22 @@ void *pokemonContext = &pokemonContext;
     if (self.isViewLoaded && self.pokemon) {
         self.title = [self.pokemon.pokemonName capitalizedString];
         self.pokemonNameLabel.text = [self.pokemon.pokemonName capitalizedString];
-        self.pokemonIdLabel.text = [self.pokemon.pokemonID stringValue];
-        self.pokemonAbilitiesTextView.text = [[self.pokemon.pokemonAbilities componentsJoinedByString:@"\n"] capitalizedString];
-        
-        NSData *imageData = [NSData dataWithContentsOfURL:self.pokemon.pokemonFrontDefaultImageURL];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.pokemonImageView.image = [UIImage imageWithData:imageData];
-        });
+        self.pokemonIdLabel.text = @"Loading...";
+        self.pokemonAbilitiesTextView.text = @"Loading...";
+        self.pokemonImageView.image = [UIImage imageNamed:@"loading"];
     }
+}
+
+- (void)updateViewsAfterFetch
+{
+    self.pokemonNameLabel.text = [self.pokemon.pokemonName capitalizedString];
+    self.pokemonIdLabel.text = [self.pokemon.pokemonID stringValue];
+    self.pokemonAbilitiesTextView.text = [[self.pokemon.pokemonAbilities componentsJoinedByString:@"\n"] capitalizedString];
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:self.pokemon.pokemonFrontDefaultImageURL];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.pokemonImageView.image = [UIImage imageWithData:imageData];
+    });
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
