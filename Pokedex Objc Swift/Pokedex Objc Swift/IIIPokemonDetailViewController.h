@@ -12,7 +12,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class IIIPokemon;
-@class IIIPokemonController;
 
 @interface IIIPokemonDetailViewController : UIViewController
 

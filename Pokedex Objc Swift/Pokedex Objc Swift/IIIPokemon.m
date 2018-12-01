@@ -10,6 +10,13 @@
 
 @interface IIIPokemon ()
 
+@property (nonatomic, readwrite, copy) NSString *pokemonName;
+@property (nonatomic, readwrite) NSURL *pokemonURL;
+
+@property (nonatomic, readwrite) NSNumber *pokemonID;
+@property (nonatomic, nullable, readwrite, copy) NSArray<NSString *> *pokemonAbilities;
+@property (nonatomic, nullable, readwrite) NSURL *pokemonFrontDefaultImageURL;
+
 @end
 
 @implementation IIIPokemon

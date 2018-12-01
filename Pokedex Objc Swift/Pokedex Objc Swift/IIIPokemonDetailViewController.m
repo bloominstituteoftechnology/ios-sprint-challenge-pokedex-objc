@@ -24,13 +24,21 @@ void *pokemonContext = &pokemonContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [PokemonController.sharedController fillInDetailsFor:self.pokemon];
     [self updateViews];
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+    [super viewDidAppear:animated];
     [self updateViews];
+    NSData *imageData = [NSData dataWithContentsOfURL:self.pokemon.pokemonFrontDefaultImageURL];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.pokemonImageView.image = [UIImage imageWithData:imageData];
+    });
+//    [PokemonController.sharedController fetchPokemonImageWithUrl:self.pokemon.pokemonFrontDefaultImageURL completion:^(UIImage * image, NSError * error) {
+//        self.pokemonImageView.image = image;
+//    }];
 }
 
 - (void)dealloc
@@ -68,14 +76,13 @@ void *pokemonContext = &pokemonContext;
         [_pokemon removeObserver:self forKeyPath:@"pokemonID" context:pokemonContext];
         [_pokemon removeObserver:self forKeyPath:@"pokemonAbilities" context:pokemonContext];
         [_pokemon removeObserver:self forKeyPath:@"pokemonFrontDefaultImageURL" context:pokemonContext];
-        
+
         _pokemon = pokemon;
-        [PokemonController.sharedController fillInDetailsFor:pokemon];
         [self updateViews];
         
-        [_pokemon addObserver:self forKeyPath:@"pokemonID" options:NSKeyValueObservingOptionNew context:pokemonContext];
-        [_pokemon addObserver:self forKeyPath:@"pokemonAbilities" options:NSKeyValueObservingOptionNew context:pokemonContext];
-        [_pokemon addObserver:self forKeyPath:@"pokemonFrontDefaultImageURL" options:NSKeyValueObservingOptionNew context:pokemonContext];
+        [_pokemon addObserver:self forKeyPath:@"pokemonID" options:NSKeyValueObservingOptionInitial context:pokemonContext];
+        [_pokemon addObserver:self forKeyPath:@"pokemonAbilities" options:NSKeyValueObservingOptionInitial context:pokemonContext];
+        [_pokemon addObserver:self forKeyPath:@"pokemonFrontDefaultImageURL" options:NSKeyValueObservingOptionInitial context:pokemonContext];
     }
 }
 

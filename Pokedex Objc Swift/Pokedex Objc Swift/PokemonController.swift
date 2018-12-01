@@ -63,15 +63,12 @@ class PokemonController: NSObject {
     }
     
     @objc func fillInDetails(for pokemon: IIIPokemon) {
-        let url = baseURL.appendingPathComponent(pokemon.pokemonName)
-//        let url = URL(string: pokemon.pokemonURLString)!
-        
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: pokemon.pokemonURL)
         request.httpMethod = "GET"
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
-                NSLog("fillInDetails: Error fetching pokedex: \(error)")
+                NSLog("fillInDetails: Error fetching pokemon details: \(error)")
                 return
             }
             
@@ -95,4 +92,28 @@ class PokemonController: NSObject {
             }
         }.resume()
     }
+    
+//    @objc func fetchPokemonImage(url: URL, completion: @escaping (UIImage?, Error?) -> Void) {
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "GET"
+//        
+//        URLSession.shared.dataTask(with: request) { (data, _, error) in
+//            if let error = error {
+//                NSLog("fetchPokemonImage: Error fetching pokedex: \(error)")
+//                completion(nil, error)
+//                return
+//            }
+//            
+//            guard let data = data else {
+//                NSLog("fetchPokemonImage: No data returned from Url Session")
+//                completion(nil, NSError())
+//                return
+//            }
+//            
+//            let image = UIImage(data: data)
+//            DispatchQueue.main.async {
+//                completion(image, nil)
+//            }
+//        }.resume()
+//    }
 }
