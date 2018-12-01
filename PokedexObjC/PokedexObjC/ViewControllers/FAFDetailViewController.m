@@ -65,6 +65,23 @@ void *KVOContext = &KVOContext;
 - (void)updateViews
 {
     
+    NSURL *imageURL = [NSURL URLWithString:self.pokemon.imageURL];
+    
+    [[NSURLSession sharedSession] dataTaskWithURL:imageURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) { NSLog(@"Error: %@", error); }
+        
+        if (data)
+        {
+            UIImage *pokemon = [UIImage imageWithData:data];
+            dispatch_async(dispatch_get_main_queue(),
+                           ^{
+                               [[self pokeView] setImage:pokemon];
+                           });
+        }
+        
+        
+    }].resume;
+    
     self.nameLabel.text = [NSString stringWithFormat:@"Name : %@", self.pokemon.name.capitalizedString];
     
     NSString *abilities = [NSString stringWithFormat:@"Abilities: %@", [[[self pokemon] abilities] componentsJoinedByString:@" , "]];
