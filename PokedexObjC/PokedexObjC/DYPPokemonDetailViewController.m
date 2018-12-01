@@ -7,8 +7,9 @@
 //
 
 #import "DYPPokemonDetailViewController.h"
+#import "PokedexObjC-Swift.h"
 
-//void *KVOContext = &KVOContext;
+void *KVOContext = &KVOContext;
 
 @interface DYPPokemonDetailViewController ()
 
@@ -24,7 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self updateViews];
+    [[PokemonAPI sharedController] fillInDetailsFor:self.pokemon];
 }
 
 - (void)updateViews
@@ -38,15 +39,26 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.imageView setImage:image];
+                NSString *name = self.pokemon.name;
+                [self.nameLabel setText:name];
+                NSString *identifer = [self.pokemon.identifier stringValue];
+                [self.idLabel setText:identifer];
+                NSString *abilities = self.pokemon.abilities;
+                [self.abilitiesTextView setText:abilities];
             });
         }];
-        NSString *name = self.pokemon.name;
-        [self.nameLabel setText:name];
-        NSString *identifer = [self.pokemon.identifier stringValue];
-        [self.idLabel setText:identifer];
-        NSString *abilities = self.pokemon.abilities;
-        [self.abilitiesTextView setText:abilities];
-        
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (context == KVOContext) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateViews];
+        });
+
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
 
@@ -76,9 +88,12 @@
 {
     if (pokemon != _pokemon) {
     
+        [_pokemon removeObserver:self forKeyPath:@"sprite" context:KVOContext];
+        
         _pokemon = pokemon;
     
-        [self updateViews];
+        [_pokemon addObserver:self forKeyPath:@"sprite" options:NSKeyValueObservingOptionInitial context:KVOContext];
+        
     }
 }
 

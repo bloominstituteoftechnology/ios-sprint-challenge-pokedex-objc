@@ -46,29 +46,31 @@ void *KVOContext2 = &KVOContext2;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
     DYPPokemon *pokemon = self.pokemon[indexPath.row];
-    [cell.textLabel setText:pokemon.name];
+    [cell.textLabel setText:[pokemon.name capitalizedString]];
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    DYPPokemon *pokemon = [self.pokemon objectAtIndex:[indexPath row]];
-    [[PokemonAPI sharedController] fillInDetailsFor:pokemon];
-    self.pokemonSelected = pokemon;
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    DYPPokemon *pokemon = [self.pokemon objectAtIndex:[indexPath row]];
+////    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+////        [[PokemonAPI sharedController] fillInDetailsFor:pokemon];
+////    });
+//    self.pokemonSelected = pokemon;
+//}
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if (context == KVOContext2) {
-        DYPPokemon *pokemon = (DYPPokemon *)object;
-        if (pokemon.sprite) {
-            [self performSegueWithIdentifier:@"ShowPokemon" sender:self];
-        }
-    } else {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
-}
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+//{
+//    if (context == KVOContext2) {
+//        DYPPokemon *pokemon = (DYPPokemon *)object;
+//        //if (pokemon.sprite) {
+//            [self performSegueWithIdentifier:@"ShowPokemon" sender:self];
+//        //}
+//    } else {
+//        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+//    }
+//}
 
 #pragma mark - Navigation
 
@@ -77,7 +79,9 @@ void *KVOContext2 = &KVOContext2;
     if ([segue.identifier isEqualToString:@"ShowPokemon"]) {
         DYPPokemonDetailViewController *destinationVC = (DYPPokemonDetailViewController *)[segue destinationViewController];
         
-        [destinationVC setPokemon:self.pokemonSelected];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        DYPPokemon *pokemon = [self.pokemon objectAtIndex:[indexPath row]];
+        [destinationVC setPokemon:pokemon];
     }
 }
 
@@ -91,16 +95,16 @@ void *KVOContext2 = &KVOContext2;
     });
 }
 
-- (void)setPokemonSelected:(DYPPokemon *)pokemonSelected
-{
-    if (pokemonSelected != _pokemonSelected) {
-        
-        [_pokemonSelected removeObserver:self forKeyPath:@"sprite" context:KVOContext2];
-        
-        _pokemonSelected = pokemonSelected;
-        
-        [_pokemonSelected addObserver:self forKeyPath:@"sprite" options:NSKeyValueObservingOptionInitial context:KVOContext2];
-    }
-}
+//- (void)setPokemonSelected:(DYPPokemon *)pokemonSelected
+//{
+//    if (pokemonSelected != _pokemonSelected) {
+//        
+//        [_pokemonSelected removeObserver:self forKeyPath:@"sprite" context:KVOContext2];
+//        
+//        _pokemonSelected = pokemonSelected;
+//        
+//        [_pokemonSelected addObserver:self forKeyPath:@"sprite" options:NSKeyValueObservingOptionInitial context:KVOContext2];
+//    }
+//}
 
 @end
