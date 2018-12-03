@@ -22,9 +22,6 @@
     {
         self = [super initWithCoder:aDecoder];
         if (self) {
-            [[FAFPokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<FAFPokemon *> * fetchedPokemons, NSError * error) {
-                FAFPokemonAPI.sharedController.pokemons = fetchedPokemons;
-            }];
         }
         return self;
     }
@@ -42,6 +39,17 @@
     }
 
 #pragma mark - Table view data source
+    
+- (void)viewDidLoad
+{
+    [[FAFPokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<FAFPokemon *> * fetchedPokemons, NSError * error) {
+        FAFPokemonAPI.sharedController.pokemons = fetchedPokemons;
+        dispatch_async(dispatch_get_main_queue(),
+                       ^{
+                           [[self tableView] reloadData];
+                       });
+    }];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return FAFPokemonAPI.sharedController.pokemons.count;
