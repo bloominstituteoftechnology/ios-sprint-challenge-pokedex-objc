@@ -12,6 +12,11 @@ private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
 
 class FAFPokemonAPI: NSObject {
     
+    override init() {
+        let cache = URLCache(memoryCapacity: 16*1024*1024, diskCapacity: 100 * 1024 * 1024, diskPath: nil)
+        URLCache.shared = cache
+    }
+    
     @objc(pokemons) var pokemons = [FAFPokemon]()
 
     @objc(sharedController) static let shared = FAFPokemonAPI()
