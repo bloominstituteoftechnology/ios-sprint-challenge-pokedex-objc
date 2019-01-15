@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  Pokedex
+//  Pokedex-objc
 //
-//  Created by Simon Elhoej Steinmejer on 12/10/18.
+//  Created by Simon Elhoej Steinmejer on 10/12/18.
 //  Copyright © 2018 Simon Elhoej Steinmejer. All rights reserved.
 //
 
