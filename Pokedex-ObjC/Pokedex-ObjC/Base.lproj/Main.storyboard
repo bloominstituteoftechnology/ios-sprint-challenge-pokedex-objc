@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Pokemon Table View Controller-->
         <scene sceneID="tTX-Vw-WQv">
             <objects>
-                <tableViewController id="3TT-m2-iWP" sceneMemberID="viewController">
+                <tableViewController id="3TT-m2-iWP" customClass="JWPokemonTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9RU-7a-0bY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="328.80000000000001" y="850.52473763118451"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detial View Controller-->
         <scene sceneID="htF-LN-lV3">
             <objects>
-                <viewController id="bs2-9Q-awv" sceneMemberID="viewController">
+                <viewController id="bs2-9Q-awv" customClass="JWPokemonDetialViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MmT-tJ-pOO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

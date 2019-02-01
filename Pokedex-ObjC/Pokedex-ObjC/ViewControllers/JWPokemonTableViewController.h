@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  JWPokemonTableViewController.h
 //  Pokedex-ObjC
 //
 //  Created by Jerrick Warren on 2/1/19.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface JWPokemonTableViewController : UITableViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

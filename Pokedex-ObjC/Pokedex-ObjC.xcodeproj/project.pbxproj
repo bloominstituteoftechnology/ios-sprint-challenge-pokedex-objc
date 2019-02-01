@@ -8,21 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		47B71D632204B75D004FAF39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B71D622204B75D004FAF39 /* AppDelegate.m */; };
-		47B71D662204B75D004FAF39 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B71D652204B75D004FAF39 /* ViewController.m */; };
 		47B71D692204B75D004FAF39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B71D672204B75D004FAF39 /* Main.storyboard */; };
 		47B71D6B2204B75E004FAF39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B71D6A2204B75E004FAF39 /* Assets.xcassets */; };
 		47B71D6E2204B75E004FAF39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B71D6C2204B75E004FAF39 /* LaunchScreen.storyboard */; };
 		47B71D712204B75E004FAF39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B71D702204B75E004FAF39 /* main.m */; };
 		47B71D792204C73E004FAF39 /* JWPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B71D782204C73E004FAF39 /* JWPokemon.m */; };
 		47B71D7D2204CD16004FAF39 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B71D7C2204CD16004FAF39 /* PokemonAPI.swift */; };
+		47B71D802204CE79004FAF39 /* JWPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B71D7F2204CE79004FAF39 /* JWPokemonTableViewController.m */; };
+		47B71D872204CEE7004FAF39 /* JWPokemonDetialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B71D862204CEE7004FAF39 /* JWPokemonDetialViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		47B71D5E2204B75D004FAF39 /* Pokedex-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B71D612204B75D004FAF39 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47B71D622204B75D004FAF39 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		47B71D642204B75D004FAF39 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		47B71D652204B75D004FAF39 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		47B71D682204B75D004FAF39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47B71D6A2204B75E004FAF39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47B71D6D2204B75E004FAF39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +31,10 @@
 		47B71D782204C73E004FAF39 /* JWPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWPokemon.m; sourceTree = "<group>"; };
 		47B71D7B2204CD16004FAF39 /* Pokedex-ObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-ObjC-Bridging-Header.h"; sourceTree = "<group>"; };
 		47B71D7C2204CD16004FAF39 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		47B71D7E2204CE79004FAF39 /* JWPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWPokemonTableViewController.h; sourceTree = "<group>"; };
+		47B71D7F2204CE79004FAF39 /* JWPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWPokemonTableViewController.m; sourceTree = "<group>"; };
+		47B71D852204CEE7004FAF39 /* JWPokemonDetialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWPokemonDetialViewController.h; sourceTree = "<group>"; };
+		47B71D862204CEE7004FAF39 /* JWPokemonDetialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWPokemonDetialViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +69,9 @@
 			children = (
 				47B71D612204B75D004FAF39 /* AppDelegate.h */,
 				47B71D622204B75D004FAF39 /* AppDelegate.m */,
-				47B71D642204B75D004FAF39 /* ViewController.h */,
-				47B71D652204B75D004FAF39 /* ViewController.m */,
 				47B71D672204B75D004FAF39 /* Main.storyboard */,
 				47B71D7A2204C746004FAF39 /* Pokemon Model */,
+				47B71D842204CE9A004FAF39 /* ViewControllers */,
 				47B71D6A2204B75E004FAF39 /* Assets.xcassets */,
 				47B71D6C2204B75E004FAF39 /* LaunchScreen.storyboard */,
 				47B71D6F2204B75E004FAF39 /* Info.plist */,
@@ -87,6 +89,17 @@
 				47B71D7B2204CD16004FAF39 /* Pokedex-ObjC-Bridging-Header.h */,
 			);
 			path = "Pokemon Model";
+			sourceTree = "<group>";
+		};
+		47B71D842204CE9A004FAF39 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				47B71D852204CEE7004FAF39 /* JWPokemonDetialViewController.h */,
+				47B71D862204CEE7004FAF39 /* JWPokemonDetialViewController.m */,
+				47B71D7E2204CE79004FAF39 /* JWPokemonTableViewController.h */,
+				47B71D7F2204CE79004FAF39 /* JWPokemonTableViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,7 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B71D792204C73E004FAF39 /* JWPokemon.m in Sources */,
-				47B71D662204B75D004FAF39 /* ViewController.m in Sources */,
+				47B71D802204CE79004FAF39 /* JWPokemonTableViewController.m in Sources */,
+				47B71D872204CEE7004FAF39 /* JWPokemonDetialViewController.m in Sources */,
 				47B71D712204B75E004FAF39 /* main.m in Sources */,
 				47B71D7D2204CD16004FAF39 /* PokemonAPI.swift in Sources */,
 				47B71D632204B75D004FAF39 /* AppDelegate.m in Sources */,
