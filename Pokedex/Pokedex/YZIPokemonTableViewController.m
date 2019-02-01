@@ -61,7 +61,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     YZIPokedex *pokemon = self.pokemons[indexPath.row];
-    cell.textLabel.text = pokemon.name;
+    NSString *pokename = pokemon.name ;
+    cell.textLabel.text = pokename.capitalizedString ;
     
     return cell;
 }

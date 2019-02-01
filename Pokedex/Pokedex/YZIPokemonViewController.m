@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *abilitiesLabel;
 
+
 @end
 
 void *KVOContext = &KVOContext;
@@ -33,79 +34,43 @@ void *KVOContext = &KVOContext;
     
 }
 
-- (void)fetchingImage:(BOOL)pokeImage identifier:(BOOL)identifier abilities:(BOOL)abilities name:(BOOL)name
+
+-(void)updateViews
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (pokeImage == YES) {
-            self.pokeImage.image = self.pokemon.image;
-        }
-        if (name == YES) {
-            self.nameLabel.text = [NSString stringWithFormat:@"name: %@", self.pokemon.name];
-        }
-        
-        if (identifier == YES) {
-            self.idLabel.text = [NSString stringWithFormat:@"Id: %@", self.pokemon.identifier];
-        }
-        if (abilities == YES) {
-            self.abilitiesLabel.text = [NSString stringWithFormat:@"Abilities: %@", self.pokemon.abilities];
-        }
-    });
+    NSString *name = [NSString stringWithFormat: @"name: %@", self.pokemon.name];
+    NSString *identifier = [NSString stringWithFormat: @"id: %@", self.pokemon.identifier];
+    NSString *abilities = [NSString stringWithFormat: @"abilities: %@", self.pokemon.abilities] ;
+    [self.pokeImage setImage:self.pokemon.image];
+    [self.nameLabel setText: name];
+    [self.idLabel setText: identifier];
+    [self.abilitiesLabel setText: abilities.capitalizedString];
 }
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if (context != KVOContext) {
+    if (context == KVOContext) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateViews];
+        });
+    } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-        return;
     }
-    
-    BOOL name = NO ;
-    BOOL identifier = NO;
-    BOOL pokeImage = NO;
-    BOOL abilities = NO;
-    
-    if ([keyPath isEqualToString: @"name"]) {
-        name = YES;
-    }
-    
-    if ([keyPath isEqualToString: @"image"]) {
-        pokeImage = YES;
-    }
-    if ([keyPath isEqualToString: @"identifier"]) {
-        identifier = YES;
-    }
-    if ([keyPath isEqualToString: @"abilities"]) {
-        abilities = YES;
-    }
-    
-    [self fetchingImage:pokeImage identifier:identifier abilities:abilities name: name];
-}
-
-//add & remove Observers
-
-
-- (void)dealloc
-{
-    [_pokemon removeObserver:self forKeyPath:@"name"];
-    [_pokemon removeObserver:self forKeyPath:@"image"];
-    [_pokemon removeObserver:self forKeyPath:@"identifier"];
-    [_pokemon removeObserver:self forKeyPath:@"abilities"];
 }
 
 - (void)setPokemon:(YZIPokedex *)pokemon
 {
-    if (_pokemon) {
-        [_pokemon removeObserver:self forKeyPath:@"name"];
-        [_pokemon removeObserver:self forKeyPath:@"image"];
-        [_pokemon removeObserver:self forKeyPath:@"identifier"];
-        [_pokemon removeObserver:self forKeyPath:@"abilities"];
+    if(pokemon != _pokemon) {
+        _pokemon = pokemon;
+        
+        [_pokemon addObserver:self forKeyPath:@"image" options:NSKeyValueObservingOptionInitial context:KVOContext];
+        [_pokemon addObserver:self forKeyPath:@"id" options:NSKeyValueObservingOptionInitial context:KVOContext];
+        [_pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionInitial context:KVOContext];
     }
-    
-    _pokemon = pokemon;
-    [_pokemon addObserver:self forKeyPath:@"name" options:0 context:KVOContext];
-    [_pokemon addObserver:self forKeyPath:@"image" options:0 context:KVOContext];
-    [_pokemon addObserver:self forKeyPath:@"identifier" options:0 context:KVOContext];
-    [_pokemon addObserver:self forKeyPath:@"abilities" options:0 context:KVOContext];
 }
+
+
+
+
 
 
 

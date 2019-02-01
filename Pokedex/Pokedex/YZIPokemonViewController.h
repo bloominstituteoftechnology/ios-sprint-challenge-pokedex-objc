@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YZIPokemonViewController : UIViewController
 
-
+-(void) updateViews;
 @property (nonatomic, nullable) YZIPokedexController *pokedexController ;
 @property (nonatomic, nullable) YZIPokedex *pokemon ;
 
