@@ -30,6 +30,8 @@ void *KVOContext = &KVOContext;
     
     [[PokemonAPI shared] fetchPokemonObjectWithPokemon:[self pokemon]];
     
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    
 }
 
 - (void)setPokemon:(NKTPokemon *)pokemon
