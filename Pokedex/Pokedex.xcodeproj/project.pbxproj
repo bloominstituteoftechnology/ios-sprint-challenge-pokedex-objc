@@ -14,6 +14,7 @@
 		11FD677F2204A8F4004FEEB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FD677E2204A8F4004FEEB5 /* Main.storyboard */; };
 		11FD67822204A95B004FEEB5 /* NKTListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FD67812204A95B004FEEB5 /* NKTListTableViewController.m */; };
 		11FD67852204A96F004FEEB5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FD67842204A96F004FEEB5 /* DetailViewController.m */; };
+		11FD67892204A9A1004FEEB5 /* NKTPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FD67882204A9A1004FEEB5 /* NKTPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		11FD67812204A95B004FEEB5 /* NKTListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKTListTableViewController.m; sourceTree = "<group>"; };
 		11FD67832204A96F004FEEB5 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		11FD67842204A96F004FEEB5 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		11FD67872204A9A1004FEEB5 /* NKTPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKTPokemon.h; sourceTree = "<group>"; };
+		11FD67882204A9A1004FEEB5 /* NKTPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKTPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,7 @@
 				11FD67682204A8BF004FEEB5 /* AppDelegate.h */,
 				11FD67692204A8BF004FEEB5 /* AppDelegate.m */,
 				11FD677E2204A8F4004FEEB5 /* Main.storyboard */,
+				11FD678A2204A9A4004FEEB5 /* Model */,
 				11FD67862204A973004FEEB5 /* View Controllers */,
 				11FD67712204A8C0004FEEB5 /* Assets.xcassets */,
 				11FD67732204A8C0004FEEB5 /* LaunchScreen.storyboard */,
@@ -82,6 +86,15 @@
 				11FD67812204A95B004FEEB5 /* NKTListTableViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		11FD678A2204A9A4004FEEB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11FD67872204A9A1004FEEB5 /* NKTPokemon.h */,
+				11FD67882204A9A1004FEEB5 /* NKTPokemon.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +171,7 @@
 				11FD676A2204A8BF004FEEB5 /* AppDelegate.m in Sources */,
 				11FD67822204A95B004FEEB5 /* NKTListTableViewController.m in Sources */,
 				11FD67852204A96F004FEEB5 /* DetailViewController.m in Sources */,
+				11FD67892204A9A1004FEEB5 /* NKTPokemon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
