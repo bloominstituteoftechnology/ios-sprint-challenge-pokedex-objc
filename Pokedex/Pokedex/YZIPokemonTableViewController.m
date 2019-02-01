@@ -38,7 +38,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.pokedexController fetchPokemonsWithCompletion: ^(NSArray<YZIPokedex *> *pokemons, NSError *error) {
+    [self.pokedexController fetchAllPokemonsWithCompletion: ^(NSArray<YZIPokedex *> *pokemons, NSError *error) {
         self.pokemons = pokemons;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -59,7 +59,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
+    cell.layer.borderWidth = 2.0 ;
+    cell.layer.borderColor = UIColor.grayColor.CGColor ;
+    cell.layer.cornerRadius = 10 ;
     YZIPokedex *pokemon = self.pokemons[indexPath.row];
     NSString *pokename = pokemon.name ;
     cell.textLabel.text = pokename.capitalizedString ;

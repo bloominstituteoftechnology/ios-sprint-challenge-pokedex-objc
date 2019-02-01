@@ -14,7 +14,7 @@ class PokedexController : NSObject {
 
 private static let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     
-    @objc func fetchPokemons(completion: @escaping ([YZIPokedex]?, Error?) -> Void) {
+    @objc func fetchAllPokemons(completion: @escaping ([YZIPokedex]?, Error?) -> Void) {
     
     URLSession.shared.dataTask(with: PokedexController.baseURL) { (data, _, error) in
     if let error = error {

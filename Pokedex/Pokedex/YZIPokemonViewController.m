@@ -31,6 +31,10 @@ void *KVOContext = &KVOContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.pokedexController fillInDetailsFor:_pokemon];
+    _pokeImage.layer.cornerRadius = 10;
+    _pokeImage.clipsToBounds = YES ;
+    _pokeImage.layer.borderWidth = 2.0 ;
+    
     
 }
 
@@ -69,7 +73,12 @@ void *KVOContext = &KVOContext;
 }
 
 
-
+- (void)dealloc;
+{
+    [self.pokemon removeObserver:self forKeyPath:@"abilities" context:&KVOContext];
+    [self.pokemon removeObserver:self forKeyPath:@"id" context:&KVOContext];
+    [self.pokemon removeObserver:self forKeyPath:@"image" context:&KVOContext];
+}
 
 
 
