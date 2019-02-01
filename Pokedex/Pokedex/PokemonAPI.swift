@@ -76,8 +76,9 @@ class PokemonAPI: NSObject {
                 }
                 
                 pokemon.imageURL = spriteURL
-                pokemon.abilities = abilities
                 pokemon.pokemonID = pokemonID
+                
+                pokemon.abilities = abilities
             } catch {
                 NSLog("Error converting dict to object: \(error)")
                 return

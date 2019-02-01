@@ -50,10 +50,17 @@ void *KVOContext = &KVOContext;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self updateViews];
         });
-    } else {
+    }
+    else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
+
+- (void)dealloc;
+{
+    [self.pokemon removeObserver:self forKeyPath:@"abilities" context:&KVOContext];
+}
+
 
 - (void)updateViews
 {
