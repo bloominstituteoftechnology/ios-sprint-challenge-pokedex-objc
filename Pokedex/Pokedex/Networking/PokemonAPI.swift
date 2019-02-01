@@ -93,7 +93,7 @@ class PokemonAPI: NSObject {
                 return
             }
             
-            }.resume()
+        }.resume()
     }
     
     func getImage(url: URL, completion: @escaping (UIImage?, Error?) -> Void) {
