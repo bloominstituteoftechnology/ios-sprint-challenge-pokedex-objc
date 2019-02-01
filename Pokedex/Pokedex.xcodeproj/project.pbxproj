@@ -15,6 +15,7 @@
 		44AF88A02204AD7200DDA798 /* YZIPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AF889F2204AD7200DDA798 /* YZIPokemonTableViewController.m */; };
 		44AF88A32204AD9100DDA798 /* YZIPokemonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AF88A22204AD9100DDA798 /* YZIPokemonViewController.m */; };
 		44AF88A62204AF8700DDA798 /* YZIPokedex.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AF88A52204AF8700DDA798 /* YZIPokedex.m */; };
+		44AF88A92204B56300DDA798 /* PokedexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF88A82204B56300DDA798 /* PokedexController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		44AF88A22204AD9100DDA798 /* YZIPokemonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZIPokemonViewController.m; sourceTree = "<group>"; };
 		44AF88A42204AF8700DDA798 /* YZIPokedex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZIPokedex.h; sourceTree = "<group>"; };
 		44AF88A52204AF8700DDA798 /* YZIPokedex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZIPokedex.m; sourceTree = "<group>"; };
+		44AF88A72204B56200DDA798 /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
+		44AF88A82204B56300DDA798 /* PokedexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +76,12 @@
 				44AF88A22204AD9100DDA798 /* YZIPokemonViewController.m */,
 				44AF88A42204AF8700DDA798 /* YZIPokedex.h */,
 				44AF88A52204AF8700DDA798 /* YZIPokedex.m */,
+				44AF88A82204B56300DDA798 /* PokedexController.swift */,
 				44AF88912204A40300DDA798 /* Assets.xcassets */,
 				44AF88932204A40300DDA798 /* LaunchScreen.storyboard */,
 				44AF88962204A40300DDA798 /* Info.plist */,
 				44AF88972204A40300DDA798 /* main.m */,
+				44AF88A72204B56200DDA798 /* Pokedex-Bridging-Header.h */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 				TargetAttributes = {
 					44AF88842204A40300DDA798 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -151,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44AF88A92204B56300DDA798 /* PokedexController.swift in Sources */,
 				44AF88A02204AD7200DDA798 /* YZIPokemonTableViewController.m in Sources */,
 				44AF88A62204AF8700DDA798 /* YZIPokedex.m in Sources */,
 				44AF88982204A40300DDA798 /* main.m in Sources */,
@@ -297,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NH6AR4LY3J;
 				INFOPLIST_FILE = Pokedex/Info.plist;
@@ -306,6 +314,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = LambdaSchool.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex/Pokedex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -314,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NH6AR4LY3J;
 				INFOPLIST_FILE = Pokedex/Info.plist;
@@ -323,6 +335,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = LambdaSchool.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex/Pokedex-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
