@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@class YZIPokedexController ;
+@class YZIPokedex ;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YZIPokemonViewController : UIViewController
+
+
+@property (nonatomic, nullable) YZIPokedexController *pokedexController ;
+@property (nonatomic, nullable) YZIPokedex *pokemon ;
 
 @end
 

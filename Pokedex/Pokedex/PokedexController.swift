@@ -18,20 +18,20 @@ private static let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     
     URLSession.shared.dataTask(with: PokedexController.baseURL) { (data, _, error) in
     if let error = error {
-    NSLog("Error fetching pokemon: \(error)")
+    NSLog("Error fetching pokemons: \(error)")
     completion(nil, error)
     return
     }
     
     guard let data = data else {
-    completion(nil, error)
+    completion(nil, NSError())
     return
 }
     do {
     guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
     let results = dictionary["results"] as? [[String: String]] else {
     
-    NSLog("JSON was not a dictionary")
+    NSLog("JSON not a dictionary")
     completion(nil, NSError())
     return
     }

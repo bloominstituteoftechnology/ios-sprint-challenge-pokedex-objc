@@ -61,6 +61,7 @@
     self.identifier = identifier.stringValue;
     self.abilities = abilitiesString;
     self.imagesURL = url;
+    self.name = dictionary[@"name"];
 }
 
 @end

@@ -111,6 +111,7 @@
                         <outlet property="abilitiesLabel" destination="gHx-Jr-13a" id="Nfi-bC-BKp"/>
                         <outlet property="idLabel" destination="Xem-dn-vLl" id="VqW-st-TTX"/>
                         <outlet property="nameLabel" destination="wbU-zH-QSN" id="Uhh-Sh-B7E"/>
+                        <outlet property="pokeImage" destination="A94-XN-1Nc" id="fzg-6a-YFI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBc-CU-8zN" userLabel="First Responder" sceneMemberID="firstResponder"/>
