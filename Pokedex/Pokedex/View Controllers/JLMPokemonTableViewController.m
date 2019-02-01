@@ -8,6 +8,7 @@
 
 #import "JLMPokemonTableViewController.h"
 #import "JLMPokemonDetailViewController.h"
+#import "JLMPokemonTableViewCell.h"
 #import "JLMPokemon.h"
 #import "Pokedex-Swift.h"
 
@@ -21,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
     
     [PokemonAPI.sharedController fetchAllPokemonWithCompletion:^(NSArray<JLMPokemon *> *pokemon, NSError *error) {
         self.pokemon = pokemon;
@@ -37,10 +40,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
+    JLMPokemonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
     JLMPokemon *pokemon = [self.pokemon objectAtIndex:indexPath.row];
-    [cell.textLabel setText: [pokemon.name capitalizedString]];
+    [cell.nameLabel setText:[pokemon.name capitalizedString]];
     
     return cell;
 }

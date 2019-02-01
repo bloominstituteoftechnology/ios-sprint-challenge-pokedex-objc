@@ -18,6 +18,7 @@
 		965E2D952204B47300454641 /* JLMPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965E2D942204B47300454641 /* JLMPokemonTableViewController.m */; };
 		965E2D982204B4A600454641 /* JLMPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965E2D972204B4A600454641 /* JLMPokemonDetailViewController.m */; };
 		965E2D9C2204B88A00454641 /* JLMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965E2D9B2204B88A00454641 /* JLMNavigationController.m */; };
+		965E2D9F2204C10800454641 /* JLMPokemonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 965E2D9E2204C10800454641 /* JLMPokemonTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		965E2D972204B4A600454641 /* JLMPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLMPokemonDetailViewController.m; sourceTree = "<group>"; };
 		965E2D9A2204B88A00454641 /* JLMNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLMNavigationController.h; sourceTree = "<group>"; };
 		965E2D9B2204B88A00454641 /* JLMNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLMNavigationController.m; sourceTree = "<group>"; };
+		965E2D9D2204C10800454641 /* JLMPokemonTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLMPokemonTableViewCell.h; sourceTree = "<group>"; };
+		965E2D9E2204C10800454641 /* JLMPokemonTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLMPokemonTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 				965E2D762204B12900454641 /* Main.storyboard */,
 				965E2D8C2204B2F200454641 /* Model */,
 				965E2D922204B3BA00454641 /* Networking */,
+				965E2DA02204C13B00454641 /* Views */,
 				965E2D992204B60200454641 /* View Controllers */,
 				965E2D872204B19400454641 /* Resources */,
 				965E2D8D2204B35700454641 /* Pokedex-Bridging-Header.h */,
@@ -124,6 +128,15 @@
 				965E2D9B2204B88A00454641 /* JLMNavigationController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		965E2DA02204C13B00454641 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				965E2D9D2204C10800454641 /* JLMPokemonTableViewCell.h */,
+				965E2D9E2204C10800454641 /* JLMPokemonTableViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +214,7 @@
 				965E2D952204B47300454641 /* JLMPokemonTableViewController.m in Sources */,
 				965E2D8B2204B28400454641 /* JLMPokemon.m in Sources */,
 				965E2D982204B4A600454641 /* JLMPokemonDetailViewController.m in Sources */,
+				965E2D9F2204C10800454641 /* JLMPokemonTableViewCell.m in Sources */,
 				965E2D802204B12A00454641 /* main.m in Sources */,
 				965E2D9C2204B88A00454641 /* JLMNavigationController.m in Sources */,
 				965E2D8F2204B35700454641 /* PokemonAPI.swift in Sources */,
