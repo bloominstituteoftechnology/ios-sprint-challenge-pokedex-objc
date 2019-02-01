@@ -14,6 +14,7 @@
 		44AF88982204A40300DDA798 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AF88972204A40300DDA798 /* main.m */; };
 		44AF88A02204AD7200DDA798 /* YZIPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AF889F2204AD7200DDA798 /* YZIPokemonTableViewController.m */; };
 		44AF88A32204AD9100DDA798 /* YZIPokemonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AF88A22204AD9100DDA798 /* YZIPokemonViewController.m */; };
+		44AF88A62204AF8700DDA798 /* YZIPokedex.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AF88A52204AF8700DDA798 /* YZIPokedex.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		44AF889F2204AD7200DDA798 /* YZIPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZIPokemonTableViewController.m; sourceTree = "<group>"; };
 		44AF88A12204AD9100DDA798 /* YZIPokemonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZIPokemonViewController.h; sourceTree = "<group>"; };
 		44AF88A22204AD9100DDA798 /* YZIPokemonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZIPokemonViewController.m; sourceTree = "<group>"; };
+		44AF88A42204AF8700DDA798 /* YZIPokedex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZIPokedex.h; sourceTree = "<group>"; };
+		44AF88A52204AF8700DDA798 /* YZIPokedex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZIPokedex.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				44AF889F2204AD7200DDA798 /* YZIPokemonTableViewController.m */,
 				44AF88A12204AD9100DDA798 /* YZIPokemonViewController.h */,
 				44AF88A22204AD9100DDA798 /* YZIPokemonViewController.m */,
+				44AF88A42204AF8700DDA798 /* YZIPokedex.h */,
+				44AF88A52204AF8700DDA798 /* YZIPokedex.m */,
 				44AF88912204A40300DDA798 /* Assets.xcassets */,
 				44AF88932204A40300DDA798 /* LaunchScreen.storyboard */,
 				44AF88962204A40300DDA798 /* Info.plist */,
@@ -147,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44AF88A02204AD7200DDA798 /* YZIPokemonTableViewController.m in Sources */,
+				44AF88A62204AF8700DDA798 /* YZIPokedex.m in Sources */,
 				44AF88982204A40300DDA798 /* main.m in Sources */,
 				44AF88A32204AD9100DDA798 /* YZIPokemonViewController.m in Sources */,
 				44AF888A2204A40300DDA798 /* AppDelegate.m in Sources */,
