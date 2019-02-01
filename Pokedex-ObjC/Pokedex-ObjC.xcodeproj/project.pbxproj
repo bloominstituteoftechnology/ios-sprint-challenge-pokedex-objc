@@ -13,6 +13,7 @@
 		47B71D6B2204B75E004FAF39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B71D6A2204B75E004FAF39 /* Assets.xcassets */; };
 		47B71D6E2204B75E004FAF39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B71D6C2204B75E004FAF39 /* LaunchScreen.storyboard */; };
 		47B71D712204B75E004FAF39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B71D702204B75E004FAF39 /* main.m */; };
+		47B71D792204C73E004FAF39 /* JWPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B71D782204C73E004FAF39 /* JWPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		47B71D6D2204B75E004FAF39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47B71D6F2204B75E004FAF39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47B71D702204B75E004FAF39 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		47B71D772204C73E004FAF39 /* JWPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWPokemon.h; sourceTree = "<group>"; };
+		47B71D782204C73E004FAF39 /* JWPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +66,22 @@
 				47B71D642204B75D004FAF39 /* ViewController.h */,
 				47B71D652204B75D004FAF39 /* ViewController.m */,
 				47B71D672204B75D004FAF39 /* Main.storyboard */,
+				47B71D7A2204C746004FAF39 /* Pokemon Model */,
 				47B71D6A2204B75E004FAF39 /* Assets.xcassets */,
 				47B71D6C2204B75E004FAF39 /* LaunchScreen.storyboard */,
 				47B71D6F2204B75E004FAF39 /* Info.plist */,
 				47B71D702204B75E004FAF39 /* main.m */,
 			);
 			path = "Pokedex-ObjC";
+			sourceTree = "<group>";
+		};
+		47B71D7A2204C746004FAF39 /* Pokemon Model */ = {
+			isa = PBXGroup;
+			children = (
+				47B71D772204C73E004FAF39 /* JWPokemon.h */,
+				47B71D782204C73E004FAF39 /* JWPokemon.m */,
+			);
+			path = "Pokemon Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47B71D792204C73E004FAF39 /* JWPokemon.m in Sources */,
 				47B71D662204B75D004FAF39 /* ViewController.m in Sources */,
 				47B71D712204B75E004FAF39 /* main.m in Sources */,
 				47B71D632204B75D004FAF39 /* AppDelegate.m in Sources */,
