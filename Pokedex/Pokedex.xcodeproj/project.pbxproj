@@ -8,24 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		11FD676A2204A8BF004FEEB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FD67692204A8BF004FEEB5 /* AppDelegate.m */; };
-		11FD676D2204A8BF004FEEB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FD676C2204A8BF004FEEB5 /* ViewController.m */; };
-		11FD67702204A8BF004FEEB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FD676E2204A8BF004FEEB5 /* Main.storyboard */; };
 		11FD67722204A8C0004FEEB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11FD67712204A8C0004FEEB5 /* Assets.xcassets */; };
 		11FD67752204A8C0004FEEB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FD67732204A8C0004FEEB5 /* LaunchScreen.storyboard */; };
 		11FD67782204A8C0004FEEB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FD67772204A8C0004FEEB5 /* main.m */; };
+		11FD677F2204A8F4004FEEB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FD677E2204A8F4004FEEB5 /* Main.storyboard */; };
+		11FD67822204A95B004FEEB5 /* NKTListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FD67812204A95B004FEEB5 /* NKTListTableViewController.m */; };
+		11FD67852204A96F004FEEB5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FD67842204A96F004FEEB5 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11FD67652204A8BF004FEEB5 /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FD67682204A8BF004FEEB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11FD67692204A8BF004FEEB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		11FD676B2204A8BF004FEEB5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		11FD676C2204A8BF004FEEB5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		11FD676F2204A8BF004FEEB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11FD67712204A8C0004FEEB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11FD67742204A8C0004FEEB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11FD67762204A8C0004FEEB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11FD67772204A8C0004FEEB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		11FD677E2204A8F4004FEEB5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		11FD67802204A95B004FEEB5 /* NKTListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKTListTableViewController.h; sourceTree = "<group>"; };
+		11FD67812204A95B004FEEB5 /* NKTListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKTListTableViewController.m; sourceTree = "<group>"; };
+		11FD67832204A96F004FEEB5 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		11FD67842204A96F004FEEB5 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +63,25 @@
 			children = (
 				11FD67682204A8BF004FEEB5 /* AppDelegate.h */,
 				11FD67692204A8BF004FEEB5 /* AppDelegate.m */,
-				11FD676B2204A8BF004FEEB5 /* ViewController.h */,
-				11FD676C2204A8BF004FEEB5 /* ViewController.m */,
-				11FD676E2204A8BF004FEEB5 /* Main.storyboard */,
+				11FD677E2204A8F4004FEEB5 /* Main.storyboard */,
+				11FD67862204A973004FEEB5 /* View Controllers */,
 				11FD67712204A8C0004FEEB5 /* Assets.xcassets */,
 				11FD67732204A8C0004FEEB5 /* LaunchScreen.storyboard */,
 				11FD67762204A8C0004FEEB5 /* Info.plist */,
 				11FD67772204A8C0004FEEB5 /* main.m */,
 			);
 			path = Pokedex;
+			sourceTree = "<group>";
+		};
+		11FD67862204A973004FEEB5 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11FD67832204A96F004FEEB5 /* DetailViewController.h */,
+				11FD67842204A96F004FEEB5 /* DetailViewController.m */,
+				11FD67802204A95B004FEEB5 /* NKTListTableViewController.h */,
+				11FD67812204A95B004FEEB5 /* NKTListTableViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +143,7 @@
 			files = (
 				11FD67752204A8C0004FEEB5 /* LaunchScreen.storyboard in Resources */,
 				11FD67722204A8C0004FEEB5 /* Assets.xcassets in Resources */,
-				11FD67702204A8BF004FEEB5 /* Main.storyboard in Resources */,
+				11FD677F2204A8F4004FEEB5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,23 +154,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11FD676D2204A8BF004FEEB5 /* ViewController.m in Sources */,
 				11FD67782204A8C0004FEEB5 /* main.m in Sources */,
 				11FD676A2204A8BF004FEEB5 /* AppDelegate.m in Sources */,
+				11FD67822204A95B004FEEB5 /* NKTListTableViewController.m in Sources */,
+				11FD67852204A96F004FEEB5 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		11FD676E2204A8BF004FEEB5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				11FD676F2204A8BF004FEEB5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		11FD67732204A8C0004FEEB5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
