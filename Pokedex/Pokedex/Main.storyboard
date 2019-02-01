@@ -104,7 +104,10 @@
                         <viewLayoutGuide key="safeArea" id="0kr-Vs-FqO"/>
                     </view>
                     <connections>
-                        <outlet property="nameLabel" destination="LNO-Mb-W80" id="Y3s-4O-kvm"/>
+                        <outlet property="abilitiesLabel" destination="7OZ-Ol-c8z" id="5z0-jV-Y7P"/>
+                        <outlet property="idLabel" destination="zGl-gz-zmf" id="0nt-Q9-OAZ"/>
+                        <outlet property="imageView" destination="8t7-ev-ncn" id="Zmd-I6-QYf"/>
+                        <outlet property="nameLabel" destination="LNO-Mb-W80" id="H9V-E7-caZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mxv-3k-guw" userLabel="First Responder" sceneMemberID="firstResponder"/>
