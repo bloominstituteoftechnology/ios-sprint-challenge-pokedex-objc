@@ -21,6 +21,8 @@ void *KVOContext = &KVOContext;
 
 @property (weak, nonatomic) IBOutlet UILabel *abilitiesLabel;
 
+@property (weak, nonatomic) UIColor *bgColor;
+
 @end
 
 @implementation DetailViewController
@@ -31,8 +33,9 @@ void *KVOContext = &KVOContext;
     [[PokemonAPI shared] fetchPokemonObjectWithPokemon:[self pokemon]];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
-    
 }
+
+
 
 - (void)setPokemon:(NKTPokemon *)pokemon
 {
@@ -92,9 +95,6 @@ void *KVOContext = &KVOContext;
     self.idLabel.text = [NSString stringWithFormat:@"ID: %ld", self.pokemon.pokemonID];
     
 }
-
-
-
 
 
 

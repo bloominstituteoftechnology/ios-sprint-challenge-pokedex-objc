@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) NKTPokemon *pokemon;
 
+- (UIColor*) getPixelColorAtLocation:(CGPoint)point;
+
 @end
 
 NS_ASSUME_NONNULL_END

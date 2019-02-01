@@ -59,7 +59,16 @@
     
     cell.textLabel.text = pokemon.name;
     
+    UIView *colorView = [[UIView alloc] init];
+    colorView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    cell.selectedBackgroundView = colorView;
+    
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70;
 }
 
 
