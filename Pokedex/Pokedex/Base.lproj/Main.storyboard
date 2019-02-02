@@ -58,7 +58,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Xs-sZ-zUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1164" y="-248.72563718140933"/>
+            <point key="canvasLocation" x="1135" y="-250"/>
         </scene>
         <!--Pokémon details-->
         <scene sceneID="Yk5-8e-nyd">
@@ -200,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLN-cp-uUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2078" y="-249"/>
+            <point key="canvasLocation" x="2046" y="-251"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="k5N-sK-jlD">
