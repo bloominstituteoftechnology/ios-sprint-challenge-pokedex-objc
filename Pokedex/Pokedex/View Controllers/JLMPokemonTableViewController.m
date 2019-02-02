@@ -44,6 +44,8 @@
     
     JLMPokemon *pokemon = [self.pokemon objectAtIndex:indexPath.row];
     [cell.nameLabel setText:[pokemon.name capitalizedString]];
+    NSString *id = [NSString stringWithFormat: @"ID #%ld", (long)indexPath.row + 1];
+    [cell.idLabel setText: id];
     
     return cell;
 }
