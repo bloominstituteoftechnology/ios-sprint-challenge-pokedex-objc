@@ -74,6 +74,9 @@
                                             <segment title="Front View"/>
                                             <segment title="BackView"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="didTapSegmentedControl:" destination="0Ed-nG-7ab" eventType="valueChanged" id="kfa-oY-UCo"/>
+                                        </connections>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ga8-eh-B0z">
                                         <rect key="frame" x="0.0" y="38" width="335" height="50"/>
@@ -173,6 +176,7 @@
                         <outlet property="idLabel" destination="KBL-3O-VxO" id="FQS-sw-GGs"/>
                         <outlet property="imageView" destination="oPa-Em-eN5" id="6Pm-z1-9L5"/>
                         <outlet property="nameLabel" destination="I62-1f-ePa" id="aiT-h1-G0h"/>
+                        <outlet property="segmentedControl" destination="t8n-a4-1BX" id="qyl-Kv-E3T"/>
                         <outlet property="speciesLabel" destination="TE0-9J-gM9" id="TLC-OU-iYn"/>
                     </connections>
                 </viewController>

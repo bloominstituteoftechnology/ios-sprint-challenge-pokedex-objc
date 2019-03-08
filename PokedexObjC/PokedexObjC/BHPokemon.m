@@ -65,7 +65,7 @@
         
         NSString *frontDefault = sprites[@"front_default"];
         CheckClass(frontDefault, NSString)
-        [images addObject:[NSURL URLWithString:backDefault]];
+        [images addObject:[NSURL URLWithString:frontDefault]];
         
         
         _name = name;

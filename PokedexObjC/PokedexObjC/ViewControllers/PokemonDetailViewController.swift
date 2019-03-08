@@ -34,7 +34,7 @@ class PokemonDetailViewController: UIViewController {
             self.speciesLabel.text = pokemon.speciesName
             self.idLabel.text = pokemon.identifier
             
-            guard let imageURL = pokemon.images.first else { return }
+            let imageURL = pokemon.images[self.segmentedControl.selectedSegmentIndex]
             do {
                 let data = try Data(contentsOf: imageURL)
                 self.imageView.image = UIImage(data: data)
@@ -44,6 +44,7 @@ class PokemonDetailViewController: UIViewController {
             
             guard let abilities = pokemon.abilities else { return }
             
+            self.abilitiesTextView.text = ""
             for ability in abilities {
                 
                 self.abilitiesTextView.text += "\(ability.name)\n"
@@ -54,11 +55,15 @@ class PokemonDetailViewController: UIViewController {
         
     }
     
+    @IBAction func didTapSegmentedControl(_ sender: UISegmentedControl) {
+        updateViews()
+    }
     
     
     // MARK: Properties
     
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
