@@ -1,22 +1,23 @@
 //
-//  PokedexTableViewController.m
+//  DRMPokedexTableViewController.m
 //  PokedexObjc
 //
 //  Created by Dillon McElhinney on 3/8/19.
 //  Copyright © 2019 Dillon McElhinney. All rights reserved.
 //
 
-#import "PokedexTableViewController.h"
+#import "DRMPokedexTableViewController.h"
 #import "DRMPokemon.h"
 #import "PokedexObjc-Swift.h"
+#import "DRMPokemonDetailViewController.h"
 
-@interface PokedexTableViewController ()
+@interface DRMPokedexTableViewController ()
 
 @property NSArray<DRMPokemon *> *pokemons;
 
 @end
 
-@implementation PokedexTableViewController
+@implementation DRMPokedexTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,14 +45,14 @@
     return cell;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+#pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    DRMPokemonDetailViewController *destinationVC = segue.destinationViewController;
+    NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+    DRMPokemon *pokemon = self.pokemons[indexPath.row];
+    
+    destinationVC.pokemon = pokemon;
 }
-*/
 
 @end

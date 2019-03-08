@@ -14,7 +14,7 @@
         <!--Pokedex-->
         <scene sceneID="r7h-nn-rkb">
             <objects>
-                <tableViewController id="99N-z0-dgW" customClass="PokedexTableViewController" sceneMemberID="viewController">
+                <tableViewController id="99N-z0-dgW" customClass="DRMPokedexTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fld-Km-Qea">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +46,7 @@
         <!--Pokemon Detail View Controller-->
         <scene sceneID="GT7-eU-drx">
             <objects>
-                <viewController id="BIT-S8-z1H" customClass="PokemonDetailViewController" sceneMemberID="viewController">
+                <viewController id="BIT-S8-z1H" customClass="DRMPokemonDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1wk-WJ-aah">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

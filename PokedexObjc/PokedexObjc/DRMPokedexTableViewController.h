@@ -1,5 +1,5 @@
 //
-//  PokedexTableViewController.h
+//  DRMPokedexTableViewController.h
 //  PokedexObjc
 //
 //  Created by Dillon McElhinney on 3/8/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PokedexTableViewController : UITableViewController
+@interface DRMPokedexTableViewController : UITableViewController
 
 @end
 

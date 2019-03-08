@@ -1,5 +1,5 @@
 //
-//  PokemonDetailViewController.h
+//  DRMPokemonDetailViewController.h
 //  PokedexObjc
 //
 //  Created by Dillon McElhinney on 3/8/19.
@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DRMPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PokemonDetailViewController : UIViewController
+@interface DRMPokemonDetailViewController : UIViewController
+
+@property DRMPokemon *pokemon;
 
 @end
 
