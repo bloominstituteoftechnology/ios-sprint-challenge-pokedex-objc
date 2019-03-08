@@ -16,10 +16,10 @@
     self = [super init];
     if (self){
         BOOL hidden = [[json objectForKey:@"is_hidden"] boolValue];
-        NSString *name = [json valueForKey:@"ability.name"];
+        NSDictionary *nameDict = [json objectForKey:@"ability"];
         
         _hidden = hidden;
-        _name = name;
+        _name = [nameDict valueForKey:@"name"];
     }
     return self;
 }

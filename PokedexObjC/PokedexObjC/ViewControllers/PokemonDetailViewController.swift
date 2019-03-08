@@ -33,7 +33,24 @@ class PokemonDetailViewController: UIViewController {
             self.nameLabel.text = pokemon.name
             self.speciesLabel.text = pokemon.speciesName
             self.idLabel.text = pokemon.identifier
+            
+            guard let imageURL = pokemon.images.first else { return }
+            do {
+                let data = try Data(contentsOf: imageURL)
+                self.imageView.image = UIImage(data: data)
+            } catch {
+                print("could not update image view")
+            }
+            
+            guard let abilities = pokemon.abilities else { return }
+            
+            for ability in abilities {
+                
+                self.abilitiesTextView.text += "\(ability.name)\n"
+            }
+            
         }
+        reloadInputViews()
         
     }
     
@@ -41,10 +58,11 @@ class PokemonDetailViewController: UIViewController {
     
     // MARK: Properties
     
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var abilitiesLabel: UITextView!
+    @IBOutlet weak var abilitiesTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     @objc var pokemonName: String?
     @objc var pokemonController: PokemonController?

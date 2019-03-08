@@ -12,45 +12,6 @@ class PokemonController: NSObject {
     
     @objc(shared) static let shared = PokemonController()
     
-    @objc(searchForPeopleWithSearchTerm:completionBlock:)
-    func searchForPeople( with searchTerm: String, completion: @escaping ([BHPokemon]?, Error?) -> Void){
-        
-        
-        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
-        let searchItem = URLQueryItem(name: "search", value: searchTerm)
-        components.queryItems = [searchItem]
-        let url = components.url!
-        
-        URLSession.shared.dataTask(with: url){ (data, _, error) in
-            
-            if let error = error {
-                completion(nil, error)
-                return
-            }
-            
-            guard let data = data else {
-                return completion(nil, NSError())
-            }
-            
-            
-            do {
-                
-                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any],
-                    let pokemonDictionaries = dictionary["results"] as? [[String : Any]] else {
-                        throw NSError()
-                }
-//                let people = pokemonDictionaries.compactMap { BHPokemon(dictionary: $0)}
-                completion(nil, nil)
-                
-            } catch {
-                completion(nil, error)
-                return
-            }
-            
-            }.resume()
-        
-    }
-    
     @objc (getAvailablePokemonWithCompletionBlock:)
     func getAvailablePokemon(completion: @escaping ([BHPokemonTemporaryResults]?, Error?) -> Void){
         

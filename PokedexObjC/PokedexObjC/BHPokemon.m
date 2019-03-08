@@ -30,7 +30,7 @@
         CheckClass(name, NSString)
         
         // name
-        NSString *identifer = pokemonDict[@"id"];
+        NSString *identifer = [NSString stringWithFormat:@"%@", pokemonDict[@"id"]];
         CheckClass(identifer, NSString)
         
         // species
