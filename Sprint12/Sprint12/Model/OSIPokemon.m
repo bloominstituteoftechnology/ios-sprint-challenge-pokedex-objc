@@ -71,6 +71,44 @@
     return [self initWithName:name url:url];
 }
 
+-(instancetype)fillInDetails:(NSDictionary *)dictionary {
+    
+    CheckClass(dictionary, NSDictionary);
+    
+   
+    if (self) {
+        
+        NSDictionary *dict = dictionary;
+        
+        NSString *name = dict[@"name"];
+        CheckClass(name, NSString)
+        
+        NSNumber *identifier = dict[@"id"];
+        CheckClass(identifier, NSNumber)
+        
+        _identifier = identifier;
+        _name = name;
+        
+        NSDictionary *spritesInfo = dict[@"sprites"];
+        CheckClass(spritesInfo, NSDictionary);
+        NSString *spritesURL = spritesInfo[@"front_default"];
+        // if (spritesURL == nil) {
+        CheckClass(spritesURL, NSString);
+        _imageURL = spritesURL;
+        
+        NSMutableArray *abilities = [NSMutableArray array];
+        NSArray *abilityDefs = dict[@"abilities"];
+        for (NSDictionary *def in abilityDefs) {
+            OSIAbility *ability = [[OSIAbility alloc] initWithJSON:def];
+            if (ability != nil) {
+                [abilities addObject:ability];
+            }
+        }
+        _abilities = abilities;
+    }
+    return self;
+}
+
 
 @end
 

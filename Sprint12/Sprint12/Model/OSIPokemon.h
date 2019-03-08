@@ -24,15 +24,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithJSON:(id)json;
 
 
-
-
-
-
 - (instancetype)initWithName:(NSString *)name url:(NSURL *)url;
 
 -(nullable instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
-
+-(instancetype)fillInDetails:(NSDictionary *)dictionary;
 @end
 
 

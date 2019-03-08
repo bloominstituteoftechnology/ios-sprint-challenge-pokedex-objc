@@ -48,10 +48,27 @@ class PokemonController: NSObject {
     
     
     @objc func fillInDetails(for pokemon: OSIPokemon) {
-    
         
-        return
+        let datatask = URLSession.shared.dataTask(with: pokemon.url!) { (data, _, error) in
+            if let error = error {
+                NSLog("Error filling in details for pokemon: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("No data was returned...")
+                return
+            }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+               // pokemon.fillIn(with: json)
+                
+            } catch {
+                NSLog("Error decoding Pokemon detail: \(error)")
+            }
+        }
+        
+        datatask.resume()
     }
-    
-    
 }

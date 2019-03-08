@@ -11,6 +11,7 @@
 #import "OSIPokemon.h"
 #import "OSIPokemonName.h"
 #import "OSIPokemonDetailsViewController.h"
+#import "Sprint12-Swift.h"
 
 @interface OSIPokemonTableViewController ()
 @property OSIPokemonController *osiPokemonController;
