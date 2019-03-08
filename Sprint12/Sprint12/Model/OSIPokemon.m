@@ -50,25 +50,23 @@
     return self;
 }
 
-
-
-
-
-- (instancetype)initWithURL:(NSURL *)url {
+- (instancetype)initWithURL:(NSString *)url name:(NSString *)name {
     self = [super init];
     if (self) {
+        _name = name;
         _url = url;
     }
     return self;
 }
 
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
 
     NSString *name = dictionary[@"name"];
-    NSString *urlString = dictionary[@"url"];
-    NSURL *url = [NSURL URLWithString:urlString];
+    NSString *url = dictionary[@"url"];
+    
 
-    return [self initWithName:name url:url];
+    return [self initWithURL:url name:name];
 }
 
 -(instancetype)fillInDetails:(NSDictionary *)dictionary {

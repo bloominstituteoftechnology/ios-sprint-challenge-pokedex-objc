@@ -17,6 +17,7 @@
 @property OSIPokemonController *osiPokemonController;
 @property OSIPokemonName *osiPokemonName;
 @property OSIPokemon *osiPokemon;
+@property NSArray<OSIPokemon *> *pokemonArray;
 @end
 
 @implementation OSIPokemonTableViewController
@@ -45,25 +46,37 @@ static NSString * const reuseIdentifier = @"pokemonCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.osiPokemonController fetchPokemonName:^(OSIPokemonName *pokemon, NSError *error) {
-        self.osiPokemonName = pokemon;
+//    [self.osiPokemonController fetchPokemonName:^(OSIPokemonName *pokemon, NSError *error) {
+//        self.osiPokemonName = pokemon;
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self.tableView reloadData];
+//        });
+//    }];
+//
+    
+    [PokemonController.shared fetchAllPokemonWithCompletion:^(NSArray<OSIPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
+        self.pokemonArray = pokemon;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
+        
     }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.osiPokemonName.names.count;
+    return self.pokemonArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
     
+    OSIPokemon *pokemon = self.pokemonArray[indexPath.row];
     
-    cell.textLabel.text = [self.osiPokemonName.names[indexPath.row] capitalizedString];
+    cell.textLabel.text = [pokemon.name capitalizedString];
+    
+   // cell.textLabel.text = [self.osiPokemonName.names[indexPath.row] capitalizedString];
     return cell;
 }
 
@@ -74,7 +87,7 @@ static NSString * const reuseIdentifier = @"pokemonCell";
     if([segue.identifier isEqualToString:@"pokemonDetails"]) {
         OSIPokemonDetailsViewController *destinationVC = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSString *pokemonURL = self.osiPokemonName.url[indexPath.row];
+        NSString *pokemonURL = self.pokemonArray[indexPath.row].url;
         destinationVC.pokemonURL = pokemonURL;
     }
     

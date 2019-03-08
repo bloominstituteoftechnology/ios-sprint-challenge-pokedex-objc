@@ -18,13 +18,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable) NSString *name;
 @property (nonatomic, nullable) NSArray<OSIAbility *> *abilities;
 @property (nonatomic, nullable) NSString *imageURL;
-@property (nonatomic, copy, nullable) NSURL *url;
+@property (nonatomic, nullable) NSString *url;
 @property (readwrite, nullable) NSNumber *identifier;
 
 - (instancetype)initWithJSON:(id)json;
 
 
-- (instancetype)initWithName:(NSString *)name url:(NSURL *)url;
+- (instancetype)initWithURL:(NSString *)url name:(NSString *)name;
 
 -(nullable instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

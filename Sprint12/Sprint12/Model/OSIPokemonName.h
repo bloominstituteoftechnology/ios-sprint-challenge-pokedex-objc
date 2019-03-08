@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSArray<NSString *> *url;
 
 - (instancetype)initWithJSON:(id)json;
+// - (instancetype)initWithURL:(NSURL *)url names:(NSString *)names;
 @end
 
 NS_ASSUME_NONNULL_END
