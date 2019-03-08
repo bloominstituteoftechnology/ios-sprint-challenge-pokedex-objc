@@ -12,11 +12,13 @@ import Foundation
     @objc static let shared: PokemonAPI = PokemonAPI()
     
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
-    
+
+    // MARK: - Networking
+    /// Fetches the first 151 pokemon
     @objc func fetchAllPokemon(completion: @escaping ([DRMPokemon]?, Error?) -> Void) {
         
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
-        let limitQuery = URLQueryItem(name: "limit", value: "150")
+        let limitQuery = URLQueryItem(name: "limit", value: "151")
         components.queryItems = [limitQuery]
         
         let requestURL = components.url!
@@ -52,6 +54,7 @@ import Foundation
         datatask.resume()
     }
     
+    /// Fetches the missing details for the given pokemon so that they can be filled in
     @objc func fillInDetails(for pokemon: DRMPokemon) {
         
         let datatask = URLSession.shared.dataTask(with: pokemon.url) { (data, _, error) in

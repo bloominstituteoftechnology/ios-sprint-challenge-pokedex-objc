@@ -17,14 +17,19 @@
 
 @implementation DRMPokemonDetailViewController
 
+#pragma mark - Lifecycle Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self updateViews];
     
-    [self.pokemon addObserver: self forKeyPath: @"abilities" options: 0 context: nil];
+    // Only add an observer if there is something worth observing
+    if (self.pokemon.identifier == nil) {
+        [self.pokemon addObserver: self forKeyPath: @"abilities" options: 0 context: nil];
+    }
 }
 
+#pragma mark - Utility Methods
 - (void)updateViews {
     if (self.pokemon != nil) {
         self.title = [self.pokemon.name capitalizedString];
@@ -44,6 +49,8 @@
     dispatch_sync(dispatch_get_main_queue(), ^{
         [self updateViews];
     });
+    // Remove the observer when it has done its job
+    [object removeObserver:self forKeyPath:keyPath];
 }
 
 @end

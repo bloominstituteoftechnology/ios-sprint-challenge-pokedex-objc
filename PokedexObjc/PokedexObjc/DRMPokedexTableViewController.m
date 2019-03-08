@@ -19,6 +19,7 @@
 
 @implementation DRMPokedexTableViewController
 
+#pragma mark - Lifecycle Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.pokemons = [NSArray array];
@@ -31,7 +32,7 @@
     }];
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table View Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.pokemons.count;
 }
@@ -44,7 +45,6 @@
     
     return cell;
 }
-
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
