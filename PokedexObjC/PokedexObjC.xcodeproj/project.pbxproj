@@ -19,7 +19,6 @@
 		D1B241512232CDAE00E708C1 /* BHAbility.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B241502232CDAE00E708C1 /* BHAbility.m */; };
 		D1B241542232D1AF00E708C1 /* BHPokemonTemporaryResults.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B241532232D1AF00E708C1 /* BHPokemonTemporaryResults.m */; };
 		D1B241572232D2D700E708C1 /* BHPokemonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B241562232D2D700E708C1 /* BHPokemonTableViewCell.m */; };
-		D1B2415C2232DE4800E708C1 /* BHPokemonTemporaryResults+NSJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2415B2232DE4800E708C1 /* BHPokemonTemporaryResults+NSJSONSerializer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,8 +43,6 @@
 		D1B241532232D1AF00E708C1 /* BHPokemonTemporaryResults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHPokemonTemporaryResults.m; sourceTree = "<group>"; };
 		D1B241552232D2D700E708C1 /* BHPokemonTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHPokemonTableViewCell.h; sourceTree = "<group>"; };
 		D1B241562232D2D700E708C1 /* BHPokemonTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHPokemonTableViewCell.m; sourceTree = "<group>"; };
-		D1B2415A2232DE4800E708C1 /* BHPokemonTemporaryResults+NSJSONSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BHPokemonTemporaryResults+NSJSONSerializer.h"; sourceTree = "<group>"; };
-		D1B2415B2232DE4800E708C1 /* BHPokemonTemporaryResults+NSJSONSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BHPokemonTemporaryResults+NSJSONSerializer.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,15 +77,8 @@
 			children = (
 				D1B241292232C95200E708C1 /* AppDelegate.h */,
 				D1B2412A2232C95200E708C1 /* AppDelegate.m */,
-				D1B241522232D1AF00E708C1 /* BHPokemonTemporaryResults.h */,
-				D1B241532232D1AF00E708C1 /* BHPokemonTemporaryResults.m */,
-				D1B2415A2232DE4800E708C1 /* BHPokemonTemporaryResults+NSJSONSerializer.h */,
-				D1B2415B2232DE4800E708C1 /* BHPokemonTemporaryResults+NSJSONSerializer.m */,
-				D1B2414C2232CD9100E708C1 /* BHPokemon.h */,
-				D1B2414D2232CD9100E708C1 /* BHPokemon.m */,
-				D1B2414F2232CDAE00E708C1 /* BHAbility.h */,
-				D1B241502232CDAE00E708C1 /* BHAbility.m */,
-				D1B241402232CAEF00E708C1 /* PokemonController.swift */,
+				D1B2415E2232F3B900E708C1 /* ModelController */,
+				D1B2415D2232F3A000E708C1 /* Model */,
 				D1B241592232D2EB00E708C1 /* ViewControllers */,
 				D1B241582232D2DE00E708C1 /* Views */,
 				D1B2412F2232C95200E708C1 /* Main.storyboard */,
@@ -118,6 +108,27 @@
 				D1B241482232CB8200E708C1 /* PokemonDetailViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D1B2415D2232F3A000E708C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1B2414F2232CDAE00E708C1 /* BHAbility.h */,
+				D1B241502232CDAE00E708C1 /* BHAbility.m */,
+				D1B2414C2232CD9100E708C1 /* BHPokemon.h */,
+				D1B2414D2232CD9100E708C1 /* BHPokemon.m */,
+				D1B241522232D1AF00E708C1 /* BHPokemonTemporaryResults.h */,
+				D1B241532232D1AF00E708C1 /* BHPokemonTemporaryResults.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1B2415E2232F3B900E708C1 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				D1B241402232CAEF00E708C1 /* PokemonController.swift */,
+			);
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1B241572232D2D700E708C1 /* BHPokemonTableViewCell.m in Sources */,
-				D1B2415C2232DE4800E708C1 /* BHPokemonTemporaryResults+NSJSONSerializer.m in Sources */,
 				D1B241392232C95400E708C1 /* main.m in Sources */,
 				D1B2412B2232C95200E708C1 /* AppDelegate.m in Sources */,
 				D1B241472232CB6600E708C1 /* BHPokemonTableViewController.m in Sources */,
