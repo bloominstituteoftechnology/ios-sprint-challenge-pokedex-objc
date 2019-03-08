@@ -14,11 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, copy) NSString *name;
 @property (readonly, copy) NSURL *url;
-@property (nullable, copy) NSString *identifier;
-@property (nullable, copy) NSURL *spriteURL;
-@property (nullable, copy) NSArray<NSString *> *abilities;
+@property (readonly, nullable, copy) NSString *identifier;
+@property (readonly, nullable, copy) NSURL *spriteURL;
+@property (readonly, nullable, copy) NSArray<NSString *> *abilities;
+@property (readonly) NSString *abilityString;
 
 - (instancetype _Nullable)initWithDictionary: (NSDictionary<NSString *, NSString *> *)dictionary;
+
+- (void)fillInWithDictionary: (NSDictionary *)dictionary;
 
 @end
 

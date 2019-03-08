@@ -51,7 +51,7 @@
     DRMPokemonDetailViewController *destinationVC = segue.destinationViewController;
     NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
     DRMPokemon *pokemon = self.pokemons[indexPath.row];
-    
+    [PokemonAPI.shared fillInDetailsFor: pokemon];
     destinationVC.pokemon = pokemon;
 }
 

@@ -27,4 +27,34 @@
     return [self initWithName: name andURL: url];
 }
 
+- (void)fillInWithDictionary:(NSDictionary *)dictionary {
+    if (self.identifier != nil) { return; }
+    
+    NSString *identifier = dictionary[@"id"];
+    _identifier = identifier;
+    
+    NSString *spriteURLString = dictionary[@"sprites"][@"front_default"];
+    NSURL *spriteURL = [NSURL URLWithString: spriteURLString];
+    _spriteURL = spriteURL;
+    
+    NSArray *abilityArray = dictionary[@"abilities"];
+    NSMutableArray *abilities = [NSMutableArray array];
+    
+    for (NSDictionary *abilityDictionary in abilityArray) {
+        NSString *ability = abilityDictionary[@"ability"][@"name"];
+        [abilities addObject: ability];
+    }
+    [self willChangeValueForKey:@"abilities"];
+    _abilities = abilities;
+    [self didChangeValueForKey:@"abilities"];
+}
+
+- (NSString *)abilityString {
+    NSString *string = [NSString string];
+    for (NSString *ability in self.abilities) {
+        string = [string stringByAppendingFormat:@"- %@\n", [ability capitalizedString]];
+    }
+    return string;
+}
+
 @end

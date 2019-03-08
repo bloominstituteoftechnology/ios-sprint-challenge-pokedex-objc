@@ -21,6 +21,8 @@
     [super viewDidLoad];
     
     [self updateViews];
+    
+    [self.pokemon addObserver: self forKeyPath: @"abilities" options: 0 context: nil];
 }
 
 - (void)updateViews {
@@ -28,8 +30,20 @@
         self.title = [self.pokemon.name capitalizedString];
         
         self.idLabel.text = [NSString stringWithFormat:@"ID: %@", (self.pokemon.identifier == nil) ? @"" : self.pokemon.identifier];
-        self.abilityLabel.text = [NSString stringWithFormat:@"Abilities:\n%@", self.pokemon.name];
+        self.abilityLabel.text = [NSString stringWithFormat:@"Abilities:\n%@", self.pokemon.abilityString];
+        
+        if (self.pokemon.spriteURL != nil) {
+            NSData *imageData = [NSData dataWithContentsOfURL: self.pokemon.spriteURL];
+            UIImage *image = [UIImage imageWithData: imageData];
+            self.pokemonImageView.image = image;
+        }
     }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [self updateViews];
+    });
 }
 
 @end
