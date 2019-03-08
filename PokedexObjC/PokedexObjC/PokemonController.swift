@@ -15,7 +15,7 @@ class PokemonController: NSObject {
     @objc (getAvailablePokemonWithCompletionBlock:)
     func getAvailablePokemon(completion: @escaping ([BHPokemonTemporaryResults]?, Error?) -> Void){
         
-        let urlString = "\(baseURL.absoluteString)pokemon/"
+        let urlString = "\(baseURL.absoluteString)pokemon/?limit=1000"
         let url = URL(string: urlString)!
         
         URLSession.shared.dataTask(with: url){ (data, _, error) in
