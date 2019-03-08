@@ -15,6 +15,7 @@
 		7B04C7512232D78F007210A1 /* SHPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B04C7502232D78F007210A1 /* SHPokemon.m */; };
 		7B04C7542232D804007210A1 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B04C7532232D804007210A1 /* PokemonAPI.swift */; };
 		7B04C7572232D83B007210A1 /* SHPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B04C7562232D83B007210A1 /* SHPokemonDetailViewController.m */; };
+		7B04C75A2232D8C9007210A1 /* SHPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B04C7592232D8C9007210A1 /* SHPokemonTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		7B04C7532232D804007210A1 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 		7B04C7552232D83B007210A1 /* SHPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHPokemonDetailViewController.h; sourceTree = "<group>"; };
 		7B04C7562232D83B007210A1 /* SHPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHPokemonDetailViewController.m; sourceTree = "<group>"; };
+		7B04C7582232D8C9007210A1 /* SHPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHPokemonTableViewController.h; sourceTree = "<group>"; };
+		7B04C7592232D8C9007210A1 /* SHPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHPokemonTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				7B04C7532232D804007210A1 /* PokemonAPI.swift */,
 				7B04C7552232D83B007210A1 /* SHPokemonDetailViewController.h */,
 				7B04C7562232D83B007210A1 /* SHPokemonDetailViewController.m */,
+				7B04C7582232D8C9007210A1 /* SHPokemonTableViewController.h */,
+				7B04C7592232D8C9007210A1 /* SHPokemonTableViewController.m */,
 				7B04C7422232D6F9007210A1 /* Assets.xcassets */,
 				7B04C7442232D6F9007210A1 /* LaunchScreen.storyboard */,
 				7B04C7472232D6F9007210A1 /* Info.plist */,
@@ -157,6 +162,7 @@
 				7B04C7572232D83B007210A1 /* SHPokemonDetailViewController.m in Sources */,
 				7B04C7542232D804007210A1 /* PokemonAPI.swift in Sources */,
 				7B04C73B2232D6F5007210A1 /* AppDelegate.m in Sources */,
+				7B04C75A2232D8C9007210A1 /* SHPokemonTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
