@@ -15,6 +15,7 @@
 		345DE58D2232CA2C000597BF /* PokedexObjcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DE58C2232CA2C000597BF /* PokedexObjcTests.m */; };
 		345DE5992232CBB6000597BF /* PokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DE5982232CBB6000597BF /* PokedexTableViewController.m */; };
 		345DE59C2232CBCA000597BF /* PokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DE59B2232CBCA000597BF /* PokemonDetailViewController.m */; };
+		345DE59F2232CC77000597BF /* DRMPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DE59E2232CC77000597BF /* DRMPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		345DE5982232CBB6000597BF /* PokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokedexTableViewController.m; sourceTree = "<group>"; };
 		345DE59A2232CBCA000597BF /* PokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonDetailViewController.h; sourceTree = "<group>"; };
 		345DE59B2232CBCA000597BF /* PokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
+		345DE59D2232CC77000597BF /* DRMPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRMPokemon.h; sourceTree = "<group>"; };
+		345DE59E2232CC77000597BF /* DRMPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRMPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				345DE5982232CBB6000597BF /* PokedexTableViewController.m */,
 				345DE59A2232CBCA000597BF /* PokemonDetailViewController.h */,
 				345DE59B2232CBCA000597BF /* PokemonDetailViewController.m */,
+				345DE59D2232CC77000597BF /* DRMPokemon.h */,
+				345DE59E2232CC77000597BF /* DRMPokemon.m */,
 				345DE57C2232CA2C000597BF /* Assets.xcassets */,
 				345DE57E2232CA2C000597BF /* LaunchScreen.storyboard */,
 				345DE5812232CA2C000597BF /* Info.plist */,
@@ -211,6 +216,7 @@
 				345DE5832232CA2C000597BF /* main.m in Sources */,
 				345DE5992232CBB6000597BF /* PokedexTableViewController.m in Sources */,
 				345DE5752232CA2B000597BF /* AppDelegate.m in Sources */,
+				345DE59F2232CC77000597BF /* DRMPokemon.m in Sources */,
 				345DE59C2232CBCA000597BF /* PokemonDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
