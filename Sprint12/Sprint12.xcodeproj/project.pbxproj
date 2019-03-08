@@ -17,6 +17,8 @@
 		A577FE482232CEE9000FC4A1 /* OSIPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A577FE472232CEE9000FC4A1 /* OSIPokemonTableViewController.m */; };
 		A577FE4C2232CF44000FC4A1 /* OSIPokemonDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A577FE4B2232CF44000FC4A1 /* OSIPokemonDetailsViewController.m */; };
 		A577FE4F2232CFB9000FC4A1 /* OSIAbility.m in Sources */ = {isa = PBXBuildFile; fileRef = A577FE4E2232CFB9000FC4A1 /* OSIAbility.m */; };
+		A577FE522232D074000FC4A1 /* OSIPokemonName.m in Sources */ = {isa = PBXBuildFile; fileRef = A577FE512232D074000FC4A1 /* OSIPokemonName.m */; };
+		A577FE552232D180000FC4A1 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577FE542232D180000FC4A1 /* NetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,10 @@
 		A577FE4B2232CF44000FC4A1 /* OSIPokemonDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSIPokemonDetailsViewController.m; sourceTree = "<group>"; };
 		A577FE4D2232CFB9000FC4A1 /* OSIAbility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSIAbility.h; sourceTree = "<group>"; };
 		A577FE4E2232CFB9000FC4A1 /* OSIAbility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSIAbility.m; sourceTree = "<group>"; };
+		A577FE502232D074000FC4A1 /* OSIPokemonName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSIPokemonName.h; sourceTree = "<group>"; };
+		A577FE512232D074000FC4A1 /* OSIPokemonName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSIPokemonName.m; sourceTree = "<group>"; };
+		A577FE532232D17F000FC4A1 /* Sprint12-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sprint12-Bridging-Header.h"; sourceTree = "<group>"; };
+		A577FE542232D180000FC4A1 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +80,13 @@
 				A577FE292232CCAA000FC4A1 /* AppDelegate.m */,
 				A577FE412232CDC9000FC4A1 /* Model */,
 				A577FE452232CEA2000FC4A1 /* Model Controller */,
-				A577FE2E2232CCAA000FC4A1 /* Main.storyboard */,
 				A577FE492232CEEE000FC4A1 /* View Controller */,
+				A577FE2E2232CCAA000FC4A1 /* Main.storyboard */,
 				A577FE312232CCAC000FC4A1 /* Assets.xcassets */,
 				A577FE332232CCAC000FC4A1 /* LaunchScreen.storyboard */,
 				A577FE362232CCAC000FC4A1 /* Info.plist */,
 				A577FE372232CCAC000FC4A1 /* main.m */,
+				A577FE532232D17F000FC4A1 /* Sprint12-Bridging-Header.h */,
 			);
 			path = Sprint12;
 			sourceTree = "<group>";
@@ -87,10 +94,12 @@
 		A577FE412232CDC9000FC4A1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A577FE3E2232CDC5000FC4A1 /* OSIPokemon.h */,
-				A577FE3F2232CDC5000FC4A1 /* OSIPokemon.m */,
 				A577FE4D2232CFB9000FC4A1 /* OSIAbility.h */,
 				A577FE4E2232CFB9000FC4A1 /* OSIAbility.m */,
+				A577FE3E2232CDC5000FC4A1 /* OSIPokemon.h */,
+				A577FE3F2232CDC5000FC4A1 /* OSIPokemon.m */,
+				A577FE502232D074000FC4A1 /* OSIPokemonName.h */,
+				A577FE512232D074000FC4A1 /* OSIPokemonName.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +107,7 @@
 		A577FE452232CEA2000FC4A1 /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A577FE542232D180000FC4A1 /* NetworkController.swift */,
 				A577FE422232CE9C000FC4A1 /* OSIPokemonController.h */,
 				A577FE432232CE9C000FC4A1 /* OSIPokemonController.m */,
 			);
@@ -146,6 +156,7 @@
 				TargetAttributes = {
 					A577FE242232CCAA000FC4A1 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -185,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A577FE522232D074000FC4A1 /* OSIPokemonName.m in Sources */,
 				A577FE402232CDC5000FC4A1 /* OSIPokemon.m in Sources */,
 				A577FE442232CE9C000FC4A1 /* OSIPokemonController.m in Sources */,
 				A577FE382232CCAC000FC4A1 /* main.m in Sources */,
@@ -192,6 +204,7 @@
 				A577FE2A2232CCAA000FC4A1 /* AppDelegate.m in Sources */,
 				A577FE482232CEE9000FC4A1 /* OSIPokemonTableViewController.m in Sources */,
 				A577FE4F2232CFB9000FC4A1 /* OSIAbility.m in Sources */,
+				A577FE552232D180000FC4A1 /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KF4QEGAU36;
 				INFOPLIST_FILE = Sprint12/Info.plist;
@@ -342,6 +356,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Sergey.Sprint12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sprint12/Sprint12-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -350,6 +367,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KF4QEGAU36;
 				INFOPLIST_FILE = Sprint12/Info.plist;
@@ -359,6 +377,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Sergey.Sprint12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sprint12/Sprint12-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

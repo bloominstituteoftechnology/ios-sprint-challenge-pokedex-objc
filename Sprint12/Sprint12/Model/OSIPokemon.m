@@ -24,18 +24,19 @@
         NSString *name = dict[@"name"];
         CheckClass(name, NSString)
         
-        NSDictionary *speciesInfo = dict[@"species"];
-        CheckClass(speciesInfo, NSDictionary);
-        NSString *speciesName = speciesInfo[@"name"];
-        CheckClass(speciesName, NSString);
+        NSNumber *identifier = dict[@"id"];
+        CheckClass(identifier, NSNumber)
         
+        _identifier = identifier;
         _name = name;
-        _speciesName = speciesName;
-        
-        NSArray *moveInfo = dict[@"moves"];
-        NSArray *names = [moveInfo valueForKeyPath:@"move.name"];
-        _moves = names;
-        
+   
+        NSDictionary *spritesInfo = dict[@"sprites"];
+        CheckClass(spritesInfo, NSDictionary);
+        NSString *spritesURL = spritesInfo[@"front_default"];
+      // if (spritesURL == nil) {
+        CheckClass(spritesURL, NSString);
+        _imageURL = spritesURL;
+      
         NSMutableArray *abilities = [NSMutableArray array];
         NSArray *abilityDefs = dict[@"abilities"];
         for (NSDictionary *def in abilityDefs) {
@@ -49,6 +50,27 @@
     return self;
 }
 
-@end
+
+
+
+
+- (instancetype)initWithURL:(NSURL *)url {
+    self = [super init];
+    if (self) {
+        _url = url;
+    }
+    return self;
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+
+    NSString *name = dictionary[@"name"];
+    NSString *urlString = dictionary[@"url"];
+    NSURL *url = [NSURL URLWithString:urlString];
+
+    return [self initWithName:name url:url];
+}
+
 
 @end
+

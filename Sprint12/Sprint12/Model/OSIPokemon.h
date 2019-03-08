@@ -15,15 +15,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface OSIPokemon : NSObject
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSString *speciesName;
-@property (nonatomic, readonly) NSArray<OSIAbility *> *abilities;
-@property NSURL *imageURL;
-@property (nonatomic, copy, readonly) NSURL *url;
-@property (readwrite, nullable) NSString *identifier;
-@property (nonatomic, readonly) NSArray<NSString *> *moves;
+@property (nonatomic, nullable) NSString *name;
+@property (nonatomic, nullable) NSArray<OSIAbility *> *abilities;
+@property (nonatomic, nullable) NSString *imageURL;
+@property (nonatomic, copy, nullable) NSURL *url;
+@property (readwrite, nullable) NSNumber *identifier;
 
 - (instancetype)initWithJSON:(id)json;
+
+
+
+
+
+
+- (instancetype)initWithName:(NSString *)name url:(NSURL *)url;
+
+-(nullable instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
 
 @end
 

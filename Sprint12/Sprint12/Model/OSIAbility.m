@@ -15,7 +15,6 @@
     
     self = [super init];
     if (self) {
-        _hidden = [[json objectForKey:@"is_hidden"] boolValue];
         _name = [json valueForKeyPath:@"ability.name"];
     }
     return self;
