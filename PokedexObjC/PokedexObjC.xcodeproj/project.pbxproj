@@ -15,6 +15,7 @@
 		A2FD3D522232CD4E00A2AED7 /* ABCPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FD3D512232CD4E00A2AED7 /* ABCPokemon.m */; };
 		A2FD3D582232D29600A2AED7 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FD3D572232D29600A2AED7 /* PokemonController.swift */; };
 		A2FD3D5E2232DFDB00A2AED7 /* ABCPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FD3D5D2232DFDB00A2AED7 /* ABCPokemonTableViewController.m */; };
+		A2FD3D612232E5E300A2AED7 /* ABCPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FD3D602232E5E300A2AED7 /* ABCPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		A2FD3D572232D29600A2AED7 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 		A2FD3D5C2232DFDB00A2AED7 /* ABCPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCPokemonTableViewController.h; sourceTree = "<group>"; };
 		A2FD3D5D2232DFDB00A2AED7 /* ABCPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCPokemonTableViewController.m; sourceTree = "<group>"; };
+		A2FD3D5F2232E5E300A2AED7 /* ABCPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCPokemonDetailViewController.h; sourceTree = "<group>"; };
+		A2FD3D602232E5E300A2AED7 /* ABCPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 				A2FD3D3B2232CC1900A2AED7 /* AppDelegate.m */,
 				A2FD3D5C2232DFDB00A2AED7 /* ABCPokemonTableViewController.h */,
 				A2FD3D5D2232DFDB00A2AED7 /* ABCPokemonTableViewController.m */,
+				A2FD3D5F2232E5E300A2AED7 /* ABCPokemonDetailViewController.h */,
+				A2FD3D602232E5E300A2AED7 /* ABCPokemonDetailViewController.m */,
 				A2FD3D402232CC1900A2AED7 /* Main.storyboard */,
 				A2FD3D572232D29600A2AED7 /* PokemonController.swift */,
 				A2FD3D502232CD4E00A2AED7 /* ABCPokemon.h */,
@@ -156,6 +161,7 @@
 				A2FD3D4A2232CC1900A2AED7 /* main.m in Sources */,
 				A2FD3D5E2232DFDB00A2AED7 /* ABCPokemonTableViewController.m in Sources */,
 				A2FD3D3C2232CC1900A2AED7 /* AppDelegate.m in Sources */,
+				A2FD3D612232E5E300A2AED7 /* ABCPokemonDetailViewController.m in Sources */,
 				A2FD3D582232D29600A2AED7 /* PokemonController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
