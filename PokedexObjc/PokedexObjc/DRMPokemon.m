@@ -12,7 +12,7 @@
 
 - (instancetype)initWithName: (NSString *)name andURL: (NSURL *)url {
     self = [super init];
-    if (self != nil) {
+    if (self != nil && name != nil && url != nil) {
         _name = name;
         _url = url;
     }

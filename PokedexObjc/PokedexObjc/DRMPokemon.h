@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, copy) NSURL *spriteURL;
 @property (nullable, copy) NSArray<NSString *> *abilities;
 
-- (instancetype)initWithDictionary: (NSDictionary<NSString *, NSString *> *)dictionary;
+- (instancetype _Nullable)initWithDictionary: (NSDictionary<NSString *, NSString *> *)dictionary;
 
 @end
 

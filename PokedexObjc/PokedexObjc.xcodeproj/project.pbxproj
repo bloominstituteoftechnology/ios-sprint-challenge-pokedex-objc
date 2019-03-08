@@ -16,6 +16,7 @@
 		345DE5992232CBB6000597BF /* PokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DE5982232CBB6000597BF /* PokedexTableViewController.m */; };
 		345DE59C2232CBCA000597BF /* PokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DE59B2232CBCA000597BF /* PokemonDetailViewController.m */; };
 		345DE59F2232CC77000597BF /* DRMPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DE59E2232CC77000597BF /* DRMPokemon.m */; };
+		345DE5A22232CF24000597BF /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345DE5A12232CF24000597BF /* PokemonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		345DE59B2232CBCA000597BF /* PokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
 		345DE59D2232CC77000597BF /* DRMPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRMPokemon.h; sourceTree = "<group>"; };
 		345DE59E2232CC77000597BF /* DRMPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRMPokemon.m; sourceTree = "<group>"; };
+		345DE5A02232CF24000597BF /* PokedexObjc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokedexObjc-Bridging-Header.h"; sourceTree = "<group>"; };
+		345DE5A12232CF24000597BF /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +99,12 @@
 				345DE59B2232CBCA000597BF /* PokemonDetailViewController.m */,
 				345DE59D2232CC77000597BF /* DRMPokemon.h */,
 				345DE59E2232CC77000597BF /* DRMPokemon.m */,
+				345DE5A12232CF24000597BF /* PokemonAPI.swift */,
 				345DE57C2232CA2C000597BF /* Assets.xcassets */,
 				345DE57E2232CA2C000597BF /* LaunchScreen.storyboard */,
 				345DE5812232CA2C000597BF /* Info.plist */,
 				345DE5822232CA2C000597BF /* main.m */,
+				345DE5A02232CF24000597BF /* PokedexObjc-Bridging-Header.h */,
 			);
 			path = PokedexObjc;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				TargetAttributes = {
 					345DE56F2232CA2B000597BF = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					345DE5872232CA2C000597BF = {
 						CreatedOnToolsVersion = 10.1;
@@ -215,6 +221,7 @@
 			files = (
 				345DE5832232CA2C000597BF /* main.m in Sources */,
 				345DE5992232CBB6000597BF /* PokedexTableViewController.m in Sources */,
+				345DE5A22232CF24000597BF /* PokemonAPI.swift in Sources */,
 				345DE5752232CA2B000597BF /* AppDelegate.m in Sources */,
 				345DE59F2232CC77000597BF /* DRMPokemon.m in Sources */,
 				345DE59C2232CBCA000597BF /* PokemonDetailViewController.m in Sources */,
@@ -375,6 +382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
 				INFOPLIST_FILE = PokedexObjc/Info.plist;
@@ -384,6 +392,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dillonmcelhinney.PokedexObjc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokedexObjc/PokedexObjc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -392,6 +403,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
 				INFOPLIST_FILE = PokedexObjc/Info.plist;
@@ -401,6 +413,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dillonmcelhinney.PokedexObjc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokedexObjc/PokedexObjc-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -408,6 +422,7 @@
 		345DE5952232CA2C000597BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
@@ -427,6 +442,7 @@
 		345DE5962232CA2C000597BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
