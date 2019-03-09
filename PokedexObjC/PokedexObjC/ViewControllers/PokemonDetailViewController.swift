@@ -12,29 +12,35 @@ class PokemonDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        observation = objectToObserve.observe(\.images, options: [.old, .new], changeHandler: { object, change in
+            print("myDate changed from: \(String(describing: change.oldValue!)), updated to: \(String(describing: change.newValue!))")
+        })
 
-        // Do any additional setup after loading the view.
-        guard let pokemonName = pokemonName else { fatalError("No pokemon sent to detail View Controller")}
-        guard let pokemonController = pokemonController else { fatalError("No pokemonController sent to detail View Controller")}
-        
-        pokemonController.getPokemon(name: pokemonName) { (pokemon, error) in
-            
-            self.pokemon = pokemon
-            
+        updateViews()
+    }
+    
+    // MARK: - Key-Value Observing
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "objectToObserve" {
+            // Update Time Label
+            print("Yay!")
         }
-        
     }
     
     // MARK: Private Methods
     
     func updateViews(){
-        guard let pokemon = pokemon else { return }
+        
+        guard let pokemon = objectToObserve else { return }
         DispatchQueue.main.async {
             self.nameLabel.text = pokemon.name
             self.speciesLabel.text = pokemon.speciesName
             self.idLabel.text = pokemon.identifier
             
-            let imageURL = pokemon.images[self.segmentedControl.selectedSegmentIndex]
+            guard let images = pokemon.images else { return }
+            let imageURL = images[self.segmentedControl.selectedSegmentIndex]
             do {
                 let data = try Data(contentsOf: imageURL)
                 self.imageView.image = UIImage(data: data)
@@ -57,11 +63,12 @@ class PokemonDetailViewController: UIViewController {
     
     @IBAction func didTapSegmentedControl(_ sender: UISegmentedControl) {
         updateViews()
+        
     }
     
     
-    // MARK: Properties
     
+    // MARK: Properties
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var nameLabel: UILabel!
@@ -69,9 +76,10 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var abilitiesTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
-    @objc var pokemonName: String?
-    @objc var pokemonController: PokemonController?
-    var pokemon: BHPokemon? {
+   
+    @objc var pokemonAPI: PokemonAPI?
+    private var observation: NSKeyValueObservation?
+    @objc dynamic var objectToObserve: BHPokemon! {
         didSet {
             updateViews()
         }

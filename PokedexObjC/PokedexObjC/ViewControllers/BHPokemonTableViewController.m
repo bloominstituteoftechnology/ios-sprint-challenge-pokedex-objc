@@ -12,7 +12,7 @@
 
 @interface BHPokemonTableViewController ()
 
-@property PokemonController *pokemonController;
+@property PokemonAPI *pokemonController;
 
 @end
 
@@ -21,8 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _pokemonController = [PokemonController shared];
-    [_pokemonController getAvailablePokemonWithCompletionBlock:^(NSArray<BHPokemonTemporaryResults*> *tempResults, NSError *error) {
+    _pokemonController = [PokemonAPI sharedController];
+    [_pokemonController fetchAllPokemonWithCompletionBlock:^(NSArray<BHPokemon*> * _Nullable results , NSError * _Nullable error) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -43,6 +43,7 @@
     
     cell.textLabel.text = [_pokemonController.results[indexPath.row] name];
     
+    
     return cell;
 }
 
@@ -52,11 +53,18 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    BHPokemonTableViewCell *cell = sender;
-    PokemonDetailViewController *destVC = [segue destinationViewController];
     
-    destVC.pokemonName = [[cell textLabel] text];
-    destVC.pokemonController = [self pokemonController];
+    
+    PokemonDetailViewController *destVC = [segue destinationViewController];
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    [_pokemonController fillInDetailsFor: _pokemonController.results[indexPath.row]];
+    
+    destVC.objectToObserve = _pokemonController.results[indexPath.row];
+    destVC.pokemonAPI = [self pokemonController];
+    
+    
+    
     
 }
 

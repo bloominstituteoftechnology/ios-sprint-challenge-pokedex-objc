@@ -1,5 +1,5 @@
 //
-//  PokemonController.swift
+//  PokemonAPI.swift
 //  PokedexObjC
 //
 //  Created by Benjamin Hakes on 3/8/19.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-class PokemonController: NSObject {
+@objc class PokemonAPI: NSObject {
     
-    @objc(shared) static let shared = PokemonController()
+    @objc(sharedController) static let shared = PokemonAPI()
     
-    @objc (getAvailablePokemonWithCompletionBlock:)
-    func getAvailablePokemon(completion: @escaping ([BHPokemonTemporaryResults]?, Error?) -> Void){
+    @objc (fetchAllPokemonWithCompletionBlock:)
+    func fetchAllPokemon(completion: @escaping ([BHPokemon]?, Error?) -> Void){
         
         let urlString = "\(baseURL.absoluteString)pokemon/?limit=1000"
         let url = URL(string: urlString)!
@@ -40,7 +40,7 @@ class PokemonController: NSObject {
 
                 for pokemonTempResultsDict in pokemonDictionaries {
                     
-                    let tempPokemon: BHPokemonTemporaryResults = BHPokemonTemporaryResults(json: pokemonTempResultsDict)
+                    let tempPokemon: BHPokemon = BHPokemon(json: pokemonTempResultsDict)
                     self.results.append(tempPokemon)
                 }
                 
@@ -55,21 +55,20 @@ class PokemonController: NSObject {
         
     }
     
-    @objc (getPokemonWithName:CompletionBlock:)
-    func getPokemon(name:String, completion: @escaping (BHPokemon?, Error?) -> Void){
+    @objc func fillInDetails(for pokemon:BHPokemon){
         
-        let urlString = "\(baseURL.absoluteString)pokemon/\(name)"
+        let urlString = "\(pokemon.moreInfoURLString)"
         let url = URL(string: urlString)!
         
         URLSession.shared.dataTask(with: url){ (data, _, error) in
             
             if let error = error {
-                completion(nil, error)
+                NSLog("Error: \(error)")
                 return
             }
             
             guard let data = data else {
-                return completion(nil, NSError())
+                return
             }
             
             
@@ -79,12 +78,16 @@ class PokemonController: NSObject {
                     throw NSError()
                     
                 }
-                let pokemon = BHPokemon(json: dictionary)
                 
-                completion(pokemon, nil)
+                let updatedPokemon = pokemon.update(withJSON: dictionary)
                 
+                guard let id = updatedPokemon.identifier else { fatalError("no identifier associated with pokemon") }
+                let index = Int(id)! - 1
+
+                self.results[index] = updatedPokemon
+
             } catch {
-                completion(nil, error)
+                
                 return
             }
             
@@ -94,7 +97,7 @@ class PokemonController: NSObject {
     
     
     // MARK: - Properties
-    @objc var results: [BHPokemonTemporaryResults] = []
+    @objc dynamic var results: [BHPokemon] = []
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/")!
 }
 

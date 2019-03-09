@@ -14,9 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BHPokemonTableViewCell : UITableViewCell
 
-
-@property BHPokemonTemporaryResults *pokemonTemporaryResult;
-
+@property BHPokemon *pokemon;
 
 @end
 
