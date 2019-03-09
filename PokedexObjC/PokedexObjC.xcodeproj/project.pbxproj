@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D1393DCF223447F5001D8B91 /* BHPokemonDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1393DCE223447F5001D8B91 /* BHPokemonDetailedViewController.m */; };
 		D1B2412B2232C95200E708C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2412A2232C95200E708C1 /* AppDelegate.m */; };
 		D1B241312232C95200E708C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1B2412F2232C95200E708C1 /* Main.storyboard */; };
 		D1B241332232C95400E708C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B241322232C95400E708C1 /* Assets.xcassets */; };
@@ -14,14 +15,13 @@
 		D1B241392232C95400E708C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B241382232C95400E708C1 /* main.m */; };
 		D1B241412232CAEF00E708C1 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B241402232CAEF00E708C1 /* PokemonAPI.swift */; };
 		D1B241472232CB6600E708C1 /* BHPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B241462232CB6600E708C1 /* BHPokemonTableViewController.m */; };
-		D1B241492232CB8200E708C1 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B241482232CB8200E708C1 /* PokemonDetailViewController.swift */; };
 		D1B2414E2232CD9100E708C1 /* BHPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2414D2232CD9100E708C1 /* BHPokemon.m */; };
 		D1B241512232CDAE00E708C1 /* BHAbility.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B241502232CDAE00E708C1 /* BHAbility.m */; };
-		D1B241542232D1AF00E708C1 /* BHPokemonTemporaryResults.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B241532232D1AF00E708C1 /* BHPokemonTemporaryResults.m */; };
-		D1B241572232D2D700E708C1 /* BHPokemonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B241562232D2D700E708C1 /* BHPokemonTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D1393DCD223447F5001D8B91 /* BHPokemonDetailedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHPokemonDetailedViewController.h; sourceTree = "<group>"; };
+		D1393DCE223447F5001D8B91 /* BHPokemonDetailedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHPokemonDetailedViewController.m; sourceTree = "<group>"; };
 		D1B241262232C95200E708C1 /* PokedexObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokedexObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B241292232C95200E708C1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D1B2412A2232C95200E708C1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -34,15 +34,10 @@
 		D1B241402232CAEF00E708C1 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 		D1B241452232CB6600E708C1 /* BHPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHPokemonTableViewController.h; sourceTree = "<group>"; };
 		D1B241462232CB6600E708C1 /* BHPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHPokemonTableViewController.m; sourceTree = "<group>"; };
-		D1B241482232CB8200E708C1 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		D1B2414C2232CD9100E708C1 /* BHPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHPokemon.h; sourceTree = "<group>"; };
 		D1B2414D2232CD9100E708C1 /* BHPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHPokemon.m; sourceTree = "<group>"; };
 		D1B2414F2232CDAE00E708C1 /* BHAbility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHAbility.h; sourceTree = "<group>"; };
 		D1B241502232CDAE00E708C1 /* BHAbility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHAbility.m; sourceTree = "<group>"; };
-		D1B241522232D1AF00E708C1 /* BHPokemonTemporaryResults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHPokemonTemporaryResults.h; sourceTree = "<group>"; };
-		D1B241532232D1AF00E708C1 /* BHPokemonTemporaryResults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHPokemonTemporaryResults.m; sourceTree = "<group>"; };
-		D1B241552232D2D700E708C1 /* BHPokemonTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHPokemonTableViewCell.h; sourceTree = "<group>"; };
-		D1B241562232D2D700E708C1 /* BHPokemonTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHPokemonTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +75,6 @@
 				D1B2415E2232F3B900E708C1 /* ModelController */,
 				D1B2415D2232F3A000E708C1 /* Model */,
 				D1B241592232D2EB00E708C1 /* ViewControllers */,
-				D1B241582232D2DE00E708C1 /* Views */,
 				D1B2412F2232C95200E708C1 /* Main.storyboard */,
 				D1B241322232C95400E708C1 /* Assets.xcassets */,
 				D1B241342232C95400E708C1 /* LaunchScreen.storyboard */,
@@ -91,21 +85,13 @@
 			path = PokedexObjC;
 			sourceTree = "<group>";
 		};
-		D1B241582232D2DE00E708C1 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				D1B241552232D2D700E708C1 /* BHPokemonTableViewCell.h */,
-				D1B241562232D2D700E708C1 /* BHPokemonTableViewCell.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		D1B241592232D2EB00E708C1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				D1B241452232CB6600E708C1 /* BHPokemonTableViewController.h */,
 				D1B241462232CB6600E708C1 /* BHPokemonTableViewController.m */,
-				D1B241482232CB8200E708C1 /* PokemonDetailViewController.swift */,
+				D1393DCD223447F5001D8B91 /* BHPokemonDetailedViewController.h */,
+				D1393DCE223447F5001D8B91 /* BHPokemonDetailedViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -117,8 +103,6 @@
 				D1B241502232CDAE00E708C1 /* BHAbility.m */,
 				D1B2414C2232CD9100E708C1 /* BHPokemon.h */,
 				D1B2414D2232CD9100E708C1 /* BHPokemon.m */,
-				D1B241522232D1AF00E708C1 /* BHPokemonTemporaryResults.h */,
-				D1B241532232D1AF00E708C1 /* BHPokemonTemporaryResults.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,15 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1B241572232D2D700E708C1 /* BHPokemonTableViewCell.m in Sources */,
 				D1B241392232C95400E708C1 /* main.m in Sources */,
+				D1393DCF223447F5001D8B91 /* BHPokemonDetailedViewController.m in Sources */,
 				D1B2412B2232C95200E708C1 /* AppDelegate.m in Sources */,
 				D1B241472232CB6600E708C1 /* BHPokemonTableViewController.m in Sources */,
 				D1B241412232CAEF00E708C1 /* PokemonAPI.swift in Sources */,
-				D1B241492232CB8200E708C1 /* PokemonDetailViewController.swift in Sources */,
 				D1B241512232CDAE00E708C1 /* BHAbility.m in Sources */,
 				D1B2414E2232CD9100E708C1 /* BHPokemon.m in Sources */,
-				D1B241542232D1AF00E708C1 /* BHPokemonTemporaryResults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -86,6 +86,7 @@ import Foundation
 
                 self.results[index] = updatedPokemon
 
+
             } catch {
                 
                 return

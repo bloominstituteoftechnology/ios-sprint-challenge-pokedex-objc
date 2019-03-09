@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "BHPokemon.h"
-#import "BHPokemonTemporaryResults.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

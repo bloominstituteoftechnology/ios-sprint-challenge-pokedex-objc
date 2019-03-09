@@ -4,4 +4,3 @@
 
 #import "BHPokemon.h"
 #import "BHAbility.h"
-#import "BHPokemonTemporaryResults.h"

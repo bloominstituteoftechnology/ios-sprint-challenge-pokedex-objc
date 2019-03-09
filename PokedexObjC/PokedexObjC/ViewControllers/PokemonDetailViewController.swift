@@ -13,22 +13,25 @@ class PokemonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        observation = objectToObserve.observe(\.images, options: [.old, .new], changeHandler: { object, change in
-            print("myDate changed from: \(String(describing: change.oldValue!)), updated to: \(String(describing: change.newValue!))")
-        })
-
-        updateViews()
-    }
-    
-    // MARK: - Key-Value Observing
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "objectToObserve" {
-            // Update Time Label
-            print("Yay!")
+        guard let objectToObserve = objectToObserve else {fatalError(" No object to observe")}
+        observation = objectToObserve.observe(\.speciesName) {object,change in
+            print("Object Change Observed:\(object):\(change)")
+            self.updateViews()
         }
+        
+        guard let pokemonAPI = pokemonAPI else { fatalError("No pokemonAPI exists.")}
+        
+        pokemonAPI.fillInDetails(for: objectToObserve)
+        
+        self.updateViews()
+        
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        observation?.invalidate()
+    }
+
     // MARK: Private Methods
     
     func updateViews(){
@@ -40,7 +43,14 @@ class PokemonDetailViewController: UIViewController {
             self.idLabel.text = pokemon.identifier
             
             guard let images = pokemon.images else { return }
-            let imageURL = images[self.segmentedControl.selectedSegmentIndex]
+            
+            var imageIndex = self.segmentedControl.selectedSegmentIndex
+            if imageIndex == 0 {
+                imageIndex = 1
+            } else {
+                imageIndex = 0
+            }
+            let imageURL = images[imageIndex]
             do {
                 let data = try Data(contentsOf: imageURL)
                 self.imageView.image = UIImage(data: data)
@@ -66,8 +76,7 @@ class PokemonDetailViewController: UIViewController {
         
     }
     
-    
-    
+
     // MARK: Properties
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -78,11 +87,7 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
    
     @objc var pokemonAPI: PokemonAPI?
-    private var observation: NSKeyValueObservation?
-    @objc dynamic var objectToObserve: BHPokemon! {
-        didSet {
-            updateViews()
-        }
-    }
+    @objc dynamic var observation: NSKeyValueObservation?
+    @objc dynamic var objectToObserve: BHPokemon?
 
 }

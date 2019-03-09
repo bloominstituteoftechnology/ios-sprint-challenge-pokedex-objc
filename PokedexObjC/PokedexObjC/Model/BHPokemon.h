@@ -23,6 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, nullable) NSArray<NSURL *> *images;
 @property (nonatomic, readonly) NSString *moreInfoURLString;
 
+
+
+
 -(instancetype)initWithJSON:(id)json;
 -(BHPokemon*)updateWithJSON:(id)json;
 

@@ -7,7 +7,7 @@
 //
 
 #import "BHPokemonTableViewController.h"
-#import "BHPokemonTableViewCell.h"
+#import "BHPokemonDetailedViewController.h"
 #import "PokedexObjC-Swift.h"
 
 @interface BHPokemonTableViewController ()
@@ -39,7 +39,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BHPokemonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
     cell.textLabel.text = [_pokemonController.results[indexPath.row] name];
     
@@ -51,21 +51,14 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
     
-    
-    PokemonDetailViewController *destVC = [segue destinationViewController];
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
-    [_pokemonController fillInDetailsFor: _pokemonController.results[indexPath.row]];
-    
+    BHPokemonDetailedViewController *destVC = [segue destinationViewController];
     destVC.objectToObserve = _pokemonController.results[indexPath.row];
     destVC.pokemonAPI = [self pokemonController];
     
-    
-    
-    
 }
+
 
 @end
