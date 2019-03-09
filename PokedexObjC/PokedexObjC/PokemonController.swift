@@ -9,10 +9,15 @@
 import UIKit
 
 @objc
-class PokemonController: NSObject, Decodable {
+class PokemonController: NSObject {
+    
+
+    @objc
+    var pokemon: ABCPokemon?
     
     @objc
     static let shared = PokemonController()
+    
     
     @objc
     func fetchAllPokemon(completion: @escaping (_ pokemon: [ABCPokemon]?, _ error: Error?) -> Void) {
@@ -49,7 +54,7 @@ class PokemonController: NSObject, Decodable {
     }
     
     @objc
-    func fillInDetails(for pokemon: ABCPokemon) {
+    func fillInDetails(for pokemon: ABCPokemon, from viewController: UIViewController) {
         let requestURL = URL(string: pokemon.url)
         
         URLSession.shared.dataTask(with: requestURL!) { (data, _, error) in
@@ -63,8 +68,10 @@ class PokemonController: NSObject, Decodable {
             }
             do {
                 let pokemonDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+                pokemon.addObserver(viewController, forKeyPath: "idNumber", options: [], context: nil)
                 pokemon.fillInDetails(with: pokemonDictionary as! [AnyHashable : Any])
-                
+                let existingIDNumber = pokemon.idNumber
+                pokemon.idNumber = existingIDNumber
             } catch {
                 NSLog("Error decoding JSON: \(error)")
                 return

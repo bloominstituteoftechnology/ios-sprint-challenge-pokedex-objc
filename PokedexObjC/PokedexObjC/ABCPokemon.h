@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ABCPokemonAbility.h"
+#import "ABCPokemonSprite.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSString *name;
 @property NSString *url;
-@property NSString *idNumber;
+@property NSNumber *idNumber;
 @property NSArray *abililties;
 @property NSString *sprite;
 

@@ -19,20 +19,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self startMonitoringPokemon:_pokemon];
     _pokemonController = [[PokemonController alloc] init];
-    [_pokemonController fillInDetailsFor:_pokemon];
-    [self updateViews];
+    [_pokemonController fillInDetailsFor:_pokemon from:self];
     
 }
 
 - (void)updateViews {
     _pokemonNameLabel.text = [_pokemon.name capitalizedString];
-    _pokemonIDLabel.text = _pokemon.idNumber;
+    _pokemonIDLabel.text = [_pokemon.idNumber stringValue];
     _pokemonAbilitiesLabel.text = @"Abilities:";
-    _pokemonFirstAbilityLabel.text = _pokemon.abililties[0];
-    _pokemonSecondAbilityLabel.text = _pokemon.abililties[1];
-    _pokemonThirdAbilityLabel.text = _pokemon.abililties[2];
+    switch (_pokemon.abililties.count) {
+        case 0:
+            break;
+        case 1:
+            _pokemonFirstAbilityLabel.text = _pokemon.abililties[0];
+            break;
+        case 2:
+            _pokemonFirstAbilityLabel.text = _pokemon.abililties[0];
+            _pokemonSecondAbilityLabel.text = _pokemon.abililties[1];
+            break;
+        case 3:
+            _pokemonFirstAbilityLabel.text = _pokemon.abililties[0];
+            _pokemonSecondAbilityLabel.text = _pokemon.abililties[1];
+            _pokemonThirdAbilityLabel.text = _pokemon.abililties[2];
+            break;
+    }
     NSURL *url = [NSURL URLWithString:_pokemon.sprite];
     NSData *data = [NSData dataWithContentsOfURL:url];
     _pokemonSpriteImageView.image = [UIImage imageWithData:data];
@@ -41,10 +52,8 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     NSLog(@"Value changed.");
-    [self updateViews];
-}
-
-- (void)startMonitoringPokemon: (ABCPokemon *)pokemon {
-    [pokemon addObserver:self forKeyPath:@"abilities" options:0 context:NULL];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self updateViews];
+    });
 }
 @end

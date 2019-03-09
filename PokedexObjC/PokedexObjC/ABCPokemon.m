@@ -7,6 +7,9 @@
 //
 
 #import "ABCPokemon.h"
+#import "ABCPokemonSprite.h"
+#import "ABCPokemonAbility.h"
+
 
 @implementation ABCPokemon
 

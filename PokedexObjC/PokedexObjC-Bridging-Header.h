@@ -4,3 +4,4 @@
 
 
 #import "ABCPokemon.h"
+#import "ABCPokemonDetailViewController.h"

@@ -16,6 +16,8 @@
 		A2FD3D582232D29600A2AED7 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FD3D572232D29600A2AED7 /* PokemonController.swift */; };
 		A2FD3D5E2232DFDB00A2AED7 /* ABCPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FD3D5D2232DFDB00A2AED7 /* ABCPokemonTableViewController.m */; };
 		A2FD3D612232E5E300A2AED7 /* ABCPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FD3D602232E5E300A2AED7 /* ABCPokemonDetailViewController.m */; };
+		A2FD3D642233347200A2AED7 /* ABCPokemonAbility.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FD3D632233347200A2AED7 /* ABCPokemonAbility.m */; };
+		A2FD3D672233347D00A2AED7 /* ABCPokemonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FD3D662233347D00A2AED7 /* ABCPokemonSprite.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,10 @@
 		A2FD3D5D2232DFDB00A2AED7 /* ABCPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCPokemonTableViewController.m; sourceTree = "<group>"; };
 		A2FD3D5F2232E5E300A2AED7 /* ABCPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCPokemonDetailViewController.h; sourceTree = "<group>"; };
 		A2FD3D602232E5E300A2AED7 /* ABCPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCPokemonDetailViewController.m; sourceTree = "<group>"; };
+		A2FD3D622233347200A2AED7 /* ABCPokemonAbility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCPokemonAbility.h; sourceTree = "<group>"; };
+		A2FD3D632233347200A2AED7 /* ABCPokemonAbility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCPokemonAbility.m; sourceTree = "<group>"; };
+		A2FD3D652233347D00A2AED7 /* ABCPokemonSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCPokemonSprite.h; sourceTree = "<group>"; };
+		A2FD3D662233347D00A2AED7 /* ABCPokemonSprite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCPokemonSprite.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,10 @@
 				A2FD3D572232D29600A2AED7 /* PokemonController.swift */,
 				A2FD3D502232CD4E00A2AED7 /* ABCPokemon.h */,
 				A2FD3D512232CD4E00A2AED7 /* ABCPokemon.m */,
+				A2FD3D622233347200A2AED7 /* ABCPokemonAbility.h */,
+				A2FD3D632233347200A2AED7 /* ABCPokemonAbility.m */,
+				A2FD3D652233347D00A2AED7 /* ABCPokemonSprite.h */,
+				A2FD3D662233347D00A2AED7 /* ABCPokemonSprite.m */,
 				A2FD3D432232CC1900A2AED7 /* Assets.xcassets */,
 				A2FD3D452232CC1900A2AED7 /* LaunchScreen.storyboard */,
 				A2FD3D482232CC1900A2AED7 /* Info.plist */,
@@ -160,8 +170,10 @@
 				A2FD3D522232CD4E00A2AED7 /* ABCPokemon.m in Sources */,
 				A2FD3D4A2232CC1900A2AED7 /* main.m in Sources */,
 				A2FD3D5E2232DFDB00A2AED7 /* ABCPokemonTableViewController.m in Sources */,
+				A2FD3D672233347D00A2AED7 /* ABCPokemonSprite.m in Sources */,
 				A2FD3D3C2232CC1900A2AED7 /* AppDelegate.m in Sources */,
 				A2FD3D612232E5E300A2AED7 /* ABCPokemonDetailViewController.m in Sources */,
+				A2FD3D642233347200A2AED7 /* ABCPokemonAbility.m in Sources */,
 				A2FD3D582232D29600A2AED7 /* PokemonController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
