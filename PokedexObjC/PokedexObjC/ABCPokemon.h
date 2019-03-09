@@ -6,7 +6,7 @@
 //  Copyright © 2019 Austin Cole. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "ABCPokemonAbility.h"
 #import "ABCPokemonSprite.h"
 
@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initNameAndUrlWithDictionary:(NSDictionary *)dictionary;
 
-- (instancetype)fillInDetailsWithDictionary: (NSDictionary *)dictionary;
+- (instancetype)fillInDetailsWithDictionary: (NSDictionary *)dictionary withViewController:(UIViewController *)viewController;
 
 @end
 

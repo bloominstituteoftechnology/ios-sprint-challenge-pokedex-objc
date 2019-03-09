@@ -22,7 +22,7 @@
     return self;
 }
 
-- (instancetype)fillInDetailsWithDictionary: (NSDictionary *)dictionary {
+- (instancetype)fillInDetailsWithDictionary: (NSDictionary *)dictionary withViewController:(UIViewController *)viewController{
     if (self != nil) {
         NSMutableArray *abilities = [[NSMutableArray alloc] init];
         NSArray *dictAbilities = [dictionary valueForKey:@"abilities"];
@@ -36,7 +36,9 @@
         _idNumber = [dictionary objectForKey:@"id"];
         
         NSDictionary *spritesDictionary = [dictionary objectForKey:@"sprites"];
+        
         _sprite = [spritesDictionary objectForKey:@"front_default"];
+        
     }
     return self;
 }
