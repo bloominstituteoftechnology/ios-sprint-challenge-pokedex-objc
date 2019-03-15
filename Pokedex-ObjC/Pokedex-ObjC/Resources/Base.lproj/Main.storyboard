@@ -141,7 +141,7 @@
                     <navigationItem key="navigationItem" title="Title" id="QIT-vN-91n"/>
                     <connections>
                         <outlet property="abilitiesLabel" destination="bQl-tS-MZs" id="HEl-KQ-IAP"/>
-                        <outlet property="idLabel" destination="rvg-Zc-Yki" id="eL9-S8-oXB"/>
+                        <outlet property="idLabel" destination="g2K-bS-hlJ" id="hT8-S3-4a7"/>
                         <outlet property="imageView" destination="0NK-j0-2XY" id="eai-JR-hK2"/>
                         <outlet property="nameLabel" destination="hvn-qd-ZLQ" id="fZm-sC-d1g"/>
                     </connections>
