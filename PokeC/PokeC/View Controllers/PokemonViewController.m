@@ -34,7 +34,7 @@
 - (void)updateViews {
     if (self.pokemon != nil) {
         self.title = [self.pokemon.name capitalizedString];
-        
+                
         self.idLabel.text = [NSString stringWithFormat:@"ID: %@", (self.pokemon.identifier == nil) ? @"" : self.pokemon.identifier];
         self.abilityLabel.text = [NSString stringWithFormat:@"Abilities:\n %@", self.pokemon.abilityString];
         
