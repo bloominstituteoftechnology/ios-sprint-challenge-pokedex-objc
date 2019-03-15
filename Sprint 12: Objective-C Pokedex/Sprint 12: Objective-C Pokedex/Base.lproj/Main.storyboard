@@ -65,7 +65,54 @@
                     <view key="view" contentMode="scaleToFill" id="wh2-vb-trY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nC9-a9-DN9">
+                                <rect key="frame" x="28" y="132" width="319" height="275.5"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j5y-Ua-hWJ">
+                                <rect key="frame" x="28" y="501" width="319" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tTl-S4-fFU">
+                                <rect key="frame" x="28" y="415.5" width="319" height="77.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhZ-nG-gTX">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVz-dr-AfW">
+                                        <rect key="frame" x="0.0" y="28.5" width="319" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ability:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idd-SU-ob5">
+                                        <rect key="frame" x="0.0" y="57" width="319" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="j5y-Ua-hWJ" firstAttribute="width" secondItem="tTl-S4-fFU" secondAttribute="width" id="K7S-Kw-aeX"/>
+                            <constraint firstItem="nC9-a9-DN9" firstAttribute="width" secondItem="U8l-Uc-7Hg" secondAttribute="width" multiplier="0.85" id="N8B-NG-TRK"/>
+                            <constraint firstItem="nC9-a9-DN9" firstAttribute="centerX" secondItem="wh2-vb-trY" secondAttribute="centerX" id="XAc-CD-jF1"/>
+                            <constraint firstItem="j5y-Ua-hWJ" firstAttribute="centerX" secondItem="wh2-vb-trY" secondAttribute="centerX" id="YE9-et-mHa"/>
+                            <constraint firstItem="U8l-Uc-7Hg" firstAttribute="bottom" secondItem="j5y-Ua-hWJ" secondAttribute="bottom" constant="16" id="gbE-IX-yK7"/>
+                            <constraint firstItem="nC9-a9-DN9" firstAttribute="top" secondItem="U8l-Uc-7Hg" secondAttribute="top" constant="16" id="mEC-Ko-78M"/>
+                            <constraint firstItem="tTl-S4-fFU" firstAttribute="width" secondItem="nC9-a9-DN9" secondAttribute="width" id="sgp-Zs-Q4C"/>
+                            <constraint firstItem="tTl-S4-fFU" firstAttribute="centerX" secondItem="wh2-vb-trY" secondAttribute="centerX" id="t9d-I2-mss"/>
+                            <constraint firstItem="tTl-S4-fFU" firstAttribute="top" secondItem="nC9-a9-DN9" secondAttribute="bottom" constant="8" id="vMA-zq-uDY"/>
+                            <constraint firstItem="nC9-a9-DN9" firstAttribute="height" secondItem="U8l-Uc-7Hg" secondAttribute="height" multiplier="0.5" id="vhp-dQ-USC"/>
+                            <constraint firstItem="j5y-Ua-hWJ" firstAttribute="top" secondItem="tTl-S4-fFU" secondAttribute="bottom" constant="8" id="wI5-3J-srO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="U8l-Uc-7Hg"/>
                     </view>
                 </viewController>

@@ -9,9 +9,17 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+// Your model must support at least: pokemon name, identifier, sprite, and abilities.
 @interface IACPokemon : NSObject
 
+@property (readonly, copy) NSString *pokemonName;
+@property (readonly, copy) NSURL *pokemonURL;
+@property (readonly) NSNumber *pokemonID;
+@property (readonly) NSArray<NSString *> *pokemonAbilities;
+@property (readonly, copy) NSURL *pokemonFrontDefaultURL;
+
+- (instancetype) initPokemonDictionary: (NSDictionary *)dictionary;
+- (void) fillInPokemonDictionary: (NSDictionary *)dictionary;
 @end
 
 NS_ASSUME_NONNULL_END
