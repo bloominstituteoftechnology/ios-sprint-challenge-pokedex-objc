@@ -67,11 +67,10 @@
 		2C482A45223C001200FAD2E6 /* Sprint 12: Objective-C Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				2C482A4C223C001300FAD2E6 /* Main.storyboard */,
 				2C482A46223C001200FAD2E6 /* AppDelegate.h */,
 				2C482A47223C001200FAD2E6 /* AppDelegate.m */,
-				2C482A4C223C001300FAD2E6 /* Main.storyboard */,
 				2C482A4F223C002F00FAD2E6 /* Assets.xcassets */,
-				2C482A51223C002F00FAD2E6 /* LaunchScreen.storyboard */,
 				2C482A5C223C065D00FAD2E6 /* IACPokemonDetailViewController.h */,
 				2C482A5D223C065D00FAD2E6 /* IACPokemonDetailViewController.m */,
 				2C482A5F223C068700FAD2E6 /* IACPokemonTableViewController.h */,
@@ -82,6 +81,7 @@
 				2C482A54223C002F00FAD2E6 /* Info.plist */,
 				2C482A55223C002F00FAD2E6 /* main.m */,
 				2C482A65223C209F00FAD2E6 /* Sprint 12: Objective-C Pokedex-Bridging-Header.h */,
+				2C482A51223C002F00FAD2E6 /* LaunchScreen.storyboard */,
 			);
 			path = "Sprint 12: Objective-C Pokedex";
 			sourceTree = "<group>";

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IACPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IACPokemonDetailViewController : UIViewController
+
+@property IACPokemon *pokemon;
 
 @end
 

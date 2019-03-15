@@ -6,14 +6,14 @@
 //  Copyright © 2019 Ivan Caldwell. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class PokemonController: NSObject {
     @objc(sharedController) static let shared: PokemonController = PokemonController()
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
+    @objc var pokemons: [IACPokemon] = []
     
-    // Fetch the all the pokemons
+    // Fetch the all the pokekmons
     @objc func fetchAllPokemon(completion: @escaping ([IACPokemon]?, Error?) -> Void) {
         var pokemons: [IACPokemon] = []
         let request = URLRequest(url: baseURL)
