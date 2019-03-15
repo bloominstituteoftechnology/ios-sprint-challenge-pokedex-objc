@@ -14,6 +14,7 @@
 		EB8B416F223BFC0B000745D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8B416E223BFC0B000745D0 /* main.m */; };
 		EB8B417B223BFF90000745D0 /* LSIPokemonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8B417A223BFF90000745D0 /* LSIPokemonViewController.m */; };
 		EB8B417E223BFFAF000745D0 /* LSIPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8B417D223BFFAF000745D0 /* LSIPokemonTableViewController.m */; };
+		EB8B4181223C00EB000745D0 /* LSIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8B4180223C00EB000745D0 /* LSIPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		EB8B417A223BFF90000745D0 /* LSIPokemonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemonViewController.m; sourceTree = "<group>"; };
 		EB8B417C223BFFAF000745D0 /* LSIPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIPokemonTableViewController.h; sourceTree = "<group>"; };
 		EB8B417D223BFFAF000745D0 /* LSIPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemonTableViewController.m; sourceTree = "<group>"; };
+		EB8B417F223C00EB000745D0 /* LSIPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIPokemon.h; sourceTree = "<group>"; };
+		EB8B4180223C00EB000745D0 /* LSIPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,7 @@
 		EB8B415E223BFC0A000745D0 /* Pokedex-ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				EB8B416A223BFC0B000745D0 /* LaunchScreen.storyboard */,
 				EB8B4177223BFCC1000745D0 /* Resources */,
 				EB8B4178223BFCCC000745D0 /* Networking */,
 				EB8B4176223BFCAF000745D0 /* View Controller */,
@@ -73,6 +77,8 @@
 		EB8B4175223BFC9F000745D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB8B417F223C00EB000745D0 /* LSIPokemon.h */,
+				EB8B4180223C00EB000745D0 /* LSIPokemon.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -95,7 +101,6 @@
 				EB8B4160223BFC0A000745D0 /* AppDelegate.m */,
 				EB8B4165223BFC0A000745D0 /* Main.storyboard */,
 				EB8B4168223BFC0B000745D0 /* Assets.xcassets */,
-				EB8B416A223BFC0B000745D0 /* LaunchScreen.storyboard */,
 				EB8B416E223BFC0B000745D0 /* main.m */,
 			);
 			path = Resources;
@@ -182,6 +187,7 @@
 				EB8B416F223BFC0B000745D0 /* main.m in Sources */,
 				EB8B417E223BFFAF000745D0 /* LSIPokemonTableViewController.m in Sources */,
 				EB8B4161223BFC0A000745D0 /* AppDelegate.m in Sources */,
+				EB8B4181223C00EB000745D0 /* LSIPokemon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
