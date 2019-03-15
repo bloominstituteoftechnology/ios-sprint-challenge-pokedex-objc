@@ -23,16 +23,16 @@
 
 @implementation LSIPokemonViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.pokemon addObserver:self forKeyPath:@"sprites" options:0 context:NULL];
-    [self updateView];
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.pokemon addObserver:self forKeyPath:@"sprite" options:0 context:NULL];
+    _network = [[PokemonGET alloc] init];
     [self.network fetchDetailsFor:self.pokemon];
-
 }
 
 -(void) updateView {
-    if (![self.pokemon name]) {
+    if (![self.pokemon name] && ![self isViewLoaded]) {
         return;
     }
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -40,7 +40,7 @@
         self.nameLabel.text = self.pokemon.name;
         self.abilitiesLabel.text = [self.pokemon abilities];
         self.idLabel.text =[self.pokemon id];
-        [self loadImageWithString: [self.pokemon sprites]];
+        [self loadImageWithString: [self.pokemon sprite]];
     });
 }
 

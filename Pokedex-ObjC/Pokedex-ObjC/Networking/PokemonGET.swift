@@ -43,7 +43,7 @@ class PokemonGET: NSObject {
     
     @objc func fetchDetails(for pokemon: LSIPokemon) {
         let url = URL(string: pokemon.url)!
-       guard pokemon.sprites == nil else {return }
+       guard pokemon.sprite == nil else {return }
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
@@ -67,7 +67,8 @@ class PokemonGET: NSObject {
                 }
                 if let spritesDict = dictionary["sprites"] as? [String:String?] {
                     let spriteURL = spritesDict["front_default"]
-                    pokemon.sprites = spriteURL!
+                    pokemon.sprite = spriteURL!
+                    print("Got sprites")
                 }
             } catch {
                 NSLog("Error geting sprites: \(error)" )

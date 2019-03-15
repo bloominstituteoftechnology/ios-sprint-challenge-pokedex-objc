@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSString *name;
 @property (nonatomic, nullable) NSString *abilities;
-@property (nonatomic, nullable) NSString *sprites;
+@property (nonatomic, nullable) NSString *sprite;
 @property (nonatomic, nullable) NSString *id;
 @property NSString *url;
 
