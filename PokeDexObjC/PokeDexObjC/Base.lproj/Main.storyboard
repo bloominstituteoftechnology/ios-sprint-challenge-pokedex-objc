@@ -13,7 +13,7 @@
         <!--PokeDex Viewer-->
         <scene sceneID="jqm-dO-sRO">
             <objects>
-                <tableViewController id="DPo-qp-pH8" sceneMemberID="viewController">
+                <tableViewController id="DPo-qp-pH8" customClass="JMKPokeDexTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gYY-tv-vYr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="881" y="-81"/>
         </scene>
-        <!--View Controller-->
+        <!--Poke Dex Detail View Controller-->
         <scene sceneID="taX-Gu-ZOA">
             <objects>
-                <viewController id="jXD-jC-enC" sceneMemberID="viewController">
+                <viewController id="jXD-jC-enC" customClass="JMKPokeDexDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6eF-Dd-LTD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

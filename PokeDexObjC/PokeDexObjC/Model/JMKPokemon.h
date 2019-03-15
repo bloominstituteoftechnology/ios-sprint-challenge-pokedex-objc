@@ -12,6 +12,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JMKPokemon : NSObject
 
+@property (readonly, copy) NSURL *url;
+@property (readonly, copy) NSString *name;
+@property (readonly, copy) NSURL *spriteURL;
+@property (readonly, copy) NSString *identifier;
+@property (readonly, copy) NSString *abilitiesString;
+@property (readonly, copy) NSArray<NSString *> *abilities;
+
+- (instancetype)initWithName:(NSString *)name URL:(NSURL *)url;
+- (instancetype)initWithDictionary:(NSDictionary<NSString *, NSString *>  * _Nullable)dictionary;
+
+- (void)fillInDetailsWithDictionary:(NSDictionary *)dictionary;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END
