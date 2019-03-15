@@ -7,8 +7,13 @@
 //
 
 #import "ALWPokedexTableViewController.h"
+#import "ALWPokemon.h"
+#import "ALWDetailViewController.h"
+#import "Pokedex_ObjC_Sprint_Challenge-Swift.h"
 
 @interface ALWPokedexTableViewController ()
+
+@property (nonatomic, strong) NSArray<ALWPokemon *> *allPokemon;
 
 @end
 
@@ -23,14 +28,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 0;
+    return self.allPokemon.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     // Configure the cell...
+    ALWPokemon *pokemon = self.allPokemon[indexPath.row];
+    cell.textLabel.text = pokemon.name;
     
     return cell;
 }
@@ -40,8 +48,17 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showDetailSegue"]) {
+        
+       // Get the new view controller using [segue destinationViewController].
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        ALWDetailViewController *detailVC = segue.destinationViewController;
+        
+        // Pass the selected object to the new view controller.
+        
+    }
+    
+    
 }
 
 

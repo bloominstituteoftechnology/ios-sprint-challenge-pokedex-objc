@@ -30,13 +30,15 @@ NS_ASSUME_NONNULL_BEGIN
 // Sprites are inside a dictionary
 
 @property (nonatomic, copy, readonly) NSString *name;
-@property (nonatomic, readonly) NSInteger pokemonID;
-@property (nonatomic, copy, readonly) NSString *abilities;
-@property (nonatomic, copy, readonly) NSString *sprite;
+@property (nonatomic, copy, readonly, nullable) NSString *pokemonID;
+@property (nonatomic, copy, readonly, nullable) NSString *sprite;
 
-- (instancetype)initWithName:(NSString *)name pokemonID:(NSInteger)pokemonID abilities:(NSString *)abilities sprite:(NSString *)sprite;
+//@property (nonatomic, copy, readonly) NSString *abilities;
+@property (nonatomic, copy, readonly, nullable) NSArray<NSString *> *abilities;
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithName:(NSString *)name pokemonID:(nullable NSString *)pokemonID abilities:(nullable NSArray *)abilities sprite:(nullable NSString *)sprite;
+
+   
 
 @end
 

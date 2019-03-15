@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		848C24C0223C091700FF01B8 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C24BF223C091700FF01B8 /* PokemonAPI.swift */; };
 		84EDD3CA223BF91300B56011 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EDD3C9223BF91300B56011 /* AppDelegate.m */; };
 		84EDD3D0223BF91400B56011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EDD3CE223BF91400B56011 /* Main.storyboard */; };
 		84EDD3D2223BF91500B56011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EDD3D1223BF91500B56011 /* Assets.xcassets */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		848C24BE223C091600FF01B8 /* Pokedex ObjC Sprint Challenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex ObjC Sprint Challenge-Bridging-Header.h"; sourceTree = "<group>"; };
+		848C24BF223C091700FF01B8 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 		84EDD3C5223BF91300B56011 /* Pokedex ObjC Sprint Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex ObjC Sprint Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EDD3C8223BF91300B56011 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84EDD3C9223BF91300B56011 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 		84EDD3DE223BF95300B56011 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				848C24BE223C091600FF01B8 /* Pokedex ObjC Sprint Challenge-Bridging-Header.h */,
 				84EDD3C8223BF91300B56011 /* AppDelegate.h */,
 				84EDD3C9223BF91300B56011 /* AppDelegate.m */,
 				84EDD3D1223BF91500B56011 /* Assets.xcassets */,
@@ -108,6 +112,7 @@
 		84EDD3E1223BF97600B56011 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				848C24BF223C091700FF01B8 /* PokemonAPI.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 				TargetAttributes = {
 					84EDD3C4223BF91300B56011 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -193,6 +199,7 @@
 			files = (
 				84EDD3E5223BFA2E00B56011 /* ALWPokedexTableViewController.m in Sources */,
 				84EDD3D8223BF91500B56011 /* main.m in Sources */,
+				848C24C0223C091700FF01B8 /* PokemonAPI.swift in Sources */,
 				84EDD3E8223BFAAD00B56011 /* ALWDetailViewController.m in Sources */,
 				84EDD3EB223BFDEA00B56011 /* ALWPokemon.m in Sources */,
 				84EDD3CA223BF91300B56011 /* AppDelegate.m in Sources */,
@@ -337,6 +344,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BH59G2VDQ6;
 				INFOPLIST_FILE = "Pokedex ObjC Sprint Challenge/Resources/Info.plist";
@@ -346,6 +354,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.audreywelch.Pokedex-ObjC-Sprint-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex ObjC Sprint Challenge/Resources/Pokedex ObjC Sprint Challenge-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -354,6 +365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BH59G2VDQ6;
 				INFOPLIST_FILE = "Pokedex ObjC Sprint Challenge/Resources/Info.plist";
@@ -363,6 +375,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.audreywelch.Pokedex-ObjC-Sprint-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex ObjC Sprint Challenge/Resources/Pokedex ObjC Sprint Challenge-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
