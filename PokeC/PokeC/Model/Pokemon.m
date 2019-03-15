@@ -57,7 +57,7 @@
     _abilities = abilities;
     [self didChangeValueForKey:@"abilities"];
     
-    _abilityString = [self abilitiesAsString];
+    _abilityString = [self abilitiesAsString] ;
 }
 
 //Convert list of abilities into a convenient string
