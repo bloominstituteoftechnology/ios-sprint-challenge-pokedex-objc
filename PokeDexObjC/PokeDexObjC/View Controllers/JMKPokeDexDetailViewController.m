@@ -31,7 +31,7 @@
     if (self.pokemon) {
         self.pokemonNameLabel.text = [NSString stringWithFormat:@"Name: %@", self.pokemon.name];
         self.pokemonIDLabel.text = [NSString stringWithFormat:@"ID: %@", self.pokemon.identifier];
-        self.abilitiesListLabel.text = [NSString stringWithFormat:@"%@\n", self.pokemon.abilitiesString];
+        self.abilitiesListLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.abilitiesString];
         
         if (self.pokemon.spriteURL) {
             NSData *imageData = [NSData dataWithContentsOfURL:self.pokemon.spriteURL];

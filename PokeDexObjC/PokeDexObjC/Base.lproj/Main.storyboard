@@ -59,7 +59,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9xd-m4-lgx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9xd-m4-lgx">
                                 <rect key="frame" x="8" y="72" width="359" height="239.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9xd-m4-lgx" secondAttribute="height" multiplier="3:2" id="L8u-h0-9do"/>
@@ -80,7 +80,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="bdf-Vv-Y9L">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bdf-Vv-Y9L">
                                         <rect key="frame" x="0.0" y="83" width="188" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJB-lQ-rj2">
@@ -96,6 +96,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="144" id="6qB-Jd-vSU"/>
+                                            <constraint firstItem="QJB-lQ-rj2" firstAttribute="centerY" secondItem="cjv-67-mtk" secondAttribute="centerY" id="jtX-lp-fQ2"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>

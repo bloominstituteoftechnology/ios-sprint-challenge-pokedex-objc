@@ -16,7 +16,7 @@ class PokemonAPI: NSObject {
     func fetchAllPokemon(completion: @escaping ([JMKPokemon]?, Error?) -> Void) {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
-        let queryItem = URLQueryItem(name: "limit", value: "1999")
+        let queryItem = URLQueryItem(name: "limit", value: "801") //limits query to 801 pokemon to avoid crashes. Can't figure out yet why over 801 causes crash.
         urlComponents.queryItems = [queryItem]
         let requestURL = urlComponents.url!
         

@@ -13,11 +13,11 @@
 @interface JMKPokemon : NSObject
 
 @property (readonly, copy) NSURL *url;
-@property (readonly, copy) NSString *name;
-@property (readonly, copy) NSURL *spriteURL;
-@property (readonly, copy) NSString *identifier;
-@property (readonly, copy) NSString *abilitiesString;
-@property (readonly, copy) NSArray<NSString *> *abilities;
+@property (readonly, copy, nullable) NSString *name;
+@property (readonly, copy, nullable) NSURL *spriteURL;
+@property (readonly, copy, nullable) NSString *identifier;
+@property (readonly, copy, nullable) NSString *abilitiesString;
+@property (readonly, copy, nullable) NSArray<NSString *> *abilities;
 
 - (instancetype)initWithName:(NSString *)name URL:(NSURL *)url;
 - (instancetype)initWithDictionary:(NSDictionary<NSString *, NSString *>  *)dictionary;
