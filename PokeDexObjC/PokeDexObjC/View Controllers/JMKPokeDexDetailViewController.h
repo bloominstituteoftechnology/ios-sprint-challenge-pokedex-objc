@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JMKPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JMKPokeDexDetailViewController : UIViewController
+
+@property JMKPokemon *pokemon;
 
 @end
 

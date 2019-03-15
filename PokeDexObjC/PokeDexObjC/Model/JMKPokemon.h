@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+//NS_ASSUME_NONNULL_BEGIN
 
 @interface JMKPokemon : NSObject
 
@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, copy) NSArray<NSString *> *abilities;
 
 - (instancetype)initWithName:(NSString *)name URL:(NSURL *)url;
-- (instancetype)initWithDictionary:(NSDictionary<NSString *, NSString *>  * _Nullable)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary<NSString *, NSString *>  *)dictionary;
 
 - (void)fillInDetailsWithDictionary:(NSDictionary *)dictionary;
 
@@ -28,4 +28,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
+//NS_ASSUME_NONNULL_END

@@ -112,6 +112,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X5K-4O-ewi"/>
                     </view>
+                    <connections>
+                        <outlet property="abilitiesListLabel" destination="cjv-67-mtk" id="U8R-PY-wWn"/>
+                        <outlet property="pokemonIDLabel" destination="1VD-1x-kQ4" id="180-cq-LGC"/>
+                        <outlet property="pokemonNameLabel" destination="3kK-2V-NnI" id="f4x-Z1-kmg"/>
+                        <outlet property="pokemonSpriteImageView" destination="9xd-m4-lgx" id="bXL-7o-Ble"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Wl-ig-h1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

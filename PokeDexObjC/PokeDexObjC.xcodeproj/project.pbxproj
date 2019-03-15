@@ -51,10 +51,10 @@
 		AB031102223BFD6200DFF0F4 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AB0310FC223BFD4100DFF0F4 /* JMKPokeDexDetailViewController.h */,
-				AB0310FD223BFD4100DFF0F4 /* JMKPokeDexDetailViewController.m */,
 				AB0310FF223BFD5600DFF0F4 /* JMKPokeDexTableViewController.h */,
 				AB031100223BFD5600DFF0F4 /* JMKPokeDexTableViewController.m */,
+				AB0310FC223BFD4100DFF0F4 /* JMKPokeDexDetailViewController.h */,
+				AB0310FD223BFD4100DFF0F4 /* JMKPokeDexDetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

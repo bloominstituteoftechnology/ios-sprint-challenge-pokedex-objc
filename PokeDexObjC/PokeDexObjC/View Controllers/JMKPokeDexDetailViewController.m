@@ -8,7 +8,13 @@
 
 #import "JMKPokeDexDetailViewController.h"
 
+
 @interface JMKPokeDexDetailViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *pokemonSpriteImageView;
+@property (weak, nonatomic) IBOutlet UILabel *pokemonNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pokemonIDLabel;
+@property (weak, nonatomic) IBOutlet UILabel *abilitiesListLabel;
 
 @end
 
@@ -16,17 +22,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self updateViews];
+    [_pokemon addObserver:self forKeyPath:@"abilities" options:0 context:NULL];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)updateViews
+{
+    if (self.pokemon) {
+        self.pokemonNameLabel.text = [NSString stringWithFormat:@"Name: %@", self.pokemon.name];
+        self.pokemonIDLabel.text = [NSString stringWithFormat:@"ID: %@", self.pokemon.identifier];
+        self.abilitiesListLabel.text = [NSString stringWithFormat:@"%@\n", self.pokemon.abilitiesString];
+        
+        if (self.pokemon.spriteURL) {
+            NSData *imageData = [NSData dataWithContentsOfURL:self.pokemon.spriteURL];
+            UIImage *tempImage = [UIImage imageWithData:imageData];
+            self.pokemonSpriteImageView.image = tempImage;
+        }
+    }
 }
-*/
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [self updateViews];
+    });
+    [object removeObserver:self forKeyPath:keyPath];
+}
 @end
