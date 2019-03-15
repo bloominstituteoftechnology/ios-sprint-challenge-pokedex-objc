@@ -36,7 +36,11 @@
         self.title = [self.pokemon.name capitalizedString];
         
         self.idLabel.text = [NSString stringWithFormat:@"ID: %@", (self.pokemon.identifier == nil) ? @"" : self.pokemon.identifier];
-        self.abilityLabel.text = [NSString stringWithFormat:@"Abilities:\n%@", self.pokemon.abilityString];
+        self.abilityLabel.text = [NSString stringWithFormat:@"Abilities:\n %@", self.pokemon.abilityString];
+        
+        //Checking problem with list of abilities
+        NSLog(@"%@", self.pokemon.abilityString);
+        
         
         if (self.pokemon.spriteURL != nil) {
             NSData *imageData = [NSData dataWithContentsOfURL: self.pokemon.spriteURL];
