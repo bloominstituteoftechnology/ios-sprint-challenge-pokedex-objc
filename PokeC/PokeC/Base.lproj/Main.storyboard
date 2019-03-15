@@ -55,6 +55,9 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xoX-6H-w5h">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="239.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="2gB-Es-Lug"/>
+                                        </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID-Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJ9-2E-jqt">
                                         <rect key="frame" x="92.5" y="247.5" width="55.5" height="17"/>
@@ -70,15 +73,15 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="tEr-7v-cgN"/>
+                                    <constraint firstAttribute="width" secondItem="jDC-H0-9Mo" secondAttribute="height" multiplier="4:5" id="0Ka-Ng-Jn1"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lGr-pq-Qme" firstAttribute="trailing" secondItem="jDC-H0-9Mo" secondAttribute="trailing" constant="68" id="SWr-0j-ZsJ"/>
+                            <constraint firstItem="jDC-H0-9Mo" firstAttribute="leading" secondItem="lGr-pq-Qme" secondAttribute="leading" constant="67" id="AJ4-ce-Zsx"/>
                             <constraint firstItem="jDC-H0-9Mo" firstAttribute="top" secondItem="lGr-pq-Qme" secondAttribute="top" constant="67" id="XaQ-Mf-jUq"/>
-                            <constraint firstItem="jDC-H0-9Mo" firstAttribute="leading" secondItem="lGr-pq-Qme" secondAttribute="leading" constant="67" id="haz-eE-lxb"/>
+                            <constraint firstItem="lGr-pq-Qme" firstAttribute="trailing" secondItem="jDC-H0-9Mo" secondAttribute="trailing" constant="68" id="v6p-Bm-EFb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lGr-pq-Qme"/>
                     </view>
