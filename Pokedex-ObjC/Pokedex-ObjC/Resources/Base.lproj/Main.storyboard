@@ -37,7 +37,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="hLs-ny-1H7" kind="show" id="lQj-CN-4Kh"/>
+                                    <segue destination="hLs-ny-1H7" kind="show" identifier="showSegue" id="lQj-CN-4Kh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
