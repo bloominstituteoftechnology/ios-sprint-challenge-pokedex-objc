@@ -15,8 +15,7 @@ class PokemonController: NSObject {
     
     // Fetch the all the pokekmons
     @objc func fetchAllPokemon(completion: @escaping ([IACPokemon]?, Error?) -> Void) {
-        var pokemons: [IACPokemon] = []
-        let request = URLRequest(url: baseURL)
+        let request = URLRequest(url: baseURL)        
         let datatask = URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 NSLog("Error fetching data: \(error)")
@@ -29,13 +28,11 @@ class PokemonController: NSObject {
                 return
             }
             do {
+                var pokemons: [IACPokemon] = []
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 let results = json["results"] as! [[String: String]]
-                for result in results {
-                    if let pokemon = IACPokemon(pokemonDictionary: result) {
-                        pokemons.append(pokemon)
-                    }
-                }
+                pokemons = results.compactMap{ IACPokemon(pokemonDictionary: $0) }
+                self.pokemons = pokemons
                 completion(pokemons, nil)
             } catch {
                 NSLog("Unable to decode data: \(error)")
@@ -61,6 +58,7 @@ class PokemonController: NSObject {
                 pokemon.fill(inPokemonDictionary: pokemonDictionary)
             } catch {
                 NSLog("Error decoding Pokemon details: \(error)")
+                return
             }
         }
         datatask.resume()

@@ -18,12 +18,14 @@
 
 @implementation IACPokemonTableViewController
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
-    // I wasted time trying to figure out will PokemonController was being recognize. And
-    // all needed to do was build the project....Huhhhhhhh.
+    // I didn't have the right import file "Sprint_12__Objective_C_Pokedex-Swift.h"
+    // I wrongfully thought it was #import "Sprint 12: Objective-C Pokedex-Bridging-Header.h"
     [PokemonController.sharedController fetchAllPokemonWithCompletion:^(NSArray<IACPokemon *> * pokemon, NSError * error) {
-        [self.tableView reloadData];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }];
 }
 
@@ -39,7 +41,6 @@
     return PokemonController.sharedController.pokemons.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     IACPokemon *pokemon = PokemonController.sharedController.pokemons[indexPath.row];
@@ -48,17 +49,12 @@
 }
 
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"ShowPokemon"]) {
         IACPokemonDetailViewController *destinationVC = segue.destinationViewController;
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         destinationVC.pokemon = PokemonController.sharedController.pokemons[indexPath.row];
     }
 }
-
 
 @end

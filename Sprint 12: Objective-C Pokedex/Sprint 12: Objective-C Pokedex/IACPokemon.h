@@ -14,9 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, copy) NSString *pokemonName;
 @property (readonly, copy) NSURL *pokemonURL;
-@property (readonly) NSNumber *pokemonID;
-@property (readonly) NSArray<NSString *> *pokemonAbilities;
-@property (readonly, copy) NSURL *pokemonFrontDefaultURL;
+@property (nullable) NSNumber *pokemonID;
+@property (nullable) NSArray<NSString *> *pokemonAbilities;
+@property (nullable) NSURL *pokemonFrontDefaultURL;
 
 - (instancetype _Nullable) initPokemonDictionary: (NSDictionary *)dictionary;
 - (void) fillInPokemonDictionary: (NSDictionary *)dictionary;
