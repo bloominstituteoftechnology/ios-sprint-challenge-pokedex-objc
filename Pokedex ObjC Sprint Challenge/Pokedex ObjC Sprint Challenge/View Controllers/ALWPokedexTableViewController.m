@@ -8,6 +8,7 @@
 
 #import "ALWPokedexTableViewController.h"
 #import "ALWPokemon.h"
+
 #import "ALWDetailViewController.h"
 #import "Pokedex_ObjC_Sprint_Challenge-Swift.h"
 
@@ -15,14 +16,26 @@
 
 @property (nonatomic, strong) NSArray<ALWPokemon *> *allPokemon;
 
+
 @end
 
 @implementation ALWPokedexTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    PokemonAPI *pokemonController = [PokemonAPI sharedController];
+    [pokemonController fetchAllPokemonWithCompletion:^(NSArray<ALWPokemon *> *allPokemon, NSError *error) {
+        if (error) {
+            NSLog(@"Error searching for pokemon");
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.allPokemon = allPokemon;
+            [self.tableView reloadData];
+        });
+    }];
 }
+
 
 #pragma mark - Table view data source
 

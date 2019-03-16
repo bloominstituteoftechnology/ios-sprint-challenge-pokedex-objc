@@ -39,14 +39,26 @@ class PokemonAPI : NSObject {
                         throw NSError()
                 }
                 
-            } catch {
+                print(pokemonDictionaries)
                 
+                // Turn array into Pokemon objects
+                let allPokemon = pokemonDictionaries.compactMap { ALWPokemon(dictionary: $0) }
+                
+//                var allPokemon = [ALWPokemon]()
+//                for dictionary in pokemonDictionaries {
+//                    if let pokemon = ALWPokemon(dictionary: dictionary) {
+//                        allPokemon.append(pokemon)
+//                    }
+//                }
+                
+                print(allPokemon)
+            
+                completion(allPokemon, nil)
+                
+            } catch {
+                return completion(nil, error)
             }
-            
-            
-        }
-        
-        
+        }.resume()
     }
     
     @objc func fillInDetails(for pokemon: ALWPokemon) {
@@ -70,7 +82,9 @@ class PokemonAPI : NSObject {
             do {
                 
                 // Take data and turn it into a JSON object (a dictionary)
-                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                    throw NSError()
+                }
                 
                     // Now we have a dictionary - the top le
                 

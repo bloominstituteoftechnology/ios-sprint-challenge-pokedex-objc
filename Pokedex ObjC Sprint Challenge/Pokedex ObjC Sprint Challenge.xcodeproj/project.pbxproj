@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		848C24C0223C091700FF01B8 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C24BF223C091700FF01B8 /* PokemonAPI.swift */; };
+		848C24C3223C836B00FF01B8 /* ALWPokemonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 848C24C2223C836B00FF01B8 /* ALWPokemonAPI.m */; };
 		84EDD3CA223BF91300B56011 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EDD3C9223BF91300B56011 /* AppDelegate.m */; };
 		84EDD3D0223BF91400B56011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EDD3CE223BF91400B56011 /* Main.storyboard */; };
 		84EDD3D2223BF91500B56011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EDD3D1223BF91500B56011 /* Assets.xcassets */; };
@@ -21,6 +22,8 @@
 /* Begin PBXFileReference section */
 		848C24BE223C091600FF01B8 /* Pokedex ObjC Sprint Challenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex ObjC Sprint Challenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		848C24BF223C091700FF01B8 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		848C24C1223C836B00FF01B8 /* ALWPokemonAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALWPokemonAPI.h; sourceTree = "<group>"; };
+		848C24C2223C836B00FF01B8 /* ALWPokemonAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALWPokemonAPI.m; sourceTree = "<group>"; };
 		84EDD3C5223BF91300B56011 /* Pokedex ObjC Sprint Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex ObjC Sprint Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EDD3C8223BF91300B56011 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84EDD3C9223BF91300B56011 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				848C24BF223C091700FF01B8 /* PokemonAPI.swift */,
+				848C24C1223C836B00FF01B8 /* ALWPokemonAPI.h */,
+				848C24C2223C836B00FF01B8 /* ALWPokemonAPI.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				848C24C0223C091700FF01B8 /* PokemonAPI.swift in Sources */,
 				84EDD3E8223BFAAD00B56011 /* ALWDetailViewController.m in Sources */,
 				84EDD3EB223BFDEA00B56011 /* ALWPokemon.m in Sources */,
+				848C24C3223C836B00FF01B8 /* ALWPokemonAPI.m in Sources */,
 				84EDD3CA223BF91300B56011 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
