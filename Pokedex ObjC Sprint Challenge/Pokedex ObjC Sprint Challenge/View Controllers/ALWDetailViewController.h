@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class ALWPokemon;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ALWDetailViewController : UIViewController
+
+@property ALWPokemon *pokemon;
 
 @end
 

@@ -16,7 +16,7 @@ class PokemonAPI : NSObject {
     
     @objc func fetchAllPokemon(completion: @escaping ([ALWPokemon]?, Error?) -> Void) {
         
-        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
+        let components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         let url = components.url!
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
@@ -44,13 +44,6 @@ class PokemonAPI : NSObject {
                 // Turn array into Pokemon objects
                 let allPokemon = pokemonDictionaries.compactMap { ALWPokemon(dictionary: $0) }
                 
-//                var allPokemon = [ALWPokemon]()
-//                for dictionary in pokemonDictionaries {
-//                    if let pokemon = ALWPokemon(dictionary: dictionary) {
-//                        allPokemon.append(pokemon)
-//                    }
-//                }
-                
                 print(allPokemon)
             
                 completion(allPokemon, nil)
@@ -64,6 +57,8 @@ class PokemonAPI : NSObject {
     @objc func fillInDetails(for pokemon: ALWPokemon) {
         
         let requestURL = baseURL.appendingPathComponent(pokemon.name.lowercased())
+        
+        print(requestURL)
         
         URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
             
@@ -86,12 +81,33 @@ class PokemonAPI : NSObject {
                     throw NSError()
                 }
                 
-                    // Now we have a dictionary - the top le
+                print(dictionary)
+
+                
+                //ALWPokemon *fetchedPokemon = [[ALWPokemon alloc] init];
+                let fetchedPokemon = ALWPokemon.init(dictionary: dictionary)
+                
+                pokemon.name = fetchedPokemon.name
+                pokemon.abilities = fetchedPokemon.abilities
+                pokemon.sprite = fetchedPokemon.sprite
+                
+//                pokemon.pokemonID = fetchedPokemon.pokemonID
+//
+//                pokemon.sprite = fetchedPokemon.sprite
+                
+                //pokemon = fetchedPokemon
+                
+                //print(fetchedPokemon.name)
+                //print(fetchedPokemon.abilities)
+                
+//                print(pokemon.abilities)
+//                print(pokemon.sprite)
+//                print(pokemon.pokemonID)
                 
             } catch {
                 
             }
-        }
+        }.resume()
         
         
     }

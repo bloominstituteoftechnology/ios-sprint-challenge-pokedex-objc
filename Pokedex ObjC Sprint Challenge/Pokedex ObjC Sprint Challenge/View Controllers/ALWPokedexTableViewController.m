@@ -8,14 +8,13 @@
 
 #import "ALWPokedexTableViewController.h"
 #import "ALWPokemon.h"
-
 #import "ALWDetailViewController.h"
 #import "Pokedex_ObjC_Sprint_Challenge-Swift.h"
 
 @interface ALWPokedexTableViewController ()
 
 @property (nonatomic, strong) NSArray<ALWPokemon *> *allPokemon;
-
+@property (nonatomic, readonly) PokemonAPI *pokemonController;
 
 @end
 
@@ -24,8 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    PokemonAPI *pokemonController = [PokemonAPI sharedController];
-    [pokemonController fetchAllPokemonWithCompletion:^(NSArray<ALWPokemon *> *allPokemon, NSError *error) {
+    _pokemonController = [PokemonAPI sharedController];
+    
+    //PokemonAPI *pokemonController = [PokemonAPI sharedController];
+    [_pokemonController fetchAllPokemonWithCompletion:^(NSArray<ALWPokemon *> *allPokemon, NSError *error) {
         if (error) {
             NSLog(@"Error searching for pokemon");
         }
@@ -68,6 +69,9 @@
         ALWDetailViewController *detailVC = segue.destinationViewController;
         
         // Pass the selected object to the new view controller.
+        detailVC.pokemon = self.allPokemon[indexPath.row];
+        
+        //[_pokemonController fillInDetailsFor:detailVC.pokemon];
         
     }
     

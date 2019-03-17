@@ -36,11 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 //@property (nonatomic, copy, readonly) NSString *abilities;
 @property (nonatomic, copy, nullable) NSArray<NSString *> *abilities;
 
-- (instancetype)initWithName:(NSString *)name pokemonID:(nullable NSString *)pokemonID abilities:(nullable NSArray *)abilities sprite:(nullable NSString *)sprite;
-
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
-- (instancetype)initWithJSON:(id)json;
    
 
 @end

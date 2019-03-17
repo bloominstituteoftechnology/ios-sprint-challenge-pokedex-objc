@@ -7,6 +7,8 @@
 //
 
 #import "ALWDetailViewController.h"
+#import "ALWPokemon.h"
+#import "Pokedex_ObjC_Sprint_Challenge-Swift.h"
 
 @interface ALWDetailViewController ()
 
@@ -21,7 +23,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (self.pokemon.name == nil) {
+        [self.pokemon addObserver:self forKeyPath:@"abilities" options:0 context:nil];
+    }
+    //[_pokemonController fillInDetailsFor:detailVC.pokemon];
+    [PokemonAPI.sharedController fillInDetailsFor:self.pokemon];
 
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self updateViews];
+}
+
+- (void)updateViews {
+    if (self.pokemon) {
+        self.title = [self.pokemon.name capitalizedString];
+        self.nameLabel.text = [self.pokemon.name capitalizedString];
+        self.abilitiesLabel.text = [[self.pokemon.abilities componentsJoinedByString:@", "] capitalizedString];
+        
+//        NSData *data = [NSData dataWithContentsOfURL:self.pokemon.sprite];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            self.imageView.image = [UIImage imageWithData:data];
+//        });
+    }
+}
+
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [self updateViews];
+    });
+    [object removeObserver:self forKeyPath:keyPath];
 }
 
 

@@ -12,18 +12,6 @@
 
 @implementation ALWPokemon
 
-//- (instancetype)initWithName:(NSString *)name pokemonID:(nullable NSString *)pokemonID abilities:(nullable NSArray *)abilities sprite:(nullable NSString *)sprite {
-//
-//    self = [super init];
-//    if (self != nil) {
-//        _name = [name copy];
-//        _pokemonID = [pokemonID copy];
-//        _abilities = [abilities copy];
-//        _sprite = [sprite copy];
-//    }
-//    return self;
-//}
-
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     
     self = [super init];
@@ -50,23 +38,5 @@
     return self;
 }
 
-
-
-//- (instancetype)initWithJSON:(id)json {
-//    //if ([json isKindOfClass:[NSDictionary class]] == NO) { return nil; }
-//    CheckClass(json, NSDictionary);
-//
-//    self = [super init];
-//    if (self) {
-//
-//        NSDictionary *dict = json;
-//
-//        NSString *name = dict[@"name"];
-//        CheckClass(name, NSString);
-//
-//        NSString *pokemonID = dict[@"id"];
-//        CheckClass(pokemonID, NSString);
-//    }
-//}
 
 @end
