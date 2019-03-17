@@ -27,7 +27,6 @@
     if (self.pokemon.name == nil) {
         [self.pokemon addObserver:self forKeyPath:@"abilities" options:0 context:nil];
     }
-    //[_pokemonController fillInDetailsFor:detailVC.pokemon];
     [PokemonAPI.sharedController fillInDetailsFor:self.pokemon];
 
 }
@@ -41,12 +40,14 @@
     if (self.pokemon) {
         self.title = [self.pokemon.name capitalizedString];
         self.nameLabel.text = [self.pokemon.name capitalizedString];
+        self.idLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.pokemonID];
         self.abilitiesLabel.text = [[self.pokemon.abilities componentsJoinedByString:@", "] capitalizedString];
         
-//        NSData *data = [NSData dataWithContentsOfURL:self.pokemon.sprite];
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            self.imageView.image = [UIImage imageWithData:data];
-//        });
+        NSURL *url = [NSURL URLWithString:self.pokemon.sprite];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imageView.image = [UIImage imageWithData:data];
+        });
     }
 }
 

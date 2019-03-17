@@ -19,7 +19,7 @@
         NSString *name = dictionary[@"name"];
         CheckClass(name, NSString);
         
-        NSString *pokemonID = dictionary[@"id"];
+        NSInteger pokemonID = dictionary[@"id"];
         
         // Save values I've pulled out and put them into the instance variables
         _name = name;

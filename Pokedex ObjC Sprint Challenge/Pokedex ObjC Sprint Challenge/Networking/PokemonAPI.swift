@@ -80,10 +80,8 @@ class PokemonAPI : NSObject {
                 guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
                     throw NSError()
                 }
-                
                 print(dictionary)
 
-                
                 //ALWPokemon *fetchedPokemon = [[ALWPokemon alloc] init];
                 let fetchedPokemon = ALWPokemon.init(dictionary: dictionary)
                 
@@ -91,24 +89,11 @@ class PokemonAPI : NSObject {
                 pokemon.abilities = fetchedPokemon.abilities
                 pokemon.sprite = fetchedPokemon.sprite
                 
-//                pokemon.pokemonID = fetchedPokemon.pokemonID
-//
-//                pokemon.sprite = fetchedPokemon.sprite
-                
-                //pokemon = fetchedPokemon
-                
-                //print(fetchedPokemon.name)
-                //print(fetchedPokemon.abilities)
-                
-//                print(pokemon.abilities)
-//                print(pokemon.sprite)
-//                print(pokemon.pokemonID)
-                
+                pokemon.pokemonID = fetchedPokemon.pokemonID
+
             } catch {
-                
+                NSLog("Error setting details to pokemon")
             }
         }.resume()
-        
-        
     }
 }

@@ -72,10 +72,7 @@
         detailVC.pokemon = self.allPokemon[indexPath.row];
         
         //[_pokemonController fillInDetailsFor:detailVC.pokemon];
-        
     }
-    
-    
 }
 
 
