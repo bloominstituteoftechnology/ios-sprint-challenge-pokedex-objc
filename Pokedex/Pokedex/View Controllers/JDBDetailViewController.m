@@ -7,8 +7,15 @@
 //
 
 #import "JDBDetailViewController.h"
+#import "JDBPokemon.h"
+#import "Pokedex-Swift.h"
 
 @interface JDBDetailViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *idLabel;
+@property (weak, nonatomic) IBOutlet UILabel *abilitiesLabel;
 
 @end
 
@@ -16,17 +23,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    if (self.pokemon.idNumber == nil) {
+        [self.pokemon addObserver:self
+                       forKeyPath:@"abilities"
+                          options:0
+                          context:nil];
+    }
+    
+    [PokemonAPI.sharedController fillInDetailsFor:self.pokemon];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self updateViews];
 }
-*/
+
+- (void)updateViews {
+    
+    if (self.pokemon) {
+        
+        NSURL *imageURL = [NSURL URLWithString:self.pokemon.sprite];
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+        dispatch_async(dispatch_get_main_queue(), ^{ self.imageView.image = [UIImage imageWithData:imageData]; });
+        
+        self.nameLabel.text = [self.pokemon.name capitalizedString];
+        self.abilitiesLabel.text = [self.pokemon.abilities componentsJoinedByString:@" \n"];
+        
+        NSString *idString = [NSString stringWithFormat:@"%ld", (long)self.pokemon.idNumber];
+        self.idLabel.text = idString;
+    }
+}
+
+- (void) observeValueForKeyPath:(NSString *)keyPath
+                       ofObject:(id)object
+                         change:(NSDictionary *)change
+                        context:(void *)context {
+    dispatch_async(dispatch_get_main_queue(), ^{ [self updateViews]; });
+    [object removeObserver: self forKeyPath:keyPath];
+}
 
 @end

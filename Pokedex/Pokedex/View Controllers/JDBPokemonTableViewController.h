@@ -14,8 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JDBPokemonTableViewController : UITableViewController
 
-- (instancetype) initWithPokemonAPI:(PokemonAPI *)pokemonAPI;
-
 @end
 
 NS_ASSUME_NONNULL_END

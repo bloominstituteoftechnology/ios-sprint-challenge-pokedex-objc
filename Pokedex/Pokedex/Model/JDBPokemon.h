@@ -14,17 +14,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JDBPokemon : NSObject
 
-@property (nonatomic, readonly) NSNumber *idNumber;
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSURL *sprite;
 
-@property (nonatomic, readonly) NSArray<Ability *> *abilities;
-@property (nonatomic, readonly) NSArray<JDBPokemon *> *pokemonResults;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *url;
+@property (nonatomic) NSInteger idNumber;
+@property (nonatomic, nullable) NSString *sprite;
 
-//@property (nonatomic, readonly) NSString *speciesName;
-//@property (nonatomic, readonly) NSArray<NSString *> *moves;
+//@property (nonatomic, readonly, nullable) NSArray<Ability *> *abilities;
+@property (nonatomic, readonly, nullable) NSArray<JDBPokemon *> *pokemonResults;
 
-- (instancetype)initWithJSON:(id)json;
+- (instancetype)initWithDictionary:(NSDictionary *)allDictionary;
+//- (instancetype)initWithJSON:(id)json;
+//- (instancetype)initDetailsWithJSON:(id)dictionary;
+
+/////
+@property (nonatomic, nullable) NSArray<NSString *> *abilities;
 
 @end
 

@@ -17,6 +17,7 @@
 		114A777C223BFE60006843C4 /* JDBPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 114A777B223BFE60006843C4 /* JDBPokemon.m */; };
 		114A7782223C0A40006843C4 /* JDBAbility.m in Sources */ = {isa = PBXBuildFile; fileRef = 114A7781223C0A40006843C4 /* JDBAbility.m */; };
 		114A7785223C1BCE006843C4 /* JDBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 114A7784223C1BCE006843C4 /* JDBDetailViewController.m */; };
+		114A7788223C9AB1006843C4 /* JDBPokemonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 114A7787223C9AB1006843C4 /* JDBPokemonAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		114A7781223C0A40006843C4 /* JDBAbility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDBAbility.m; sourceTree = "<group>"; };
 		114A7783223C1BCE006843C4 /* JDBDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDBDetailViewController.h; sourceTree = "<group>"; };
 		114A7784223C1BCE006843C4 /* JDBDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDBDetailViewController.m; sourceTree = "<group>"; };
+		114A7786223C9AB1006843C4 /* JDBPokemonAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDBPokemonAPI.h; sourceTree = "<group>"; };
+		114A7787223C9AB1006843C4 /* JDBPokemonAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDBPokemonAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				114A7778223BFE2A006843C4 /* PokemonAPI.swift */,
+				114A7786223C9AB1006843C4 /* JDBPokemonAPI.h */,
+				114A7787223C9AB1006843C4 /* JDBPokemonAPI.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				114A7782223C0A40006843C4 /* JDBAbility.m in Sources */,
 				114A7776223BFD8C006843C4 /* JDBPokemonTableViewController.m in Sources */,
 				114A777C223BFE60006843C4 /* JDBPokemon.m in Sources */,
+				114A7788223C9AB1006843C4 /* JDBPokemonAPI.m in Sources */,
 				114A7779223BFE2A006843C4 /* PokemonAPI.swift in Sources */,
 				114A775B223BF8F2006843C4 /* AppDelegate.m in Sources */,
 			);

@@ -4,9 +4,12 @@
 
 // Model
 #import "JDBPokemon.h"
+#import "JDBAbility.h"
 
 // Model Controllers
 
 
+
 // View Controllers
 #import "JDBPokemonTableViewController.h"
+#import "JDBDetailViewController.h"

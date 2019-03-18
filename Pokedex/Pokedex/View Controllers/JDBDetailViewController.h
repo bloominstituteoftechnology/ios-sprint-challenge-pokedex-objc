@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class JDBPokemon;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JDBDetailViewController : UIViewController
+
+@property JDBPokemon *pokemon;
 
 @end
 
