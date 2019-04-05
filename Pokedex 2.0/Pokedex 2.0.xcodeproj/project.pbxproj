@@ -117,9 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				39A97A1C2257B94C00F694E1 /* Pokedex 2.0-Bridging-Header.h */,
-				39A97A1D2257B94C00F694E1 /* PokemonDetailViewController.swift */,
 				39A97A1F2257B98200F694E1 /* MJRPokemonTableViewController.h */,
 				39A97A202257B98200F694E1 /* MJRPokemonTableViewController.m */,
+				39A97A1D2257B94C00F694E1 /* PokemonDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

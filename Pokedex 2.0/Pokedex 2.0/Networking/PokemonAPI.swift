@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objc (MJRPokemonAPI)
 class PokemonAPI: NSObject {
     
     @objc (sharedController) static let shared = PokemonAPI()

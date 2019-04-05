@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class MJRPokemonAPI;
+@class PokemonDetailViewController;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MJRPokemonTableViewController : UITableViewController
