@@ -10,4 +10,16 @@
 
 @implementation MJRPokemon
 
+- (instancetype)initWithName:(NSString *)name identifier:(NSNumber *)identifier abilities:(NSArray *)abilities sprite:(NSURL *)sprite
+{
+    self = [super init];
+    if (self) {
+        _name = [name copy];
+        _identifier = [identifier copy];
+        _abilities = [abilities copy];
+        _sprite = [sprite copy];
+    }
+    return self;
+}
+
 @end

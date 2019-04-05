@@ -10,19 +10,20 @@ import UIKit
 
 class PokemonAPI: NSObject {
 
-    @objc(sharedController) static let shared = PokemonAPI()
+    @objc (sharedController) static let shared = PokemonAPI()
     
-    @objc func fetchAllPokemon(completion: @escaping ([MJRPokemon]?, Error?) -> Void) {
+    @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
+        
+        
+    }
+    
+    @objc func fillInDetails(for pokemon: Pokemon) {
         
         
         
     }
     
-    @objc func fillInDetails(for pokemon: MJRPokemon) {
-        
-        
-        
-    }
     
+    // MARK: - Properties
     
 }
