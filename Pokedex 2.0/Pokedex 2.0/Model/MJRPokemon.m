@@ -10,6 +10,28 @@
 
 @implementation MJRPokemon
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    
+    NSString *name = dictionary[@"name"];
+    NSNumber *identifier = dictionary[@"id"];
+    
+    NSString *spriteString = dictionary[@"sprites"][@"front_default"];
+    NSURL *sprite = [NSURL URLWithString:spriteString];
+    
+    NSMutableArray *abilities = [[NSMutableArray alloc] init];
+    
+    NSArray *abilitiesDictionary = dictionary[@"abilities"];
+    
+    for (NSDictionary *abilityDictionary in abilitiesDictionary) {
+        NSString *ability = abilityDictionary[@"ability"][@"name"];
+        
+        [abilities addObject:ability];
+    }
+    
+    return [self initWithName:name identifier:identifier abilities:abilities sprite:sprite];
+}
+
 - (instancetype)initWithName:(NSString *)name identifier:(NSNumber *)identifier abilities:(NSArray *)abilities sprite:(NSURL *)sprite
 {
     self = [super init];

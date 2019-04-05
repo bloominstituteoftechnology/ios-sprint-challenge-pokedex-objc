@@ -26,4 +26,6 @@ class PokemonAPI: NSObject {
     
     // MARK: - Properties
     
+    private(set) var pokedex: [Pokemon] = []
+    private(set) var pokemon: Pokemon?
 }
