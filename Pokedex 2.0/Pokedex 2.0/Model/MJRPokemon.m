@@ -19,7 +19,7 @@
     NSString *spriteString = dictionary[@"sprites"][@"front_default"];
     NSURL *sprite = [NSURL URLWithString:spriteString];
     
-    NSMutableArray *abilities = [[NSMutableArray alloc] init];
+    NSMutableArray<NSString *> *abilities = [[NSMutableArray alloc] init];
     
     NSArray *abilitiesDictionary = dictionary[@"abilities"];
     

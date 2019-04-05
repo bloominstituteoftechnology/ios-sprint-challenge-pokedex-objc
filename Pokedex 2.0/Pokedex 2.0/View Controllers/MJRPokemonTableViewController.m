@@ -53,8 +53,6 @@
     
     if ([segue.identifier isEqualToString:@"ShowDetail"]) {
         
-        // Passing the task and task controller (tapped on a task cell)
-        
         PokemonDetailViewController *destination = segue.destinationViewController;
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         

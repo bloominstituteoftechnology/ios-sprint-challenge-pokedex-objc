@@ -88,6 +88,12 @@
                         <viewLayoutGuide key="safeArea" id="xoH-DT-SaC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="D20-Bj-1Cq"/>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="JEc-jR-xTW" id="AqT-gc-ogX"/>
+                        <outlet property="idLabel" destination="LON-dw-K0B" id="Nga-fr-mQa"/>
+                        <outlet property="nameLabel" destination="jJL-al-H3k" id="5VE-LP-jzG"/>
+                        <outlet property="pokemonSprite" destination="DbR-J1-gmS" id="7ed-dr-x1a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmc-S6-Qv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
