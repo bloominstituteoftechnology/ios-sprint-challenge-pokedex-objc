@@ -12,10 +12,7 @@ private let baseUrl = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
 
 class PokemonApi: NSObject {
     @objc(pokeApi) static let shared: PokemonApi = PokemonApi()
- //   @objc private(set) var pokemon = [NELPokemon]()
-    
-    
-    
+ 
     
     @objc func fetchPokemons(completion: @escaping ([NELPokemon]?, Error?) -> Void) {
         let components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)!
@@ -67,13 +64,15 @@ class PokemonApi: NSObject {
             do {
                 guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {throw NSError()}
                 
+              //   print(dictionary)
+                
                 let fetchedPoke = NELPokemon.init(dictionary: dictionary)
                 
                 pokemon.pokeName = fetchedPoke.pokeName
                 pokemon.pokeAbilities = fetchedPoke.pokeAbilities
                 pokemon.pokeId = fetchedPoke.pokeId
-                pokemon.pokeUrl = fetchedPoke.pokeUrl
-                pokemon.pokeFrontDefaultUrl = fetchedPoke.pokeFrontDefaultUrl
+                pokemon.sprite = fetchedPoke.sprite
+                
                 
             } catch {
                 NSLog("Error setting pokemon details")

@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class NELPokemon;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NELPokeDetailViewController : UIViewController
+
+@property NELPokemon *pokemons;
 
 @end
 

@@ -58,8 +58,15 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-   
+    if ([segue.identifier isEqualToString:@"toDetailVC"]) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NELPokeDetailViewController *destinationVC = segue.destinationViewController;
+        
+        destinationVC.pokemons = self.allPokemons[indexPath.row];
+    }
 }
+
 
 
 @end

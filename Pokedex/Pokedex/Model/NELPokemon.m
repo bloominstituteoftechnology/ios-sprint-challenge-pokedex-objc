@@ -8,11 +8,9 @@
 
 #import "NELPokemon.h"
 
-@interface NELPokemon ()
+#define CheckisKindOfClass(_v, _c) if ([(_v) isKindOfClass:[_c class]] == NO) { return nil; }
 
-@property (nonatomic, nullable, copy, readwrite) NSMutableArray<NSString *> *internalAbilities;
 
-@end
 
 @implementation NELPokemon
 
@@ -20,30 +18,25 @@
 {
     self = [super init];
     if (self) {
-        _pokeName = dictionary[@"name"];
-        _pokeUrl = dictionary[@"url"];
-        _pokeId = nil;
-        _pokeFrontDefaultUrl = nil;
-        _pokeAbilities = nil;
         
+        NSString *pokeName = dictionary[@"name"];
+        CheckisKindOfClass(pokeName, NSString);
+        NSNumber *pokeId = dictionary[@"id"];
+        
+        _pokeName = pokeName;
+        _pokeId = pokeId;
+        
+        NSString *sprite = [dictionary valueForKeyPath:@"sprites.front_default"];
+        NSArray *info = dictionary[@"abilities"];
+        NSArray *abilityName = [info valueForKeyPath:@"ability.name"];
+        
+        _pokeAbilities = abilityName;
+        _sprite = sprite;
+
     }
     return self;
 }
 
-- (void)fillPokeDictionary:(NSDictionary *)dictionary
-{
-    _pokeId = dictionary[@"id"];
-    
-    NSDictionary *spritesDict = dictionary[@"sprites"];
-    _pokeFrontDefaultUrl = spritesDict[@"font_default"];
-    
-    NSArray *abilities = dictionary[@"abilities"];
-    for (NSDictionary *ability in abilities) {
-        NSString *name = ability[@"name"];
-        [self.internalAbilities addObject: name];
-    }
-    _pokeAbilities = self.internalAbilities;
-}
 
 @end
 
