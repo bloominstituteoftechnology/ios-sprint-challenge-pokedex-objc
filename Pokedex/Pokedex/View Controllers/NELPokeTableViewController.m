@@ -7,8 +7,15 @@
 //
 
 #import "NELPokeTableViewController.h"
+#import "NELPokemon.h"
+#import "NELPokeDetailViewController.h"
+#import "Pokedex-Swift.h"
+
 
 @interface NELPokeTableViewController ()
+
+@property (nonatomic, strong) NSArray<NELPokemon *> *allPokemons;
+@property (nonatomic, readonly) PokemonApi *pokemonController;
 
 @end
 
@@ -17,21 +24,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _pokemonController = [PokemonApi pokeApi];
+    
+    [_pokemonController fetchPokemonsWithCompletion:^(NSArray<NELPokemon *> *allPokemons, NSError *error) {
+        if (error) {
+            NSLog(@"Error fetching all pokemons");
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^ {
+            self.allPokemons = allPokemons;
+            [self.tableView reloadData];
+        });
+    }];
    
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 0;
+    return self.allPokemons.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pokeCell" forIndexPath:indexPath];
     
+    NELPokemon *pokemons = self.allPokemons[indexPath.row];
     
-    
+    cell.textLabel.text = pokemons.pokeName;
+        
     return cell;
 }
 

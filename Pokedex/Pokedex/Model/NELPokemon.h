@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 -(void)fillPokeDictionary:(NSDictionary *)dictionary;
 
-@property (nonatomic, copy, readonly) NSString *pokeName;
-@property (nonatomic, copy, readonly) NSURL *pokeUrl;
-@property (nonatomic, readonly) NSNumber *pokeId;
-@property (nonatomic, copy, readonly, nullable) NSURL *pokeFrontDefaultUrl;
+@property (nonatomic, copy) NSString *pokeName;
+@property (nonatomic, copy) NSURL *pokeUrl;
+@property (nonatomic) NSNumber *pokeId;
+@property (nonatomic, copy, nullable) NSURL *pokeFrontDefaultUrl;
 @property (nonatomic, copy, nullable) NSArray<NSString *> *pokeAbilities;
 
 @end
