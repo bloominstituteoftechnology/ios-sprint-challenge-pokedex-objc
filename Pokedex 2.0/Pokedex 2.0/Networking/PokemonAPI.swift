@@ -9,7 +9,7 @@
 import UIKit
 
 class PokemonAPI: NSObject {
-
+    
     @objc (sharedController) static let shared = PokemonAPI()
     
     @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
@@ -47,14 +47,38 @@ class PokemonAPI: NSObject {
     
     @objc func fillInDetails(for pokemon: Pokemon) {
         
+        let url = baseURL.appendingPathComponent(pokemon.name)
         
-        
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                NSLog("error getting data: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("No data returned from data task")
+                return
+            }
+            
+            do {
+                
+                guard let pokemonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else { throw NSError() }
+                
+                let pokemon = Pokemon(dictionary: pokemonDictionary)
+                
+                self.pokemon = pokemon
+                
+            } catch {
+                NSLog("Unable to serialize json data: \(error)")
+                return
+            }
+        }
+        dataTask.resume()
     }
-    
     
     // MARK: - Properties
     
-   // private(set) var pokedex: [Pokemon] = []
+    // private(set) var pokedex: [Pokemon] = []
     private(set) var pokemon: Pokemon?
     
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
