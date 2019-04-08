@@ -12,10 +12,10 @@
 		39A97A0B2257B6B100F694E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39A97A0A2257B6B100F694E1 /* Assets.xcassets */; };
 		39A97A0E2257B6B100F694E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A97A0C2257B6B100F694E1 /* LaunchScreen.storyboard */; };
 		39A97A112257B6B100F694E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A97A102257B6B100F694E1 /* main.m */; };
-		39A97A1E2257B94C00F694E1 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A97A1D2257B94C00F694E1 /* PokemonDetailViewController.swift */; };
 		39A97A212257B98200F694E1 /* MJRPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A97A202257B98200F694E1 /* MJRPokemonTableViewController.m */; };
 		39A97A242257B9A100F694E1 /* MJRPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A97A232257B9A100F694E1 /* MJRPokemon.m */; };
 		39A97A262257B9BF00F694E1 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A97A252257B9BF00F694E1 /* PokemonAPI.swift */; };
+		39A97A29225AC21800F694E1 /* MJRPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A97A28225AC21800F694E1 /* MJRPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +28,13 @@
 		39A97A0F2257B6B100F694E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39A97A102257B6B100F694E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39A97A1C2257B94C00F694E1 /* Pokedex 2.0-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex 2.0-Bridging-Header.h"; sourceTree = "<group>"; };
-		39A97A1D2257B94C00F694E1 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		39A97A1F2257B98200F694E1 /* MJRPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJRPokemonTableViewController.h; sourceTree = "<group>"; };
 		39A97A202257B98200F694E1 /* MJRPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJRPokemonTableViewController.m; sourceTree = "<group>"; };
 		39A97A222257B9A100F694E1 /* MJRPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJRPokemon.h; sourceTree = "<group>"; };
 		39A97A232257B9A100F694E1 /* MJRPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJRPokemon.m; sourceTree = "<group>"; };
 		39A97A252257B9BF00F694E1 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		39A97A27225AC21800F694E1 /* MJRPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJRPokemonDetailViewController.h; sourceTree = "<group>"; };
+		39A97A28225AC21800F694E1 /* MJRPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJRPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +120,8 @@
 				39A97A1C2257B94C00F694E1 /* Pokedex 2.0-Bridging-Header.h */,
 				39A97A1F2257B98200F694E1 /* MJRPokemonTableViewController.h */,
 				39A97A202257B98200F694E1 /* MJRPokemonTableViewController.m */,
-				39A97A1D2257B94C00F694E1 /* PokemonDetailViewController.swift */,
+				39A97A27225AC21800F694E1 /* MJRPokemonDetailViewController.h */,
+				39A97A28225AC21800F694E1 /* MJRPokemonDetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -199,7 +201,7 @@
 				39A97A112257B6B100F694E1 /* main.m in Sources */,
 				39A97A032257B6AF00F694E1 /* AppDelegate.m in Sources */,
 				39A97A262257B9BF00F694E1 /* PokemonAPI.swift in Sources */,
-				39A97A1E2257B94C00F694E1 /* PokemonDetailViewController.swift in Sources */,
+				39A97A29225AC21800F694E1 /* MJRPokemonDetailViewController.m in Sources */,
 				39A97A212257B98200F694E1 /* MJRPokemonTableViewController.m in Sources */,
 				39A97A242257B9A100F694E1 /* MJRPokemon.m in Sources */,
 			);

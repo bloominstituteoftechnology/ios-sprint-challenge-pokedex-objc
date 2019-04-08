@@ -7,6 +7,7 @@
 //
 
 #import "MJRPokemonTableViewController.h"
+#import "MJRPokemonDetailViewController.h"
 #import "Pokedex_2_0-Swift.h"
 #import "MJRPokemon.h"
 
@@ -53,12 +54,14 @@
     
     if ([segue.identifier isEqualToString:@"ShowDetail"]) {
         
-        PokemonDetailViewController *destination = segue.destinationViewController;
+        MJRPokemonDetailViewController *destination = segue.destinationViewController;
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         
         MJRPokemon *pokemon = self.pokedex[indexPath.row];
         
         destination.pokemon = pokemon;
+        
+        [[MJRPokemonAPI sharedController] fillInDetailsFor:pokemon];
     }
 }
 

@@ -15,7 +15,7 @@ NS_SWIFT_NAME(Pokemon)
 
 -(instancetype)initWithName:(NSString *)name identifier:(NSNumber *)identifier abilities:(NSArray *)abilities sprite:(NSURL *)sprite;
 
-@property (nonatomic, copy, readonly) NSString *name;
+@property (nonatomic, copy, readwrite) NSString *name;
 @property (nonatomic, copy, readwrite, nullable) NSNumber *identifier;
 @property (nonatomic, copy, readwrite, nullable) NSArray<NSString *> *abilities;
 @property (nonatomic, copy, readwrite, nullable) NSURL *sprite;

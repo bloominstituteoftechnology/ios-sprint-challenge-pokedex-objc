@@ -65,9 +65,12 @@ class PokemonAPI: NSObject {
                 
                 guard let pokemonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else { throw NSError() }
                 
-                let pokemon = Pokemon(dictionary: pokemonDictionary)
+                let updatedPokemon = Pokemon(dictionary: pokemonDictionary)
                 
-                self.pokemon = pokemon
+                pokemon.name = updatedPokemon.name
+                pokemon.abilities = updatedPokemon.abilities
+                pokemon.identifier = updatedPokemon.identifier
+                pokemon.sprite = updatedPokemon.sprite
                 
             } catch {
                 NSLog("Unable to serialize json data: \(error)")
@@ -78,9 +81,6 @@ class PokemonAPI: NSObject {
     }
     
     // MARK: - Properties
-    
-    // private(set) var pokedex: [Pokemon] = []
-    private(set) var pokemon: Pokemon?
     
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
 }
