@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class JCSPokemon;
+@class JCSPokemonController;
 NS_SWIFT_NAME(DetailViewController)
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,8 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UILabel *abilitiesLabel;
 
-@property JCSPokemon *pokemon;
+- (void)updateViews;
 
+@property JCSPokemon *pokemon;
+@property JCSPokemonController *pokemonController;
 
 @end
 

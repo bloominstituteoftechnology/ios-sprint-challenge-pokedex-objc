@@ -12,15 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JCSPokemon : NSObject
 
-- (instancetype)initWithName:(NSString *)name abilities:(NSArray *)abilities identifier:(NSInteger)identifier photo:(NSURL *)photoURL;
+- (instancetype)initWithName:(NSString *)name abilities:(NSArray *)abilities identifier:(NSInteger)identifier photo:(NSString *)photoURL;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-- (instancetype)initWithURL:(NSURL *)pokemonURL name:(NSString *)name;
+- (instancetype)initWithURL:(NSString *)pokemonURL name:(NSString *)name;
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy, readonly) NSArray *abilities;
 @property (nonatomic) NSInteger identifier;
-@property (nonatomic, copy) NSURL *photoURL;
-@property (nonatomic, copy) NSURL *pokemonURL;
+@property (nonatomic, copy) NSString *photoURL;
+@property (nonatomic, copy) NSString *pokemonURL;
 @property (nonatomic) BOOL isFilled;
 
 @end

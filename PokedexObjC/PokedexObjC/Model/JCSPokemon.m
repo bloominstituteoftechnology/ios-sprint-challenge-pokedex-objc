@@ -10,7 +10,7 @@
 
 @implementation JCSPokemon
 
-- (instancetype)initWithURL:(NSURL *)pokemonURL name:(NSString *)name {
+- (instancetype)initWithURL:(NSString *)pokemonURL name:(NSString *)name {
     self = [super init];
     if (self) {
         _pokemonURL = pokemonURL;
@@ -19,7 +19,7 @@
     return self;
 }
 
-- (instancetype)initWithName:(NSString *)name abilities:(NSArray *)abilities identifier:(NSInteger)identifier photo:(NSURL *)photoURL {
+- (instancetype)initWithName:(NSString *)name abilities:(NSArray *)abilities identifier:(NSInteger)identifier photo:(NSString *)photoURL {
     self = [super init];
     if (self) {
         _name = name;
@@ -47,7 +47,7 @@
 
     
     NSDictionary *spritesDict = dictionary[@"sprites"];
-    NSURL *photo = spritesDict[@"back_default"];
+    NSString *photo = spritesDict[@"back_default"];
     
     NSArray *abilitiesArray = dictionary[@"abilities"];
     NSMutableArray *abilityNames = [[NSMutableArray alloc] init];

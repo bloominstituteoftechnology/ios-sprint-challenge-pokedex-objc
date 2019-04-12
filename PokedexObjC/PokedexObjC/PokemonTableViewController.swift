@@ -12,7 +12,11 @@ class PokemonTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        pokemonController.fetchAllPokemon { (_, _) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -83,6 +87,7 @@ class PokemonTableViewController: UITableViewController {
             guard let detailVC = segue.destination as? DetailViewController, let pokemonIndex = tableView.indexPathForSelectedRow?.row else { return }
             
             detailVC.pokemon = pokemonController.pokemons[pokemonIndex]
+            detailVC.pokemonController = pokemonController
         }
     }
     

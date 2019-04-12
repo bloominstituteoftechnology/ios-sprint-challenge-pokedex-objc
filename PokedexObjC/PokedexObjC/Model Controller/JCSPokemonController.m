@@ -28,19 +28,20 @@ static NSString *baseURLString = @"https://pokeapi.co/api/v2/pokemon/";
     return self;
 }
 
-- (void)fetchPokemonByName:(NSString *)name completion:(void (^)(NSError *))completion {
+- (void)fetchAllPokemon:(JCSPokemonControllerCompletionBlock)completion {
+//- (void)fetchPokemonByName:(NSString *)name completion:(void (^)(NSError *))completion {
     
     
    // NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:baseURLString];
     
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
-    NSURL *pokemonURL = [baseURL URLByAppendingPathComponent: name.lowercaseString];
+   // NSURL *pokemonURL = [baseURL URLByAppendingPathComponent: name.lowercaseString];
     
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:baseURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if (error) {
             NSLog(@"Error fetching pokemon: %@", error);
-            completion(error);
+            completion(nil, error);
             return;
         }
         NSError *jsonError;
@@ -48,7 +49,7 @@ static NSString *baseURLString = @"https://pokeapi.co/api/v2/pokemon/";
         
         if (!dictionary) {
             NSLog(@"Error decoding: %@", error);
-            completion(error);
+            completion(nil, error);
             return;
         }
         
@@ -66,7 +67,7 @@ static NSString *baseURLString = @"https://pokeapi.co/api/v2/pokemon/";
         }
         self.internalPokemon = pokemons;
         NSLog(@"Pokemon from all fetch: %@", self.internalPokemon);
-        completion(nil);
+        completion(pokemons, nil);
         
     }];
     [task resume];
@@ -75,7 +76,9 @@ static NSString *baseURLString = @"https://pokeapi.co/api/v2/pokemon/";
 
 - (void)fillInDetails:(JCSPokemon *)pokemon {
     
-    NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:pokemon.pokemonURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSURL *pokemonURL = [NSURL URLWithString:pokemon.pokemonURL];
+    
+    NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:pokemonURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if (error) {
             NSLog(@"Error fetching pokemon: %@", error);
@@ -103,7 +106,8 @@ static NSString *baseURLString = @"https://pokeapi.co/api/v2/pokemon/";
         
        // [pokemons addObject:pokemon];
         if (pokemon.name && pokemon.abilities && pokemon.identifier && pokemon.photoURL) {
-            //[pokemon setValue:YES forKey:@"isFilled"];
+            NSNumber *boolValue = [NSNumber numberWithBool:YES];
+            [pokemon setValue:boolValue forKey:@"isFilled"];
             NSLog(@"Pokemon from fetch detail has been set: %@", pokemonWithDetails.name);
         }
         //self.internalPokemon = pokemons;
