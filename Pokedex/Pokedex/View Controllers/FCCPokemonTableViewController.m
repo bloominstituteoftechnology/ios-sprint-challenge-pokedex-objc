@@ -47,7 +47,7 @@
     
     if ([segue.identifier isEqualToString:@"PokemonSegue"]) {
         
-        FCCPokemonDetailViewController *destination = segue.destinationViewController;
+        FCCDetailPokemonViewController *destination = segue.destinationViewController;
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         
         FCCPokemon *pokemon = self.pokedex[indexPath.row];
