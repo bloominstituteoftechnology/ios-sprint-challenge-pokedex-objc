@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithName:(NSString *)name  id:(NSInteger)identifier spritesURL:(NSString *)spritesURL abilities:(NSString *)abilities;
 
-// - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 
 @property (nonatomic, copy, readonly) NSString *name;
