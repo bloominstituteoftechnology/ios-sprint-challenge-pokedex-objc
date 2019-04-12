@@ -25,6 +25,12 @@ void *KVOContext = &KVOContext;
     [self.pokemonController fillInDetails:self.pokemon];
     
 }
+
+- (void)dealloc
+{
+    [self.pokemon removeObserver:self forKeyPath:@"isFilled" context:KVOContext];
+    NSLog(@"Dealloc method");
+}
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (context == KVOContext) {
@@ -41,7 +47,6 @@ void *KVOContext = &KVOContext;
 
 - (void)updateViews {
     _nameLabel.text = [NSString stringWithFormat:@"Name: %@", self.pokemon.name];
-  //  NSNumber *idValue = [NSNumber numberWithInteger:self.pokemon.identifier];
     _idLabel.text = [NSString stringWithFormat:@"ID: %ld", (long)self.pokemon.identifier];
     
     NSMutableString *abString = [[NSMutableString alloc] init];
@@ -55,14 +60,5 @@ void *KVOContext = &KVOContext;
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

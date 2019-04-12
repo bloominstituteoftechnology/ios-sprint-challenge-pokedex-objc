@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef void (^JCSPokemonControllerCompletionBlock)(NSArray  * _Nullable pokemons, NSError  * _Nullable error);
+
 @class JCSPokemon;
 
 NS_SWIFT_NAME(PokemonController)
@@ -20,7 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) NSArray<JCSPokemon *> *pokemons;
 
-- (void)fetchPokemonByName:(NSString *)name completion:(void (^)(NSError *))completion;
 - (void)fetchAllPokemon:(JCSPokemonControllerCompletionBlock)completion;
 - (void)fillInDetails:(JCSPokemon *)pokemon;
 
