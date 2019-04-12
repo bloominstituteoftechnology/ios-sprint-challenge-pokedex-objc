@@ -9,6 +9,12 @@
 #import "FCCDetailPokemonViewController.h"
 
 @interface FCCDetailPokemonViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *pokemonSprite;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *identifierLabel;
+@property (weak, nonatomic) IBOutlet UILabel *abilitiesLabel;
+
+
 
 @end
 

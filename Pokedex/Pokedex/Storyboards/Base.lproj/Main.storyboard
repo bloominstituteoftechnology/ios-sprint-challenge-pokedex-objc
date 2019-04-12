@@ -102,6 +102,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vjl-5Q-5ff"/>
                     </view>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="5uw-le-pjm" id="S5i-iw-5t8"/>
+                        <outlet property="identifierLabel" destination="kia-cx-Tsw" id="lkq-ot-0hH"/>
+                        <outlet property="nameLabel" destination="8EH-Fo-ttq" id="jsL-41-PSf"/>
+                        <outlet property="pokemonSprite" destination="MYw-Zc-G6x" id="hYE-Qf-tFt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M6S-FB-Ui2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
