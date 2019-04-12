@@ -91,6 +91,29 @@ class PokemonAPI: NSObject {
         task.resume()
     }
     
+    @objc(fetchImageWithURL:completionBlock:)
+    func fetchImage(with url: URL, completion: @escaping (Data?, Error?) -> Void) {
+        
+        let imageTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
+            
+            if let error = error {
+                print("Error during URLSession: \(error).")
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                print("Error fetching data.")
+                completion(nil, URLSessionError.dataFetching)
+                return
+            }
+            
+            completion(data, nil)
+        }
+        
+        imageTask.resume()
+    }
+    
     let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     @objc(sharedController) static let shared = PokemonAPI()
 }

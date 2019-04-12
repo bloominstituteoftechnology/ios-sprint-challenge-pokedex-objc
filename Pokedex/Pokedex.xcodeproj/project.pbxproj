@@ -76,7 +76,7 @@
 				77E0A2042260E4A000447BA4 /* main.m */,
 				77E0A20E2260E77700447BA4 /* Model */,
 				77E0A2152260E8CE00447BA4 /* View Controllers */,
-				77E0A2172260E9B300447BA4 /* PokemonAPI.swift */,
+				77E0A2192260F60E00447BA4 /* Controllers */,
 				77E0A2162260E9B300447BA4 /* Pokedex-Bridging-Header.h */,
 			);
 			path = Pokedex;
@@ -100,6 +100,14 @@
 				77E0A2132260E8C800447BA4 /* NYCDetailViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		77E0A2192260F60E00447BA4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				77E0A2172260E9B300447BA4 /* PokemonAPI.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
