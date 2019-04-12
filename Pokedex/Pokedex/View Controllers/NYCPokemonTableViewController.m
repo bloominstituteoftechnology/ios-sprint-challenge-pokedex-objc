@@ -13,7 +13,7 @@
 
 @interface NYCPokemonTableViewController ()
 
-@property (nonatomic, strong) NSArray *pokemon;
+@property (nonatomic, strong) NSMutableArray *pokemon;
 
 @end
 
@@ -21,17 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    PokemonAPI *controller = [PokemonAPI sharedController];
-    
-    [controller fetchAllPokemonWithCompletion:^(NSArray<NYCPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
-       
-        if (error) {
-            NSLog(@"Error fetching Pokemon: %@", error);
-            return;
-        }
-        self.pokemon = pokemon;
-    }];
+    [self fetchPokemon];
 }
 
 #pragma mark - Table view data source
@@ -48,6 +38,38 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row + 1 == self.pokemon.count) {
+        [self fetchPokemon];
+    }
+}
+
+- (void)fetchPokemon {
+    
+    PokemonAPI *controller = [PokemonAPI sharedController];
+    [controller fetchAllPokemonWithCompletion:^(NSArray<NYCPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
+        
+        if (error) {
+            NSLog(@"Error fetching Pokemon: %@", error);
+            return;
+        }
+        
+        if (self.pokemon != nil) {
+            [self.pokemon addObjectsFromArray:pokemon];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+               
+                [[self tableView] reloadData];
+            });
+            
+        } else {
+            NSMutableArray *pokemonArray = [[NSMutableArray alloc] initWithArray:pokemon];
+            self.pokemon = pokemonArray;
+        }
+    }];
+}
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -58,7 +80,7 @@
     }
 }
 
-- (void)setPokemon:(NSArray *)pokemon {
+- (void)setPokemon:(NSMutableArray *)pokemon {
     _pokemon = pokemon;
     
     dispatch_async(dispatch_get_main_queue(), ^{

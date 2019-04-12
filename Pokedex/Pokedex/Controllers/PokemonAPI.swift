@@ -18,7 +18,9 @@ class PokemonAPI: NSObject {
     @objc(fetchAllPokemonWithCompletion:)
     func fetchAllPokemon(completion: @escaping ([NYCPokemon]?, Error?) -> Void) {
         
-        let task = URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
+        let taskURL = self.nextURL ?? baseURL
+        
+        let task = URLSession.shared.dataTask(with: taskURL) { (data, _, error) in
             if let error = error {
                 print("Error fetching Pokemon: \(error)")
                 completion(nil, error)
@@ -33,6 +35,16 @@ class PokemonAPI: NSObject {
             
             do {
                 let response = try JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary
+                
+                let nextURLString = response.value(forKey: "next") as? String
+                
+                if nextURLString != nil {
+                    let nextURL = URL(string: nextURLString!)!
+                    self.nextURL = nextURL
+                } else {
+                    self.nextURL = nil;
+                }
+                
                 let results = response.value(forKey: "results") as! NSArray
                 var pokemon: [NYCPokemon] = []
                 for result in results {
@@ -115,5 +127,8 @@ class PokemonAPI: NSObject {
     }
     
     let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
+    
+    var nextURL: URL?
+    
     @objc(sharedController) static let shared = PokemonAPI()
 }
