@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  NYCDetailViewController.h
 //  Pokedex
 //
 //  Created by Nathanael Youngren on 4/12/19.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface NYCDetailViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
