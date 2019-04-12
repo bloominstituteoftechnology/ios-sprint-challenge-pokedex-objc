@@ -10,6 +10,8 @@
 #import "FCCPokemon.h"
 #import "Pokedex-Swift.h"
 
+void *KVOContext = &KVOContext;
+
 @interface FCCDetailPokemonViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *pokemonSprite;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -20,9 +22,15 @@
 
 @implementation FCCDetailPokemonViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+}
+
 - (void) updateViews {
     if (self.pokemon) {
         
+        dispatch_async(dispatch_get_main_queue(), ^{
         self.title = [self.pokemon.name capitalizedString];
         self.nameLabel.text = [self.pokemon.name capitalizedString];
         self.identifierLabel.text = [NSString stringWithFormat:@"ID: %@", self.pokemon.identifier];
@@ -31,6 +39,7 @@
         self.abilitiesLabel.text = [NSString stringWithFormat:@"Abilities: %@", abilitiesString];
         
         [self placeImage];
+        });
     }
 }
 
@@ -58,5 +67,26 @@
     [dataTask resume];
 }
 
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    
+    if (context == KVOContext) {
+            [self updateViews];
+    }
+    else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+    
+- (void) dealloc; {
+    [self.pokemon removeObserver:self forKeyPath:@"sprite" context:&KVOContext];
+}
+
+- (void)setPokemon:(FCCPokemon *)pokemon {
+    
+    if (pokemon != _pokemon) {
+        _pokemon = pokemon;
+        [self.pokemon addObserver:self forKeyPath:@"sprite" options:NSKeyValueObservingOptionInitial context:KVOContext];
+    }
+}
 
 @end
