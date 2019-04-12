@@ -10,6 +10,11 @@
 
 @interface NYCDetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *pokemonImageView;
+@property (weak, nonatomic) IBOutlet UILabel *pokemonNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pokemonIdentifierLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pokemonAbilitiesLabel;
+
 @end
 
 @implementation NYCDetailViewController

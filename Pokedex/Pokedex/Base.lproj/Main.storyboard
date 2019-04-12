@@ -102,6 +102,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b2x-hw-TYA"/>
                     </view>
+                    <connections>
+                        <outlet property="pokemonAbilitiesLabel" destination="LKM-Uw-0M1" id="ue6-uW-HD6"/>
+                        <outlet property="pokemonIdentifierLabel" destination="u5N-M8-x2y" id="9Ek-st-nVq"/>
+                        <outlet property="pokemonImageView" destination="j9t-5a-xVs" id="41Z-Nf-4E4"/>
+                        <outlet property="pokemonNameLabel" destination="5d5-lx-sIq" id="Gdq-ic-C4N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PMA-PF-fp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
