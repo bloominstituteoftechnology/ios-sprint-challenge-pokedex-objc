@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		C4C4D08C2260DE6000EE39BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D08B2260DE6000EE39BC /* AppDelegate.m */; };
-		C4C4D08F2260DE6000EE39BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D08E2260DE6000EE39BC /* ViewController.m */; };
 		C4C4D0922260DE6000EE39BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C4D0902260DE6000EE39BC /* Main.storyboard */; };
 		C4C4D0942260DE6100EE39BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4C4D0932260DE6100EE39BC /* Assets.xcassets */; };
 		C4C4D0972260DE6100EE39BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C4D0952260DE6100EE39BC /* LaunchScreen.storyboard */; };
 		C4C4D09A2260DE6100EE39BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D0992260DE6100EE39BC /* main.m */; };
+		C4C4D0A22260E30100EE39BC /* GLITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D0A12260E30100EE39BC /* GLITableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C4C4D0872260DE6000EE39BC /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C4D08A2260DE6000EE39BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C4C4D08B2260DE6000EE39BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C4C4D08D2260DE6000EE39BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C4C4D08E2260DE6000EE39BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C4C4D0912260DE6000EE39BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4C4D0932260DE6100EE39BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4C4D0962260DE6100EE39BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4C4D0982260DE6100EE39BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4C4D0992260DE6100EE39BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C4C4D0A02260E30100EE39BC /* GLITableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLITableViewController.h; sourceTree = "<group>"; };
+		C4C4D0A12260E30100EE39BC /* GLITableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLITableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +58,10 @@
 		C4C4D0892260DE6000EE39BC /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				C4C4D0A02260E30100EE39BC /* GLITableViewController.h */,
+				C4C4D0A12260E30100EE39BC /* GLITableViewController.m */,
 				C4C4D08A2260DE6000EE39BC /* AppDelegate.h */,
 				C4C4D08B2260DE6000EE39BC /* AppDelegate.m */,
-				C4C4D08D2260DE6000EE39BC /* ViewController.h */,
-				C4C4D08E2260DE6000EE39BC /* ViewController.m */,
 				C4C4D0902260DE6000EE39BC /* Main.storyboard */,
 				C4C4D0932260DE6100EE39BC /* Assets.xcassets */,
 				C4C4D0952260DE6100EE39BC /* LaunchScreen.storyboard */,
@@ -141,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4C4D08F2260DE6000EE39BC /* ViewController.m in Sources */,
+				C4C4D0A22260E30100EE39BC /* GLITableViewController.m in Sources */,
 				C4C4D09A2260DE6100EE39BC /* main.m in Sources */,
 				C4C4D08C2260DE6000EE39BC /* AppDelegate.m in Sources */,
 			);

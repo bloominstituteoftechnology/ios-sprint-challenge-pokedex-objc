@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GLITableViewController.h
 //  Pokedex
 //
 //  Created by Julian A. Fordyce on 4/12/19.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface GLITableViewController : UITableViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
