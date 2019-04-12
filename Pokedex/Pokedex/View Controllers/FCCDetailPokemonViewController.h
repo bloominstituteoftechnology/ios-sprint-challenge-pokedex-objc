@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class FCCPokemon;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FCCDetailPokemonViewController : UIViewController

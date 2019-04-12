@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class FCCPokemonController;
+@class PokemonDetailViewController;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FCCPokemonTableViewController : UITableViewController
