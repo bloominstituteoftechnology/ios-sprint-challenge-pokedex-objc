@@ -82,7 +82,6 @@ void *KVOContext = &KVOContext;
 }
 
 - (void)setPokemon:(FCCPokemon *)pokemon {
-    
     if (pokemon != _pokemon) {
         _pokemon = pokemon;
         [self.pokemon addObserver:self forKeyPath:@"sprite" options:NSKeyValueObservingOptionInitial context:KVOContext];
