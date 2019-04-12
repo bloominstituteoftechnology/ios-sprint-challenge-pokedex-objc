@@ -13,6 +13,7 @@
 		C4C4D0972260DE6100EE39BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C4D0952260DE6100EE39BC /* LaunchScreen.storyboard */; };
 		C4C4D09A2260DE6100EE39BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D0992260DE6100EE39BC /* main.m */; };
 		C4C4D0A22260E30100EE39BC /* GLITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D0A12260E30100EE39BC /* GLITableViewController.m */; };
+		C4C4D0A52260E37D00EE39BC /* GLIDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D0A42260E37D00EE39BC /* GLIDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		C4C4D0992260DE6100EE39BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4C4D0A02260E30100EE39BC /* GLITableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLITableViewController.h; sourceTree = "<group>"; };
 		C4C4D0A12260E30100EE39BC /* GLITableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLITableViewController.m; sourceTree = "<group>"; };
+		C4C4D0A32260E37D00EE39BC /* GLIDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLIDetailViewController.h; sourceTree = "<group>"; };
+		C4C4D0A42260E37D00EE39BC /* GLIDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLIDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				C4C4D08A2260DE6000EE39BC /* AppDelegate.h */,
 				C4C4D08B2260DE6000EE39BC /* AppDelegate.m */,
 				C4C4D0902260DE6000EE39BC /* Main.storyboard */,
+				C4C4D0A32260E37D00EE39BC /* GLIDetailViewController.h */,
+				C4C4D0A42260E37D00EE39BC /* GLIDetailViewController.m */,
 				C4C4D0932260DE6100EE39BC /* Assets.xcassets */,
 				C4C4D0952260DE6100EE39BC /* LaunchScreen.storyboard */,
 				C4C4D0982260DE6100EE39BC /* Info.plist */,
@@ -143,6 +148,7 @@
 			files = (
 				C4C4D0A22260E30100EE39BC /* GLITableViewController.m in Sources */,
 				C4C4D09A2260DE6100EE39BC /* main.m in Sources */,
+				C4C4D0A52260E37D00EE39BC /* GLIDetailViewController.m in Sources */,
 				C4C4D08C2260DE6000EE39BC /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
