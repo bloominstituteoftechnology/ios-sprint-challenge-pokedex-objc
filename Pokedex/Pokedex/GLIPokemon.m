@@ -10,4 +10,18 @@
 
 @implementation GLIPokemon
 
+
+- (instancetype)initWithName:(NSString *)name id:(NSInteger)identifier spritesURL:(NSString *)spritesURL abilities:(NSString *)abilities
+{
+    self = [super init];
+    if (self) {
+        _name = name;
+        _identifier = identifier;
+        _spritesURL = spritesURL;
+        _abilities = abilities;
+    }
+    return self;
+}
+
+
 @end
