@@ -44,5 +44,35 @@ class PokemonController: NSObject {
         dataTask.resume()
     }
     
-   
+    @objc func fillInDetails(for pokemon: Pokemon) {
+        let url = baseURL.appendingPathComponent(pokemon.name)
+        
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                NSLog("error getting data: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("No data returned from data task")
+                return
+            }
+            
+            do {
+                guard let pokemonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else { throw NSError() }
+                
+                let updatedPokemon = Pokemon(dictionary: pokemonDictionary)
+                pokemon.name = updatedPokemon.name
+                pokemon.abilities = updatedPokemon.abilities
+                pokemon.identifier = updatedPokemon.identifier
+                pokemon.sprite = updatedPokemon.sprite
+                
+            } catch {
+                NSLog("Unable to serialize json data: \(error)")
+                return
+            }
+        }
+        dataTask.resume()
+    }
+    
 }
