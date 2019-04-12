@@ -18,7 +18,34 @@ class PokemonController: NSObject {
     
     @objc func fetchAllPokemon(completion: @escaping ([GLIPokemon]?, Error?) -> Void) {
         
+        URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
+            if let error = error {
+                return completion(nil, error)
+            }
+            
+            guard let data = data else {
+                return completion(nil, NSError())
+            }
+            
+            do {
+                
+                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any],
+                    let pokemonDictionaries = dictionary["results"] as? [[String : Any]] else {
+                        throw NSError()
+                }
+                
+                let pokemon = pokemonDictionaries.compactMap { GLIPokemon(dictionary: $0) }
+                
+                completion(pokemon, nil)
+                
+            } catch {
+                return completion(nil, error)
+            }
+        }.resume()
+        
     }
+    
+
     
     @objc func fillInDetails(for pokemon: GLIPokemon) {
         

@@ -16,7 +16,6 @@
 		C4C4D0A52260E37D00EE39BC /* GLIDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D0A42260E37D00EE39BC /* GLIDetailViewController.m */; };
 		C4C4D0A82260E63D00EE39BC /* GLIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D0A72260E63D00EE39BC /* GLIPokemon.m */; };
 		C4C4D0AE2260F0C100EE39BC /* GLIPokemon+NSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D0AD2260F0C100EE39BC /* GLIPokemon+NSJSONSerialization.m */; };
-		C4C4D0B12260F2D400EE39BC /* GLIPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D0B02260F2D400EE39BC /* GLIPokemonController.m */; };
 		C4C4D0B42260F58D00EE39BC /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D0B32260F58D00EE39BC /* PokemonController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +36,6 @@
 		C4C4D0A72260E63D00EE39BC /* GLIPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLIPokemon.m; sourceTree = "<group>"; };
 		C4C4D0AC2260F0C100EE39BC /* GLIPokemon+NSJSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLIPokemon+NSJSONSerialization.h"; sourceTree = "<group>"; };
 		C4C4D0AD2260F0C100EE39BC /* GLIPokemon+NSJSONSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GLIPokemon+NSJSONSerialization.m"; sourceTree = "<group>"; };
-		C4C4D0AF2260F2D400EE39BC /* GLIPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLIPokemonController.h; sourceTree = "<group>"; };
-		C4C4D0B02260F2D400EE39BC /* GLIPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLIPokemonController.m; sourceTree = "<group>"; };
 		C4C4D0B22260F58D00EE39BC /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4C4D0B32260F58D00EE39BC /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,9 +72,7 @@
 			children = (
 				C4C4D0AC2260F0C100EE39BC /* GLIPokemon+NSJSONSerialization.h */,
 				C4C4D0AD2260F0C100EE39BC /* GLIPokemon+NSJSONSerialization.m */,
-				C4C4D0AF2260F2D400EE39BC /* GLIPokemonController.h */,
 				C4C4D0B32260F58D00EE39BC /* PokemonController.swift */,
-				C4C4D0B02260F2D400EE39BC /* GLIPokemonController.m */,
 				C4C4D0A02260E30100EE39BC /* GLITableViewController.h */,
 				C4C4D0A12260E30100EE39BC /* GLITableViewController.m */,
 				C4C4D08A2260DE6000EE39BC /* AppDelegate.h */,
@@ -172,7 +167,6 @@
 				C4C4D0A82260E63D00EE39BC /* GLIPokemon.m in Sources */,
 				C4C4D09A2260DE6100EE39BC /* main.m in Sources */,
 				C4C4D0A52260E37D00EE39BC /* GLIDetailViewController.m in Sources */,
-				C4C4D0B12260F2D400EE39BC /* GLIPokemonController.m in Sources */,
 				C4C4D08C2260DE6000EE39BC /* AppDelegate.m in Sources */,
 				C4C4D0B42260F58D00EE39BC /* PokemonController.swift in Sources */,
 			);
