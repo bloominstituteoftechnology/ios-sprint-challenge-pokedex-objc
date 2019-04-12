@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class NYCPokemon;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NYCDetailViewController : UIViewController
+
+@property (nonatomic) NYCPokemon *pokemon;
 
 @end
 
