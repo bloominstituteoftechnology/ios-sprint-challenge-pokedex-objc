@@ -16,25 +16,47 @@
 @property (weak, nonatomic) IBOutlet UILabel *identifierLabel;
 @property (weak, nonatomic) IBOutlet UILabel *abilitiesLabel;
 
-
-
 @end
 
 @implementation FCCDetailPokemonViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void) updateViews {
+    if (self.pokemon) {
+        
+        self.title = [self.pokemon.name capitalizedString];
+        self.nameLabel.text = [self.pokemon.name capitalizedString];
+        self.identifierLabel.text = [NSString stringWithFormat:@"ID: %@", self.pokemon.identifier];
+        
+        NSString *abilitiesString = [[self.pokemon.abilities componentsJoinedByString:@", "] capitalizedString];
+        self.abilitiesLabel.text = [NSString stringWithFormat:@"Abilities: %@", abilitiesString];
+        
+        [self placeImage];
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void) placeImage {
+    NSURL *imageURL = self.pokemon.sprite;
+    
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithURL:imageURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error getting image %@", error);
+            return;
+        }
+        
+        if (!data) {
+            NSLog(@"No data returned from data task");
+            return;
+        }
+        
+        UIImage *sprite = [UIImage imageWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[self pokemonSprite] setImage:sprite];
+        });
+        
+    }];
+    [dataTask resume];
 }
-*/
+
 
 @end
