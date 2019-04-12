@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class FCCPokemonController;
+@class PokemonController;
 @class PokemonDetailViewController;
 
 NS_ASSUME_NONNULL_BEGIN

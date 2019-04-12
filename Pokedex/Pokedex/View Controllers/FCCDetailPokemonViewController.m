@@ -7,6 +7,8 @@
 //
 
 #import "FCCDetailPokemonViewController.h"
+#import "FCCPokemon.h"
+#import "Pokedex-Swift.h"
 
 @interface FCCDetailPokemonViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *pokemonSprite;

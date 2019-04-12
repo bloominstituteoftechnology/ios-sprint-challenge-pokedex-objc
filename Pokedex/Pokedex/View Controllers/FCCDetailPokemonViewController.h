@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FCCDetailPokemonViewController : UIViewController
-
+@property (nonatomic) FCCPokemon *pokemon;
 @end
 
 NS_ASSUME_NONNULL_END
