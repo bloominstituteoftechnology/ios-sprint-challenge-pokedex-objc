@@ -43,7 +43,7 @@
     
     JMKPokemon *pokemon = self.allPokemon[indexPath.row];
     [cell.textLabel setText:pokemon.name];
-
+    
     return cell;
 }
 
@@ -51,7 +51,7 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-   
+    
     JMKPokeDexDetailViewController *destinationVC = segue.destinationViewController;
     NSIndexPath *indexPath = [[self tableView] indexPathForSelectedRow];
     JMKPokemon *pokemon = self.allPokemon[indexPath.row];

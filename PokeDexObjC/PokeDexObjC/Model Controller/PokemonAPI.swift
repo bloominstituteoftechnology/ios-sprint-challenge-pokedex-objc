@@ -16,7 +16,7 @@ class PokemonAPI: NSObject {
     func fetchAllPokemon(completion: @escaping ([JMKPokemon]?, Error?) -> Void) {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
-        let queryItem = URLQueryItem(name: "limit", value: "801") //limits query to 801 pokemon to avoid crashes. Can't figure out yet why over 801 causes crash.
+        let queryItem = URLQueryItem(name: "limit", value: "801") //limits query to 801 pokemon to avoid crashes.
         urlComponents.queryItems = [queryItem]
         let requestURL = urlComponents.url!
         
@@ -47,12 +47,12 @@ class PokemonAPI: NSObject {
                 NSLog("Error decoding json into object: \(error)")
                 completion(nil, error)
             }
-        }.resume()
+            }.resume()
     }
     
     func fillInDetails(for pokemon: JMKPokemon) {
-        
-        URLSession.shared.dataTask(with: pokemon.url) { (data, _, error) in
+        guard let url = pokemon.url else {return}
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
             
             if let error = error {
                 NSLog("Error fetching details: \(error)")
@@ -71,6 +71,6 @@ class PokemonAPI: NSObject {
                 NSLog("Error decoding json data: \(error)")
                 return
             }
-        }.resume()
+            }.resume()
     }
 }
