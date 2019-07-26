@@ -28,7 +28,7 @@
         _pokemonID = pokemonID;
 
         _sprite = sprite;
-        _ablities = abilityNames;
+        _abilities = abilityNames;
 
 
     }

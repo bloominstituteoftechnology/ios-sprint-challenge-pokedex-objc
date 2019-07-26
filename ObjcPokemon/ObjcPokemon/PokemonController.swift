@@ -69,7 +69,7 @@ class PokemonController: NSObject {
 
                 let pokemonResults = DLJPokemon.init(dictionary: result)
                 pokemon.name = pokemonResults.name
-                pokemon.ablities = pokemonResults.ablities
+                pokemon.abilities = pokemonResults.abilities
                 pokemon.pokemonID = pokemonResults.pokemonID
                 pokemon.sprite = pokemonResults.sprite
 

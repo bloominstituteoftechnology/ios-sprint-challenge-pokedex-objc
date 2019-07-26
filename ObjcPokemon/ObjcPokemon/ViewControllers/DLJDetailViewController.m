@@ -24,7 +24,7 @@
 
 @implementation DLJDetailViewController
 
-//void *KVOContext = &KVOContext;
+void *KVOContext = &KVOContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +32,7 @@
 
     if (self.pokemon.name == nil) {
 
-        [self.pokemon addObserver:self forKeyPath:@"abilities" options:0 context:nil];
+        [self.pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionInitial context:KVOContext];
     }
     [PokemonController.shared fillInDetailsFor:self.pokemon];
 }
@@ -48,7 +48,7 @@
     if (self.pokemon) {
         self.nameLabel.text = self.pokemon.name;
         self.idLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.pokemonID];
-        self.abilityLabel.text = [self.pokemon.ablities componentsJoinedByString:@","];
+        self.abilityLabel.text = [self.pokemon.abilities componentsJoinedByString:@","];
         self.title = [self.pokemon.name capitalizedString];
         NSURL *spriteURL = [NSURL URLWithString:self.pokemon.sprite];
         NSData *spriteData = [NSData dataWithContentsOfURL:spriteURL];
@@ -59,12 +59,22 @@
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self updateViews];
-    });
-    [object removeObserver:self forKeyPath:keyPath];
+
+    if (context == KVOContext) {
+        if ([keyPath isEqualToString:@"abilities"]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self updateViews];
+            });
+        } else {
+            [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        }
+    }
+
 }
 
+-(void)dealloc {
+    [self.pokemon removeObserver:self forKeyPath:@"abilities"];
+}
 
 
 
