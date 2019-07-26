@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DLJDetailViewController.h
 //  ObjcPokemon
 //
 //  Created by Diante Lewis-Jolley on 7/26/19.
@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
+
+@interface DLJDetailViewController : UIViewController
 
 
 @end
 
+NS_ASSUME_NONNULL_END

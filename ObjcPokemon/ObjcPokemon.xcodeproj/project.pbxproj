@@ -8,24 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		9E21A46D22EB50D100420E9F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E21A46C22EB50D100420E9F /* AppDelegate.m */; };
-		9E21A47022EB50D100420E9F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E21A46F22EB50D100420E9F /* ViewController.m */; };
 		9E21A47322EB50D200420E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E21A47122EB50D200420E9F /* Main.storyboard */; };
 		9E21A47522EB50E600420E9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E21A47422EB50E600420E9F /* Assets.xcassets */; };
 		9E21A47822EB50E600420E9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E21A47622EB50E600420E9F /* LaunchScreen.storyboard */; };
 		9E21A47B22EB50E600420E9F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E21A47A22EB50E600420E9F /* main.m */; };
+		9E5D9D5122EB5BA800FC34AB /* DLJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D9D5022EB5BA800FC34AB /* DLJDetailViewController.m */; };
+		9E5D9D5422EB5BC400FC34AB /* DLJPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D9D5322EB5BC400FC34AB /* DLJPokemonTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9E21A46822EB50D100420E9F /* ObjcPokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjcPokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E21A46B22EB50D100420E9F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9E21A46C22EB50D100420E9F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9E21A46E22EB50D100420E9F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9E21A46F22EB50D100420E9F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9E21A47222EB50D200420E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E21A47422EB50E600420E9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E21A47722EB50E600420E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E21A47922EB50E600420E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E21A47A22EB50E600420E9F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9E5D9D4F22EB5BA800FC34AB /* DLJDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLJDetailViewController.h; sourceTree = "<group>"; };
+		9E5D9D5022EB5BA800FC34AB /* DLJDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLJDetailViewController.m; sourceTree = "<group>"; };
+		9E5D9D5222EB5BC400FC34AB /* DLJPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLJPokemonTableViewController.h; sourceTree = "<group>"; };
+		9E5D9D5322EB5BC400FC34AB /* DLJPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLJPokemonTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +63,25 @@
 			children = (
 				9E21A46B22EB50D100420E9F /* AppDelegate.h */,
 				9E21A46C22EB50D100420E9F /* AppDelegate.m */,
-				9E21A46E22EB50D100420E9F /* ViewController.h */,
-				9E21A46F22EB50D100420E9F /* ViewController.m */,
 				9E21A47122EB50D200420E9F /* Main.storyboard */,
 				9E21A47422EB50E600420E9F /* Assets.xcassets */,
 				9E21A47622EB50E600420E9F /* LaunchScreen.storyboard */,
 				9E21A47922EB50E600420E9F /* Info.plist */,
 				9E21A47A22EB50E600420E9F /* main.m */,
+				9E5D9D5522EB5BCD00FC34AB /* ViewControllers */,
 			);
 			path = ObjcPokemon;
+			sourceTree = "<group>";
+		};
+		9E5D9D5522EB5BCD00FC34AB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9E5D9D5222EB5BC400FC34AB /* DLJPokemonTableViewController.h */,
+				9E5D9D5322EB5BC400FC34AB /* DLJPokemonTableViewController.m */,
+				9E5D9D4F22EB5BA800FC34AB /* DLJDetailViewController.h */,
+				9E5D9D5022EB5BA800FC34AB /* DLJDetailViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +110,7 @@
 		9E21A46022EB50D000420E9F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = DLJ;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Diante Lewis-Jolley";
 				TargetAttributes = {
@@ -141,8 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E21A47022EB50D100420E9F /* ViewController.m in Sources */,
+				9E5D9D5422EB5BC400FC34AB /* DLJPokemonTableViewController.m in Sources */,
 				9E21A47B22EB50E600420E9F /* main.m in Sources */,
+				9E5D9D5122EB5BA800FC34AB /* DLJDetailViewController.m in Sources */,
 				9E21A46D22EB50D100420E9F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
