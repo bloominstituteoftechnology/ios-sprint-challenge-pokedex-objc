@@ -9,6 +9,7 @@
 #import "HSVPokemonViewController.h"
 #import "HSVPokemon.h"
 #import "Pokedex-Swift.h"
+#import <UIKit/UIKit.h>
 
 void *KVOContext = &KVOContext;
 
@@ -50,7 +51,22 @@ void *KVOContext = &KVOContext;
 
 - (void)fetchSetImage{
 	NSLog(@"%@", self.pokemon.sprite);
-	
+	NSURL *url = [[NSURL alloc] initWithString:self.pokemon.sprite];
+	[[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+		if (error){
+			NSLog(@"error getting image: %@", error);
+			
+		}
+		
+		if (data){
+			UIImage *image = [[UIImage alloc] initWithData:data];
+			dispatch_async(dispatch_get_main_queue(), ^{
+				self.imageView.image = image;
+			});
+			
+		}
+		
+	}] resume];
 	
 	
 }
