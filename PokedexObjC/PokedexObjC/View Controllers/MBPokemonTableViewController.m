@@ -41,7 +41,14 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
+    if ([segue.identifier isEqualToString:@"ShowPokemon"]) {
+        MBPokemonDetailViewController *detailVC = segue.destinationViewController;
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        MBPokemon *pokemon = self.allPokemon[indexPath.row];
+        detailVC.pokemon = pokemon;
+        //detail.pokemonController = self.pokemonController shared controller doesn't need to be passed
+        [[MBPokemonController sharedController] fillInDetailsFor:pokemon];
+    }
 }
 
 @end

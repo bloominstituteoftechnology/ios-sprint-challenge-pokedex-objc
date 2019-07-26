@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MBPokemonDetailViewController : UIViewController
+
+@property (nonatomic) MBPokemon *pokemon;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *idLabel;
