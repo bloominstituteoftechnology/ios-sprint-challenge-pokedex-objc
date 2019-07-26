@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class KRCPokemon;
+
 @interface KRCPokemonDetailViewController : UIViewController
+
+@property (nonatomic, nullable) KRCPokemon *pokemon;
 
 @end
 

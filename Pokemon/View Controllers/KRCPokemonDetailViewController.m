@@ -7,7 +7,7 @@
 //
 
 #import "KRCPokemonDetailViewController.h"
-
+#import "KRCPokemon.h"
 @interface KRCPokemonDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *spriteImageView;
@@ -21,17 +21,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [[self pokemon] addObserver:self forKeyPath:@"identifier" options:0 context:nil];
+    [[self pokemon] addObserver:self forKeyPath:@"spriteImage" options:0 context:nil];
+    [[self pokemon] addObserver:self forKeyPath:@"abilities" options:0 context:nil];
+    
+    [[self nameLabel] setText:[[self pokemon] name]];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"identifier"]) {
+        
+        NSLog(@"identifier has changed");
+    } else if ([keyPath isEqualToString:@"spriteImage"]) {
+        
+        NSLog(@"spriteImage has changed");
+    } else if ([keyPath isEqualToString:@"abilities"]) {
+        
+        NSLog(@"abilities has changed");
+    } else {
+        
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
-*/
 
 @end
