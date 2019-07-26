@@ -25,24 +25,32 @@
         
         NSLog(@"Finished Fetching all pokemon...");
         
+        if (error) {
+            return;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self setAllPokemon:pokemonList];
+            [[self tableView] reloadData];
+        });
         
     }];
 }
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return [[self allPokemon] count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
+    KRCPokemon *pokemon = [[self allPokemon] objectAtIndex:[indexPath row]];
     
-    // Configure the cell...
+    [[cell textLabel] setText:[pokemon name]];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
