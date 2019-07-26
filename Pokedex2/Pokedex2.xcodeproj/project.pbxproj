@@ -15,6 +15,8 @@
 		5796B99A22EB63ED00CAF547 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796B99922EB63ED00CAF547 /* main.m */; };
 		5796B9A222EB671D00CAF547 /* VDRPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796B9A122EB671D00CAF547 /* VDRPokemon.m */; };
 		5796B9A522EB67EA00CAF547 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796B9A422EB67EA00CAF547 /* PokemonAPI.swift */; };
+		5796B9A822EB692500CAF547 /* VDRPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796B9A722EB692500CAF547 /* VDRPokemonTableViewController.m */; };
+		5796B9AB22EB69E300CAF547 /* VDRPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796B9AA22EB69E300CAF547 /* VDRPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		5796B9A122EB671D00CAF547 /* VDRPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDRPokemon.m; sourceTree = "<group>"; };
 		5796B9A322EB67E900CAF547 /* Pokedex2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex2-Bridging-Header.h"; sourceTree = "<group>"; };
 		5796B9A422EB67EA00CAF547 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		5796B9A622EB690300CAF547 /* VDRPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDRPokemonTableViewController.h; sourceTree = "<group>"; };
+		5796B9A722EB692500CAF547 /* VDRPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDRPokemonTableViewController.m; sourceTree = "<group>"; };
+		5796B9A922EB69D000CAF547 /* VDRPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDRPokemonDetailViewController.h; sourceTree = "<group>"; };
+		5796B9AA22EB69E300CAF547 /* VDRPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDRPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,10 @@
 				5796B9A122EB671D00CAF547 /* VDRPokemon.m */,
 				5796B9A422EB67EA00CAF547 /* PokemonAPI.swift */,
 				5796B9A322EB67E900CAF547 /* Pokedex2-Bridging-Header.h */,
+				5796B9A622EB690300CAF547 /* VDRPokemonTableViewController.h */,
+				5796B9A722EB692500CAF547 /* VDRPokemonTableViewController.m */,
+				5796B9A922EB69D000CAF547 /* VDRPokemonDetailViewController.h */,
+				5796B9AA22EB69E300CAF547 /* VDRPokemonDetailViewController.m */,
 			);
 			path = Pokedex2;
 			sourceTree = "<group>";
@@ -154,9 +164,11 @@
 			files = (
 				5796B9A222EB671D00CAF547 /* VDRPokemon.m in Sources */,
 				5796B98F22EB63E300CAF547 /* ViewController.m in Sources */,
+				5796B9A822EB692500CAF547 /* VDRPokemonTableViewController.m in Sources */,
 				5796B99A22EB63ED00CAF547 /* main.m in Sources */,
 				5796B9A522EB67EA00CAF547 /* PokemonAPI.swift in Sources */,
 				5796B98C22EB63E300CAF547 /* AppDelegate.m in Sources */,
+				5796B9AB22EB69E300CAF547 /* VDRPokemonDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
