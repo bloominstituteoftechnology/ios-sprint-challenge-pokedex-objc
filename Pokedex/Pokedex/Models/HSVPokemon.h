@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_SWIFT_NAME(Pokemon)
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HSVPokemon : NSObject

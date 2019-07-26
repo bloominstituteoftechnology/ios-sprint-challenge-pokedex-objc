@@ -16,9 +16,7 @@
 	self = [super init];
 	if (self) {
 		_name = name;
-		_identifier = identifier;
-		
-		
+		_identifier = identifier;		
 	}
 	return self;
 }

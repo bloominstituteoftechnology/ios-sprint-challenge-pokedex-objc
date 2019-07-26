@@ -6,6 +6,7 @@
 //  Copyright © 2019 Hector Steven. All rights reserved.
 //
 
+#import "Pokedex-Swift.h"
 #import "HSVPokedexTableViewController.h"
 #import "HSVPokemonViewController.h"
 
@@ -25,6 +26,23 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+	[super viewWillAppear:animated];
+	
+	
+	[[HSVPokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<HSVPokemon *> * _Nullable PokemonList, NSError * _Nullable error) {
+		
+		if (error){
+			NSLog(@"error: %@", error);
+		}
+		
+		NSLog(@"error: %@", PokemonList);
+		
+	}];
+
+}
+
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -80,10 +98,10 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	if ([segue.identifier isEqualToString:@"PokemonSegue"]) {
-		HSVPokemonViewController *vc = (HSVPokemonViewController *) segue.destinationViewController;
-	
-	}
+//	if ([segue.identifier isEqualToString:@"PokemonSegue"]) {
+//		HSVPokemonViewController *vc = (HSVPokemonViewController *) segue.destinationViewController;
+//	
+//	}
  
 }
 
