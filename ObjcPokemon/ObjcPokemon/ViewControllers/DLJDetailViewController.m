@@ -30,7 +30,7 @@ void *KVOContext = &KVOContext;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    if (self.pokemon.name == nil) {
+    if (self.pokemon) {
 
         [self.pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionInitial context:KVOContext];
     }
