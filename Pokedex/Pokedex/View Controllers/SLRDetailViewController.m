@@ -33,7 +33,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-  //  [self observationDone];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"id" object:nil];
 }
 
 // MARK: - Functions
