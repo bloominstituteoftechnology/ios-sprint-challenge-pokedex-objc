@@ -10,6 +10,14 @@
 
 @interface JGPDetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *idLabel;
+@property (weak, nonatomic) IBOutlet UITextView *abilitiesTextView;
+
+// don't forget to convert url or string to UIImage
+@property (weak, nonatomic) IBOutlet UIImageView *spriteImageView;
+
+
 @end
 
 @implementation JGPDetailViewController
