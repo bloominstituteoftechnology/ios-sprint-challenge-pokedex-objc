@@ -9,9 +9,12 @@
 #import "Pokedex-Swift.h"
 #import "HSVPokedexTableViewController.h"
 #import "HSVPokemonViewController.h"
+#import "HSVPokemon.h"
 
 
 @interface HSVPokedexTableViewController ()
+
+@property (nonatomic) NSArray<HSVPokemon*> *pokedex;
 
 @end
 
@@ -31,13 +34,17 @@
 	[super viewWillAppear:animated];
 	
 	
-	[[HSVPokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<HSVPokemon *> * _Nullable PokemonList, NSError * _Nullable error) {
-		
+	[[HSVPokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<HSVPokemon *> * _Nullable pokedex, NSError * _Nullable error) {
+
 		if (error){
 			NSLog(@"error: %@", error);
 		}
 		
-		NSLog(@"PokemonList: %@", PokemonList);
+		self.pokedex = pokedex;
+		
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self.tableView reloadData];
+		});
 		
 	}];
 
@@ -47,55 +54,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 10;
+    return [self.pokedex count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
-    
-
-    
+	cell.textLabel.text = self.pokedex[indexPath.row].name;
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
-
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 //	if ([segue.identifier isEqualToString:@"PokemonSegue"]) {

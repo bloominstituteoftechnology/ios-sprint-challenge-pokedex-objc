@@ -31,19 +31,12 @@ class PokemonAPI: NSObject {
 			}
 			
 			do{
-				guard let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-				let results = jsonDictionary["results"] as? [[String: Any]] else { return }
+				guard 	let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+						let results = jsonDictionary["results"] as? [[String: Any]]
+					else { return }
 				
-				print(results[0]["name"] as! String)
-				
-				for i in 0..<results.count {
-					if let name = results[i]["name"] as? String{
-						let pokemon = Pokemon(name: name, identifier: "\(i + 1)")
-						pokemon.sprite = "some"
-						print(pokemon.sprite as! String)
-						
-					}
-				}
+				let pokedex: [Pokemon] = self.createPokedexWith(results: results)
+				completion(pokedex, nil)
 				
 			}catch {
 				NSLog("error with :\(error)")
@@ -57,4 +50,18 @@ class PokemonAPI: NSObject {
 	@objc func fillInDetails(for pokemon: Pokemon) {
 		
 	}
+	
+	
+	func createPokedexWith(results: [[String: Any]]) -> [Pokemon]{
+		var pokedex: [Pokemon] = []
+		for i in 0..<results.count {
+			if let name = results[i]["name"] as? String{
+				let pokemon = Pokemon(name: name, identifier: "\(i + 1)")
+				pokedex.append(pokemon)
+			}
+		}
+		return pokedex
+	}
+	
+	
 }
