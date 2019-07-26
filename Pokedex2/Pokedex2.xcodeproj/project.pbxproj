@@ -13,6 +13,7 @@
 		5796B99422EB63ED00CAF547 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5796B99322EB63ED00CAF547 /* Assets.xcassets */; };
 		5796B99722EB63ED00CAF547 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5796B99522EB63ED00CAF547 /* LaunchScreen.storyboard */; };
 		5796B99A22EB63ED00CAF547 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796B99922EB63ED00CAF547 /* main.m */; };
+		5796B9A222EB671D00CAF547 /* VDRPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796B9A122EB671D00CAF547 /* VDRPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		5796B99622EB63ED00CAF547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5796B99822EB63ED00CAF547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5796B99922EB63ED00CAF547 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5796B9A022EB66EC00CAF547 /* VDRPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VDRPokemon.h; sourceTree = "<group>"; };
+		5796B9A122EB671D00CAF547 /* VDRPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDRPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				5796B99522EB63ED00CAF547 /* LaunchScreen.storyboard */,
 				5796B99822EB63ED00CAF547 /* Info.plist */,
 				5796B99922EB63ED00CAF547 /* main.m */,
+				5796B9A022EB66EC00CAF547 /* VDRPokemon.h */,
+				5796B9A122EB671D00CAF547 /* VDRPokemon.m */,
 			);
 			path = Pokedex2;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5796B9A222EB671D00CAF547 /* VDRPokemon.m in Sources */,
 				5796B98F22EB63E300CAF547 /* ViewController.m in Sources */,
 				5796B99A22EB63ED00CAF547 /* main.m in Sources */,
 				5796B98C22EB63E300CAF547 /* AppDelegate.m in Sources */,
