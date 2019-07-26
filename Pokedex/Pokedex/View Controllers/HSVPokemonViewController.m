@@ -18,6 +18,10 @@ void *KVOContext = &KVOContext;
 
 @implementation HSVPokemonViewController
 
+- (void)viewWillDisappear:(BOOL)animated {
+	[self.pokemon removeObserver:self forKeyPath:@"abilities"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	if (self.pokemon) {
@@ -40,8 +44,6 @@ void *KVOContext = &KVOContext;
 		NSString *abilitiesStr = [self.pokemon.abilities componentsJoinedByString:@", "];
 		NSLog(@"%@", self.pokemon.abilities);
 		self.abilitiesLabel.text =  abilitiesStr;
-		
-		[self fetchSetImage];
 		
 	}else {
 		NSLog(@"missing pokemon");
@@ -78,7 +80,9 @@ void *KVOContext = &KVOContext;
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[self setupView];
+			[self fetchSetImage];
 		});
+		
 
 	}else {
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];

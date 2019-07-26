@@ -48,6 +48,7 @@ class PokemonAPI: NSObject {
 	@objc func fillInDetails(for pokemon: Pokemon) {
 		guard let name = pokemon.name  else { return }
 		let url = URL(string: "\(baseUrl)\(name)")!
+		
 		print(url)
 		
 		URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -59,8 +60,7 @@ class PokemonAPI: NSObject {
 				NSLog("Error fetching data")
 				return
 			}
-//			print(data)
-			
+
 			do{
 				guard 	let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
 					let abilities =  jsonDictionary["abilities"] as? [[String: Any]] else { return }
@@ -75,11 +75,9 @@ class PokemonAPI: NSObject {
 					let ability = abilities[i] as [String: Any]
 					let abilityName = ability["ability"] as! [String: Any]
 					let name = abilityName["name"] as! String
-
+					
 					abilitiesArr.append(name)
-		
 				}
-				
 				pokemon.abilities = abilitiesArr;
 			}catch{
 				NSLog("error with JSONSerialization:\(error)")
