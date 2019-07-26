@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="841" y="177"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="tYZ-eY-e5J">
             <objects>
-                <viewController id="jz8-7x-Z14" sceneMemberID="viewController">
+                <viewController id="jz8-7x-Z14" customClass="HHPokemonDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Wi-AB-e9N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,6 +92,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aeH-1B-k5k"/>
                     </view>
+                    <connections>
+                        <outlet property="pokemonAbilitiesLabel" destination="L2R-kU-6md" id="Uzl-cB-zA5"/>
+                        <outlet property="pokemonIDLabel" destination="tZe-Uo-WDo" id="qhV-d5-kqU"/>
+                        <outlet property="pokemonImageView" destination="dFV-yg-6hM" id="IIG-B7-KwT"/>
+                        <outlet property="pokemonNameLabel" destination="5vg-or-y0D" id="bNz-dy-PAE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfU-XD-Q8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
