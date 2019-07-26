@@ -14,6 +14,7 @@
 		3D31DC9F22EB4D8E00BEB914 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D31DC9E22EB4D8E00BEB914 /* main.m */; };
 		3D31DCA922EB4EF700BEB914 /* MBPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D31DCA822EB4EF700BEB914 /* MBPokemonTableViewController.m */; };
 		3D31DCAC22EB4F0700BEB914 /* MBPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D31DCAB22EB4F0700BEB914 /* MBPokemonDetailViewController.m */; };
+		3D31DCB022EB506D00BEB914 /* MBPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D31DCAF22EB506D00BEB914 /* MBPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		3D31DCA822EB4EF700BEB914 /* MBPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBPokemonTableViewController.m; sourceTree = "<group>"; };
 		3D31DCAA22EB4F0700BEB914 /* MBPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBPokemonDetailViewController.h; sourceTree = "<group>"; };
 		3D31DCAB22EB4F0700BEB914 /* MBPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBPokemonDetailViewController.m; sourceTree = "<group>"; };
+		3D31DCAE22EB506D00BEB914 /* MBPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBPokemon.h; sourceTree = "<group>"; };
+		3D31DCAF22EB506D00BEB914 /* MBPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +64,10 @@
 		3D31DC8E22EB4D8C00BEB914 /* PokedexObjC */ = {
 			isa = PBXGroup;
 			children = (
+				3D31DCAD22EB505400BEB914 /* View Controllers */,
 				3D31DCA522EB4DB700BEB914 /* Storyboards */,
 				3D31DCA622EB4DCD00BEB914 /* Resources */,
-				3D31DCA722EB4EF700BEB914 /* MBPokemonTableViewController.h */,
-				3D31DCA822EB4EF700BEB914 /* MBPokemonTableViewController.m */,
-				3D31DCAA22EB4F0700BEB914 /* MBPokemonDetailViewController.h */,
-				3D31DCAB22EB4F0700BEB914 /* MBPokemonDetailViewController.m */,
+				3D31DCB122EB526D00BEB914 /* Model */,
 			);
 			path = PokedexObjC;
 			sourceTree = "<group>";
@@ -90,6 +91,26 @@
 				3D31DC9022EB4D8C00BEB914 /* AppDelegate.m */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3D31DCAD22EB505400BEB914 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D31DCA722EB4EF700BEB914 /* MBPokemonTableViewController.h */,
+				3D31DCA822EB4EF700BEB914 /* MBPokemonTableViewController.m */,
+				3D31DCAA22EB4F0700BEB914 /* MBPokemonDetailViewController.h */,
+				3D31DCAB22EB4F0700BEB914 /* MBPokemonDetailViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3D31DCB122EB526D00BEB914 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D31DCAE22EB506D00BEB914 /* MBPokemon.h */,
+				3D31DCAF22EB506D00BEB914 /* MBPokemon.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D31DCAC22EB4F0700BEB914 /* MBPokemonDetailViewController.m in Sources */,
+				3D31DCB022EB506D00BEB914 /* MBPokemon.m in Sources */,
 				3D31DCA922EB4EF700BEB914 /* MBPokemonTableViewController.m in Sources */,
 				3D31DC9F22EB4D8E00BEB914 /* main.m in Sources */,
 				3D31DC9122EB4D8C00BEB914 /* AppDelegate.m in Sources */,
