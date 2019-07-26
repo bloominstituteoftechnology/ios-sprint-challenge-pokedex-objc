@@ -10,18 +10,19 @@
 
 @implementation SLRPokemon
 
-/*
- @property (nonatomic, nullable, copy) NSString *pokemonName;
- @property(nonatomic, nullable, copy) NSURL *detailLink;
- 
- @property(nonatomic, nullable, copy) NSURL *spriteLink;
- @property(nonatomic, nullable, copy) NSString *sprite;
- @property(nonatomic, nullable, copy) NSString *spriteID;
- @property(nonatomic, nullable, copy) NSString *listOfAbilities;
- */
+
+// Network results of Pokemon detail network call
+- (instancetype) initWithDictionary:(NSDictionary *)dictionary {
+    
+    NSString *pokemonName = dictionary[@"pokemonName"];
+    NSString *detailLink = dictionary[@"url"];
+    return [self initWithPokemonName:pokemonName detailLink:detailLink];
+    
+}
+
 
 // Initialize the model and get list of Pokemon
-- (instancetype) initWithPokemonName:(NSString *)pokemonName detailLink:(NSURL *)detailLink {
+- (instancetype) initWithPokemonName:(NSString *)pokemonName detailLink:(NSString *)detailLink {
     if (self = [super init]) {
         self.pokemonName = pokemonName;
         self.detailLink = detailLink;
@@ -29,12 +30,7 @@
     return self;
 }
 
-// Network results of Pokemon detail network call
-//- (instancetype) initWithDictionary:(NSDictionary *)dictionary {
-//    
-//    
-//    return self;
-//}
+
 
 
 @end

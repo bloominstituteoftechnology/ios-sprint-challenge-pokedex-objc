@@ -13,14 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SLRPokemon : NSObject
 
 @property (nonatomic, nullable, copy) NSString *pokemonName;
-@property(nonatomic, nullable, copy) NSURL *detailLink;
-//@property(nonatomic, nullable, copy) NSURL *spriteLink;
-//@property(nonatomic, nullable, copy) NSString *sprite;
-//@property(nonatomic, nullable, copy) NSString *spriteID;
-//@property(nonatomic, nullable, copy) NSString *listOfAbilities;
+@property(nonatomic, nullable, copy) NSString *detailLink;
 
-- (instancetype) initWithPokemonName:(NSString *)pokemonName detailLink:(NSURL *)detailLink;
-//- (instancetype) initWithDictionary:(NSDictionary *)dictionary;
+//@property(nonatomic, nullable, copy) NSURL *spriteLink;
+@property(nonatomic, nullable, copy) NSString *sprite;
+@property(nonatomic, nullable, copy) NSString *spriteID;
+@property(nonatomic, nullable, copy) NSString *listOfAbilities;
+
+- (instancetype) initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype) initWithPokemonName:(NSString *)pokemonName detailLink:(NSString *)detailLink;
+
 
 @end
 
