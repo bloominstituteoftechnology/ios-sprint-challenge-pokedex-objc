@@ -22,8 +22,9 @@ void *KVOContext = &KVOContext;
 	
 }
 
--(void)dealloc{
+-(void)dealloc {
 	[self.pokemon removeObserver:self forKeyPath:@"abilities"];
+	[self.pokemon removeObserver:self forKeyPath:@"sprite"];
 }
 
 - (void)viewDidLoad {
@@ -31,10 +32,7 @@ void *KVOContext = &KVOContext;
 	if (self.pokemon) {
 		NSLog(@"found Pokemon");
 		[self.pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionInitial context:KVOContext];
-		
-		[[HSVPokemonAPI sharedController] fillInDetailsFor:self.pokemon];
-		
-		
+		[self.pokemon addObserver:self forKeyPath:@"sprite" options:NSKeyValueObservingOptionInitial context:KVOContext];
 	}
 	
 }
@@ -48,20 +46,21 @@ void *KVOContext = &KVOContext;
 		NSString *abilitiesStr = [self.pokemon.abilities componentsJoinedByString:@", "];
 		NSLog(@"%@", self.pokemon.abilities);
 		self.abilitiesLabel.text =  abilitiesStr;
-		[self fetchSetImage];
+
+		NSLog(@"%@", self.pokemon.sprite);
+
 	}else {
 		NSLog(@"missing pokemon");
 	}
 	
 }
 
-- (void)fetchSetImage{
+- (void)fetchSetImageWithUrl:(NSURL *)url{
 	NSLog(@"%@", self.pokemon.sprite);
-	NSURL *url = [[NSURL alloc] initWithString:self.pokemon.sprite];
+	
 	[[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 		if (error){
 			NSLog(@"error getting image: %@", error);
-			
 		}
 		
 		if (data){
@@ -80,14 +79,17 @@ void *KVOContext = &KVOContext;
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
 	if (context == KVOContext) {
-		NSLog(@"abilities changed!!!");
+		if ([keyPath isEqualToString:@"abilities"]){
+			NSLog(@"got abilities");
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[self setupView];
+			});
+		} else if ([keyPath isEqualToString:@"sprite"]){
+			NSLog(@"got sprite");
+			NSURL *url = [[NSURL alloc] initWithString:self.pokemon.sprite];
+			[self fetchSetImageWithUrl:url];
+		}
 		
-		dispatch_async(dispatch_get_main_queue(), ^{
-			[self setupView];
-			
-		});
-		
-
 	}else {
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 	}
