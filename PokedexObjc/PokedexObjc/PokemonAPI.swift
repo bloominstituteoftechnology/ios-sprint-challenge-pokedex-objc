@@ -60,11 +60,12 @@ class PokemonAPI: NSObject {
                 guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else { throw NSError()
                 }
 
+               
                 let chosenPokemon = TXCPokemon(dictionary: json)
                 //initialize pokemon with json and set to a variable that we will use to update the views.
             pokemon.name = chosenPokemon.name
             pokemon.identifier = chosenPokemon.identifier
-//            pokemon.abilities = chosenPokemon.abilities
+            pokemon.abilities = chosenPokemon.abilities
             pokemon.sprite = chosenPokemon.sprite
                 
             } catch {

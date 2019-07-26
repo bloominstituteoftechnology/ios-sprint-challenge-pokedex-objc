@@ -28,7 +28,15 @@
     
     _name = dictionary[@"name"];
     _identifier = [dictionary[@"id"] intValue];
-//    _abilities = dictionary[@"abilities"][@"ability"][@"name"];
+    NSArray *abilitiesArray = dictionary[@"abilities"];
+    NSLog(@"Abilities Array: %@", abilitiesArray);
+    NSMutableArray *finalAbilitiesArray = [[NSMutableArray alloc] init];
+    for (NSDictionary *dict in abilitiesArray) {
+        NSString *ability = dict[@"ability"][@"name"];
+        NSLog(@"ability: %@", ability);
+        [finalAbilitiesArray addObject:ability];
+    }
+    _abilities = finalAbilitiesArray;
     _sprite = dictionary[@"sprites"][@"front_default"];
     
     return self;

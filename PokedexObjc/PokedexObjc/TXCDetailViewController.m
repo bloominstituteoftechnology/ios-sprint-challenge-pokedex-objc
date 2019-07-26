@@ -42,7 +42,8 @@ void *KVOContext = &KVOContext;
         NSURL *imageURL = [NSURL URLWithString:self.pokemon.sprite];
         UIImage *spriteImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
         self.imageView.image = spriteImage;
-//        self.abilitiesLabel.text = self.pokemon.abilities[0]; //show 1 ability for now. fix later.
+        self.abilitiesLabel.text = [[self.pokemon.abilities valueForKey:@"description"] componentsJoinedByString:@", "];
+//        NSLog(@"%@", [[self.pokemon.abilities valueForKey:@"description"] componentsJoinedByString:@""]);
     });
 }
 

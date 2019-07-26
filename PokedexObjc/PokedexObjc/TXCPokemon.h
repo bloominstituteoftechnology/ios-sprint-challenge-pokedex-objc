@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, nonnull, copy) NSString *name;
 @property (nonatomic) int identifier;
-//@property (nonatomic, copy) NSArray *abilities;
+@property (nonatomic, copy) NSMutableArray *abilities;
 @property NSString *sprite;
 
 - (instancetype)initWithName:(NSString *)name
