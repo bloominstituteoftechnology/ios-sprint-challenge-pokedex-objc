@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class KTMPokemon;
 @interface KTMPokemonDetailViewController : UIViewController
-
+@property (nonatomic, nullable)KTMPokemon *pokemon;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -50,7 +50,7 @@ class PokemonAPI: NSObject {
     
     
     
-    @objc func fillInDetails(pokemon: KTMPokemon) {
+    @objc func fillInDetails(for pokemon: KTMPokemon) {
         
         let pokemonURL = baseURL.appendingPathComponent(pokemon.name)
         

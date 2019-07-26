@@ -32,7 +32,8 @@
     NSString *name = dictionary[@"name"];
     NSNumber *identifier = dictionary[@"id"];
     
-    NSURL *spriteURL = [dictionary valueForKeyPath:@"sprites.front_default"];
+    NSString *spriteString = [dictionary valueForKeyPath:@"sprites.front_default"];
+    NSURL *spriteURL = [NSURL URLWithString:spriteString];
     
     NSArray *abilitiesArray = dictionary[@"abilities"];
     NSArray *abilities = [abilitiesArray valueForKeyPath:@"ability.name"];

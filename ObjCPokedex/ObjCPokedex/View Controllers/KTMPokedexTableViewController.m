@@ -7,8 +7,10 @@
 //
 
 #import "KTMPokedexTableViewController.h"
+#import "KTMPokemonDetailViewController.h"
 #import "ObjCPokedex-Swift.h"
 #import "KTMPokemon.h"
+
 
 @interface KTMPokedexTableViewController ()
 @property (nonatomic)NSArray<KTMPokemon *> *pokedex;
@@ -42,18 +44,28 @@
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.seguePokemon = self.pokedex[indexPath.row];
+    
+    [self performSegueWithIdentifier:@"PokemonDetailSegue" sender:self];
+}
 
 
 
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+    if ([segue.identifier isEqualToString:(@"PokemonDetailSegue")]) {
+        KTMPokemonDetailViewController *detailVC = segue.destinationViewController;
+        detailVC.pokemon = self.seguePokemon;
+        NSLog(@"%@", self.seguePokemon.name);
+        [[PokemonAPI sharedController] fillInDetailsFor:self.seguePokemon];
+        
+    }
+    
 }
-*/
+
 
 @end
