@@ -7,6 +7,8 @@
 //
 
 #import "JGPDetailViewController.h"
+#import "PokedexObjC-Swift.h"          // gives us access to swift file PokemonAPIController, i THINK!
+#import "JGPPokemon.h"
 
 @interface JGPDetailViewController ()
 
@@ -24,7 +26,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // [pokemonAPIController.fillInDetails pokemonName ... completion
+    
+//    [[JGPPokemonAPIController sharedController] fillInDetailsFor:pokemon.name
+//                                                      completion:^(JGPPokemon * _Nullable pokemon, NSError * _Nullable error) {
+//        if(error) {
+//            NSLog(@"Error searching: %@", error);
+//        }
+//        
+//        // OBSERVE when pokemon info is fetched and implement...
+//                                                          
+//                                                          
+//        NSLog(@"Results: %@", pokemon.name);
+//        
+//        self.pokemon = pokemon;
+//    }];
+    
+    
+    [self updateViews]; //to load the data into DetailVC
+    
+    
+}
+
+- (void)updateViews {
+    
+    //self.nameLabel.text = self.pokemon.name;
+    //self.idLabel.text = [NSString stringWithFormat:@"%@", [NSString stringWithFormat:@"%d", self.pokemon.identifier]];
+    // abilities here... save for last
+    
 }
 
 
