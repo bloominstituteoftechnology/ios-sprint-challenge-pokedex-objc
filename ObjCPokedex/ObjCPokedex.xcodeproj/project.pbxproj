@@ -13,6 +13,7 @@
 		C47FAF1A22EB564E0098A184 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47FAF1822EB564E0098A184 /* LaunchScreen.storyboard */; };
 		C47FAF1D22EB564E0098A184 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C47FAF1C22EB564E0098A184 /* main.m */; };
 		C47FAF2722EB564F0098A184 /* ObjCPokedexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C47FAF2622EB564F0098A184 /* ObjCPokedexTests.m */; };
+		C47FAF3322EB56AD0098A184 /* KTMPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = C47FAF3222EB56AD0098A184 /* KTMPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,8 @@
 		C47FAF2222EB564F0098A184 /* ObjCPokedexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjCPokedexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47FAF2622EB564F0098A184 /* ObjCPokedexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCPokedexTests.m; sourceTree = "<group>"; };
 		C47FAF2822EB564F0098A184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C47FAF3122EB56AD0098A184 /* KTMPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KTMPokemon.h; sourceTree = "<group>"; };
+		C47FAF3222EB56AD0098A184 /* KTMPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTMPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				C47FAF0D22EB564E0098A184 /* AppDelegate.h */,
 				C47FAF0E22EB564E0098A184 /* AppDelegate.m */,
 				C47FAF1322EB564E0098A184 /* Main.storyboard */,
+				C47FAF3122EB56AD0098A184 /* KTMPokemon.h */,
+				C47FAF3222EB56AD0098A184 /* KTMPokemon.m */,
 				C47FAF1622EB564E0098A184 /* Assets.xcassets */,
 				C47FAF1822EB564E0098A184 /* LaunchScreen.storyboard */,
 				C47FAF1B22EB564E0098A184 /* Info.plist */,
@@ -142,6 +147,7 @@
 		C47FAF0222EB564E0098A184 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = KTM;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Kobe McKee";
 				TargetAttributes = {
@@ -200,6 +206,7 @@
 			files = (
 				C47FAF1D22EB564E0098A184 /* main.m in Sources */,
 				C47FAF0F22EB564E0098A184 /* AppDelegate.m in Sources */,
+				C47FAF3322EB56AD0098A184 /* KTMPokemon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
