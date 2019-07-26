@@ -17,9 +17,7 @@
     NSString *pokemonName = dictionary[@"name"];
     NSString *detailLink = dictionary[@"url"];
     return [self initWithPokemonName:pokemonName detailLink:detailLink];
-    
 }
-
 
 // Initialize the model and get list of Pokemon
 - (instancetype) initWithPokemonName:(NSString *)pokemonName detailLink:(NSString *)detailLink {
@@ -30,6 +28,14 @@
     return self;
 }
 
+- (void)abilitiesArray:(NSArray *)arrayData {
+    NSMutableArray<NSString *> *abilities = [[NSMutableArray alloc] init];
+    for (NSDictionary *dict in arrayData){
+        NSDictionary *ability = dict[@"ability"];
+        [abilities addObject:ability[@"name"]];
+    }
+    [self setAbilities:[abilities componentsJoinedByString:@", "]];
+}
 
 
 

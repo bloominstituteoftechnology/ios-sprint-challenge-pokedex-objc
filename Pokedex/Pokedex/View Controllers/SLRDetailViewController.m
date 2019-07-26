@@ -7,26 +7,39 @@
 //
 
 #import "SLRDetailViewController.h"
+#import "SLRPokemon.h"
+#import "Pokedex-Swift.h"
+
 
 @interface SLRDetailViewController ()
+
+@property PokemonAPI *apiDetailFetch;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *pokemonNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *idLabel;
+@property (weak, nonatomic) IBOutlet UILabel *abilitiesLabel;
 
 @end
 
 @implementation SLRDetailViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.pokemon addObserver:self forKeyPath:@"sprite" options:0 context:NULL];
+    _apiDetailFetch = [[PokemonAPI alloc] init];
+    [self.apiDetailFetch fillInDetailsFor:self.pokemon];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) displayDetail {
+    if(![self.pokemon pokemonName] && ![self isViewLoaded]) {
+        return;
+    }
+    
+    // Display the detail
+    [self setTitle:self.pokemon.pokemonName];
 }
-*/
+
+
 
 @end

@@ -110,8 +110,8 @@
 			children = (
 				3738571022EB529E00E7DE83 /* SLRPokemonTableViewController.m */,
 				3738570F22EB529E00E7DE83 /* SLRPokemonTableViewController.h */,
-				3738571222EB52BA00E7DE83 /* SLRDetailViewController.h */,
 				3738571322EB52BA00E7DE83 /* SLRDetailViewController.m */,
+				3738571222EB52BA00E7DE83 /* SLRDetailViewController.h */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

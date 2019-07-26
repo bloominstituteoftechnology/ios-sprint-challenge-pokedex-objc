@@ -26,7 +26,7 @@
     [super viewDidLoad];
     
     self.apiData = [[PokemonAPI alloc] init];
-    [self.apiData fetchListOfPokemonWithCompletion:^(NSArray<SLRPokemon *> *listOfPokemon, NSError *error) {
+    [self.apiData fetchAllPokemonWithCompletion:^(NSArray<SLRPokemon *> *listOfPokemon, NSError *error) {
         if (error) {
             NSLog(@"Error fetching Pokemon list: %@", error);
         }
