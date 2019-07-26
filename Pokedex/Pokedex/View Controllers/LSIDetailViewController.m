@@ -37,7 +37,6 @@ void *KVOContext = &KVOContext;
     [self.identifierLbl setText: identifier];
     [self.abilitiesLbl setText:[self.pokemon.abilities componentsJoinedByString:@", "]];
     
-    NSLog(@"HERE: ", self.pokemon.abilities, name, identifier);
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
