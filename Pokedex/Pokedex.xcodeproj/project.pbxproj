@@ -14,6 +14,7 @@
 		E8E2C09B22EB4E73003E57A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C09A22EB4E73003E57A9 /* main.m */; };
 		E8E2C0A322EB4FE8003E57A9 /* HSVPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C0A222EB4FE8003E57A9 /* HSVPokedexTableViewController.m */; };
 		E8E2C0A722EB5071003E57A9 /* HSVPokemonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C0A622EB5071003E57A9 /* HSVPokemonViewController.m */; };
+		E8E2C0AA22EB51CA003E57A9 /* HSVPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C0A922EB51CA003E57A9 /* HSVPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		E8E2C0A222EB4FE8003E57A9 /* HSVPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSVPokedexTableViewController.m; sourceTree = "<group>"; };
 		E8E2C0A522EB5071003E57A9 /* HSVPokemonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSVPokemonViewController.h; sourceTree = "<group>"; };
 		E8E2C0A622EB5071003E57A9 /* HSVPokemonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSVPokemonViewController.m; sourceTree = "<group>"; };
+		E8E2C0A822EB51CA003E57A9 /* HSVPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSVPokemon.h; sourceTree = "<group>"; };
+		E8E2C0A922EB51CA003E57A9 /* HSVPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSVPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,7 @@
 				E8E2C09922EB4E73003E57A9 /* Info.plist */,
 				E8E2C09A22EB4E73003E57A9 /* main.m */,
 				E8E2C0A422EB4FEE003E57A9 /* View Controllers */,
+				E8E2C0AB22EB51D0003E57A9 /* Models */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -82,6 +86,15 @@
 				E8E2C0A622EB5071003E57A9 /* HSVPokemonViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E8E2C0AB22EB51D0003E57A9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E8E2C0A822EB51CA003E57A9 /* HSVPokemon.h */,
+				E8E2C0A922EB51CA003E57A9 /* HSVPokemon.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +171,7 @@
 				E8E2C09B22EB4E73003E57A9 /* main.m in Sources */,
 				E8E2C08D22EB4E71003E57A9 /* AppDelegate.m in Sources */,
 				E8E2C0A722EB5071003E57A9 /* HSVPokemonViewController.m in Sources */,
+				E8E2C0AA22EB51CA003E57A9 /* HSVPokemon.m in Sources */,
 				E8E2C0A322EB4FE8003E57A9 /* HSVPokedexTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
