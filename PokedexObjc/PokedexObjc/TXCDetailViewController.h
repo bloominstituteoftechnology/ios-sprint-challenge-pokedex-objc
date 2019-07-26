@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class TXCPokemon;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TXCDetailViewController : UIViewController
+
+@property (nonatomic, nullable) TXCPokemon *pokemon;
 
 @end
 

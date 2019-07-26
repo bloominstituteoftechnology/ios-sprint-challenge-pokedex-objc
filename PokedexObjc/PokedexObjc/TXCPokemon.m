@@ -17,7 +17,7 @@
     if (self) {
         _name = [name copy];
         _identifier = [identifier intValue];
-        _abilities = [abilities copy];
+//        _abilities = [abilities copy];
         _sprite = sprite;
     }
     return self;
@@ -28,7 +28,7 @@
     
     _name = dictionary[@"name"];
     _identifier = [dictionary[@"id"] intValue];
-    _abilities = dictionary[@"abilities"][@"ability"][@"name"];
+//    _abilities = dictionary[@"abilities"][@"ability"][@"name"];
     _sprite = dictionary[@"sprites"][@"front_default"];
     
     return self;

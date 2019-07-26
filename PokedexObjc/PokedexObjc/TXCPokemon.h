@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TXCPokemon : NSObject
 
-@property (nonatomic, readonly, nonnull, copy) NSString *name;
-@property (nonatomic, readonly) int identifier;
-@property (nonatomic, copy, readonly, nonnull) NSArray *abilities;
+@property (nonatomic, nonnull, copy) NSString *name;
+@property (nonatomic) int identifier;
+//@property (nonatomic, copy) NSArray *abilities;
 @property NSString *sprite;
 
 - (instancetype)initWithName:(NSString *)name

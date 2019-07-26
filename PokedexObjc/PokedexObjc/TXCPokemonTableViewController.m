@@ -9,6 +9,7 @@
 #import "TXCPokemonTableViewController.h"
 #import "TXCPokemon.h"
 #import "PokedexObjc-Swift.h"
+#import "TXCDetailViewController.h"
 
 @interface TXCPokemonTableViewController ()
 
@@ -52,14 +53,18 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"DetailSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        TXCPokemon *pokemon = self.pokemons[indexPath.row];
+        TXCDetailViewController *detailVC = segue.destinationViewController;
+        detailVC.pokemon = pokemon;
+    }
+    
 }
-*/
+
 
 @end

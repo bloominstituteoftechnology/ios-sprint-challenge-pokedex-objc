@@ -12,6 +12,7 @@ private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
 
 class PokemonAPI: NSObject {
     
+    
     @objc(sharedController) static let shared = PokemonAPI()
     
     @objc func fetchAllPokemon(completion: @escaping ([TXCPokemon]?, Error?) -> Void) {
@@ -45,7 +46,7 @@ class PokemonAPI: NSObject {
     
     @objc func fillInDetails(for pokemon: TXCPokemon) {
         let pokemonURL = baseURL.appendingPathComponent(pokemon.name)
-        
+        NSLog("AM I BEING CALLED?")
         URLSession.shared.dataTask(with: pokemonURL) { (data, _, error) in
             if let error = error {
                 NSLog("Error: \(error)")
@@ -58,11 +59,18 @@ class PokemonAPI: NSObject {
             do {
                 guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else { throw NSError()
                 }
+
+                let chosenPokemon = TXCPokemon(dictionary: json)
+                //initialize pokemon with json and set to a variable that we will use to update the views.
+            pokemon.name = chosenPokemon.name
+            pokemon.identifier = chosenPokemon.identifier
+//            pokemon.abilities = chosenPokemon.abilities
+            pokemon.sprite = chosenPokemon.sprite
                 
             } catch {
-                
+                NSLog("Error initializing chosen pokemon")
             }
-        }
+        }.resume()
         
     }
     
