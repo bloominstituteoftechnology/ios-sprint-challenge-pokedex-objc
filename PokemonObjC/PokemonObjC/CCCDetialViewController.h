@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-
 @class CCCPokemon;
 
 NS_ASSUME_NONNULL_BEGIN

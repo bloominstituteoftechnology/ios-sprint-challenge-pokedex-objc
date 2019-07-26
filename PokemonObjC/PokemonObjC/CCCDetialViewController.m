@@ -44,7 +44,6 @@
     [object removeObserver:self forKeyPath:keyPath];
 }
 
-
 - (void)updateViews {
     if (self.pokemon) {
         self.title = [self.pokemon.name capitalizedString];

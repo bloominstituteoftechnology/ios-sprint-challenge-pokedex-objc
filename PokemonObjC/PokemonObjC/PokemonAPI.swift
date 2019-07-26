@@ -17,7 +17,7 @@ class PokemonAPI : NSObject {
     @objc func fetchAllPokemon(completion: @escaping ([CCCPokemon]?, Error?) -> Void) {
         
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
-        let limitQuery = URLQueryItem(name: "limit", value: "50")
+        let limitQuery = URLQueryItem(name: "limit", value: "75")
         components.queryItems = [limitQuery]
         let url = components.url!
         
@@ -46,7 +46,7 @@ class PokemonAPI : NSObject {
             } catch {
                 return completion(nil, error)
             }
-            }.resume()
+        }.resume()
     }
     
     @objc func fillInDetails(for pokemon: CCCPokemon) {
@@ -82,6 +82,6 @@ class PokemonAPI : NSObject {
             } catch {
                 NSLog("Error")
             }
-            }.resume()
+        }.resume()
     }
 }

@@ -17,7 +17,6 @@
     if (self) {
         NSString *name = dictionary[@"name"];
 
-        
         NSInteger pokemonID = dictionary[@"id"]; // this error is stupid and makes my id come back funny on my DetailVC
         _name = name;
         _pokemonID = pokemonID;
