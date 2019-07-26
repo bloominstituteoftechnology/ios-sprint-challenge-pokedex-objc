@@ -27,7 +27,8 @@
 - (nullable instancetype)initWithDictionary:(NSDictionary *_Nullable)dict {
     
     NSString *name = dict[@"name"];
-    int identifier = dict[@"identifier"];
+    NSString *identifierString = dict[@"identifier"];
+    int identifier = [identifierString intValue];
     NSString *sprite = dict[@"sprite"];
     NSArray<JGPAbility *> *abilities = dict [@"abilities"];
     

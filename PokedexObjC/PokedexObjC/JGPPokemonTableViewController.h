@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class JGPPokemon;
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface JGPPokemonTableViewController : UITableViewController
 
+@property (nonatomic, copy, nullable) NSArray<JGPPokemon *> *pokemons;
+
 @end
 
-NS_ASSUME_NONNULL_END

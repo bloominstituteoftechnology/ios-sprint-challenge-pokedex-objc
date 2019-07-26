@@ -7,17 +7,24 @@
 //
 
 import Foundation
+import UIKit
 
+private let baseURL = URL(string: "https://pokeapi.co/api/v2/")
 
-@objc class PokemonAPIController: NSObject {
+@objc(JGPPokemonAPIController)
+class PokemonAPIController: NSObject {
     
-    //@objc(sharedController) static let shared: PokemonAPIController
+    @objc(sharedController) static let shared = PokemonAPIController()
     
-    @objc func fetchAllPokemon(completion: @escaping ([JGPPokemon]?, Error?) -> Void) {
+    @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
         
+        // appendingPathComponent "pokemon/" to get all the pokemon... url
+        
+        //URLSession.shared.dataTask(with: url, completionHandler: <#T##(Data?, URLResponse?, Error?) -> Void#>)
+             // .resume()
     }
     
-    @objc func fillInDetails(for pokemon: JGPPokemon) {
+    @objc func fillInDetails(for pokemon: Pokemon) {
         
     }
 }

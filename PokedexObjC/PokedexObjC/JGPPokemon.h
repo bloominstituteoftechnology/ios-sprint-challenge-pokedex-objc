@@ -10,7 +10,7 @@
 #import "JGPAbility.h"
 
 
-
+NS_SWIFT_NAME(Pokemon)
 @interface JGPPokemon : NSObject
 
 @property (nonatomic, copy, nonnull) NSString *name;
