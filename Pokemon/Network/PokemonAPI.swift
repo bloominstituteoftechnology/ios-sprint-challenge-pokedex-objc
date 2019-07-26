@@ -78,8 +78,11 @@ class PokemonAPI: NSObject {
                 
                 guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
                 let id = json["id"] as? Int,
-                let abilitiesArray = json["abilities"] as? Array<Dictionary<String, Any>>
+                let abilitiesArray = json["abilities"] as? Array<Dictionary<String, Any>>,
+                let sprites = json["sprites"] as? Dictionary<String, String?>,
+                let spriteURL = sprites["front_default"] as? String
                 else { return }
+                
                 
                 var abilities = [String]()
                 
@@ -94,21 +97,23 @@ class PokemonAPI: NSObject {
                     abilities.append(name)
                 }
                 
+                let imageURL = URL(string: spriteURL)!
+                
+                URLSession.shared.dataTask(with: imageURL, completionHandler: { (data, _, error) in
+                    
+                    if let error = error {
+                        print("Error fetching sprite for \(pokemon.name): \(error)")
+                        return
+                    }
+                    
+                    guard let data = data else { return }
+                    
+                    pokemon.spriteImage = UIImage(data: data)
+                    
+                }).resume()
+                
                 pokemon.identifier = "\(id)"
                 pokemon.abilities = abilities
-                
-//                var pokemon = [Pokemon]()
-//
-//                for index in 0 ..< results.count {
-//
-//                    let pokemonData = results[index]
-//
-//                    guard let name = pokemonData["name"],
-//                        let url = pokemonData["url"]
-//                        else { return }
-//
-//                    pokemon.append(Pokemon(name: name, url: url))
-//                }
                 
                 return
                 
@@ -117,13 +122,6 @@ class PokemonAPI: NSObject {
                 print("Error with json: \(error)")
                 return
             }
-            
-            
-            
-            
-            
         }.resume()
     }
-    // MARK: - Private Methods
-
 }

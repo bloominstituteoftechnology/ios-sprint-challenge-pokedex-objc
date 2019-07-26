@@ -43,7 +43,10 @@
         
     } else if ([keyPath isEqualToString:@"spriteImage"]) {
         
-        NSLog(@"spriteImage has changed");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[self spriteImageView] setImage:[[self pokemon] spriteImage]];
+        });
+
     } else if ([keyPath isEqualToString:@"abilities"]) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
