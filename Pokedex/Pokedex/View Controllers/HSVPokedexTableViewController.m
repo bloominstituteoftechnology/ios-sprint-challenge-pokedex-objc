@@ -71,7 +71,7 @@
 		HSVPokemon *pokemon = self.pokedex[indexPath.row];
 		vc.pokemon = pokemon;
 		
-		[[HSVPokemonAPI sharedController] fillInDetailsFor:pokemon];
+//		[[HSVPokemonAPI sharedController] fillInDetailsFor:pokemon];
 	}
 	
 }

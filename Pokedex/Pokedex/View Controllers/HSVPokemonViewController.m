@@ -10,17 +10,24 @@
 #import "HSVPokemon.h"
 #import "Pokedex-Swift.h"
 
+void *KVOContext = &KVOContext;
 
 @interface HSVPokemonViewController ()
-
-
-
 @end
 
 @implementation HSVPokemonViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	if (self.pokemon) {
+		NSLog(@"found Pokemon");
+		[self.pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionInitial context:KVOContext];
+		
+		[[HSVPokemonAPI sharedController] fillInDetailsFor:self.pokemon];
+		
+		
+	}
+	
 }
 
 - (void)setupView{
@@ -33,15 +40,33 @@
 		NSLog(@"%@", self.pokemon.abilities);
 		self.abilitiesLabel.text =  abilitiesStr;
 		
+		[self fetchSetImage];
+		
 	}else {
 		NSLog(@"missing pokemon");
 	}
 	
 }
 
+- (void)fetchSetImage{
+	NSLog(@"%@", self.pokemon.sprite);
+	
+	
+	
+}
+
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-	//obserce for abilities
+	if (context == KVOContext) {
+		NSLog(@"abilities changed!!!");
+		
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self setupView];
+		});
+
+	}else {
+		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+	}
 }
 
 
