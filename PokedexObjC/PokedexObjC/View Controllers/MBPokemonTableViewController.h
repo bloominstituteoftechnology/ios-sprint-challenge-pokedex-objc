@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBPokemon.h"
+#import "PokedexObjC-Swift.h"
+#import "MBPokemonDetailViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MBPokemonTableViewController : UITableViewController
+
+@property (nonatomic) NSArray<MBPokemon *> *allPokemon;
 
 @end
 

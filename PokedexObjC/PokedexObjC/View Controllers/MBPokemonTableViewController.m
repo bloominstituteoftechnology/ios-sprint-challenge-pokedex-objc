@@ -16,17 +16,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[MBPokemonController sharedController] fetchAllPokemonWithCompletion:^(NSArray<MBPokemon *> * pokedex, NSError * error) {
+        self.allPokemon = self->_allPokemon;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.allPokemon.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
-    
+    MBPokemon *pokemon = self.allPokemon[indexPath.row];
+    cell.textLabel.text = pokemon.name;
     return cell;
 }
 
