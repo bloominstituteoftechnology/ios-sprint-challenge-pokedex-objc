@@ -39,16 +39,45 @@ class PokemonAPI: NSObject {
 				completion(pokedex, nil)
 				
 			}catch {
-				NSLog("error with :\(error)")
+				NSLog("error with JSONSerialization:\(error)")
 			}
 
 		}.resume()
-		
-		
 	}
 	
 	@objc func fillInDetails(for pokemon: Pokemon) {
+		guard let name = pokemon.name  else { return }
+		let url = URL(string: "\(baseUrl)\(name)")!
+		print(url)
 		
+		URLSession.shared.dataTask(with: url) { (data, response, error) in
+			if let error = error, let response = response as? HTTPURLResponse{
+				NSLog("Error fetching pokedex: \(error)\n Response Code: \(response.statusCode)")
+			}
+			
+			guard let data = data else {
+				NSLog("Error fetching data")
+				return
+			}
+			print(data)
+			
+			do{
+				guard 	let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+					let abilities =  jsonDictionary["abilities"] as? [[String: Any]] else { return }
+				
+				let ability = abilities[0] as [String: Any]
+				let abilityName = ability["ability"] as! [String: Any]
+				print(abilityName["name"] as! String)
+				
+				
+				
+//				print(abilities.count)
+				
+				
+			}catch{
+				NSLog("error with JSONSerialization:\(error)")
+			}
+		}.resume()
 	}
 	
 	

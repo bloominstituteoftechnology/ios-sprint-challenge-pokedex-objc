@@ -69,8 +69,9 @@
 		HSVPokemonViewController *vc = (HSVPokemonViewController *) segue.destinationViewController;
 		NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
 		HSVPokemon *pokemon = self.pokedex[indexPath.row];
-		NSLog(@"found pokemon %@", pokemon);
 		vc.pokemon = pokemon;
+		
+		[[HSVPokemonAPI sharedController] fillInDetailsFor:pokemon];
 	}
 	
 }
