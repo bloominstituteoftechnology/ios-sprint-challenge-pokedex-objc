@@ -19,7 +19,7 @@ void *KVOContext = &KVOContext;
 @implementation HSVPokemonViewController
 
 
--(void)dealloc {
+- (void)dealloc {
 	[self.pokemon removeObserver:self forKeyPath:@"abilities"];
 	[self.pokemon removeObserver:self forKeyPath:@"sprite"];
 }
@@ -77,9 +77,10 @@ void *KVOContext = &KVOContext;
 				[self setupView];
 			});
 		} else if ([keyPath isEqualToString:@"sprite"]){
-			NSLog(@"got sprite");
-			NSURL *url = [[NSURL alloc] initWithString:self.pokemon.sprite];
-			[self fetchSetImageWithUrl:url];
+			if (self.pokemon.sprite) {
+				NSURL *url = [[NSURL alloc] initWithString:self.pokemon.sprite];
+				[self fetchSetImageWithUrl:url];
+			}
 		}
 		
 	}else {
