@@ -21,9 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-	[self setupView];
-	
 }
 
 - (void)setupView{
@@ -33,8 +30,8 @@
 		self.idLabel.text = [[NSString alloc] initWithFormat:@"ID: %@", self.pokemon.identifier];
 		
 		NSString *abilitiesStr = [self.pokemon.abilities componentsJoinedByString:@", "];
-		NSLog(@"%@", abilitiesStr);
-		self.abilitiesLabel.text =  [self.pokemon.abilities componentsJoinedByString:@", "];;
+		NSLog(@"%@", self.pokemon.abilities);
+		self.abilitiesLabel.text =  abilitiesStr;
 		
 	}else {
 		NSLog(@"missing pokemon");
