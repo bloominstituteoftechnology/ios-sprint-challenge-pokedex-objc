@@ -14,7 +14,7 @@
         <!--Pokedex-->
         <scene sceneID="rfS-eb-RNL">
             <objects>
-                <tableViewController id="adM-c6-RLQ" sceneMemberID="viewController">
+                <tableViewController id="adM-c6-RLQ" customClass="HHPokemonTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1qb-hJ-Brw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="jz8-7x-Z14" kind="show" identifier="toPokeDetail" id="PCS-Rd-a7i"/>
+                                    <segue destination="jz8-7x-Z14" kind="show" identifier="toPokeDetailVC" id="PCS-Rd-a7i"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

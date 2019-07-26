@@ -14,6 +14,8 @@
 		EFF7ED9322EB4E8F00A4D7B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF7ED9222EB4E8F00A4D7B6 /* main.m */; };
 		EFF7ED9E22EB509F00A4D7B6 /* HHPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF7ED9D22EB509F00A4D7B6 /* HHPokemon.m */; };
 		EFF7EDA222EB52CF00A4D7B6 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF7EDA122EB52CF00A4D7B6 /* PokemonController.swift */; };
+		EFF7EDA622EB57EC00A4D7B6 /* HHPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF7EDA522EB57EC00A4D7B6 /* HHPokemonTableViewController.m */; };
+		EFF7EDA922EB580600A4D7B6 /* HHPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF7EDA822EB580600A4D7B6 /* HHPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		EFF7ED9D22EB509F00A4D7B6 /* HHPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHPokemon.m; sourceTree = "<group>"; };
 		EFF7EDA022EB52CE00A4D7B6 /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
 		EFF7EDA122EB52CF00A4D7B6 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
+		EFF7EDA422EB57EC00A4D7B6 /* HHPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHPokemonTableViewController.h; sourceTree = "<group>"; };
+		EFF7EDA522EB57EC00A4D7B6 /* HHPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHPokemonTableViewController.m; sourceTree = "<group>"; };
+		EFF7EDA722EB580600A4D7B6 /* HHPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHPokemonDetailViewController.h; sourceTree = "<group>"; };
+		EFF7EDA822EB580600A4D7B6 /* HHPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 			children = (
 				EFF7ED9B22EB507000A4D7B6 /* Model */,
 				EFF7ED9F22EB529600A4D7B6 /* Model Controller */,
+				EFF7EDA322EB57B000A4D7B6 /* View Controllers */,
 				EFF7ED9922EB4EBC00A4D7B6 /* Storyboards */,
 			);
 			path = Pokedex;
@@ -106,6 +113,17 @@
 				EFF7EDA022EB52CE00A4D7B6 /* Pokedex-Bridging-Header.h */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		EFF7EDA322EB57B000A4D7B6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EFF7EDA422EB57EC00A4D7B6 /* HHPokemonTableViewController.h */,
+				EFF7EDA522EB57EC00A4D7B6 /* HHPokemonTableViewController.m */,
+				EFF7EDA722EB580600A4D7B6 /* HHPokemonDetailViewController.h */,
+				EFF7EDA822EB580600A4D7B6 /* HHPokemonDetailViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,7 +199,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFF7ED9322EB4E8F00A4D7B6 /* main.m in Sources */,
+				EFF7EDA622EB57EC00A4D7B6 /* HHPokemonTableViewController.m in Sources */,
 				EFF7ED8522EB4E8F00A4D7B6 /* AppDelegate.m in Sources */,
+				EFF7EDA922EB580600A4D7B6 /* HHPokemonDetailViewController.m in Sources */,
 				EFF7ED9E22EB509F00A4D7B6 /* HHPokemon.m in Sources */,
 				EFF7EDA222EB52CF00A4D7B6 /* PokemonController.swift in Sources */,
 			);
