@@ -53,7 +53,7 @@ void *KVOContext = &KVOContext;
     if(pokemon != _pokemon) {
         _pokemon = pokemon;
         
-        [_pokemon addObserver:self forKeyPath:@"iage" options:NSKeyValueObservingOptionInitial context: KVOContext];
+        [_pokemon addObserver:self forKeyPath:@"image" options:NSKeyValueObservingOptionInitial context: KVOContext];
         [_pokemon addObserver:self forKeyPath:@"id" options:NSKeyValueObservingOptionInitial context: KVOContext];
         [_pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionInitial context: KVOContext];
     }
