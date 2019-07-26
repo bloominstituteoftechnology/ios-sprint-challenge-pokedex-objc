@@ -9,9 +9,9 @@
 import Foundation
 
 
-@objc class PokemonAPI: NSObject {
+@objc class PokemonAPIController: NSObject {
     
-    @objc(sharedController) static let shared: PokemonAPIController
+    //@objc(sharedController) static let shared: PokemonAPIController
     
     @objc func fetchAllPokemon(completion: @escaping ([JGPPokemon]?, Error?) -> Void) {
         
