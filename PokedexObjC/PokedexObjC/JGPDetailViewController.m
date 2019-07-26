@@ -29,13 +29,9 @@
     
     // [pokemonAPIController.fillInDetails pokemonName ... completion
     
-//    [[JGPPokemonAPIController sharedController] fillInDetailsFor:pokemon.name
-//                                                      completion:^(JGPPokemon * _Nullable pokemon, NSError * _Nullable error) {
-//        if(error) {
-//            NSLog(@"Error searching: %@", error);
-//        }
+//    [[JGPPokemonAPIController sharedController] fillInDetailsFor:pokemon.name {    NO COMPLETION MEANS MUST USE OBSERVER!
 //        
-//        // OBSERVE when pokemon info is fetched and implement...
+//        // OBSERVE when pokemon info is fetched inside th network call, and implement...
 //                                                          
 //                                                          
 //        NSLog(@"Results: %@", pokemon.name);
