@@ -14,6 +14,7 @@
 		9E21A47B22EB50E600420E9F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E21A47A22EB50E600420E9F /* main.m */; };
 		9E5D9D5122EB5BA800FC34AB /* DLJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D9D5022EB5BA800FC34AB /* DLJDetailViewController.m */; };
 		9E5D9D5422EB5BC400FC34AB /* DLJPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D9D5322EB5BC400FC34AB /* DLJPokemonTableViewController.m */; };
+		9E5D9D5822EB5EEE00FC34AB /* DLJPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D9D5722EB5EEE00FC34AB /* DLJPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		9E5D9D5022EB5BA800FC34AB /* DLJDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLJDetailViewController.m; sourceTree = "<group>"; };
 		9E5D9D5222EB5BC400FC34AB /* DLJPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLJPokemonTableViewController.h; sourceTree = "<group>"; };
 		9E5D9D5322EB5BC400FC34AB /* DLJPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLJPokemonTableViewController.m; sourceTree = "<group>"; };
+		9E5D9D5622EB5EEE00FC34AB /* DLJPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLJPokemon.h; sourceTree = "<group>"; };
+		9E5D9D5722EB5EEE00FC34AB /* DLJPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLJPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,7 @@
 				9E21A47922EB50E600420E9F /* Info.plist */,
 				9E21A47A22EB50E600420E9F /* main.m */,
 				9E5D9D5522EB5BCD00FC34AB /* ViewControllers */,
+				9E5D9D5922EB5EF500FC34AB /* Model */,
 			);
 			path = ObjcPokemon;
 			sourceTree = "<group>";
@@ -82,6 +86,15 @@
 				9E5D9D5022EB5BA800FC34AB /* DLJDetailViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9E5D9D5922EB5EF500FC34AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E5D9D5622EB5EEE00FC34AB /* DLJPokemon.h */,
+				9E5D9D5722EB5EEE00FC34AB /* DLJPokemon.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E5D9D5822EB5EEE00FC34AB /* DLJPokemon.m in Sources */,
 				9E5D9D5422EB5BC400FC34AB /* DLJPokemonTableViewController.m in Sources */,
 				9E21A47B22EB50E600420E9F /* main.m in Sources */,
 				9E5D9D5122EB5BA800FC34AB /* DLJDetailViewController.m in Sources */,
