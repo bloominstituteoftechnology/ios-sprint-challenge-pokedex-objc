@@ -14,6 +14,7 @@
 		C47FAF1D22EB564E0098A184 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C47FAF1C22EB564E0098A184 /* main.m */; };
 		C47FAF2722EB564F0098A184 /* ObjCPokedexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C47FAF2622EB564F0098A184 /* ObjCPokedexTests.m */; };
 		C47FAF3322EB56AD0098A184 /* KTMPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = C47FAF3222EB56AD0098A184 /* KTMPokemon.m */; };
+		C47FAF3622EB58760098A184 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FAF3522EB58760098A184 /* PokemonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		C47FAF2822EB564F0098A184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C47FAF3122EB56AD0098A184 /* KTMPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KTMPokemon.h; sourceTree = "<group>"; };
 		C47FAF3222EB56AD0098A184 /* KTMPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTMPokemon.m; sourceTree = "<group>"; };
+		C47FAF3422EB58760098A184 /* ObjCPokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCPokedex-Bridging-Header.h"; sourceTree = "<group>"; };
+		C47FAF3522EB58760098A184 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +89,12 @@
 				C47FAF1322EB564E0098A184 /* Main.storyboard */,
 				C47FAF3122EB56AD0098A184 /* KTMPokemon.h */,
 				C47FAF3222EB56AD0098A184 /* KTMPokemon.m */,
+				C47FAF3522EB58760098A184 /* PokemonAPI.swift */,
 				C47FAF1622EB564E0098A184 /* Assets.xcassets */,
 				C47FAF1822EB564E0098A184 /* LaunchScreen.storyboard */,
 				C47FAF1B22EB564E0098A184 /* Info.plist */,
 				C47FAF1C22EB564E0098A184 /* main.m */,
+				C47FAF3422EB58760098A184 /* ObjCPokedex-Bridging-Header.h */,
 			);
 			path = ObjCPokedex;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				TargetAttributes = {
 					C47FAF0922EB564E0098A184 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 					C47FAF2122EB564F0098A184 = {
 						CreatedOnToolsVersion = 10.3;
@@ -206,6 +212,7 @@
 			files = (
 				C47FAF1D22EB564E0098A184 /* main.m in Sources */,
 				C47FAF0F22EB564E0098A184 /* AppDelegate.m in Sources */,
+				C47FAF3622EB58760098A184 /* PokemonAPI.swift in Sources */,
 				C47FAF3322EB56AD0098A184 /* KTMPokemon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 636DWTJB2B;
 				INFOPLIST_FILE = ObjCPokedex/Info.plist;
@@ -373,6 +381,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kmacmckee.ObjCPokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjCPokedex/ObjCPokedex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -381,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 636DWTJB2B;
 				INFOPLIST_FILE = ObjCPokedex/Info.plist;
@@ -390,6 +402,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kmacmckee.ObjCPokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjCPokedex/ObjCPokedex-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -397,6 +411,7 @@
 		C47FAF2F22EB564F0098A184 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 636DWTJB2B;
@@ -416,6 +431,7 @@
 		C47FAF3022EB564F0098A184 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 636DWTJB2B;
