@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class TXCPokemon;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TXCPokemonTableViewController : UITableViewController
+
+@property (nonatomic, copy, nullable) NSArray<TXCPokemon *> *pokemons;
 
 @end
 

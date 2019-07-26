@@ -7,6 +7,8 @@
 //
 
 #import "TXCPokemonTableViewController.h"
+#import "TXCPokemon.h"
+#import "PokedexObjc-Swift.h"
 
 @interface TXCPokemonTableViewController ()
 
@@ -17,26 +19,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
+    [[PokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<TXCPokemon *> * _Nullable pokemons, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error fetching: %@", error);
+        }
+        self.pokemons = pokemons;
+    }];
 }
 
+- (void)setPokemons:(NSArray<TXCPokemon *> *)pokemons {
+    _pokemons = [pokemons copy];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+}
 #pragma mark - Table view data source
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return self.pokemons.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    TXCPokemon *pokemon = self.pokemons[indexPath.row];
+    cell.textLabel.text = pokemon.name;
     
     return cell;
 }
-*/
+
 
 /*
 #pragma mark - Navigation
