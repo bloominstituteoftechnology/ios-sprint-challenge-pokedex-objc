@@ -61,6 +61,54 @@ class PokemonAPI: NSObject {
         }.resume()
     }
     
+    @objc func fillInDetails(for pokemon: Pokemon) {
+        
+        let url = URL(string: pokemon.infoURL)!
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            
+            if let error = error {
+                print("Error fetching info for \(pokemon.name): \(error)")
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                
+                guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                let id = json["id"] as? Int
+                else { return }
+                
+                pokemon.identifier = "\(id)"
+                
+//                var pokemon = [Pokemon]()
+//
+//                for index in 0 ..< results.count {
+//
+//                    let pokemonData = results[index]
+//
+//                    guard let name = pokemonData["name"],
+//                        let url = pokemonData["url"]
+//                        else { return }
+//
+//                    pokemon.append(Pokemon(name: name, url: url))
+//                }
+                
+                return
+                
+            } catch {
+                
+                print("Error with json: \(error)")
+                return
+            }
+            
+            
+            
+            
+            
+        }.resume()
+    }
     // MARK: - Private Methods
 
 }

@@ -7,7 +7,9 @@
 //
 
 #import "KRCPokemonDetailViewController.h"
+#import "Pokemon-Swift.h"
 #import "KRCPokemon.h"
+
 @interface KRCPokemonDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *spriteImageView;
@@ -27,13 +29,18 @@
     [[self pokemon] addObserver:self forKeyPath:@"abilities" options:0 context:nil];
     
     [[self nameLabel] setText:[[self pokemon] name]];
+    
+    [[KRCPokemonAPI sharded] fillInDetailsFor:[self pokemon]];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"identifier"]) {
         
-        NSLog(@"identifier has changed");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[self idLabel] setText:[[self pokemon] identifier]];
+        });
+        
     } else if ([keyPath isEqualToString:@"spriteImage"]) {
         
         NSLog(@"spriteImage has changed");
