@@ -14,6 +14,7 @@
 		1BE12E7F22EB5C6E0002E74B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE12E7E22EB5C6E0002E74B /* main.m */; };
 		1BE12E8922EB5FBB0002E74B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE12E8822EB5FBB0002E74B /* DetailViewController.swift */; };
 		1BE12E8C22EB5FED0002E74B /* MRFPokeDexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE12E8B22EB5FED0002E74B /* MRFPokeDexTableViewController.m */; };
+		1BE12E9122EB62140002E74B /* MRFPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE12E9022EB62140002E74B /* MRFPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		1BE12E8822EB5FBB0002E74B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1BE12E8A22EB5FED0002E74B /* MRFPokeDexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRFPokeDexTableViewController.h; sourceTree = "<group>"; };
 		1BE12E8B22EB5FED0002E74B /* MRFPokeDexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRFPokeDexTableViewController.m; sourceTree = "<group>"; };
+		1BE12E8F22EB62140002E74B /* MRFPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRFPokemon.h; sourceTree = "<group>"; };
+		1BE12E9022EB62140002E74B /* MRFPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRFPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +64,10 @@
 		1BE12E6E22EB5C6E0002E74B /* PokeDexObjc */ = {
 			isa = PBXGroup;
 			children = (
+				1BE12E9222EB621C0002E74B /* Model */,
 				1BE12E8522EB5D570002E74B /* Storyboard */,
+				1BE12E8E22EB60370002E74B /* TableViewController */,
+				1BE12E8D22EB602B0002E74B /* View Controller */,
 				1BE12E8622EB5D650002E74B /* Resources */,
 			);
 			path = PokeDexObjc;
@@ -71,9 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				1BE12E7522EB5C6E0002E74B /* Main.storyboard */,
-				1BE12E8A22EB5FED0002E74B /* MRFPokeDexTableViewController.h */,
-				1BE12E8B22EB5FED0002E74B /* MRFPokeDexTableViewController.m */,
-				1BE12E8822EB5FBB0002E74B /* DetailViewController.swift */,
 				1BE12E8722EB5FBB0002E74B /* PokeDexObjc-Bridging-Header.h */,
 			);
 			path = Storyboard;
@@ -90,6 +93,32 @@
 				1BE12E7E22EB5C6E0002E74B /* main.m */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1BE12E8D22EB602B0002E74B /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BE12E8822EB5FBB0002E74B /* DetailViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		1BE12E8E22EB60370002E74B /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1BE12E8A22EB5FED0002E74B /* MRFPokeDexTableViewController.h */,
+				1BE12E8B22EB5FED0002E74B /* MRFPokeDexTableViewController.m */,
+			);
+			path = TableViewController;
+			sourceTree = "<group>";
+		};
+		1BE12E9222EB621C0002E74B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BE12E8F22EB62140002E74B /* MRFPokemon.h */,
+				1BE12E9022EB62140002E74B /* MRFPokemon.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +195,7 @@
 			files = (
 				1BE12E8922EB5FBB0002E74B /* DetailViewController.swift in Sources */,
 				1BE12E7F22EB5C6E0002E74B /* main.m in Sources */,
+				1BE12E9122EB62140002E74B /* MRFPokemon.m in Sources */,
 				1BE12E8C22EB5FED0002E74B /* MRFPokeDexTableViewController.m in Sources */,
 				1BE12E7122EB5C6E0002E74B /* AppDelegate.m in Sources */,
 			);
