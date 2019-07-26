@@ -15,6 +15,7 @@
 		9E5D9D5122EB5BA800FC34AB /* DLJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D9D5022EB5BA800FC34AB /* DLJDetailViewController.m */; };
 		9E5D9D5422EB5BC400FC34AB /* DLJPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D9D5322EB5BC400FC34AB /* DLJPokemonTableViewController.m */; };
 		9E5D9D5822EB5EEE00FC34AB /* DLJPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D9D5722EB5EEE00FC34AB /* DLJPokemon.m */; };
+		9E5D9D5C22EB68F200FC34AB /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D9D5B22EB68F200FC34AB /* PokemonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		9E5D9D5322EB5BC400FC34AB /* DLJPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLJPokemonTableViewController.m; sourceTree = "<group>"; };
 		9E5D9D5622EB5EEE00FC34AB /* DLJPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLJPokemon.h; sourceTree = "<group>"; };
 		9E5D9D5722EB5EEE00FC34AB /* DLJPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLJPokemon.m; sourceTree = "<group>"; };
+		9E5D9D5A22EB68F200FC34AB /* ObjcPokemon-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjcPokemon-Bridging-Header.h"; sourceTree = "<group>"; };
+		9E5D9D5B22EB68F200FC34AB /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				9E21A47A22EB50E600420E9F /* main.m */,
 				9E5D9D5522EB5BCD00FC34AB /* ViewControllers */,
 				9E5D9D5922EB5EF500FC34AB /* Model */,
+				9E5D9D5B22EB68F200FC34AB /* PokemonController.swift */,
+				9E5D9D5A22EB68F200FC34AB /* ObjcPokemon-Bridging-Header.h */,
 			);
 			path = ObjcPokemon;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 				TargetAttributes = {
 					9E21A46722EB50D100420E9F = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -173,6 +179,7 @@
 				9E21A47B22EB50E600420E9F /* main.m in Sources */,
 				9E5D9D5122EB5BA800FC34AB /* DLJDetailViewController.m in Sources */,
 				9E21A46D22EB50D100420E9F /* AppDelegate.m in Sources */,
+				9E5D9D5C22EB68F200FC34AB /* PokemonController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TP75B2J23B;
 				INFOPLIST_FILE = ObjcPokemon/Info.plist;
@@ -323,6 +331,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Diantelewisjolley.ObjcPokemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjcPokemon/ObjcPokemon-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -331,6 +342,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TP75B2J23B;
 				INFOPLIST_FILE = ObjcPokemon/Info.plist;
@@ -340,6 +352,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Diantelewisjolley.ObjcPokemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjcPokemon/ObjcPokemon-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -14,11 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSURL *url;
-@property (nonatomic) int *pokemonID;
+@property (nonatomic) NSInteger *pokemonID;
 @property (nonatomic, copy, nullable) NSArray<NSString *> *ablities;
 @property (nonatomic, copy, nullable) NSString *sprite;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
+
 
 @end
 

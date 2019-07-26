@@ -10,4 +10,30 @@
 
 @implementation DLJPokemon
 
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary {
+
+    self = [super init];
+    if (self) {
+
+        NSString *name = dictionary[@"name"];
+        NSInteger pokemonID = dictionary[@"id"];
+
+        NSString *sprite = [dictionary valueForKeyPath:@"sprites.front_default"];
+
+        NSArray *abilityArray = dictionary[@"abilities"];
+
+        NSArray *abilityNames = [abilityArray valueForKeyPath:@"ability.name"];
+
+        _name = name;
+        _pokemonID = pokemonID;
+
+        _sprite = sprite;
+        _ablities = abilityNames;
+
+
+    }
+    return self;
+}
+
+
 @end

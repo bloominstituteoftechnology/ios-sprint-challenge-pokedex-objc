@@ -7,8 +7,14 @@
 //
 
 #import "DLJPokemonTableViewController.h"
+#import "DLJPokemon.h"
+#import "DLJDetailViewController.h"
+#import "ObjcPokemon-Swift.h"
 
 @interface DLJPokemonTableViewController ()
+
+@property PokemonController *pokemonController;
+@property NSArray<DLJPokemon *> *pokedex;
 
 @end
 
@@ -16,35 +22,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    _pokemonController = [PokemonController shared];
+
+    [_pokemonController fetchPokemonWithCompletion:^(NSArray<DLJPokemon *> *pokedex, NSError * error) {
+        if (error) {
+            NSLog(@"Error fetching pokemon");
+        }
+        dispatch_async(dispatch_get_main_queue(), ^ {
+            self.pokedex = pokedex;
+            [self.tableView reloadData];
+        });
+
+    }];
+
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.pokedex.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
+
+    DLJPokemon *pokemon = self.pokedex[indexPath.row];
+    cell.textLabel.text = pokemon.name;
+
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
