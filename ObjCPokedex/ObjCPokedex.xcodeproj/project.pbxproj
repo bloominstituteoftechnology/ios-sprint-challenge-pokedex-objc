@@ -15,6 +15,8 @@
 		C47FAF2722EB564F0098A184 /* ObjCPokedexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C47FAF2622EB564F0098A184 /* ObjCPokedexTests.m */; };
 		C47FAF3322EB56AD0098A184 /* KTMPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = C47FAF3222EB56AD0098A184 /* KTMPokemon.m */; };
 		C47FAF3622EB58760098A184 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FAF3522EB58760098A184 /* PokemonAPI.swift */; };
+		C47FAF3B22EB5D310098A184 /* KTMPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C47FAF3A22EB5D310098A184 /* KTMPokedexTableViewController.m */; };
+		C47FAF3F22EB5F680098A184 /* KTMPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C47FAF3E22EB5F680098A184 /* KTMPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		C47FAF3222EB56AD0098A184 /* KTMPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTMPokemon.m; sourceTree = "<group>"; };
 		C47FAF3422EB58760098A184 /* ObjCPokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCPokedex-Bridging-Header.h"; sourceTree = "<group>"; };
 		C47FAF3522EB58760098A184 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		C47FAF3922EB5D310098A184 /* KTMPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KTMPokedexTableViewController.h; sourceTree = "<group>"; };
+		C47FAF3A22EB5D310098A184 /* KTMPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTMPokedexTableViewController.m; sourceTree = "<group>"; };
+		C47FAF3D22EB5F680098A184 /* KTMPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KTMPokemonDetailViewController.h; sourceTree = "<group>"; };
+		C47FAF3E22EB5F680098A184 /* KTMPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTMPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,9 +93,9 @@
 				C47FAF0D22EB564E0098A184 /* AppDelegate.h */,
 				C47FAF0E22EB564E0098A184 /* AppDelegate.m */,
 				C47FAF1322EB564E0098A184 /* Main.storyboard */,
-				C47FAF3122EB56AD0098A184 /* KTMPokemon.h */,
-				C47FAF3222EB56AD0098A184 /* KTMPokemon.m */,
-				C47FAF3522EB58760098A184 /* PokemonAPI.swift */,
+				C47FAF3C22EB5D380098A184 /* View Controllers */,
+				C47FAF3722EB5CE90098A184 /* Models */,
+				C47FAF3822EB5D020098A184 /* Networking */,
 				C47FAF1622EB564E0098A184 /* Assets.xcassets */,
 				C47FAF1822EB564E0098A184 /* LaunchScreen.storyboard */,
 				C47FAF1B22EB564E0098A184 /* Info.plist */,
@@ -106,6 +112,34 @@
 				C47FAF2822EB564F0098A184 /* Info.plist */,
 			);
 			path = ObjCPokedexTests;
+			sourceTree = "<group>";
+		};
+		C47FAF3722EB5CE90098A184 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C47FAF3122EB56AD0098A184 /* KTMPokemon.h */,
+				C47FAF3222EB56AD0098A184 /* KTMPokemon.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C47FAF3822EB5D020098A184 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C47FAF3522EB58760098A184 /* PokemonAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C47FAF3C22EB5D380098A184 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C47FAF3D22EB5F680098A184 /* KTMPokemonDetailViewController.h */,
+				C47FAF3E22EB5F680098A184 /* KTMPokemonDetailViewController.m */,
+				C47FAF3922EB5D310098A184 /* KTMPokedexTableViewController.h */,
+				C47FAF3A22EB5D310098A184 /* KTMPokedexTableViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +246,9 @@
 			files = (
 				C47FAF1D22EB564E0098A184 /* main.m in Sources */,
 				C47FAF0F22EB564E0098A184 /* AppDelegate.m in Sources */,
+				C47FAF3F22EB5F680098A184 /* KTMPokemonDetailViewController.m in Sources */,
 				C47FAF3622EB58760098A184 /* PokemonAPI.swift in Sources */,
+				C47FAF3B22EB5D310098A184 /* KTMPokedexTableViewController.m in Sources */,
 				C47FAF3322EB56AD0098A184 /* KTMPokemon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
