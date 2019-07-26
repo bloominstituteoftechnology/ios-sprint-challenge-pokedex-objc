@@ -20,10 +20,9 @@ class PokemonAPI: NSObject {
 		URLSession.shared.dataTask(with: url) { (data, response, error) in
 			if let error = error, let response = response as? HTTPURLResponse{
 				NSLog("Error fetching pokedex: \(error)\n Response Code: \(response.statusCode)")
-			
+				
 				completion(nil, error)
 			}
-			
 			
 			guard let data = data else {
 				
@@ -31,12 +30,25 @@ class PokemonAPI: NSObject {
 				return
 			}
 			
-			
-			print(data)
-			
-			
-			
-			
+			do{
+				guard let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+				let results = jsonDictionary["results"] as? [[String: Any]] else { return }
+				
+				print(results[0]["name"] as! String)
+				
+				for i in 0..<results.count {
+					if let name = results[i]["name"] as? String{
+						let pokemon = Pokemon(name: name, identifier: "\(i + 1)")
+						pokemon.sprite = "some"
+						print(pokemon.sprite as! String)
+						
+					}
+				}
+				
+			}catch {
+				NSLog("error with :\(error)")
+			}
+
 		}.resume()
 		
 		
