@@ -10,6 +10,11 @@
 
 @interface KRCPokemonDetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *spriteImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *idLabel;
+@property (weak, nonatomic) IBOutlet UITextView *abilitiesTextView;
+
 @end
 
 @implementation KRCPokemonDetailViewController
