@@ -37,7 +37,7 @@
 			NSLog(@"error: %@", error);
 		}
 		
-		NSLog(@"error: %@", PokemonList);
+		NSLog(@"PokemonList: %@", PokemonList);
 		
 	}];
 
