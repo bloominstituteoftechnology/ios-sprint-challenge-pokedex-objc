@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pokedex Table View Controller-->
+        <!--Pokedex-->
         <scene sceneID="RYU-hI-Hf5">
             <objects>
                 <tableViewController id="Fza-OG-Ybx" customClass="HSVPokedexTableViewController" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="zB4-W5-wlw" kind="show" id="p40-Df-2W0"/>
+                                    <segue destination="zB4-W5-wlw" kind="show" identifier="PokemonSegue" id="p40-Df-2W0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -45,7 +45,7 @@
                             <outlet property="delegate" destination="Fza-OG-Ybx" id="Oxh-W4-rOd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="iJ7-CN-8fd"/>
+                    <navigationItem key="navigationItem" title="Pokedex" id="iJ7-CN-8fd"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEY-df-yZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,21 +60,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tSG-xD-tYJ">
-                                <rect key="frame" x="40" y="128" width="334" height="290.5"/>
+                                <rect key="frame" x="40" y="180" width="334" height="290.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tSG-xD-tYJ" secondAttribute="height" multiplier="269:234" id="5jp-Hq-0Xc"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNJ-O1-YJm">
+                                <rect key="frame" x="20" y="490.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poV-Ix-PFq">
+                                <rect key="frame" x="20" y="519.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhn-9j-P5X">
+                                <rect key="frame" x="20" y="548.5" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tSG-xD-tYJ" firstAttribute="centerX" secondItem="9Wm-UX-E2P" secondAttribute="centerX" id="72S-8V-Xra"/>
+                            <constraint firstItem="fNJ-O1-YJm" firstAttribute="leading" secondItem="UP0-GQ-XmN" secondAttribute="leading" constant="20" id="7M7-u1-MF4"/>
+                            <constraint firstItem="poV-Ix-PFq" firstAttribute="leading" secondItem="UP0-GQ-XmN" secondAttribute="leading" constant="20" id="99D-Yy-wmQ"/>
+                            <constraint firstItem="UP0-GQ-XmN" firstAttribute="trailing" secondItem="fNJ-O1-YJm" secondAttribute="trailing" constant="20" id="9vs-EF-D84"/>
+                            <constraint firstItem="UP0-GQ-XmN" firstAttribute="trailing" secondItem="poV-Ix-PFq" secondAttribute="trailing" constant="20" id="Etw-0n-lZs"/>
+                            <constraint firstItem="lhn-9j-P5X" firstAttribute="top" secondItem="poV-Ix-PFq" secondAttribute="bottom" constant="8" id="Gud-Hd-Rra"/>
                             <constraint firstItem="tSG-xD-tYJ" firstAttribute="top" secondItem="UP0-GQ-XmN" secondAttribute="top" constant="40" id="J88-Gk-OZK"/>
+                            <constraint firstItem="fNJ-O1-YJm" firstAttribute="top" secondItem="tSG-xD-tYJ" secondAttribute="bottom" constant="20" id="KgI-so-3ig"/>
+                            <constraint firstItem="lhn-9j-P5X" firstAttribute="leading" secondItem="UP0-GQ-XmN" secondAttribute="leading" constant="20" id="NVv-3o-0et"/>
+                            <constraint firstItem="poV-Ix-PFq" firstAttribute="top" secondItem="fNJ-O1-YJm" secondAttribute="bottom" constant="8" id="O8x-dc-tEk"/>
                             <constraint firstItem="tSG-xD-tYJ" firstAttribute="leading" secondItem="UP0-GQ-XmN" secondAttribute="leading" constant="40" id="d7r-t4-ke3"/>
+                            <constraint firstItem="UP0-GQ-XmN" firstAttribute="trailing" secondItem="lhn-9j-P5X" secondAttribute="trailing" constant="20" id="gNU-Ev-pfz"/>
                             <constraint firstItem="UP0-GQ-XmN" firstAttribute="trailing" secondItem="tSG-xD-tYJ" secondAttribute="trailing" constant="40" id="lDC-nJ-kYj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UP0-GQ-XmN"/>
                     </view>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="lhn-9j-P5X" id="pU2-5S-67O"/>
+                        <outlet property="idLabel" destination="poV-Ix-PFq" id="ual-7A-z5h"/>
+                        <outlet property="imageView" destination="tSG-xD-tYJ" id="1BR-qd-f0E"/>
+                        <outlet property="nameLabel" destination="fNJ-O1-YJm" id="wfT-lh-UCy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5f0-E0-vBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,8 +118,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="59k-qX-4Lh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KrG-1V-aGe">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="KrG-1V-aGe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

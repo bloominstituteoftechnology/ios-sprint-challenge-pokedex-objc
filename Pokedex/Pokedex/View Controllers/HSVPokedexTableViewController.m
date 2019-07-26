@@ -65,11 +65,14 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//	if ([segue.identifier isEqualToString:@"PokemonSegue"]) {
-//		HSVPokemonViewController *vc = (HSVPokemonViewController *) segue.destinationViewController;
-//	
-//	}
- 
+	if ([segue.identifier isEqualToString:@"PokemonSegue"]) {
+		HSVPokemonViewController *vc = (HSVPokemonViewController *) segue.destinationViewController;
+		NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+		HSVPokemon *pokemon = self.pokedex[indexPath.row];
+		NSLog(@"found pokemon %@", pokemon);
+		vc.pokemon = pokemon;
+	}
+	
 }
 
 

@@ -7,8 +7,13 @@
 //
 
 #import "HSVPokemonViewController.h"
+#import "HSVPokemon.h"
+#import "Pokedex-Swift.h"
+
 
 @interface HSVPokemonViewController ()
+
+
 
 @end
 
@@ -16,17 +21,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+	[self setupView];
+	
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setupView{
+	
+	if(self.pokemon){
+		self.nameLabel.text = self.pokemon.name;
+		self.idLabel.text = [[NSString alloc] initWithFormat:@"ID: %@", self.pokemon.identifier];
+		
+		
+	}else {
+		NSLog(@"missing pokemon");
+	}
+	
 }
-*/
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+	//obserce for abilities 
+}
+
+
 
 @end
