@@ -14,7 +14,7 @@
         <!--Root View Controller-->
         <scene sceneID="ct7-ED-YkL">
             <objects>
-                <tableViewController id="MSS-9W-lIl" sceneMemberID="viewController">
+                <tableViewController id="MSS-9W-lIl" customClass="MRFPokeDexTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bx6-HI-v1J">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="742" y="121"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="rye-yQ-gDT">
             <objects>
-                <viewController id="tGa-XH-W41" sceneMemberID="viewController">
+                <viewController id="tGa-XH-W41" customClass="DetailViewController" customModule="PokeDexObjc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="voy-AV-30Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
