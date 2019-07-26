@@ -94,9 +94,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pokemon name" id="j2E-WV-RK8"/>
                     <connections>
-                        <outlet property="abilitiesLabel" destination="HNL-qN-Usq" id="Y9I-Kw-jwX"/>
-                        <outlet property="idLabel" destination="Mh5-Fr-WVg" id="SfT-lN-LT0"/>
-                        <outlet property="imageView" destination="hYW-0f-9B0" id="Akf-V0-aTr"/>
+                        <outlet property="abilitiesLabel" destination="HNL-qN-Usq" id="pmN-GD-LII"/>
+                        <outlet property="idLabel" destination="Mh5-Fr-WVg" id="fld-u0-6h0"/>
+                        <outlet property="imageView" destination="hYW-0f-9B0" id="Atb-kA-Pnt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DKQ-DB-uIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
