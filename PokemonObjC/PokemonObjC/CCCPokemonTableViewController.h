@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CCCPokemonTableViewController.h
 //  PokemonObjC
 //
 //  Created by Ryan Murphy on 7/26/19.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface CCCPokemonTableViewController : UITableViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

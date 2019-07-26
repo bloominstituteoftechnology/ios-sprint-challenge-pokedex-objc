@@ -13,18 +13,27 @@
         <!--Pokemon-->
         <scene sceneID="GXO-fc-qLg">
             <objects>
-                <tableViewController id="gVu-za-vCo" sceneMemberID="viewController">
+                <tableViewController id="gVu-za-vCo" customClass="CCCPokemonTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EWT-V9-y4a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokeCell" id="VjI-1V-4Hy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokeCell" textLabel="pvo-JM-pMi" style="IBUITableViewCellStyleDefault" id="VjI-1V-4Hy">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VjI-1V-4Hy" id="ytD-lq-auT">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pvo-JM-pMi">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="CCQ-t7-Ckj" kind="show" identifier="ShowSegue" id="qjn-jN-nmX"/>
@@ -42,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="1021.7391304347827" y="145.98214285714286"/>
         </scene>
-        <!--View Controller-->
+        <!--Detial View Controller-->
         <scene sceneID="Kdu-KX-mKO">
             <objects>
-                <viewController id="CCQ-t7-Ckj" sceneMemberID="viewController">
+                <viewController id="CCQ-t7-Ckj" customClass="CCCDetialViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d9H-IE-yUV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,6 +136,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fwE-LR-yCj"/>
                     </view>
+                    <connections>
+                        <outlet property="abilityLabel" destination="W6d-sX-bj8" id="W2L-v1-ucc"/>
+                        <outlet property="iDLabel" destination="cI2-4p-OKQ" id="sx4-hO-VdJ"/>
+                        <outlet property="nameLabel" destination="6YL-Ua-UEv" id="Td5-2M-XCc"/>
+                        <outlet property="pokeImageView" destination="4Do-iQ-LcT" id="cIa-q7-T6l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJQ-tO-1ni" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
