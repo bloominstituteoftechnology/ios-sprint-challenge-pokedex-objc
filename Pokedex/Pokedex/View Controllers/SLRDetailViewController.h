@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class SLRPokemon;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SLRDetailViewController : UIViewController
+
+@property (nullable) SLRPokemon *pokemon;
 
 @end
 

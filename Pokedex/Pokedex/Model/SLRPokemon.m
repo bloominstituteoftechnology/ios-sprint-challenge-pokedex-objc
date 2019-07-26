@@ -14,7 +14,7 @@
 // Network results of Pokemon detail network call
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary {
     
-    NSString *pokemonName = dictionary[@"pokemonName"];
+    NSString *pokemonName = dictionary[@"name"];
     NSString *detailLink = dictionary[@"url"];
     return [self initWithPokemonName:pokemonName detailLink:detailLink];
     

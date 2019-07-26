@@ -36,17 +36,16 @@ class PokemonAPI: NSObject {
             
             // We have the list
             // Store pokemon list data in
-            var pokemonList: [SLRPokemon] = []
+            var pokemonList = [SLRPokemon]()
             
             // Let's populate the pokemonList with the names
             do {
-                let apiData = try JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary
-                let pokemonData = apiData.value(forKey: "apiData") as! NSArray
+                let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+               // let pokemonData = apiResponse.value(forKey: "results") as! NSArray
+                guard let pokemonData = dictionary["results"] as? [[String: String]] else {return}
 
-                // Add the names to the pokemonList array
-                for pokeData in pokemonData {
-                    let aPokemon = SLRPokemon(dictionary: (pokeData as! NSDictionary) as! [String: Any])
-                    pokemonList.append(aPokemon)
+                for aPokemon in pokemonData {
+                    pokemonList.append(SLRPokemon(dictionary: aPokemon))
                 }
                 
             // Had an error pulling out data

@@ -9,12 +9,13 @@
 #import "SLRPokemonTableViewController.h"
 #import "SLRPokemon.h"
 #import "Pokedex-Swift.h"
+#import "SLRDetailViewController.h"
 
 
 
 @interface SLRPokemonTableViewController ()
 
-@property SLRPokemon *apiData;
+@property PokemonAPI *apiData;
 @property NSMutableArray <SLRPokemon *> *pokemon;
 
 @end
@@ -24,25 +25,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.apiData = [[PokemonAPI alloc] init];
+    [self.apiData fetchListOfPokemonWithCompletion:^(NSArray<SLRPokemon *> *listOfPokemon, NSError *error) {
+        if (error) {
+            NSLog(@"Error fetching Pokemon list: %@", error);
+        }
+
+        self.pokemon = [listOfPokemon mutableCopy];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return [self.pokemon count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemanCells" forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.textLabel.text = [self.pokemon[indexPath.row] pokemonName];
     
     return cell;
 }
@@ -50,10 +56,10 @@
 
 #pragma mark - Navigation
 //SegueToDetail
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSIndexPath *index = [self.tableView indexPathForSelectedRow];
+    SLRDetailViewController *detailVC = segue.destinationViewController;
+    detailVC.pokemon = [self.pokemon objectAtIndex:index.row];
 }
 
 
