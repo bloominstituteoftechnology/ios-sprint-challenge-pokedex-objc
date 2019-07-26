@@ -65,9 +65,20 @@ class PokemonAPI: NSObject {
 				guard 	let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
 					let abilities =  jsonDictionary["abilities"] as? [[String: Any]] else { return }
 				
-				let ability = abilities[0] as [String: Any]
-				let abilityName = ability["ability"] as! [String: Any]
-				print(abilityName["name"] as! String)
+				var abilitiesArr: [String] = []
+				
+				for i in 0..<abilities.count {
+					
+					let ability = abilities[i] as [String: Any]
+					let abilityName = ability["ability"] as! [String: Any]
+					let name = abilityName["name"] as! String
+
+					abilitiesArr.append(name)
+					
+				}
+				
+				pokemon.abilities = abilitiesArr;
+				print(pokemon.abilities!)
 				
 				
 				
