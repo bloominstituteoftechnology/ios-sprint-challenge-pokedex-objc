@@ -7,6 +7,10 @@
 //
 
 #import "TXCDetailViewController.h"
+#import "TXCPokemon.h"
+
+
+void *KVOContext = &KVOContext;
 
 @interface TXCDetailViewController ()
 
@@ -15,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *idLabel;
 @property (weak, nonatomic) IBOutlet UILabel *abilitiesLabel;
 
+@property (nonatomic) TXCPokemon *pokemon;
 
 @end
 
@@ -25,14 +30,28 @@
     // Do any additional setup after loading the view.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setPokemon:(TXCPokemon *)pokemon {
+    if (pokemon != _pokemon) {
+        [_pokemon removeObserver:self forKeyPath:@"name" context:KVOContext];
+        [_pokemon removeObserver:self forKeyPath:@"id" context:KVOContext];
+        
+        _pokemon = pokemon;
+        
+        [_pokemon addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionInitial context:KVOContext];
+        [_pokemon addObserver:self forKeyPath:@"id" options:NSKeyValueObservingOptionInitial context:KVOContext];
+    }
 }
-*/
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if (context == KVOContext) {
+        //fill in details for pokemon?  network call?
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
+- (void) dealloc {
+    self.pokemon = nil;
+}
 
 @end

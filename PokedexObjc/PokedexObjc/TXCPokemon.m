@@ -28,7 +28,7 @@
     
     _name = dictionary[@"name"];
     _identifier = [dictionary[@"id"] intValue];
-    _abilities = dictionary[@"ability"][@"name"];
+    _abilities = dictionary[@"abilities"][@"ability"][@"name"];
     _sprite = dictionary[@"sprites"][@"front_default"];
     
     return self;

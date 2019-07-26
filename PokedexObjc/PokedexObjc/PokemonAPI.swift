@@ -44,11 +44,26 @@ class PokemonAPI: NSObject {
     
     
     @objc func fillInDetails(for pokemon: TXCPokemon) {
+        let pokemonURL = baseURL.appendingPathComponent(pokemon.name)
+        
+        URLSession.shared.dataTask(with: pokemonURL) { (data, _, error) in
+            if let error = error {
+                NSLog("Error: \(error)")
+                return
+            }
+            guard let data = data else {
+                NSLog("Error No data")
+                return
+            }
+            do {
+                guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else { throw NSError()
+                }
+                
+            } catch {
+                
+            }
+        }
         
     }
-    
-    
-    
-    
     
 }
