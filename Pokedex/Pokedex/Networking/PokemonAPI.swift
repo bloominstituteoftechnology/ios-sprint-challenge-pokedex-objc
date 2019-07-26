@@ -90,10 +90,9 @@ class PokemonAPI: NSObject {
                 if let spritesDict = dictionary["sprites"] as? [String:String?] {
                     let spriteURL = spritesDict["front_default"]
                     pokemon.sprite = spriteURL!
-                    print("Got sprites")
                 }
             } catch {
-                NSLog("Error geting sprites: \(error)" )
+                NSLog("Unable to retrieve sprites: \(error)" )
                 return
             }
             }.resume()
