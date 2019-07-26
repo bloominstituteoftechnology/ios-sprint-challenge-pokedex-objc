@@ -7,6 +7,7 @@
 //
 
 #import "MBPokemonTableViewController.h"
+#import "PokedexObjC-Swift.h"
 
 @interface MBPokemonTableViewController ()
 
@@ -16,8 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[MBPokemonController sharedController] fetchAllPokemonWithCompletion:^(NSArray<MBPokemon *> * pokedex, NSError * error) {
-        self.allPokemon = self->_allPokemon;
+    [[MBPokemonController sharedController] fetchAllPokemonWithCompletion:^(NSArray<MBPokemon *> * allPokemon, NSError * error) {
+        self.allPokemon = allPokemon;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
