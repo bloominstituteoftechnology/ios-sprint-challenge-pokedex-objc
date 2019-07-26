@@ -21,7 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [[KRCPokemonAPI sharded] fetchAllPokemonWithCompletion:^(NSArray<KRCPokemon *> * _Nullable pokemonList, NSError * _Nullable error) {
+        
+        NSLog(@"Finished Fetching all pokemon...");
+        
+        
+    }];
 }
 
 #pragma mark - Table view data source

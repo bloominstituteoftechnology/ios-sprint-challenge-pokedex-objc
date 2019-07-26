@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc(KRCPokemonInterface)
+@objc(KRCPokemonAPI)
 class PokemonAPI: NSObject {
     
     // MARK: - Properties
@@ -18,5 +18,49 @@ class PokemonAPI: NSObject {
     @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
         
         print("Fetching All Pokemon...")
+        
+        let url = URL(string: "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=964")!
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            
+            if let error = error {
+                print("Error calling Pokemon API: \(error)")
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+            
+                guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                let results = json["results"] as? Array<Dictionary<String, String>>
+                else { return }
+                
+                
+                var pokemon = [Pokemon]()
+                
+                for index in 0 ..< results.count {
+                    
+                    let pokemonData = results[index]
+                    
+                    guard let name = pokemonData["name"],
+                    let url = pokemonData["url"]
+                    else { return }
+                    
+                    pokemon.append(Pokemon(name: name, url: url))
+                }
+                
+                completion(pokemon, nil)
+                return
+            } catch {
+                
+                print("Error with json: \(error)")
+                completion(nil, error)
+            }
+        }.resume()
     }
+    
+    // MARK: - Private Methods
+
 }
