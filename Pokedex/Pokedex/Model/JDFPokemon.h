@@ -12,16 +12,16 @@
 
 @interface JDFPokemon : NSObject
 
+- (instancetype _Nullable)initWithDictionary: (NSDictionary<NSString *, NSString *> *_Nullable)dictionary;
+
+- (void)fillInWithDictionary: (NSDictionary *_Nullable)dictionary;
+
 @property (readonly, nonnull, copy) NSString *name;
 @property (readonly, nonnull, copy) NSURL *url;
 @property (readonly, nullable, copy) NSString *identifier;
 @property (readonly, nullable, copy) NSURL *spriteURL;
 @property (readonly, nullable, copy) NSArray<NSString *> *abilities;
 @property (readonly, nonnull, copy) NSString *abilityString;
-
-- (instancetype _Nullable)initWithDictionary: (NSDictionary<NSString *, NSString *> *_Nullable)dictionary;
-
-- (void)fillInWithDictionary: (NSDictionary *_Nullable)dictionary;
 
 @end
 
