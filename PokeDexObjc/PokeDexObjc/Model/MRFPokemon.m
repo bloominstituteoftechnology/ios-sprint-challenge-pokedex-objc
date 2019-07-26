@@ -10,4 +10,15 @@
 
 @implementation MRFPokemon
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    
+    return nil;
+}
+
+- (instancetype)initWithName:(NSString *)name identifier:(int)identifier sprite:(NSString *)sprite abilities:(NSArray *)abilities {
+    
+    return nil;
+}
+
+
 @end
