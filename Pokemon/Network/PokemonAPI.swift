@@ -77,10 +77,25 @@ class PokemonAPI: NSObject {
             do {
                 
                 guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                let id = json["id"] as? Int
+                let id = json["id"] as? Int,
+                let abilitiesArray = json["abilities"] as? Array<Dictionary<String, Any>>
                 else { return }
                 
+                var abilities = [String]()
+                
+                for index in 0 ..< abilitiesArray.count {
+                    
+                    let abilityCollection = abilitiesArray[index]
+                    
+                    guard let ability = abilityCollection["ability"] as? Dictionary<String, String>,
+                    let name = ability["name"]
+                    else { return }
+                    
+                    abilities.append(name)
+                }
+                
                 pokemon.identifier = "\(id)"
+                pokemon.abilities = abilities
                 
 //                var pokemon = [Pokemon]()
 //

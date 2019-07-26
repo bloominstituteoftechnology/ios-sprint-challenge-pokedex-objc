@@ -46,7 +46,11 @@
         NSLog(@"spriteImage has changed");
     } else if ([keyPath isEqualToString:@"abilities"]) {
         
-        NSLog(@"abilities has changed");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *abilities = [[[self pokemon] abilities] componentsJoinedByString:@"\n"];
+            [[self abilitiesTextView] setText: abilities];
+        });
+        
     } else {
         
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
