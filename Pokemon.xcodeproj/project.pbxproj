@@ -15,6 +15,7 @@
 		EC80B0E822EB53CC00AF10A1 /* KRCPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC80B0E722EB53CC00AF10A1 /* KRCPokemonTableViewController.m */; };
 		EC80B0EB22EB541100AF10A1 /* KRCPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC80B0EA22EB541100AF10A1 /* KRCPokemonDetailViewController.m */; };
 		EC80B0EF22EB56BD00AF10A1 /* KRCPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = EC80B0EE22EB56BD00AF10A1 /* KRCPokemon.m */; };
+		EC80B0F322EB5BA300AF10A1 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC80B0F222EB5BA300AF10A1 /* PokemonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		EC80B0EA22EB541100AF10A1 /* KRCPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCPokemonDetailViewController.m; sourceTree = "<group>"; };
 		EC80B0ED22EB56BD00AF10A1 /* KRCPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCPokemon.h; sourceTree = "<group>"; };
 		EC80B0EE22EB56BD00AF10A1 /* KRCPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCPokemon.m; sourceTree = "<group>"; };
+		EC80B0F122EB5BA300AF10A1 /* Pokemon-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokemon-Bridging-Header.h"; sourceTree = "<group>"; };
+		EC80B0F222EB5BA300AF10A1 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,7 @@
 		EC80B0CB22EB4F5400AF10A1 /* Pokemon */ = {
 			isa = PBXGroup;
 			children = (
+				EC80B0F022EB5B6900AF10A1 /* Network */,
 				EC80B0EC22EB564B00AF10A1 /* Model */,
 				EC80B0E222EB501500AF10A1 /* App */,
 				EC80B0E522EB505100AF10A1 /* View Controllers */,
@@ -121,6 +125,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		EC80B0F022EB5B6900AF10A1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EC80B0F222EB5BA300AF10A1 /* PokemonAPI.swift */,
+				EC80B0F122EB5BA300AF10A1 /* Pokemon-Bridging-Header.h */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +165,7 @@
 				TargetAttributes = {
 					EC80B0C822EB4F5400AF10A1 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -196,6 +210,7 @@
 				EC80B0E822EB53CC00AF10A1 /* KRCPokemonTableViewController.m in Sources */,
 				EC80B0DC22EB4F5600AF10A1 /* main.m in Sources */,
 				EC80B0CE22EB4F5400AF10A1 /* AppDelegate.m in Sources */,
+				EC80B0F322EB5BA300AF10A1 /* PokemonAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66AJPZAPLQ;
 				INFOPLIST_FILE = "$(SRCROOT)/Pokemon/Resources/Info.plist";
@@ -346,6 +362,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.christopheraronson.Pokemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokemon/Network/Pokemon-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -354,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66AJPZAPLQ;
 				INFOPLIST_FILE = "$(SRCROOT)/Pokemon/Resources/Info.plist";
@@ -363,6 +383,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.christopheraronson.Pokemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokemon/Network/Pokemon-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
