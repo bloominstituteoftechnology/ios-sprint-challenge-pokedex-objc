@@ -68,7 +68,7 @@ class PokemonAPI: NSObject {
 				let sprites = jsonDictionary["sprites"] as! [String: Any]
 				let sprite = sprites["front_default"] as! String
 				
-				pokemon.sprite = sprite
+				pokemon.sprite = sprite;
 				
 				var abilitiesArr: [String] = []
 				for i in 0..<abilities.count {
