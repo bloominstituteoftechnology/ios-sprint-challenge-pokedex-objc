@@ -59,32 +59,28 @@ class PokemonAPI: NSObject {
 				NSLog("Error fetching data")
 				return
 			}
-			print(data)
+//			print(data)
 			
 			do{
 				guard 	let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
 					let abilities =  jsonDictionary["abilities"] as? [[String: Any]] else { return }
 				
-				var abilitiesArr: [String] = []
+				let sprites = jsonDictionary["sprites"] as! [String: Any]
+				let sprite = sprites["front_default"] as! String
 				
+				pokemon.sprite = sprite
+				
+				var abilitiesArr: [String] = []
 				for i in 0..<abilities.count {
-					
 					let ability = abilities[i] as [String: Any]
 					let abilityName = ability["ability"] as! [String: Any]
 					let name = abilityName["name"] as! String
 
 					abilitiesArr.append(name)
-					
+		
 				}
 				
 				pokemon.abilities = abilitiesArr;
-				print(pokemon.abilities!)
-				
-				
-				
-//				print(abilities.count)
-				
-				
 			}catch{
 				NSLog("error with JSONSerialization:\(error)")
 			}

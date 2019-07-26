@@ -29,9 +29,12 @@
 - (void)setupView{
 	
 	if(self.pokemon){
-		self.nameLabel.text = self.pokemon.name;
+		self.nameLabel.text = [self.pokemon.name uppercaseString];
 		self.idLabel.text = [[NSString alloc] initWithFormat:@"ID: %@", self.pokemon.identifier];
 		
+		NSString *abilitiesStr = [self.pokemon.abilities componentsJoinedByString:@", "];
+		NSLog(@"%@", abilitiesStr);
+		self.abilitiesLabel.text =  [self.pokemon.abilities componentsJoinedByString:@", "];;
 		
 	}else {
 		NSLog(@"missing pokemon");
@@ -41,7 +44,7 @@
 
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-	//obserce for abilities 
+	//obserce for abilities
 }
 
 
