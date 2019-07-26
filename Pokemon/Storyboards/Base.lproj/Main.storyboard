@@ -13,7 +13,7 @@
         <!--Pokemon-->
         <scene sceneID="7WF-Wf-hHU">
             <objects>
-                <tableViewController id="vcm-hh-GZV" sceneMemberID="viewController">
+                <tableViewController id="vcm-hh-GZV" customClass="KRCPokemonTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aES-Nv-00E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="644" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="uYL-UZ-N6j">
             <objects>
-                <viewController id="GHl-gB-M9B" sceneMemberID="viewController">
+                <viewController id="GHl-gB-M9B" customClass="KRCPokemonDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qUn-m4-6O7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

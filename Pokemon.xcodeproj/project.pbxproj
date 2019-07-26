@@ -12,6 +12,8 @@
 		EC80B0D622EB4F5600AF10A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC80B0D522EB4F5600AF10A1 /* Assets.xcassets */; };
 		EC80B0D922EB4F5600AF10A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC80B0D722EB4F5600AF10A1 /* LaunchScreen.storyboard */; };
 		EC80B0DC22EB4F5600AF10A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC80B0DB22EB4F5600AF10A1 /* main.m */; };
+		EC80B0E822EB53CC00AF10A1 /* KRCPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC80B0E722EB53CC00AF10A1 /* KRCPokemonTableViewController.m */; };
+		EC80B0EB22EB541100AF10A1 /* KRCPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC80B0EA22EB541100AF10A1 /* KRCPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,10 @@
 		EC80B0D822EB4F5600AF10A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC80B0DA22EB4F5600AF10A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC80B0DB22EB4F5600AF10A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC80B0E622EB53CC00AF10A1 /* KRCPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCPokemonTableViewController.h; sourceTree = "<group>"; };
+		EC80B0E722EB53CC00AF10A1 /* KRCPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCPokemonTableViewController.m; sourceTree = "<group>"; };
+		EC80B0E922EB541100AF10A1 /* KRCPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRCPokemonDetailViewController.h; sourceTree = "<group>"; };
+		EC80B0EA22EB541100AF10A1 /* KRCPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRCPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,10 @@
 		EC80B0E522EB505100AF10A1 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EC80B0E922EB541100AF10A1 /* KRCPokemonDetailViewController.h */,
+				EC80B0EA22EB541100AF10A1 /* KRCPokemonDetailViewController.m */,
+				EC80B0E622EB53CC00AF10A1 /* KRCPokemonTableViewController.h */,
+				EC80B0E722EB53CC00AF10A1 /* KRCPokemonTableViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -168,6 +178,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC80B0EB22EB541100AF10A1 /* KRCPokemonDetailViewController.m in Sources */,
+				EC80B0E822EB53CC00AF10A1 /* KRCPokemonTableViewController.m in Sources */,
 				EC80B0DC22EB4F5600AF10A1 /* main.m in Sources */,
 				EC80B0CE22EB4F5400AF10A1 /* AppDelegate.m in Sources */,
 			);
@@ -313,7 +325,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66AJPZAPLQ;
-				INFOPLIST_FILE = Pokemon/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Pokemon/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66AJPZAPLQ;
-				INFOPLIST_FILE = Pokemon/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Pokemon/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
