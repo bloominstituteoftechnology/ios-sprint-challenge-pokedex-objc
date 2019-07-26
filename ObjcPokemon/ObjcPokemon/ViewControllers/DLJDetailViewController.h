@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "DLJPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class DLJPokemon;
+
 @interface DLJDetailViewController : UIViewController
+
+@property DLJPokemon *pokemon;
 
 
 @end

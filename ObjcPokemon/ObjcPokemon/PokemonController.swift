@@ -40,7 +40,6 @@ class PokemonController: NSObject {
 
                 let pokemon = resultDictionary?.compactMap { DLJPokemon(dictionary: $0)}
 
-                print(pokemon)
                 completion(pokemon, nil)
 
             } catch {

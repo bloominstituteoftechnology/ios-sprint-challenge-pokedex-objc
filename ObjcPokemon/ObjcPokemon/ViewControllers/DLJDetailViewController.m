@@ -8,6 +8,8 @@
 //
 
 #import "DLJDetailViewController.h"
+#import "ObjcPokemon-Swift.h"
+#import "DLJPokemon.h"
 
 @interface DLJDetailViewController ()
 
@@ -22,19 +24,48 @@
 
 @implementation DLJDetailViewController
 
+//void *KVOContext = &KVOContext;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    if (self.pokemon.name == nil) {
+
+        [self.pokemon addObserver:self forKeyPath:@"abilities" options:0 context:nil];
+    }
+    [PokemonController.shared fillInDetailsFor:self.pokemon];
 }
 
-/*
-#pragma mark - Navigation
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [self updateViews];
 }
-*/
+
+-(void)updateViews {
+
+    if (self.pokemon) {
+        self.nameLabel.text = self.pokemon.name;
+        self.idLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.pokemonID];
+        self.abilityLabel.text = [self.pokemon.ablities componentsJoinedByString:@","];
+        self.title = [self.pokemon.name capitalizedString];
+        NSURL *spriteURL = [NSURL URLWithString:self.pokemon.sprite];
+        NSData *spriteData = [NSData dataWithContentsOfURL:spriteURL];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imageView.image = [UIImage imageWithData:spriteData];
+        });
+    }
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self updateViews];
+    });
+    [object removeObserver:self forKeyPath:keyPath];
+}
+
+
+
 
 @end
