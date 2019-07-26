@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Pokedex Table View Controller-->
         <scene sceneID="RYU-hI-Hf5">
             <objects>
-                <tableViewController id="Fza-OG-Ybx" sceneMemberID="viewController">
+                <tableViewController id="Fza-OG-Ybx" customClass="HSVPokedexTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bm7-6A-2hU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,20 +51,34 @@
             </objects>
             <point key="canvasLocation" x="443.47826086956525" y="182.8125"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon View Controller-->
         <scene sceneID="SiV-zQ-RVT">
             <objects>
-                <viewController id="zB4-W5-wlw" sceneMemberID="viewController">
+                <viewController id="zB4-W5-wlw" customClass="HSVPokemonViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Wm-UX-E2P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tSG-xD-tYJ">
+                                <rect key="frame" x="40" y="128" width="334" height="290.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tSG-xD-tYJ" secondAttribute="height" multiplier="269:234" id="5jp-Hq-0Xc"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tSG-xD-tYJ" firstAttribute="centerX" secondItem="9Wm-UX-E2P" secondAttribute="centerX" id="72S-8V-Xra"/>
+                            <constraint firstItem="tSG-xD-tYJ" firstAttribute="top" secondItem="UP0-GQ-XmN" secondAttribute="top" constant="40" id="J88-Gk-OZK"/>
+                            <constraint firstItem="tSG-xD-tYJ" firstAttribute="leading" secondItem="UP0-GQ-XmN" secondAttribute="leading" constant="40" id="d7r-t4-ke3"/>
+                            <constraint firstItem="UP0-GQ-XmN" firstAttribute="trailing" secondItem="tSG-xD-tYJ" secondAttribute="trailing" constant="40" id="lDC-nJ-kYj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UP0-GQ-XmN"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5f0-E0-vBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1254" y="183"/>
+            <point key="canvasLocation" x="1253.6231884057972" y="182.8125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wCv-y8-Rds">

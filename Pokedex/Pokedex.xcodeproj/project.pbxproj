@@ -12,6 +12,8 @@
 		E8E2C09522EB4E73003E57A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8E2C09422EB4E73003E57A9 /* Assets.xcassets */; };
 		E8E2C09822EB4E73003E57A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E2C09622EB4E73003E57A9 /* LaunchScreen.storyboard */; };
 		E8E2C09B22EB4E73003E57A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C09A22EB4E73003E57A9 /* main.m */; };
+		E8E2C0A322EB4FE8003E57A9 /* HSVPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C0A222EB4FE8003E57A9 /* HSVPokedexTableViewController.m */; };
+		E8E2C0A722EB5071003E57A9 /* HSVPokemonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E2C0A622EB5071003E57A9 /* HSVPokemonViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,10 @@
 		E8E2C09722EB4E73003E57A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8E2C09922EB4E73003E57A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8E2C09A22EB4E73003E57A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E8E2C0A122EB4FE8003E57A9 /* HSVPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSVPokedexTableViewController.h; sourceTree = "<group>"; };
+		E8E2C0A222EB4FE8003E57A9 /* HSVPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSVPokedexTableViewController.m; sourceTree = "<group>"; };
+		E8E2C0A522EB5071003E57A9 /* HSVPokemonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSVPokemonViewController.h; sourceTree = "<group>"; };
+		E8E2C0A622EB5071003E57A9 /* HSVPokemonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSVPokemonViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +68,20 @@
 				E8E2C09622EB4E73003E57A9 /* LaunchScreen.storyboard */,
 				E8E2C09922EB4E73003E57A9 /* Info.plist */,
 				E8E2C09A22EB4E73003E57A9 /* main.m */,
+				E8E2C0A422EB4FEE003E57A9 /* View Controllers */,
 			);
 			path = Pokedex;
+			sourceTree = "<group>";
+		};
+		E8E2C0A422EB4FEE003E57A9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E8E2C0A122EB4FE8003E57A9 /* HSVPokedexTableViewController.h */,
+				E8E2C0A222EB4FE8003E57A9 /* HSVPokedexTableViewController.m */,
+				E8E2C0A522EB5071003E57A9 /* HSVPokemonViewController.h */,
+				E8E2C0A622EB5071003E57A9 /* HSVPokemonViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,6 +110,7 @@
 		E8E2C08022EB4E71003E57A9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = HSV;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Hector Steven";
 				TargetAttributes = {
@@ -138,6 +157,8 @@
 			files = (
 				E8E2C09B22EB4E73003E57A9 /* main.m in Sources */,
 				E8E2C08D22EB4E71003E57A9 /* AppDelegate.m in Sources */,
+				E8E2C0A722EB5071003E57A9 /* HSVPokemonViewController.m in Sources */,
+				E8E2C0A322EB4FE8003E57A9 /* HSVPokedexTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
