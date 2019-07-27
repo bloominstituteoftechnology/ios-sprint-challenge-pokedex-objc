@@ -8,10 +8,12 @@
 
 import Foundation
 
+@objc(MRFNetwork)
+
 class Network: NSObject {
-    static let shared = Network()
+    @objc static let shared = Network()
     let baseURL = "https://pokeapi.co/api/v2/pokemon/"
-    func fetchAllPokemon(completion: @escaping ([MRFPokemon]?, Error?) -> Void){
+    @objc func fetchAllPokemon(completion: @escaping ([MRFPokemon]?, Error?) -> Void){
         //url - this is to populate the table view
         let url = URL(string: baseURL)!
         
@@ -41,21 +43,25 @@ class Network: NSObject {
                     completion(nil, NSError()) //TODO: ERROR HANDLING
                     return
                 }
+                print(" PokemonDictionary: \(pokemonDictionary)")
 
                 guard let results = pokemonDictionary["results"] as? [[String : Any]] else {
                     completion(nil, NSError())// TODO: HANDLE ERRORS
                     return
                 }
                 
+                print("Reuslts from PokemonDictionary: \(results)")
                 //create a holder array to store temparily all of the pokemon we will get back from the pokemonDictionary
                 var pokemonHolderArray = [MRFPokemon]()
                 
-                
                 //use the dictionary to return an array of objects back
                 for pokemon in results {
-                    let returnedPokemon = MRFPokemon(dictionary: results)
+                    if let returnedPokemon = MRFPokemon(dictionary: pokemon) {
+                        //append pokemon to the placeholder array
+                        pokemonHolderArray.append(returnedPokemon)
+                    }
                 }
-                
+                completion(pokemonHolderArray, nil)
                 
             } catch {
                 print("Error serializing JSON: \(error)")
@@ -63,9 +69,10 @@ class Network: NSObject {
                 return
             }
         }
+        .resume()
     }
     
-    func fillInDetails(for pokemon: MRFPokemon){
+    @objc func fillInDetails(for pokemon: MRFPokemon){
         //url this is going to take the name of the pokemon in the cell, put that name as a queryItem in the url and then make a network fetch for that specific pokemon
     }
 }

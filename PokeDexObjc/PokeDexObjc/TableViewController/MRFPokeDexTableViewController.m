@@ -7,6 +7,7 @@
 //
 
 #import "MRFPokeDexTableViewController.h"
+#import "PokeDexObjc-Swift.h"
 
 @interface MRFPokeDexTableViewController ()
 
@@ -16,7 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+   MRFNetwork *network = [[MRFNetwork alloc] init];
+    [network fetchAllPokemonWithCompletion:^(NSArray<MRFPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
+        NSLog(@"pokemon.count %li", pokemon.count);
+    }];
 }
 
 #pragma mark - Table view data source
