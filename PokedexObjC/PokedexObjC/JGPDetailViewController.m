@@ -24,6 +24,14 @@
 
 @implementation JGPDetailViewController
 
+- (void)setPokemon:(JGPPokemon *)artist {               //i had a mispelling SetAarrsk or something, run again
+    if (pokemon != _pokemon) {
+        _pokemon = pokemon;
+        
+        [self updateViews];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

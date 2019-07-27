@@ -16,6 +16,8 @@ class PokemonAPIController: NSObject {
     
     @objc(sharedController) static let shared = PokemonAPIController()
     
+    
+    
     @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
         
         let request = URLRequest(url: baseURL)
@@ -34,60 +36,14 @@ class PokemonAPIController: NSObject {
             }
             do {
                 guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any],
-                    
+                    let results = dictionary["results"] as? [[String : Any]]
+                    else { throw NSError() /* TODO: enum for errors} */ }
                 
                 
+                let pokemons = results.compactMap({ Pokemon(dictionary: $0) })
                 
                 
-                
-//                let decoder = JSONDecoder()
-//                let pokemon = try decoder.decode(Pokemon.self, from: data)
-                
-                // observe this!
-                self.pokemon = pokemon
-                
-                
-                
-            } catch let decodingError {
-                NSLog("Error decoding Pokemon detail from data: \(decodingError)")
-                completion(nil, error)
-            }
-        }
-             // .resume()
-    }
-
-//UNCOMMENT WHEN READY TO FETCH DETAILS FOR POKEMON
- /*   @objc func fillInDetails(for pokemon: Pokemon) {
-        
-        
-        let requestURL = baseURL.appendingPathComponent(pokemon.name)
-        
-        // this time might need some queryItems to get (name again?) id, abilities, and sprite
-        
-        let urlComponents = URLComponents(url: requestURL, resolvingAgainstBaseURL: true)!
-        
-        //guard let this later, let's get something happening
-        let request = URLRequest(url: urlComponents?.url)
-        
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
-            if let error = error {
-                NSLog("error getting pokemon detail: \(error)")
-                completion(nil, error)
-                return
-            }
-            
-            guard let data = data else {
-                NSLog("Data not returned from data task")
-                completion(nil, error)
-                return
-            }
-            do {
-                let pokemon = try JSONDecoder.decode(Pokemon.self, from: data)
-                
-                // observe this!
-                self.pokemon = pokemon
-                
-                
+                completion(pokemons, nil)
                 
             } catch let decodingError {
                 NSLog("Error decoding Pokemon detail from data: \(decodingError)")
@@ -95,6 +51,54 @@ class PokemonAPIController: NSObject {
             }
         }.resume()
     }
- */
+
+//UNCOMMENT WHEN READY TO FETCH DETAILS FOR POKEMON
+    @objc func fillInDetails(for pokemon: Pokemon) {
+        
+        let requestURL = baseURL.appendingPathComponent(pokemon.name)
+        
+        //guard let this later, let's get something happening
+        let request = URLRequest(url: requestURL)
+        
+        print("url is: \(baseURL)");
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                NSLog("error getting pokemon detail: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("Data not returned from data task")
+                return
+            }
+
+            do {
+                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
+                    //,let results = dictionary["results"] as? [[String : Any]]
+                    else { throw NSError() /* TODO: enum for errors} */ }
+                
+                print("Data is: \(data)");
+                print("dictionary is: \(dictionary)")
+                
+                let pokemonDetail = Pokemon(dictionary: dictionary)
+                
+                print("pokemons are: \(pokemonDetail)")
+                
+                //let pokemon = try JSONDecoder.decode(Pokemon.self, from: data)
+                //let pokemonDetail = results.compactMap({ JGPPokemon(dictionary: $0) })
+                
+                
+                // observe this!
+                //self.pokemon = pokemonDetail
+                
+                
+                
+            } catch let decodingError {
+                NSLog("Error decoding Pokemon detail from data: \(decodingError)")
+            }
+        }.resume()
+    }
+
  
 }

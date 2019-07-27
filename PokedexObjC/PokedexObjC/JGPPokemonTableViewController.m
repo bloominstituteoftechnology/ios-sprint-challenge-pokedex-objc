@@ -10,6 +10,7 @@
 #import "PokedexObjC-Swift.h"
 #import "JGPAbility.h"
 #import "JGPPokemon.h"
+#import "JGPDetailViewController.h"
 
 @interface JGPPokemonTableViewController ()
 
@@ -20,13 +21,26 @@
 - (void)setPokemons:(NSArray<JGPPokemon *> *)pokemons {
     _pokemons = [pokemons copy];
     
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+    
     // i don't think we need to reload data here bc we're never really changing list of pokemons, and there's no save button in the DetailViewController
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // call pokemonAPIController.fetchAllPokemon(completion ([pokemons], (error)
+    [[JGPPokemonAPIController sharedController] fetchAllPokemonWithCompletion:^(NSArray<JGPPokemon *> * _Nullable pokemons, NSError * _Nullable error) {
+
+        if(error) {
+            NSLog(@"Error searching: %@", error);
+        }
+
+
+        
+        self.pokemons = pokemons;
+    }];
 
 }
 
@@ -52,10 +66,19 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue JGPDetailViewController].
+    
+    if ([segue.identifier isEqualToString:@"PokemonDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        NSString *pokemonName = self.pokemons[indexPath.row].name;
+        
+        JGPDetailViewController *detailVC = segue.destinationViewController;
+    }
     
     // JGPPokemon *pokemon = ?
     // destVC.Pokemon = pokemon;
+    
+            NSLog(@"pokemons...: %@", sender);
 }
 
 

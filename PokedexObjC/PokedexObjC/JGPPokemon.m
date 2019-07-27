@@ -13,7 +13,7 @@
 - (nonnull instancetype) initWithName:(NSString *_Nonnull)name
                            identifier:(int)identifier
                             sprite:(NSString *_Nullable)sprite
-                            abilities:(NSArray<JGPAbility *> *_Nullable)abilities {
+                            abilities:(NSArray<NSString *> *)abilities {
     self = [super init];
     if (self) {
         _name = [name copy];
@@ -27,14 +27,14 @@
 - (nullable instancetype)initWithDictionary:(NSDictionary *_Nullable)dict {
     
     NSString *name = dict[@"name"];
-    NSString *identifierString = dict[@"identifier"];
+    NSString *identifierString = dict[@"id"];
     int identifier = [identifierString intValue];
-    NSString *sprite = dict[@"sprite"];
-    NSArray<JGPAbility *> *abilities = dict [@"abilities"];
+    NSString *sprite = dict[@"sprites.front_default"];
+    NSArray<NSString *> *abilities = dict [@"ability.name"];
     
-    if (!name || !identifier || !sprite || !abilities) {
-        return nil;
-    }
+//    if (!name || !identifier || !sprite || !abilities) {
+//        return nil;
+//    }
     
     
     return [self initWithName:name

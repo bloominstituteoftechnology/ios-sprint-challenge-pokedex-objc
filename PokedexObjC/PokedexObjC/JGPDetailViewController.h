@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JGPDetailViewController : UIViewController
 
+@property (nonatomic) JGPPokemon *pokemon;
+
 @end
 
 NS_ASSUME_NONNULL_END
