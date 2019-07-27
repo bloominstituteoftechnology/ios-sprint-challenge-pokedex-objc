@@ -55,12 +55,13 @@ class PokemonAPIController: NSObject {
 //UNCOMMENT WHEN READY TO FETCH DETAILS FOR POKEMON
     @objc func fillInDetails(for pokemon: Pokemon) {
         
-        let requestURL = baseURL.appendingPathComponent(pokemon.name)
+        let nameForDetails = pokemon.name
+        let requestURL = baseURL.appendingPathComponent(nameForDetails)
         
         //guard let this later, let's get something happening
         let request = URLRequest(url: requestURL)
         
-        print("url is: \(baseURL)");
+        //print("url is: \(requestURL)");
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
@@ -79,11 +80,12 @@ class PokemonAPIController: NSObject {
                     else { throw NSError() /* TODO: enum for errors} */ }
                 
                 print("Data is: \(data)");
-                print("dictionary is: \(dictionary)")
+                //print("dictionary is: \(dictionary)")
                 
                 let pokemonDetail = Pokemon(dictionary: dictionary)
                 
-                print("pokemons are: \(pokemonDetail)")
+                print("DETAIL sprite: \(pokemonDetail?.sprite), \(pokemonDetail?.identifier), \(pokemonDetail?.abilities)")
+                print(Pokemon.description)
                 
                 //let pokemon = try JSONDecoder.decode(Pokemon.self, from: data)
                 //let pokemonDetail = results.compactMap({ JGPPokemon(dictionary: $0) })
@@ -91,9 +93,6 @@ class PokemonAPIController: NSObject {
                 
                 // observe this!
                 //self.pokemon = pokemonDetail
-                
-                
-                
             } catch let decodingError {
                 NSLog("Error decoding Pokemon detail from data: \(decodingError)")
             }

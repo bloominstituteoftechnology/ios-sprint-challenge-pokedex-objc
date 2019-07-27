@@ -28,6 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable instancetype)initWithDictionary:(NSDictionary *_Nullable)dict;
 
+
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -10,6 +10,8 @@
 #import "PokedexObjC-Swift.h"          // gives us access to swift file PokemonAPIController, i THINK!
 #import "JGPPokemon.h"
 
+void *KVOContext = &KVOContext;
+
 @interface JGPDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -24,39 +26,44 @@
 
 @implementation JGPDetailViewController
 
-- (void)setPokemon:(JGPPokemon *)artist {               //i had a mispelling SetAarrsk or something, run again
+- (void)setPokemon:(JGPPokemon *)pokemon {
     if (pokemon != _pokemon) {
         _pokemon = pokemon;
         
-        [self updateViews];
+        [pokemon addObserver:self forKeyPath:@"identifier" options:NSKeyValueObservingOptionInitial context:KVOContext];
+        [self updateViews];     // perhaps this is needed if we get data back from observer, not sure yet
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // [pokemonAPIController.fillInDetails pokemonName ... completion
+    [[JGPPokemonAPIController sharedController] fillInDetailsFor:self.pokemon];    //NO COMPLETION MEANS MUST USE OBSERVER!
+    //[self addObserver:self forKeyPath:@"id" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     
-//    [[JGPPokemonAPIController sharedController] fillInDetailsFor:pokemon.name {    NO COMPLETION MEANS MUST USE OBSERVER!
-//        
-//        // OBSERVE when pokemon info is fetched inside th network call, and implement...
-//                                                          
-//                                                          
-//        NSLog(@"Results: %@", pokemon.name);
-//        
-//        self.pokemon = pokemon;
-//    }];
+    //[self updateViews]; //to load the data into DetailVC
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    NSLog(@"From KVO");
     
-    
-    [self updateViews]; //to load the data into DetailVC
-    
+    if (context == KVOContext) {
+        
+        NSLog(@"get model attributes here");
+        [self updateViews];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
     
 }
 
 - (void)updateViews {
     
-    //self.nameLabel.text = self.pokemon.name;
-    //self.idLabel.text = [NSString stringWithFormat:@"%@", [NSString stringWithFormat:@"%d", self.pokemon.identifier]];
+    
+    
+    self.nameLabel.text = self.pokemon.name;
+    self.idLabel.text = [NSString stringWithFormat:@"%@", [NSString stringWithFormat:@"%d", self.pokemon.identifier]];
     // abilities here... save for last
     
 }

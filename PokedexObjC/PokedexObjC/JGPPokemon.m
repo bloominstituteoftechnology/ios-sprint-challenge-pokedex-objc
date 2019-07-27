@@ -30,7 +30,9 @@
     NSString *identifierString = dict[@"id"];
     int identifier = [identifierString intValue];
     NSString *sprite = dict[@"sprites.front_default"];
-    NSArray<NSString *> *abilities = dict [@"ability.name"];
+    
+    
+    NSArray<NSString *> *abilities = dict[@"ability.name"];
     
 //    if (!name || !identifier || !sprite || !abilities) {
 //        return nil;
@@ -41,6 +43,10 @@
                    identifier:identifier
                     sprite:sprite
                     abilities:abilities];
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@...name %d...id %@....sprite %@...abilities", self.name, self.identifier, self.sprite, self.abilities];
 }
 
 
