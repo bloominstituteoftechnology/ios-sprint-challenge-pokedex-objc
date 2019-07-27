@@ -10,15 +10,26 @@
 
 @implementation MRFPokemon
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
-    
+- (nonnull instancetype)initWithName:(NSString *_Nonnull)name
+                          identifier:(int)identifier
+                              sprite:(NSString *_Nonnull)sprite
+                           abilities:(NSArray *_Nonnull)abilities {
     return nil;
+    
 }
 
-- (instancetype)initWithName:(NSString *)name identifier:(int)identifier sprite:(NSString *)sprite abilities:(NSArray *)abilities {
+- (nullable instancetype)initWithDictionary:(NSDictionary *_Nullable)dictionary { //we need this to populate the detailView
+    //initialize dictionary
+    self = [super init];
     
-    return nil;
+    if (self){
+        //this is where we map our properties to the names/spelling on the api
+        _identifier = [dictionary[@"id"] intValue];
+        _sprite = dictionary[@"sprites"][@"front_default"];
+        _abilities = dictionary[@"abilities"][@"ability"][@"name"];
+        
+    }
+    return self;
 }
-
 
 @end
