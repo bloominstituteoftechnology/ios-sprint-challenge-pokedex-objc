@@ -24,29 +24,26 @@
     return self;
 }
 
-- (nullable instancetype)initWithDictionary:(NSDictionary *_Nullable)dict {
+- (nullable instancetype)initWithDictionary:(NSDictionary *_Nullable)dictionary {
     
-    NSString *name = dict[@"name"];
-    NSString *identifierString = dict[@"id"];
+    NSString *name = dictionary[@"name"];
+    
+    NSString *identifierString = dictionary[@"id"];
     int identifier = [identifierString intValue];
-    NSString *sprite = dict[@"sprites.front_default"];
     
+    NSString *sprite = dictionary[@"sprites.front_default"];
     
-    NSArray<NSString *> *abilities = dict[@"ability.name"];
-    
-//    if (!name || !identifier || !sprite || !abilities) {
-//        return nil;
-//    }
-    
-    
+    NSArray<NSString *> *abilities = dictionary[@"ability.name"];
+
     return [self initWithName:name
                    identifier:identifier
                     sprite:sprite
                     abilities:abilities];
 }
 
+
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%@...name %d...id %@....sprite %@...abilities", self.name, self.identifier, self.sprite, self.abilities];
+    return [NSString stringWithFormat:@"name:%@\nid=%d\nsprite=%@\nabilities=%@", self.name, self.identifier, self.sprite, self.abilities];
 }
 
 

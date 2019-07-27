@@ -21,29 +21,26 @@
 - (void)setPokemons:(NSArray<JGPPokemon *> *)pokemons {
     _pokemons = [pokemons copy];
     
-
-    
-    // i don't think we need to reload data here bc we're never really changing list of pokemons, and there's no save button in the DetailViewController
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
     
     [[JGPPokemonAPIController sharedController] fetchAllPokemonWithCompletion:^(NSArray<JGPPokemon *> * _Nullable pokemons, NSError * _Nullable error) {
-
+        
         if(error) {
             NSLog(@"Error searching: %@", error);
         }
-
-
-        
         self.pokemons = pokemons;
     }];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
-    });
-
 }
 
 #pragma mark - Table view data source
@@ -76,7 +73,7 @@
         
         JGPPokemon *pokemon = self.pokemons[indexPath.row];
         detailVC.pokemon = pokemon;
-        NSLog(@"pokemon selected...: %@", pokemon);
+        NSLog(@"pokemon selected: %@ \n", pokemon.name);
     }
 }
 

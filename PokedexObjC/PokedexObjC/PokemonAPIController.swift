@@ -39,6 +39,7 @@ class PokemonAPIController: NSObject {
                     let results = dictionary["results"] as? [[String : Any]]
                     else { throw NSError() /* TODO: enum for errors} */ }
                 
+                //print("dictionary is: \(dictionary)")
                 
                 let pokemons = results.compactMap({ Pokemon(dictionary: $0) })
                 
@@ -55,44 +56,28 @@ class PokemonAPIController: NSObject {
 //UNCOMMENT WHEN READY TO FETCH DETAILS FOR POKEMON
     @objc func fillInDetails(for pokemon: Pokemon) {
         
-        let nameForDetails = pokemon.name
-        let requestURL = baseURL.appendingPathComponent(nameForDetails)
-        
-        //guard let this later, let's get something happening
+        //let nameForDetails = pokemon.name
+        let requestURL = baseURL.appendingPathComponent(pokemon.name)
         let request = URLRequest(url: requestURL)
-        
-        //print("url is: \(requestURL)");
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 NSLog("error getting pokemon detail: \(error)")
                 return
             }
-            
             guard let data = data else {
                 NSLog("Data not returned from data task")
                 return
             }
-
             do {
                 guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-                    //,let results = dictionary["results"] as? [[String : Any]]
                     else { throw NSError() /* TODO: enum for errors} */ }
                 
-                print("Data is: \(data)");
-                //print("dictionary is: \(dictionary)")
+                //print("dictionary is: \(dictionary)\n")
                 
                 let pokemonDetail = Pokemon(dictionary: dictionary)
                 
-                print("DETAIL sprite: \(pokemonDetail?.sprite), \(pokemonDetail?.identifier), \(pokemonDetail?.abilities)")
-                print(Pokemon.description)
-                
-                //let pokemon = try JSONDecoder.decode(Pokemon.self, from: data)
-                //let pokemonDetail = results.compactMap({ JGPPokemon(dictionary: $0) })
-                
-                
-                // observe this!
-                //self.pokemon = pokemonDetail
+                print(pokemonDetail!.description)
             } catch let decodingError {
                 NSLog("Error decoding Pokemon detail from data: \(decodingError)")
             }
