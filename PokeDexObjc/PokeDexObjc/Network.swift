@@ -17,6 +17,8 @@ class Network: NSObject {
         
         //no need to construct urlReqeust the default is get
         URLSession.shared.dataTask(with: url) { (data, response, error) in
+            print(url)
+            
             if let response = response as? HTTPURLResponse {
                 print("The response is: \(response.statusCode)")
             }
@@ -32,16 +34,27 @@ class Network: NSObject {
                 return
             }
             
-            //Because our model is in Objc it doesn't conform to codable so I have to use jsonserialization
+            //Because our model is in Objc it doesn't conform to codable so I have to use jsonserialization -Results is an array of dictionaries (pokemon)
             do {
-                guard let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [String : Any] else {
+                guard let pokemonDictionary = try JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [String : Any] else {
                     print("Error with jsonDictionary")
                     completion(nil, NSError()) //TODO: ERROR HANDLING
                     return
                 }
+
+                guard let results = pokemonDictionary["results"] as? [[String : Any]] else {
+                    completion(nil, NSError())// TODO: HANDLE ERRORS
+                    return
+                }
+                
+                //create a holder array to store temparily all of the pokemon we will get back from the pokemonDictionary
+                var pokemonHolderArray = [MRFPokemon]()
+                
                 
                 //use the dictionary to return an array of objects back
-//                let pokemen =
+                for pokemon in results {
+                    let returnedPokemon = MRFPokemon(dictionary: results)
+                }
                 
                 
             } catch {
