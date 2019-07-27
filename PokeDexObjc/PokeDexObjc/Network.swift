@@ -11,8 +11,10 @@ import Foundation
 @objc(MRFNetwork)
 
 class Network: NSObject {
-    @objc static let shared = Network()
     let baseURL = "https://pokeapi.co/api/v2/pokemon/"
+    @objc static let shared = Network()
+    @objc var pokemons = [MRFPokemon]()
+    
     @objc func fetchAllPokemon(completion: @escaping ([MRFPokemon]?, Error?) -> Void){
         //url - this is to populate the table view
         let url = URL(string: baseURL)!
@@ -53,8 +55,8 @@ class Network: NSObject {
                 }
                 print("Reuslts from PokemonDictionary: \(results)")
                 
-                //create a holder array to store temparily all of the pokemon we will get back from the pokemonDictionary
-                var pokemonHolderArray = [MRFPokemon]()
+//                //create a holder array to store temparily all of the pokemon we will get back from the pokemonDictionary
+//                var pokemonHolderArray = [MRFPokemon]()
                 
                 //use the dictionary to return an array of objects back
                 //pokemon (dictionary) in results (array of dictionaries)
@@ -62,10 +64,10 @@ class Network: NSObject {
                     //In the objective c model class we created in initializer that parses through a dictionary, pulls out its value and assign them to the model's applicable properties
                     if let returnedPokemon = MRFPokemon(dictionary: pokemon) {
                         //append pokemon to the placeholder array
-                        pokemonHolderArray.append(returnedPokemon)
+                        self.pokemons.append(returnedPokemon)
                     }
                 }
-                completion(pokemonHolderArray, nil)
+                completion(self.pokemons, nil)
                 
             } catch {
                 print("Error serializing JSON: \(error)")
@@ -78,5 +80,8 @@ class Network: NSObject {
     
     @objc func fillInDetails(for pokemon: MRFPokemon){
         //url this is going to take the name of the pokemon in the cell, put that name as a queryItem in the url and then make a network fetch for that specific pokemon
+        
     }
+    
+    //KEEP IN MIND WE HAVE TO CREATE ANOTHER NETWORKING REQUEST FOR THE PHOTO
 }

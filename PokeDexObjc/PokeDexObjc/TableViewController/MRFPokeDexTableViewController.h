@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "PokeDexObjc-Swift.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MRFPokeDexTableViewController : UITableViewController
-
+@property (nonatomic) MRFNetwork *network;
 @end
 
 NS_ASSUME_NONNULL_END

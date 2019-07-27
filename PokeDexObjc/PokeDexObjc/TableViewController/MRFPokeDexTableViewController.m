@@ -7,7 +7,6 @@
 //
 
 #import "MRFPokeDexTableViewController.h"
-#import "PokeDexObjc-Swift.h"
 
 @interface MRFPokeDexTableViewController ()
 
@@ -15,8 +14,17 @@
 
 @implementation MRFPokeDexTableViewController
 
+//INITIALIZE the network as a lazy property
+-(MRFNetwork *)network {
+    if (_network == nil){
+        _network = [[MRFNetwork alloc] init];
+    }
+    return _network;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //test the network call
    MRFNetwork *network = [[MRFNetwork alloc] init];
     [network fetchAllPokemonWithCompletion:^(NSArray<MRFPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
         NSLog(@"pokemon.count %li", pokemon.count);
