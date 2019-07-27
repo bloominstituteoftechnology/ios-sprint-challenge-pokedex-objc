@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JGPAbility.h"
 
 NS_SWIFT_NAME(Pokemon)
 
@@ -27,7 +26,7 @@ NS_SWIFT_NAME(Pokemon)
 
 - (nullable instancetype)initWithDictionary:(NSDictionary *_Nullable)dictionary;
 
-- (NSString *)description;
+- (NSString *_Nonnull)description;
 
 
 

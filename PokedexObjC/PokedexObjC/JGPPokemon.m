@@ -31,9 +31,9 @@
     NSString *identifierString = dictionary[@"id"];
     int identifier = [identifierString intValue];
     
-    NSString *sprite = dictionary[@"sprites.front_default"];
+    NSString *sprite = dictionary[@"sprites.front_shiny"];
     
-    NSArray<NSString *> *abilities = dictionary[@"ability.name"];
+    NSArray<NSString *> *abilities = dictionary[@"abilities.ability.name"];    // or is it just ability.name?
 
     return [self initWithName:name
                    identifier:identifier

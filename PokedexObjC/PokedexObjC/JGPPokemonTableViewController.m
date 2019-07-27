@@ -8,7 +8,6 @@
 
 #import "JGPPokemonTableViewController.h"
 #import "PokedexObjC-Swift.h"
-#import "JGPAbility.h"
 #import "JGPPokemon.h"
 #import "JGPDetailViewController.h"
 

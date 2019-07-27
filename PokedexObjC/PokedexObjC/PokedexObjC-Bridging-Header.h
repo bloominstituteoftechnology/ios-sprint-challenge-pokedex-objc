@@ -3,4 +3,4 @@
 //
 
 #import "JGPPokemon.h"
-#import "JGPAbility.h"
+

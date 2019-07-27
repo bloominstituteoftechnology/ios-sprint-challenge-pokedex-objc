@@ -6,6 +6,7 @@
 //  Copyright © 2019 johnpitts. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "JGPDetailViewController.h"
 #import "PokedexObjC-Swift.h"          // gives us access to swift file PokemonAPIController, i THINK!
 #import "JGPPokemon.h"
@@ -67,19 +68,23 @@ void *KVOContext = &KVOContext;
 
         self.nameLabel.text = self.pokemon.name;
         self.idLabel.text = [NSString stringWithFormat:@"%@", [NSString stringWithFormat:@"%d", self.pokemon.identifier]];
+        [self displayImage];
+        self.abilitiesTextView.text = @"sucks it \n hates other pokemon \n loves SwiftUI \n hates parsing json";
     });
     
     // IMAGES IN TEXTVIEW, must extract abilities from array of dictionaries of abilities
     //self.abilitiesTextView.text = self.pokemon.abilities.reduce("", { $0 + $1) } )   //might be String($0) + String($1)
     
-    //[self displayImage];
 }
 
-- (void)displayImage {
-    NSString *imageURLString = [NSString stringWithString:self.pokemon.sprite];
+- (void)displayImage {            //WORKS, just need to re-enabe comment in line 81 and delete literal...
+    
+    NSString *imageURLString = [NSString stringWithFormat:@"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" /*self.pokemon.sprite*/];
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURLString]];
-    self.spriteImageView = [UIImage  imageWithData: imageData];
-    //[imageData release];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.spriteImageView.image = [UIImage  imageWithData: imageData];
+    });
+    //[imageData release];   With ARC ("automated release..."), release method is forbidden, it's already done for you.
 }
 
 
