@@ -24,6 +24,7 @@
     
     if (self){
         //this is where we map our properties to the names/spelling on the api
+        _name = dictionary[@"name"];
         _identifier = [dictionary[@"id"] intValue];
         _sprite = dictionary[@"sprites"][@"front_default"];
         _abilities = dictionary[@"abilities"][@"ability"][@"name"];

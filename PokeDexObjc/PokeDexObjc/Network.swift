@@ -46,14 +46,14 @@ class Network: NSObject {
                     completion(nil, NSError()) //TODO: ERROR HANDLING
                     return
                 }
-                print(" PokemonDictionary: \(pokemonDictionary)")
+//                print(" PokemonDictionary: \(pokemonDictionary)")
                 
                 //Results is a key who's value is an Array of dictionaries [[ String : Any ]]
                 guard let results = pokemonDictionary["results"] as? [[String : Any]] else {
                     completion(nil, NSError())// TODO: HANDLE ERRORS
                     return
                 }
-                print("Reuslts from PokemonDictionary: \(results)")
+//                print("Reuslts from PokemonDictionary: \(results)")
                 
 //                //create a holder array to store temparily all of the pokemon we will get back from the pokemonDictionary
 //                var pokemonHolderArray = [MRFPokemon]()
@@ -62,9 +62,11 @@ class Network: NSObject {
                 //pokemon (dictionary) in results (array of dictionaries)
                 for pokemon in results {
                     //In the objective c model class we created in initializer that parses through a dictionary, pulls out its value and assign them to the model's applicable properties
+
                     if let returnedPokemon = MRFPokemon(dictionary: pokemon) {
                         //append pokemon to the placeholder array
                         self.pokemons.append(returnedPokemon)
+                        print("This is the returned pokemon's name: \(returnedPokemon.name)")
                     }
                 }
                 completion(self.pokemons, nil)

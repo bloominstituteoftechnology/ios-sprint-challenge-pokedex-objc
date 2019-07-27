@@ -7,6 +7,7 @@
 //
 
 #import "MRFPokeDexTableViewController.h"
+#import "MRFPokemon.h"
 
 @interface MRFPokeDexTableViewController ()
 
@@ -29,24 +30,22 @@
     [network fetchAllPokemonWithCompletion:^(NSArray<MRFPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
         NSLog(@"pokemon.count %li", pokemon.count);
     }];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
-}
+    return self.network.pokemons.count;
 
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokeCell" forIndexPath:indexPath];
     
+    MRFPokemon *pokemon = self.network.pokemons[indexPath.row];
     // Configure the cell...
-    
+    cell.textLabel.text = pokemon.name;
     return cell;
 }
 
