@@ -10,45 +10,70 @@
 #import "MRFPokemon.h"
 
 @interface MRFPokeDexTableViewController ()
-
+//@property NSMutableArray *internalPokemons;
+@property NSArray< MRFPokemon *> *returnedPokemons;
 @end
 
 @implementation MRFPokeDexTableViewController
 
+//initialize mutable array
+//-(instancetype)init {
+//    self = [super init];
+//
+//    if (self){
+//        _internalPokemons = [[NSMutableArray alloc]init];
+//    }
+//    return self;
+//}
+
 //INITIALIZE the network as a lazy property
--(MRFNetwork *)network {
-    if (_network == nil){
-        _network = [[MRFNetwork alloc] init];
-    }
-    return _network;
-}
+//-(MRFNetwork *)network {
+//    if (_network == nil){
+//        _network = [[MRFNetwork alloc] init];
+//    }
+//    return _network;
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     //test the network call
    MRFNetwork *network = [[MRFNetwork alloc] init];
-    [network fetchAllPokemonWithCompletion:^(NSArray<MRFPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
-        NSLog(@"pokemon.count %li", pokemon.count);
+    [network fetchAllPokemonWithCompletion:^(NSArray<MRFPokemon *> * _Nullable pokemons, NSError * _Nullable error) {
+        if (error){
+            NSLog(@"Error in the tblvc: %@",error);
+        }
+        NSLog(@"pokemon.count %li", pokemons.count);
+        self.returnedPokemons = pokemons;
+//        [self.internalPokemons addObjectsFromArray:pokemons];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            NSLog(@"print internalPokemons:%li", self.internalPokemons.count);
+            [self.tableView reloadData];
+            self.tableView.backgroundColor = UIColor.blueColor;
+        });
+        
     }];
-    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.network.pokemons.count;
-
+//    return self.network.pokemons.count;
+//    return self.internalPokemons.count;
+    return self.returnedPokemons.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokeCell" forIndexPath:indexPath];
     
-    MRFPokemon *pokemon = self.network.pokemons[indexPath.row];
+//    MRFPokemon *pokemon = self.network.pokemons[indexPath.row];
+//    MRFPokemon *pokemon = self.internalPokemons[indexPath.row];
+    MRFPokemon *pokemon = self.returnedPokemons[indexPath.row];
     // Configure the cell...
     cell.textLabel.text = pokemon.name;
+    NSLog(@"pokemons sprite: %@", pokemon.sprite);
     return cell;
 }
-
 
 /*
 // Override to support conditional editing of the table view.

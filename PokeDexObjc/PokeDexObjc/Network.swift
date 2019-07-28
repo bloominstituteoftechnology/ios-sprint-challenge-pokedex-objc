@@ -66,7 +66,7 @@ class Network: NSObject {
                     if let returnedPokemon = MRFPokemon(dictionary: pokemon) {
                         //append pokemon to the placeholder array
                         self.pokemons.append(returnedPokemon)
-                        print("This is the returned pokemon's name: \(returnedPokemon.name)")
+//                        print("This is the returned pokemon's name: \(returnedPokemon.name)")
                     }
                 }
                 completion(self.pokemons, nil)
