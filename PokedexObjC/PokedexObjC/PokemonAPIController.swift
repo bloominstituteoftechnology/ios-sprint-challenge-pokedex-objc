@@ -72,12 +72,11 @@ class PokemonAPIController: NSObject {
             do {
                 guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
                     else { throw NSError() /* TODO: enum for errors} */ }
-                
-                print("dictionary is: \(dictionary)\n")
-                
+
                 let pokemonDetail = Pokemon(dictionary: dictionary)
                 
                 print(pokemonDetail!.description)
+                
             } catch let decodingError {
                 NSLog("Error decoding Pokemon detail from data: \(decodingError)")
             }

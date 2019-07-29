@@ -67,9 +67,9 @@ void *KVOContext = &KVOContext;
     dispatch_async(dispatch_get_main_queue(), ^{
 
         self.nameLabel.text = self.pokemon.name;
-        self.idLabel.text = [NSString stringWithFormat:@"%@", [NSString stringWithFormat:@"%d", self.pokemon.identifier]];
+        self.idLabel.text = /*[NSString stringWithFormat:@"%@", */[NSString stringWithFormat:@"%d", self.pokemon.identifier]/*]*/;
         [self displayImage];
-        self.abilitiesTextView.text = @"sucks it \n hates other pokemon \n loves SwiftUI \n hates parsing json";
+        //self.abilitiesTextView.text = self.pokemon.abilities; /*@"sucks it \n hates other pokemon \n loves SwiftUI \n hates parsing json";*/
     });
     
     // IMAGES IN TEXTVIEW, must extract abilities from array of dictionaries of abilities
@@ -79,7 +79,7 @@ void *KVOContext = &KVOContext;
 
 - (void)displayImage {            //WORKS, just need to re-enabe comment in line 81 and delete literal...
     
-    NSString *imageURLString = [NSString stringWithFormat:@"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" /*self.pokemon.sprite*/];
+    NSString *imageURLString = [NSString stringWithFormat:/*@"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"*/@"%@", self.pokemon.sprite];
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURLString]];
     dispatch_async(dispatch_get_main_queue(), ^{
         self.spriteImageView.image = [UIImage  imageWithData: imageData];

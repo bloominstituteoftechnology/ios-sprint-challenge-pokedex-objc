@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
-NS_SWIFT_NAME(Ability)
+//NS_SWIFT_NAME(Ability)
 @interface JGPAbility : NSObject
 
-@property (nonatomic, copy, readonly, nullable) NSString *name;
+@property (nonatomic, copy, readonly) NSString *name;
 
-// initializer needed?
+- (instancetype)initWithDictionary:(id)dictionary;
 
 @end
+
+NS_ASSUME_NONNULL_END
 

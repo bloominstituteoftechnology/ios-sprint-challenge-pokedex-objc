@@ -7,13 +7,14 @@
 //
 
 #import "JGPPokemon.h"
+#import "JGPAbility.h"
 
 @implementation JGPPokemon
 
 - (nonnull instancetype) initWithName:(NSString *_Nonnull)name
                            identifier:(int)identifier
                             sprite:(NSString *_Nullable)sprite
-                            abilities:(NSArray<NSString *> *)abilities {
+                            abilities:(NSArray<JGPAbility *> *)abilities {
     self = [super init];
     if (self) {
         _name = [name copy];
@@ -26,19 +27,25 @@
 
 - (nullable instancetype)initWithDictionary:(NSDictionary *_Nullable)dictionary {
     
+    
     NSString *name = dictionary[@"name"];
     
     NSString *identifierString = dictionary[@"id"];
     int identifier = [identifierString intValue];
     
-    NSString *sprite = dictionary[@"sprites.front_shiny"];
+    NSString *sprite = dictionary[@"sprites"][@"front_default"];
     
-    NSArray<NSString *> *abilities = dictionary[@"abilities.ability.name"];    // or is it just ability.name?
-
-    return [self initWithName:name
-                   identifier:identifier
-                    sprite:sprite
-                    abilities:abilities];
+    // TRY THIS KVC METHOD BY UNCOMMENTING THE TWO LINES BELOW TO SEE IF IT ACHIEVES SAME AS LINES 42-46 ????????????????
+    // NSArray *abilitiesTopLevel = dictionary[@"abilities"]
+    // NSArray *abilities = [abilitiesTopLevel valueForKeyPath:@"ability.name"];
+    
+    NSMutableArray *abilities = [NSMutableArray array];
+    NSArray *abilitiesImmutable = dictionary[@"abilities"];
+    for (NSDictionary *dict in abilitiesImmutable) {
+        JGPAbility *ability = [[JGPAbility alloc] initWithDictionary:dict];
+        [abilities addObject:ability];
+    }
+    return [self initWithName:name identifier:identifier sprite:sprite abilities:abilities];
 }
 
 

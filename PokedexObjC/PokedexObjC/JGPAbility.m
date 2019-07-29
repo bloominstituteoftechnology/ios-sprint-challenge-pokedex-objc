@@ -10,4 +10,12 @@
 
 @implementation JGPAbility
 
+- (instancetype)initWithDictionary:(id)dictionary {
+    self = [super init];
+    if (self) {
+        _name = [dictionary valueForKeyPath:@"ability.name"];
+    }
+    return self;
+}
+
 @end
