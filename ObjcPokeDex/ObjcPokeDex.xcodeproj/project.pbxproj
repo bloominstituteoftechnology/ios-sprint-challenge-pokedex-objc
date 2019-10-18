@@ -47,6 +47,7 @@
 		EF85B1BB235A0FF30044E13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF85B1C1235A10160044E13D /* PokeNameAndURL.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PokeNameAndURL.json; sourceTree = "<group>"; };
 		EF85B1C3235A10650044E13D /* PokeInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PokeInfo.json; sourceTree = "<group>"; };
+		EF85B1C5235A10AC0044E13D /* LSIFileHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIFileHelper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +110,7 @@
 				EF85B1B9235A0FF30044E13D /* ObjcPokeDexTests.m */,
 				EF85B1C3235A10650044E13D /* PokeInfo.json */,
 				EF85B1C1235A10160044E13D /* PokeNameAndURL.json */,
+				EF85B1C5235A10AC0044E13D /* LSIFileHelper.h */,
 				EF85B1BB235A0FF30044E13D /* Info.plist */,
 			);
 			path = ObjcPokeDexTests;
