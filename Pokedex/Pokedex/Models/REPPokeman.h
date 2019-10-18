@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +17,7 @@ NS_SWIFT_NAME(Pokeman)
 @property (nonatomic) NSUInteger identifier;
 @property (copy, nonatomic) NSString *name;
 @property (nonatomic) NSURL *pokeURL;
-@property (nonatomic, nullable) NSURL *spriteURL;
+@property (nonatomic, nullable) UIImage *sprite;
 @property (nonatomic, nullable) NSArray<NSString *> *abilities;
 
 - (instancetype)initWithName:(NSString *)name infoURL:(NSURL *)url;

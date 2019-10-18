@@ -55,5 +55,54 @@ class PokemonAPI: NSObject {
 
 	@objc func fillInDetails(for pokemon: Pokeman) {
 
+		URLSession.shared.dataTask(with: pokemon.pokeURL) { [weak self] data, _, error in
+			if let error = error {
+				NSLog("Error loading data: \(error)")
+				return
+			}
+
+			guard let data = data else {
+				NSLog("bad data")
+				return
+			}
+
+			do {
+				let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+//				print(jsonDict)
+				let sprites: [String: URL]? = (jsonDict?["sprites"] as? [String: Any])?.compactMapValues{
+					guard let str = $0 as? String else { return nil }
+					return URL(string: str)
+				}
+				if let imageURL = sprites?["front_default"] {
+					self?.fetchImageURL(imageURL, forPokemon: pokemon)
+				}
+
+				let abilitiesInfo = jsonDict?["abilities"] as? [[String: Any]]
+				for abilityInfo in abilitiesInfo ?? [] {
+
+				}
+
+			} catch {
+				NSLog("Error decoding JSON: \(error)")
+			}
+		}.resume()
+	}
+
+	private func fetchImageURL(_ url: URL, forPokemon pokemon: Pokeman) {
+		URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+			if let error = error {
+				NSLog("Error loading data: \(error)")
+				return
+			}
+
+			guard let data = data else {
+				NSLog("bad data")
+				return
+			}
+
+			if let image = UIImage(data: data) {
+				pokemon.sprite = image
+			}
+		}.resume()
 	}
 }
