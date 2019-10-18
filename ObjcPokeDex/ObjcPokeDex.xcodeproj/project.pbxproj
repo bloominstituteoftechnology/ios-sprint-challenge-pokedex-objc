@@ -13,6 +13,7 @@
 		EF85B1A4235A0BE60044E13D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF85B1A3235A0BE60044E13D /* Assets.xcassets */; };
 		EF85B1A7235A0BE70044E13D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF85B1A5235A0BE70044E13D /* LaunchScreen.storyboard */; };
 		EF85B1AA235A0BE70044E13D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF85B1A9235A0BE70044E13D /* main.m */; };
+		EF85B1B2235A0E0A0044E13D /* LSIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = EF85B1B1235A0E0A0044E13D /* LSIPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		EF85B1A6235A0BE70044E13D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF85B1A8235A0BE70044E13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF85B1A9235A0BE70044E13D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EF85B1B0235A0E0A0044E13D /* LSIPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIPokemon.h; sourceTree = "<group>"; };
+		EF85B1B1235A0E0A0044E13D /* LSIPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 				EF85B197235A0BD80044E13D /* AppDelegate.h */,
 				EF85B198235A0BD80044E13D /* AppDelegate.m */,
 				EF85B19A235A0BD80044E13D /* SceneDelegate.h */,
+				EF85B1B0235A0E0A0044E13D /* LSIPokemon.h */,
+				EF85B1B1235A0E0A0044E13D /* LSIPokemon.m */,
 				EF85B19B235A0BD80044E13D /* SceneDelegate.m */,
 				EF85B1A0235A0BD80044E13D /* Main.storyboard */,
 				EF85B1A3235A0BE60044E13D /* Assets.xcassets */,
@@ -141,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF85B1B2235A0E0A0044E13D /* LSIPokemon.m in Sources */,
 				EF85B199235A0BD80044E13D /* AppDelegate.m in Sources */,
 				EF85B1AA235A0BE70044E13D /* main.m in Sources */,
 				EF85B19C235A0BD80044E13D /* SceneDelegate.m in Sources */,
