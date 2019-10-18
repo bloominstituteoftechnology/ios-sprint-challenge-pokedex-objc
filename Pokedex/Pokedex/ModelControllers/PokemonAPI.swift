@@ -68,7 +68,6 @@ class PokemonAPI: NSObject {
 
 			do {
 				let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-//				print(jsonDict)
 				let sprites: [String: URL]? = (jsonDict?["sprites"] as? [String: Any])?.compactMapValues{
 					guard let str = $0 as? String else { return nil }
 					return URL(string: str)
@@ -77,10 +76,15 @@ class PokemonAPI: NSObject {
 					self?.fetchImageURL(imageURL, forPokemon: pokemon)
 				}
 
+				var abilityStrings = [String]()
 				let abilitiesInfo = jsonDict?["abilities"] as? [[String: Any]]
 				for abilityInfo in abilitiesInfo ?? [] {
-
+					print(abilityInfo)
+					let deeperAbility = abilityInfo["ability"] as? [String: Any]
+					guard let name = deeperAbility?["name"] as? String else { continue }
+					abilityStrings.append(name)
 				}
+				pokemon.abilities = abilityStrings
 
 			} catch {
 				NSLog("Error decoding JSON: \(error)")
