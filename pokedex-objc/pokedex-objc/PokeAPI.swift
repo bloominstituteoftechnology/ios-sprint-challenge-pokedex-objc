@@ -39,7 +39,7 @@ class PokemonAPI: NSObject {
                     completion(nil, NSError())
                     return
                 }
-                print(JSONDictionary)
+                //print(JSONDictionary)
                 self.nextURLString = JSONDictionary["next"] as? String
                 var pokemons: [BYPokemon] = []
                 if let pokemonDictionaries: Array = JSONDictionary["results"] as? Array<Dictionary<String, String>> {
@@ -79,6 +79,25 @@ class PokemonAPI: NSObject {
                     return
                 }
                 print(JSONDictionary)
+                if let abilitiesArray = JSONDictionary["abilities"] as? Array<Dictionary<String, Any>> {
+                    var abilityString = ""
+                    for ability in abilitiesArray {
+                        let abilityDictionary = ability["ability"] as? Dictionary<String, String>
+                        let abilityName = abilityDictionary?["name"]
+                        abilityString.append(contentsOf: abilityName!)
+                        abilityString.append(contentsOf: "\n ")
+                    }
+                    pokemon.abilities = abilityString
+                    print(pokemon)
+                }
+                
+                if let sprites = JSONDictionary["sprites"] as? Dictionary<String, Any> {
+                    let imageURLString = sprites["front_default"] as? String
+                    guard let imageURL = URL(string: imageURLString ?? "") else { return }
+                    loadImage(url: imageURL) { (imageData) in
+                        pokemon.imageData = imageData
+                    }
+                }
 
             } catch {
                 print("error converting to json dictionary")
@@ -86,4 +105,20 @@ class PokemonAPI: NSObject {
             }
         }.resume()
     }
+}
+
+
+private func loadImage(url: URL, completion: @escaping (Data) -> Void) {
+    URLSession.shared.dataTask(with: url) { (data, _, error) in
+        if let error = error {
+            print("error loading image: \(error)")
+            return
+        }
+        guard let data = data else {
+            print("no image data returned")
+            return
+        }
+        completion(data)
+        
+    }.resume()
 }

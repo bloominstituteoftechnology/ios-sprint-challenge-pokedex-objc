@@ -11,22 +11,28 @@ import UIKit
 class PokemonDetailViewController: UIViewController {
     
     var pokemon: BYPokemon?
+    var abilityObservation: NSKeyValueObservation?
+    var imageDataObservation: NSKeyValueObservation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         PokemonAPI.shared.fillInDetails(for: pokemon!)
-        
-        BYPokemon.addObserver(self, forKeyPath: "abilities", options: [], context: nil)
+        addObservations()
 
         // Do any additional setup after loading the view.
     }
     
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        print(keyPath)
+    private func addObservations() {
+        abilityObservation = pokemon?.observe(\.abilities,options: [.old, .new], changeHandler: { (object, change) in
+            print("ability change from \(change.oldValue) to \(change.newValue)")
+            
+        })
+        imageDataObservation = pokemon?.observe(\.imageData,options: [.old, .new], changeHandler: { (object, change) in
+            print("imageData change from \(change.oldValue) to \(change.newValue)")
+            
+        })
     }
-    
     
 
     /*
