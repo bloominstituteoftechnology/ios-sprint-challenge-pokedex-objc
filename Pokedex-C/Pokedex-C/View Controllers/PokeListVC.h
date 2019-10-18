@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PokeListVC.h
 //  Pokedex-C
 //
 //  Created by Jeffrey Santana on 10/18/19.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface PokeListVC : UITableViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
