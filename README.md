@@ -14,7 +14,7 @@ If you have any questions about the project requirements or expectations, ask yo
 
 ## Description
 
-1. Answer the questions in [Manual-Reference-Coutning.md](Manual-Reference-Coutning.md)
+1. Answer the questions in [Manual-Reference-Counting.md](Manual-Reference-Counting.md)
 2. For this project, you will build a viewer app for the [Pokedex API](https://pokeapi.co). The Pokedex API does not require an API key or any other form of authentication. 
     1. The app will consist of two screens, a main table view, and a detail view. 
     2. You will implement it using a mix of Objective-C and Swift.
