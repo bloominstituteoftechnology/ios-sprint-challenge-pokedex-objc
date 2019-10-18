@@ -9,10 +9,11 @@
 #import "PokemonsTableViewController.h"
 #import "LSIPokemon.h"
 #import "ObjcPokeDex-Swift.h"
+#import "PokemonDetailViewController.h"
 
 @interface PokemonsTableViewController ()
 
-@property (nonatomic, strong) NSArray<LSIPokemon *> *pokemons;
+@property NSArray<LSIPokemon *> *pokemons;
 
 @end
 
@@ -46,6 +47,11 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ShowPoke"]) {
+           NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+       PokemonDetailViewController *detailVC = segue.destinationViewController;
+        detailVC.pokemon = [self.pokemons objectAtIndex:indexPath.row];
+       }
 }
 
 
