@@ -6,16 +6,18 @@
 //  Copyright © 2019 Lambda. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(PokeDetails)
 @interface JSPokeDetails : NSObject
 
 @property int id;
 @property (copy) NSString * name;
 @property double height;
 @property double weight;
+@property UIImage *image;
 @property (copy) NSArray<NSString *> * abilities;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
