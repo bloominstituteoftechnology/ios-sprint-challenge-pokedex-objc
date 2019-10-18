@@ -10,4 +10,21 @@
 
 @implementation REPPokeman
 
+- (instancetype)initWithName:(NSString *)name infoURL:(NSURL *)url {
+	if (self = [super init]) {
+		_name = name;
+		_pokeURL = url;
+
+		_identifier = [[url lastPathComponent] integerValue];
+	}
+	return self;
+}
+
++ (REPPokeman *)pokemonFromDictionary:(NSDictionary *)dictionary {
+	NSString *name = dictionary[@"name"];
+	NSURL *url = [NSURL URLWithString:dictionary[@"url"]];
+
+	return [[REPPokeman alloc] initWithName:name infoURL:url];
+}
+
 @end

@@ -21,6 +21,8 @@ NS_SWIFT_NAME(Pokeman)
 
 - (instancetype)initWithName:(NSString *)name infoURL:(NSURL *)url;
 
++ (REPPokeman *)pokemonFromDictionary:(NSDictionary *)dictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END
