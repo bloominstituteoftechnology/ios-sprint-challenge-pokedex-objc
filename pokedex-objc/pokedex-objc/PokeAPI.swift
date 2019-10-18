@@ -63,5 +63,27 @@ class PokemonAPI: NSObject {
 
     @objc func fillInDetails(for pokemon: BYPokemon) {
         
+        URLSession.shared.dataTask(with: pokemon.url) { (data, _, error) in
+            if let error = error {
+                print("error fetching pokemon detail")
+                return
+            }
+            
+            guard let data = data else {
+                print("no detail data retun")
+                return
+            }
+            do {
+                guard let JSONDictionary = try JSONSerialization.jsonObject(with: data) as? NSDictionary else {
+                    print("error converting to json dictionary")
+                    return
+                }
+                print(JSONDictionary)
+
+            } catch {
+                print("error converting to json dictionary")
+                return
+            }
+        }.resume()
     }
 }

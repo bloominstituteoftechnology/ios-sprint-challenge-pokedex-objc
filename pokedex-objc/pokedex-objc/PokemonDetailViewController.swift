@@ -9,12 +9,24 @@
 import UIKit
 
 class PokemonDetailViewController: UIViewController {
+    
+    var pokemon: BYPokemon?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        PokemonAPI.shared.fillInDetails(for: pokemon!)
+        
+        BYPokemon.addObserver(self, forKeyPath: "abilities", options: [], context: nil)
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        print(keyPath)
+    }
+    
     
 
     /*
