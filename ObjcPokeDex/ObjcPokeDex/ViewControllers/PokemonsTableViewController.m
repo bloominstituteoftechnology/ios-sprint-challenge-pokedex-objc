@@ -42,8 +42,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokeCell" forIndexPath:indexPath];
     LSIPokemon *pokemon = self.pokemons[indexPath.row];
     cell.textLabel.text = pokemon.name;
-    PokemonAPI *pa = [PokemonAPI sharedController];
-    [pa fillInDetailsFor:pokemon];
     return cell;
 }
 
