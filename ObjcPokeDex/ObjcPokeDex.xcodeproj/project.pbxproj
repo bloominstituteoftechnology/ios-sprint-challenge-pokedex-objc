@@ -18,6 +18,7 @@
 		EF85B1C2235A10160044E13D /* PokeNameAndURL.json in Resources */ = {isa = PBXBuildFile; fileRef = EF85B1C1235A10160044E13D /* PokeNameAndURL.json */; };
 		EF85B1C4235A10650044E13D /* PokeInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = EF85B1C3235A10650044E13D /* PokeInfo.json */; };
 		EF89C427235A142E00D07844 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89C426235A142E00D07844 /* PokemonAPI.swift */; };
+		EF89C42A235A1B8D00D07844 /* PokemonsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF89C429235A1B8D00D07844 /* PokemonsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		EF85B1C5235A10AC0044E13D /* LSIFileHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIFileHelper.h; sourceTree = "<group>"; };
 		EF89C423235A13DE00D07844 /* ObjcPokeDex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjcPokeDex-Bridging-Header.h"; sourceTree = "<group>"; };
 		EF89C426235A142E00D07844 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		EF89C428235A1B8D00D07844 /* PokemonsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonsTableViewController.h; sourceTree = "<group>"; };
+		EF89C429235A1B8D00D07844 /* PokemonsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,7 @@
 				EF85B197235A0BD80044E13D /* AppDelegate.h */,
 				EF85B198235A0BD80044E13D /* AppDelegate.m */,
 				EF85B19A235A0BD80044E13D /* SceneDelegate.h */,
+				EF89C42B235A1B9700D07844 /* ViewControllers */,
 				EF89C426235A142E00D07844 /* PokemonAPI.swift */,
 				EF89C422235A136A00D07844 /* Model */,
 				EF85B19B235A0BD80044E13D /* SceneDelegate.m */,
@@ -127,6 +131,15 @@
 				EF85B1B1235A0E0A0044E13D /* LSIPokemon.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EF89C42B235A1B9700D07844 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF89C428235A1B8D00D07844 /* PokemonsTableViewController.h */,
+				EF89C429235A1B8D00D07844 /* PokemonsTableViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +248,7 @@
 				EF85B1B2235A0E0A0044E13D /* LSIPokemon.m in Sources */,
 				EF85B199235A0BD80044E13D /* AppDelegate.m in Sources */,
 				EF85B1AA235A0BE70044E13D /* main.m in Sources */,
+				EF89C42A235A1B8D00D07844 /* PokemonsTableViewController.m in Sources */,
 				EF89C427235A142E00D07844 /* PokemonAPI.swift in Sources */,
 				EF85B19C235A0BD80044E13D /* SceneDelegate.m in Sources */,
 			);
