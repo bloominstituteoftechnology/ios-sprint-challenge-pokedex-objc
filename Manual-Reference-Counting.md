@@ -52,7 +52,7 @@ Answer the following questions inline with this document.
 
 @property (nonatomic, copy) NSString *name;
 
-- (instancetype)initWithName;
+- (instancetype)initWithName:(NSString *)name;
 
 @end
 ```
