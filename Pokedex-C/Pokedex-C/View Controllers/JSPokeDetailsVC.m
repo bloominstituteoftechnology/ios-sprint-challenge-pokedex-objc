@@ -19,7 +19,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *abilitiesLbl;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLbl;
 
-- (void)updateViewsWithPokemon:(JSPokeDetails *)pokemon;
+@property JSPokeDetails *pokemon;
+
+- (void)updateViews;
 - (void)getImageFromUrl:(NSURL *)url;
 - (double)convertWeightFromHexagram:(double)hexWeight;
 
@@ -32,18 +34,43 @@
 
 // MARK: - Properties
 
+static void *detailsContext = &detailsContext;
 
 // MARK: - Life Cycle
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+	self = [super initWithCoder:coder];
+	if (self) {
+		_pokemon = [[JSPokeDetails alloc] init];
+		[self addObserver:self forKeyPath:@"pokemon" options:NSKeyValueObservingOptionNew context:&detailsContext];
+	}
+	return self;
+}
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
 	[self.pokecontroller getPokeDetailsFrom:self.pokeName completion:^(JSPokeDetails * _Nullable details) {
 		if (details) {
-			[self updateViewsWithPokemon:details];
+			self.pokemon = details;
 		}
 	}];
 	[self.descriptionLbl setHidden:true];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+	if (context == detailsContext) {
+		[self updateViews];
+	} else {
+		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+	}
+}
+
+- (void)dealloc
+{
+	[self removeObserver:self forKeyPath:@"pokemon" context:detailsContext];
 }
 
 // MARK: - IBActions
@@ -51,18 +78,20 @@
 
 // MARK: - Helpers
 
-- (void)updateViewsWithPokemon:(JSPokeDetails *)pokemon {
-	dispatch_async(dispatch_get_main_queue(), ^{
-		self.title = [pokemon.name capitalizedString];
-		self.idLbl.text = [NSString stringWithFormat:@"ID: %d", pokemon.id];
-		self.heightLbl.text = [NSString stringWithFormat:@"Height: %.2f", [self convertHeightFromDecimetres:pokemon.height]];
-		self.weightLbl.text = [NSString stringWithFormat:@"Weight: %.2f", [self convertWeightFromHexagram:pokemon.weight]];
-		
-		NSString *abilities = [pokemon.abilities componentsJoinedByString:@", "];
-		self.abilitiesLbl.text = [NSString stringWithFormat:@"Abilities: %@", [abilities capitalizedString]];
-		//	self.description.text = pokemon.description;
-	});
-	[self getImageFromUrl:pokemon.imageUrl];
+- (void)updateViews {
+	if (self.pokemon) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			self.title = [self.pokemon.name capitalizedString];
+			self.idLbl.text = [NSString stringWithFormat:@"ID: %d", self.pokemon.id];
+			self.heightLbl.text = [NSString stringWithFormat:@"Height: %.2f", [self convertHeightFromDecimetres:self.pokemon.height]];
+			self.weightLbl.text = [NSString stringWithFormat:@"Weight: %.2f", [self convertWeightFromHexagram:self.pokemon.weight]];
+			
+			NSString *abilities = [self.pokemon.abilities componentsJoinedByString:@", "];
+			self.abilitiesLbl.text = [NSString stringWithFormat:@"Abilities: %@", [abilities capitalizedString]];
+			//	self.description.text = pokemon.description;
+		});
+		[self getImageFromUrl:self.pokemon.imageUrl];
+	}
 }
 
 - (void)getImageFromUrl:(NSURL *)url {
