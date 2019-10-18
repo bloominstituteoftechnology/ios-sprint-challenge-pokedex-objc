@@ -25,8 +25,8 @@
     [pa fetchAllPokemonWithCompletion:^(NSArray<LSIPokemon *> *allPokemons, NSError *error) {
         self.pokemons = allPokemons;
         dispatch_async(dispatch_get_main_queue(), ^{
-                   [self.tableView reloadData];
-               });
+            [self.tableView reloadData];
+        });
     }];
 }
 
@@ -47,10 +47,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowPoke"]) {
-           NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-       PokemonDetailViewController *detailVC = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PokemonDetailViewController *detailVC = segue.destinationViewController;
         detailVC.pokemon = [self.pokemons objectAtIndex:indexPath.row];
-       }
+    }
 }
 
 

@@ -35,10 +35,10 @@
 - (void)testParseJSONToFillInPokemonDetails {
     
     LSIPokemon *pokemon = [[LSIPokemon alloc] initWithName:@"bulbasaur" pokeID:NULL pokeInforURL:@"https://pokeapi.co/api/v2/pokemon/1/" pokeAbilities:NULL andSprites:NULL];
-     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSData *infoData = loadFile(@"PokeInfo.json",bundle);
     XCTAssertNotNil(infoData);
-     NSError *error = nil;
+    NSError *error = nil;
     NSDictionary *jsonForPokeInfo = [NSJSONSerialization JSONObjectWithData:infoData options:0 error: &error];
     
     //parse the abilities and set them

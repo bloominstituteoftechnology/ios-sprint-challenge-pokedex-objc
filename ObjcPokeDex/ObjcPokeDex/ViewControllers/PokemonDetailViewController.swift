@@ -13,19 +13,18 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet var pokeAbilities: UILabel!
     @IBOutlet var pokeID: UILabel!
     @IBOutlet var pokeImage: UIImageView!
-   
+    
     @objc var pokemon: LSIPokemon?
     
     var abilityObservation: NSKeyValueObservation?
     var imageObservation: NSKeyValueObservation?
     var pokeIDObservation: NSKeyValueObservation?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.pokeName.text = self.pokemon?.name
         PokemonAPI.shared.fillInDetails(for: pokemon!)
         abilityObservation = pokemon?.observe(\.abilites,options: [.old, .new], changeHandler: { (object, change) in
-            print("from: \(String(describing: change.oldValue)) to \(String(describing: change.newValue))")
             DispatchQueue.main.async {
                 let abilitiesString = self.pokemon?.abilites.map({$0})?.componentsJoined(by: ",")
                 self.pokeAbilities.text = abilitiesString
@@ -33,7 +32,6 @@ class PokemonDetailViewController: UIViewController {
         })
         
         imageObservation = pokemon?.observe(\.spriteURLString,options: [.old, .new], changeHandler: { (object, change) in
-                   print("from: \(String(describing: change.oldValue)) to \(String(describing: change.newValue))")
             guard let poke = self.pokemon, let url = URL(string:poke.spriteURLString!) else {return}
             PokemonAPI.shared.loadImage(url: url) { (data) in
                 DispatchQueue.main.async {
@@ -42,10 +40,9 @@ class PokemonDetailViewController: UIViewController {
                 }
             }
             
-               })
+        })
         
         pokeIDObservation = pokemon?.observe(\.id,options: [.old, .new], changeHandler: { (object, change) in
-            print("from: \(String(describing: change.oldValue)) to \(String(describing: change.newValue))")
             DispatchQueue.main.async {
                 guard let poke = self.pokemon, let id = poke.id else {return}
                 self.pokeID.text = "\(id)"
@@ -55,5 +52,5 @@ class PokemonDetailViewController: UIViewController {
     }
     
     
-
+    
 }
