@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		33B01CC1235A14940060ED31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B01CC0235A14940060ED31 /* AppDelegate.m */; };
-		33B01CC4235A14940060ED31 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B01CC3235A14940060ED31 /* SceneDelegate.m */; };
 		33B01CC7235A14940060ED31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B01CC6235A14940060ED31 /* ViewController.m */; };
 		33B01CCA235A14940060ED31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33B01CC8235A14940060ED31 /* Main.storyboard */; };
 		33B01CCC235A14950060ED31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33B01CCB235A14950060ED31 /* Assets.xcassets */; };
@@ -20,8 +19,6 @@
 		33B01CBC235A14940060ED31 /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33B01CBF235A14940060ED31 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		33B01CC0235A14940060ED31 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		33B01CC2235A14940060ED31 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		33B01CC3235A14940060ED31 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		33B01CC5235A14940060ED31 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		33B01CC6235A14940060ED31 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		33B01CC9235A14940060ED31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,8 +60,6 @@
 			children = (
 				33B01CBF235A14940060ED31 /* AppDelegate.h */,
 				33B01CC0235A14940060ED31 /* AppDelegate.m */,
-				33B01CC2235A14940060ED31 /* SceneDelegate.h */,
-				33B01CC3235A14940060ED31 /* SceneDelegate.m */,
 				33B01CC5235A14940060ED31 /* ViewController.h */,
 				33B01CC6235A14940060ED31 /* ViewController.m */,
 				33B01CC8235A14940060ED31 /* Main.storyboard */,
@@ -149,7 +144,6 @@
 				33B01CC7235A14940060ED31 /* ViewController.m in Sources */,
 				33B01CC1235A14940060ED31 /* AppDelegate.m in Sources */,
 				33B01CD2235A14950060ED31 /* main.m in Sources */,
-				33B01CC4235A14940060ED31 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +286,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5UZAT7KA9;
 				INFOPLIST_FILE = Pokedex/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +304,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L5UZAT7KA9;
 				INFOPLIST_FILE = Pokedex/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
