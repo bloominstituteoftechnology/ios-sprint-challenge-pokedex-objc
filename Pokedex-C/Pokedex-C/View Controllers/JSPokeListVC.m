@@ -7,8 +7,12 @@
 //
 
 #import "JSPokeListVC.h"
+#import "JSPokeLink.h"
+#import "Pokedex_C-Swift.h"
 
 @interface JSPokeListVC ()
+
+@property PokeController *pokeController;
 
 @end
 
@@ -20,10 +24,28 @@
 // MARK: - Properties
 
 
+
 // MARK: - Life Cycle
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+	self = [super initWithCoder:coder];
+	if (self) {
+		_pokeController = [[PokeController alloc] init];
+	}
+	return self;
+}
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
+	[self.pokeController getPokeListWithCompletion:^(BOOL didLoad) {
+		if (didLoad) {
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[self.tableView reloadData];
+			});
+		}
+	}];
 }
 
 // MARK: - Navigation
@@ -42,14 +64,13 @@
 // MARK: - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+	return self.pokeController.pokeList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokeCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+	cell.textLabel.text = self.pokeController.pokeList[indexPath.row].name;
     
     return cell;
 }
