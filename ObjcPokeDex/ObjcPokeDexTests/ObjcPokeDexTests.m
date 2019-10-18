@@ -34,7 +34,33 @@
 
 - (void)testParseJSONToFillInPokemonDetails {
     
+    LSIPokemon *pokemon = [[LSIPokemon alloc] initWithName:@"bulbasaur" pokeID:NULL pokeInforURL:@"https://pokeapi.co/api/v2/pokemon/1/" pokeAbilities:NULL andSprites:NULL];
+     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSData *infoData = loadFile(@"PokeInfo.json",bundle);
+    XCTAssertNotNil(infoData);
+     NSError *error = nil;
+    NSDictionary *jsonForPokeInfo = [NSJSONSerialization JSONObjectWithData:infoData options:0 error: &error];
+    
+    //parse the abilities and set them
+    NSMutableArray *abilities = jsonForPokeInfo[@"abilities"];
+    pokemon.abilites = [[NSMutableArray<NSString *> alloc] init];
+    for (NSMutableDictionary *ability in abilities) {
+        NSMutableDictionary *innerAbility = [ability valueForKey:@"ability"];
+        NSString *abilityString = [innerAbility valueForKey:@"name"];
+        NSString *abilityName = [[NSString alloc] initWithString:abilityString];
+        [pokemon.abilites addObject:abilityName];
+    }
+    XCTAssertEqual(2 , pokemon.abilites.count);
+    
+    //parse the ID and set it
+    pokemon.ID = [[NSNumber alloc] initWithInt: [[jsonForPokeInfo valueForKey:@"id"]intValue]];
+    XCTAssertTrue(pokemon.ID > 0);
+    
+    //parse the sprite url string and set it
+    NSMutableDictionary *spriteDict = [jsonForPokeInfo valueForKey:@"sprites"];
+    NSString *receivedSpriteURLString = [spriteDict valueForKey:@"front_shiny"];
+    pokemon.spriteURLString = [[NSString alloc] initWithString:receivedSpriteURLString];
+    XCTAssertEqualObjects(@"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png", pokemon.spriteURLString);
 }
-
 
 @end

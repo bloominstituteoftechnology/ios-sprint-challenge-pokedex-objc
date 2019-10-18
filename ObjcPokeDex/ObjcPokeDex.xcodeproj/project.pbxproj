@@ -17,6 +17,7 @@
 		EF85B1BA235A0FF30044E13D /* ObjcPokeDexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF85B1B9235A0FF30044E13D /* ObjcPokeDexTests.m */; };
 		EF85B1C2235A10160044E13D /* PokeNameAndURL.json in Resources */ = {isa = PBXBuildFile; fileRef = EF85B1C1235A10160044E13D /* PokeNameAndURL.json */; };
 		EF85B1C4235A10650044E13D /* PokeInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = EF85B1C3235A10650044E13D /* PokeInfo.json */; };
+		EF89C427235A142E00D07844 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89C426235A142E00D07844 /* PokemonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		EF85B1C1235A10160044E13D /* PokeNameAndURL.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PokeNameAndURL.json; sourceTree = "<group>"; };
 		EF85B1C3235A10650044E13D /* PokeInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PokeInfo.json; sourceTree = "<group>"; };
 		EF85B1C5235A10AC0044E13D /* LSIFileHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIFileHelper.h; sourceTree = "<group>"; };
+		EF89C423235A13DE00D07844 /* ObjcPokeDex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjcPokeDex-Bridging-Header.h"; sourceTree = "<group>"; };
+		EF89C426235A142E00D07844 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,14 +95,15 @@
 				EF85B197235A0BD80044E13D /* AppDelegate.h */,
 				EF85B198235A0BD80044E13D /* AppDelegate.m */,
 				EF85B19A235A0BD80044E13D /* SceneDelegate.h */,
-				EF85B1B0235A0E0A0044E13D /* LSIPokemon.h */,
-				EF85B1B1235A0E0A0044E13D /* LSIPokemon.m */,
+				EF89C426235A142E00D07844 /* PokemonAPI.swift */,
+				EF89C422235A136A00D07844 /* Model */,
 				EF85B19B235A0BD80044E13D /* SceneDelegate.m */,
 				EF85B1A0235A0BD80044E13D /* Main.storyboard */,
 				EF85B1A3235A0BE60044E13D /* Assets.xcassets */,
 				EF85B1A5235A0BE70044E13D /* LaunchScreen.storyboard */,
 				EF85B1A8235A0BE70044E13D /* Info.plist */,
 				EF85B1A9235A0BE70044E13D /* main.m */,
+				EF89C423235A13DE00D07844 /* ObjcPokeDex-Bridging-Header.h */,
 			);
 			path = ObjcPokeDex;
 			sourceTree = "<group>";
@@ -114,6 +118,15 @@
 				EF85B1BB235A0FF30044E13D /* Info.plist */,
 			);
 			path = ObjcPokeDexTests;
+			sourceTree = "<group>";
+		};
+		EF89C422235A136A00D07844 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF85B1B0235A0E0A0044E13D /* LSIPokemon.h */,
+				EF85B1B1235A0E0A0044E13D /* LSIPokemon.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +178,7 @@
 				TargetAttributes = {
 					EF85B193235A0BD80044E13D = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 					EF85B1B6235A0FF30044E13D = {
 						CreatedOnToolsVersion = 11.0;
@@ -221,6 +235,7 @@
 				EF85B1B2235A0E0A0044E13D /* LSIPokemon.m in Sources */,
 				EF85B199235A0BD80044E13D /* AppDelegate.m in Sources */,
 				EF85B1AA235A0BE70044E13D /* main.m in Sources */,
+				EF89C427235A142E00D07844 /* PokemonAPI.swift in Sources */,
 				EF85B19C235A0BD80044E13D /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = ObjcPokeDex/Info.plist;
@@ -386,6 +402,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.luqmaankhan.ObjcPokeDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjcPokeDex/ObjcPokeDex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -394,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = ObjcPokeDex/Info.plist;
@@ -403,6 +423,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.luqmaankhan.ObjcPokeDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjcPokeDex/ObjcPokeDex-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -410,6 +432,7 @@
 		EF85B1BF235A0FF30044E13D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
@@ -429,6 +452,7 @@
 		EF85B1C0235A0FF30044E13D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
