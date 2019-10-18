@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "Pokedex_C-Swift.h"
 
 @interface Pokedex_CTests : XCTestCase
 
