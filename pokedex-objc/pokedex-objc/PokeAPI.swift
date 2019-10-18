@@ -79,6 +79,10 @@ class PokemonAPI: NSObject {
                     return
                 }
                 print(JSONDictionary)
+                if let id = JSONDictionary["id"] as? NSNumber {
+                    pokemon.pokeId = id
+                }
+                
                 if let abilitiesArray = JSONDictionary["abilities"] as? Array<Dictionary<String, Any>> {
                     var abilityString = ""
                     for ability in abilitiesArray {
