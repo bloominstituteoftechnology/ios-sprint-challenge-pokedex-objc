@@ -42,6 +42,37 @@ class PokemonAPI: NSObject {
     
     @objc func fillInDetails(for pokemon: LSIPokemon) {
         
+        let requestURL = URL(string: pokemon.pokeInfoURL)!
+        
+        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+            if let error = error {
+                NSLog("Error fetching details for pokemon: \(error)")
+                return
+            }
+            guard let data = data else {
+                NSLog("Error with pokemon detail data: \(String(describing: error))")
+                return
+            }
+            do {
+                guard let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any], let abilites = jsonDict["abilities"] as? [[String:Any]], let spriteDict = jsonDict["sprites"] as? [String:Any] else {throw NSError()}
+                pokemon.abilites = NSMutableArray()
+                for abilty in abilites {
+                    guard  let innerAbility = abilty["ability"] as? [String:Any] else {return}
+                    let abilityName = innerAbility["name"]
+                    pokemon.abilites?.add(abilityName ?? "Ability is nil")
+                }
+                pokemon.id = NSNumber()
+                pokemon.id = jsonDict["id"] as? NSNumber
+                
+                pokemon.spriteURLString = String()
+                pokemon.spriteURLString = spriteDict["front_shiny"] as? String
+                
+            } catch {
+                NSLog("Error decoding details for pokemon: \(error)")
+                return
+            }
+        }.resume()
+        
     }
     
 }
