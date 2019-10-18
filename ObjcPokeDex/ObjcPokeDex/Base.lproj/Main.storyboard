@@ -126,10 +126,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="jef-mg-25x"/>
                     <connections>
-                        <outlet property="pokeAbilities" destination="avR-US-VMa" id="asL-Av-dlJ"/>
-                        <outlet property="pokeID" destination="aVD-Lm-mPw" id="OrW-K5-nu6"/>
-                        <outlet property="pokeImage" destination="xzF-xz-M21" id="dGt-13-d9l"/>
-                        <outlet property="pokeName" destination="fQG-MV-Q5R" id="zJx-zc-ZGj"/>
+                        <outlet property="pokeAbilities" destination="avR-US-VMa" id="UbN-oh-DWy"/>
+                        <outlet property="pokeID" destination="aVD-Lm-mPw" id="HFr-zF-ghu"/>
+                        <outlet property="pokeImage" destination="xzF-xz-M21" id="pVd-lQ-mid"/>
+                        <outlet property="pokeName" destination="fQG-MV-Q5R" id="6i3-UH-zDI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9e3-BX-dwo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

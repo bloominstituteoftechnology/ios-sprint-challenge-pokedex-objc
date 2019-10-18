@@ -9,7 +9,6 @@
 #import "PokemonsTableViewController.h"
 #import "LSIPokemon.h"
 #import "ObjcPokeDex-Swift.h"
-#import "PokemonDetailViewController.h"
 
 @interface PokemonsTableViewController ()
 

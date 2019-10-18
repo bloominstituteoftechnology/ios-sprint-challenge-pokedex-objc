@@ -76,7 +76,7 @@ class PokemonAPI: NSObject {
     }
     
     
-    private func loadImage(url: URL, completion: @escaping (Data) -> Void) {
+    func loadImage(url: URL, completion: @escaping (Data) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 NSLog("Error loading image: \(error)")
