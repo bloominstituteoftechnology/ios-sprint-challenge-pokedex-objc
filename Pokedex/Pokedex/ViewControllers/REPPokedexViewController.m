@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  REPPokedexViewController.m
 //  Pokedex
 //
 //  Created by Michael Redig on 10/18/19.
 //  Copyright © 2019 Red_Egg Productions. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "REPPokedexViewController.h"
 
-@interface ViewController ()
+@interface REPPokedexViewController ()
 
 @end
 
-@implementation ViewController
+@implementation REPPokedexViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
