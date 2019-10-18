@@ -1,14 +1,14 @@
 //
-//  PokeDetailsVC.m
+//  JSPokeDetailsVC.m
 //  Pokedex-C
 //
 //  Created by Jeffrey Santana on 10/18/19.
 //  Copyright © 2019 Lambda. All rights reserved.
 //
 
-#import "PokeDetailsVC.h"
+#import "JSPokeDetailsVC.h"
 
-@interface PokeDetailsVC ()
+@interface JSPokeDetailsVC ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *pokeImgView;
 @property (weak, nonatomic) IBOutlet UILabel *idLbl;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation PokeDetailsVC
+@implementation JSPokeDetailsVC
 
 // MARK: - IBOutlets
 

@@ -1,5 +1,5 @@
 //
-//  PokeDetailsVC.h
+//  JSPokeDetailsVC.h
 //  Pokedex-C
 //
 //  Created by Jeffrey Santana on 10/18/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PokeDetailsVC : UIViewController
+@interface JSPokeDetailsVC : UIViewController
 
 @end
 

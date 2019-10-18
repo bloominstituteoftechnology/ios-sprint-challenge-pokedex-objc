@@ -10,7 +10,7 @@
         <!--Pokedex-->
         <scene sceneID="9Ns-f7-pxo">
             <objects>
-                <tableViewController id="9M0-Cd-sLb" customClass="PokeListVC" sceneMemberID="viewController">
+                <tableViewController id="9M0-Cd-sLb" customClass="JSPokeListVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mJs-t8-dzW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,7 +51,7 @@
         <!--Poke DetailsVC-->
         <scene sceneID="rlZ-5f-AYh">
             <objects>
-                <viewController id="cGu-h2-rRe" customClass="PokeDetailsVC" sceneMemberID="viewController">
+                <viewController id="cGu-h2-rRe" customClass="JSPokeDetailsVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uav-n0-JZa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
