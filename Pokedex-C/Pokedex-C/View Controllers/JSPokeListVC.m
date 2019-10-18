@@ -7,6 +7,7 @@
 //
 
 #import "JSPokeListVC.h"
+#import "JSPokeDetailsVC.h"
 #import "JSPokeLink.h"
 #import "Pokedex_C-Swift.h"
 
@@ -51,8 +52,13 @@
 // MARK: - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+	if ([segue.destinationViewController isKindOfClass:JSPokeDetailsVC.self]) {
+		JSPokeDetailsVC *detailsVC = [segue destinationViewController];
+		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+		
+		detailsVC.pokecontroller = self.pokeController;
+		detailsVC.pokeName = self.pokeController.pokeList[indexPath.row].name;
+	}
 }
 
 // MARK: - IBActions

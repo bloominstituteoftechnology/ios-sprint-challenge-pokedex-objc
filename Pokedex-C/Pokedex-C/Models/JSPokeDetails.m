@@ -8,12 +8,6 @@
 
 #import "JSPokeDetails.h"
 
-@interface JSPokeDetails ()
-
-- (void)getImageFromUrl:(NSURL *)url;
-
-@end
-
 @implementation JSPokeDetails
 
 - (instancetype)initWithDict:(NSDictionary *)dict {
@@ -28,8 +22,7 @@
 		_weight = [dict[@"weight"] doubleValue];
 		
 		NSString *spriteUrlString = dict[@"sprites"][@"front_default"];
-		NSURL *spriteUrl = [[NSURL alloc] initWithString:spriteUrlString];
-		[self getImageFromUrl:spriteUrl];
+		_imageUrl = [[NSURL alloc] initWithString:spriteUrlString];
 		
 		for (NSDictionary *dict in abilitiesArray) {
 			NSDictionary *abilityDict = dict[@"ability"];
@@ -39,15 +32,6 @@
 		_abilities = [abilities copy];
 	}
 	return self;
-}
-
-- (void)getImageFromUrl:(NSURL *)url {
-	dispatch_async(dispatch_get_global_queue(0,0), ^{
-		NSData *data = [[NSData alloc] initWithContentsOfURL: url];
-		if (data) {
-			self.image = [UIImage imageWithData:data];
-		}
-	});
 }
 
 @end

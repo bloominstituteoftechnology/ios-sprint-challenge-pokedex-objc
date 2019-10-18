@@ -6,7 +6,7 @@
 //  Copyright © 2019 Lambda. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,7 +17,7 @@ NS_SWIFT_NAME(PokeDetails)
 @property (copy) NSString * name;
 @property double height;
 @property double weight;
-@property UIImage *image;
+@property NSURL *imageUrl;
 @property (copy) NSArray<NSString *> * abilities;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;

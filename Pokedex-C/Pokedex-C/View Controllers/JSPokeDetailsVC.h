@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class PokeController;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSPokeDetailsVC : UIViewController
+
+@property PokeController *pokecontroller;
+@property (copy) NSString *pokeName;
 
 @end
 

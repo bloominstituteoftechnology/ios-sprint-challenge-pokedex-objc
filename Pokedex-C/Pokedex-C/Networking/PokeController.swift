@@ -11,7 +11,7 @@ import Foundation
 @objc class PokeController: NSObject {
 	
 	private let baseUrl = URL(string: "https://pokeapi.co/api/v2/pokemon")!
-	@objc var pokeList = [JSPokeLink]()
+	@objc var pokeList = [PokeLink]()
 	
 	@objc func getPokeList(completion: @escaping (Bool) -> Void) {
 		
@@ -40,7 +40,7 @@ import Foundation
 				if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
 					if let list = json["results"] as? [[String:String]] {
 						for pokemon in list {
-							self.pokeList.append(JSPokeLink(dict: pokemon))
+							self.pokeList.append(PokeLink(dict: pokemon))
 						}
 						completion(true)
 					}
@@ -51,10 +51,10 @@ import Foundation
 		}.resume()
 	}
 	
-	@objc func getPokeDetails(from pokeName: String, completion: @escaping (JSPokeLink?) -> Void) {
+	@objc func getPokeDetails(from pokeName: String, completion: @escaping (PokeDetails?) -> Void) {
 		
 		var urlComponents = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)
-		urlComponents?.path.append(contentsOf: pokeName)
+		urlComponents?.path.append(contentsOf: "/\(pokeName)")
 		
 		guard let detailsUrl = urlComponents?.url else { return }
 		
@@ -75,7 +75,10 @@ import Foundation
 			}
 			
 			do {
-				completion(nil)
+				if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+					let pokemon = PokeDetails(dict: json)
+					completion(pokemon)
+				}
 			} catch {
 				completion(nil)
 			}

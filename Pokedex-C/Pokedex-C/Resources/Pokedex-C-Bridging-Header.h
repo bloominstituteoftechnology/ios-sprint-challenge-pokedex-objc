@@ -3,3 +3,4 @@
 //
 
 #import "JSPokeLink.h"
+#import "JSPokeDetails.h"

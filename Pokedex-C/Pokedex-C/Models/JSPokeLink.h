@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(PokeLink)
 @interface JSPokeLink : NSObject
 
 @property (copy) NSString *name;
