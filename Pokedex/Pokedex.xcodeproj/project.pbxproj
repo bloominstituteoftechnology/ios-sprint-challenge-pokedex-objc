@@ -17,7 +17,7 @@
 		33B01D05235A1E0C0060ED31 /* REPPokeman.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B01D04235A1E0C0060ED31 /* REPPokeman.m */; };
 		33B01D08235A1FE20060ED31 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B01D07235A1FE20060ED31 /* PokemonAPI.swift */; };
 		33B01D0B235A21520060ED31 /* REPPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B01D0A235A21520060ED31 /* REPPokemonController.m */; };
-		33B01D0E235A22180060ED31 /* REPPokemonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B01D0D235A22180060ED31 /* REPPokemonInfoViewController.m */; };
+		33B01D10235A30330060ED31 /* PokemonInfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B01D0F235A30330060ED31 /* PokemonInfoDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +38,7 @@
 		33B01D07235A1FE20060ED31 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 		33B01D09235A21520060ED31 /* REPPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REPPokemonController.h; sourceTree = "<group>"; };
 		33B01D0A235A21520060ED31 /* REPPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPPokemonController.m; sourceTree = "<group>"; };
-		33B01D0C235A22180060ED31 /* REPPokemonInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REPPokemonInfoViewController.h; sourceTree = "<group>"; };
-		33B01D0D235A22180060ED31 /* REPPokemonInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPPokemonInfoViewController.m; sourceTree = "<group>"; };
+		33B01D0F235A30330060ED31 /* PokemonInfoDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +100,7 @@
 			children = (
 				33B01CC5235A14940060ED31 /* REPPokedexViewController.h */,
 				33B01CC6235A14940060ED31 /* REPPokedexViewController.m */,
-				33B01D0C235A22180060ED31 /* REPPokemonInfoViewController.h */,
-				33B01D0D235A22180060ED31 /* REPPokemonInfoViewController.m */,
+				33B01D0F235A30330060ED31 /* PokemonInfoDetailVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -201,9 +199,9 @@
 			files = (
 				33B01CC7235A14940060ED31 /* REPPokedexViewController.m in Sources */,
 				33B01CC1235A14940060ED31 /* AppDelegate.m in Sources */,
-				33B01D0E235A22180060ED31 /* REPPokemonInfoViewController.m in Sources */,
 				33B01CD2235A14950060ED31 /* main.m in Sources */,
 				33B01D08235A1FE20060ED31 /* PokemonAPI.swift in Sources */,
+				33B01D10235A30330060ED31 /* PokemonInfoDetailVC.swift in Sources */,
 				33B01D05235A1E0C0060ED31 /* REPPokeman.m in Sources */,
 				33B01D0B235A21520060ED31 /* REPPokemonController.m in Sources */,
 			);
