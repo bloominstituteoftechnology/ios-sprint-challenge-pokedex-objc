@@ -13,6 +13,7 @@
 		33B01CCC235A14950060ED31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33B01CCB235A14950060ED31 /* Assets.xcassets */; };
 		33B01CCF235A14950060ED31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33B01CCD235A14950060ED31 /* LaunchScreen.storyboard */; };
 		33B01CD2235A14950060ED31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B01CD1235A14950060ED31 /* main.m */; };
+		33B01CD9235A15250060ED31 /* Manual-Reference-Counting.md in Resources */ = {isa = PBXBuildFile; fileRef = 33B01CD8235A15250060ED31 /* Manual-Reference-Counting.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		33B01CCE235A14950060ED31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33B01CD0235A14950060ED31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33B01CD1235A14950060ED31 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		33B01CD8235A15250060ED31 /* Manual-Reference-Counting.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "Manual-Reference-Counting.md"; path = "../Manual-Reference-Counting.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		33B01CB3235A14940060ED31 = {
 			isa = PBXGroup;
 			children = (
+				33B01CD8235A15250060ED31 /* Manual-Reference-Counting.md */,
 				33B01CBE235A14940060ED31 /* Pokedex */,
 				33B01CBD235A14940060ED31 /* Products */,
 			);
@@ -129,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33B01CCF235A14950060ED31 /* LaunchScreen.storyboard in Resources */,
+				33B01CD9235A15250060ED31 /* Manual-Reference-Counting.md in Resources */,
 				33B01CCC235A14950060ED31 /* Assets.xcassets in Resources */,
 				33B01CCA235A14940060ED31 /* Main.storyboard in Resources */,
 			);
