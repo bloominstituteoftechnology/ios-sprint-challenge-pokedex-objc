@@ -82,12 +82,12 @@ static void *detailsContext = &detailsContext;
 	if (self.pokemon) {
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.title = [self.pokemon.name capitalizedString];
-			self.idLbl.text = [NSString stringWithFormat:@"ID: %d", self.pokemon.id];
-			self.heightLbl.text = [NSString stringWithFormat:@"Height: %.2f", [self convertHeightFromDecimetres:self.pokemon.height]];
-			self.weightLbl.text = [NSString stringWithFormat:@"Weight: %.2f", [self convertWeightFromHexagram:self.pokemon.weight]];
+			self.idLbl.text = [NSString stringWithFormat:@"%d", self.pokemon.id];
+			self.heightLbl.text = [NSString stringWithFormat:@"%.2f", [self convertHeightFromDecimetres:self.pokemon.height]];
+			self.weightLbl.text = [NSString stringWithFormat:@"%.2f", [self convertWeightFromHexagram:self.pokemon.weight]];
 			
 			NSString *abilities = [self.pokemon.abilities componentsJoinedByString:@", "];
-			self.abilitiesLbl.text = [NSString stringWithFormat:@"Abilities: %@", [abilities capitalizedString]];
+			self.abilitiesLbl.text = [NSString stringWithFormat:@"%@", [abilities capitalizedString]];
 			//	self.description.text = pokemon.description;
 		});
 		[self getImageFromUrl:self.pokemon.imageUrl];
