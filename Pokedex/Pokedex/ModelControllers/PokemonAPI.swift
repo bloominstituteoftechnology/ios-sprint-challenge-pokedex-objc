@@ -79,7 +79,6 @@ class PokemonAPI: NSObject {
 				var abilityStrings = [String]()
 				let abilitiesInfo = jsonDict?["abilities"] as? [[String: Any]]
 				for abilityInfo in abilitiesInfo ?? [] {
-					print(abilityInfo)
 					let deeperAbility = abilityInfo["ability"] as? [String: Any]
 					guard let name = deeperAbility?["name"] as? String else { continue }
 					abilityStrings.append(name)
