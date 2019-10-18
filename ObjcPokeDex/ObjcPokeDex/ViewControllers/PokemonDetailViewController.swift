@@ -47,7 +47,8 @@ class PokemonDetailViewController: UIViewController {
         pokeIDObservation = pokemon?.observe(\.id,options: [.old, .new], changeHandler: { (object, change) in
             print("from: \(String(describing: change.oldValue)) to \(String(describing: change.newValue))")
             DispatchQueue.main.async {
-                self.pokeID.text = "\(String(describing: self.pokemon!.id))"
+                guard let poke = self.pokemon, let id = poke.id else {return}
+                self.pokeID.text = "\(id)"
             }
         })
         
