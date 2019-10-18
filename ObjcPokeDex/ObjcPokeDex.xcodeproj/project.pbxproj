@@ -16,6 +16,7 @@
 		EF85B1B2235A0E0A0044E13D /* LSIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = EF85B1B1235A0E0A0044E13D /* LSIPokemon.m */; };
 		EF85B1BA235A0FF30044E13D /* ObjcPokeDexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF85B1B9235A0FF30044E13D /* ObjcPokeDexTests.m */; };
 		EF85B1C2235A10160044E13D /* PokeNameAndURL.json in Resources */ = {isa = PBXBuildFile; fileRef = EF85B1C1235A10160044E13D /* PokeNameAndURL.json */; };
+		EF85B1C4235A10650044E13D /* PokeInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = EF85B1C3235A10650044E13D /* PokeInfo.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		EF85B1B9235A0FF30044E13D /* ObjcPokeDexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcPokeDexTests.m; sourceTree = "<group>"; };
 		EF85B1BB235A0FF30044E13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF85B1C1235A10160044E13D /* PokeNameAndURL.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PokeNameAndURL.json; sourceTree = "<group>"; };
+		EF85B1C3235A10650044E13D /* PokeInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PokeInfo.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				EF85B1B9235A0FF30044E13D /* ObjcPokeDexTests.m */,
+				EF85B1C3235A10650044E13D /* PokeInfo.json */,
 				EF85B1C1235A10160044E13D /* PokeNameAndURL.json */,
 				EF85B1BB235A0FF30044E13D /* Info.plist */,
 			);
@@ -201,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF85B1C4235A10650044E13D /* PokeInfo.json in Resources */,
 				EF85B1C2235A10160044E13D /* PokeNameAndURL.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
