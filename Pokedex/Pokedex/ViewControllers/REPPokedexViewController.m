@@ -9,6 +9,7 @@
 #import "REPPokedexViewController.h"
 #import "REPPokemonController.h"
 #import "REPPokeman.h"
+#import "Pokedex-Swift.h"
 
 @interface REPPokedexViewController ()
 
@@ -27,6 +28,15 @@
 		});
 	}];
 
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([segue.identifier isEqualToString:@"ShowPokemonInfo"]) {
+		PokemonInfoDetailVC *detailVC = segue.destinationViewController;
+		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+		REPPokeman *pokemon = self.pokeController.pokemans[indexPath.row];
+		detailVC.pokeman = pokemon;
+	}
 }
 
 
