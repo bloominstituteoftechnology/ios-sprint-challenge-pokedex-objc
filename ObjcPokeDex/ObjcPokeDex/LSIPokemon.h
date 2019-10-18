@@ -17,8 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonnull) NSString *pokeInfoURL;
 @property (nullable) NSMutableArray<NSString *> *abilites;
 @property (nullable) NSString *spriteURLString;
-
-
+-(instancetype)initDictionaryToGetNameAndURL:(nullable NSDictionary *)dictionary;
+-(instancetype)initWithName:(NSString *)name
+       pokeID:(nullable NSNumber*)ID
+       pokeInforURL:(NSString *)url
+pokeAbilities:(nullable NSMutableArray<NSString *> *)abilities
+   andSprites:(nullable NSString *)spriteURLString;
 @end
 
 NS_ASSUME_NONNULL_END
