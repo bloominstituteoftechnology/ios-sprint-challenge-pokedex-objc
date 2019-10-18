@@ -15,7 +15,8 @@ class PokemonAPI: NSObject {
     @objc(sharedController) static let shared = PokemonAPI()
 
 	@objc func fetchAllPokemon(completion: @escaping ([Pokeman]?, Error?) -> Void) {
-		var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: false)
+		let allPokemonURL = baseURL.appendingPathComponent("pokemon")
+		var components = URLComponents(url: allPokemonURL, resolvingAgainstBaseURL: false)
 		components?.queryItems = [
 			URLQueryItem(name: "offset", value: "0"),
 			URLQueryItem(name: "limit", value: "1000")
