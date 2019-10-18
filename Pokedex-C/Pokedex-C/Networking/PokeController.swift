@@ -7,9 +7,78 @@
 //
 
 import Foundation
-/*
-Multiple commands produce '/Users/santana/Library/Developer/Xcode/DerivedData/Pokedex-C-eqihdnyemsmxpmemzowaprmwbrip/Build/Products/Debug-iphonesimulator/Pokedex-C.app/Info.plist':
-1) Target 'Pokedex-C' (project 'Pokedex-C') has copy command from '/Users/santana/Desktop/Lambda/Unit4/Build Week/ios-sprint-challenge-pokedex-objc/Pokedex-C/Pokedex-C/Info.plist' to '/Users/santana/Library/Developer/Xcode/DerivedData/Pokedex-C-eqihdnyemsmxpmemzowaprmwbrip/Build/Products/Debug-iphonesimulator/Pokedex-C.app/Info.plist'
-2) Target 'Pokedex-C' (project 'Pokedex-C') has process command with output '/Users/santana/Library/Developer/Xcode/DerivedData/Pokedex-C-eqihdnyemsmxpmemzowaprmwbrip/Build/Products/Debug-iphonesimulator/Pokedex-C.app/Info.plist'
 
-*/
+@objc class PokeController: NSObject {
+	
+	private let baseUrl = URL(string: "https://pokeapi.co/api/v2/pokemon")!
+	@objc var pokeList = [JSPokeLink]()
+	
+	@objc func getPokeList(completion: @escaping (Bool) -> Void) {
+		
+		var urlComponents = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)
+		urlComponents?.queryItems = [URLQueryItem(name: "limit", value: "964")]
+		
+		guard let detailsUrl = urlComponents?.url else { return }
+		
+		URLSession.shared.dataTask(with: detailsUrl) { (data, response, error) in
+			if let error = error {
+				if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+					NSLog("Error: status code is \(response.statusCode) instead of 200.")
+				}
+				NSLog("Error creating user: \(error)")
+				completion(false)
+				return
+			}
+			
+			guard let data = data else {
+				NSLog("No data was returned")
+				completion(false)
+				return
+			}
+			
+			do {
+				if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+					if let list = json["results"] as? [[String:String]] {
+						for pokemon in list {
+							self.pokeList.append(JSPokeLink(dict: pokemon))
+						}
+						completion(true)
+					}
+				}
+			} catch {
+				completion(false)
+			}
+		}.resume()
+	}
+	
+	@objc func getPokeDetails(from pokeName: String, completion: @escaping (JSPokeLink?) -> Void) {
+		
+		var urlComponents = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)
+		urlComponents?.path.append(contentsOf: pokeName)
+		
+		guard let detailsUrl = urlComponents?.url else { return }
+		
+		URLSession.shared.dataTask(with: detailsUrl) { (data, response, error) in
+			if let error = error {
+				if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+					NSLog("Error: status code is \(response.statusCode) instead of 200.")
+				}
+				NSLog("Error creating user: \(error)")
+				completion(nil)
+				return
+			}
+			
+			guard let data = data else {
+				NSLog("No data was returned")
+				completion(nil)
+				return
+			}
+			
+			do {
+				completion(nil)
+			} catch {
+				completion(nil)
+			}
+		}.resume()
+	}
+}
