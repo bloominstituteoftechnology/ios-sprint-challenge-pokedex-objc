@@ -39,6 +39,7 @@ class PokemonAPI: NSObject {
                     completion(nil, NSError())
                     return
                 }
+                print(JSONDictionary)
                 self.nextURLString = JSONDictionary["next"] as? String
                 var pokemons: [BYPokemon] = []
                 if let pokemonDictionaries: Array = JSONDictionary["results"] as? Array<Dictionary<String, String>> {
@@ -57,7 +58,7 @@ class PokemonAPI: NSObject {
                 completion(nil, NSError())
                 return
             }
-        }
+        }.resume()
     }
 
     @objc func fillInDetails(for pokemon: BYPokemon) {
