@@ -51,7 +51,7 @@
         <!--Pokemon Detail View Controller-->
         <scene sceneID="te3-9N-72g">
             <objects>
-                <viewController id="G14-Wz-Ygf" customClass="PokemonDetailViewController" sceneMemberID="viewController">
+                <viewController id="G14-Wz-Ygf" customClass="PokemonDetailViewController" customModule="ObjcPokeDex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FFE-Ut-H7H">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
