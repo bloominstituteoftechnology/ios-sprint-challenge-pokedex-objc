@@ -15,6 +15,7 @@
 		B5327C9A235A21230075C118 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5327C95235A21220075C118 /* main.m */; };
 		B58DA171235A2C7100F110CA /* JSPokeLink.m in Sources */ = {isa = PBXBuildFile; fileRef = B58DA170235A2C7100F110CA /* JSPokeLink.m */; };
 		B58DA175235A367C00F110CA /* PokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5327C8E235A1EC30075C118 /* PokeController.swift */; };
+		B58DA178235A46B000F110CA /* JSPokeDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = B58DA177235A46B000F110CA /* JSPokeDetails.m */; };
 		B5C9A3E7235A12B9009AFA06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C9A3E5235A12B9009AFA06 /* Main.storyboard */; };
 		B5C9A3E9235A12BC009AFA06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5C9A3E8235A12BC009AFA06 /* Assets.xcassets */; };
 		B5C9A3EC235A12BC009AFA06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C9A3EA235A12BC009AFA06 /* LaunchScreen.storyboard */; };
@@ -46,6 +47,8 @@
 		B5327CA7235A21840075C118 /* Pokedex-C-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pokedex-C-Bridging-Header.h"; sourceTree = "<group>"; };
 		B58DA16F235A2C7100F110CA /* JSPokeLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSPokeLink.h; sourceTree = "<group>"; };
 		B58DA170235A2C7100F110CA /* JSPokeLink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSPokeLink.m; sourceTree = "<group>"; };
+		B58DA176235A46B000F110CA /* JSPokeDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSPokeDetails.h; sourceTree = "<group>"; };
+		B58DA177235A46B000F110CA /* JSPokeDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSPokeDetails.m; sourceTree = "<group>"; };
 		B5C9A3D9235A12B9009AFA06 /* Pokedex-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C9A3E6235A12B9009AFA06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5C9A3E8235A12BC009AFA06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 			children = (
 				B58DA16F235A2C7100F110CA /* JSPokeLink.h */,
 				B58DA170235A2C7100F110CA /* JSPokeLink.m */,
+				B58DA176235A46B000F110CA /* JSPokeDetails.h */,
+				B58DA177235A46B000F110CA /* JSPokeDetails.m */,
 			);
 			name = Models;
 			path = "/Users/santana/Desktop/Lambda/Unit4/Build Week/ios-sprint-challenge-pokedex-objc/Pokedex-C/Pokedex-C/Models";
@@ -303,6 +308,7 @@
 				B5327C99235A21230075C118 /* AppDelegate.m in Sources */,
 				B5327C8C235A1BBF0075C118 /* JSPokeDetailsVC.m in Sources */,
 				B5327C8F235A1EC30075C118 /* PokeController.swift in Sources */,
+				B58DA178235A46B000F110CA /* JSPokeDetails.m in Sources */,
 				B5327C9A235A21230075C118 /* main.m in Sources */,
 				B58DA171235A2C7100F110CA /* JSPokeLink.m in Sources */,
 				B5327C89235A1BA40075C118 /* JSPokeListVC.m in Sources */,
