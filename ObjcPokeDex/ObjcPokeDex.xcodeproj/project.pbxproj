@@ -14,7 +14,19 @@
 		EF85B1A7235A0BE70044E13D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF85B1A5235A0BE70044E13D /* LaunchScreen.storyboard */; };
 		EF85B1AA235A0BE70044E13D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF85B1A9235A0BE70044E13D /* main.m */; };
 		EF85B1B2235A0E0A0044E13D /* LSIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = EF85B1B1235A0E0A0044E13D /* LSIPokemon.m */; };
+		EF85B1BA235A0FF30044E13D /* ObjcPokeDexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF85B1B9235A0FF30044E13D /* ObjcPokeDexTests.m */; };
+		EF85B1C2235A10160044E13D /* PokeNameAndURL.json in Resources */ = {isa = PBXBuildFile; fileRef = EF85B1C1235A10160044E13D /* PokeNameAndURL.json */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF85B1BC235A0FF30044E13D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF85B18C235A0BD70044E13D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF85B193235A0BD80044E13D;
+			remoteInfo = ObjcPokeDex;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		EF85B194235A0BD80044E13D /* ObjcPokeDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjcPokeDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,10 +41,21 @@
 		EF85B1A9235A0BE70044E13D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF85B1B0235A0E0A0044E13D /* LSIPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIPokemon.h; sourceTree = "<group>"; };
 		EF85B1B1235A0E0A0044E13D /* LSIPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemon.m; sourceTree = "<group>"; };
+		EF85B1B7235A0FF30044E13D /* ObjcPokeDexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjcPokeDexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF85B1B9235A0FF30044E13D /* ObjcPokeDexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcPokeDexTests.m; sourceTree = "<group>"; };
+		EF85B1BB235A0FF30044E13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF85B1C1235A10160044E13D /* PokeNameAndURL.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PokeNameAndURL.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EF85B191235A0BD80044E13D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF85B1B4235A0FF30044E13D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				EF85B196235A0BD80044E13D /* ObjcPokeDex */,
+				EF85B1B8235A0FF30044E13D /* ObjcPokeDexTests */,
 				EF85B195235A0BD80044E13D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				EF85B194235A0BD80044E13D /* ObjcPokeDex.app */,
+				EF85B1B7235A0FF30044E13D /* ObjcPokeDexTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +101,16 @@
 			path = ObjcPokeDex;
 			sourceTree = "<group>";
 		};
+		EF85B1B8235A0FF30044E13D /* ObjcPokeDexTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF85B1B9235A0FF30044E13D /* ObjcPokeDexTests.m */,
+				EF85B1C1235A10160044E13D /* PokeNameAndURL.json */,
+				EF85B1BB235A0FF30044E13D /* Info.plist */,
+			);
+			path = ObjcPokeDexTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,6 +131,24 @@
 			productReference = EF85B194235A0BD80044E13D /* ObjcPokeDex.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EF85B1B6235A0FF30044E13D /* ObjcPokeDexTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF85B1BE235A0FF30044E13D /* Build configuration list for PBXNativeTarget "ObjcPokeDexTests" */;
+			buildPhases = (
+				EF85B1B3235A0FF30044E13D /* Sources */,
+				EF85B1B4235A0FF30044E13D /* Frameworks */,
+				EF85B1B5235A0FF30044E13D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF85B1BD235A0FF30044E13D /* PBXTargetDependency */,
+			);
+			name = ObjcPokeDexTests;
+			productName = ObjcPokeDexTests;
+			productReference = EF85B1B7235A0FF30044E13D /* ObjcPokeDexTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -107,6 +160,10 @@
 				TargetAttributes = {
 					EF85B193235A0BD80044E13D = {
 						CreatedOnToolsVersion = 11.0;
+					};
+					EF85B1B6235A0FF30044E13D = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = EF85B193235A0BD80044E13D;
 					};
 				};
 			};
@@ -124,6 +181,7 @@
 			projectRoot = "";
 			targets = (
 				EF85B193235A0BD80044E13D /* ObjcPokeDex */,
+				EF85B1B6235A0FF30044E13D /* ObjcPokeDexTests */,
 			);
 		};
 /* End PBXProject section */
@@ -136,6 +194,14 @@
 				EF85B1A7235A0BE70044E13D /* LaunchScreen.storyboard in Resources */,
 				EF85B1A4235A0BE60044E13D /* Assets.xcassets in Resources */,
 				EF85B1A2235A0BD80044E13D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF85B1B5235A0FF30044E13D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF85B1C2235A10160044E13D /* PokeNameAndURL.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +219,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EF85B1B3235A0FF30044E13D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF85B1BA235A0FF30044E13D /* ObjcPokeDexTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF85B1BD235A0FF30044E13D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF85B193235A0BD80044E13D /* ObjcPokeDex */;
+			targetProxy = EF85B1BC235A0FF30044E13D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EF85B1A0235A0BD80044E13D /* Main.storyboard */ = {
@@ -319,6 +401,44 @@
 			};
 			name = Release;
 		};
+		EF85B1BF235A0FF30044E13D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
+				INFOPLIST_FILE = ObjcPokeDexTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.luqmaankhan.ObjcPokeDexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ObjcPokeDex.app/ObjcPokeDex";
+			};
+			name = Debug;
+		};
+		EF85B1C0235A0FF30044E13D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
+				INFOPLIST_FILE = ObjcPokeDexTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.luqmaankhan.ObjcPokeDexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ObjcPokeDex.app/ObjcPokeDex";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -336,6 +456,15 @@
 			buildConfigurations = (
 				EF85B1AE235A0BE70044E13D /* Debug */,
 				EF85B1AF235A0BE70044E13D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF85B1BE235A0FF30044E13D /* Build configuration list for PBXNativeTarget "ObjcPokeDexTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF85B1BF235A0FF30044E13D /* Debug */,
+				EF85B1C0235A0FF30044E13D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
