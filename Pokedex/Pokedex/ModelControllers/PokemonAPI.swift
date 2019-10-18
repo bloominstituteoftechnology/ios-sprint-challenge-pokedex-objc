@@ -19,7 +19,7 @@ class PokemonAPI: NSObject {
 		var components = URLComponents(url: allPokemonURL, resolvingAgainstBaseURL: false)
 		components?.queryItems = [
 			URLQueryItem(name: "offset", value: "0"),
-			URLQueryItem(name: "limit", value: "1000")
+			URLQueryItem(name: "limit", value: "807")
 		]
 		guard let url = components?.url else { fatalError("couldn't construct URL") }
 

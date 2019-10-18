@@ -10,6 +10,10 @@
 
 @implementation REPPokeman
 
+- (NSString *)name {
+	return [_name capitalizedString];
+}
+
 - (instancetype)initWithName:(NSString *)name infoURL:(NSURL *)url {
 	if (self = [super init]) {
 		_name = name;
