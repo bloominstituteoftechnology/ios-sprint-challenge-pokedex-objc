@@ -15,6 +15,8 @@
 		753C1023235A107F0062BEB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 753C1022235A107F0062BEB4 /* main.m */; };
 		753C102B235A13480062BEB4 /* BYPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 753C102A235A13480062BEB4 /* BYPokemon.m */; };
 		753C102E235A166B0062BEB4 /* PokeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C102D235A166B0062BEB4 /* PokeAPI.swift */; };
+		753C1033235A1D9B0062BEB4 /* PokedexTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C1032235A1D9B0062BEB4 /* PokedexTableViewController.swift */; };
+		753C1035235A1DB30062BEB4 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C1034235A1DB30062BEB4 /* PokemonDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		753C102A235A13480062BEB4 /* BYPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYPokemon.m; sourceTree = "<group>"; };
 		753C102C235A166A0062BEB4 /* pokedex-objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pokedex-objc-Bridging-Header.h"; sourceTree = "<group>"; };
 		753C102D235A166B0062BEB4 /* PokeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeAPI.swift; sourceTree = "<group>"; };
+		753C1032235A1D9B0062BEB4 /* PokedexTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexTableViewController.swift; sourceTree = "<group>"; };
+		753C1034235A1DB30062BEB4 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 				753C102A235A13480062BEB4 /* BYPokemon.m */,
 				753C102D235A166B0062BEB4 /* PokeAPI.swift */,
 				753C102C235A166A0062BEB4 /* pokedex-objc-Bridging-Header.h */,
+				753C1032235A1D9B0062BEB4 /* PokedexTableViewController.swift */,
+				753C1034235A1DB30062BEB4 /* PokemonDetailViewController.swift */,
 			);
 			path = "pokedex-objc";
 			sourceTree = "<group>";
@@ -152,7 +158,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753C1033235A1D9B0062BEB4 /* PokedexTableViewController.swift in Sources */,
 				753C102B235A13480062BEB4 /* BYPokemon.m in Sources */,
+				753C1035235A1DB30062BEB4 /* PokemonDetailViewController.swift in Sources */,
 				753C1012235A107C0062BEB4 /* AppDelegate.m in Sources */,
 				753C102E235A166B0062BEB4 /* PokeAPI.swift in Sources */,
 				753C1023235A107F0062BEB4 /* main.m in Sources */,
