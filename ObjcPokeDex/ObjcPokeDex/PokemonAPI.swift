@@ -9,9 +9,9 @@
 import UIKit
 
 class PokemonAPI: NSObject {
-
+    
     @objc(sharedController) static let shared = PokemonAPI()
-   
+    
     let baseURL = URL(string: "https://pokeapi.co/api/v2")!
     
     @objc func fetchAllPokemon(completion: @escaping ([LSIPokemon]?, Error?) -> Void) {
