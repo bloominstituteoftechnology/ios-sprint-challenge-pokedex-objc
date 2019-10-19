@@ -61,7 +61,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
 
     MJRPokemon *pokemon = self.pokeController.allPokemon[indexPath.row];
-    cell.textLabel.text = pokemon.name;
+    cell.textLabel.text = pokemon.name.capitalizedString;
     
     return cell;
 }

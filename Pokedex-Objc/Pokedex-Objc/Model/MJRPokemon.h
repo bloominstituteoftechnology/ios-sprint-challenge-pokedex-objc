@@ -23,7 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithName:(NSString *)name andURLString:(NSString *)urlString;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 - (void)getAbilitiesAsString:(NSArray *)array;
-- (void)updateDetails:(NSDictionary *)jsonDict;
 
 @end
 

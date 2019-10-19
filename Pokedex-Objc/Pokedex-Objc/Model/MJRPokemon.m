@@ -33,12 +33,6 @@
     return self;
 }
 
-- (void)updateDetails:(NSDictionary *)jsonDict {
-    _pokemonID = jsonDict[@"id"];
-    _pokemonURL = jsonDict[@"sprites"][@"front_default"];
-    [self getAbilitiesAsString:jsonDict[@"abilities"]];
-}
-
 - (void)getAbilitiesAsString:(NSArray *)array {
 
     NSMutableArray<NSString *> *abilities = [@[] mutableCopy];

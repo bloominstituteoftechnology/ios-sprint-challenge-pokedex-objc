@@ -48,9 +48,9 @@
 - (void)updateViews {
     dispatch_async(dispatch_get_main_queue(), ^{
         self.imageView.image = self.pokemon.pokemonSprite;
-        self.nameLabel.text = self.pokemon.name;
+        self.nameLabel.text = self.pokemon.name.capitalizedString;
         if (self.pokemon.abilities) {
-            self.abilitiesLabel.text = self.pokemon.abilities;
+            self.abilitiesLabel.text = self.pokemon.abilities.capitalizedString;
         } else {
             self.abilitiesLabel.text = @"No abilities";
         }
