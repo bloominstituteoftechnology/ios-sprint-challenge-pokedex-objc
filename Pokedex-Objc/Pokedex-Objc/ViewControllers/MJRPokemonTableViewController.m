@@ -36,9 +36,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.tableFooterView = [UIView new];
-//    NSMutableArray *array = [@[@"Pikachu", @"Bulbasaur", @"Eevee"] mutableCopy];
-//    _pokeArray = array;
-
     [self.pokeController fetchAllPokemonWithCompletion:^(NSArray<MJRPokemon *> * _Nullable array, NSError * _Nullable error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"%lu", array.count);
