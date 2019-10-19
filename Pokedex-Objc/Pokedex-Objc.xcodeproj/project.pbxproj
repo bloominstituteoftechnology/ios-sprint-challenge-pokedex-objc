@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		37282C1E235A11E400D596B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37282C1D235A11E400D596B3 /* AppDelegate.m */; };
 		37282C21235A11E400D596B3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37282C20235A11E400D596B3 /* SceneDelegate.m */; };
-		37282C24235A11E400D596B3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37282C23235A11E400D596B3 /* ViewController.m */; };
 		37282C27235A11E400D596B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37282C25235A11E400D596B3 /* Main.storyboard */; };
 		37282C29235A11E500D596B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37282C28235A11E500D596B3 /* Assets.xcassets */; };
 		37282C2C235A11E500D596B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37282C2A235A11E500D596B3 /* LaunchScreen.storyboard */; };
 		37282C2F235A11E500D596B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37282C2E235A11E500D596B3 /* main.m */; };
+		37282C3A235A165E00D596B3 /* MJRPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37282C39235A165E00D596B3 /* MJRPokemonTableViewController.m */; };
+		37282C3D235A168900D596B3 /* MJRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37282C3C235A168900D596B3 /* MJRDetailViewController.m */; };
+		37282C41235A204D00D596B3 /* MJRPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 37282C40235A204D00D596B3 /* MJRPokemon.m */; };
+		37282C45235A20D000D596B3 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282C44235A20D000D596B3 /* PokemonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +25,19 @@
 		37282C1D235A11E400D596B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		37282C1F235A11E400D596B3 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		37282C20235A11E400D596B3 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		37282C22235A11E400D596B3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		37282C23235A11E400D596B3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		37282C26235A11E400D596B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37282C28235A11E500D596B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37282C2B235A11E500D596B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37282C2D235A11E500D596B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37282C2E235A11E500D596B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		37282C38235A165E00D596B3 /* MJRPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJRPokemonTableViewController.h; sourceTree = "<group>"; };
+		37282C39235A165E00D596B3 /* MJRPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJRPokemonTableViewController.m; sourceTree = "<group>"; };
+		37282C3B235A168900D596B3 /* MJRDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJRDetailViewController.h; sourceTree = "<group>"; };
+		37282C3C235A168900D596B3 /* MJRDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJRDetailViewController.m; sourceTree = "<group>"; };
+		37282C3F235A204D00D596B3 /* MJRPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJRPokemon.h; sourceTree = "<group>"; };
+		37282C40235A204D00D596B3 /* MJRPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJRPokemon.m; sourceTree = "<group>"; };
+		37282C43235A20D000D596B3 /* Pokedex-Objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Objc-Bridging-Header.h"; sourceTree = "<group>"; };
+		37282C44235A20D000D596B3 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,19 +70,65 @@
 		37282C1B235A11E400D596B3 /* Pokedex-Objc */ = {
 			isa = PBXGroup;
 			children = (
-				37282C1C235A11E400D596B3 /* AppDelegate.h */,
-				37282C1D235A11E400D596B3 /* AppDelegate.m */,
-				37282C1F235A11E400D596B3 /* SceneDelegate.h */,
-				37282C20235A11E400D596B3 /* SceneDelegate.m */,
-				37282C22235A11E400D596B3 /* ViewController.h */,
-				37282C23235A11E400D596B3 /* ViewController.m */,
-				37282C25235A11E400D596B3 /* Main.storyboard */,
+				37282C42235A205600D596B3 /* ModelController */,
+				37282C3E235A203400D596B3 /* Model */,
+				37282C35235A147800D596B3 /* ViewControllers */,
+				37282C36235A148700D596B3 /* Storyboards */,
+				37282C37235A149B00D596B3 /* Resources */,
 				37282C28235A11E500D596B3 /* Assets.xcassets */,
-				37282C2A235A11E500D596B3 /* LaunchScreen.storyboard */,
 				37282C2D235A11E500D596B3 /* Info.plist */,
 				37282C2E235A11E500D596B3 /* main.m */,
 			);
 			path = "Pokedex-Objc";
+			sourceTree = "<group>";
+		};
+		37282C35235A147800D596B3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				37282C38235A165E00D596B3 /* MJRPokemonTableViewController.h */,
+				37282C39235A165E00D596B3 /* MJRPokemonTableViewController.m */,
+				37282C3B235A168900D596B3 /* MJRDetailViewController.h */,
+				37282C3C235A168900D596B3 /* MJRDetailViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		37282C36235A148700D596B3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				37282C25235A11E400D596B3 /* Main.storyboard */,
+				37282C2A235A11E500D596B3 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		37282C37235A149B00D596B3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				37282C1C235A11E400D596B3 /* AppDelegate.h */,
+				37282C1D235A11E400D596B3 /* AppDelegate.m */,
+				37282C1F235A11E400D596B3 /* SceneDelegate.h */,
+				37282C20235A11E400D596B3 /* SceneDelegate.m */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		37282C3E235A203400D596B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37282C3F235A204D00D596B3 /* MJRPokemon.h */,
+				37282C40235A204D00D596B3 /* MJRPokemon.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		37282C42235A205600D596B3 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				37282C44235A20D000D596B3 /* PokemonAPI.swift */,
+				37282C43235A20D000D596B3 /* Pokedex-Objc-Bridging-Header.h */,
+			);
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,11 +157,13 @@
 		37282C11235A11E400D596B3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MJR;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Marlon Raskin";
 				TargetAttributes = {
 					37282C18235A11E400D596B3 = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -146,10 +203,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37282C24235A11E400D596B3 /* ViewController.m in Sources */,
 				37282C1E235A11E400D596B3 /* AppDelegate.m in Sources */,
+				37282C41235A204D00D596B3 /* MJRPokemon.m in Sources */,
 				37282C2F235A11E500D596B3 /* main.m in Sources */,
+				37282C45235A20D000D596B3 /* PokemonAPI.swift in Sources */,
+				37282C3D235A168900D596B3 /* MJRDetailViewController.m in Sources */,
 				37282C21235A11E400D596B3 /* SceneDelegate.m in Sources */,
+				37282C3A235A165E00D596B3 /* MJRPokemonTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6VB3396MT;
 				INFOPLIST_FILE = "Pokedex-Objc/Info.plist";
@@ -298,6 +359,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marlonraskin.Pokedex-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex-Objc/ModelController/Pokedex-Objc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -306,6 +370,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6VB3396MT;
 				INFOPLIST_FILE = "Pokedex-Objc/Info.plist";
@@ -315,6 +380,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marlonraskin.Pokedex-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex-Objc/ModelController/Pokedex-Objc-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
