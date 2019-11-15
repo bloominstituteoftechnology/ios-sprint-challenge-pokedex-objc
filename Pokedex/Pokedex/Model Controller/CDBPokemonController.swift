@@ -16,7 +16,7 @@ import UIKit
     
     typealias CompletionHandler = (Error?) -> Void
     
-// MARK: Get all pokemons
+    // MARK: Get all pokemons
     
     @objc func fetchPokemons(completion: @escaping CompletionHandler) {
         URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
@@ -48,6 +48,8 @@ import UIKit
         }.resume()
     }
     
+    // MARK: Get pokemon details
+
 
     
     
