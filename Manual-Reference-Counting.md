@@ -58,24 +58,31 @@ Answer the following questions inline with this document.
 2. Which of these objects is autoreleased?  Why?
 
 	1. `NSDate *yesterday = [NSDate date];`
+	
 	`// Autorelease (convenience function)`
 
 	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];`
+	
 	`// Autorelease (convenience function)`
 	
 	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];`
+	
 	`// No (Rule #1: object that starts with alloc/init)`
 	
 	4. `NSDate *food = [NSDate new];`
+	
 	`// No (Rule #1: object that starts with new)`
 	
 	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];`
+	
 	`// No (Rule #1: object that starts with alloc/init)`
 	
 	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];`
+	
 	`// Autorelease (released at the end)`
 
 3. Explain when you need to use the `NSAutoreleasePool`.
+
 For when you have to loop over big objects, such as images. Looping over images would cause a high increase in memory. By using `@autoreleasepool` it creates an autorelease for each iteration, and then releases at the end of each iteration.
 
 
