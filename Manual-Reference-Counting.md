@@ -59,27 +59,27 @@ Answer the following questions inline with this document.
 
 	1. `NSDate *yesterday = [NSDate date];`
 	
-	`// Autorelease (convenience function)`
+	Autorelease (convenience function)
 
 	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];`
 	
-	`// Autorelease (convenience function)`
+	Autorelease (convenience function)
 	
 	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];`
 	
-	`// No (Rule #1: object that starts with alloc/init)`
+	No (Rule #1: object that starts with alloc/init)
 	
 	4. `NSDate *food = [NSDate new];`
 	
-	`// No (Rule #1: object that starts with new)`
+	No (Rule #1: object that starts with new)
 	
 	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];`
 	
-	`// No (Rule #1: object that starts with alloc/init)`
+	No (Rule #1: object that starts with alloc/init)
 	
 	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];`
 	
-	`// Autorelease (released at the end)`
+	Autorelease (released at the end)
 
 3. Explain when you need to use the `NSAutoreleasePool`.
 
