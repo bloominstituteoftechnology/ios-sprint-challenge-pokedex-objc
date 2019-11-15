@@ -45,5 +45,11 @@ class JLCPokemonDetailViewController: UIViewController {
     private func updateViews() {
         guard let pokemon = pokemon else { return }
         nameLabel.text = "Name: \(pokemon.name)"
+        idLabel.text = "ID: \(pokemon.identifier)"
+        var abilitiesString = ""
+        for ability in pokemon.abilities {
+            abilitiesString.append(contentsOf: ability)
+        }
+        abilitiesTextView.text = abilitiesString
     }
 }

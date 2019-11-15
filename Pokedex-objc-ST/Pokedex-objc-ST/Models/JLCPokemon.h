@@ -13,8 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JLCPokemon : NSObject
 
 @property (nonatomic, copy, readonly) NSString *name;
+@property NSNumber *identifier;
+@property (nonatomic, copy, readonly) NSArray<NSString *> *abilities;
 
-- (instancetype)initWithName:(NSString *)name;
+
+- (instancetype)initWithName:(NSString *)name
+                  identifier:(NSNumber *)identifier
+                   abilities:(NSArray<NSString*> *)abilities;
 
 - (nullable instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
