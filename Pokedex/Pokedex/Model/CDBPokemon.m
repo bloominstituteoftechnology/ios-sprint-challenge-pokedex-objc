@@ -19,11 +19,10 @@
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
-    if (self = [super init]) {
-        _name = dictionary[@"name"];
-        _url = dictionary[@"url"];
-    }
-    return self;
+    NSString *name = dictionary[@"name"];
+    NSString *url = dictionary[@"url"];
+    
+    return [self initWithName:name withURL:url];
 }
 
 @end

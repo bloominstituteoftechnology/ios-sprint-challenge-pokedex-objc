@@ -13,22 +13,20 @@ import UIKit
     @objc var pokemons: [CDBPokemon] = []
     
     let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
-    
-    typealias CompletionHandler = (Error?) -> Void
-    
+        
     // MARK: Get all pokemons
     
-    @objc func fetchPokemons(completion: @escaping CompletionHandler) {
+    @objc func fetchPokemons(completion: @escaping ([CDBPokemon]?, Error?) -> Void) {
         URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
             if let error = error {
                 NSLog("Error: Data task fetching error")
-                completion(error)
+                completion(nil, error)
                 return
             }
             
             guard let data = data else {
                 NSLog("Error: No data from data task")
-                completion(error)
+                completion(nil, error)
                 return
             }
             
@@ -39,11 +37,12 @@ import UIKit
                             let eachPokemon = CDBPokemon(dictionary: pokemon)
                             self.pokemons.append(eachPokemon)
                         }
+                        completion(self.pokemons, nil)
                     }
                 }
             } catch {
                 NSLog("Error: No pokemon data")
-                completion(error)
+                completion(nil, error)
             }
         }.resume()
     }

@@ -28,8 +28,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.pokemonController fetchPokemonsWithCompletion:^(NSError * _Nullable error) {
-        NSLog(@"Error: Error fetching pokemons on viewDidLoad");
+    [self.pokemonController fetchPokemonsWithCompletion:^(NSArray<CDBPokemon *> *pokemon, NSError *error) {
+        if (error) {
+            NSLog(@"Error: Error fetching pokemons on viewDidLoad");
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }];
 }
 
