@@ -41,9 +41,9 @@ class PokemonDetailViewController: UIViewController {
     }
     
     private func updateViews() {
-        guard let pokemon = ARPokemon else { return }
+        guard let pokemon = ARPokemon, let id = pokemon.id else { return }
         title = pokemon.name
-        idLabel.text = "ID: \(pokemon.id)"
+        idLabel.text = "\(id)"
         
         var abilitiesString = ""
         for ability in pokemon.abilities {
