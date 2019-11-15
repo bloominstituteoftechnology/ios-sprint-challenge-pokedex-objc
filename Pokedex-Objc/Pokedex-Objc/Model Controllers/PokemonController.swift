@@ -76,4 +76,9 @@ class PokemonController: NSObject {
             pokemon.image = data
         }.resume()
     }
+    
+    override init() {
+        super.init()
+    }
+    
 }
