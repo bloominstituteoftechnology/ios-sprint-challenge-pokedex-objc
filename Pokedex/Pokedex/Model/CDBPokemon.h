@@ -12,10 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CDBPokemon : NSObject
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *identifier;
-@property (nonatomic, copy) NSString *sprite;
-@property (nonatomic, copy) NSArray *abilities;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSNumber *identifier;
+@property (nonatomic, readonly, copy) NSDictionary *sprites;
+@property (nonatomic, readonly, copy) NSArray *abilities;
+
+- (instancetype) initWithName:(NSString *)name withID:(NSNumber *)identifier withSprites:(NSDictionary *)sprites withAbilities:(NSArray *)abilities;
+
+- (instancetype) initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 

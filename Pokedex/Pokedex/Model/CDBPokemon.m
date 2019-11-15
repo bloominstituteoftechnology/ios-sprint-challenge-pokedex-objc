@@ -10,8 +10,23 @@
 
 @implementation CDBPokemon
 
-- (NSString *)description {
-    return [NSString stringWithFormat:@"Name: %@, Identifier: %@", self.name, self.identifier];
+- (instancetype) initWithName:(NSString *)name withID:(NSNumber *)identifier withSprites:(NSDictionary *)sprites withAbilities:(NSArray *)abilities {
+    if (self = [super init]) {
+        _name = [name copy];
+        _identifier = [identifier copy];
+        _sprites = [sprites copy];
+        _abilities = [abilities copy];
+    }
+    return self;
+}
+
+- (instancetype) initWithDictionary:(NSDictionary *)dictionary {
+    NSString *name = dictionary[@"name"];
+    NSString *identifier = dictionary[@"id"];
+    NSString *sprites = dictionary[@"sprites"];
+    NSString *abilities = dictionary[@"abilities"];
+    
+    return [self initWithName:name withID:identifier withSprites:sprites withAbilities:abilities];
 }
 
 @end
