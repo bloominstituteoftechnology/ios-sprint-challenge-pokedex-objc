@@ -12,8 +12,13 @@ import Foundation
 
 class PokeController: NSObject {
     
+    //MARK: - Properties
+    
     private let baseURL = URL(string:"https://pokeapi.co/api/v2/pokemon")!
     @objc var allPokemon = [JLCPokemon]()
+    @objc var selectedPokemon = JLCPokemon()
+    
+    //MARK: - Fetch All Pokemon
     
     @objc func fetchAllPokemon(completion: @escaping ([JLCPokemon]?, Error?) -> Void) {
         
@@ -52,7 +57,37 @@ class PokeController: NSObject {
             }
         }.resume()
     }
-
-    //@objc fetchSinglePokemon(with ID: Int
     
+    //MARK: - Fetch Single Pokemon By Name
+
+    @objc func fetchSinglePokemon(with name: String, completion: @escaping (JLCPokemon?, Error?) -> Void) {
+        
+        let url = baseURL.appendingPathComponent(name)
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            
+            if let error = error {
+                NSLog("Error fetching pokemon \(name) with error:\(error)")
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil, NSError())
+                return
+            }
+            
+            do{
+                guard let pokeDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any],
+                      let pokemon = JLCPokemon(dictionary: pokeDictionary) else {
+                        throw NSError()
+                }
+                self.selectedPokemon = pokemon
+            } catch {
+                NSLog("Error when decoding pokemon \(name) with error:\(error)")
+                completion(nil, error)
+            }
+            completion(self.selectedPokemon, nil)
+        }.resume()
+    }
 }
