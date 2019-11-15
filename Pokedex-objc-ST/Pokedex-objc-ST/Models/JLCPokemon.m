@@ -10,6 +10,18 @@
 
 @implementation JLCPokemon
 
+- (instancetype)initWithName:(NSString *)name {
+    self = [super init];
+    if (self) {
+        _name = [name copy];
+    }
+    return self;
+}
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    NSString *name = dictionary[@"name"];
+    
+    return [self initWithName:name];
+}
 
 @end
