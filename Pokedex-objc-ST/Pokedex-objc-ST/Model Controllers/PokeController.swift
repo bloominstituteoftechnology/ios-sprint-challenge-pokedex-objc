@@ -13,6 +13,7 @@ import Foundation
 class PokeController: NSObject {
     
     private let baseURL = URL(string:"https://pokeapi.co/api/v2/pokemon")!
+    @objc var allPokemon = [JLCPokemon]()
     
     @objc func fetchAllPokemon(completion: @escaping ([JLCPokemon]?, Error?) -> Void) {
         
@@ -37,6 +38,7 @@ class PokeController: NSObject {
                 }
                 
                 let pokemon = pokeDictionaries.compactMap { JLCPokemon(dictionary: $0) }
+                self.allPokemon = pokemon
                 completion(pokemon, nil)
             } catch {
                 NSLog("Error decoding pokemon:\(error)")
