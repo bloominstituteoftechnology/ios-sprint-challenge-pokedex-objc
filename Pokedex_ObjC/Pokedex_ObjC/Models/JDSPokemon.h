@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(instancetype)initWithName:(NSString *)name sprite:(NSURL *)spriteURL idNumber:(NSNumber *)idNumber abilities:(NSArray *)abilities;
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (NSComparisonResult) compare:(JDSPokemon*) pokemon;
 
 @end
 

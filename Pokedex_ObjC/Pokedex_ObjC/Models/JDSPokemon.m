@@ -34,4 +34,8 @@
     
     return [self initWithName:name sprite:spriteURL idNumber:idNumber abilities:abilities];
 }
+
+- (NSComparisonResult) compare:(JDSPokemon*) pokemon {
+    return [[self name] compare:[pokemon name]];
+}
 @end
