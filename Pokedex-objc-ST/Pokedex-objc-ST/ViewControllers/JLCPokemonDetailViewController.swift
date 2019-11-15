@@ -18,8 +18,8 @@ class JLCPokemonDetailViewController: UIViewController {
     
     @objc var pokeController: PokeController?
     @objc var pokeName: NSString?
-    var pokeImage: UIImage?
-    var pokemon: JLCPokemon? {
+    var pokemon: JLCPokemon?
+    var pokeImage: UIImage? {
         didSet {
             updateViews()
         }
@@ -39,29 +39,28 @@ class JLCPokemonDetailViewController: UIViewController {
             }
             DispatchQueue.main.async {
                 self.pokemon = pokemon
+                self.fetchPokeImage()
             }
         }
     }
     
-    private func fetchedPokeImage() -> UIImage? {
-        var pokeImage:UIImage?
+    private func fetchPokeImage() {
         guard let pokeController = pokeController,
-              let pokemon = pokemon else { return nil }
+              let pokemon = pokemon else { return }
         pokeController.fetchImageFromURL(url: pokemon.imageURL) { (image, error) in
             if let error = error {
                 NSLog("Error fetching image in detailview with error:\(error)")
                 return
             }
             DispatchQueue.main.async {
-                pokeImage = image
+                self.pokeImage = image
             }
         }
-        return pokeImage
     }
     
     private func updateViews() {
-        guard let pokemon = pokemon,
-              let pokeController = pokeController else { return }
+        guard let pokemon = pokemon else { return }
+        title = pokemon.name
         nameLabel.text = "Name: \(pokemon.name)"
         idLabel.text = "ID: \(pokemon.identifier)"
         var abilitiesString = ""
@@ -69,7 +68,6 @@ class JLCPokemonDetailViewController: UIViewController {
             abilitiesString.append(contentsOf: ability)
         }
         abilitiesTextView.text = abilitiesString
-        let pokeImage = fetchedPokeImage()
         imageView.image = pokeImage
     }
 }
