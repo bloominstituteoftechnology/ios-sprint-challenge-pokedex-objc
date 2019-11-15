@@ -17,7 +17,13 @@ class PokeController: NSObject {
     
     @objc func fetchAllPokemon(completion: @escaping ([JLCPokemon]?, Error?) -> Void) {
         
-        URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
+        var components = URLComponents(url: self.baseURL, resolvingAgainstBaseURL: true)!
+        
+        let limitQuery = URLQueryItem(name: "limit", value: "964")
+        components.queryItems = [limitQuery]
+        let url = components.url!
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 NSLog("Error fetching all pokemon:\(error)")
                 completion(nil, error)
