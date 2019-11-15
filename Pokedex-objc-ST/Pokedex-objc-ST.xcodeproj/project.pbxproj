@@ -15,6 +15,8 @@
 		3233EBCD237F04C8009D2930 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3233EBCC237F04C8009D2930 /* main.m */; };
 		3233EBD7237F07D4009D2930 /* JLCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3233EBD6237F07D4009D2930 /* JLCTableViewController.m */; };
 		3233EBDB237F07FC009D2930 /* JLCPokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3233EBDA237F07FC009D2930 /* JLCPokemonDetailViewController.swift */; };
+		3233EBDD237F08E4009D2930 /* PokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3233EBDC237F08E4009D2930 /* PokeController.swift */; };
+		3233EBE1237F0906009D2930 /* JLCPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3233EBE0237F0906009D2930 /* JLCPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		3233EBD6237F07D4009D2930 /* JLCTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCTableViewController.m; sourceTree = "<group>"; };
 		3233EBD9237F07FB009D2930 /* Pokedex-objc-ST-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-objc-ST-Bridging-Header.h"; sourceTree = "<group>"; };
 		3233EBDA237F07FC009D2930 /* JLCPokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLCPokemonDetailViewController.swift; sourceTree = "<group>"; };
+		3233EBDC237F08E4009D2930 /* PokeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeController.swift; sourceTree = "<group>"; };
+		3233EBDF237F0906009D2930 /* JLCPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCPokemon.h; sourceTree = "<group>"; };
+		3233EBE0237F0906009D2930 /* JLCPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,8 @@
 		3233EBB9237F04C5009D2930 /* Pokedex-objc-ST */ = {
 			isa = PBXGroup;
 			children = (
+				3233EBE2237F090F009D2930 /* Models */,
+				3233EBDE237F08E8009D2930 /* Model Controllers */,
 				3233EBD8237F07DA009D2930 /* ViewControllers */,
 				3233EBD4237F061C009D2930 /* Storyboards */,
 				3233EBD3237F060F009D2930 /* Resources */,
@@ -103,6 +110,23 @@
 				3233EBDA237F07FC009D2930 /* JLCPokemonDetailViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3233EBDE237F08E8009D2930 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3233EBDC237F08E4009D2930 /* PokeController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		3233EBE2237F090F009D2930 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3233EBDF237F0906009D2930 /* JLCPokemon.h */,
+				3233EBE0237F0906009D2930 /* JLCPokemon.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,10 +201,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3233EBE1237F0906009D2930 /* JLCPokemon.m in Sources */,
 				3233EBBC237F04C5009D2930 /* AppDelegate.m in Sources */,
 				3233EBCD237F04C8009D2930 /* main.m in Sources */,
 				3233EBBF237F04C5009D2930 /* SceneDelegate.m in Sources */,
 				3233EBD7237F07D4009D2930 /* JLCTableViewController.m in Sources */,
+				3233EBDD237F08E4009D2930 /* PokeController.swift in Sources */,
 				3233EBDB237F07FC009D2930 /* JLCPokemonDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
