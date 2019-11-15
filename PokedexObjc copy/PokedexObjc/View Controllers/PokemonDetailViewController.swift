@@ -49,7 +49,7 @@ class PokemonDetailViewController: UIViewController {
         for ability in pokemon.abilities {
             abilitiesString.append(contentsOf: ability)
         }
-        
+        abilitiesLabel.text = abilitiesString
         pokemonImageView.image = pokemonImage
     }
 }
