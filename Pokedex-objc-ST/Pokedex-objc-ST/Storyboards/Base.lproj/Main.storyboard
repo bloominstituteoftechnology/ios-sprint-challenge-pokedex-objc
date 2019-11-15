@@ -24,7 +24,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="8e1-yB-w1h" kind="show" id="U2b-v4-Lop"/>
+                                    <segue destination="8e1-yB-w1h" kind="show" identifier="ShowPokeSegue" id="U2b-v4-Lop"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="913.04347826086962" y="89.732142857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="47r-tW-CaV">
             <objects>
-                <viewController id="8e1-yB-w1h" sceneMemberID="viewController">
+                <viewController id="8e1-yB-w1h" customClass="JLCPokemonDetailViewController" customModule="Pokedex_objc_ST" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a0x-bi-dkf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,6 +124,12 @@
                         <viewLayoutGuide key="safeArea" id="0sz-0s-mfW"/>
                     </view>
                     <navigationItem key="navigationItem" id="aca-H5-lbE"/>
+                    <connections>
+                        <outlet property="abilitiesTextView" destination="uMb-d7-shx" id="zth-Xh-MgT"/>
+                        <outlet property="idLabel" destination="Hoi-xK-52A" id="PRe-fx-mxn"/>
+                        <outlet property="imageView" destination="aeq-p5-ezl" id="VN4-Bd-Kge"/>
+                        <outlet property="nameLabel" destination="Svk-Vs-olv" id="xwt-7R-PAb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FbX-SF-7Yy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
