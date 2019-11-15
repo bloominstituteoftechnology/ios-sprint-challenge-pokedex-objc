@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[JDSPokemonController sharedController] fetchAllPokemonWithCompletion:^(NSArray<JDSPokemon *> *allPokemon, NSError * error) {
-        self.pokemonList = allPokemon;
+        self.pokemonList = [allPokemon sortedArrayUsingSelector:(@selector(compare:))];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
@@ -39,9 +39,7 @@
     return cell;
 }
 
-
 #pragma mark - Navigation
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowPokemonSegue"]) {
@@ -52,6 +50,4 @@
         [[JDSPokemonController sharedController] fillInDetailsFor:pokemon];
     }
 }
-
-
 @end
