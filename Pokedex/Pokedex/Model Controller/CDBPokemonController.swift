@@ -8,33 +8,47 @@
 
 import UIKit
 
-class CDBPokemonController: NSObject {
+@objc class CDBPokemonController: NSObject {
     
+    @objc var pokemons: [CDBPokemon] = []
     
     let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     
     typealias CompletionHandler = (Error?) -> Void
     
-    func fetchPokemons(completion: @escaping CompletionHandler) {
+// MARK: Get all pokemons
+    
+    @objc func fetchPokemons(completion: @escaping CompletionHandler) {
         URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
             if let error = error {
+                NSLog("Error: Data task fetching error")
                 completion(error)
                 return
-                NSLog("Error: Data task")
             }
             
             guard let data = data else {
-                completion(nil)
-                return
                 NSLog("Error: No data from data task")
+                completion(error)
+                return
             }
             
             do {
-                let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
-                let resultsDict = try JSONSerialization.jsonObject(with: jsonDict, options: []) as? [String:Any]
+                if let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
+                    if let resultsDict = jsonDict["results"] as? [[String: String]] {
+                        for pokemon in resultsDict {
+                            let eachPokemon = CDBPokemon(dictionary: pokemon)
+                            self.pokemons.append(eachPokemon)
+                        }
+                    }
+                }
             } catch {
-                
+                NSLog("Error: No pokemon data")
+                completion(error)
             }
-        }
+        }.resume()
     }
+    
+
+    
+    
 }

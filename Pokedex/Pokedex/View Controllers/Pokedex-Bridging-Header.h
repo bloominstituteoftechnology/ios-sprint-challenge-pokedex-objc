@@ -3,4 +3,3 @@
 //
 
 #import "CDBPokemon.h"
-#import "CDBPokemonController-Swift.h"

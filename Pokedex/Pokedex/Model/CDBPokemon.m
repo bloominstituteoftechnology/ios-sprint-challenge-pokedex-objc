@@ -10,23 +10,20 @@
 
 @implementation CDBPokemon
 
-- (instancetype) initWithName:(NSString *)name withID:(NSNumber *)identifier withSprites:(NSDictionary *)sprites withAbilities:(NSArray *)abilities {
+- (instancetype) initWithName:(NSString *)name withURL:(NSString *)url {
     if (self = [super init]) {
-        _name = [name copy];
-        _identifier = [identifier copy];
-        _sprites = [sprites copy];
-        _abilities = [abilities copy];
+        _name = name;
+        _url = url;
     }
     return self;
 }
 
-- (instancetype) initWithDictionary:(NSDictionary *)dictionary {
-    NSString *name = dictionary[@"name"];
-    NSString *identifier = dictionary[@"id"];
-    NSString *sprites = dictionary[@"sprites"];
-    NSString *abilities = dictionary[@"abilities"];
-    
-    return [self initWithName:name withID:identifier withSprites:sprites withAbilities:abilities];
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    if (self = [super init]) {
+        _name = dictionary[@"name"];
+        _url = dictionary[@"url"];
+    }
+    return self;
 }
 
 @end
