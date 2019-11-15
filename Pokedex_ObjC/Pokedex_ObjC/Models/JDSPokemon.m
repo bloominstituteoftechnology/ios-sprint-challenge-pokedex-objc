@@ -38,4 +38,10 @@
 - (NSComparisonResult) compare:(JDSPokemon*) pokemon {
     return [[self name] compare:[pokemon name]];
 }
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"Name:%@\n\tID: %@\n\tSpriteURL: %@\n\tAbilities:%@\n",
+                self.name, self.idNumber, self.spriteURL, self.abilities];
+}
+
 @end

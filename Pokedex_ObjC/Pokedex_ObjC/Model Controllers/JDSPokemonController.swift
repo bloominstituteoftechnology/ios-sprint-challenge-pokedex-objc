@@ -47,7 +47,7 @@ class JDSPokemonController: NSObject {
     
     @objc func fillInDetails(for pokemon: JDSPokemon) {
         let url = baseURL.appendingPathComponent(pokemon.name)
-        NSLog("Retrieving details for \(pokemon.name) with URL: \(url)")
+        //NSLog("Retrieving details for \(pokemon.name) with URL: \(url)")
         let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 NSLog("Error fetching data: \(error)")

@@ -47,7 +47,6 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         JDSPokemon *pokemon = self.pokemonList[indexPath.row];
         vc.pokemon = pokemon;
-        [[JDSPokemonController sharedController] fillInDetailsFor:pokemon];
     }
 }
 @end
