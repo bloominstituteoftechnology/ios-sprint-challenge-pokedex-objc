@@ -48,7 +48,37 @@ import UIKit
     }
     
     // MARK: Get pokemon details
-
+    @objc func fetchPokemon(withName: String, completion: @escaping (CDBPokemon?, Error?) -> Void) {
+        var basePlusNameURL = baseURL.appendingPathComponent(withName)
+        URLSession.shared.dataTask(with: basePlusNameURL) { (data, _, error) in
+            if let error = error {
+                NSLog("Error: Data task fetching error")
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("Error: No data from data task")
+                completion(nil, error)
+                return
+            }
+            
+            do {
+                if let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
+                    if let resultsDict = jsonDict["results"] as? [[String: String]] {
+                        for pokemon in resultsDict {
+                            let eachPokemon = CDBPokemon(dictionary: pokemon)
+                            self.pokemons.append(eachPokemon)
+                        }
+                        completion(self.pokemons, nil)
+                    }
+                }
+            } catch {
+                NSLog("Error: No pokemon data")
+                completion(nil, error)
+            }
+        }.resume()
+    }
 
     
     

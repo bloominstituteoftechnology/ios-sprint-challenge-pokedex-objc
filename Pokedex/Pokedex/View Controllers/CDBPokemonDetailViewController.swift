@@ -8,23 +8,38 @@
 
 import UIKit
 
-class CDBPokemonDetailViewController: UIViewController {
-
+@objc class CDBPokemonDetailViewController: UIViewController {
+    
+    @objc var pokemon: CDBPokemon?
+    @objc var pokemonName: NSString?
+    @objc var pokemonController: CDBPokemonController?
+        
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var spriteImageView: UIImageView!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var abilitiesLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        guard let pokemonController = pokemonController,
+            let pokemonName = pokemonName else { return }
+        pokemonController.fetchPokemon(withName: pokemonName as String) { (pokemonData, error) in
+            if (error != nil) {
+                NSLog("Error: fetching pokemon error")
+            }
+            self.pokemon = pokemonData
+        }
     }
-    */
-
+    
+    private func updateViews() {
+        guard let pokemon = pokemon else { return }
+        title = pokemon.name
+        nameLabel.text = pokemon.name
+        idLabel.text = "\(pokemon.identifier)"
+        abilitiesLabel.text = "\(pokemon.abilities)"
+    }
 }
