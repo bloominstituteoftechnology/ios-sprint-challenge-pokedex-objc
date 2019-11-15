@@ -15,11 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSString *name;
 @property NSNumber *identifier;
 @property (nonatomic, copy, readonly) NSArray<NSString *> *abilities;
+@property NSURL *imageURL;
 
 
 - (instancetype)initWithName:(NSString *)name
                   identifier:(NSNumber *)identifier
-                   abilities:(NSArray<NSString*> *)abilities;
+                   abilities:(NSArray<NSString *> *)abilities
+                         URL:(NSURL *)imageURL;
 
 - (nullable instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

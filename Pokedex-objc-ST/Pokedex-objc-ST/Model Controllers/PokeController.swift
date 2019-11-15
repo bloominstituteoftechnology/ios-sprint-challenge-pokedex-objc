@@ -6,9 +6,7 @@
 //  Copyright © 2019 jake connerly. All rights reserved.
 //
 
-import Foundation
-
-
+import UIKit
 
 class PokeController: NSObject {
     
@@ -17,6 +15,7 @@ class PokeController: NSObject {
     private let baseURL = URL(string:"https://pokeapi.co/api/v2/pokemon")!
     @objc var allPokemon = [JLCPokemon]()
     @objc var selectedPokemon = JLCPokemon()
+    var pokeImage = UIImage()
     
     //MARK: - Fetch All Pokemon
     
@@ -88,6 +87,32 @@ class PokeController: NSObject {
                 completion(nil, error)
             }
             completion(self.selectedPokemon, nil)
+        }.resume()
+    }
+    
+    //MARK: - Fetch Image From URL
+    
+    func fetchImageFromURL(url: URL, completion: @escaping (UIImage?, Error?) -> Void) {
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                NSLog("Error fetching image at url \(url) with error:\(error)")
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("Bad data from image at URL: \(url)")
+                completion(nil, error)
+                return
+            }
+            
+            guard let image = UIImage(data: data) else {
+                NSLog("Error converting image from data")
+                return
+            }
+            self.pokeImage = image
+            completion(image, nil)
         }.resume()
     }
 }
