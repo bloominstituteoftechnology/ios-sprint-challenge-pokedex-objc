@@ -157,6 +157,7 @@
 		0EA854DE237F07B5002D4F97 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JAC;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Mazjap Co";
 				TargetAttributes = {

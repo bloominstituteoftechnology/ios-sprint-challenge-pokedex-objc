@@ -7,6 +7,7 @@
 //
 
 #import "JACPokemonDetailViewController.h"
+#import "Pokedex_Objc-Swift.h"
 
 @interface JACPokemonDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *idLabel;
