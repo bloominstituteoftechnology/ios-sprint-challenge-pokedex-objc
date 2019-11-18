@@ -10,7 +10,11 @@ import UIKit
 
 @objc class CDBPokemonDetailViewController: UIViewController {
     
-    @objc var pokemon: CDBPokemon?
+    @objc var pokemon: CDBPokemon? {
+        didSet {
+            updateViews()
+        }
+    }
     @objc var pokemonName: NSString?
     @objc var pokemonController: CDBPokemonController?
         
@@ -21,12 +25,11 @@ import UIKit
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
+        getPokemonByName()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        guard let pokemonController = pokemonController,
-            let pokemonName = pokemonName else { return }
+    private func getPokemonByName() {
+        guard let pokemonController = pokemonController, let pokemonName = pokemonName else { return }
         pokemonController.fetchPokemon(withName: pokemonName as String) { (pokemonData, error) in
             if (error != nil) {
                 NSLog("Error: fetching pokemon error")
@@ -36,10 +39,15 @@ import UIKit
     }
     
     private func updateViews() {
-        guard let pokemon = pokemon else { return }
-        title = pokemon.name
-        nameLabel.text = pokemon.name
-        idLabel.text = "\(pokemon.identifier)"
-        abilitiesLabel.text = "\(pokemon.abilities)"
+        guard let pokemon = pokemon else {
+            return
+        }
+        DispatchQueue.main.async {
+            self.title = pokemon.name
+            self.nameLabel.text = pokemon.name
+            self.idLabel.text = "\(pokemon.identifier)"
+            self.abilitiesLabel.text = "\(pokemon.abilities)"
+        }
+        
     }
 }

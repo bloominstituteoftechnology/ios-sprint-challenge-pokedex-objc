@@ -147,9 +147,8 @@
                     <connections>
                         <outlet property="abilitiesLabel" destination="FRq-kA-DiR" id="4Ie-4M-54K"/>
                         <outlet property="idLabel" destination="5Kl-ez-39N" id="r1w-Lt-Rir"/>
-                        <outlet property="image" destination="MF8-n4-1L7" id="ucf-IW-fBy"/>
                         <outlet property="nameLabel" destination="jsX-65-BX4" id="nVQ-Oi-HUU"/>
-                        <outlet property="spriteImageView" destination="MF8-n4-1L7" id="MPM-nd-MtO"/>
+                        <outlet property="spriteImageView" destination="MF8-n4-1L7" id="o4v-tp-a06"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ST0-In-tTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
