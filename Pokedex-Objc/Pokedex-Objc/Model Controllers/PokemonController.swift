@@ -14,6 +14,7 @@ class PokemonController: NSObject {
     let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     
     @objc func fetchAllPokemon(completion: @escaping ([JACPokemon]?, Error?) -> Void) {
+        
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         components?.queryItems = [URLQueryItem(name: "limit", value: "964")]
         
@@ -56,24 +57,31 @@ class PokemonController: NSObject {
 
     @objc func fillInDetails(for pokemon: JACPokemon) {
         let url = URL(string: pokemon.url)!
-        var request = URLRequest(url: url)
+        let request = URLRequest(url: url)
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let _ = error { return }
             guard let data = data else { return }
             
             do {
+                
                 guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else { return }
+                
                 pokemon.fillInDetails(with: dictionary)
+                self.fetchPokemonImage(for: pokemon)
             } catch { return }
         }.resume()
-        
-        request = URLRequest(url: URL(string: pokemon.url)!)
+    }
+    
+    @objc
+    func fetchPokemonImage(for pokemon: JACPokemon) {
+        let request = URLRequest(url: URL(string: pokemon.imageURL!)!)
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let _ = error { return }
             guard let data = data else { return }
             pokemon.image = data
+            pokemon.notify()
         }.resume()
     }
     

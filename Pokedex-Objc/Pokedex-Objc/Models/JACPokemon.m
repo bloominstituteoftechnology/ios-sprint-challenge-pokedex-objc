@@ -11,20 +11,21 @@
 @implementation JACPokemon
 
 - (void)fillInDetailsWithDictionary:(NSDictionary *)dictionary {
-    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-    f.numberStyle = NSNumberFormatterDecimalStyle;
-    
-    NSString *identifierString = [dictionary valueForKeyPath:@"id"];
-    NSNumber *identifier = [f numberFromString:identifierString];
+    NSString *identifier = [dictionary valueForKeyPath:@"id"];
+    NSString *imageURL = [dictionary valueForKeyPath:@"sprites.front_default"];
     
     NSMutableArray<NSString *> *abilities = [[NSMutableArray alloc] init];
     NSDictionary *abilitiesDict = [dictionary valueForKeyPath:@"abilities"];
     for (NSDictionary *ability in abilitiesDict) {
         [abilities addObject:[ability valueForKeyPath:@"ability.name"]];
     }
-    
+    _imageURL = imageURL;
     _identifier = identifier;
     _abilities = abilities;
+}
+
+- (void)notify {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pokemonDetailsSet" object:self];
 }
 
 - (instancetype)initWithName:(NSString *)name url:(NSString *)url {
@@ -35,7 +36,7 @@
     return self;
 }
 
-- (instancetype)initWithName:(NSString *)name url:(NSString *)url identifier:(NSNumber *)identifier image:(NSData *)image abilities:(NSArray<NSString *> *)abilities {
+- (instancetype)initWithName:(NSString *)name url:(NSString *)url identifier:(NSString *)identifier image:(NSData *)image abilities:(NSArray<NSString *> *)abilities {
     if (self = [super init]) {
         _name = name;
         _identifier = identifier;

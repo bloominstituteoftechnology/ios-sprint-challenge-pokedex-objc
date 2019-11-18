@@ -8,6 +8,7 @@
 
 #import "JACPokemonDetailViewController.h"
 #import "Pokedex_Objc-Swift.h"
+#import "JACPokemon.h"
 
 @interface JACPokemonDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *idLabel;
@@ -18,19 +19,28 @@
 
 @implementation JACPokemonDetailViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateViews) name:@"pokemonDetailsSet" object:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [_controller fillInDetailsFor:_pokemon];
+    [self updateViews];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)updateViews {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.idLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.identifier];
+        self.title = [self.pokemon.name capitalizedString];
+        NSString *abilities = [[NSString alloc] init];
+        for (NSString *ability in self.pokemon.abilities) {
+            abilities = [NSString stringWithFormat:@"%@\n%@", abilities, ability];
+        }
+        self.abilitiesLabel.text = abilities;
+        self.pokemonImageView.image = [UIImage imageWithData:self.pokemon.image];
+    });
 }
-*/
 
 @end

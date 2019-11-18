@@ -27,7 +27,29 @@ Answer the following questions inline with this document.
 	```
 
 	2. Rewrite the code so that it does not leak any memory with ARC disabled
+    ```swift
+     NSString *quote = @"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it. - Steve Jobs";
 
+     NSCharacterSet *punctuationSet = [[NSCharacterSet punctuationCharacterSet] retain];
+
+     NSString *cleanQuote = [[quote componentsSeparatedByCharactersInSet:punctuationSet] componentsJoinedByString:@""];
+     NSArray *words = [[cleanQuote lowercaseString] componentsSeparatedByString:@" "];
+
+     NSMutableDictionary<NSString *, NSNumber *> *wordFrequency = [[NSMutableDictionary alloc] init];
+
+     for (NSString *word in words) {
+         NSNumber *count = wordFrequency[word];
+         if (count.intValue) {
+             wordFrequency[word] = [NSNumber numberWithInteger:count.integerValue + 1];
+         } else {
+             wordFrequency[word] = [[NSNumber alloc] initWithInteger:1];
+         }
+     }
+     
+     printf("Word frequency: %s", wordFrequency.description.UTF8String);
+     [punctuationSet release];
+     [wordFrequency release];
+    ```
 2. Which of these objects is autoreleased?  Why?
 
 	1. `NSDate *yesterday = [NSDate date];` Autoreleased
@@ -43,7 +65,7 @@ Answer the following questions inline with this document.
 	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];` Autoreleased
 
 3. Explain when you need to use the `NSAutoreleasePool`.
-When you're looping through large amounts of data, like image data, you want to release inside of the loop to 
+When you're looping through large amounts of data, like image data, you want to release inside of the loop to minimize data consumption
 
 4. Implement a convenience `class` method to create a `LSIPerson` object that takes a `name` property and returns an autoreleased object.
 
@@ -52,7 +74,23 @@ When you're looping through large amounts of data, like image data, you want to 
 
 @property (nonatomic, copy) NSString *name;
 
-- (instancetype)initWithName:(NSString *)name;
+- (instancetype)initWithName:(NSString *)name autorelease;
+
+@end
+
+@implementation LSIPerson
+
+- (instancetype)initWithName:(NSString *)name {
+    if (self = [super init]) {
+        _name = name;
+    }
+    return [self autorelease];
+}
+
+- (void)dealloc {
+    [_name release];
+    [super dealloc];
+}
 
 @end
 ```

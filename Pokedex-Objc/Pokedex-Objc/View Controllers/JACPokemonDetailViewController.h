@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class JACPokemon;
+@class PokemonController;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JACPokemonDetailViewController : UIViewController
+@property JACPokemon *pokemon;
+@property PokemonController *controller;
 
 @end
 

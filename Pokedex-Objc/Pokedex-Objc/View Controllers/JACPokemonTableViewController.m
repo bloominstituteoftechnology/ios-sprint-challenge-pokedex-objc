@@ -7,6 +7,7 @@
 //
 
 #import "JACPokemonTableViewController.h"
+#import "JACPokemonDetailViewController.h"
 #import "Pokedex_Objc-Swift.h"
 #import "JACPokemon.h"
 
@@ -54,7 +55,12 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    JACPokemonDetailViewController *detailVC = [segue destinationViewController];
     
+    if ([[segue identifier] isEqual:@"ShowPokemonSegue"]) {
+        detailVC.controller = self.controller;
+        detailVC.pokemon = [self.pokemon objectAtIndex:(int)[self.tableView.indexPathForSelectedRow row]];
+    }
 }
 
 @end
