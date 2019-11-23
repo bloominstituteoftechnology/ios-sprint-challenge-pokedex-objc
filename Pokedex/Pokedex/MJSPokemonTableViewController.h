@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MJSPokemonTableViewController.h
 //  Pokedex
 //
 //  Created by Michael Stoffer on 11/23/19.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@class MJSPokemon;
 
+@interface MJSPokemonTableViewController : UITableViewController
 
 @end
-
