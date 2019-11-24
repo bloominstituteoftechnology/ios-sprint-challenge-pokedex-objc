@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MRFPokemon.h"
+#import "PokeDexOBJC-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
