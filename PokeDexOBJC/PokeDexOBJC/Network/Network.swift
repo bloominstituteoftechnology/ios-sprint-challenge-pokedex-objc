@@ -18,7 +18,7 @@ class Network: NSObject {
     
     //make accessible to OBJC
     @objc static let shared = Network()
-    @objc var pokemons = [MRFPokemon]()
+    @objc var pokemons: [MRFPokemon] = []
     @objc var detailsForPokemon: MRFPokemon?
     
     //get all the pokemons

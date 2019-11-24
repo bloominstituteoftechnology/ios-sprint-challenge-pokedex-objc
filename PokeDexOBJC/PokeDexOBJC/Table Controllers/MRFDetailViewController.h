@@ -1,5 +1,5 @@
 //
-//  MRFPokemonListTableViewController.h
+//  MRFDetailViewController.h
 //  PokeDexOBJC
 //
 //  Created by Michael Flowers on 11/23/19.
@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MRFPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MRFPokemonListTableViewController : UITableViewController
+@interface MRFDetailViewController : UIViewController
+
+@property (nonatomic) MRFNetwork *network;
+@property (nonatomic) MRFPokemon *pokemon;
 
 @end
 
