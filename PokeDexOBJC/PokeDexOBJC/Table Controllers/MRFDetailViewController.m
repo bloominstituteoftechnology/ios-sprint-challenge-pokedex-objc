@@ -32,6 +32,8 @@ void *KVOContext = &KVOContext;
         NSLog(@"found Pokemon");
         [self.pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionInitial context:KVOContext];
         [self.pokemon addObserver:self forKeyPath:@"sprite" options:NSKeyValueObservingOptionInitial context:KVOContext];
+        
+        [self.network fillInDetailsFor:self.pokemon];
     } else {
         NSLog(@"No pokemon found");
     }

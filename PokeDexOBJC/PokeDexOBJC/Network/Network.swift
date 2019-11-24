@@ -53,17 +53,18 @@ class Network: NSObject {
                     completion(nil, NSError()) //TODO: ERROR HANDLING
                     return
                 }
-                //                print(" PokemonDictionary: \(pokemonDictionary)")
+                                print(" PokemonDictionary: \(pokemonDictionary)")
                 
                 //Results is a key who's value is an Array of dictionaries [[ String : Any ]]
                 guard let results = pokemonDictionary["results"] as? [[String : Any]] else {
                     completion(nil, NSError())// TODO: HANDLE ERRORS
                     return
                 }
-                //                print("Reuslts from PokemonDictionary: \(results)")
+                                print("Reuslts from PokemonDictionary: \(results)")
                 
                 //because results is an array of dictionaries we can loop through, and get a dictionary back, because we are getting a dictionary back we can call our MRFPokemon init with dictionary
                 let returnedPokemons = results.compactMap { MRFPokemon(dictionary: $0)}
+                self.pokemons = returnedPokemons
                 completion(returnedPokemons, nil)
                 
             } catch {

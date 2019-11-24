@@ -76,7 +76,9 @@
     {
         MRFDetailViewController *destinationVC = segue.destinationViewController;
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        
         destinationVC.pokemon = self.network.pokemons[indexPath.row];
+        
     }
 }
 
