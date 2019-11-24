@@ -21,6 +21,7 @@ class Network: NSObject {
     @objc var pokemons = [MRFPokemon]()
     @objc var detailsForPokemon: MRFPokemon?
     
+    //get all the pokemons
     @objc func fetchAllPokemon(completion: @escaping ([MRFPokemon]?, Error?) -> Void){
         //url - this is to populate the table view
         let url = URL(string: baseURL)!
@@ -74,7 +75,7 @@ class Network: NSObject {
         .resume()
     }
     
-    //make accessible to objc
+    //make accessible to objc - take one pokemon from that array and specifically fetch for it
     @objc func fillInDetails(for pokemon: MRFPokemon){
         //we need the pokemon to append the baseURL
         guard let url = URL(string: baseURL)?.appendingPathComponent(pokemon.name) else {
@@ -119,7 +120,7 @@ class Network: NSObject {
         }.resume()
     }
     
-    //fetch the sprite
+    //fetch the sprite from the pokemon we extracted from the pokemon array
     @objc func fetchSprite(with pokemon: MRFPokemon, completion: @escaping (UIImage?, Error?) -> Void){
         //construct the url to get image
         let url = URL(string: pokemon.sprite)!

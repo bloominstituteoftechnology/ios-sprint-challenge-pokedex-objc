@@ -15,6 +15,7 @@
 		1BE6D6A6238A0DD00066E7DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6D6A5238A0DD00066E7DD /* main.m */; };
 		1BE6D6B7238A152A0066E7DD /* MRFPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6D6B6238A152A0066E7DD /* MRFPokemon.m */; };
 		1BE6D6BA238A16AE0066E7DD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6D6B9238A16AE0066E7DD /* Network.swift */; };
+		1BE6D6BD238A32330066E7DD /* MRFPokemonListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6D6BC238A32330066E7DD /* MRFPokemonListTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		1BE6D6B6238A152A0066E7DD /* MRFPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRFPokemon.m; sourceTree = SOURCE_ROOT; };
 		1BE6D6B8238A16AD0066E7DD /* PokeDexOBJC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokeDexOBJC-Bridging-Header.h"; sourceTree = "<group>"; };
 		1BE6D6B9238A16AE0066E7DD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		1BE6D6BB238A32330066E7DD /* MRFPokemonListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MRFPokemonListTableViewController.h; path = PokeDexOBJC/Network/MRFPokemonListTableViewController.h; sourceTree = SOURCE_ROOT; };
+		1BE6D6BC238A32330066E7DD /* MRFPokemonListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MRFPokemonListTableViewController.m; path = PokeDexOBJC/Network/MRFPokemonListTableViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 		1BE6D6B2238A0F010066E7DD /* Table Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1BE6D6BB238A32330066E7DD /* MRFPokemonListTableViewController.h */,
+				1BE6D6BC238A32330066E7DD /* MRFPokemonListTableViewController.m */,
 			);
 			path = "Table Controllers";
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				1BE6D6BA238A16AE0066E7DD /* Network.swift in Sources */,
 				1BE6D695238A0DCF0066E7DD /* AppDelegate.m in Sources */,
 				1BE6D6B7238A152A0066E7DD /* MRFPokemon.m in Sources */,
+				1BE6D6BD238A32330066E7DD /* MRFPokemonListTableViewController.m in Sources */,
 				1BE6D6A6238A0DD00066E7DD /* main.m in Sources */,
 				1BE6D698238A0DCF0066E7DD /* SceneDelegate.m in Sources */,
 			);
