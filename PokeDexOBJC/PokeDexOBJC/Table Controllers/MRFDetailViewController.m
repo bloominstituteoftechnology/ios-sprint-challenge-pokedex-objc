@@ -30,10 +30,12 @@ void *KVOContext = &KVOContext;
     [super viewDidLoad];
     if (self.pokemon) {
         NSLog(@"found Pokemon");
+        NSLog(@"pokemons sprite: %@", self.pokemon.sprite);
+                     NSLog(@"pokemons ability count: %lu", self.pokemon.abilities.count);
+        
         [self.pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionInitial context:KVOContext];
         [self.pokemon addObserver:self forKeyPath:@"sprite" options:NSKeyValueObservingOptionInitial context:KVOContext];
         
-        [self.network fillInDetailsFor:self.pokemon];
     } else {
         NSLog(@"No pokemon found");
     }
@@ -42,6 +44,8 @@ void *KVOContext = &KVOContext;
 - (void)updateViews
 {
     if(self.pokemon){
+        NSLog(@"pokemons sprite: %@", self.pokemon.sprite);
+              NSLog(@"pokemons ability count: %lu", self.pokemon.abilities.count);
         [self.network fetchSpriteWith:self.pokemon completion:^(UIImage * _Nullable image, NSError * _Nullable error) {
             if (error)
             {
@@ -53,11 +57,16 @@ void *KVOContext = &KVOContext;
                 self.pokemonImageView.image = image;
             });
             }
+            
+            
         }];
+        
         self.identifierLabel.text = [[NSString alloc] initWithFormat:@"ID: %d", self.pokemon.identifier];
         self.nameLabel.text = self.pokemon.name;
         NSString *abilitiesStr = [self.pokemon.abilities componentsJoinedByString:@", "];
         self.abilitiesLabel.text =  abilitiesStr;
+        NSLog(@"pokemons sprite: %@", self.pokemon.sprite);
+                     NSLog(@"pokemons ability count: %lu", self.pokemon.abilities.count);
     }else {
         NSLog(@"didn't update views with pokemon");
     }

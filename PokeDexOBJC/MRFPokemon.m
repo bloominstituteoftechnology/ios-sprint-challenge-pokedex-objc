@@ -32,7 +32,7 @@
     self = [super init];
     
     if (self){
-        //this is where we map our properties to the names/spelling on the api
+//        this is where we map our properties to the names/spelling on the api
         _name = dictionary[@"name"];
         _identifier = [dictionary[@"id"] intValue];
         _sprite = dictionary[@"sprites"][@"front_default"];
@@ -54,9 +54,9 @@
 //            [abilityNames addObject:[NSString stringWithFormat:@"%@\n", abilityName]];
 //        }
         
+//        return [self initWithName:name identifier:identifier sprite:spriteURL abilities:abilitiesArray];
     }
     return self;
-//    return [self initWithName:name identifier:identifier sprite:spriteURL abilities:abilities];
 }
 
 @end

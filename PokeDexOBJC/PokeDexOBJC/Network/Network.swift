@@ -105,19 +105,21 @@ class Network: NSObject {
                     print("Error serializing jsonDictionary in; \(#function) on line: \(#line)")
                     return
                 }
-                
+
                 //initailize our model object with the dictionary
                 guard let pokemonInformation = MRFPokemon(dictionary: jsonDictionary) else {
                     print("Error initializing MRFPokemon in: \(#function) on line: \(#line)")
                     return
                 }
-               
+
                 //take single pokemon and assign it to our holding pokemon up top
                 self.detailsForPokemon = pokemonInformation
-                
+
+
             } catch  {
                 print("Error in: \(#function)\n Readable Error: \(error.localizedDescription)\n Technical Error: \(error)")
             }
+            
         }.resume()
     }
     

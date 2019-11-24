@@ -60,8 +60,6 @@
     MRFPokemon *pokemon = self.network.pokemons[indexPath.row];
        // Configure the cell...
        cell.textLabel.text = pokemon.name;
-       NSLog(@"pokemons sprite: %@", pokemon.sprite);
-       NSLog(@"pokemons ability count: %lu", pokemon.abilities.count);
     // Configure the cell...
 
     return cell;
@@ -76,9 +74,9 @@
     {
         MRFDetailViewController *destinationVC = segue.destinationViewController;
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-        
-        destinationVC.pokemon = self.network.pokemons[indexPath.row];
-        
+        MRFPokemon *pokemon = self.network.pokemons[indexPath.row];
+        destinationVC.pokemon = pokemon;
+        NSLog(@"this is the tapped pokemon name: %@", self.network.pokemons[indexPath.row]);
     }
 }
 
