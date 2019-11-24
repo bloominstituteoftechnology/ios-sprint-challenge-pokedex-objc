@@ -51,16 +51,18 @@ void *KVOContext = &KVOContext;
             {
                 NSLog(@"Error making sprite call");
             }
+            
+            //THIS ISNT BEING HIT
             if (image)
             {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.pokemonImageView.image = image;
             });
             }
-            
-            
+
         }];
         
+        //FILL IN DETAILS HERE?!
         self.identifierLabel.text = [[NSString alloc] initWithFormat:@"ID: %d", self.pokemon.identifier];
         self.nameLabel.text = self.pokemon.name;
         NSString *abilitiesStr = [self.pokemon.abilities componentsJoinedByString:@", "];
