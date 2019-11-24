@@ -65,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				1BE6D6AD238A0EDE0066E7DD /* Storyboard */,
-				1BE6D6B4238A0F300066E7DD /* Header Folder */,
+				1BE6D6B4238A0F300066E7DD /* HeaderFolder */,
 				1BE6D6B3238A0F170066E7DD /* Network */,
 				1BE6D6B2238A0F010066E7DD /* Table Controllers */,
 				1BE6D6B1238A0EF70066E7DD /* View Controller */,
@@ -80,12 +80,12 @@
 		1BE6D6AC238A0ED30066E7DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1BE6D6A1238A0DD00066E7DD /* LaunchScreen.storyboard */,
 				1BE6D693238A0DCF0066E7DD /* AppDelegate.h */,
 				1BE6D694238A0DCF0066E7DD /* AppDelegate.m */,
 				1BE6D696238A0DCF0066E7DD /* SceneDelegate.h */,
 				1BE6D697238A0DCF0066E7DD /* SceneDelegate.m */,
 				1BE6D69F238A0DD00066E7DD /* Assets.xcassets */,
-				1BE6D6A1238A0DD00066E7DD /* LaunchScreen.storyboard */,
 				1BE6D6A4238A0DD00066E7DD /* Info.plist */,
 				1BE6D6A5238A0DD00066E7DD /* main.m */,
 			);
@@ -141,16 +141,16 @@
 			isa = PBXGroup;
 			children = (
 				1BE6D6B9238A16AE0066E7DD /* Network.swift */,
-				1BE6D6B8238A16AD0066E7DD /* PokeDexOBJC-Bridging-Header.h */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		1BE6D6B4238A0F300066E7DD /* Header Folder */ = {
+		1BE6D6B4238A0F300066E7DD /* HeaderFolder */ = {
 			isa = PBXGroup;
 			children = (
+				1BE6D6B8238A16AD0066E7DD /* PokeDexOBJC-Bridging-Header.h */,
 			);
-			path = "Header Folder";
+			path = HeaderFolder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,14 +372,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4W7EQ4E4R;
-				INFOPLIST_FILE = PokeDexOBJC/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PokeDexOBJC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = flowers.PokeDexOBJC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "PokeDexOBJC/Network/PokeDexOBJC-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokeDexOBJC/HeaderFolder/PokeDexOBJC-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -393,14 +393,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4W7EQ4E4R;
-				INFOPLIST_FILE = PokeDexOBJC/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PokeDexOBJC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = flowers.PokeDexOBJC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "PokeDexOBJC/Network/PokeDexOBJC-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokeDexOBJC/HeaderFolder/PokeDexOBJC-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
