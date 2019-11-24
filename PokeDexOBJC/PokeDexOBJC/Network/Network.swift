@@ -6,7 +6,7 @@
 //  Copyright © 2019 Michael Flowers. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 //Give this an OBJC name
 @objc(MRFNetwork)
@@ -116,6 +116,40 @@ class Network: NSObject {
             } catch  {
                 print("Error in: \(#function)\n Readable Error: \(error.localizedDescription)\n Technical Error: \(error)")
             }
+        }.resume()
+    }
+    
+    //fetch the sprite
+    @objc func fetchSprite(with pokemon: MRFPokemon, completion: @escaping (UIImage?, Error?) -> Void){
+        //construct the url to get image
+        let url = URL(string: pokemon.sprite)!
+        print("This is the sprite url: \(url.debugDescription)")
+        
+        //the default request is get so we don't have to do anything here just call urlsession
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            if let response = response as? HTTPURLResponse {
+                         print("The response is: \(response.statusCode)")
+            }
+            
+            if let error = error {
+                print("Error in: \(#function)\n on line: \(#line)\n Readable Error: \(error.localizedDescription)\n Technical Error: \(error)")
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                print("Error unwrapping data in: \(#function) on line: \(#line)")
+                completion(nil, NSError())
+                return
+            }
+            
+            guard let image = UIImage(data: data) else {
+                print("Error initializing image with the returned data in: \(#function) on line: \(#line)")
+                completion(nil, NSError())
+                return
+            }
+            completion(image, nil)
         }.resume()
     }
     
