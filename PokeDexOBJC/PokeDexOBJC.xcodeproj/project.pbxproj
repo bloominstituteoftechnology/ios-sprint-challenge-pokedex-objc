@@ -13,6 +13,7 @@
 		1BE6D6A0238A0DD00066E7DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BE6D69F238A0DD00066E7DD /* Assets.xcassets */; };
 		1BE6D6A3238A0DD00066E7DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BE6D6A1238A0DD00066E7DD /* LaunchScreen.storyboard */; };
 		1BE6D6A6238A0DD00066E7DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6D6A5238A0DD00066E7DD /* main.m */; };
+		1BE6D6B7238A152A0066E7DD /* MRFPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6D6B6238A152A0066E7DD /* MRFPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		1BE6D6A2238A0DD00066E7DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BE6D6A4238A0DD00066E7DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		1BE6D6A5238A0DD00066E7DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
+		1BE6D6B5238A152A0066E7DD /* MRFPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRFPokemon.h; sourceTree = SOURCE_ROOT; };
+		1BE6D6B6238A152A0066E7DD /* MRFPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRFPokemon.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 		1BE6D6AE238A0EE60066E7DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1BE6D6B5238A152A0066E7DD /* MRFPokemon.h */,
+				1BE6D6B6238A152A0066E7DD /* MRFPokemon.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 		1BE6D688238A0DCF0066E7DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MRF;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Michael Flowers";
 				TargetAttributes = {
@@ -214,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BE6D695238A0DCF0066E7DD /* AppDelegate.m in Sources */,
+				1BE6D6B7238A152A0066E7DD /* MRFPokemon.m in Sources */,
 				1BE6D6A6238A0DD00066E7DD /* main.m in Sources */,
 				1BE6D698238A0DCF0066E7DD /* SceneDelegate.m in Sources */,
 			);
