@@ -12,6 +12,7 @@
 void *KVOContext = &KVOContext;
 
 @interface MRFDetailViewController ()
+@property (nonatomic, weak)IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *pokemonImageView;
 @property (nonatomic, weak) IBOutlet UILabel *identifierLabel;
 @property (nonatomic, weak) IBOutlet UILabel *abilitiesLabel;
@@ -52,12 +53,33 @@ void *KVOContext = &KVOContext;
             }
         }];
         self.identifierLabel.text = [[NSString alloc] initWithFormat:@"ID: %d", self.pokemon.identifier];
-        
+        self.nameLabel.text = self.pokemon.name;
         NSString *abilitiesStr = [self.pokemon.abilities componentsJoinedByString:@", "];
         self.abilitiesLabel.text =  abilitiesStr;
     }else {
         NSLog(@"didn't update views with pokemon");
     }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    
+    if (context == KVOContext) {
+        if ([keyPath isEqualToString:@"abilities"]){
+            NSLog(@"got abilities");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self updateViews];
+            });
+        } else if ([keyPath isEqualToString:@"sprite"]){
+            if (self.pokemon.sprite) {
+                [self updateViews];
+            }
+        }
+        
+    }else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+    
 }
 
 @end
