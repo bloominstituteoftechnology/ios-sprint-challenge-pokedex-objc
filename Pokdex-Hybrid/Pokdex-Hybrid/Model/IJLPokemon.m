@@ -39,7 +39,7 @@
     NSString *spriteString = dictionary[@"sprites"][@"front_default"];
     NSURL *spriteURL = [NSURL URLWithString:spriteString];
     
-    NSArray *abilities = dictionary[@"abilities"];
+    NSArray *abilitiesArray = dictionary[@"abilities"];
     
     NSNumber *identifier = dictionary[@"id"];
     
@@ -47,9 +47,9 @@
         self.spriteURL = spriteURL;
     }
     
-    if (abilities) {
-        NSMutableArray *abilities;
-        for (NSDictionary *dictionary in abilities) {
+    if (abilitiesArray) {
+        NSMutableArray *abilities = [[NSMutableArray alloc] init];
+        for (NSDictionary *dictionary in abilitiesArray) {
             NSString *abilityName = dictionary[@"ability"][@"name"];
             if (abilityName) {
                 [abilities addObject:abilityName];

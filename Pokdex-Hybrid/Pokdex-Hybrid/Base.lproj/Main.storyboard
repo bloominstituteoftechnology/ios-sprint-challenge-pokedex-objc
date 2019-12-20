@@ -97,6 +97,12 @@
                         <viewLayoutGuide key="safeArea" id="Yt9-r5-SEM"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pokemon" id="KkT-Fi-30p"/>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="OXk-JI-Zo7" id="Hg6-hT-b3e"/>
+                        <outlet property="idLabel" destination="3ng-gt-MVL" id="u3a-gh-iJ6"/>
+                        <outlet property="imageView" destination="zKn-Ic-cgt" id="2Mq-K5-12L"/>
+                        <outlet property="nameLabel" destination="rBa-P9-txK" id="aNl-hc-Dpc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEY-cl-k5e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
