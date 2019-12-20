@@ -13,6 +13,8 @@
 		5910EF5923AD2A7D00E7A64C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5910EF5823AD2A7D00E7A64C /* Assets.xcassets */; };
 		5910EF5C23AD2A7D00E7A64C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5910EF5A23AD2A7D00E7A64C /* LaunchScreen.storyboard */; };
 		5910EF5F23AD2A7D00E7A64C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910EF5E23AD2A7D00E7A64C /* main.m */; };
+		5910EF6823AD2B8200E7A64C /* IJLPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910EF6723AD2B8200E7A64C /* IJLPokedexTableViewController.m */; };
+		5910EF6B23AD2BB300E7A64C /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5910EF6A23AD2BB300E7A64C /* PokemonDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		5910EF5B23AD2A7D00E7A64C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5910EF5D23AD2A7D00E7A64C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5910EF5E23AD2A7D00E7A64C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5910EF6623AD2B8200E7A64C /* IJLPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IJLPokedexTableViewController.h; sourceTree = "<group>"; };
+		5910EF6723AD2B8200E7A64C /* IJLPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IJLPokedexTableViewController.m; sourceTree = "<group>"; };
+		5910EF6923AD2BB200E7A64C /* Pokdex-Hybrid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokdex-Hybrid-Bridging-Header.h"; sourceTree = "<group>"; };
+		5910EF6A23AD2BB300E7A64C /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 				5910EF4D23AD2A7B00E7A64C /* AppDelegate.m */,
 				5910EF4F23AD2A7B00E7A64C /* SceneDelegate.h */,
 				5910EF5023AD2A7B00E7A64C /* SceneDelegate.m */,
+				5910EF6523AD2B5B00E7A64C /* View Controllers */,
 				5910EF5523AD2A7B00E7A64C /* Main.storyboard */,
 				5910EF5823AD2A7D00E7A64C /* Assets.xcassets */,
 				5910EF5A23AD2A7D00E7A64C /* LaunchScreen.storyboard */,
@@ -69,6 +76,17 @@
 				5910EF5E23AD2A7D00E7A64C /* main.m */,
 			);
 			path = "Pokdex-Hybrid";
+			sourceTree = "<group>";
+		};
+		5910EF6523AD2B5B00E7A64C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5910EF6623AD2B8200E7A64C /* IJLPokedexTableViewController.h */,
+				5910EF6723AD2B8200E7A64C /* IJLPokedexTableViewController.m */,
+				5910EF6A23AD2BB300E7A64C /* PokemonDetailViewController.swift */,
+				5910EF6923AD2BB200E7A64C /* Pokdex-Hybrid-Bridging-Header.h */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,11 +115,13 @@
 		5910EF4123AD2A7B00E7A64C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = IJL;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Isaac Lyons";
 				TargetAttributes = {
 					5910EF4823AD2A7B00E7A64C = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -141,7 +161,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5910EF6823AD2B8200E7A64C /* IJLPokedexTableViewController.m in Sources */,
 				5910EF4E23AD2A7B00E7A64C /* AppDelegate.m in Sources */,
+				5910EF6B23AD2BB300E7A64C /* PokemonDetailViewController.swift in Sources */,
 				5910EF5F23AD2A7D00E7A64C /* main.m in Sources */,
 				5910EF5123AD2A7B00E7A64C /* SceneDelegate.m in Sources */,
 			);
@@ -283,6 +305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4525544Q4;
 				INFOPLIST_FILE = "Pokdex-Hybrid/Info.plist";
@@ -292,6 +315,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IsaacLyons.Pokdex-Hybrid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokdex-Hybrid/View Controllers/Pokdex-Hybrid-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -300,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4525544Q4;
 				INFOPLIST_FILE = "Pokdex-Hybrid/Info.plist";
@@ -309,6 +336,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IsaacLyons.Pokdex-Hybrid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokdex-Hybrid/View Controllers/Pokdex-Hybrid-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
