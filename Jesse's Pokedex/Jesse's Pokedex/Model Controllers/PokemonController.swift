@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PokemonAPI: NSObject {
+@objc class PokemonAPI: NSObject {
     
     @objc(sharedController) static let shared = PokemonAPI()
     
@@ -74,7 +74,7 @@ class PokemonAPI: NSObject {
                     }
                     
                     if let sprites = jsonDictionary["sprites"] as? [String: Any] {
-                        let imageURLString = sprites["front-default"] as? String
+                        let imageURLString = sprites["front_shiny"] as? String
                         guard let imageURL = URL(string: imageURLString ?? "") else { return }
                         self.loadImage(url: imageURL) { (imageData) in
                             pokemon.sprite = imageData
