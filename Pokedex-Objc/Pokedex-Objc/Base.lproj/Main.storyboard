@@ -16,15 +16,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="o7a-wC-a5Z">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokeCell" textLabel="n89-dX-BWO" style="IBUITableViewCellStyleDefault" id="o7a-wC-a5Z">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o7a-wC-a5Z" id="f8e-SG-FEQ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n89-dX-BWO">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="fqB-eR-vRH" kind="show" id="Cb4-Aw-Ose"/>
+                                    <segue destination="fqB-eR-vRH" kind="show" identifier="DetailSegue" id="Cb4-Aw-Ose"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -42,7 +51,7 @@
         <!--Detail View Controller-->
         <scene sceneID="4Wi-Vd-rwI">
             <objects>
-                <viewController id="fqB-eR-vRH" customClass="DetailViewController" customModule="Pokedex_Objc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fqB-eR-vRH" customClass="GIPDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SDf-yn-LfI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,10 +126,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="4rp-a5-Wi8"/>
                     <connections>
-                        <outlet property="abilityTextView" destination="cw3-AH-VB5" id="wDK-xF-qXQ"/>
-                        <outlet property="idLabel" destination="9wy-IV-D9U" id="xxJ-ex-28H"/>
-                        <outlet property="imageView" destination="mL0-oi-NoD" id="ILD-1Q-lMD"/>
-                        <outlet property="nameLabel" destination="swN-Jl-yKK" id="gRf-zc-W5e"/>
+                        <outlet property="abilityTextView" destination="cw3-AH-VB5" id="CNr-On-8FM"/>
+                        <outlet property="idLabel" destination="9wy-IV-D9U" id="BVD-FI-tHx"/>
+                        <outlet property="imageView" destination="mL0-oi-NoD" id="DN3-36-KUD"/>
+                        <outlet property="nameLabel" destination="swN-Jl-yKK" id="LOJ-QY-OXU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxe-0U-MY6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

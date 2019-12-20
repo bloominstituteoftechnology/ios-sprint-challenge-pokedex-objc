@@ -6,6 +6,7 @@
 //  Copyright © 2019 GIPGIP Studio. All rights reserved.
 //
 
+
 #import "GIPPokemon.h"
 
 @interface GIPPokemon()
@@ -61,7 +62,6 @@
         [self.internalAbilities addObject:name];
     }
     pokemon.abilities = self.internalAbilities;
-    
 }
 
 @end

@@ -15,9 +15,9 @@
 		A6F5BDAB23AD295400EE9D21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDAA23AD295400EE9D21 /* main.m */; };
 		A6F5BDB523AD295500EE9D21 /* Pokedex_ObjcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDB423AD295500EE9D21 /* Pokedex_ObjcTests.m */; };
 		A6F5BDC123AD2C2300EE9D21 /* GIPPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDC023AD2C2300EE9D21 /* GIPPokedexTableViewController.m */; };
-		A6F5BDC423AD2C3700EE9D21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDC323AD2C3700EE9D21 /* DetailViewController.swift */; };
 		A6F5BDC823AD2D2800EE9D21 /* GIPPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDC723AD2D2800EE9D21 /* GIPPokemon.m */; };
 		A6F5BDCB23AD3CA400EE9D21 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDCA23AD3CA400EE9D21 /* PokemonAPI.swift */; };
+		A6F5BDCF23AD506000EE9D21 /* GIPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDCE23AD506000EE9D21 /* GIPDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +47,11 @@
 		A6F5BDBF23AD2C2300EE9D21 /* GIPPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPPokedexTableViewController.h; sourceTree = "<group>"; };
 		A6F5BDC023AD2C2300EE9D21 /* GIPPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPPokedexTableViewController.m; sourceTree = "<group>"; };
 		A6F5BDC223AD2C3600EE9D21 /* Pokedex-Objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Objc-Bridging-Header.h"; sourceTree = "<group>"; };
-		A6F5BDC323AD2C3700EE9D21 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A6F5BDC623AD2D2800EE9D21 /* GIPPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPPokemon.h; sourceTree = "<group>"; };
 		A6F5BDC723AD2D2800EE9D21 /* GIPPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPPokemon.m; sourceTree = "<group>"; };
 		A6F5BDCA23AD3CA400EE9D21 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		A6F5BDCD23AD506000EE9D21 /* GIPDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPDetailViewController.h; sourceTree = "<group>"; };
+		A6F5BDCE23AD506000EE9D21 /* GIPDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +103,9 @@
 				A6F5BDA923AD295400EE9D21 /* Info.plist */,
 				A6F5BDAA23AD295400EE9D21 /* main.m */,
 				A6F5BDC523AD2C3D00EE9D21 /* View controllers */,
-				A6F5BDC223AD2C3600EE9D21 /* Pokedex-Objc-Bridging-Header.h */,
 				A6F5BDC923AD2D2C00EE9D21 /* Models */,
-				A6F5BDCA23AD3CA400EE9D21 /* PokemonAPI.swift */,
+				A6F5BDCC23AD44B700EE9D21 /* Networking */,
+				A6F5BDC223AD2C3600EE9D21 /* Pokedex-Objc-Bridging-Header.h */,
 			);
 			path = "Pokedex-Objc";
 			sourceTree = "<group>";
@@ -123,7 +124,8 @@
 			children = (
 				A6F5BDBF23AD2C2300EE9D21 /* GIPPokedexTableViewController.h */,
 				A6F5BDC023AD2C2300EE9D21 /* GIPPokedexTableViewController.m */,
-				A6F5BDC323AD2C3700EE9D21 /* DetailViewController.swift */,
+				A6F5BDCD23AD506000EE9D21 /* GIPDetailViewController.h */,
+				A6F5BDCE23AD506000EE9D21 /* GIPDetailViewController.m */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -135,6 +137,14 @@
 				A6F5BDC723AD2D2800EE9D21 /* GIPPokemon.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A6F5BDCC23AD44B700EE9D21 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A6F5BDCA23AD3CA400EE9D21 /* PokemonAPI.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,8 +253,8 @@
 				A6F5BD9A23AD295400EE9D21 /* AppDelegate.m in Sources */,
 				A6F5BDC123AD2C2300EE9D21 /* GIPPokedexTableViewController.m in Sources */,
 				A6F5BDCB23AD3CA400EE9D21 /* PokemonAPI.swift in Sources */,
-				A6F5BDC423AD2C3700EE9D21 /* DetailViewController.swift in Sources */,
 				A6F5BDAB23AD295400EE9D21 /* main.m in Sources */,
+				A6F5BDCF23AD506000EE9D21 /* GIPDetailViewController.m in Sources */,
 				A6F5BD9D23AD295400EE9D21 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,11 +12,7 @@ class PokemonAPI: NSObject {
 
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
         
-//    @objc(sharedController) static let shared: PokemonAPI
-//
-//    override init() {
-//        PokemonAPI.shared = PokemonAPI()
-//    }
+    @objc(sharedController) static let shared: PokemonAPI = PokemonAPI()
 
     @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
         URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
