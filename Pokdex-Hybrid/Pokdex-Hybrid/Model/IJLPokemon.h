@@ -17,6 +17,7 @@ NS_SWIFT_NAME(Pokemon)
 @property int identifier;
 
 - (nonnull instancetype)initWithName:(nonnull NSString *)name;
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
 
 - (void)updateFromDictionary:(nonnull NSDictionary *)dictionary;
 

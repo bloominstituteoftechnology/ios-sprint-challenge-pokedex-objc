@@ -25,6 +25,16 @@
     return self;
 }
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    NSString *name = dictionary[@"name"];
+    
+    if (!name) {
+        return nil;
+    }
+    
+    return [self initWithName:name];
+}
+
 - (void)updateFromDictionary:(NSDictionary *)dictionary {
     NSString *spriteString = dictionary[@"sprites"][@"front_default"];
     NSURL *spriteURL = [NSURL URLWithString:spriteString];

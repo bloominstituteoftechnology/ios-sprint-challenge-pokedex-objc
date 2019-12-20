@@ -7,39 +7,54 @@
 //
 
 #import "IJLPokedexTableViewController.h"
+#import "IJLPokemon.h"
+#import "Pokdex_Hybrid-Swift.h"
 
 @interface IJLPokedexTableViewController ()
+
+@property PokemonAPI *pokemonAPI;
+@property NSArray<IJLPokemon *> *pokemon;
 
 @end
 
 @implementation IJLPokedexTableViewController
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        _pokemonAPI = [[PokemonAPI alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.pokemonAPI fetchAllPokemonWithCompletion:^(NSArray<IJLPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
+        if (error) {
+            return NSLog(@"%@", error);
+        }
+        
+        self.pokemon = pokemon;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return [self.pokemon count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    IJLPokemon *pokemon = self.pokemon[indexPath.row];
+    [[cell textLabel] setText:[[pokemon name] capitalizedString]];
     
     return cell;
 }
