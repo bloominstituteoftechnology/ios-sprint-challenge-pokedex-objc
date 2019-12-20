@@ -15,6 +15,7 @@
 		5910EF5F23AD2A7D00E7A64C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910EF5E23AD2A7D00E7A64C /* main.m */; };
 		5910EF6823AD2B8200E7A64C /* IJLPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910EF6723AD2B8200E7A64C /* IJLPokedexTableViewController.m */; };
 		5910EF6B23AD2BB300E7A64C /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5910EF6A23AD2BB300E7A64C /* PokemonDetailViewController.swift */; };
+		5910EF6F23AD2C6E00E7A64C /* IJLPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910EF6E23AD2C6E00E7A64C /* IJLPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		5910EF6723AD2B8200E7A64C /* IJLPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IJLPokedexTableViewController.m; sourceTree = "<group>"; };
 		5910EF6923AD2BB200E7A64C /* Pokdex-Hybrid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokdex-Hybrid-Bridging-Header.h"; sourceTree = "<group>"; };
 		5910EF6A23AD2BB300E7A64C /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
+		5910EF6D23AD2C6E00E7A64C /* IJLPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IJLPokemon.h; sourceTree = "<group>"; };
+		5910EF6E23AD2C6E00E7A64C /* IJLPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IJLPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 				5910EF4D23AD2A7B00E7A64C /* AppDelegate.m */,
 				5910EF4F23AD2A7B00E7A64C /* SceneDelegate.h */,
 				5910EF5023AD2A7B00E7A64C /* SceneDelegate.m */,
+				5910EF6C23AD2C5F00E7A64C /* Model */,
 				5910EF6523AD2B5B00E7A64C /* View Controllers */,
 				5910EF5523AD2A7B00E7A64C /* Main.storyboard */,
 				5910EF5823AD2A7D00E7A64C /* Assets.xcassets */,
@@ -87,6 +91,15 @@
 				5910EF6923AD2BB200E7A64C /* Pokdex-Hybrid-Bridging-Header.h */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5910EF6C23AD2C5F00E7A64C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5910EF6D23AD2C6E00E7A64C /* IJLPokemon.h */,
+				5910EF6E23AD2C6E00E7A64C /* IJLPokemon.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5910EF6823AD2B8200E7A64C /* IJLPokedexTableViewController.m in Sources */,
+				5910EF6F23AD2C6E00E7A64C /* IJLPokemon.m in Sources */,
 				5910EF4E23AD2A7B00E7A64C /* AppDelegate.m in Sources */,
 				5910EF6B23AD2BB300E7A64C /* PokemonDetailViewController.swift in Sources */,
 				5910EF5F23AD2A7D00E7A64C /* main.m in Sources */,
