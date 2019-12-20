@@ -13,6 +13,7 @@ NS_SWIFT_NAME(Pokemon)
 
 @property (nonatomic, nonnull, readonly) NSString *name;
 @property (nonatomic, nullable, readonly) NSURL *spriteURL;
+@property (nonatomic, nullable, readonly) NSURL *shinySpriteURL;
 @property (nonatomic, nullable, readonly) NSArray<NSString *> *abilities;
 @property int identifier;
 

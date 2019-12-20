@@ -63,7 +63,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5mD-L5-hQW">
-                                <rect key="frame" x="20" y="542" width="65" height="77.5"/>
+                                <rect key="frame" x="20" y="580" width="65" height="77.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBa-P9-txK">
                                         <rect key="frame" x="0.0" y="0.0" width="65" height="20.5"/>
@@ -85,14 +85,23 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbd-1n-Iu3">
+                                <rect key="frame" x="188" y="542" width="38" height="30"/>
+                                <state key="normal" title="Shiny"/>
+                                <connections>
+                                    <action selector="shinyTapped:" destination="j6e-Il-vfd" eventType="touchUpInside" id="YJf-dC-z0V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="5mD-L5-hQW" firstAttribute="leading" secondItem="Yt9-r5-SEM" secondAttribute="leading" constant="20" id="5oN-2P-W1z"/>
-                            <constraint firstItem="5mD-L5-hQW" firstAttribute="top" secondItem="zKn-Ic-cgt" secondAttribute="bottom" constant="8" id="9fi-lH-uCV"/>
+                            <constraint firstItem="5mD-L5-hQW" firstAttribute="top" secondItem="Jbd-1n-Iu3" secondAttribute="bottom" constant="8" id="9fi-lH-uCV"/>
                             <constraint firstItem="zKn-Ic-cgt" firstAttribute="top" secondItem="Yt9-r5-SEM" secondAttribute="top" constant="20" id="NO3-nC-SPQ"/>
                             <constraint firstItem="zKn-Ic-cgt" firstAttribute="leading" secondItem="Yt9-r5-SEM" secondAttribute="leading" constant="20" id="SaA-vL-gsP"/>
                             <constraint firstItem="Yt9-r5-SEM" firstAttribute="trailing" secondItem="zKn-Ic-cgt" secondAttribute="trailing" constant="20" id="WeG-5S-gi5"/>
+                            <constraint firstItem="Jbd-1n-Iu3" firstAttribute="top" secondItem="zKn-Ic-cgt" secondAttribute="bottom" constant="8" id="uvm-pM-Giu"/>
+                            <constraint firstItem="Jbd-1n-Iu3" firstAttribute="centerX" secondItem="4uk-4z-SsT" secondAttribute="centerX" id="wj3-0e-5rq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yt9-r5-SEM"/>
                     </view>
@@ -102,6 +111,7 @@
                         <outlet property="idLabel" destination="3ng-gt-MVL" id="u3a-gh-iJ6"/>
                         <outlet property="imageView" destination="zKn-Ic-cgt" id="2Mq-K5-12L"/>
                         <outlet property="nameLabel" destination="rBa-P9-txK" id="aNl-hc-Dpc"/>
+                        <outlet property="shinyButton" destination="Jbd-1n-Iu3" id="gf4-Bi-Bmu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEY-cl-k5e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -11,6 +11,7 @@
 @interface IJLPokemon()
 
 @property (nonatomic, nullable, readwrite) NSURL *spriteURL;
+@property (nonatomic, nullable, readwrite) NSURL *shinySpriteURL;
 @property (nonatomic, nullable, readwrite) NSArray<NSString *> *abilities;
 
 @end
@@ -43,6 +44,9 @@
     NSString *spriteString = dictionary[@"sprites"][@"front_default"];
     NSURL *spriteURL = [NSURL URLWithString:spriteString];
     
+    NSString *shinySpriteString = dictionary[@"sprites"][@"front_shiny"];
+    NSURL *shinySpriteURL = [NSURL URLWithString:shinySpriteString];
+    
     if (abilitiesArray) {
         NSMutableArray *abilities = [[NSMutableArray alloc] init];
         for (NSDictionary *dictionary in abilitiesArray) {
@@ -60,6 +64,10 @@
     
     if (spriteURL) {
         self.spriteURL = spriteURL;
+    }
+    
+    if (shinySpriteURL) {
+        self.shinySpriteURL = shinySpriteURL;
     }
 }
 
