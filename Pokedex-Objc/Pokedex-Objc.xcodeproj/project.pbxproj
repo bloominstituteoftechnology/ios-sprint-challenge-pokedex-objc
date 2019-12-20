@@ -16,6 +16,7 @@
 		A6F5BDB523AD295500EE9D21 /* Pokedex_ObjcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDB423AD295500EE9D21 /* Pokedex_ObjcTests.m */; };
 		A6F5BDC123AD2C2300EE9D21 /* GIPPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDC023AD2C2300EE9D21 /* GIPPokedexTableViewController.m */; };
 		A6F5BDC423AD2C3700EE9D21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDC323AD2C3700EE9D21 /* DetailViewController.swift */; };
+		A6F5BDC823AD2D2800EE9D21 /* GIPPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDC723AD2D2800EE9D21 /* GIPPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		A6F5BDC023AD2C2300EE9D21 /* GIPPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPPokedexTableViewController.m; sourceTree = "<group>"; };
 		A6F5BDC223AD2C3600EE9D21 /* Pokedex-Objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Objc-Bridging-Header.h"; sourceTree = "<group>"; };
 		A6F5BDC323AD2C3700EE9D21 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A6F5BDC623AD2D2800EE9D21 /* GIPPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPPokemon.h; sourceTree = "<group>"; };
+		A6F5BDC723AD2D2800EE9D21 /* GIPPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,7 @@
 				A6F5BDAA23AD295400EE9D21 /* main.m */,
 				A6F5BDC523AD2C3D00EE9D21 /* View controllers */,
 				A6F5BDC223AD2C3600EE9D21 /* Pokedex-Objc-Bridging-Header.h */,
+				A6F5BDC923AD2D2C00EE9D21 /* Models */,
 			);
 			path = "Pokedex-Objc";
 			sourceTree = "<group>";
@@ -119,6 +123,15 @@
 				A6F5BDC323AD2C3700EE9D21 /* DetailViewController.swift */,
 			);
 			path = "View controllers";
+			sourceTree = "<group>";
+		};
+		A6F5BDC923AD2D2C00EE9D21 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A6F5BDC623AD2D2800EE9D21 /* GIPPokemon.h */,
+				A6F5BDC723AD2D2800EE9D21 /* GIPPokemon.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6F5BDC823AD2D2800EE9D21 /* GIPPokemon.m in Sources */,
 				A6F5BD9A23AD295400EE9D21 /* AppDelegate.m in Sources */,
 				A6F5BDC123AD2C2300EE9D21 /* GIPPokedexTableViewController.m in Sources */,
 				A6F5BDC423AD2C3700EE9D21 /* DetailViewController.swift in Sources */,
