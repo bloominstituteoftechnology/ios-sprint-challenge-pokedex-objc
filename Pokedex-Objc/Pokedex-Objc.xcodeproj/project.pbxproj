@@ -17,6 +17,7 @@
 		A6F5BDC123AD2C2300EE9D21 /* GIPPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDC023AD2C2300EE9D21 /* GIPPokedexTableViewController.m */; };
 		A6F5BDC423AD2C3700EE9D21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDC323AD2C3700EE9D21 /* DetailViewController.swift */; };
 		A6F5BDC823AD2D2800EE9D21 /* GIPPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDC723AD2D2800EE9D21 /* GIPPokemon.m */; };
+		A6F5BDCB23AD3CA400EE9D21 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDCA23AD3CA400EE9D21 /* PokemonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A6F5BDC323AD2C3700EE9D21 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A6F5BDC623AD2D2800EE9D21 /* GIPPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPPokemon.h; sourceTree = "<group>"; };
 		A6F5BDC723AD2D2800EE9D21 /* GIPPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPPokemon.m; sourceTree = "<group>"; };
+		A6F5BDCA23AD3CA400EE9D21 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				A6F5BDC523AD2C3D00EE9D21 /* View controllers */,
 				A6F5BDC223AD2C3600EE9D21 /* Pokedex-Objc-Bridging-Header.h */,
 				A6F5BDC923AD2D2C00EE9D21 /* Models */,
+				A6F5BDCA23AD3CA400EE9D21 /* PokemonAPI.swift */,
 			);
 			path = "Pokedex-Objc";
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				A6F5BDC823AD2D2800EE9D21 /* GIPPokemon.m in Sources */,
 				A6F5BD9A23AD295400EE9D21 /* AppDelegate.m in Sources */,
 				A6F5BDC123AD2C2300EE9D21 /* GIPPokedexTableViewController.m in Sources */,
+				A6F5BDCB23AD3CA400EE9D21 /* PokemonAPI.swift in Sources */,
 				A6F5BDC423AD2C3700EE9D21 /* DetailViewController.swift in Sources */,
 				A6F5BDAB23AD295400EE9D21 /* main.m in Sources */,
 				A6F5BD9D23AD295400EE9D21 /* SceneDelegate.m in Sources */,
