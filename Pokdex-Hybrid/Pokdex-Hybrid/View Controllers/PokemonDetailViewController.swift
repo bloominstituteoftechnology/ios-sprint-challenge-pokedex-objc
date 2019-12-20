@@ -24,6 +24,7 @@ class PokemonDetailViewController: UIViewController {
     
     var identifierObservation: NSKeyValueObservation?
     var abilitiesObservation: NSKeyValueObservation?
+    var spriteURLObservation: NSKeyValueObservation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +55,27 @@ class PokemonDetailViewController: UIViewController {
                 self.abilitiesLabel.text = "Abilities: \(abilitiesString)"
             }
         })
+        
+        spriteURLObservation = observe(\.pokemon?.spriteURL, changeHandler: { _, _ in
+            guard let pokemon = self.pokemon,
+                let spriteURL = pokemon.spriteURL else { return }
+            do {
+                let imageData = try Data(contentsOf: spriteURL)
+                guard let sprite = UIImage(data: imageData) else { return }
+                DispatchQueue.main.async {
+                    self.imageView.image = sprite
+                }
+            } catch {
+                NSLog("\(error)")
+            }
+        })
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         identifierObservation?.invalidate()
+        abilitiesObservation?.invalidate()
+        spriteURLObservation?.invalidate()
     }
 
 }

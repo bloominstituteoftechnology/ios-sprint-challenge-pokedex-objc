@@ -36,16 +36,12 @@
 }
 
 - (void)updateFromDictionary:(NSDictionary *)dictionary {
-    NSString *spriteString = dictionary[@"sprites"][@"front_default"];
-    NSURL *spriteURL = [NSURL URLWithString:spriteString];
-    
     NSArray *abilitiesArray = dictionary[@"abilities"];
     
     NSNumber *identifier = dictionary[@"id"];
     
-    if (spriteURL) {
-        self.spriteURL = spriteURL;
-    }
+    NSString *spriteString = dictionary[@"sprites"][@"front_default"];
+    NSURL *spriteURL = [NSURL URLWithString:spriteString];
     
     if (abilitiesArray) {
         NSMutableArray *abilities = [[NSMutableArray alloc] init];
@@ -60,6 +56,10 @@
     
     if (identifier) {
         self.identifier = [identifier intValue];
+    }
+    
+    if (spriteURL) {
+        self.spriteURL = spriteURL;
     }
 }
 
