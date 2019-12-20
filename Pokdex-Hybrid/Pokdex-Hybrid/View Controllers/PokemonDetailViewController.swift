@@ -9,11 +9,14 @@
 import UIKit
 
 class PokemonDetailViewController: UIViewController {
+    
+    @objc var pokemonAPI: PokemonAPI?
+    @objc var pokemon: Pokemon?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        title = pokemon?.name.capitalized
     }
 
 }

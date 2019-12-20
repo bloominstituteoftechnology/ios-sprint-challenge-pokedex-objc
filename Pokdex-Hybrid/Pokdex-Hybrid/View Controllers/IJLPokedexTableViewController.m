@@ -93,14 +93,17 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    PokemonDetailViewController *pokemonDetailVC = segue.destinationViewController;
+    if (pokemonDetailVC && [pokemonDetailVC isKindOfClass:[PokemonDetailViewController class]]) {
+        [pokemonDetailVC setPokemonAPI:self.pokemonAPI];
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        [pokemonDetailVC setPokemon:self.pokemon[indexPath.row]];
+    }
 }
-*/
 
 @end
