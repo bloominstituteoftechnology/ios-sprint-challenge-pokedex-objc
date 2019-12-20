@@ -63,6 +63,33 @@ class PokemonAPI: NSObject {
     }
 
     @objc func fillInDetails(for pokemon: Pokemon) {
+        let url = pokemon.detailURL
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                NSLog("PokemonAPI::fillInDetails : Error while fetching details: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("PokemonAPI::fillInDetails : No data was returned.")
+                return
+            }
+            
+            do {
+                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else {
+                    NSLog("PokemonAPI::fillInDetails : Not able to get dictionary out of data.")
+                    return
+                }
+                
+                pokemon.fillInDetails(for: pokemon, dictionary: dictionary)
+                
+            } catch {
+                NSLog("PokemonAPI::fillInDetails : Not able to get jsonObject from data: \(error)")
+                return
+            }
+            
+        }.resume()
         
     }
 }
