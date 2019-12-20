@@ -9,11 +9,11 @@
 import Foundation
 
 class PokemonAPI: NSObject {
-
+    
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
-        
+    
     @objc(sharedController) static let shared: PokemonAPI = PokemonAPI()
-
+    
     @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
         URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
             if let error = error {
@@ -57,35 +57,37 @@ class PokemonAPI: NSObject {
             
         }.resume()
     }
-
+    
     @objc func fillInDetails(for pokemon: Pokemon) {
-        let url = pokemon.detailURL
-        
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
-            if let error = error {
-                NSLog("PokemonAPI::fillInDetails : Error while fetching details: \(error)")
-                return
-            }
+        if (pokemon.sprite == nil && pokemon.identifier == nil && pokemon.abilities == nil) {
+            let url = pokemon.detailURL
             
-            guard let data = data else {
-                NSLog("PokemonAPI::fillInDetails : No data was returned.")
-                return
-            }
-            
-            do {
-                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else {
-                    NSLog("PokemonAPI::fillInDetails : Not able to get dictionary out of data.")
+            URLSession.shared.dataTask(with: url) { (data, _, error) in
+                if let error = error {
+                    NSLog("PokemonAPI::fillInDetails : Error while fetching details: \(error)")
                     return
                 }
                 
-                pokemon.fillInDetails(for: pokemon, dictionary: dictionary)
+                guard let data = data else {
+                    NSLog("PokemonAPI::fillInDetails : No data was returned.")
+                    return
+                }
                 
-            } catch {
-                NSLog("PokemonAPI::fillInDetails : Not able to get jsonObject from data: \(error)")
-                return
-            }
-            
-        }.resume()
+                do {
+                    guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else {
+                        NSLog("PokemonAPI::fillInDetails : Not able to get dictionary out of data.")
+                        return
+                    }
+                    
+                    pokemon.fillInDetails(for: pokemon, dictionary: dictionary)
+                    
+                } catch {
+                    NSLog("PokemonAPI::fillInDetails : Not able to get jsonObject from data: \(error)")
+                    return
+                }
+                
+            }.resume()
+        }
         
     }
 }
