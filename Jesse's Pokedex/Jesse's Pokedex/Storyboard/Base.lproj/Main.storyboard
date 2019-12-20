@@ -51,7 +51,7 @@
         <!--Detail View Controller-->
         <scene sceneID="sKU-g9-Wz2">
             <objects>
-                <viewController id="LdG-1t-kxy" customClass="JLRDetailViewController" sceneMemberID="viewController">
+                <viewController id="LdG-1t-kxy" customClass="DetailViewController" customModule="Jesse_s_Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9WM-KJ-nvY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,10 +139,10 @@
                         <viewLayoutGuide key="safeArea" id="ExT-vq-SiM"/>
                     </view>
                     <connections>
-                        <outlet property="pokeID" destination="5AR-N3-dPS" id="hHU-ya-bgI"/>
-                        <outlet property="pokeImage" destination="r5p-WJ-iNO" id="AJB-a1-aln"/>
-                        <outlet property="pokeName" destination="6FP-T7-0qR" id="Ltt-3D-iz7"/>
-                        <outlet property="textView" destination="AmJ-1X-NoL" id="T6I-dL-gaD"/>
+                        <outlet property="pokemonID" destination="5AR-N3-dPS" id="Qwe-U9-8t9"/>
+                        <outlet property="pokemonImage" destination="r5p-WJ-iNO" id="75Y-WN-tim"/>
+                        <outlet property="pokemonName" destination="6FP-T7-0qR" id="I31-na-KMg"/>
+                        <outlet property="textView" destination="AmJ-1X-NoL" id="OvD-yo-oBd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Bd-oU-PTW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
