@@ -29,6 +29,8 @@ class PokemonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imageView.layer.magnificationFilter = .nearest
+        
         addObservers()
 
         if let pokemon = pokemon {
