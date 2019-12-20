@@ -10,4 +10,14 @@
 
 @implementation JLRPokemon
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    if (self) {
+        _pokemonName = dictionary[@"name"];
+        NSString *urlString = dictionary[@"url"];
+        _url = [NSURL URLWithString:urlString];
+    }
+    return self;
+}
+
 @end

@@ -56,6 +56,7 @@
 			children = (
 				80D49DF723AD34D600DB321B /* Jesse's Pokedex */,
 				80D49DF623AD34D600DB321B /* Products */,
+				80D49E1D23AD354500DB321B /* Jesse's Pokedex-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				80D49E1E23AD354500DB321B /* PokemonController.swift */,
-				80D49E1D23AD354500DB321B /* Jesse's Pokedex-Bridging-Header.h */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
