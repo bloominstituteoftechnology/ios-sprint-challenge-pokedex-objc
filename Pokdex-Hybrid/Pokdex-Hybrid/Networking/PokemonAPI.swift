@@ -15,7 +15,9 @@ class PokemonAPI: NSObject {
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
 
     @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
-        URLSession.shared.dataTask(with: baseURL) { data, _, error in
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: false)
+        urlComponents!.queryItems = [URLQueryItem(name: "limit", value: "2000")]
+        URLSession.shared.dataTask(with: urlComponents!.url!) { data, _, error in
             if let error = error {
                 return completion(nil, error)
             }
