@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GIPPokedexTableViewController.h
 //  Pokedex-Objc
 //
 //  Created by Gi Pyo Kim on 12/20/19.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface GIPPokedexTableViewController : UITableViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

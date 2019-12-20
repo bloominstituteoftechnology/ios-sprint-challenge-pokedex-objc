@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		A6F5BD9A23AD295400EE9D21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BD9923AD295400EE9D21 /* AppDelegate.m */; };
 		A6F5BD9D23AD295400EE9D21 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BD9C23AD295400EE9D21 /* SceneDelegate.m */; };
-		A6F5BDA023AD295400EE9D21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BD9F23AD295400EE9D21 /* ViewController.m */; };
 		A6F5BDA323AD295400EE9D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6F5BDA123AD295400EE9D21 /* Main.storyboard */; };
 		A6F5BDA523AD295400EE9D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6F5BDA423AD295400EE9D21 /* Assets.xcassets */; };
 		A6F5BDA823AD295400EE9D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6F5BDA623AD295400EE9D21 /* LaunchScreen.storyboard */; };
 		A6F5BDAB23AD295400EE9D21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDAA23AD295400EE9D21 /* main.m */; };
 		A6F5BDB523AD295500EE9D21 /* Pokedex_ObjcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDB423AD295500EE9D21 /* Pokedex_ObjcTests.m */; };
+		A6F5BDC123AD2C2300EE9D21 /* GIPPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDC023AD2C2300EE9D21 /* GIPPokedexTableViewController.m */; };
+		A6F5BDC423AD2C3700EE9D21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5BDC323AD2C3700EE9D21 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,8 +34,6 @@
 		A6F5BD9923AD295400EE9D21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A6F5BD9B23AD295400EE9D21 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		A6F5BD9C23AD295400EE9D21 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		A6F5BD9E23AD295400EE9D21 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A6F5BD9F23AD295400EE9D21 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A6F5BDA223AD295400EE9D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6F5BDA423AD295400EE9D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6F5BDA723AD295400EE9D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,6 +42,10 @@
 		A6F5BDB023AD295500EE9D21 /* Pokedex-ObjcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pokedex-ObjcTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F5BDB423AD295500EE9D21 /* Pokedex_ObjcTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokedex_ObjcTests.m; sourceTree = "<group>"; };
 		A6F5BDB623AD295500EE9D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6F5BDBF23AD2C2300EE9D21 /* GIPPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIPPokedexTableViewController.h; sourceTree = "<group>"; };
+		A6F5BDC023AD2C2300EE9D21 /* GIPPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIPPokedexTableViewController.m; sourceTree = "<group>"; };
+		A6F5BDC223AD2C3600EE9D21 /* Pokedex-Objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Objc-Bridging-Header.h"; sourceTree = "<group>"; };
+		A6F5BDC323AD2C3700EE9D21 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,13 +91,13 @@
 				A6F5BD9923AD295400EE9D21 /* AppDelegate.m */,
 				A6F5BD9B23AD295400EE9D21 /* SceneDelegate.h */,
 				A6F5BD9C23AD295400EE9D21 /* SceneDelegate.m */,
-				A6F5BD9E23AD295400EE9D21 /* ViewController.h */,
-				A6F5BD9F23AD295400EE9D21 /* ViewController.m */,
 				A6F5BDA123AD295400EE9D21 /* Main.storyboard */,
 				A6F5BDA423AD295400EE9D21 /* Assets.xcassets */,
 				A6F5BDA623AD295400EE9D21 /* LaunchScreen.storyboard */,
 				A6F5BDA923AD295400EE9D21 /* Info.plist */,
 				A6F5BDAA23AD295400EE9D21 /* main.m */,
+				A6F5BDC523AD2C3D00EE9D21 /* View controllers */,
+				A6F5BDC223AD2C3600EE9D21 /* Pokedex-Objc-Bridging-Header.h */,
 			);
 			path = "Pokedex-Objc";
 			sourceTree = "<group>";
@@ -106,6 +109,16 @@
 				A6F5BDB623AD295500EE9D21 /* Info.plist */,
 			);
 			path = "Pokedex-ObjcTests";
+			sourceTree = "<group>";
+		};
+		A6F5BDC523AD2C3D00EE9D21 /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6F5BDBF23AD2C2300EE9D21 /* GIPPokedexTableViewController.h */,
+				A6F5BDC023AD2C2300EE9D21 /* GIPPokedexTableViewController.m */,
+				A6F5BDC323AD2C3700EE9D21 /* DetailViewController.swift */,
+			);
+			path = "View controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,11 +165,13 @@
 		A6F5BD8D23AD295400EE9D21 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GIP;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "GIPGIP Studio";
 				TargetAttributes = {
 					A6F5BD9423AD295400EE9D21 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 					A6F5BDAF23AD295500EE9D21 = {
 						CreatedOnToolsVersion = 11.3;
@@ -208,8 +223,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6F5BDA023AD295400EE9D21 /* ViewController.m in Sources */,
 				A6F5BD9A23AD295400EE9D21 /* AppDelegate.m in Sources */,
+				A6F5BDC123AD2C2300EE9D21 /* GIPPokedexTableViewController.m in Sources */,
+				A6F5BDC423AD2C3700EE9D21 /* DetailViewController.swift in Sources */,
 				A6F5BDAB23AD295400EE9D21 /* main.m in Sources */,
 				A6F5BD9D23AD295400EE9D21 /* SceneDelegate.m in Sources */,
 			);
@@ -367,6 +383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FLZ8CLXX64;
 				INFOPLIST_FILE = "Pokedex-Objc/Info.plist";
@@ -376,6 +393,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GIPGIP.Pokedex-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex-Objc/Pokedex-Objc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -384,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FLZ8CLXX64;
 				INFOPLIST_FILE = "Pokedex-Objc/Info.plist";
@@ -393,6 +414,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GIPGIP.Pokedex-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex-Objc/Pokedex-Objc-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -400,6 +423,7 @@
 		A6F5BDBD23AD295500EE9D21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FLZ8CLXX64;
@@ -420,6 +444,7 @@
 		A6F5BDBE23AD295500EE9D21 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FLZ8CLXX64;
