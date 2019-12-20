@@ -12,8 +12,8 @@
 
 @interface IJLPokedexTableViewController ()
 
-@property PokemonAPI *pokemonAPI;
-@property NSArray<IJLPokemon *> *pokemon;
+@property (nonatomic, nonnull) PokemonAPI *pokemonAPI;
+@property (nonatomic, nullable) NSArray<IJLPokemon *> *pokemon;
 
 @end
 
