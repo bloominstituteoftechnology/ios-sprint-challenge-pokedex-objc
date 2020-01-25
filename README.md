@@ -18,6 +18,8 @@ If you have any questions about the project requirements or expectations, ask yo
 2. For this project, you will build a viewer app for the [Pokedex API](https://pokeapi.co). The Pokedex API does not require an API key or any other form of authentication. 
     1. The app will consist of two screens, a main table view, and a detail view. 
     2. You will implement it using a mix of Objective-C and Swift.
+    
+**NOTE:** This API has gone down in the past. If this happens to you while taking the sprint challenge, use this url as your base URL: https://lambdapokeapi.herokuapp.com. Note that you will have to add the same path components onto that URL that the original API's base URL has.
 
 ## Screen Recording
 
