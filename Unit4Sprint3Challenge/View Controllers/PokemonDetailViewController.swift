@@ -24,8 +24,13 @@ class PokemonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpObservers()
-        PokemonAPI.shared.fillInDetails(for: pokemon)
         updateViews()
+        if pokemon.idNumber == nil ||
+            pokemon.abilities == nil ||
+            pokemon.sprite == nil
+        {
+            PokemonAPI.shared.fillInDetails(for: pokemon)
+        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {

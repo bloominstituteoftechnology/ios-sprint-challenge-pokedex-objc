@@ -104,13 +104,17 @@ class PokemonAPI: NSObject {
                 NSLog("Error decoding pokemon JSON: \(error)")
                 return
             }
+            guard let dict = pokemonDict else {
+                NSLog("Unknown error decoding pokemon JSON")
+                return
+            }
 
             // get id
-            pokemon.idNumber = pokemonDict?["id"] as? NSNumber
+            pokemon.idNumber = dict["id"] as? NSNumber
 
             // get abilities
             var abilities: [String] = []
-            if let abilitiesJSONArray = pokemonDict?["abilities"] as? [[String: Any]] {
+            if let abilitiesJSONArray = dict["abilities"] as? [[String: Any]] {
                 for abilityTopDict in abilitiesJSONArray {
                     let abilityLowerDict = abilityTopDict["ability"] as? [String: String]
                     if let abilityName = abilityLowerDict?["name"] {
@@ -121,18 +125,20 @@ class PokemonAPI: NSObject {
             pokemon.abilities = abilities
 
             // get sprite url
-            let sprites = pokemonDict?["sprites"] as? [String: String]
-            let imageURLString = sprites?["front_default"]
+            let sprites = dict["sprites"] as? [String: Any]
+            let imageURLString = sprites?["front_default"] as? String
             if let urlString = imageURLString,
                 let imageURL = URL(string: urlString) {
                 pokemon.spriteURL = imageURL
                 self?.fetchSprite(for: pokemon, with: imageURL)
+            } else {
+                NSLog("Bad image url: \(imageURLString ?? "NO URL")")
             }
         }.resume()
     }
 
     private func fetchSprite(for pokemon: Pokemon, with url: URL) {
-        URLSession.shared.dataTask(with: pokemon.detailURL) { data, response, error in
+        URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 NSLog("Error fetching Pokemon sprite: \(error)")
                 return
@@ -147,8 +153,11 @@ class PokemonAPI: NSObject {
                 NSLog("Error fetching Pokemon sprite; no data received")
                 return
             }
-
-            pokemon.sprite = UIImage(data: data)
+            let sprite = UIImage(data: data)
+            if sprite == nil {
+                NSLog("Error converting fetched data to sprite image")
+            }
+            pokemon.sprite = sprite
         }.resume()
     }
 }
