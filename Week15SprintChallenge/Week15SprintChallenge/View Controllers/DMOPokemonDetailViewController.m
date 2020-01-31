@@ -10,6 +10,8 @@
 #import "DMOPokemon.h"
 #import "Week15SprintChallenge-Swift.h"
 
+void *KVOContext = &KVOContext;
+
 @interface DMOPokemonDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -24,30 +26,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [PokemonAPI.sharedController addObserver:self forKeyPath:@"pokemon" options:NSKeyValueObservingOptionInitial context:KVOContext];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+[super viewDidDisappear:animated];
+
+[PokemonAPI.sharedController removeObserver:self forKeyPath:@"pokemon" context:KVOContext];
 }
 
 - (void) updateViews {
     
     DMOPokemon *pokemon = PokemonAPI.sharedController.pokemon;
     
-    self.nameLabel.text = [NSString stringWithFormat:@"Name: %@", [pokemon.name capitalizedString]];
-    self.idLabel.text = [NSString stringWithFormat:@"ID: %i", pokemon.idenitifier];
-    self.abilitiesLabel.text =  [NSString stringWithFormat:@"Abilities:\n\n%@", [pokemon.abilities capitalizedString]];
-    
-    
-    
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.nameLabel.text = [NSString stringWithFormat:@"Name: %@", [pokemon.name capitalizedString]];
+        self.idLabel.text = [NSString stringWithFormat:@"ID: %i", pokemon.idenitifier];
+        self.abilitiesLabel.text =  [NSString stringWithFormat:@"Abilities:\n\n%@", [pokemon.abilities capitalizedString]];
+    });
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    
+    if (context == KVOContext) {
+        if ([keyPath isEqualToString:@"pokemon"]) {
+            [self updateViews];
+        }
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
 
 @end
