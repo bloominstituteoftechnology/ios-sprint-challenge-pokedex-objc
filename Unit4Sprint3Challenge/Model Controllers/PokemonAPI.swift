@@ -12,7 +12,7 @@ class PokemonAPI: NSObject {
 
     private(set) var pokemon: [Pokemon] = []
 
-    private var baseURL: URL? = URL(string: "https://pokeapi.co/api/v2/")
+    private var baseURL: URL = URL(string: "https://pokeapi.co/api/v2/")!
 
     @objc(sharedController)
     static let shared = PokemonAPI()
@@ -21,7 +21,8 @@ class PokemonAPI: NSObject {
 
     @objc
     func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
-        let url = URL(fileURLWithPath: "pokemon/?limit=20000", relativeTo: baseURL)
+        
+        let url = URL(fileURLWithPath: "", relativeTo: baseURL)
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 completion(nil, error)
