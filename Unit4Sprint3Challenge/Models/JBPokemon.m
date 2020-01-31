@@ -23,7 +23,7 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
-    NSString *name = dictionary[@"name"];
+    NSString *name = [dictionary[@"name"] capitalizedString];
     NSString *detailURLString = dictionary[@"url"];
     NSURL *detailURL = [NSURL URLWithString:detailURLString];
 
