@@ -3,3 +3,4 @@
 //
 
 #import "SKSPokemon.h"
+#import "LSIErrors.h"

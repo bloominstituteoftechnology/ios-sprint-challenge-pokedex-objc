@@ -35,7 +35,7 @@ static NSString * const reuseIdentifier = @"PokemonCell";
     [self.pokemonAPI fetchAllPokemonWithCompletion:^(NSArray<SKSPokemon *> *pokemons, NSError *error) {
 
         if (error) {
-            NSLog(@"Error with fetch!");
+            NSLog(@"Error: %@", error);
             return;
         } else {
             NSLog(@"Got Data!");

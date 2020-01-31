@@ -28,23 +28,23 @@ class PokemonAPI: NSObject {
             }
 
             guard let data = data else {
-                print("Bad data!")
-                completion(nil, NSError())
+                completion(nil, errorWithMessage("Bad data!", LSIDataNilError.rawValue))
                 return
             }
             
             do {
                 if let pokemonAPI = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     if let pokemonResults = pokemonAPI["results"] as? Array<[String: Any]> {
-                        for pokemon in pokemonResults {
-                            print(pokemon);
+                        var pokemons = [SKSPokemon]()
+                        for pokemonDictionary in pokemonResults {
+                            let pokemon = SKSPokemon(dictionary: pokemonDictionary)
+                            pokemons.append(pokemon)
                         }
-
+                        completion(pokemons, nil);
                     }
                 }
             } catch {
-                print("Bad decoding!!")
-                completion(nil, NSError())
+                completion(nil, errorWithMessage("Bad json decoding", LSIJSONDecodeError.rawValue))
             }
 
         }.resume()

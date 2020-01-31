@@ -18,6 +18,15 @@
 @implementation SKSPokemon
 
 
+- (instancetype _Nonnull)initWithDictionary:(nonnull NSDictionary *)dictionary {
+
+    self = [super init];
+    if (self) {
+        _name = dictionary[@"name"];
+        _detailsURL = dictionary[@"url"];
+    }
+    return self;
+}
 
 
 
