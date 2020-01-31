@@ -10,4 +10,14 @@
 
 @implementation PNCPokemon
 
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    if (self = [super init]) {
+        _name = dictionary[@"name"];
+                           NSString *urlString = dictionary[@"url"];
+        _url = [NSURL URLWithString:urlString];
+    }
+    return self;
+}
+
 @end

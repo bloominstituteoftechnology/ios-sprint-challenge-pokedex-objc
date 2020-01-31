@@ -8,10 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface PNCPokemon : NSObject
 
+@property (copy, nonnull, nonatomic) NSString *name;
+@property (copy, nonnull, nonatomic) NSURL *url;
+@property (copy, nonnull, nonatomic) NSNumber *pokeId;
+@property (copy, nonnull, nonatomic) NSString *abilities;
+
+- (instancetype _Nonnull)initWithDictionary:(NSDictionary *_Nonnull)dictionary;
+
 @end
 
-NS_ASSUME_NONNULL_END
+

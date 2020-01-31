@@ -18,6 +18,7 @@
 		E348713523E4B613003B31A4 /* PNCPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = E348713323E4B613003B31A4 /* PNCPokemon.m */; };
 		E348713A23E4B67A003B31A4 /* PokeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E348713923E4B67A003B31A4 /* PokeAPI.swift */; };
 		E348713B23E4B67A003B31A4 /* PokeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E348713923E4B67A003B31A4 /* PokeAPI.swift */; };
+		E348713E23E4B7D2003B31A4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E348713D23E4B7D2003B31A4 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E348713723E4B679003B31A4 /* Pokedex-ObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-ObjC-Bridging-Header.h"; sourceTree = "<group>"; };
 		E348713823E4B679003B31A4 /* Pokedex-ObjCTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-ObjCTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E348713923E4B67A003B31A4 /* PokeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeAPI.swift; sourceTree = "<group>"; };
+		E348713D23E4B7D2003B31A4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		E34870FD23E4B439003B31A4 = {
 			isa = PBXGroup;
 			children = (
+				E348713D23E4B7D2003B31A4 /* Default-568h@2x.png */,
 				E348710823E4B439003B31A4 /* Pokedex-ObjC */,
 				E348712423E4B43C003B31A4 /* Pokedex-ObjCTests */,
 				E348710723E4B439003B31A4 /* Products */,
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E348711923E4B43B003B31A4 /* LaunchScreen.storyboard in Resources */,
+				E348713E23E4B7D2003B31A4 /* Default-568h@2x.png in Resources */,
 				E348711623E4B43B003B31A4 /* Assets.xcassets in Resources */,
 				E348711423E4B439003B31A4 /* Main.storyboard in Resources */,
 			);
@@ -416,7 +420,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
-				INFOPLIST_FILE = "Pokedex-ObjC/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Pokedex-ObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,7 +441,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
-				INFOPLIST_FILE = "Pokedex-ObjC/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Pokedex-ObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
