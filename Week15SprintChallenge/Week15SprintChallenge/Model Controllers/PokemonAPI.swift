@@ -11,6 +11,7 @@ import Foundation
 class PokemonAPI: NSObject {
     
     @objc(sharedController) static let shared = PokemonAPI()
+    @objc dynamic var pokemon: DMOPokemon?
     
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon")!
     
@@ -40,6 +41,27 @@ class PokemonAPI: NSObject {
             }
             print(pokemen.count)
             completion(pokemen, nil)
+        }
+    }
+    
+    @objc func fillInDetails(for pokemon: DMOPokemon) {
+        self.pokemon = nil
+        guard let url = pokemon.infoURL else { return }
+        
+        fetch(from: url) { (dictionary, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let dictionary = dictionary else {
+                print("No dictionary.")
+                return
+            }
+            
+            let possibleFullPokemon = DMOPokemon(dictionary: dictionary)
+            guard let fullPokemon = possibleFullPokemon else { return }
+            print(fullPokemon.name)
+            self.pokemon = fullPokemon
         }
     }
     
