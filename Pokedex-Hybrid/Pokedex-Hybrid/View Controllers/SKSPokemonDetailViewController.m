@@ -23,18 +23,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    [self updateViews];
     [self.pokemonController fetchDetailsWithPokemonAPIForPokemon:self.pokemon];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)updateViews {
+    if(self.pokemon) {
+        self.nameLabel.text = [NSString stringWithFormat:@"Name: %@",self.pokemon.name];
+    }
 }
-*/
 
 @end

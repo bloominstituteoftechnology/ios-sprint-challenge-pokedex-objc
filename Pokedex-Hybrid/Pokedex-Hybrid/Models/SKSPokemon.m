@@ -22,7 +22,7 @@
     self = [super init];
     if (self) {
         _name = dictionary[@"name"];
-        _detailsURL = dictionary[@"url"];
+        _detailsURL = [NSURL URLWithString:dictionary[@"url"]];
     }
     return self;
 }
