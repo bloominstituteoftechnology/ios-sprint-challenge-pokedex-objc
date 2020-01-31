@@ -23,9 +23,15 @@ void *KVOContext = &KVOContext;
 
 @implementation SKSPokemonDetailViewController
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self removePokemonObservers];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self pokemonObservers];
+    [self addPokemonObservers];
     [self.pokemonController fetchDetailsWithPokemonAPIForPokemon:self.pokemon];
 }
 
@@ -34,15 +40,23 @@ void *KVOContext = &KVOContext;
         dispatch_async(dispatch_get_main_queue(), ^{
             self.nameLabel.text = [NSString stringWithFormat:@"Name: %@",self.pokemon.name];
             self.idLabel.text = [NSString stringWithFormat:@"ID: %d", self.pokemon.pokemonId];
+            self.imageView.image = self.pokemon.pokemonSprite;
             NSString *abilityString = [[self.pokemon.abilities valueForKey:@"description"] componentsJoinedByString:@", "];
             self.abilitiesLabel.text = [NSString stringWithFormat:@"Abilities: %@", abilityString];
         });
     }
 }
 
-- (void)pokemonObservers {
+- (void)addPokemonObservers {
     [_pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionNew context:KVOContext];
     [_pokemon addObserver:self forKeyPath:@"pokemonId" options:NSKeyValueObservingOptionNew context:KVOContext];
+    [_pokemon addObserver:self forKeyPath:@"pokemonSprite" options:NSKeyValueObservingOptionNew context:KVOContext];
+}
+
+- (void)removePokemonObservers {
+    [_pokemon removeObserver:self forKeyPath:@"abilities" context:KVOContext];
+    [_pokemon removeObserver:self forKeyPath:@"pokemonId" context:KVOContext];
+    [_pokemon removeObserver:self forKeyPath:@"pokemonSprite" context:KVOContext];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -51,6 +65,8 @@ void *KVOContext = &KVOContext;
         if([keyPath isEqualToString:@"abilities"]) {
             [self updateViews];
         } else if([keyPath isEqualToString:@"pokemonId"]) {
+            [self updateViews];
+        } else if([keyPath isEqualToString:@"pokemonSprite"]) {
             [self updateViews];
         }
     } else {

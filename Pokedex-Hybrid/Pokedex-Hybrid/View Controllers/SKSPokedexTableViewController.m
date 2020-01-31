@@ -37,7 +37,7 @@ static NSString * const reuseIdentifier = @"PokemonCell";
         if (error) {
             NSLog(@"Error: %@", error);
         } else {
-            NSLog(@"# pokemon fetched: %lu", [self.pokemonController getPokemons].count);
+            //NSLog(@"# pokemon fetched: %lu", [self.pokemonController getPokemons].count);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
             });

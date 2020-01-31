@@ -34,11 +34,15 @@
     for (NSDictionary *abilityDictionary in abilitiesDictionaries) {
         NSDictionary *ability = abilityDictionary[@"ability"];
         NSString *abilityName = ability[@"name"];
-        NSLog(@"AbilityName: %@", abilityName);
         [self.abilities addObject:abilityName];
     }
-    NSLog(@"Abilities: %@", self.abilities);
+    //NSLog(@"Abilities: %@", self.abilities);
     self.pokemonId = [dictionary[@"id"] intValue];
+
+    NSDictionary *spritesDictionary = dictionary[@"sprites"];
+    NSURL *spriteURL = [NSURL URLWithString:spritesDictionary[@"front_default"]];
+    NSData *imageData = [NSData dataWithContentsOfURL:spriteURL];
+    self.pokemonSprite = [UIImage imageWithData:imageData];
 }
 
 @end

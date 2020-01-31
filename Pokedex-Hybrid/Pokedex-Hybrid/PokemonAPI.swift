@@ -10,9 +10,7 @@ import Foundation
 
 class PokemonAPI: NSObject {
 
-    var observation: NSKeyValueObservation?
-    var observation2: NSKeyValueObservation?
-    @objc var tempPokemon: SKSPokemon?
+    var observations = [NSKeyValueObservation]()
 
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     
@@ -56,7 +54,6 @@ class PokemonAPI: NSObject {
 
     @objc func fillInDetails(for pokemon: SKSPokemon) {
 
-        tempPokemon = pokemon
         var requestURL = URLRequest(url: pokemon.detailsURL)
         requestURL.httpMethod = "GET"
 
@@ -75,7 +72,6 @@ class PokemonAPI: NSObject {
             do {
                 if let pokemonDetails = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     pokemon.pokemonDetails(with: pokemonDetails)
-                    self.tempPokemon = pokemon
                 }
             } catch {
                 errorWithMessage("Json decode error", LSIJSONDecodeError.rawValue)
@@ -83,14 +79,8 @@ class PokemonAPI: NSObject {
 
         }.resume()
 
-        observation = observe(\.tempPokemon?.pokemonId, options: [.old, .new], changeHandler: {_, change in
-            print("\(change.oldValue!), updated to: \(change.newValue)")
-        })
-
-        observation = observe(\.tempPokemon?.abilities, options: [.old, .new], changeHandler: {_, change in
-            print("\(change.oldValue!), updated to: \(change.newValue)")
-        })
-
+        observations.append(pokemon.observe(\.pokemonId, options: [.old, .new], changeHandler: {_,_ in}))
+        observations.append(pokemon.observe(\.abilities, options: [.old, .new], changeHandler: {_,_ in}))
+        observations.append(pokemon.observe(\.pokemonSprite, options: [.old, .new], changeHandler: {_,_ in}))
     }
-
 }
