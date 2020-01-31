@@ -28,12 +28,14 @@ void *KVOContext = &KVOContext;
     [super viewDidLoad];
     
     [PokemonAPI.sharedController addObserver:self forKeyPath:@"pokemon" options:NSKeyValueObservingOptionInitial context:KVOContext];
+    [PokemonAPI.sharedController addObserver:self forKeyPath:@"pokemonImage" options:NSKeyValueObservingOptionInitial context:KVOContext];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
-[super viewDidDisappear:animated];
-
-[PokemonAPI.sharedController removeObserver:self forKeyPath:@"pokemon" context:KVOContext];
+    [super viewDidDisappear:animated];
+    
+    [PokemonAPI.sharedController removeObserver:self forKeyPath:@"pokemon" context:KVOContext];
+    [PokemonAPI.sharedController removeObserver:self forKeyPath:@"pokemonImage" context:KVOContext];
 }
 
 - (void) updateViews {
@@ -44,6 +46,8 @@ void *KVOContext = &KVOContext;
         self.nameLabel.text = [NSString stringWithFormat:@"Name: %@", [pokemon.name capitalizedString]];
         self.idLabel.text = [NSString stringWithFormat:@"ID: %i", pokemon.idenitifier];
         self.abilitiesLabel.text =  [NSString stringWithFormat:@"Abilities:\n\n%@", [pokemon.abilities capitalizedString]];
+        
+        self.imageView.image = PokemonAPI.sharedController.pokemonImage;
     });
 }
 
@@ -51,6 +55,8 @@ void *KVOContext = &KVOContext;
     
     if (context == KVOContext) {
         if ([keyPath isEqualToString:@"pokemon"]) {
+            [self updateViews];
+        } else if ([keyPath isEqualToString:@"pokemonImage"]) {
             [self updateViews];
         }
     } else {
