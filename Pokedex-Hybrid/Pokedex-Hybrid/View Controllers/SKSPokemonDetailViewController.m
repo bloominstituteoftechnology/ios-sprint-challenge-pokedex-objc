@@ -10,6 +10,11 @@
 
 @interface SKSPokemonDetailViewController ()
 
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *idLabel;
+@property (nonatomic, weak) IBOutlet UILabel *abilitiesLabel;
+
 @end
 
 @implementation SKSPokemonDetailViewController
