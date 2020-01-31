@@ -47,7 +47,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = self.pokemen[indexPath.row].name;
+    cell.textLabel.text = [self.pokemen[indexPath.row].name capitalizedString];
     
     return cell;
 }
