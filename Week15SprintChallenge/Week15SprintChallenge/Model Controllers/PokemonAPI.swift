@@ -12,6 +12,9 @@ import UIKit
 class PokemonAPI: NSObject {
     
     @objc(sharedController) static let shared = PokemonAPI()
+    
+    private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon")!    
+    
     @objc dynamic var pokemon: DMOPokemon? {
         didSet {
             guard let spriteURL = pokemon?.sprite else { return }
@@ -20,7 +23,6 @@ class PokemonAPI: NSObject {
     }
     @objc dynamic var pokemonImage: UIImage?
     
-    private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon")!
     
     @objc func fetchAllPokemon(completion: @escaping ([DMOPokemon]?, Error?) -> Void) {
 
