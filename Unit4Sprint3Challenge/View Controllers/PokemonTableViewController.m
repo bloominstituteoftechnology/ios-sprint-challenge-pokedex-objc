@@ -7,8 +7,11 @@
 //
 
 #import "PokemonTableViewController.h"
+#import "Unit4Sprint3Challenge-Swift.h"
 
 @interface PokemonTableViewController ()
+
+@property (nonnull, nonatomic) PokemonAPI *pokemonAPI;
 
 @end
 
