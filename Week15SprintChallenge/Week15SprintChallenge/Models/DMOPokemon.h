@@ -8,10 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface DMOPokemon : NSObject
 
-@end
+@property (nonatomic, copy, nonnull) NSString *name; //  "name": "bulbasaur"
+@property (nonatomic, nullable) NSURL *infoURL;
+@property (nonatomic) int idenitifier; // "id": 1
+@property (nonatomic, copy, nullable) NSString *abilities; // see below
+@property (nonatomic, copy, nullable) NSURL *sprite; // see below
 
-NS_ASSUME_NONNULL_END
+- (nonnull instancetype)initWithName:(nonnull NSString *)name
+                             infoURL:(nullable NSURL *)infoURL
+                          identifier:(int)identifier
+                           abilities:(nullable NSString *)abilities
+                              sprite:(nullable NSURL *)sprite;
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
+
+@end
