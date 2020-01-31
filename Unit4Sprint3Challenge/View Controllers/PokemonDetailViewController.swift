@@ -10,7 +10,12 @@ import UIKit
 
 class PokemonDetailViewController: UIViewController {
 
-    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var abilityLabel: UILabel!
+    @IBOutlet weak var abilityStackView: UIStackView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
