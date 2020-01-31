@@ -64,4 +64,9 @@ void *KVOContext = &KVOContext;
     }
 }
 
+- (void)dealloc {
+    PokemonAPI.sharedController.pokemon = nil;
+    PokemonAPI.sharedController.pokemonImage = nil;
+}
+
 @end
