@@ -7,6 +7,8 @@
 //
 
 #import "DMOPokemenTableViewController.h"
+#import "Week15SprintChallenge-Swift.h"
+#import "DMOPokemon.h"
 
 @interface DMOPokemenTableViewController ()
 
@@ -17,11 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [PokemonAPI.sharedController fetchAllPokemonWithCompletion:^(NSArray<DMOPokemon *> *pokemonNames, NSError *error) {
+        
+        
+    }];
 }
 
 #pragma mark - Table view data source
