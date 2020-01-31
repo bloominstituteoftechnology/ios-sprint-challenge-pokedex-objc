@@ -21,8 +21,17 @@ class PokemonAPI: NSObject {
 
     @objc
     func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
-        
-        let url = URL(fileURLWithPath: "", relativeTo: baseURL)
+        var components = URLComponents(
+            url: baseURL.appendingPathComponent("pokemon", isDirectory: true),
+            resolvingAgainstBaseURL: true)
+        components?.queryItems = [
+            URLQueryItem(name: "limit", value: "20000")
+        ]
+        guard let url = components?.url else {
+            completion(nil, errorWithMessage("Error fetching pokemon; bad url", LSIAPIError.rawValue))
+            return
+        }
+
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 completion(nil, error)
