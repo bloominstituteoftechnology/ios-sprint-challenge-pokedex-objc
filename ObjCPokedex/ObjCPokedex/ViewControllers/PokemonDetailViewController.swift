@@ -26,17 +26,33 @@ class PokemonDetailViewController: UIViewController {
         super.viewDidLoad()
 
         guard let pokemon = pokemon else { return }
+        pokemonController.fillInDetails(for: pokemon) { (JPHpokemon, error) in
+            
+            if let error = error {
+                NSLog("Error: \(error)")
+            }
+            DispatchQueue.main.async {
+                guard let JPHpokemon = JPHpokemon else { return }
+                self.jphPokemon = JPHpokemon
+                
+                self.updateViews()
+            }
+        }
+    }
+    
+    private func updateViews() {
+        guard let pokemon = jphPokemon, let id = pokemon.id else { return }
+        self.title = pokemon.name
+        idLabel.text = "\(id)"
+        
+        var abilitiesString = ""
+        for ability in pokemon.abilities {
+            abilitiesString.append(contentsOf: ability)
+        }
+        abilitiesLabel.text = abilitiesString
+        pokemonImageView.image = pokemonImage
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
