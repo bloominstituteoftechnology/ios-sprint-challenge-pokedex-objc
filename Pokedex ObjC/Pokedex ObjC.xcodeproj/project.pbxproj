@@ -15,6 +15,7 @@
 		FAE7CE9223E4879D00A1BBE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CE9123E4879D00A1BBE7 /* main.m */; };
 		FAE7CE9A23E48A4100A1BBE7 /* LSIPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CE9923E48A4100A1BBE7 /* LSIPokedexTableViewController.m */; };
 		FAE7CE9D23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CE9C23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m */; };
+		FAE7CEA023E48C3500A1BBE7 /* LSIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CE9F23E48C3500A1BBE7 /* LSIPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		FAE7CE9923E48A4100A1BBE7 /* LSIPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokedexTableViewController.m; sourceTree = "<group>"; };
 		FAE7CE9B23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIPokemonDetailViewController.h; sourceTree = "<group>"; };
 		FAE7CE9C23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemonDetailViewController.m; sourceTree = "<group>"; };
+		FAE7CE9E23E48C3500A1BBE7 /* LSIPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIPokemon.h; sourceTree = "<group>"; };
+		FAE7CE9F23E48C3500A1BBE7 /* LSIPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				FAE7CE9923E48A4100A1BBE7 /* LSIPokedexTableViewController.m */,
 				FAE7CE9B23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.h */,
 				FAE7CE9C23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m */,
+				FAE7CE9E23E48C3500A1BBE7 /* LSIPokemon.h */,
+				FAE7CE9F23E48C3500A1BBE7 /* LSIPokemon.m */,
 			);
 			path = "Pokedex ObjC";
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				FAE7CE9A23E48A4100A1BBE7 /* LSIPokedexTableViewController.m in Sources */,
 				FAE7CE9223E4879D00A1BBE7 /* main.m in Sources */,
 				FAE7CE8423E4879900A1BBE7 /* SceneDelegate.m in Sources */,
+				FAE7CEA023E48C3500A1BBE7 /* LSIPokemon.m in Sources */,
 				FAE7CE9D23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
