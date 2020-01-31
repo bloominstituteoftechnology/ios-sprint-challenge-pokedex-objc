@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		FAE7CE8123E4879900A1BBE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CE8023E4879900A1BBE7 /* AppDelegate.m */; };
 		FAE7CE8423E4879900A1BBE7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CE8323E4879900A1BBE7 /* SceneDelegate.m */; };
-		FAE7CE8723E4879900A1BBE7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CE8623E4879900A1BBE7 /* ViewController.m */; };
 		FAE7CE8A23E4879900A1BBE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE7CE8823E4879900A1BBE7 /* Main.storyboard */; };
 		FAE7CE8C23E4879D00A1BBE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE7CE8B23E4879D00A1BBE7 /* Assets.xcassets */; };
 		FAE7CE8F23E4879D00A1BBE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE7CE8D23E4879D00A1BBE7 /* LaunchScreen.storyboard */; };
 		FAE7CE9223E4879D00A1BBE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CE9123E4879D00A1BBE7 /* main.m */; };
+		FAE7CE9A23E48A4100A1BBE7 /* LSIPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CE9923E48A4100A1BBE7 /* LSIPokedexTableViewController.m */; };
+		FAE7CE9D23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CE9C23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +23,15 @@
 		FAE7CE8023E4879900A1BBE7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FAE7CE8223E4879900A1BBE7 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		FAE7CE8323E4879900A1BBE7 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		FAE7CE8523E4879900A1BBE7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FAE7CE8623E4879900A1BBE7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FAE7CE8923E4879900A1BBE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAE7CE8B23E4879D00A1BBE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAE7CE8E23E4879D00A1BBE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAE7CE9023E4879D00A1BBE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAE7CE9123E4879D00A1BBE7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FAE7CE9823E48A4100A1BBE7 /* LSIPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIPokedexTableViewController.h; sourceTree = "<group>"; };
+		FAE7CE9923E48A4100A1BBE7 /* LSIPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokedexTableViewController.m; sourceTree = "<group>"; };
+		FAE7CE9B23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIPokemonDetailViewController.h; sourceTree = "<group>"; };
+		FAE7CE9C23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,17 +64,19 @@
 		FAE7CE7E23E4879900A1BBE7 /* Pokedex ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				FAE7CE8823E4879900A1BBE7 /* Main.storyboard */,
+				FAE7CE8D23E4879D00A1BBE7 /* LaunchScreen.storyboard */,
 				FAE7CE7F23E4879900A1BBE7 /* AppDelegate.h */,
 				FAE7CE8023E4879900A1BBE7 /* AppDelegate.m */,
 				FAE7CE8223E4879900A1BBE7 /* SceneDelegate.h */,
 				FAE7CE8323E4879900A1BBE7 /* SceneDelegate.m */,
-				FAE7CE8523E4879900A1BBE7 /* ViewController.h */,
-				FAE7CE8623E4879900A1BBE7 /* ViewController.m */,
-				FAE7CE8823E4879900A1BBE7 /* Main.storyboard */,
 				FAE7CE8B23E4879D00A1BBE7 /* Assets.xcassets */,
-				FAE7CE8D23E4879D00A1BBE7 /* LaunchScreen.storyboard */,
 				FAE7CE9023E4879D00A1BBE7 /* Info.plist */,
 				FAE7CE9123E4879D00A1BBE7 /* main.m */,
+				FAE7CE9823E48A4100A1BBE7 /* LSIPokedexTableViewController.h */,
+				FAE7CE9923E48A4100A1BBE7 /* LSIPokedexTableViewController.m */,
+				FAE7CE9B23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.h */,
+				FAE7CE9C23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m */,
 			);
 			path = "Pokedex ObjC";
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 		FAE7CE7423E4879900A1BBE7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LSI;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Lambda School";
 				TargetAttributes = {
@@ -146,10 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAE7CE8723E4879900A1BBE7 /* ViewController.m in Sources */,
 				FAE7CE8123E4879900A1BBE7 /* AppDelegate.m in Sources */,
+				FAE7CE9A23E48A4100A1BBE7 /* LSIPokedexTableViewController.m in Sources */,
 				FAE7CE9223E4879D00A1BBE7 /* main.m in Sources */,
 				FAE7CE8423E4879900A1BBE7 /* SceneDelegate.m in Sources */,
+				FAE7CE9D23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
