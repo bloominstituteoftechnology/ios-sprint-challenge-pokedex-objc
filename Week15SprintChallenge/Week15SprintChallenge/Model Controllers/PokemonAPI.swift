@@ -7,11 +7,24 @@
 //
 
 import Foundation
+import UIKit
 
 class PokemonAPI: NSObject {
     
     @objc(sharedController) static let shared = PokemonAPI()
-    @objc dynamic var pokemon: DMOPokemon?
+    @objc dynamic var pokemon: DMOPokemon? {
+        didSet {
+            guard let spriteURL = pokemon?.sprite else { return }
+            PokemonAPI.shared.fetchPhoto(from: spriteURL) { (sprite, error) in
+                if let error = error {
+                    print("Error fetching sprite: \(error)")
+                }
+                if let sprite = sprite {
+                    print(sprite)
+                }
+            }
+        }
+    }
     
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon")!
     
@@ -57,12 +70,33 @@ class PokemonAPI: NSObject {
                 print("No dictionary.")
                 return
             }
-            print(dictionary)
+            
             let possibleFullPokemon = DMOPokemon(dictionary: dictionary)
             guard let fullPokemon = possibleFullPokemon else { return }
-            print("Abilities: \(fullPokemon.abilities)")
+            
             self.pokemon = fullPokemon
         }
+    }
+    
+    private func fetchPhoto(from url: URL, completion: @escaping (UIImage?, Error?) -> Void) {
+        let session = URLSession.shared
+        session.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let data = data else {
+                print("No image data")
+                return
+            }
+            
+            guard let image = UIImage(data: data) else {
+                print("Bad image data")
+                return
+            }
+            completion(image, nil)
+
+        }.resume()
     }
     
     private func fetch(from url: URL, using session: URLSession = URLSession.shared, completion: @escaping ([String: Any]?, Error?) -> Void) {
