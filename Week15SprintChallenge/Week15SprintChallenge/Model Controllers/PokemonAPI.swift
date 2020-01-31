@@ -57,10 +57,10 @@ class PokemonAPI: NSObject {
                 print("No dictionary.")
                 return
             }
-            
+            print(dictionary)
             let possibleFullPokemon = DMOPokemon(dictionary: dictionary)
             guard let fullPokemon = possibleFullPokemon else { return }
-            
+            print("Abilities: \(fullPokemon.abilities)")
             self.pokemon = fullPokemon
         }
     }
