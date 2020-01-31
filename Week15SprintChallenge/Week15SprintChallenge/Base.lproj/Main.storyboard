@@ -105,6 +105,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="kfi-vG-f52"/>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="sSp-Hf-Gdc" id="BGC-RF-5Fe"/>
+                        <outlet property="idLabel" destination="SSK-Rq-aZT" id="JsE-Jt-zlR"/>
+                        <outlet property="imageView" destination="6Af-VZ-adZ" id="zA0-Jz-z8y"/>
+                        <outlet property="nameLabel" destination="7sg-SN-6py" id="uUt-ag-Cle"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -60,7 +60,7 @@ class PokemonAPI: NSObject {
             
             let possibleFullPokemon = DMOPokemon(dictionary: dictionary)
             guard let fullPokemon = possibleFullPokemon else { return }
-            print(fullPokemon.name)
+            
             self.pokemon = fullPokemon
         }
     }
