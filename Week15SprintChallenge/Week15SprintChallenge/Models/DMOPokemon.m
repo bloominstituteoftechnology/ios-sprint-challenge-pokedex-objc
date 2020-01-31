@@ -34,7 +34,11 @@
     NSURL *url = [NSURL URLWithString:urlString];
     int identifier = [dictionary[@"id"] intValue];
     
+    
     NSString *spriteString = dictionary[@"sprites"][@"front_default"];
+    if (![spriteString isKindOfClass:[NSString class]]) {
+        spriteString = @"";
+    }
     NSURL *sprite = [NSURL URLWithString:spriteString];
     
     NSString *abilities = @"";
