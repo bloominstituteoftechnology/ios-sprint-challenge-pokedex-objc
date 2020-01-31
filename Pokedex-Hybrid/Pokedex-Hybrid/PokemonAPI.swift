@@ -10,6 +10,10 @@ import Foundation
 
 class PokemonAPI: NSObject {
 
+    var observation: NSKeyValueObservation?
+    var observation2: NSKeyValueObservation?
+    @objc var tempPokemon: SKSPokemon?
+
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     
     @objc (sharedController) static let shared = PokemonAPI()
@@ -52,6 +56,7 @@ class PokemonAPI: NSObject {
 
     @objc func fillInDetails(for pokemon: SKSPokemon) {
 
+        tempPokemon = pokemon
         var requestURL = URLRequest(url: pokemon.detailsURL)
         requestURL.httpMethod = "GET"
 
@@ -70,12 +75,22 @@ class PokemonAPI: NSObject {
             do {
                 if let pokemonDetails = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     pokemon.pokemonDetails(with: pokemonDetails)
+                    self.tempPokemon = pokemon
                 }
             } catch {
                 errorWithMessage("Json decode error", LSIJSONDecodeError.rawValue)
             }
 
         }.resume()
+
+        observation = observe(\.tempPokemon?.pokemonId, options: [.old, .new], changeHandler: {_, change in
+            print("\(change.oldValue!), updated to: \(change.newValue)")
+        })
+
+        observation = observe(\.tempPokemon?.abilities, options: [.old, .new], changeHandler: {_, change in
+            print("\(change.oldValue!), updated to: \(change.newValue)")
+        })
+
     }
 
 }

@@ -23,6 +23,7 @@
     if (self) {
         _name = dictionary[@"name"];
         _detailsURL = [NSURL URLWithString:dictionary[@"url"]];
+        _abilities = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -32,9 +33,11 @@
 
     for (NSDictionary *abilityDictionary in abilitiesDictionaries) {
         NSDictionary *ability = abilityDictionary[@"ability"];
-        NSLog(@"Ability name: %@", ability[@"name"]);
-        [self.abilities addObject:ability[@"name"]];
+        NSString *abilityName = ability[@"name"];
+        NSLog(@"AbilityName: %@", abilityName);
+        [self.abilities addObject:abilityName];
     }
+    NSLog(@"Abilities: %@", self.abilities);
     self.pokemonId = [dictionary[@"id"] intValue];
 }
 
