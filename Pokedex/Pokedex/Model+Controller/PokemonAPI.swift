@@ -56,4 +56,35 @@ class PokemonAPI: NSObject {
             }
         }.resume()
     }
+    
+    @objc func fillInDetails(for pokemon: Pokemon, completion: @escaping (Error?) -> Void) {
+        let url = pokemon.url
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                NSLog("Error filling in details \(error)")
+                completion(error)
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("Detail Data error")
+                completion(NSError())
+                return
+            }
+            
+            do {
+                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
+                    NSLog("Details didn't return dictionary")
+                    return
+                }
+                
+                pokemon.finishDetails(pokemon, with: dictionary as! [AnyHashable : Any])
+                completion(nil)
+            } catch {
+                NSLog("Bad JSON \(error)")
+                completion(NSError())
+                return
+            }
+        }.resume()
+    }
 }

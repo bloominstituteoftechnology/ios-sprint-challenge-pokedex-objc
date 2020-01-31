@@ -20,12 +20,33 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let pokemon = pokemon else { return }
-        updateViews()
+        
+        PokemonAPI.shared.fillInDetails(for: pokemon) { (error) in
+            if let _ = error {
+                return
+            }
+            DispatchQueue.main.async {
+                self.updateViews()
+            }
+        }
     }
     
     func updateViews() {
-        nameLabel.text = pokemon?.name.capitalized
-        IDLabel.text = "ID: \(String(describing: pokemon?.identifier))"
-        abilitiesLabel.text = "Abilities: \(String(describing: pokemon?.abilities))"
+
+        guard let pokemon = pokemon, let id = pokemon.identifier, let abilities = pokemon.abilities, let url = pokemon.spriteURL else { return }
+        nameLabel.text = pokemon.name.capitalized
+        IDLabel.text = "ID: \(id)"
+        var abilitiesString = ""
+        for ability in abilities {
+            abilitiesString.append(contentsOf: ability)
+            abilitiesString.append(" ")
+        }
+        abilitiesLabel.text = "Abilities: \(abilitiesString.capitalized)"
+
+        let data = try? Data(contentsOf: url)
+        if let imageData = data {
+            let image = UIImage(data: imageData)
+            PokeImageView.image = image
+        }
     }
 }

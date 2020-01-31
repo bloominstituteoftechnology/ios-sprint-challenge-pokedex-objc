@@ -35,4 +35,25 @@
     return [self initWithName:name URL:url];
 }
 
+- (void)finishDetails:(nonnull DPRPokemon *)pokemon withDictionary:(nonnull NSDictionary *)dictionary {
+    
+    NSNumber *identifier = dictionary[@"id"];
+    
+    NSDictionary *sprites = dictionary[@"sprites"];
+    NSString *spriteString = sprites[@"front_default"];
+    NSURL *spriteURL = [NSURL URLWithString:spriteString];
+    NSMutableArray *abilities = dictionary[@"abilities"];
+    
+    NSMutableArray *abilitiesArray = [[NSMutableArray alloc] init];
+    for (NSDictionary *abilityDict in abilities) {
+        NSDictionary *ability = abilityDict[@"ability"];
+        NSString *abilityName = ability[@"name"];
+        [abilitiesArray addObject: [NSString stringWithFormat:@"%@", abilityName]];
+    }
+    
+    self.spriteURL = spriteURL;
+    self.abilities = abilitiesArray;
+    self.identifier = identifier;
+}
+
 @end
