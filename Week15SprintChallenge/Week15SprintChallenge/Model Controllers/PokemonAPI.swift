@@ -21,11 +21,49 @@ class PokemonAPI: NSObject {
 
         let url = urlForFetch(searchTerm: "")
         
-        print(url)
+        fetch(from: url) { (dictionary, error) in
+            
+        }
         
         
         
         
+    }
+    
+    private func fetch(from url: URL, using session: URLSession = URLSession.shared, completion: @escaping ([String: Any]?, Error?) -> Void) {
+        session.dataTask(with: url) { (data, _, error) in
+            
+            if let error = error {
+                print("error")
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil, NSError())
+                return
+            }
+            
+            do {
+                let possibleDictionary = try JSONSerialization.jsonObject(with: data, options: [])
+                
+                guard let dictionary = possibleDictionary as? [String: Any] else {
+                    print("JSON was not a dictionary")
+                    completion(nil, NSError())
+                    return
+                }
+                print(dictionary)
+                completion(dictionary, nil)
+                return
+                
+            } catch {
+                
+                print(error)
+                completion(nil, error)
+                return
+                
+            }
+        }.resume()
     }
     
     private func urlForFetch(searchTerm: String) -> URL {
