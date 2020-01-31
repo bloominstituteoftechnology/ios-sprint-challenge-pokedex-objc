@@ -15,6 +15,9 @@
 		1CFB38E423E48E9A008674FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB38E323E48E9A008674FE /* main.m */; };
 		1CFB38EC23E49384008674FE /* JPHTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB38EB23E49384008674FE /* JPHTableViewController.m */; };
 		1CFB38EF23E493B3008674FE /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB38EE23E493B3008674FE /* PokemonDetailViewController.swift */; };
+		1CFB38F323E494A0008674FE /* JPHPokedexPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB38F223E494A0008674FE /* JPHPokedexPokemon.m */; };
+		1CFB38F623E494B5008674FE /* JPHPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB38F523E494B5008674FE /* JPHPokemon.m */; };
+		1CFB38F923E494E2008674FE /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB38F823E494E2008674FE /* PokemonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,11 @@
 		1CFB38EB23E49384008674FE /* JPHTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPHTableViewController.m; sourceTree = "<group>"; };
 		1CFB38ED23E493B3008674FE /* ObjCPokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCPokedex-Bridging-Header.h"; sourceTree = "<group>"; };
 		1CFB38EE23E493B3008674FE /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
+		1CFB38F123E494A0008674FE /* JPHPokedexPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPHPokedexPokemon.h; sourceTree = "<group>"; };
+		1CFB38F223E494A0008674FE /* JPHPokedexPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPHPokedexPokemon.m; sourceTree = "<group>"; };
+		1CFB38F423E494B5008674FE /* JPHPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPHPokemon.h; sourceTree = "<group>"; };
+		1CFB38F523E494B5008674FE /* JPHPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPHPokemon.m; sourceTree = "<group>"; };
+		1CFB38F823E494E2008674FE /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +76,10 @@
 				1CFB38D223E48E99008674FE /* AppDelegate.m */,
 				1CFB38D423E48E99008674FE /* SceneDelegate.h */,
 				1CFB38D523E48E99008674FE /* SceneDelegate.m */,
-				1CFB38DA23E48E99008674FE /* Main.storyboard */,
+				1CFB38F723E494BD008674FE /* Models */,
+				1CFB38FA23E494EE008674FE /* ModelController */,
 				1CFB38F023E493BC008674FE /* ViewControllers */,
+				1CFB38DA23E48E99008674FE /* Main.storyboard */,
 				1CFB38DD23E48E9A008674FE /* Assets.xcassets */,
 				1CFB38DF23E48E9A008674FE /* LaunchScreen.storyboard */,
 				1CFB38E223E48E9A008674FE /* Info.plist */,
@@ -87,6 +97,25 @@
 				1CFB38EE23E493B3008674FE /* PokemonDetailViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1CFB38F723E494BD008674FE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1CFB38F123E494A0008674FE /* JPHPokedexPokemon.h */,
+				1CFB38F223E494A0008674FE /* JPHPokedexPokemon.m */,
+				1CFB38F423E494B5008674FE /* JPHPokemon.h */,
+				1CFB38F523E494B5008674FE /* JPHPokemon.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1CFB38FA23E494EE008674FE /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				1CFB38F823E494E2008674FE /* PokemonController.swift */,
+			);
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,7 +193,10 @@
 				1CFB38D323E48E99008674FE /* AppDelegate.m in Sources */,
 				1CFB38EF23E493B3008674FE /* PokemonDetailViewController.swift in Sources */,
 				1CFB38E423E48E9A008674FE /* main.m in Sources */,
+				1CFB38F623E494B5008674FE /* JPHPokemon.m in Sources */,
 				1CFB38D623E48E99008674FE /* SceneDelegate.m in Sources */,
+				1CFB38F323E494A0008674FE /* JPHPokedexPokemon.m in Sources */,
+				1CFB38F923E494E2008674FE /* PokemonController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
