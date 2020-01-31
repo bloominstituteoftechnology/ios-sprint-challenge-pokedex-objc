@@ -61,7 +61,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    PokemonDetailViewController *detailVC = segue.destinationViewController;
+    PokemonDetailViewController *detailVC = (PokemonDetailViewController *)segue.destinationViewController;
+    NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+    JBPokemon *pokemon = self.allPokemon[indexPath.row];
+
+    [PokemonAPI.sharedController fillInDetailsFor:pokemon];
+    detailVC.pokemon = pokemon;
 }
 
 @end
