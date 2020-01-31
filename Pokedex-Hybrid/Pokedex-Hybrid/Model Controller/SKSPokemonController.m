@@ -7,7 +7,32 @@
 //
 
 #import "SKSPokemonController.h"
+#import "Pokedex_Hybrid-Swift.h"
+
+@interface SKSPokemonController()
+
+@property (nonatomic) NSArray<SKSPokemon *> *pokemons;
+
+@end
 
 @implementation SKSPokemonController
+
+
+- (void)fetchPokemonWithPokemonAPI:(void (^)(NSError *error))completion {
+    [PokemonAPI.sharedController fetchAllPokemonWithCompletion:^(NSArray<SKSPokemon *> *pokemons, NSError *error) {
+        if (error) {
+            completion(error);
+            return;
+        } else {
+            self.pokemons =  [[NSArray alloc] initWithArray:pokemons];
+            completion(nil);
+        }
+    }];
+
+}
+
+- (NSArray <SKSPokemon *> *)getPokemons {
+    return self.pokemons;
+}
 
 @end

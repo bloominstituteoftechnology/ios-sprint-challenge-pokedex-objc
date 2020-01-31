@@ -8,10 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class SKSPokemon;
 
 @interface SKSPokemonController : NSObject
 
+
+
+- (void)fetchPokemonWithPokemonAPI:(void (^)(NSError *error))completion;
+
+- (NSArray <SKSPokemon *> *)getPokemons;
+
 @end
 
-NS_ASSUME_NONNULL_END

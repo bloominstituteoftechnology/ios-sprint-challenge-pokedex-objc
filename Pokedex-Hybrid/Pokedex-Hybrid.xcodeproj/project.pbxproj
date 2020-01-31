@@ -18,6 +18,7 @@
 		BB05493623E3FBB700EF62AF /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05493523E3FBB700EF62AF /* PokemonAPI.swift */; };
 		BB05493923E3FC5200EF62AF /* SKSPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = BB05493823E3FC5200EF62AF /* SKSPokemon.m */; };
 		BB05493F23E48A6200EF62AF /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = BB05493D23E48A6200EF62AF /* LSIErrors.m */; };
+		BB05494323E48CE400EF62AF /* SKSPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB05494223E48CE400EF62AF /* SKSPokemonController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		BB05493823E3FC5200EF62AF /* SKSPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSPokemon.m; sourceTree = "<group>"; };
 		BB05493D23E48A6200EF62AF /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIErrors.m; sourceTree = "<group>"; };
 		BB05493E23E48A6200EF62AF /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
+		BB05494123E48CE400EF62AF /* SKSPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSPokemonController.h; sourceTree = "<group>"; };
+		BB05494223E48CE400EF62AF /* SKSPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSPokemonController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				BB05493323E3FAD600EF62AF /* View Controllers */,
+				BB05494423E48CEA00EF62AF /* Model Controller */,
 				BB05493A23E3FC7C00EF62AF /* Models */,
 				BB05494023E48A6600EF62AF /* Helpers */,
 				BB05491123E3F8F000EF62AF /* AppDelegate.h */,
@@ -118,6 +122,15 @@
 				BB05493D23E48A6200EF62AF /* LSIErrors.m */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BB05494423E48CEA00EF62AF /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BB05494123E48CE400EF62AF /* SKSPokemonController.h */,
+				BB05494223E48CE400EF62AF /* SKSPokemonController.m */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +208,7 @@
 				BB05493223E3FAD000EF62AF /* SKSPokemonDetailViewController.m in Sources */,
 				BB05493923E3FC5200EF62AF /* SKSPokemon.m in Sources */,
 				BB05491323E3F8F000EF62AF /* AppDelegate.m in Sources */,
+				BB05494323E48CE400EF62AF /* SKSPokemonController.m in Sources */,
 				BB05493F23E48A6200EF62AF /* LSIErrors.m in Sources */,
 				BB05493623E3FBB700EF62AF /* PokemonAPI.swift in Sources */,
 				BB05492423E3F8F300EF62AF /* main.m in Sources */,
