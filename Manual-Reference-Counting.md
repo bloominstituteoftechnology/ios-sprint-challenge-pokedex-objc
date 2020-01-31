@@ -57,18 +57,25 @@ Yes, punctuationSet is retained and never released. wordFrequency is initialized
 2. Which of these objects is autoreleased?  Why?
 
 	1. `NSDate *yesterday = [NSDate date];`
+	Autoreleased because it doesn't use any of the owning keywords
 	
 	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];`
+	Not autoreleased because it calls retain
 	
 	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];`
+	Not autoreleased because it uses the owning initializer "alloc init"
 	
 	4. `NSDate *food = [NSDate new];`
+	Not autoreleased because it uses the owning initializer "new"
 	
 	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];`
+	Not autoreleased because it uses the owning initializer "alloc init"
 	
 	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];`
+	Autoreleased because it calls autorelease
 
 3. Explain when you need to use the `NSAutoreleasePool`.
+When you have a potentially large array of large objects.
 
 
 4. Implement a convenience `class` method to create a `LSIPerson` object that takes a `name` property and returns an autoreleased object.
