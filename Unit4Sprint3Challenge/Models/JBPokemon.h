@@ -16,9 +16,10 @@ NS_SWIFT_NAME(Pokemon)
 @property (nullable, nonatomic) NSNumber *idNumber;
 @property (nullable, nonatomic) NSURL *spriteURL;
 @property (nullable, nonatomic) UIImage *sprite;
-@property (nullable, nonatomic) NSMutableArray<NSString *> *abilities;
+@property (nullable, nonatomic) NSArray<NSString *> *abilities;
 
 - (instancetype _Nonnull)initWithName:(NSString *_Nonnull)name
                             detailURL:(NSURL *_Nonnull)detailURL;
+- (instancetype _Nullable)initWithDictionary:(NSDictionary *_Nonnull)dictionary;
 
 @end

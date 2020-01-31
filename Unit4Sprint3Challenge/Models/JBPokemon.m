@@ -21,4 +21,15 @@
     return self;
 }
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    NSString *name = dictionary[@"name"];
+    NSString *detailURLString = dictionary[@"url"];
+    NSURL *detailURL = [NSURL URLWithString:detailURLString];
+
+    if (name == nil || detailURL == nil) { return nil; }
+
+    return [self initWithName:name detailURL:detailURL];
+}
+
 @end
