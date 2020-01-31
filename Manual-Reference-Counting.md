@@ -25,6 +25,8 @@ Answer the following questions inline with this document.
 
 	printf("Word frequency: %s", wordFrequency.description.UTF8String);
 	```
+	
+Yes, punctuationSet is retained and never released. wordFrequency is initialized with alloc and never released. The number in the else statement is initialized using alloc and never release.
 
 	2. Rewrite the code so that it does not leak any memory with ARC disabled
 
