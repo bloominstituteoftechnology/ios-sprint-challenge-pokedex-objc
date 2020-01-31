@@ -10,6 +10,8 @@
 
 @interface SKSPokemon : NSObject
 
+@property (nonatomic, copy, nonnull) NSString *name;
+@property (nonatomic, copy, nonnull) NSURL *detailsURL;
 
 - (instancetype _Nonnull)initWithDictionary:(nonnull NSDictionary *)dictionary;
 

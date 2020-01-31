@@ -43,11 +43,6 @@ static NSString * const reuseIdentifier = @"PokemonCell";
         }
 
     }];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 #pragma mark - Table view data source
@@ -57,19 +52,18 @@ static NSString * const reuseIdentifier = @"PokemonCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return [self.pokemonController getPokemons].count;
 }
 
-/*
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
 
- // Configure the cell...
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
 
- return cell;
- }
- */
+    cell.textLabel.text = [self.pokemonController getPokemons][indexPath.row].name;
+
+    return cell;
+}
+
 
 /*
  // Override to support conditional editing of the table view.
@@ -105,7 +99,7 @@ static NSString * const reuseIdentifier = @"PokemonCell";
  }
  */
 
-/*
+
  #pragma mark - Navigation
 
  // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -113,6 +107,6 @@ static NSString * const reuseIdentifier = @"PokemonCell";
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
  }
- */
+ 
 
 @end

@@ -10,8 +10,7 @@
 
 @interface SKSPokemon()
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSURL *detailsURL;
+
 
 @end
 
