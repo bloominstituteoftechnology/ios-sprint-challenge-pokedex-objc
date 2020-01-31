@@ -63,10 +63,8 @@
     // Pass the selected object to the new view controller.
     PokemonDetailViewController *detailVC = (PokemonDetailViewController *)segue.destinationViewController;
     NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-    JBPokemon *pokemon = self.allPokemon[indexPath.row];
 
-    [PokemonAPI.sharedController fillInDetailsFor:pokemon];
-    detailVC.pokemon = pokemon;
+    detailVC.pokemon = self.allPokemon[indexPath.row];
 }
 
 @end
