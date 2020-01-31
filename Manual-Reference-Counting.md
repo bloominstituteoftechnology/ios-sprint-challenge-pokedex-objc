@@ -87,5 +87,22 @@ When you have a potentially large array of large objects.
 
 - (instancetype)initWithName:(NSString *)name;
 
+}
+
 @end
+
+#import "LSIPerson.h"
+
+@implementation LSIPerson
+
+- (instancetype)initWithName:(NSString *)name {
+	self = [super init];
+	if (self) {
+        _name = [name copy];
+	}
+	return self;
+}
+
++ (instancetype)personWithName:(NSString *)name {
+    return [[[Person alloc] initWithName:name] autorelease];
 ```
