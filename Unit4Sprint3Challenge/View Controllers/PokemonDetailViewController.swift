@@ -48,7 +48,7 @@ class PokemonDetailViewController: UIViewController {
         guard let abilities = pokemon.abilities else { return }
         var abilityText = ""
         for ability in abilities {
-            abilityText = "\(abilityText)\(ability)\n"
+            abilityText = "\(abilityText)\(ability.capitalized)\n"
         }
         abilityLabel.text = abilityText
     }
