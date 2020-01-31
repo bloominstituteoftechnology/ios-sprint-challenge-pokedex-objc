@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DMOPokemonDetailViewController.h
 //  Week15SprintChallenge
 //
 //  Created by morse on 1/31/20.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PokemonDetailViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface DMOPokemonDetailViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

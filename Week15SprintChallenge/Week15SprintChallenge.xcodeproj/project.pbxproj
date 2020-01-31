@@ -7,28 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C03FB96123E48AE10017B5A8 /* DMOPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = C03FB96023E48AE10017B5A8 /* DMOPokemon.m */; };
+		C03FB96423E48B240017B5A8 /* DMOPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03FB96323E48B240017B5A8 /* DMOPokemonDetailViewController.m */; };
+		C03FB96723E48B3F0017B5A8 /* DMOPokemenTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03FB96623E48B3F0017B5A8 /* DMOPokemenTableViewController.m */; };
 		C097230B23E4874800F27079 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C097230A23E4874800F27079 /* AppDelegate.m */; };
 		C097230E23E4874800F27079 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C097230D23E4874800F27079 /* SceneDelegate.m */; };
-		C097231123E4874800F27079 /* PokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C097231023E4874800F27079 /* PokemonDetailViewController.m */; };
 		C097231423E4874800F27079 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C097231223E4874800F27079 /* Main.storyboard */; };
 		C097231623E4874900F27079 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C097231523E4874900F27079 /* Assets.xcassets */; };
 		C097231923E4874900F27079 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C097231723E4874900F27079 /* LaunchScreen.storyboard */; };
 		C097231C23E4874900F27079 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C097231B23E4874900F27079 /* main.m */; };
+		C097232923E48A1B00F27079 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C097232823E48A1B00F27079 /* PokemonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C03FB95F23E48AE10017B5A8 /* DMOPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMOPokemon.h; sourceTree = "<group>"; };
+		C03FB96023E48AE10017B5A8 /* DMOPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMOPokemon.m; sourceTree = "<group>"; };
+		C03FB96223E48B240017B5A8 /* DMOPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMOPokemonDetailViewController.h; sourceTree = "<group>"; };
+		C03FB96323E48B240017B5A8 /* DMOPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMOPokemonDetailViewController.m; sourceTree = "<group>"; };
+		C03FB96523E48B3F0017B5A8 /* DMOPokemenTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMOPokemenTableViewController.h; sourceTree = "<group>"; };
+		C03FB96623E48B3F0017B5A8 /* DMOPokemenTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMOPokemenTableViewController.m; sourceTree = "<group>"; };
 		C097230623E4874800F27079 /* Week15SprintChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Week15SprintChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C097230923E4874800F27079 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C097230A23E4874800F27079 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C097230C23E4874800F27079 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		C097230D23E4874800F27079 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		C097230F23E4874800F27079 /* PokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonDetailViewController.h; sourceTree = "<group>"; };
-		C097231023E4874800F27079 /* PokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
 		C097231323E4874800F27079 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C097231523E4874900F27079 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C097231823E4874900F27079 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C097231A23E4874900F27079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C097231B23E4874900F27079 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C097232723E48A1A00F27079 /* Week15SprintChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Week15SprintChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
+		C097232823E48A1B00F27079 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +74,9 @@
 				C097230A23E4874800F27079 /* AppDelegate.m */,
 				C097230C23E4874800F27079 /* SceneDelegate.h */,
 				C097230D23E4874800F27079 /* SceneDelegate.m */,
-				C097230F23E4874800F27079 /* PokemonDetailViewController.h */,
-				C097231023E4874800F27079 /* PokemonDetailViewController.m */,
+				C097232523E489EE00F27079 /* View Controllers */,
+				C097232623E48A0000F27079 /* Model Controllers */,
+				C097232D23E48A4500F27079 /* Models */,
 				C097231223E4874800F27079 /* Main.storyboard */,
 				C097231523E4874900F27079 /* Assets.xcassets */,
 				C097231723E4874900F27079 /* LaunchScreen.storyboard */,
@@ -74,6 +84,35 @@
 				C097231B23E4874900F27079 /* main.m */,
 			);
 			path = Week15SprintChallenge;
+			sourceTree = "<group>";
+		};
+		C097232523E489EE00F27079 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C03FB96523E48B3F0017B5A8 /* DMOPokemenTableViewController.h */,
+				C03FB96623E48B3F0017B5A8 /* DMOPokemenTableViewController.m */,
+				C03FB96223E48B240017B5A8 /* DMOPokemonDetailViewController.h */,
+				C03FB96323E48B240017B5A8 /* DMOPokemonDetailViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C097232623E48A0000F27079 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C097232823E48A1B00F27079 /* PokemonAPI.swift */,
+				C097232723E48A1A00F27079 /* Week15SprintChallenge-Bridging-Header.h */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		C097232D23E48A4500F27079 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C03FB95F23E48AE10017B5A8 /* DMOPokemon.h */,
+				C03FB96023E48AE10017B5A8 /* DMOPokemon.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +146,7 @@
 				TargetAttributes = {
 					C097230523E4874800F27079 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -146,7 +186,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C097231123E4874800F27079 /* PokemonDetailViewController.m in Sources */,
+				C03FB96723E48B3F0017B5A8 /* DMOPokemenTableViewController.m in Sources */,
+				C03FB96123E48AE10017B5A8 /* DMOPokemon.m in Sources */,
+				C097232923E48A1B00F27079 /* PokemonAPI.swift in Sources */,
+				C03FB96423E48B240017B5A8 /* DMOPokemonDetailViewController.m in Sources */,
 				C097230B23E4874800F27079 /* AppDelegate.m in Sources */,
 				C097231C23E4874900F27079 /* main.m in Sources */,
 				C097230E23E4874800F27079 /* SceneDelegate.m in Sources */,
@@ -289,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Week15SprintChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -297,6 +341,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = git.Week15SprintChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Week15SprintChallenge/Model Controllers/Week15SprintChallenge-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -305,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Week15SprintChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -313,6 +361,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = git.Week15SprintChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Week15SprintChallenge/Model Controllers/Week15SprintChallenge-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
