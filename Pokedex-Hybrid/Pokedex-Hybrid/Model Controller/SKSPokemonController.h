@@ -12,9 +12,9 @@
 
 @interface SKSPokemonController : NSObject
 
-
-
 - (void)fetchPokemonWithPokemonAPI:(void (^)(NSError *error))completion;
+
+- (void)fetchDetailsWithPokemonAPIForPokemon:(SKSPokemon *)pokemon;
 
 - (NSArray <SKSPokemon *> *)getPokemons;
 

@@ -27,6 +27,15 @@
     return self;
 }
 
+- (void)pokemonDetailsWithDictionary:(nonnull NSDictionary *)dictionary {
+    NSArray *abilitiesDictionaries = dictionary[@"abilities"];
 
+    for (NSDictionary *abilityDictionary in abilitiesDictionaries) {
+        NSDictionary *ability = abilityDictionary[@"ability"];
+        NSLog(@"Ability name: %@", ability[@"name"]);
+        [self.abilities addObject:ability[@"name"]];
+    }
+    self.pokemonId = [dictionary[@"id"] intValue];
+}
 
 @end

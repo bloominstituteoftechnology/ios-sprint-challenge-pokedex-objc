@@ -52,5 +52,30 @@ class PokemonAPI: NSObject {
 
     @objc func fillInDetails(for pokemon: SKSPokemon) {
 
+        var requestURL = URLRequest(url: pokemon.detailsURL)
+        requestURL.httpMethod = "GET"
+
+        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+
+            if let error = error {
+                print("Error fetching data!: \(error)")
+                return
+            }
+
+            guard let data = data else {
+                errorWithMessage("Bad Data!", LSIDataNilError.rawValue)
+                return
+            }
+
+            do {
+                if let pokemonDetails = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    pokemon.pokemonDetails(with: pokemonDetails)
+                }
+            } catch {
+                errorWithMessage("Json decode error", LSIJSONDecodeError.rawValue)
+            }
+
+        }.resume()
     }
+
 }

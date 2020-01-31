@@ -12,8 +12,12 @@
 
 @property (nonatomic, copy, nonnull) NSString *name;
 @property (nonatomic, copy, nonnull) NSURL *detailsURL;
+@property (nonatomic, copy, nonnull) NSMutableArray<NSString *> *abilities;
+@property (nonatomic) int pokemonId;
 
 - (instancetype _Nonnull)initWithDictionary:(nonnull NSDictionary *)dictionary;
+
+- (void)pokemonDetailsWithDictionary:(nonnull NSDictionary *)dictionary;
 
 @end
 

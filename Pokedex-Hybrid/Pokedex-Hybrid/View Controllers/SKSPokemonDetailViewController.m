@@ -7,6 +7,8 @@
 //
 
 #import "SKSPokemonDetailViewController.h"
+#import "SKSPokemonController.h"
+#import "SKSPokemon.h"
 
 @interface SKSPokemonDetailViewController ()
 
@@ -21,7 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self.pokemonController fetchDetailsWithPokemonAPIForPokemon:self.pokemon];
 }
 
 /*

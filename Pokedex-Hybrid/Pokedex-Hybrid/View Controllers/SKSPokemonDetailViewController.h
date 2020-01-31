@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class SKSPokemonController, SKSPokemon;
+
 @interface SKSPokemonDetailViewController : UIViewController
+
+@property (nonatomic) SKSPokemonController *pokemonController;
+@property (nonatomic) SKSPokemon *pokemon;
 
 @end
 

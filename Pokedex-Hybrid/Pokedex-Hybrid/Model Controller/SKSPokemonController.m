@@ -31,6 +31,10 @@
 
 }
 
+- (void)fetchDetailsWithPokemonAPIForPokemon:(SKSPokemon *)pokemon {
+    [PokemonAPI.sharedController fillInDetailsFor:pokemon];
+}
+
 - (NSArray <SKSPokemon *> *)getPokemons {
     return self.pokemons;
 }
