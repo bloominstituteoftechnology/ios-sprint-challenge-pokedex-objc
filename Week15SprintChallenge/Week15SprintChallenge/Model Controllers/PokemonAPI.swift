@@ -15,16 +15,10 @@ class PokemonAPI: NSObject {
     @objc dynamic var pokemon: DMOPokemon? {
         didSet {
             guard let spriteURL = pokemon?.sprite else { return }
-            PokemonAPI.shared.fetchPhoto(from: spriteURL) { (sprite, error) in
-                if let error = error {
-                    print("Error fetching sprite: \(error)")
-                }
-                if let sprite = sprite {
-                    print(sprite)
-                }
-            }
+            PokemonAPI.shared.fetchPhoto(from: spriteURL)
         }
     }
+    @objc dynamic var pokemonImage: UIImage?
     
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon")!
     
@@ -78,7 +72,7 @@ class PokemonAPI: NSObject {
         }
     }
     
-    private func fetchPhoto(from url: URL, completion: @escaping (UIImage?, Error?) -> Void) {
+    private func fetchPhoto(from url: URL/*, completion: @escaping (UIImage?, Error?) -> Void*/) {
         let session = URLSession.shared
         session.dataTask(with: url) { (data, _, error) in
             if let error = error {
@@ -94,8 +88,8 @@ class PokemonAPI: NSObject {
                 print("Bad image data")
                 return
             }
-            completion(image, nil)
-
+            
+            self.pokemonImage = image
         }.resume()
     }
     
