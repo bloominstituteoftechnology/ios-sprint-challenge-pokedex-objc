@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
+@class PokemonAPI;
 
 @interface LSIPokedexTableViewController : UITableViewController
 
+@property (nonatomic) PokemonAPI *pokemonAPI;
+
 @end
 
-NS_ASSUME_NONNULL_END

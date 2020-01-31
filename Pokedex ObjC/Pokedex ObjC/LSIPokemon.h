@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_SWIFT_NAME(Pokemon)
 @interface LSIPokemon : NSObject
 
 @property (nonatomic, copy, nonnull) NSString *name;

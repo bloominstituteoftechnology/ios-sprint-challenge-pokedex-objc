@@ -16,6 +16,9 @@
 		FAE7CE9A23E48A4100A1BBE7 /* LSIPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CE9923E48A4100A1BBE7 /* LSIPokedexTableViewController.m */; };
 		FAE7CE9D23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CE9C23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m */; };
 		FAE7CEA023E48C3500A1BBE7 /* LSIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CE9F23E48C3500A1BBE7 /* LSIPokemon.m */; };
+		FAE7CEA323E4902700A1BBE7 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CEA223E4902700A1BBE7 /* PokemonAPI.swift */; };
+		FAE7CEA523E491C400A1BBE7 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CEA423E491C400A1BBE7 /* HTTPMethod.swift */; };
+		FAE7CEA723E4928500A1BBE7 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7CEA623E4928500A1BBE7 /* NetworkingError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,10 @@
 		FAE7CE9C23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemonDetailViewController.m; sourceTree = "<group>"; };
 		FAE7CE9E23E48C3500A1BBE7 /* LSIPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIPokemon.h; sourceTree = "<group>"; };
 		FAE7CE9F23E48C3500A1BBE7 /* LSIPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemon.m; sourceTree = "<group>"; };
+		FAE7CEA123E4902600A1BBE7 /* Pokedex ObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex ObjC-Bridging-Header.h"; sourceTree = "<group>"; };
+		FAE7CEA223E4902700A1BBE7 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		FAE7CEA423E491C400A1BBE7 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		FAE7CEA623E4928500A1BBE7 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +89,10 @@
 				FAE7CE9C23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m */,
 				FAE7CE9E23E48C3500A1BBE7 /* LSIPokemon.h */,
 				FAE7CE9F23E48C3500A1BBE7 /* LSIPokemon.m */,
+				FAE7CEA223E4902700A1BBE7 /* PokemonAPI.swift */,
+				FAE7CEA123E4902600A1BBE7 /* Pokedex ObjC-Bridging-Header.h */,
+				FAE7CEA423E491C400A1BBE7 /* HTTPMethod.swift */,
+				FAE7CEA623E4928500A1BBE7 /* NetworkingError.swift */,
 			);
 			path = "Pokedex ObjC";
 			sourceTree = "<group>";
@@ -118,6 +129,7 @@
 				TargetAttributes = {
 					FAE7CE7B23E4879900A1BBE7 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -160,6 +172,9 @@
 				FAE7CE8123E4879900A1BBE7 /* AppDelegate.m in Sources */,
 				FAE7CE9A23E48A4100A1BBE7 /* LSIPokedexTableViewController.m in Sources */,
 				FAE7CE9223E4879D00A1BBE7 /* main.m in Sources */,
+				FAE7CEA323E4902700A1BBE7 /* PokemonAPI.swift in Sources */,
+				FAE7CEA723E4928500A1BBE7 /* NetworkingError.swift in Sources */,
+				FAE7CEA523E491C400A1BBE7 /* HTTPMethod.swift in Sources */,
 				FAE7CE8423E4879900A1BBE7 /* SceneDelegate.m in Sources */,
 				FAE7CEA023E48C3500A1BBE7 /* LSIPokemon.m in Sources */,
 				FAE7CE9D23E48A6C00A1BBE7 /* LSIPokemonDetailViewController.m in Sources */,
@@ -302,6 +317,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = "Pokedex ObjC/Info.plist";
@@ -311,6 +327,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaschool.Pokedex-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex ObjC/Pokedex ObjC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -319,6 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = "Pokedex ObjC/Info.plist";
@@ -328,6 +348,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaschool.Pokedex-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex ObjC/Pokedex ObjC-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
