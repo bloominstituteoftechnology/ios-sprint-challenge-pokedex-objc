@@ -14,11 +14,18 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var abilitiesLabel: UILabel!
     
+    var pokemonController = PokemonController.shared
+    
+    @objc var pokemon: JPHPokedexPokemon?
+    
+    var jphPokemon: JPHPokemon?
+    
+    var pokemonImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        guard let pokemon = pokemon else { return }
     }
     
 

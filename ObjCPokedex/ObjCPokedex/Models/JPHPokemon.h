@@ -19,7 +19,7 @@
 
 - (instancetype)initWithName:(NSString *)name abilities:(NSArray <NSString *>*)abilities ID:(NSNumber *)ID sprite:(NSURL *)sprite;
 
-- (instancetype)initWithDictionary:(NSDictionary* )dictionary;
+- (instancetype) initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 

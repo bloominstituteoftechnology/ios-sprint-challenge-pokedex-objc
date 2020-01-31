@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+//@class PokemonController;
+//@class JPHPokemon;
 
 @interface JPHTableViewController : UITableViewController
 
 @end
 
-NS_ASSUME_NONNULL_END
+

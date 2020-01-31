@@ -8,10 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface JPHPokedexPokemon : NSObject
 
+@property NSString *name;
+@property NSString *url;
+
+- (instancetype) initWithName:(NSString *)name url:(NSString *)pokeUrl;
+
+- (instancetype) initWithDictionary:(NSDictionary *)dictionary;
+
 @end
 
-NS_ASSUME_NONNULL_END
+
