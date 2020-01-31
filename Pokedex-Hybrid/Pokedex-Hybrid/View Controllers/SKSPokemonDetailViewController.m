@@ -23,15 +23,8 @@ void *KVOContext = &KVOContext;
 
 @implementation SKSPokemonDetailViewController
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self removePokemonObservers];
-
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addPokemonObservers];
     [self.pokemonController fetchDetailsWithPokemonAPIForPokemon:self.pokemon];
 }
 
@@ -47,16 +40,18 @@ void *KVOContext = &KVOContext;
     }
 }
 
-- (void)addPokemonObservers {
-    [_pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionNew context:KVOContext];
-    [_pokemon addObserver:self forKeyPath:@"pokemonId" options:NSKeyValueObservingOptionNew context:KVOContext];
-    [_pokemon addObserver:self forKeyPath:@"pokemonSprite" options:NSKeyValueObservingOptionNew context:KVOContext];
-}
+- (void)setPokemon:(SKSPokemon *)pokemon {
 
-- (void)removePokemonObservers {
     [_pokemon removeObserver:self forKeyPath:@"abilities" context:KVOContext];
     [_pokemon removeObserver:self forKeyPath:@"pokemonId" context:KVOContext];
     [_pokemon removeObserver:self forKeyPath:@"pokemonSprite" context:KVOContext];
+
+    _pokemon = pokemon;
+
+    [_pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionNew context:KVOContext];
+    [_pokemon addObserver:self forKeyPath:@"pokemonId" options:NSKeyValueObservingOptionNew context:KVOContext];
+    [_pokemon addObserver:self forKeyPath:@"pokemonSprite" options:NSKeyValueObservingOptionNew context:KVOContext];
+
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

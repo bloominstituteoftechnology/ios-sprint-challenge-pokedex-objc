@@ -10,8 +10,6 @@ import Foundation
 
 class PokemonAPI: NSObject {
 
-    var observations = [NSKeyValueObservation]()
-
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     
     @objc (sharedController) static let shared = PokemonAPI()
@@ -79,8 +77,5 @@ class PokemonAPI: NSObject {
 
         }.resume()
 
-        observations.append(pokemon.observe(\.pokemonId, options: [.old, .new], changeHandler: {_,_ in}))
-        observations.append(pokemon.observe(\.abilities, options: [.old, .new], changeHandler: {_,_ in}))
-        observations.append(pokemon.observe(\.pokemonSprite, options: [.old, .new], changeHandler: {_,_ in}))
     }
 }
