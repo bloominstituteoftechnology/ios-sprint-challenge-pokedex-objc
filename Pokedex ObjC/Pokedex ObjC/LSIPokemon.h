@@ -17,8 +17,8 @@ NS_SWIFT_NAME(Pokemon)
 @property (nonatomic, copy, nonnull) NSURL *url;
 
 @property (nonatomic) int identifier;
-@property (nonatomic, nonnull) NSURL *imageURL;
-@property (nonatomic, copy, nonnull) NSMutableArray *abilities;
+@property (nonatomic, nullable) NSData *imageURL;
+@property (nonatomic, nullable) NSMutableArray<NSString *> *abilities;
 
 
 

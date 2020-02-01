@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class LSIPokemon;
+@class PokemonAPI;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIPokemonDetailViewController : UIViewController
+
+@property (nonatomic, copy, nullable) LSIPokemon *pokemon;
+@property (nonatomic) PokemonAPI *pokemonAPI;
 
 @end
 
