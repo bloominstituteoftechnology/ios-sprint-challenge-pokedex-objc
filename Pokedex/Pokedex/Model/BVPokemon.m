@@ -10,12 +10,13 @@
 
 @implementation BVPokemon
 
-- (instancetype)initWithName:(NSString *)name sprite:(NSString *)sprite abilities:(NSArray *)abilities {
+- (instancetype)initWithName:(NSString *)name sprite:(NSString *)sprite abilities:(NSArray *)abilities pokemonID:(int)pokemonID{
     self = [super init];
     if (self) {
         _name = name;
         _abilities = abilities;
         _sprite = sprite;
+        _pokemonID = pokemonID;
     }
     return self;
 }
@@ -26,6 +27,17 @@
         _name = name;
     }
     return self;
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    
+    NSString *name = dictionary[@"name"];
+     int PokemonID = [dictionary[@"id"] intValue];
+    NSArray *abilities = dictionary[@"abilities"];
+    NSString *sprites = dictionary[@"sprites"][@"front_default"];
+    
+   return [self initWithName:name sprite:sprites abilities:abilities pokemonID:PokemonID];
+    
 }
 
 

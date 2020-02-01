@@ -24,7 +24,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="FvU-MB-tXc" kind="show" id="XWD-bk-gy3"/>
+                                    <segue destination="FvU-MB-tXc" kind="show" identifier="PokemonDetailSegue" id="XWD-bk-gy3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -90,6 +90,12 @@
                         <viewLayoutGuide key="safeArea" id="frR-vv-VZb"/>
                     </view>
                     <navigationItem key="navigationItem" id="Vrz-wl-ZQi"/>
+                    <connections>
+                        <outlet property="PokemonID" destination="N5m-il-K39" id="hMu-s3-xmK"/>
+                        <outlet property="abilitiesLabel" destination="azK-CF-oZs" id="Epg-qa-a3y"/>
+                        <outlet property="pokemonImage" destination="nOf-SL-WEM" id="yQK-dO-0v1"/>
+                        <outlet property="pokemonName" destination="y2b-uE-wna" id="pQT-bv-AUQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMR-2x-otE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

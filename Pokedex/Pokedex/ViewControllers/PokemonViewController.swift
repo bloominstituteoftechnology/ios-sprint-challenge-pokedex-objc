@@ -10,21 +10,49 @@ import UIKit
 
 class PokemonViewController: UIViewController {
 
+    //MARK: - properties
+    @objc var pokemonController: PokemonController?
+    @objc var pokemon: BVPokemon?
+    @IBOutlet weak var pokemonImage: UIImageView!
+    @IBOutlet weak var pokemonName: UILabel!
+    @IBOutlet weak var PokemonID: UILabel!
+    @IBOutlet weak var abilitiesLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews()
     }
     
+   private func updateViews() {
+    guard isViewLoaded else { return }
+    guard let pokemon = pokemon else { return }
+    guard let name = pokemon.name else { return }
+    title = pokemon.name
+    pokemonName.text = pokemon.name
+    pokemonController?.getPokemon(withName: name, completion: { (pokemon, error) in
+        if let error = error {
+            NSLog("error fetching pokemon: \(error)")
+        } else {
+            DispatchQueue.main.async {
+                self.pokemon = pokemon
+                guard let pokemon = pokemon else { return }
+                self.PokemonID.text = "\(pokemon.pokemonID)"
+                guard let sprite = pokemon.sprite else { return }
+                self.pokemonController?.getimage(sprite, completion: { (image, error) in
+                    if let error = error as NSError? {
+                        NSLog("error getting data: \(error)")
+                    }
+                    DispatchQueue.main.async {
+                        guard let image = image else { return }
+                        self.pokemonImage.image = image
+                    }
+                    
+                })
+            }
+        }
+    })
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
+    
 }
