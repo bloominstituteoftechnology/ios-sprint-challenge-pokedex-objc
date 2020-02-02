@@ -29,30 +29,42 @@ class PokemonViewController: UIViewController {
     guard let name = pokemon.name else { return }
     title = pokemon.name
     pokemonName.text = pokemon.name
-    pokemonController?.getPokemon(withName: name, completion: { (pokemon, error) in
-        if let error = error {
-            NSLog("error fetching pokemon: \(error)")
-        } else {
-            DispatchQueue.main.async {
-                self.pokemon = pokemon
-                guard let pokemon = pokemon else { return }
-                self.PokemonID.text = "\(pokemon.pokemonID)"
-                guard let sprite = pokemon.sprite else { return }
-                self.pokemonController?.getimage(sprite, completion: { (image, error) in
-                    if let error = error as NSError? {
-                        NSLog("error getting data: \(error)")
-                    }
-                    DispatchQueue.main.async {
-                        guard let image = image else { return }
-                        self.pokemonImage.image = image
-                    }
-                    
-                })
-            }
-        }
-    })
+    getPokemon(withName: name)
     
 
     }
     
+    
+    //MARK: - helper methods
+    
+    private func getPokemon(withName name: String) {
+    pokemonController?.getPokemon(withName: name, completion: { (pokemon, error) in
+        if let error = error {
+            NSLog("error fetching pokemon: \(error)")
+    } else {
+        DispatchQueue.main.async {
+                     self.pokemon = pokemon
+                     guard let pokemon = pokemon else { return }
+                     self.PokemonID.text = "\(pokemon.pokemonID)"
+                     guard let sprite = pokemon.sprite else { return }
+                     self.getImage(sprite)
+                 }
+             }
+         })
+        
+    }
+    
+    private func getImage(_ sprite: String){
+    self.pokemonController?.getimage(sprite, completion: { (image, error) in
+        if let error = error as NSError? {
+            NSLog("error getting data: \(error)")
+        }
+        DispatchQueue.main.async {
+            guard let image = image else { return }
+            self.pokemonImage.image = image
+                }
+                        
+            })
+        
+    }
 }

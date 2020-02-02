@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BVPokemon : NSObject
 @property(nonatomic, nullable) NSString *name;
 @property(nonatomic, nullable) NSString *sprite;
-@property(nonatomic, nullable) NSArray<NSString *> * abilities;
+@property(nonatomic, nullable) NSArray * abilities;
 @property(nonatomic) int pokemonID;
 
 - (instancetype)initWithName:(NSString *)name sprite:(NSString *)sprite abilities:(NSArray *)abilities pokemonID:(int)pokemonID;

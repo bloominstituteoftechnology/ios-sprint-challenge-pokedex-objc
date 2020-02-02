@@ -32,11 +32,12 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     
     NSString *name = dictionary[@"name"];
-     int PokemonID = [dictionary[@"id"] intValue];
-    NSArray *abilities = dictionary[@"abilities"];
+    int PokemonID = [dictionary[@"id"] intValue];
     NSString *sprites = dictionary[@"sprites"][@"front_default"];
+    NSArray *abilitiesArray = dictionary[@"abilities"];
+   
     
-   return [self initWithName:name sprite:sprites abilities:abilities pokemonID:PokemonID];
+   return [self initWithName:name sprite:sprites abilities:abilitiesArray pokemonID:PokemonID];
     
 }
 
