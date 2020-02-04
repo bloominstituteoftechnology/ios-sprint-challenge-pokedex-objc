@@ -128,6 +128,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h6d-ab-zUK">
+                                <rect key="frame" x="30" y="730" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ChY-9k-Tku"/>
+                                    <constraint firstAttribute="width" constant="240" id="PcC-IS-nOK"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -137,16 +149,24 @@
                             <constraint firstItem="FAh-jn-Uab" firstAttribute="top" secondItem="MZi-cc-KVh" secondAttribute="top" id="IsI-dT-2XB"/>
                             <constraint firstItem="Im4-fo-OCA" firstAttribute="leading" secondItem="ZL0-kT-eTy" secondAttribute="leading" id="K7w-dK-51j"/>
                             <constraint firstItem="Im4-fo-OCA" firstAttribute="top" secondItem="ZL0-kT-eTy" secondAttribute="bottom" constant="20" id="S7K-CN-q4a"/>
+                            <constraint firstItem="h6d-ab-zUK" firstAttribute="leading" secondItem="ZL0-kT-eTy" secondAttribute="leading" id="cRI-uy-Oa3"/>
                             <constraint firstItem="V4f-5O-bha" firstAttribute="top" secondItem="Im4-fo-OCA" secondAttribute="bottom" constant="20" id="cRT-nR-09E"/>
                             <constraint firstItem="FAh-jn-Uab" firstAttribute="leading" secondItem="MZi-cc-KVh" secondAttribute="leading" id="gKb-3v-d6A"/>
                             <constraint firstItem="MZi-cc-KVh" firstAttribute="trailing" secondItem="V4f-5O-bha" secondAttribute="trailing" constant="319" id="h5Q-s2-WgB"/>
                             <constraint firstItem="ZgT-JK-3zG" firstAttribute="top" secondItem="MZi-cc-KVh" secondAttribute="top" constant="50" id="hcf-21-GMN"/>
                             <constraint firstItem="MZi-cc-KVh" firstAttribute="bottom" secondItem="FAh-jn-Uab" secondAttribute="bottom" constant="400" id="kym-3n-JKz"/>
                             <constraint firstItem="ZL0-kT-eTy" firstAttribute="leading" secondItem="MZi-cc-KVh" secondAttribute="leading" constant="30" id="nfU-Ys-Zmw"/>
+                            <constraint firstItem="h6d-ab-zUK" firstAttribute="top" secondItem="V4f-5O-bha" secondAttribute="bottom" constant="20" id="xkn-TK-qM9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MZi-cc-KVh"/>
                     </view>
                     <navigationItem key="navigationItem" id="dKI-qt-aBo"/>
+                    <connections>
+                        <outlet property="abilityTextView" destination="h6d-ab-zUK" id="uBY-2u-yxF"/>
+                        <outlet property="idLabel" destination="gtD-Fe-dui" id="5Im-NA-QaN"/>
+                        <outlet property="imageView" destination="ZgT-JK-3zG" id="XHR-Oj-7ui"/>
+                        <outlet property="nameLabel" destination="daq-Lc-2ZF" id="IvO-RK-X7U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DEY-Q1-8MR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,12 +13,18 @@ class PokemonDetailViewController: UIViewController {
     // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     // MARK: - Outlets
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var abilityTextView: UITextView!
+    
+    
     // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     // MARK: - Properties
     var pokemon: PNCPokemon?
     var abilityObservation: NSKeyValueObservation?
     var imageDataObservation: NSKeyValueObservation?
-    
+    var idObservation: NSKeyValueObservation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +32,8 @@ class PokemonDetailViewController: UIViewController {
         PokemonAPI.shared.fillInDetails(for: pokemon!)
         
         PNCPokemon.addObserver(self, forKeyPath: "abilities", options: [], context: nil)
+        
+        nameLabel.text = pokemon?.name
     }
     
     private func addObservations() {
