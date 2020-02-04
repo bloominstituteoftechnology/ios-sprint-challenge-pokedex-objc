@@ -9,39 +9,66 @@
 import UIKit
 
 class PokedexTableViewController: UITableViewController {
+    
+    // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+    // MARK: - Properties
+    var pokemons: [PNCPokemon] = []
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        loadPokemon()
     }
+    
+    // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+    // MARK: - Methods
+    private func loadPokemon() {
+           
+           PokemonAPI.shared.fetchAllPokemon { (pokemons, error) in
+               if let error = error {
+                   print("Error fetching pokemon in view controller: \(error)")
+                   return
+               }
+               
+               guard let pokemons = pokemons else {
+                   print("No pokemons was returned")
+                   return
+               }
+               
+               self.pokemons.append(contentsOf: pokemons)
+               print(pokemons)
+               DispatchQueue.main.async {
+                   self.tableView.reloadData()
+               }
+           }
+       }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return pokemons.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell", for: indexPath)
+    
+       cell.textLabel?.text = pokemons[indexPath.row].name
+    
+    return cell
     }
-    */
-
+    
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        if tableView.contentOffset.y >= (tableView.contentSize.height - tableView.frame.size.height) {
+            print("end")
+            loadPokemon()
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

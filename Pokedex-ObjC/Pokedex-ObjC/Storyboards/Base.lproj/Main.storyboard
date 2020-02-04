@@ -10,13 +10,13 @@
         <!--Pokedex-->
         <scene sceneID="OIT-2E-caE">
             <objects>
-                <tableViewController id="qr4-Ya-qlW" sceneMemberID="viewController">
+                <tableViewController id="qr4-Ya-qlW" customClass="PokedexTableViewController" customModule="Pokedex_ObjC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="s0r-y1-EzU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6ju-RQ-G7k">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokemonCell" id="6ju-RQ-G7k">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6ju-RQ-G7k" id="YHz-eV-RAS">
@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="1690" y="58"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokedex Detail View Controller-->
         <scene sceneID="Fr8-P7-8it">
             <objects>
-                <viewController id="tsK-tu-Umc" sceneMemberID="viewController">
+                <viewController id="tsK-tu-Umc" customClass="PokedexDetailViewController" customModule="Pokedex_ObjC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MHJ-OI-lIg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
