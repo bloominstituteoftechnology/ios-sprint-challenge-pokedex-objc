@@ -81,7 +81,7 @@ class PokemonAPI: NSObject {
                             return
                         }
                         
-                        print(JSONDictionary)
+                        //print(JSONDictionary)
                         
                         if let id = JSONDictionary["id"] as? NSNumber {
                             pokemon.pokeId = id
@@ -120,3 +120,18 @@ class PokemonAPI: NSObject {
             }
         }
 
+private func loadImage(url: URL, completion: @escaping (Data) -> Void) {
+    
+    URLSession.shared.dataTask(with: url) { (data, _, error) in
+        if let error = error {
+            print("There is an error loading image: \(error)")
+            return
+        }
+        guard let data = data else {
+            print("No image data was returned")
+            return
+        }
+        completion(data)
+        
+    }.resume()
+}

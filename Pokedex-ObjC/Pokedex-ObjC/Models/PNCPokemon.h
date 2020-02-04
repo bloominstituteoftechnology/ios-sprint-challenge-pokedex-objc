@@ -16,6 +16,7 @@
 @property (copy, nonnull, nonatomic) NSURL *url;
 @property (copy, nonnull, nonatomic) NSNumber *pokeId;
 @property (copy, nonnull, nonatomic) NSString *abilities;
+@property (copy, nonnull, nonatomic) NSData *imageData;
 
 - (instancetype _Nonnull)initWithDictionary:(NSDictionary *_Nonnull)dictionary;
 
