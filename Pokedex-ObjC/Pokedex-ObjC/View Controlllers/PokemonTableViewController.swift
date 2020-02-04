@@ -15,7 +15,6 @@ class PokemonTableViewController: UITableViewController {
     var pokemons: [PNCPokemon] = []
     
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
