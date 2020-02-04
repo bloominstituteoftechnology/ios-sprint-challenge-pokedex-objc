@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E3008C7E23E9BCFF00EBF479 /* PokedexTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3008C7D23E9BCFF00EBF479 /* PokedexTableViewController.swift */; };
-		E3008C7F23E9BCFF00EBF479 /* PokedexTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3008C7D23E9BCFF00EBF479 /* PokedexTableViewController.swift */; };
-		E3008C8223E9BD3400EBF479 /* PokedexDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3008C8123E9BD3400EBF479 /* PokedexDetailViewController.swift */; };
-		E3008C8323E9BD3400EBF479 /* PokedexDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3008C8123E9BD3400EBF479 /* PokedexDetailViewController.swift */; };
+		E3008C7E23E9BCFF00EBF479 /* PokemonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3008C7D23E9BCFF00EBF479 /* PokemonTableViewController.swift */; };
+		E3008C7F23E9BCFF00EBF479 /* PokemonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3008C7D23E9BCFF00EBF479 /* PokemonTableViewController.swift */; };
+		E3008C8223E9BD3400EBF479 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3008C8123E9BD3400EBF479 /* PokemonDetailViewController.swift */; };
+		E3008C8323E9BD3400EBF479 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3008C8123E9BD3400EBF479 /* PokemonDetailViewController.swift */; };
 		E348710B23E4B439003B31A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E348710A23E4B439003B31A4 /* AppDelegate.m */; };
 		E348710E23E4B439003B31A4 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E348710D23E4B439003B31A4 /* SceneDelegate.m */; };
 		E348711423E4B439003B31A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E348711223E4B439003B31A4 /* Main.storyboard */; };
@@ -36,8 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E3008C7D23E9BCFF00EBF479 /* PokedexTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexTableViewController.swift; sourceTree = "<group>"; };
-		E3008C8123E9BD3400EBF479 /* PokedexDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexDetailViewController.swift; sourceTree = "<group>"; };
+		E3008C7D23E9BCFF00EBF479 /* PokemonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewController.swift; sourceTree = "<group>"; };
+		E3008C8123E9BD3400EBF479 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		E348710623E4B439003B31A4 /* Pokedex-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E348710923E4B439003B31A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E348710A23E4B439003B31A4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,8 +80,8 @@
 		E3008C8023E9BD0400EBF479 /* View Controlllers */ = {
 			isa = PBXGroup;
 			children = (
-				E3008C7D23E9BCFF00EBF479 /* PokedexTableViewController.swift */,
-				E3008C8123E9BD3400EBF479 /* PokedexDetailViewController.swift */,
+				E3008C7D23E9BCFF00EBF479 /* PokemonTableViewController.swift */,
+				E3008C8123E9BD3400EBF479 /* PokemonDetailViewController.swift */,
 			);
 			path = "View Controlllers";
 			sourceTree = "<group>";
@@ -271,12 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3008C7E23E9BCFF00EBF479 /* PokedexTableViewController.swift in Sources */,
+				E3008C7E23E9BCFF00EBF479 /* PokemonTableViewController.swift in Sources */,
 				E348713A23E4B67A003B31A4 /* PokeAPI.swift in Sources */,
 				E348710B23E4B439003B31A4 /* AppDelegate.m in Sources */,
 				E348713423E4B613003B31A4 /* PNCPokemon.m in Sources */,
 				E348711C23E4B43B003B31A4 /* main.m in Sources */,
-				E3008C8223E9BD3400EBF479 /* PokedexDetailViewController.swift in Sources */,
+				E3008C8223E9BD3400EBF479 /* PokemonDetailViewController.swift in Sources */,
 				E348710E23E4B439003B31A4 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,9 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3008C7F23E9BCFF00EBF479 /* PokedexTableViewController.swift in Sources */,
+				E3008C7F23E9BCFF00EBF479 /* PokemonTableViewController.swift in Sources */,
 				E348713B23E4B67A003B31A4 /* PokeAPI.swift in Sources */,
-				E3008C8323E9BD3400EBF479 /* PokedexDetailViewController.swift in Sources */,
+				E3008C8323E9BD3400EBF479 /* PokemonDetailViewController.swift in Sources */,
 				E348712623E4B43C003B31A4 /* Pokedex_ObjCTests.m in Sources */,
 				E348713523E4B613003B31A4 /* PNCPokemon.m in Sources */,
 			);

@@ -63,7 +63,60 @@ class PokemonAPI: NSObject {
             }
         }
         
-        @objc func fillInDetails(for pokemon: PNCPokemon) {
-        
-    }
-}
+           @objc func fillInDetails(for pokemon: PNCPokemon) {
+                
+                URLSession.shared.dataTask(with: pokemon.url) { (data, _, error) in
+                    if error != nil {
+                        print("Error fetching pokemon detail")
+                        return
+                    }
+                    
+                    guard let data = data else {
+                        print("No detail data retun")
+                        return
+                    }
+                    do {
+                        guard let JSONDictionary = try JSONSerialization.jsonObject(with: data) as? NSDictionary else {
+                            print("Error converting to json dictionary")
+                            return
+                        }
+                        
+                        print(JSONDictionary)
+                        
+                        if let id = JSONDictionary["id"] as? NSNumber {
+                            pokemon.pokeId = id
+                        }
+                        
+                        if let abilitiesArray = JSONDictionary["abilities"] as? Array<Dictionary<String, Any>> {
+                            
+                            var abilityString = ""
+                            
+                            for ability in abilitiesArray {
+                                let abilityDictionary = ability["ability"] as? Dictionary<String, String>
+                                let abilityName = abilityDictionary?["name"]
+                                abilityString.append(contentsOf: abilityName!)
+                                abilityString.append(contentsOf: "\n ")
+                            }
+                            
+                            pokemon.abilities = abilityString
+                            print(pokemon)
+                        }
+                        
+                        if let sprites = JSONDictionary["sprites"] as? Dictionary<String, Any> {
+                            
+                            let imageURLString = sprites["front_default"] as? String
+                            guard let imageURL = URL(string: imageURLString ?? "") else { return }
+                            
+                            loadImage(url: imageURL) { (imageData) in
+                                pokemon.imageData = imageData
+                            }
+                        }
+                        
+                    } catch {
+                        print("Error converting to json dictionary")
+                        return
+                    }
+                }.resume()
+            }
+        }
+
