@@ -10,7 +10,7 @@
         <!--Pokedex-->
         <scene sceneID="ubn-9n-qgt">
             <objects>
-                <tableViewController id="ekq-4m-wjD" sceneMemberID="viewController">
+                <tableViewController id="ekq-4m-wjD" customClass="PokemonTableViewController" customModule="PokedexHybrid" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="x9v-9N-MuH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="280" y="86"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="7T0-H7-Wgo">
             <objects>
-                <viewController id="gZb-XO-DDJ" sceneMemberID="viewController">
+                <viewController id="gZb-XO-DDJ" customClass="PokemonDetailViewController" customModule="PokedexHybrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0kk-FR-b0i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -13,6 +13,8 @@
 		29624BA624019B860096CD69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29624BA524019B860096CD69 /* Assets.xcassets */; };
 		29624BA924019B860096CD69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29624BA724019B860096CD69 /* LaunchScreen.storyboard */; };
 		29624BAC24019B860096CD69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29624BAB24019B860096CD69 /* main.m */; };
+		29624BB924019D870096CD69 /* PokemonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29624BB824019D870096CD69 /* PokemonTableViewController.swift */; };
+		29624BBB24019DA40096CD69 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29624BBA24019DA40096CD69 /* PokemonDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		29624BA824019B860096CD69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29624BAA24019B860096CD69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29624BAB24019B860096CD69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29624BB724019D870096CD69 /* PokedexHybrid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokedexHybrid-Bridging-Header.h"; sourceTree = "<group>"; };
+		29624BB824019D870096CD69 /* PokemonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewController.swift; sourceTree = "<group>"; };
+		29624BBA24019DA40096CD69 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,7 @@
 		29624B9824019B860096CD69 /* PokedexHybrid */ = {
 			isa = PBXGroup;
 			children = (
+				29624BB724019D870096CD69 /* PokedexHybrid-Bridging-Header.h */,
 				29624BB624019BDC0096CD69 /* Storyboards */,
 				29624BB524019BC70096CD69 /* Resources */,
 				29624BB424019BBF0096CD69 /* Model */,
@@ -70,6 +76,8 @@
 		29624BB224019BA90096CD69 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				29624BB824019D870096CD69 /* PokemonTableViewController.swift */,
+				29624BBA24019DA40096CD69 /* PokemonDetailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 				TargetAttributes = {
 					29624B9524019B860096CD69 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -183,6 +192,8 @@
 			files = (
 				29624B9B24019B860096CD69 /* AppDelegate.m in Sources */,
 				29624BAC24019B860096CD69 /* main.m in Sources */,
+				29624BBB24019DA40096CD69 /* PokemonDetailViewController.swift in Sources */,
+				29624BB924019D870096CD69 /* PokemonTableViewController.swift in Sources */,
 				29624B9E24019B860096CD69 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SE96QQ4Q6G;
 				INFOPLIST_FILE = PokedexHybrid/Info.plist;
@@ -332,6 +344,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JohnKouris.PokedexHybrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokedexHybrid/PokedexHybrid-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -340,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SE96QQ4Q6G;
 				INFOPLIST_FILE = PokedexHybrid/Info.plist;
@@ -349,6 +365,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JohnKouris.PokedexHybrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokedexHybrid/PokedexHybrid-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
