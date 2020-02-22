@@ -56,15 +56,71 @@
 		373B6F4D2400DB19009C8169 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
-				373B6F4E2400DB19009C8169 /* AppDelegate.swift */,
-				373B6F502400DB19009C8169 /* SceneDelegate.swift */,
-				373B6F522400DB19009C8169 /* ViewController.swift */,
-				373B6F542400DB19009C8169 /* Main.storyboard */,
-				373B6F572400DB1B009C8169 /* Assets.xcassets */,
-				373B6F592400DB1B009C8169 /* LaunchScreen.storyboard */,
-				373B6F5C2400DB1B009C8169 /* Info.plist */,
+				373B6F682400DBB2009C8169 /* App Lifecycle */,
+				373B6F672400DB83009C8169 /* Models */,
+				373B6F662400DB80009C8169 /* Model Controllers */,
+				373B6F652400DB7D009C8169 /* Views */,
+				373B6F642400DB7A009C8169 /* View Controllers */,
+				373B6F632400DB76009C8169 /* Storyboards */,
+				373B6F622400DB73009C8169 /* Resources */,
 			);
 			path = Pokedex;
+			sourceTree = "<group>";
+		};
+		373B6F622400DB73009C8169 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				373B6F572400DB1B009C8169 /* Assets.xcassets */,
+				373B6F5C2400DB1B009C8169 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		373B6F632400DB76009C8169 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				373B6F542400DB19009C8169 /* Main.storyboard */,
+				373B6F592400DB1B009C8169 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		373B6F642400DB7A009C8169 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				373B6F522400DB19009C8169 /* ViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		373B6F652400DB7D009C8169 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		373B6F662400DB80009C8169 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		373B6F672400DB83009C8169 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		373B6F682400DBB2009C8169 /* App Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				373B6F4E2400DB19009C8169 /* AppDelegate.swift */,
+				373B6F502400DB19009C8169 /* SceneDelegate.swift */,
+			);
+			name = "App Lifecycle";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
