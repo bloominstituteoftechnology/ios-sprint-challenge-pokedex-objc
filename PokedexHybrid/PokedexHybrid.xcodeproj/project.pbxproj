@@ -15,6 +15,8 @@
 		29624BAC24019B860096CD69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29624BAB24019B860096CD69 /* main.m */; };
 		29624BB924019D870096CD69 /* PokemonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29624BB824019D870096CD69 /* PokemonTableViewController.swift */; };
 		29624BBB24019DA40096CD69 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29624BBA24019DA40096CD69 /* PokemonDetailViewController.swift */; };
+		29624BBE24019E9C0096CD69 /* JDKPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 29624BBD24019E9C0096CD69 /* JDKPokemon.m */; };
+		29624BC024019FCA0096CD69 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29624BBF24019FCA0096CD69 /* PokemonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,9 @@
 		29624BB724019D870096CD69 /* PokedexHybrid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokedexHybrid-Bridging-Header.h"; sourceTree = "<group>"; };
 		29624BB824019D870096CD69 /* PokemonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewController.swift; sourceTree = "<group>"; };
 		29624BBA24019DA40096CD69 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
+		29624BBC24019E9C0096CD69 /* JDKPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDKPokemon.h; sourceTree = "<group>"; };
+		29624BBD24019E9C0096CD69 /* JDKPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDKPokemon.m; sourceTree = "<group>"; };
+		29624BBF24019FCA0096CD69 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +90,7 @@
 		29624BB324019BB70096CD69 /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
+				29624BBF24019FCA0096CD69 /* PokemonController.swift */,
 			);
 			name = "Model Controller";
 			sourceTree = "<group>";
@@ -92,6 +98,8 @@
 		29624BB424019BBF0096CD69 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				29624BBC24019E9C0096CD69 /* JDKPokemon.h */,
+				29624BBD24019E9C0096CD69 /* JDKPokemon.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -191,8 +199,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				29624B9B24019B860096CD69 /* AppDelegate.m in Sources */,
+				29624BC024019FCA0096CD69 /* PokemonController.swift in Sources */,
 				29624BAC24019B860096CD69 /* main.m in Sources */,
 				29624BBB24019DA40096CD69 /* PokemonDetailViewController.swift in Sources */,
+				29624BBE24019E9C0096CD69 /* JDKPokemon.m in Sources */,
 				29624BB924019D870096CD69 /* PokemonTableViewController.swift in Sources */,
 				29624B9E24019B860096CD69 /* SceneDelegate.m in Sources */,
 			);

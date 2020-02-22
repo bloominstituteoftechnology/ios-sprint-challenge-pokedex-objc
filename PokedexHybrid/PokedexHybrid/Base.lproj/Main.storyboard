@@ -131,6 +131,12 @@
                         <viewLayoutGuide key="safeArea" id="S0d-2K-Sse"/>
                     </view>
                     <navigationItem key="navigationItem" id="L9b-LE-yPQ"/>
+                    <connections>
+                        <outlet property="pokemonAbilitiesTextView" destination="7Vr-kr-OS7" id="JA2-U0-Xw4"/>
+                        <outlet property="pokemonIDLabel" destination="yOd-P4-BSP" id="ZXp-g2-RyI"/>
+                        <outlet property="pokemonImageView" destination="5aA-j1-6dN" id="1P9-2M-pSx"/>
+                        <outlet property="pokemonNameLabel" destination="l2Q-wH-JKl" id="WYv-Mf-oHP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNN-WX-wWt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
