@@ -19,7 +19,8 @@ enum NetworkError: Error {
     case noDecode
 }
 
-class PokemonController {
+@objc (PokemonController)
+class PokemonController: NSObject {
     
     //MARK: - Properties
     
