@@ -14,6 +14,11 @@ class PokemonDetailViewController: UIViewController {
     
     //MARK: - Outlets
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var abilitiesTextView: UITextView!
+    
     //MARK: - Views
     
     override func viewDidLoad() {
