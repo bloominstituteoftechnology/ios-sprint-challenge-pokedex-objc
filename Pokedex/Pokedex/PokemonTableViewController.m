@@ -7,6 +7,7 @@
 //
 
 #import "PokemonTableViewController.h"
+#import "Pokedex-Swift.h"
 
 @interface PokemonTableViewController ()
 

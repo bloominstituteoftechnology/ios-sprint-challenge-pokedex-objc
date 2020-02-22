@@ -19,10 +19,13 @@ enum NetworkError: Error {
     case noDecode
 }
 
-@objc (PokemonController)
+@objc(PokemonController)
 class PokemonController: NSObject {
     
     //MARK: - Properties
+    
+    @objc(sharedController)
+    static let shared = PokemonController()
     
     var pokemonArray: [String] = []
     
@@ -52,7 +55,7 @@ class PokemonController: NSObject {
             do {
                 let names = try decoder.decode([String], from: data)
                 completion(.success(names))
-                
+                self.pokemonArray = names
             } catch {
                 print("Error decoding pokemon names: \(error)")
                 completion(.failure(.noDecode))
