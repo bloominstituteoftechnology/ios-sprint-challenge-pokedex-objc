@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class Pokemon;
 
 @interface PokemonDetailViewController : UIViewController
 
+@property (nonatomic) Pokemon *pokemon;
+
 @end
 
-NS_ASSUME_NONNULL_END

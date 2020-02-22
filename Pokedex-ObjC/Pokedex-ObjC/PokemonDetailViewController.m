@@ -7,8 +7,17 @@
 //
 
 #import "PokemonDetailViewController.h"
+#import "Pokedex_ObjC-Swift.h"
+#import "Pokemon.h"
+
+void *KVOContext = &KVOContext;
 
 @interface PokemonDetailViewController ()
+
+@property (weak,nonatomic) IBOutlet UIImageView *pokemonImage;
+@property (retain, nonatomic) IBOutlet UILabel *pokemonName;
+@property (retain, nonatomic) IBOutlet UILabel *pokemonID;
+@property (retain, nonatomic) IBOutlet UILabel *pokemonAbilities;
 
 @end
 
@@ -29,4 +38,10 @@
 }
 */
 
+- (void)dealloc {
+    [_pokemonName release];
+    [_pokemonID release];
+    [_pokemonAbilities release];
+    [super dealloc];
+}
 @end
