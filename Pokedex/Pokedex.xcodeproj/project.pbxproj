@@ -14,6 +14,7 @@
 		373B6F5B2400DB1B009C8169 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373B6F592400DB1B009C8169 /* LaunchScreen.storyboard */; };
 		373B6F6A2401D530009C8169 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373B6F692401D530009C8169 /* PokemonDetailViewController.swift */; };
 		373B6F702401D59E009C8169 /* PokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 373B6F6F2401D59E009C8169 /* PokemonTableViewController.m */; };
+		373B6F732401D886009C8169 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373B6F722401D886009C8169 /* PokemonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		373B6F6D2401D59E009C8169 /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
 		373B6F6E2401D59E009C8169 /* PokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonTableViewController.h; sourceTree = "<group>"; };
 		373B6F6F2401D59E009C8169 /* PokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonTableViewController.m; sourceTree = "<group>"; };
+		373B6F722401D886009C8169 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +64,7 @@
 			children = (
 				373B6F682400DBB2009C8169 /* App Lifecycle */,
 				373B6F672400DB83009C8169 /* Models */,
-				373B6F662400DB80009C8169 /* Model Controllers */,
-				373B6F652400DB7D009C8169 /* Views */,
+				373B6F662400DB80009C8169 /* Networking */,
 				373B6F642400DB7A009C8169 /* View Controllers */,
 				373B6F632400DB76009C8169 /* Storyboards */,
 				373B6F622400DB73009C8169 /* Resources */,
@@ -100,18 +101,12 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		373B6F652400DB7D009C8169 /* Views */ = {
+		373B6F662400DB80009C8169 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				373B6F722401D886009C8169 /* PokemonController.swift */,
 			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		373B6F662400DB80009C8169 /* Model Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Model Controllers";
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		373B6F672400DB83009C8169 /* Models */ = {
@@ -214,6 +209,7 @@
 				373B6F512400DB19009C8169 /* SceneDelegate.swift in Sources */,
 				373B6F6A2401D530009C8169 /* PokemonDetailViewController.swift in Sources */,
 				373B6F702401D59E009C8169 /* PokemonTableViewController.m in Sources */,
+				373B6F732401D886009C8169 /* PokemonController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
