@@ -21,4 +21,8 @@ enum NetworkError: Error {
 
 class PokemonController {
     
+    //MARK: - Properties
+    
+    //MARK: - Methods
+    
 }
