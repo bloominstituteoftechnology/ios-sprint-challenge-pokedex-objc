@@ -14,22 +14,43 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var pokemonIDLabel: UILabel!
     @IBOutlet weak var pokemonNameLabel: UILabel!
     @IBOutlet weak var pokemonAbilitiesTextView: UITextView!
+    
+    var pokemon: Pokemon?
+    var abilityObservation: NSKeyValueObservation?
+    var imageObservation: NSKeyValueObservation?
+    var idObservation: NSKeyValueObservation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateDetails()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func updateDetails() {
+        guard let pokemon = pokemon else { return }
+        PokemonController.shared.fillInDetails(for: pokemon)
+        pokemonNameLabel.text = pokemon.pokemonName.capitalized
+        addObservations()
     }
-    */
+    
+    private func addObservations() {
+        abilityObservation = pokemon?.observe(\.pokemonAbilities, changeHandler: { (object, change) in
+            DispatchQueue.main.async {
+                self.pokemonAbilitiesTextView.text = self.pokemon?.pokemonAbilities
+            }
+        })
+        
+        imageObservation = pokemon?.observe(\.sprite, changeHandler: { (object, change) in
+            guard let image = self.pokemon?.sprite else { return }
+            DispatchQueue.main.async {
+                self.pokemonImageView.image = UIImage(data: image)
+            }
+        })
+        
+        idObservation = pokemon?.observe(\.pokemonID, changeHandler: { (object, change) in
+            DispatchQueue.main.async {
+                self.pokemonIDLabel.text = self.pokemon?.pokemonID.stringValue
+            }
+        })
+    }
 
 }
