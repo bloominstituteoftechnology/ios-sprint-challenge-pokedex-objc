@@ -11,6 +11,8 @@
 
 @interface PokemonTableViewController ()
 
+@property (nonatomic, readonly) PokemonController *pokemonController;
+
 @end
 
 @implementation PokemonTableViewController

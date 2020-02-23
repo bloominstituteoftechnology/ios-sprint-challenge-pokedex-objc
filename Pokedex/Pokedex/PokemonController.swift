@@ -13,12 +13,11 @@ enum HTTPMethod: String {
     case get = "GET"
 }
 
-class PokemonController: NSObject {
+@objc(PokemonController) class PokemonController: NSObject {
     
     //MARK: - Properties
     
-    @objc(sharedController)
-    static let shared = PokemonController()
+    @objc(sharedController) static let shared = PokemonController()
     
     var pokemonArray: [Pokemon] = []
     
