@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		E399B84E2400DAE300C52941 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B84D2400DAE300C52941 /* AppDelegate.m */; };
 		E399B8512400DAE300C52941 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B8502400DAE300C52941 /* SceneDelegate.m */; };
-		E399B8542400DAE300C52941 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B8532400DAE300C52941 /* ViewController.m */; };
 		E399B8572400DAE300C52941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E399B8552400DAE300C52941 /* Main.storyboard */; };
 		E399B8592400DAE500C52941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E399B8582400DAE500C52941 /* Assets.xcassets */; };
 		E399B85C2400DAE500C52941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E399B85A2400DAE500C52941 /* LaunchScreen.storyboard */; };
 		E399B85F2400DAE500C52941 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B85E2400DAE500C52941 /* main.m */; };
 		E399B86A2400DF7F00C52941 /* VVSPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B8692400DF7F00C52941 /* VVSPokemon.m */; };
 		E399B8702401B74D00C52941 /* VVSPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B86F2401B74D00C52941 /* VVSPokemonController.m */; };
+		E399B87624022AD400C52941 /* VVSPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B87524022AD400C52941 /* VVSPokedexTableViewController.m */; };
+		E399B87924022AE300C52941 /* VVSPokemonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B87824022AE300C52941 /* VVSPokemonViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +25,6 @@
 		E399B84D2400DAE300C52941 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E399B84F2400DAE300C52941 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		E399B8502400DAE300C52941 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		E399B8522400DAE300C52941 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E399B8532400DAE300C52941 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E399B8562400DAE300C52941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E399B8582400DAE500C52941 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E399B85B2400DAE500C52941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +34,10 @@
 		E399B8692400DF7F00C52941 /* VVSPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSPokemon.m; sourceTree = "<group>"; };
 		E399B86E2401B74D00C52941 /* VVSPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSPokemonController.h; sourceTree = "<group>"; };
 		E399B86F2401B74D00C52941 /* VVSPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSPokemonController.m; sourceTree = "<group>"; };
+		E399B87424022AD400C52941 /* VVSPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSPokedexTableViewController.h; sourceTree = "<group>"; };
+		E399B87524022AD400C52941 /* VVSPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSPokedexTableViewController.m; sourceTree = "<group>"; };
+		E399B87724022AE300C52941 /* VVSPokemonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSPokemonViewController.h; sourceTree = "<group>"; };
+		E399B87824022AE300C52941 /* VVSPokemonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSPokemonViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +77,6 @@
 				E399B84D2400DAE300C52941 /* AppDelegate.m */,
 				E399B84F2400DAE300C52941 /* SceneDelegate.h */,
 				E399B8502400DAE300C52941 /* SceneDelegate.m */,
-				E399B8522400DAE300C52941 /* ViewController.h */,
-				E399B8532400DAE300C52941 /* ViewController.m */,
 				E399B8552400DAE300C52941 /* Main.storyboard */,
 				E399B8582400DAE500C52941 /* Assets.xcassets */,
 				E399B85A2400DAE500C52941 /* LaunchScreen.storyboard */,
@@ -88,6 +89,10 @@
 		E399B8652400DB2200C52941 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E399B87424022AD400C52941 /* VVSPokedexTableViewController.h */,
+				E399B87524022AD400C52941 /* VVSPokedexTableViewController.m */,
+				E399B87724022AE300C52941 /* VVSPokemonViewController.h */,
+				E399B87824022AE300C52941 /* VVSPokemonViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -181,9 +186,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E399B8542400DAE300C52941 /* ViewController.m in Sources */,
 				E399B8702401B74D00C52941 /* VVSPokemonController.m in Sources */,
 				E399B84E2400DAE300C52941 /* AppDelegate.m in Sources */,
+				E399B87924022AE300C52941 /* VVSPokemonViewController.m in Sources */,
+				E399B87624022AD400C52941 /* VVSPokedexTableViewController.m in Sources */,
 				E399B85F2400DAE500C52941 /* main.m in Sources */,
 				E399B86A2400DF7F00C52941 /* VVSPokemon.m in Sources */,
 				E399B8512400DAE300C52941 /* SceneDelegate.m in Sources */,
