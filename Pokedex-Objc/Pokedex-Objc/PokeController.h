@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PokeController : NSObject
 
-@property (nullable, nonatomic, readonly) NSArray *pokemonList;
+@property (nullable, nonatomic) NSArray *pokemonList;
 
 - (void)catchEmAll:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion;
 - (void)fetchPokemonByName:(NSString *)name withCompletion:(void (^)(Pokemon *))completion;

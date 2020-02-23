@@ -10,6 +10,8 @@
 #import "PokeController.h"
 #import "Pokemon.h"
 
+void *KVOContext = &KVOContext;
+
 @interface PokemonTableViewController ()
 
 @property PokeController *pokeController;
@@ -21,7 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _pokeController = [[PokeController alloc] init];
+    self.pokeController = [[PokeController alloc] init];
+    [self.pokeController addObserver:self forKeyPath:@"pokemonList" options:0 context:KVOContext];
 }
 
 #pragma mark - Table view data source
@@ -43,6 +46,18 @@
     return cell;
 }
 
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (context == KVOContext) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
 
 #pragma mark - Navigation
 

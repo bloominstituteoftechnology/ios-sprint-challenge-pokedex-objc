@@ -13,7 +13,7 @@
 @interface PokeController ()
 
 @property NSURL *baseURL;
-@property NSMutableArray *internalPokemonList;
+//@property (nonatomic, copy) NSMutableArray *internalPokemonList;
 
 @end
 
@@ -79,7 +79,7 @@
                     NSLog(@"Nil pokemon for result: %@", result);
                 }
             }
-            self->_internalPokemonList = pokemonList;
+            self.pokemonList = pokemonList;
             completion(pokemonList, nil);
         }
         
@@ -105,9 +105,17 @@
 
 #pragma mark - Accessors
 
+- (void)setPokemonList:(NSMutableArray *)newPokemonList
+{
+    
+    _pokemonList = newPokemonList;
+    
+    
+}
+
 - (NSArray *)getPokemonList
 {
-    return [_internalPokemonList copy];
+    return [self.pokemonList copy];
 }
 
 @end
