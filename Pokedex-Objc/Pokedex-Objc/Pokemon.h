@@ -17,7 +17,7 @@
 @property (nullable, nonatomic) UIImage *sprite;
 @property (nullable, nonatomic) NSArray *abilities;
 
-+ (instancetype)fromDictionary:(NSDictionary *)dictionary;
-- (instancetype)initWithName:(NSString *)name pokemonID:(int )idNumber;
++ (instancetype _Nullable )fromDictionary:(NSDictionary * _Nonnull)dictionary;
+- (instancetype _Nullable )initWithName:(NSString * _Nonnull)name pokemonID:(int )idNumber;
 
 @end

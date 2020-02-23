@@ -73,7 +73,11 @@
             NSMutableArray *pokemonList = [[NSMutableArray alloc] init];
             for (NSDictionary *result in results) {
                 Pokemon *pokemon = [Pokemon fromDictionary:result];
-                [pokemonList addObject:pokemon];
+                if (pokemon) {
+                    [pokemonList addObject:pokemon];
+                } else {
+                    NSLog(@"Nil pokemon for result: %@", result);
+                }
             }
             self->_internalPokemonList = pokemonList;
             completion(pokemonList, nil);

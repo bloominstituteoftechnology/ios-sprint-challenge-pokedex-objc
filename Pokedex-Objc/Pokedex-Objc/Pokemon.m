@@ -12,8 +12,9 @@
 
 + (instancetype)fromDictionary:(NSDictionary *)dictionary
 {
-    if (dictionary[@"name"] && dictionary[@"id"]) {
-        int idNumber = (int) dictionary[@"id"];
+    if (dictionary[@"name"] && dictionary[@"url"]) {
+        NSURL *url = dictionary[@"url"];
+        int idNumber = [[url.pathComponents lastObject] intValue];
         Pokemon *newPokemon = [[Pokemon alloc] initWithName:dictionary[@"name"] pokemonID:idNumber];
         
         return newPokemon;
