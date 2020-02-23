@@ -28,7 +28,11 @@
         _abilities = abilities;
 
         // getting the sprite
-        _spriteURL = [dictionary[@"sprites"][@"front_default"] URL];
+        NSString *string = dictionary[@"sprites"][@"front_default"];
+        if (string != nil) {
+            NSURL *url = [[NSURL alloc] initWithString:string];
+            _spriteURL = url;
+        };
     }
     return self;
 }

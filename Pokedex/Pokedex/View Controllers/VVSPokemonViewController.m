@@ -7,6 +7,7 @@
 //
 
 #import "VVSPokemonViewController.h"
+#import <UIKit/UIKit.h>
 
 @interface VVSPokemonViewController ()
 
@@ -16,7 +17,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    [self.pokemonController fetchPokemonWithName:self.pokemon.name completion:^(VVSPokemon * _Nullable pokemon, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+            return;
+        }
+
+        NSData *imageData = [[NSData alloc] initWithContentsOfURL:pokemon.spriteURL];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imageView.image = [UIImage imageWithData:imageData];
+            self.nameLabel.text = [NSString stringWithFormat:@"Name: %@", [pokemon.name capitalizedString]];
+            self.idLabel.text = [NSString stringWithFormat:@"ID: %@", pokemon.identifier];
+            self.abilitiesLabel.text = [NSString stringWithFormat:@"Abilities: %@", [[pokemon abilities] componentsJoinedByString:@", "]];
+        });
+        
+    }];
 }
 
 /*

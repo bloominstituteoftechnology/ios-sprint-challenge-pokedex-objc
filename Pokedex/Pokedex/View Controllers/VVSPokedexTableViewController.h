@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VVSPokemonController.h"
+#import "VVSPokemon.h"
+#import "VVSPokemonViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
