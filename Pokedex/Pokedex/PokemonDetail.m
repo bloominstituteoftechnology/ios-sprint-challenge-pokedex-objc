@@ -10,12 +10,13 @@
 
 @implementation PokemonDetail
 
-- (instancetype)initWithName:(NSString *)name id:(NSString *)id abilities:(NSArray<NSString *> *)abilities
+- (instancetype)initWithName:(NSString *)name id:(NSString *)id sprite:(NSString *)sprite abilities:(NSArray<NSString *> *)abilities
 {
     self = [super init];
     if (self) {
         _name = name;
         _id = id;
+        _sprite = sprite;
         _abilities = abilities;
     }
     return self;

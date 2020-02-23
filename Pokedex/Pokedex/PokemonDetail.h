@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,12 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 //MARK: - Initialization
 
-- (instancetype)initWithName:(NSString *)name id:(NSString *)id abilities:(NSArray<NSString *> *)abilities;
+- (instancetype)initWithName:(NSString *)name id:(NSString *)id sprite:(NSString *)sprite abilities:(NSArray<NSString *> *)abilities;
 
 //MARK: - Properties
 
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *id;
+@property (nonatomic, readonly, copy) NSString *sprite;
 @property (nonatomic, readonly, copy) NSArray<NSString *> *abilities;
 
 @end
