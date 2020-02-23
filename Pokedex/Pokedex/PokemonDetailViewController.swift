@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objc(PokemonDetailViewController)
 class PokemonDetailViewController: UIViewController {
 
     //MARK: - Properties

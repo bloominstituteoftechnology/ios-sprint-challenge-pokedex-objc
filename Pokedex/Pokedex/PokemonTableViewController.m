@@ -40,7 +40,16 @@
 //MARK: - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    if ([segue.identifier isEqualToString:@"pokemonDetailSegue"]) {
+        //MAKE SURE THIS GETS FIXED
+        /*
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        PokemonDetailViewController *detailVC = segue.destinationViewController;
+        detailVC.pokemonController = self.pokemonController;
+        PokemonDetail *pokemon = [self.pokemonController.pokemonList objectAtIndex:indexPath.row];
+        detailVC.pokemon = [self.pokemonController fillInDetails(pokemon)];
+         */
+    }
 }
 
 
