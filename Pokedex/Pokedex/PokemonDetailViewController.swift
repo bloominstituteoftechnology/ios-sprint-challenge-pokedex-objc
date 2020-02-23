@@ -12,6 +12,9 @@ class PokemonDetailViewController: UIViewController {
 
     //MARK: - Properties
     
+    private var pokemonController: PokemonController?
+    private var pokemon: PokemonDetail?
+    
     //MARK: - Outlets
     
     @IBOutlet weak var imageView: UIImageView!
@@ -27,4 +30,7 @@ class PokemonDetailViewController: UIViewController {
     
     //MARK: - Methods
 
+    private func updateViews() {
+        
+    }
 }
