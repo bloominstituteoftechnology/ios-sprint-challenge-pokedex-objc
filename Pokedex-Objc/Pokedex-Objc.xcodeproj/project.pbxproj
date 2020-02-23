@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5DAA88212401B806006EDEB1 /* PokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAA88202401B806006EDEB1 /* PokemonTableViewController.m */; };
 		5DAA88242401B823006EDEB1 /* PokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAA88232401B823006EDEB1 /* PokemonDetailViewController.m */; };
+		5DAA882A2401BEC0006EDEB1 /* PokeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAA88292401BEC0006EDEB1 /* PokeController.m */; };
 		5DB62DA924019D880056A927 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB62DA824019D880056A927 /* AppDelegate.m */; };
 		5DB62DAC24019D880056A927 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB62DAB24019D880056A927 /* SceneDelegate.m */; };
 		5DB62DB224019D880056A927 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DB62DB024019D880056A927 /* Main.storyboard */; };
@@ -23,6 +24,8 @@
 		5DAA88202401B806006EDEB1 /* PokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonTableViewController.m; sourceTree = "<group>"; };
 		5DAA88222401B823006EDEB1 /* PokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonDetailViewController.h; sourceTree = "<group>"; };
 		5DAA88232401B823006EDEB1 /* PokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
+		5DAA88282401BEC0006EDEB1 /* PokeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokeController.h; sourceTree = "<group>"; };
+		5DAA88292401BEC0006EDEB1 /* PokeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokeController.m; sourceTree = "<group>"; };
 		5DB62DA424019D880056A927 /* Pokedex-Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex-Objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DB62DA724019D880056A927 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DB62DA824019D880056A927 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 		5DB62DC224019DB70056A927 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5DAA88282401BEC0006EDEB1 /* PokeController.h */,
+				5DAA88292401BEC0006EDEB1 /* PokeController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				5DB62DBA24019D8A0056A927 /* main.m in Sources */,
 				5DB62DAC24019D880056A927 /* SceneDelegate.m in Sources */,
 				5DAA88242401B823006EDEB1 /* PokemonDetailViewController.m in Sources */,
+				5DAA882A2401BEC0006EDEB1 /* PokeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
