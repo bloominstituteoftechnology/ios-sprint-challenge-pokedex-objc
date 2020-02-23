@@ -4,3 +4,4 @@
 
 
 #import "Pokemon.h"
+#import "PokemonDetail.h"

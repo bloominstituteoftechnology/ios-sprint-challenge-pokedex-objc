@@ -13,13 +13,6 @@ enum HTTPMethod: String {
     case get = "GET"
 }
 
-enum NetworkError: Error {
-    case badData
-    case otherError
-    case noDecode
-}
-
-@objc(PokemonController)
 class PokemonController: NSObject {
     
     //MARK: - Properties
@@ -33,7 +26,7 @@ class PokemonController: NSObject {
     
     //MARK: - Methods
     
-    func fetchPokemon(completion: @escaping (Result<[Pokemon], NetworkError>) -> Void) {
+    @objc func fetchPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
         
         var request = URLRequest(url: baseUrl)
         request.httpMethod = HTTPMethod.get.rawValue
@@ -41,26 +34,53 @@ class PokemonController: NSObject {
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             
             if let _ = error {
-                completion(.failure(.otherError))
+                completion(nil, error)
                 return
             }
             
             guard let data = data else {
-                completion(.failure(.badData))
+                completion(nil, error)
                 return
             }
             
             let decoder = JSONDecoder()
             
             do {
-                let names = try decoder.decode([Pokemon], from: data)
-                completion(.success(names))
-                self.pokemonArray = names
+                let pokemon = try decoder.decode([Pokemon], from: data)
+                self.pokemonArray = pokemon
             } catch {
                 print("Error decoding pokemon names: \(error)")
-                completion(.failure(.noDecode))
+                completion(nil, error)
                 return
             }
         }.resume()
+    }
+    
+    @objc func fillInDetails(for pokemon: Pokemon) -> PokemonDetail? {
+        
+        let pokemonURL = URL(string: "\(pokemon.url)")!
+        
+        var request = URLRequest(url: pokemonURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            
+            if let error = error {
+                print("Error loading data: \(error)")
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                let pokemon = try decoder.decode(PokemonDetail, from: data)
+                return pokemon
+            } catch {
+                print("Error decoding pokemon details: \(error)")
+                return
+            }
+        }
     }
 }

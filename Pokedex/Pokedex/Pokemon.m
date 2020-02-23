@@ -10,4 +10,14 @@
 
 @implementation Pokemon
 
+- (instancetype)initWithName:(NSString *)name url:(NSString *)url
+{
+    self = [super init];
+    if (self) {
+        _name = name;
+        _url = url;
+    }
+    return self;
+}
+
 @end
