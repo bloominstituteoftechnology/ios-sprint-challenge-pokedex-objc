@@ -27,13 +27,13 @@ class PokemonController: NSObject {
     @objc(sharedController)
     static let shared = PokemonController()
     
-    var pokemonArray: [String] = []
+    var pokemonArray: [Pokemon] = []
     
     private let baseUrl = URL(string: "https://pokeapi.co/api/v2/pokemon")!
     
     //MARK: - Methods
     
-    func fetchPokemon(completion: @escaping (Result<[String], NetworkError>) -> Void) {
+    func fetchPokemon(completion: @escaping (Result<[Pokemon], NetworkError>) -> Void) {
         
         var request = URLRequest(url: baseUrl)
         request.httpMethod = HTTPMethod.get.rawValue
@@ -53,7 +53,7 @@ class PokemonController: NSObject {
             let decoder = JSONDecoder()
             
             do {
-                let names = try decoder.decode([String], from: data)
+                let names = try decoder.decode([Pokemon], from: data)
                 completion(.success(names))
                 self.pokemonArray = names
             } catch {
