@@ -70,6 +70,4 @@ void *KVOContext = &KVOContext;
     }
 }
 
-
-
 @end
