@@ -24,59 +24,65 @@ enum HTTPMethod: String {
     //MARK: - Methods
     
     @objc func fetchPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
-//        var request = URLRequest(url: baseUrl)
-//        request.httpMethod = HTTPMethod.get.rawValue
-//
-//        URLSession.shared.dataTask(with: request) { (data, _, error) in
-//
-//            if let _ = error {
-//                completion(nil, error)
-//                return
-//            }
-//
-//            guard let data = data else {
-//                completion(nil, error)
-//                return
-//            }
-//
-//            let decoder = JSONDecoder()
-//
-//            do {
-//                let pokemon = try decoder.decode([Pokemon], from: data)
-//                completion(pokemon, nil)
-//            } catch {
-//                print("Error decoding pokemon names: \(error)")
-//                completion(nil, error)
-//                return
-//            }
-//        }.resume()
+        var request = URLRequest(url: baseUrl)
+        request.httpMethod = HTTPMethod.get.rawValue
+
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+
+            if let _ = error {
+                completion(nil, error)
+                return
+            }
+
+            guard let data = data else {
+                completion(nil, error)
+                return
+            }
+
+            do {
+                guard let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any], let results = jsonDict["results"] as? [[String:Any]]  else {throw NSError()}
+                let pokemon = results.compactMap {Pokemon(dictionary: $0)}
+                completion(pokemon, nil)
+            } catch {
+                print("Error decoding pokemon names: \(error)")
+                completion(nil, error)
+                return
+            }
+        }.resume()
     }
     
-    @objc func fillInDetails(for pokemon: Pokemon) -> PokemonDetail? {
-//        let pokemonURL = URL(string: "\(pokemon.url)")!
-//
-//        var request = URLRequest(url: pokemonURL)
-//        request.httpMethod = HTTPMethod.get.rawValue
-//
-//        URLSession.shared.dataTask(with: request) { (data, _, error) in
-//
-//            if let error = error {
-//                print("Error loading data: \(error)")
-//                return
-//            }
-//
-//            guard let data = data else { return }
-//
-//            let decoder = JSONDecoder()
-//
-//            do {
-//                let pokemon = try decoder.decode(PokemonDetail, from: data)
-//                return pokemon
-//            } catch {
-//                print("Error decoding pokemon details: \(error)")
-//                return
-//            }
-//        }
-        return PokemonDetail(name: pokemon.name, id: pokemon.name, sprite: pokemon.name, abilities: [pokemon.name])
+    @objc func fillInDetails(for pokemon: Pokemon) {
+        let pokemonURL = URL(string: "\(pokemon.url)")!
+
+        var request = URLRequest(url: pokemonURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+
+            if let error = error {
+                print("Error loading data: \(error)")
+                return
+            }
+
+            guard let data = data else { return }
+
+            do {
+                guard let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any],
+                      let abilites = jsonDict["abilities"] as? [[String:Any]],
+                      let sprites = jsonDict["sprites"] as? [String:Any] else {throw NSError()}
+                
+                for ability in abilites {
+                    guard let newAbility = ability["ability"] as? [String:Any] else {return}
+                    let abilityName = newAbility["name"]
+                    pokemon.abilities?.add(abilityName ?? "No abilities")
+                }
+                
+                pokemon.id = jsonDict["id"] as? String
+                pokemon.sprite = sprites["front_default"] as? String
+            } catch {
+                print("Error decoding pokemon details: \(error)")
+                return
+            }
+        }
     }
 }

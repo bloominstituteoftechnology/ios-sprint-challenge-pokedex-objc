@@ -37,7 +37,6 @@
             self.pokemon = pokemon;
         }
     }];
-    
 }
 
 //MARK: - Table view data source
@@ -64,8 +63,7 @@
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         PokemonDetailViewController *detailVC = segue.destinationViewController;
         detailVC.pokemonController = _pokemonController;
-        Pokemon *pokemon = [_pokemon objectAtIndex:indexPath.row];
-        detailVC.pokemonDetail = [_pokemonController fillInDetailsFor:(pokemon)];
+        detailVC.pokemon = [_pokemon objectAtIndex:indexPath.row];
     }
 }
 

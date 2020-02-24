@@ -7,6 +7,7 @@
 //
 
 #import "PokemonDetailViewController.h"
+#import "Pokemon.h"
 
 void *KVOContext = &KVOContext;
 
@@ -26,40 +27,42 @@ void *KVOContext = &KVOContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [_pokemonController fillInDetailsFor:_pokemon];
 }
 
 //MARK: - Methods
 
 - (void)updateViews
 {
-    if (!self.isViewLoaded || !self.pokemonDetail) { return; }
+    if (!self.isViewLoaded || !self.pokemon) { return; }
     
-    self.imageView.image = [[UIImage alloc] initWithContentsOfFile:self.pokemonDetail.sprite];
-    self.nameLabel.text = self.pokemonDetail.name;
-    self.idLabel.text = self.pokemonDetail.id;
-    self.abilitiesTextView.text = self.pokemonDetail.abilities.description;
+    self.imageView.image = [[UIImage alloc] initWithContentsOfFile:self.pokemon.sprite];
+    self.nameLabel.text = self.pokemon.name;
+    self.idLabel.text = self.pokemon.id;
+    self.abilitiesTextView.text = self.pokemon.abilities.description;
 }
 
-- (void)setPokemon:(PokemonDetail *)pokemon
+- (void)setPokemon:(Pokemon *)pokemon
 {
-    if (pokemon != _pokemonDetail) {
+    if (pokemon != _pokemon) {
         
-        if (_pokemonDetail) {
-            [_pokemonDetail removeObserver:self forKeyPath:@"pokemonDetail" context:KVOContext];
+        if (_pokemon) {
+            [_pokemon removeObserver:self forKeyPath:@"pokemon" context:KVOContext];
         }
         
-        [self willChangeValueForKey:@"pokemonDetail"];
-        _pokemonDetail = pokemon;
-        [self didChangeValueForKey:@"pokemonDetail"];
+        [self willChangeValueForKey:@"pokemon"];
+        _pokemon = pokemon;
+        [self didChangeValueForKey:@"pokemon"];
         
-        [_pokemonDetail addObserver:self forKeyPath:@"pokemonDetail" options:0 context:KVOContext];
+        [_pokemon addObserver:self forKeyPath:@"pokemon" options:0 context:KVOContext];
     }
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
     if (context == KVOContext) {
-        if ([keyPath isEqualToString:@"pokemonDetail"]) {
+        if ([keyPath isEqualToString:@"pokemon"]) {
             [self updateViews];
         }
     } else {

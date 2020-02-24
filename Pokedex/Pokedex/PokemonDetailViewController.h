@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Pokedex-Swift.h"
-#import "PokemonDetail.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 //MARK: - Properties
 
 @property (nonatomic, copy) PokemonController *pokemonController;
-@property (nonatomic, copy) PokemonDetail *pokemonDetail;
+@property (nonatomic, copy) Pokemon *pokemon;
 
 
 @end
