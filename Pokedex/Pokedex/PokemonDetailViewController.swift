@@ -27,11 +27,22 @@ class PokemonDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateViews()
     }
     
     //MARK: - Methods
 
     private func updateViews() {
+        guard let pokemon = pokemon else { return }
         
+        let image = UIImage(contentsOfFile: pokemon.sprite)
+        
+        imageView.image = image
+        nameLabel.text = pokemon.name
+        idLabel.text = pokemon.id
+        abilitiesTextView.text = pokemon.abilities.description
     }
 }
+
+//Implement KVO somewhere in here.
