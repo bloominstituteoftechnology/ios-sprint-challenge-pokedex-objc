@@ -8,6 +8,7 @@
 
 #import "PokemonTableViewController.h"
 #import "Pokedex-Swift.h"
+#import "Pokemon.h"
 
 @interface PokemonTableViewController ()
 
@@ -22,6 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _pokemonController = [[PokemonController alloc] init];
+    //Fetch pokemon here
 }
 
 //MARK: - Table view data source
@@ -33,7 +37,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
+    Pokemon *pokemon = [self.pokemonController.pokemonArray objectAtIndex:indexPath.row];
     
+    cell.textLabel.text = pokemon.name;
     
     return cell;
 }
@@ -54,7 +60,5 @@
 
 @end
 
-
-//Watch interoperability
 //Watch KVO with stopwatch
 //Watch Quakes to see the networking in swift
