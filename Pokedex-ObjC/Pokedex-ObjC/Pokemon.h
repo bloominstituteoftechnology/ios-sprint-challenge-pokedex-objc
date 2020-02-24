@@ -15,12 +15,14 @@
 @property (nonatomic, copy, nullable) NSArray *abilities;
 @property (nonatomic, copy, nullable) NSString *url;
 @property (nonatomic, copy, nullable) NSString *sprites;
+@property (nonatomic, copy, nullable) NSArray *types;
 
 - (nonnull instancetype)initWithName:(nullable NSString *)name
                                  url:(nullable NSString *)url
                                   id:(int)id
                              sprites:(nullable NSString *)sprites
-                           abilities:(nullable NSArray *)abilities;
+                           abilities:(nullable NSArray *)abilities
+                                type:(nullable NSArray *)types;
 
 - (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
 

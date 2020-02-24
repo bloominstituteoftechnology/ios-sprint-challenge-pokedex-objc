@@ -106,6 +106,16 @@ class PokemonController: NSObject {
                     names.append(name)
                 }
                 
+                let typesDictionaries = dictionary["types"] as! [[String: Any]]
+                var typesNames: [String] = []
+                
+                for typeDictionary in typesDictionaries {
+                    let type = typeDictionary["type"] as! [String: Any]
+                    let typeName = type["name"] as! String
+                    typesNames.append(typeName)
+                }
+                
+                pokemon.types = typesNames
                 pokemon.abilities = names
             } catch {
                 let error = NSError();

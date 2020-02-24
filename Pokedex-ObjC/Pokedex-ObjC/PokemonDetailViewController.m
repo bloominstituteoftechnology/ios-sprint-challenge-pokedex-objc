@@ -18,6 +18,7 @@ void *KVOContext = &KVOContext;
 @property (retain, nonatomic) IBOutlet UILabel *pokemonName;
 @property (retain, nonatomic) IBOutlet UILabel *pokemonID;
 @property (retain, nonatomic) IBOutlet UILabel *pokemonAbilities;
+@property (weak, nonatomic) IBOutlet UILabel *pokemonType;
 
 @end
 
@@ -33,10 +34,40 @@ void *KVOContext = &KVOContext;
     if (!self.isViewLoaded || !self.pokemon) { return; }
     self.pokemonName.text = self.pokemon.name;
     self.pokemonID.text = [NSString stringWithFormat:@"ID: %d", self.pokemon.id];
+    self.pokemonType.text = [self.pokemon.types componentsJoinedByString:@", "];
     self.pokemonAbilities.text = [self.pokemon.abilities componentsJoinedByString:@", "];
-    
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.pokemon.sprites]];
     self.pokemonImage.image = [[UIImage alloc] initWithData:imageData];
+    
+   
+    
+//    if (_pokemon.type == @"normal") {
+//         self.view.backgroundColor = [UIColor redColor];
+//    } else if (_pokemon.type == @"fighting") {
+//        self.view.backgroundColor = [UIColor grayColor];
+//    } else if (_pokemon.type == @"flying") {
+//        self.view.backgroundColor = [UIColor systemTealColor];
+//    } else if (_pokemon.type == @"poison") {
+//         self.view.backgroundColor = [UIColor purpleColor];
+//    } else if (_pokemon.type == @"ground") {
+//        self.view.backgroundColor = [UIColor brownColor];
+//    } else if (_pokemon.type == @"") {
+//    } else if (_pokemon.type == @"") {
+//    } else if (_pokemon.type == @"") {
+//    } else if (_pokemon.type == @"") {
+//    } else if (_pokemon.type == @"") {
+//    } else if (_pokemon.type == @"") {
+//    } else if (_pokemon.type == @"") {
+//    } else if (_pokemon.type == @"") {
+//    } else if (_pokemon.type == @"") {
+//    } else if (_pokemon.type == @"") {
+//    } else if (_pokemon.type == @"") {
+//    } else if (_pokemon.type == @"") {
+//    } else if (_pokemon.type == @"") {
+//    } else if (_pokemon.type == @"") {
+//    } else if (_pokemon.type == @"") {
+//    }
+        
 }
 
 - (void)setPokemon:(Pokemon *)pokemon
@@ -46,6 +77,7 @@ void *KVOContext = &KVOContext;
         [_pokemon removeObserver:self forKeyPath:@"id" context:KVOContext];
         [_pokemon removeObserver:self forKeyPath:@"sprites" context:KVOContext];
         [_pokemon removeObserver:self forKeyPath:@"abilities" context:KVOContext];
+        [_pokemon removeObserver:self forKeyPath:@"type" context:KVOContext];
         
         _pokemon = pokemon;
         
@@ -53,6 +85,7 @@ void *KVOContext = &KVOContext;
         [_pokemon addObserver:self forKeyPath:@"id" options:NSKeyValueObservingOptionInitial context:KVOContext];
         [_pokemon addObserver:self forKeyPath:@"sprites" options:NSKeyValueObservingOptionInitial context:KVOContext];
         [_pokemon addObserver:self forKeyPath:@"abilities" options:NSKeyValueObservingOptionInitial context:KVOContext];
+        [_pokemon addObserver:self forKeyPath:@"type" options:NSKeyValueObservingOptionInitial context:KVOContext];
     }
     
 }
