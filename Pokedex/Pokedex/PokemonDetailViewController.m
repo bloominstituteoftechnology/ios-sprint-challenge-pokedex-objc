@@ -32,34 +32,34 @@ void *KVOContext = &KVOContext;
 
 - (void)updateViews
 {
-    if (!self.isViewLoaded || !self.pokemon) { return; }
+    if (!self.isViewLoaded || !self.pokemonDetail) { return; }
     
-    self.imageView.image = [[UIImage alloc] initWithContentsOfFile:self.pokemon.sprite];
-    self.nameLabel.text = self.pokemon.name;
-    self.idLabel.text = self.pokemon.id;
-    self.abilitiesTextView.text = self.pokemon.abilities.description;
+    self.imageView.image = [[UIImage alloc] initWithContentsOfFile:self.pokemonDetail.sprite];
+    self.nameLabel.text = self.pokemonDetail.name;
+    self.idLabel.text = self.pokemonDetail.id;
+    self.abilitiesTextView.text = self.pokemonDetail.abilities.description;
 }
 
 - (void)setPokemon:(PokemonDetail *)pokemon
 {
-    if (pokemon != _pokemon) {
+    if (pokemon != _pokemonDetail) {
         
-        if (_pokemon) {
-            [_pokemon removeObserver:self forKeyPath:@"pokemon" context:KVOContext];
+        if (_pokemonDetail) {
+            [_pokemonDetail removeObserver:self forKeyPath:@"pokemonDetail" context:KVOContext];
         }
         
-        [self willChangeValueForKey:@"pokemon"];
-        _pokemon = pokemon;
-        [self didChangeValueForKey:@"pokemon"];
+        [self willChangeValueForKey:@"pokemonDetail"];
+        _pokemonDetail = pokemon;
+        [self didChangeValueForKey:@"pokemonDetail"];
         
-        [_pokemon addObserver:self forKeyPath:@"pokemon" options:0 context:KVOContext];
+        [_pokemonDetail addObserver:self forKeyPath:@"pokemonDetail" options:0 context:KVOContext];
     }
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
     if (context == KVOContext) {
-        if ([keyPath isEqualToString:@"pokemon"]) {
+        if ([keyPath isEqualToString:@"pokemonDetail"]) {
             [self updateViews];
         }
     } else {

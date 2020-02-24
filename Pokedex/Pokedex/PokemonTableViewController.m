@@ -54,7 +54,7 @@
         PokemonDetailViewController *detailVC = segue.destinationViewController;
         detailVC.pokemonController = _pokemonController;
         Pokemon *pokemon = [_pokemonController.pokemonArray objectAtIndex:indexPath.row];
-        detailVC.pokemon = [_pokemonController fillInDetailsFor:(pokemon)];
+        detailVC.pokemonDetail = [_pokemonController fillInDetailsFor:(pokemon)];
     }
 }
 
