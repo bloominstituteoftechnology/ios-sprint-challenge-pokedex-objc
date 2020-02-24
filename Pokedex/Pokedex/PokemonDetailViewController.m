@@ -70,4 +70,9 @@ void *KVOContext = &KVOContext;
     }
 }
 
+- (void)dealloc
+{
+    self.pokemon = nil;
+}
+
 @end
