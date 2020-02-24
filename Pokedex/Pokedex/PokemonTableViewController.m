@@ -65,7 +65,6 @@
     if ([segue.identifier isEqualToString:@"pokemonDetailSegue"]) {
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         PokemonDetailViewController *detailVC = segue.destinationViewController;
-        detailVC.pokemonController = _pokemonController;
         detailVC.pokemon = [_pokemon objectAtIndex:indexPath.row];
     }
 }

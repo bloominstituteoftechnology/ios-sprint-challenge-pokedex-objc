@@ -28,7 +28,7 @@ void *KVOContext = &KVOContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [_pokemonController fillInDetailsFor:_pokemon];
+    [PokemonController.sharedController fillInDetailsFor:self.pokemon];
 }
 
 //MARK: - Methods

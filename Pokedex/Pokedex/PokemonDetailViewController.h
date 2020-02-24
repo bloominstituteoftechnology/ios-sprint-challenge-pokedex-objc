@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 //MARK: - Properties
 
-@property (nonatomic, copy) PokemonController *pokemonController;
 @property (nonatomic, copy) Pokemon *pokemon;
 
 @end
