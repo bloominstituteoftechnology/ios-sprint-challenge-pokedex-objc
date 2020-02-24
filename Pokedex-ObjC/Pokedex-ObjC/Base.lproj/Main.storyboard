@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pokemon Table View Controller-->
+        <!--Pokedex-->
         <scene sceneID="3yx-x8-1Zo">
             <objects>
                 <tableViewController id="IhI-I2-032" customClass="PokemonTableViewController" sceneMemberID="viewController">
@@ -42,7 +42,7 @@
                             <outlet property="delegate" destination="IhI-I2-032" id="bQR-7O-ycG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="byy-gK-ZSD"/>
+                    <navigationItem key="navigationItem" title="Pokedex" id="byy-gK-ZSD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Fw-Yp-78f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,15 +52,27 @@
         <scene sceneID="kVu-4g-p39">
             <objects>
                 <viewController id="zVC-Jh-xHH" customClass="PokemonDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0Ng-Jb-yvJ">
+                    <view key="view" contentMode="scaleAspectFit" id="0Ng-Jb-yvJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pokeball" translatesAutoresizingMaskIntoConstraints="NO" id="SRm-3f-8zf">
+                                <rect key="frame" x="104" y="121" width="310" height="310"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="5bd-it-pSa"/>
+                                    <constraint firstAttribute="height" constant="310" id="wbU-FL-5uc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.opacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnW-bG-4NZ" customClass="ShadowView" customModule="Pokedex_ObjC" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="324" width="414" height="572"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lXR-d5-PuR">
-                                        <rect key="frame" x="65" y="162" width="284" height="70"/>
+                                        <rect key="frame" x="65" y="293" width="284" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzI-E7-hDS">
                                                 <rect key="frame" x="0.0" y="0.0" width="91.5" height="29"/>
@@ -96,7 +108,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vn1-JE-woW">
-                                        <rect key="frame" x="164" y="52" width="86.5" height="72"/>
+                                        <rect key="frame" x="164" y="183" width="86.5" height="72"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATD-K7-ZQf">
                                                 <rect key="frame" x="0.0" y="0.0" width="86.5" height="41"/>
@@ -112,29 +124,33 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lOu-zr-IGj">
+                                        <rect key="frame" x="18" y="-175" width="378" height="373"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="373" id="Pdz-c6-7S6"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="lXR-d5-PuR" firstAttribute="top" secondItem="Vn1-JE-woW" secondAttribute="bottom" constant="38" id="5d7-0s-9kB"/>
-                                    <constraint firstItem="Vn1-JE-woW" firstAttribute="centerX" secondItem="hnW-bG-4NZ" secondAttribute="centerX" id="Cgp-CA-L9r"/>
-                                    <constraint firstItem="Vn1-JE-woW" firstAttribute="top" secondItem="hnW-bG-4NZ" secondAttribute="top" constant="52" id="R3g-94-utg"/>
-                                    <constraint firstItem="lXR-d5-PuR" firstAttribute="centerX" secondItem="hnW-bG-4NZ" secondAttribute="centerX" id="rxW-Y3-Hnq"/>
+                                    <constraint firstItem="lXR-d5-PuR" firstAttribute="top" secondItem="hnW-bG-4NZ" secondAttribute="top" constant="293" id="ImH-dk-0SE"/>
+                                    <constraint firstItem="lXR-d5-PuR" firstAttribute="top" secondItem="lOu-zr-IGj" secondAttribute="bottom" constant="95" id="aIz-Sm-ujK"/>
+                                    <constraint firstItem="lOu-zr-IGj" firstAttribute="leading" secondItem="hnW-bG-4NZ" secondAttribute="leading" constant="18" id="ahW-Ae-ty9"/>
+                                    <constraint firstItem="lXR-d5-PuR" firstAttribute="centerX" secondItem="hnW-bG-4NZ" secondAttribute="centerX" id="nxT-HJ-y2T"/>
+                                    <constraint firstItem="Vn1-JE-woW" firstAttribute="centerX" secondItem="hnW-bG-4NZ" secondAttribute="centerX" id="oWh-N6-0Ha"/>
+                                    <constraint firstItem="lOu-zr-IGj" firstAttribute="centerX" secondItem="hnW-bG-4NZ" secondAttribute="centerX" id="opX-VL-nJ9"/>
+                                    <constraint firstItem="lXR-d5-PuR" firstAttribute="top" secondItem="Vn1-JE-woW" secondAttribute="bottom" constant="38" id="rcY-h0-kgG"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lOu-zr-IGj">
-                                <rect key="frame" x="18" y="88" width="378" height="373"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.53947891274216553" blue="0.50529220755625959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.39250485790212586" blue="0.3653238439379487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dtb-Jg-Bse" firstAttribute="bottom" secondItem="lOu-zr-IGj" secondAttribute="bottom" constant="401" id="3Sr-FK-Dkv"/>
                             <constraint firstAttribute="trailing" secondItem="hnW-bG-4NZ" secondAttribute="trailing" id="72k-8b-Sd9"/>
-                            <constraint firstItem="lOu-zr-IGj" firstAttribute="centerX" secondItem="0Ng-Jb-yvJ" secondAttribute="centerX" id="8Ed-1b-fbX"/>
                             <constraint firstItem="hnW-bG-4NZ" firstAttribute="top" secondItem="dtb-Jg-Bse" secondAttribute="top" constant="236" id="BmX-Q0-toS"/>
-                            <constraint firstItem="lOu-zr-IGj" firstAttribute="leading" secondItem="dtb-Jg-Bse" secondAttribute="leading" constant="18" id="Pfd-4J-IXh"/>
-                            <constraint firstItem="lOu-zr-IGj" firstAttribute="top" secondItem="dtb-Jg-Bse" secondAttribute="top" id="dgQ-q8-5JG"/>
+                            <constraint firstItem="SRm-3f-8zf" firstAttribute="trailing" secondItem="dtb-Jg-Bse" secondAttribute="trailing" id="R4O-JD-Rxo"/>
                             <constraint firstItem="hnW-bG-4NZ" firstAttribute="leading" secondItem="0Ng-Jb-yvJ" secondAttribute="leading" id="jd2-8B-qNm"/>
                             <constraint firstAttribute="bottom" secondItem="hnW-bG-4NZ" secondAttribute="bottom" id="ocD-tW-16E"/>
+                            <constraint firstItem="SRm-3f-8zf" firstAttribute="top" secondItem="dtb-Jg-Bse" secondAttribute="top" constant="33" id="xzJ-wL-ccS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dtb-Jg-Bse"/>
                     </view>
@@ -169,4 +185,7 @@
             <point key="canvasLocation" x="-213.04347826086959" y="150.66964285714286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Pokeball" width="80.5" height="80.5"/>
+    </resources>
 </document>
