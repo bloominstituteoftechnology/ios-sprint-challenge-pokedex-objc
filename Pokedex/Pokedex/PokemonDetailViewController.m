@@ -8,6 +8,8 @@
 
 #import "PokemonDetailViewController.h"
 
+void *KVOContext = &KVOContext;
+
 @interface PokemonDetailViewController ()
 
 //MARK: - Outlets
@@ -40,7 +42,29 @@
 
 - (void)setPokemon:(PokemonDetail *)pokemon
 {
-    
+    if (pokemon != _pokemon) {
+        
+        if (_pokemon) {
+            [_pokemon removeObserver:self forKeyPath:@"pokemon" context:KVOContext];
+        }
+        
+        [self willChangeValueForKey:@"pokemon"];
+        _pokemon = pokemon;
+        [self didChangeValueForKey:@"pokemon"];
+        
+        [_pokemon addObserver:self forKeyPath:@"pokemon" options:0 context:KVOContext];
+    }
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    if (context == KVOContext) {
+        if ([keyPath isEqualToString:@"pokemon"]) {
+            [self updateViews];
+        }
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 
 
