@@ -18,14 +18,14 @@
 
 @implementation PokemonTableViewController
 
-
 //MARK: - Views
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     _pokemonController = [[PokemonController alloc] init];
-    //Fetch pokemon here
+    //FETCH POKEMON
+    
 }
 
 //MARK: - Table view data source
@@ -62,3 +62,5 @@
 
 //Watch KVO with stopwatch
 //Watch Quakes to see the networking in swift
+//Fix networking calls
+//Make sure objects are in right format
