@@ -17,6 +17,8 @@
 		373B6F732401D886009C8169 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373B6F722401D886009C8169 /* PokemonController.swift */; };
 		373B6F76240339D8009C8169 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 373B6F75240339D8009C8169 /* Pokemon.m */; };
 		373B6F79240341C5009C8169 /* PokemonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 373B6F78240341C5009C8169 /* PokemonDetail.m */; };
+		373B6F7E240392E1009C8169 /* Pokemon+NSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 373B6F7D240392E1009C8169 /* Pokemon+NSJSONSerialization.m */; };
+		373B6F8124039318009C8169 /* PokemonDetail+NSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 373B6F8024039318009C8169 /* PokemonDetail+NSJSONSerialization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,10 @@
 		373B6F75240339D8009C8169 /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
 		373B6F77240341C5009C8169 /* PokemonDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonDetail.h; sourceTree = "<group>"; };
 		373B6F78240341C5009C8169 /* PokemonDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonDetail.m; sourceTree = "<group>"; };
+		373B6F7C240392E1009C8169 /* Pokemon+NSJSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokemon+NSJSONSerialization.h"; sourceTree = "<group>"; };
+		373B6F7D240392E1009C8169 /* Pokemon+NSJSONSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Pokemon+NSJSONSerialization.m"; sourceTree = "<group>"; };
+		373B6F7F24039318009C8169 /* PokemonDetail+NSJSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokemonDetail+NSJSONSerialization.h"; sourceTree = "<group>"; };
+		373B6F8024039318009C8169 /* PokemonDetail+NSJSONSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PokemonDetail+NSJSONSerialization.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +126,12 @@
 			children = (
 				373B6F74240339D8009C8169 /* Pokemon.h */,
 				373B6F75240339D8009C8169 /* Pokemon.m */,
+				373B6F7C240392E1009C8169 /* Pokemon+NSJSONSerialization.h */,
+				373B6F7D240392E1009C8169 /* Pokemon+NSJSONSerialization.m */,
 				373B6F77240341C5009C8169 /* PokemonDetail.h */,
 				373B6F78240341C5009C8169 /* PokemonDetail.m */,
+				373B6F7F24039318009C8169 /* PokemonDetail+NSJSONSerialization.h */,
+				373B6F8024039318009C8169 /* PokemonDetail+NSJSONSerialization.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -219,7 +229,9 @@
 				373B6F79240341C5009C8169 /* PokemonDetail.m in Sources */,
 				373B6F512400DB19009C8169 /* SceneDelegate.swift in Sources */,
 				373B6F6A2401D530009C8169 /* PokemonDetailViewController.swift in Sources */,
+				373B6F8124039318009C8169 /* PokemonDetail+NSJSONSerialization.m in Sources */,
 				373B6F76240339D8009C8169 /* Pokemon.m in Sources */,
+				373B6F7E240392E1009C8169 /* Pokemon+NSJSONSerialization.m in Sources */,
 				373B6F702401D59E009C8169 /* PokemonTableViewController.m in Sources */,
 				373B6F732401D886009C8169 /* PokemonController.swift in Sources */,
 			);
