@@ -14,6 +14,7 @@
 @interface PokemonTableViewController ()
 
 @property (nonatomic, readonly) PokemonController *pokemonController;
+@property (nonatomic) NSArray<Pokemon *> *pokemon;
 
 @end
 
@@ -25,20 +26,30 @@
     [super viewDidLoad];
     
     _pokemonController = [[PokemonController alloc] init];
-    //FETCH POKEMON
+    
+    [_pokemonController fetchPokemonWithCompletion:^(NSArray<Pokemon *> *pokemon, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error fetching artist: %@", error);
+        }
+        
+        if (pokemon) {
+            self.pokemon = pokemon;
+        }
+    }];
     
 }
 
 //MARK: - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _pokemonController.pokemonArray.count;
+    return _pokemon.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
-    Pokemon *pokemon = [self.pokemonController.pokemonArray objectAtIndex:indexPath.row];
+    Pokemon *pokemon = [self.pokemon objectAtIndex:indexPath.row];
     
     cell.textLabel.text = pokemon.name;
     
@@ -53,7 +64,7 @@
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         PokemonDetailViewController *detailVC = segue.destinationViewController;
         detailVC.pokemonController = _pokemonController;
-        Pokemon *pokemon = [_pokemonController.pokemonArray objectAtIndex:indexPath.row];
+        Pokemon *pokemon = [_pokemon objectAtIndex:indexPath.row];
         detailVC.pokemonDetail = [_pokemonController fillInDetailsFor:(pokemon)];
     }
 }

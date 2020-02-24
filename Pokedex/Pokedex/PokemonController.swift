@@ -19,8 +19,6 @@ enum HTTPMethod: String {
     
     @objc(sharedController) static let shared = PokemonController()
     
-    @objc var pokemonArray: [Pokemon] = []
-    
     private let baseUrl = URL(string: "https://pokeapi.co/api/v2/pokemon")!
     
     //MARK: - Methods
@@ -45,7 +43,7 @@ enum HTTPMethod: String {
 //
 //            do {
 //                let pokemon = try decoder.decode([Pokemon], from: data)
-//                self.pokemonArray = pokemon
+//                completion(pokemon, nil)
 //            } catch {
 //                print("Error decoding pokemon names: \(error)")
 //                completion(nil, error)
