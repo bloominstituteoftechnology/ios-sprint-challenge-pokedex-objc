@@ -22,8 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
 }
 
 //MARK: - Table view data source
@@ -56,3 +54,8 @@
 
 
 @end
+
+
+//Watch interoperability
+//Watch KVO with stopwatch
+//Watch Quakes to see the networking in swift
