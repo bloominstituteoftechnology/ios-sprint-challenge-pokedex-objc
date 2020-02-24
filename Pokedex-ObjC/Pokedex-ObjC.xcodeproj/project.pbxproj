@@ -17,6 +17,7 @@
 		F3419D392400EB1300F64B59 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3419D382400EB1300F64B59 /* PokemonController.swift */; };
 		F3419D3C240173C100F64B59 /* PokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3419D3B240173C100F64B59 /* PokemonTableViewController.m */; };
 		F3419D3F240173E300F64B59 /* PokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3419D3E240173E300F64B59 /* PokemonDetailViewController.m */; };
+		F3419D5724037E9300F64B59 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3419D5624037E9300F64B59 /* ShadowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F3419D3B240173C100F64B59 /* PokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonTableViewController.m; sourceTree = "<group>"; };
 		F3419D3D240173E300F64B59 /* PokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonDetailViewController.h; sourceTree = "<group>"; };
 		F3419D3E240173E300F64B59 /* PokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
+		F3419D5624037E9300F64B59 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				F3419D1F2400D7F200F64B59 /* Main.storyboard */,
 				F3419D242400D7F300F64B59 /* LaunchScreen.storyboard */,
+				F3419D5624037E9300F64B59 /* ShadowView.swift */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				F3419D292400D7F300F64B59 /* main.m in Sources */,
 				F3419D3F240173E300F64B59 /* PokemonDetailViewController.m in Sources */,
 				F3419D3C240173C100F64B59 /* PokemonTableViewController.m in Sources */,
+				F3419D5724037E9300F64B59 /* ShadowView.swift in Sources */,
 				F3419D362400E3DC00F64B59 /* Pokemon.m in Sources */,
 				F3419D1B2400D7F200F64B59 /* SceneDelegate.m in Sources */,
 				F3419D392400EB1300F64B59 /* PokemonController.swift in Sources */,

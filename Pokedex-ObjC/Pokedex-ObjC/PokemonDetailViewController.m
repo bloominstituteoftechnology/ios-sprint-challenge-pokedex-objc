@@ -32,7 +32,7 @@ void *KVOContext = &KVOContext;
 {
     if (!self.isViewLoaded || !self.pokemon) { return; }
     self.pokemonName.text = self.pokemon.name;
-    self.pokemonID.text = [NSString stringWithFormat:@"%d", self.pokemon.id];
+    self.pokemonID.text = [NSString stringWithFormat:@"ID: %d", self.pokemon.id];
     self.pokemonAbilities.text = [self.pokemon.abilities componentsJoinedByString:@", "];
     
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.pokemon.sprites]];
