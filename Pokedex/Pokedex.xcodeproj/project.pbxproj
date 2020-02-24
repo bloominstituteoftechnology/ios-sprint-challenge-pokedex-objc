@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E399B84E2400DAE300C52941 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B84D2400DAE300C52941 /* AppDelegate.m */; };
+		E399B8512400DAE300C52941 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B8502400DAE300C52941 /* SceneDelegate.m */; };
+		E399B8572400DAE300C52941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E399B8552400DAE300C52941 /* Main.storyboard */; };
+		E399B8592400DAE500C52941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E399B8582400DAE500C52941 /* Assets.xcassets */; };
+		E399B85C2400DAE500C52941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E399B85A2400DAE500C52941 /* LaunchScreen.storyboard */; };
+		E399B85F2400DAE500C52941 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B85E2400DAE500C52941 /* main.m */; };
+		E399B86A2400DF7F00C52941 /* VVSPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B8692400DF7F00C52941 /* VVSPokemon.m */; };
+		E399B8702401B74D00C52941 /* VVSPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B86F2401B74D00C52941 /* VVSPokemonController.m */; };
+		E399B87624022AD400C52941 /* VVSPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B87524022AD400C52941 /* VVSPokedexTableViewController.m */; };
+		E399B87924022AE300C52941 /* VVSPokemonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E399B87824022AE300C52941 /* VVSPokemonViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E399B8492400DAE300C52941 /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E399B84C2400DAE300C52941 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E399B84D2400DAE300C52941 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E399B84F2400DAE300C52941 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		E399B8502400DAE300C52941 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		E399B8562400DAE300C52941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E399B8582400DAE500C52941 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E399B85B2400DAE500C52941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E399B85D2400DAE500C52941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E399B85E2400DAE500C52941 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E399B8682400DF7F00C52941 /* VVSPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSPokemon.h; sourceTree = "<group>"; };
+		E399B8692400DF7F00C52941 /* VVSPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSPokemon.m; sourceTree = "<group>"; };
+		E399B86E2401B74D00C52941 /* VVSPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSPokemonController.h; sourceTree = "<group>"; };
+		E399B86F2401B74D00C52941 /* VVSPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSPokemonController.m; sourceTree = "<group>"; };
+		E399B87424022AD400C52941 /* VVSPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSPokedexTableViewController.h; sourceTree = "<group>"; };
+		E399B87524022AD400C52941 /* VVSPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSPokedexTableViewController.m; sourceTree = "<group>"; };
+		E399B87724022AE300C52941 /* VVSPokemonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVSPokemonViewController.h; sourceTree = "<group>"; };
+		E399B87824022AE300C52941 /* VVSPokemonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVSPokemonViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E399B8462400DAE300C52941 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E399B8402400DAE300C52941 = {
+			isa = PBXGroup;
+			children = (
+				E399B84B2400DAE300C52941 /* Pokedex */,
+				E399B84A2400DAE300C52941 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E399B84A2400DAE300C52941 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E399B8492400DAE300C52941 /* Pokedex.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E399B84B2400DAE300C52941 /* Pokedex */ = {
+			isa = PBXGroup;
+			children = (
+				E399B8672400DB3400C52941 /* Model Controller */,
+				E399B8662400DB2E00C52941 /* Models */,
+				E399B8652400DB2200C52941 /* View Controllers */,
+				E399B84C2400DAE300C52941 /* AppDelegate.h */,
+				E399B84D2400DAE300C52941 /* AppDelegate.m */,
+				E399B84F2400DAE300C52941 /* SceneDelegate.h */,
+				E399B8502400DAE300C52941 /* SceneDelegate.m */,
+				E399B8552400DAE300C52941 /* Main.storyboard */,
+				E399B8582400DAE500C52941 /* Assets.xcassets */,
+				E399B85A2400DAE500C52941 /* LaunchScreen.storyboard */,
+				E399B85D2400DAE500C52941 /* Info.plist */,
+				E399B85E2400DAE500C52941 /* main.m */,
+			);
+			path = Pokedex;
+			sourceTree = "<group>";
+		};
+		E399B8652400DB2200C52941 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E399B87424022AD400C52941 /* VVSPokedexTableViewController.h */,
+				E399B87524022AD400C52941 /* VVSPokedexTableViewController.m */,
+				E399B87724022AE300C52941 /* VVSPokemonViewController.h */,
+				E399B87824022AE300C52941 /* VVSPokemonViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E399B8662400DB2E00C52941 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E399B8682400DF7F00C52941 /* VVSPokemon.h */,
+				E399B8692400DF7F00C52941 /* VVSPokemon.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E399B8672400DB3400C52941 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E399B86E2401B74D00C52941 /* VVSPokemonController.h */,
+				E399B86F2401B74D00C52941 /* VVSPokemonController.m */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E399B8482400DAE300C52941 /* Pokedex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E399B8622400DAE500C52941 /* Build configuration list for PBXNativeTarget "Pokedex" */;
+			buildPhases = (
+				E399B8452400DAE300C52941 /* Sources */,
+				E399B8462400DAE300C52941 /* Frameworks */,
+				E399B8472400DAE300C52941 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pokedex;
+			productName = Pokedex;
+			productReference = E399B8492400DAE300C52941 /* Pokedex.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E399B8412400DAE300C52941 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VVS;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Vici Shaweddy";
+				TargetAttributes = {
+					E399B8482400DAE300C52941 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = E399B8442400DAE300C52941 /* Build configuration list for PBXProject "Pokedex" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E399B8402400DAE300C52941;
+			productRefGroup = E399B84A2400DAE300C52941 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E399B8482400DAE300C52941 /* Pokedex */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E399B8472400DAE300C52941 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E399B85C2400DAE500C52941 /* LaunchScreen.storyboard in Resources */,
+				E399B8592400DAE500C52941 /* Assets.xcassets in Resources */,
+				E399B8572400DAE300C52941 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E399B8452400DAE300C52941 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E399B8702401B74D00C52941 /* VVSPokemonController.m in Sources */,
+				E399B84E2400DAE300C52941 /* AppDelegate.m in Sources */,
+				E399B87924022AE300C52941 /* VVSPokemonViewController.m in Sources */,
+				E399B87624022AD400C52941 /* VVSPokedexTableViewController.m in Sources */,
+				E399B85F2400DAE500C52941 /* main.m in Sources */,
+				E399B86A2400DF7F00C52941 /* VVSPokemon.m in Sources */,
+				E399B8512400DAE300C52941 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E399B8552400DAE300C52941 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E399B8562400DAE300C52941 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E399B85A2400DAE500C52941 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E399B85B2400DAE500C52941 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E399B8602400DAE500C52941 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E399B8612400DAE500C52941 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E399B8632400DAE500C52941 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZYPH2NW7MY;
+				INFOPLIST_FILE = Pokedex/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vicishaweddy.Pokedex;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E399B8642400DAE500C52941 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZYPH2NW7MY;
+				INFOPLIST_FILE = Pokedex/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vicishaweddy.Pokedex;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E399B8442400DAE300C52941 /* Build configuration list for PBXProject "Pokedex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E399B8602400DAE500C52941 /* Debug */,
+				E399B8612400DAE500C52941 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E399B8622400DAE500C52941 /* Build configuration list for PBXNativeTarget "Pokedex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E399B8632400DAE500C52941 /* Debug */,
+				E399B8642400DAE500C52941 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E399B8412400DAE300C52941 /* Project object */;
+}
