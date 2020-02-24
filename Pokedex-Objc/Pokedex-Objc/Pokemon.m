@@ -40,6 +40,8 @@ void *KVOPokeControllerContext = &KVOPokeControllerContext;
 {
     // makes a network call to grab the image URL and the abilities list of the pokemon,
     // which then triggers a grab of the image from the URL
+    
+    if (self.spriteURL) return;     // quick check to see if this has already been done
     NSLog(@"Attempting to update details: %@", self.url);
     [[NSURLSession.sharedSession dataTaskWithURL:self.url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSLog(@"Fetching %@", self.name);
@@ -110,29 +112,5 @@ void *KVOPokeControllerContext = &KVOPokeControllerContext;
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
-
-#pragma mark - Accessors
-
-//- (void)setSpriteURL:(NSURL *)spriteURL
-//{
-//    _spriteURL = spriteURL;
-//    [self updateSprite];
-//}
-//
-//- (NSURL *)spriteURL
-//{
-//    return _spriteURL;
-//}
-
-
-
-//- (UIImage *)sprite
-//{
-//    if (self.sprite) {
-//        return self.sprite;
-//    }
-//    return [UIImage imageNamed:@"nopokemon"];
-//}
-
 
 @end
