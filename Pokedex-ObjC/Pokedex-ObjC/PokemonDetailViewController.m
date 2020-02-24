@@ -33,40 +33,37 @@ void *KVOContext = &KVOContext;
 {
     if (!self.isViewLoaded || !self.pokemon) { return; }
     self.pokemonName.text = self.pokemon.name;
-    self.pokemonID.text = [NSString stringWithFormat:@"ID: %d", self.pokemon.id];
+    self.pokemonID.text = [NSString stringWithFormat:@"%d", self.pokemon.id];
     self.pokemonType.text = [self.pokemon.types componentsJoinedByString:@", "];
     self.pokemonAbilities.text = [self.pokemon.abilities componentsJoinedByString:@", "];
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.pokemon.sprites]];
     self.pokemonImage.image = [[UIImage alloc] initWithData:imageData];
     
-   
-    
-//    if (_pokemon.type == @"normal") {
-//         self.view.backgroundColor = [UIColor redColor];
-//    } else if (_pokemon.type == @"fighting") {
-//        self.view.backgroundColor = [UIColor grayColor];
-//    } else if (_pokemon.type == @"flying") {
-//        self.view.backgroundColor = [UIColor systemTealColor];
-//    } else if (_pokemon.type == @"poison") {
-//         self.view.backgroundColor = [UIColor purpleColor];
-//    } else if (_pokemon.type == @"ground") {
-//        self.view.backgroundColor = [UIColor brownColor];
-//    } else if (_pokemon.type == @"") {
-//    } else if (_pokemon.type == @"") {
-//    } else if (_pokemon.type == @"") {
-//    } else if (_pokemon.type == @"") {
-//    } else if (_pokemon.type == @"") {
-//    } else if (_pokemon.type == @"") {
-//    } else if (_pokemon.type == @"") {
-//    } else if (_pokemon.type == @"") {
-//    } else if (_pokemon.type == @"") {
-//    } else if (_pokemon.type == @"") {
-//    } else if (_pokemon.type == @"") {
-//    } else if (_pokemon.type == @"") {
-//    } else if (_pokemon.type == @"") {
-//    } else if (_pokemon.type == @"") {
-//    } else if (_pokemon.type == @"") {
-//    }
+    switch (self.pokemon.id) {
+        case 1 ... 3:
+            self.view.backgroundColor = [UIColor greenColor];
+            break;
+        case 4 ... 6:
+            self.view.backgroundColor = [UIColor redColor];
+            break;
+        case 7 ... 9:
+            self.view.backgroundColor = [UIColor blueColor];
+            break;
+        case 10 ... 12:
+            self.view.backgroundColor = [UIColor colorWithRed:153 green:224 blue:0 alpha: 1.0];
+            break;
+        case 13 ... 15:
+            self.view.backgroundColor = [UIColor purpleColor];
+            break;
+        case 16 ... 18:
+            self.view.backgroundColor = [UIColor grayColor];
+            break;
+        case 19 ... 20:
+            self.view.backgroundColor = [UIColor grayColor];
+            break;
+        default:
+            break;
+    }
         
 }
 
