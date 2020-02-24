@@ -13,4 +13,18 @@
 
 @implementation Pokemon (NSJSONSerialization)
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    NSString *name = dictionary[@"name"];
+    NSString *url = dictionary[@"url"];
+    
+    return [self initWithName:name url:url];
+}
+
+- (NSDictionary *)toDictionary
+{
+    NSDictionary *dictionary;
+    return dictionary;
+}
+
 @end
