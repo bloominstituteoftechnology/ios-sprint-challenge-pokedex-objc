@@ -82,3 +82,6 @@ enum HTTPMethod: String {
         return PokemonDetail(name: pokemon.name, id: pokemon.name, sprite: pokemon.name, abilities: [pokemon.name])
     }
 }
+
+//Watch Quakes to see the networking in swift
+//Fix networking calls

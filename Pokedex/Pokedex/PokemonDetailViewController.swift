@@ -45,4 +45,5 @@ class PokemonDetailViewController: UIViewController {
     }
 }
 
+//Watch KVO with stopwatch
 //Implement KVO somewhere in here.

@@ -59,8 +59,3 @@
 
 
 @end
-
-//Watch KVO with stopwatch
-//Watch Quakes to see the networking in swift
-//Fix networking calls
-//Make sure objects are in right format
