@@ -49,13 +49,14 @@
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSLog(@"Catch 'em all! URL: %@", url);
         if (error) {
+            NSLog(@"URLSession error: %@", error);
             completion(nil, error);
             return;
         }
         
         if (!data) {
             NSDictionary *userInfo = @{ NSLocalizedDescriptionKey : @"API response data is nil" };
-            NSError *dataError = [NSError errorWithDomain:@"PokedexCatchEmAll" code:1 userInfo:userInfo];
+            NSError *dataError = [NSError errorWithDomain:@"PokedexCatchEmAll" code:100 userInfo:userInfo];
             completion(nil, dataError);
             return;
         }
@@ -83,7 +84,7 @@
             completion(pokemonList, nil);
         }
         
-        completion(nil, [NSError errorWithDomain:@"PokedexCatchEmAll" code:2 userInfo:@{ NSLocalizedDescriptionKey : @"No pokemon decoded" }]);
+        completion(nil, [NSError errorWithDomain:@"PokedexCatchEmAll" code:200 userInfo:@{ NSLocalizedDescriptionKey : @"No pokemon decoded" }]);
     }] resume];
     
 }

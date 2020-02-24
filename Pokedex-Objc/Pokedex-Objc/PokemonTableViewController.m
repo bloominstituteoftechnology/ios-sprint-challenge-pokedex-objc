@@ -9,8 +9,9 @@
 #import "PokemonTableViewController.h"
 #import "PokeController.h"
 #import "Pokemon.h"
+#import "PokemonDetailViewController.h"
 
-void *KVOContext = &KVOContext;
+void *KVOTableViewContext = &KVOTableViewContext;
 
 @interface PokemonTableViewController ()
 
@@ -24,7 +25,7 @@ void *KVOContext = &KVOContext;
     [super viewDidLoad];
     
     self.pokeController = [[PokeController alloc] init];
-    [self.pokeController addObserver:self forKeyPath:@"pokemonList" options:0 context:KVOContext];
+    [self.pokeController addObserver:self forKeyPath:@"pokemonList" options:0 context:KVOTableViewContext];
 }
 
 #pragma mark - Table view data source
@@ -50,7 +51,7 @@ void *KVOContext = &KVOContext;
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if (context == KVOContext) {
+    if (context == KVOTableViewContext) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
@@ -62,8 +63,9 @@ void *KVOContext = &KVOContext;
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    PokemonDetailViewController *detailVC = [segue destinationViewController];
+    long index = self.tableView.indexPathForSelectedRow.row;
+    detailVC.pokemon = self.pokeController.pokemonList[index];
 }
 
 

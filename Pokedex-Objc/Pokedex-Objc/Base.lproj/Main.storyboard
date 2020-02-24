@@ -15,14 +15,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zqc-hP-VZN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nopokemon" translatesAutoresizingMaskIntoConstraints="NO" id="zqc-hP-VZN">
                                 <rect key="frame" x="40" y="108" width="334" height="334"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zqc-hP-VZN" secondAttribute="height" multiplier="1:1" id="S1G-0Y-Qgq"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZ6-9Q-UHJ">
-                                <rect key="frame" x="40" y="450" width="334" height="28.5"/>
+                                <rect key="frame" x="40" y="450" width="334" height="33.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,37 +37,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="gsh-QE-OWI">
-                                <rect key="frame" x="40" y="519" width="334" height="303.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxh-Fe-aOu">
-                                        <rect key="frame" x="0.0" y="0.0" width="95.5" height="33.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="list of abilities" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nr3-zM-kwJ">
-                                        <rect key="frame" x="0.0" y="33.5" width="311" height="270"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxh-Fe-aOu">
+                                <rect key="frame" x="40" y="503.5" width="334" height="26.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="list of abilities" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nr3-zM-kwJ">
+                                <rect key="frame" x="40" y="538" width="334" height="304"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="gsh-QE-OWI" firstAttribute="leading" secondItem="nZ6-9Q-UHJ" secondAttribute="leading" id="0fh-gl-Rq2"/>
-                            <constraint firstItem="gsh-QE-OWI" firstAttribute="width" secondItem="nZ6-9Q-UHJ" secondAttribute="width" id="Bps-2l-Ks1"/>
-                            <constraint firstItem="gsh-QE-OWI" firstAttribute="top" secondItem="nZ6-9Q-UHJ" secondAttribute="bottom" constant="40" id="DjJ-zC-G4g"/>
+                            <constraint firstItem="Nr3-zM-kwJ" firstAttribute="top" secondItem="mxh-Fe-aOu" secondAttribute="bottom" constant="8" id="4J4-Ic-Iha"/>
                             <constraint firstItem="nZ6-9Q-UHJ" firstAttribute="top" secondItem="zqc-hP-VZN" secondAttribute="bottom" constant="8" id="E1B-RH-PD7"/>
                             <constraint firstItem="zqc-hP-VZN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="JMh-n1-UGp"/>
                             <constraint firstItem="nZ6-9Q-UHJ" firstAttribute="trailing" secondItem="zqc-hP-VZN" secondAttribute="trailing" id="K9e-He-zXF"/>
+                            <constraint firstItem="mxh-Fe-aOu" firstAttribute="top" secondItem="nZ6-9Q-UHJ" secondAttribute="bottom" constant="20" id="L9l-cO-pUK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zqc-hP-VZN" secondAttribute="trailing" constant="40" id="QtG-En-z86"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gsh-QE-OWI" secondAttribute="bottom" constant="40" id="iN7-cS-khX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Nr3-zM-kwJ" secondAttribute="bottom" constant="20" id="Wvr-TW-mbH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nr3-zM-kwJ" secondAttribute="trailing" constant="40" id="YtM-0Z-5pj"/>
                             <constraint firstItem="nZ6-9Q-UHJ" firstAttribute="leading" secondItem="zqc-hP-VZN" secondAttribute="leading" id="j0t-Fx-bTC"/>
+                            <constraint firstItem="mxh-Fe-aOu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="pum-UZ-xqM"/>
                             <constraint firstItem="nZ6-9Q-UHJ" firstAttribute="width" secondItem="zqc-hP-VZN" secondAttribute="width" id="q9W-ai-n8G"/>
+                            <constraint firstItem="Nr3-zM-kwJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="qCo-on-Fim"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mxh-Fe-aOu" secondAttribute="trailing" constant="40" id="rRV-iz-Nx4"/>
                             <constraint firstItem="zqc-hP-VZN" firstAttribute="trailing" secondItem="Dv2-0U-y0b" secondAttribute="trailing" id="rY1-08-sFe"/>
                             <constraint firstItem="zqc-hP-VZN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="ro5-Ie-H48"/>
                             <constraint firstItem="Dv2-0U-y0b" firstAttribute="top" secondItem="zqc-hP-VZN" secondAttribute="top" id="wKz-mS-Cee"/>
@@ -146,4 +144,7 @@
             <point key="canvasLocation" x="840.57971014492762" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="nopokemon" width="330" height="336"/>
+    </resources>
 </document>
