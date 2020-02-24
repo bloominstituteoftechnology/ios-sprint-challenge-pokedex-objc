@@ -13,8 +13,8 @@ class PokemonDetailViewController: UIViewController {
 
     //MARK: - Properties
     
-    private var pokemonController: PokemonController?
-    private var pokemon: PokemonDetail?
+    @objc var pokemonController: PokemonController?
+    @objc var pokemon: PokemonDetail?
     
     //MARK: - Outlets
     

@@ -19,14 +19,13 @@ enum HTTPMethod: String {
     
     @objc(sharedController) static let shared = PokemonController()
     
-    var pokemonArray: [Pokemon] = []
+    @objc var pokemonArray: [Pokemon] = []
     
     private let baseUrl = URL(string: "https://pokeapi.co/api/v2/pokemon")!
     
     //MARK: - Methods
     
-//    @objc func fetchPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
-//
+    @objc func fetchPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
 //        var request = URLRequest(url: baseUrl)
 //        request.httpMethod = HTTPMethod.get.rawValue
 //
@@ -53,10 +52,9 @@ enum HTTPMethod: String {
 //                return
 //            }
 //        }.resume()
-//    }
+    }
     
-//    @objc func fillInDetails(for pokemon: Pokemon) -> PokemonDetail? {
-//
+    @objc func fillInDetails(for pokemon: Pokemon) -> PokemonDetail? {
 //        let pokemonURL = URL(string: "\(pokemon.url)")!
 //
 //        var request = URLRequest(url: pokemonURL)
@@ -81,5 +79,6 @@ enum HTTPMethod: String {
 //                return
 //            }
 //        }
-//    }
+        return PokemonDetail(name: pokemon.name, id: pokemon.name, sprite: pokemon.name, abilities: [pokemon.name])
+    }
 }
