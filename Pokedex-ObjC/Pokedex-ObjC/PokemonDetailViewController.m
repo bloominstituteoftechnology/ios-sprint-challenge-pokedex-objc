@@ -39,6 +39,7 @@ void *KVOContext = &KVOContext;
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.pokemon.sprites]];
     self.pokemonImage.image = [[UIImage alloc] initWithData:imageData];
     
+    // Change background color based on type
     switch (self.pokemon.id) {
         case 1 ... 3:
             self.view.backgroundColor = [UIColor greenColor];
