@@ -83,6 +83,6 @@ enum HTTPMethod: String {
                 print("Error decoding pokemon details: \(error)")
                 return
             }
-        }
+        }.resume()
     }
 }

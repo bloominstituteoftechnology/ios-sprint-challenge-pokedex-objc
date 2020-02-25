@@ -28,7 +28,9 @@ void *KVOContext = &KVOContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [_pokemon addObserver:self forKeyPath:@"pokemon" options:0 context:KVOContext];
     [PokemonController.sharedController fillInDetailsFor:self.pokemon];
+    [self updateViews];
 }
 
 //MARK: - Methods
@@ -43,28 +45,28 @@ void *KVOContext = &KVOContext;
     self.abilitiesTextView.text = self.pokemon.abilities.description;
 }
 
-- (void)setPokemon:(Pokemon *)pokemon
-{
-    if (pokemon != _pokemon) {
-        
-        if (_pokemon) {
-            [_pokemon removeObserver:self forKeyPath:@"pokemon" context:KVOContext];
-        }
-        
-        [self willChangeValueForKey:@"pokemon"];
-        _pokemon = pokemon;
-        [self didChangeValueForKey:@"pokemon"];
-        
-        [_pokemon addObserver:self forKeyPath:@"pokemon" options:0 context:KVOContext];
-    }
-}
+//- (void)setPokemon:(Pokemon *)pokemon
+//{
+//    if (pokemon != _pokemon) {
+//
+//        if (_pokemon) {
+//            [_pokemon removeObserver:self forKeyPath:@"pokemon" context:KVOContext];
+//        }
+//
+//        [self willChangeValueForKey:@"pokemon"];
+//        _pokemon = pokemon;
+//        [self didChangeValueForKey:@"pokemon"];
+//
+//        [_pokemon addObserver:self forKeyPath:@"pokemon" options:0 context:KVOContext];
+//    }
+//}
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
     if (context == KVOContext) {
-        if ([keyPath isEqualToString:@"pokemon"]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
             [self updateViews];
-        }
+        });
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
