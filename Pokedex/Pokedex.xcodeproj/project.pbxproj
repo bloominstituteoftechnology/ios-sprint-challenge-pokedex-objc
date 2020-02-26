@@ -15,6 +15,7 @@
 		373B6F702401D59E009C8169 /* PokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 373B6F6F2401D59E009C8169 /* PokemonTableViewController.m */; };
 		373B6F732401D886009C8169 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373B6F722401D886009C8169 /* PokemonController.swift */; };
 		373B6F76240339D8009C8169 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 373B6F75240339D8009C8169 /* Pokemon.m */; };
+		376BEAED240729CF00CE6D2B /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376BEAEC240729CF00CE6D2B /* PokemonDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		373B6F722401D886009C8169 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 		373B6F74240339D8009C8169 /* Pokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
 		373B6F75240339D8009C8169 /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
+		376BEAEC240729CF00CE6D2B /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				373B6F6E2401D59E009C8169 /* PokemonTableViewController.h */,
 				373B6F6F2401D59E009C8169 /* PokemonTableViewController.m */,
+				376BEAEC240729CF00CE6D2B /* PokemonDetailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				373B6F76240339D8009C8169 /* Pokemon.m in Sources */,
 				373B6F702401D59E009C8169 /* PokemonTableViewController.m in Sources */,
 				373B6F732401D886009C8169 /* PokemonController.swift in Sources */,
+				376BEAED240729CF00CE6D2B /* PokemonDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
