@@ -18,7 +18,7 @@
     return [self initWithName:name url:url id:NULL abilities:NULL sprite:NULL];
 }
 
--(instancetype)initWithName:(NSString *)name url:(NSString *)url id:(nullable NSString *)id abilities:(nullable NSString *)abilities sprite:(nullable NSString *)sprite
+-(instancetype)initWithName:(NSString *)name url:(NSString *)url id:(nullable NSString *)id abilities:(nullable NSString *)abilities sprite:(nullable NSData *)sprite
 {
     if (self = [super init]) {
         _name = name;

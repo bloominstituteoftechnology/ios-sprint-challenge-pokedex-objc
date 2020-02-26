@@ -83,8 +83,11 @@ enum HTTPMethod: String {
                     }
                     
                     if let sprites = dictionary["sprites"] as? [String: Any] {
-                        let sprite = sprites["front_shiny"] as? String
-                        pokemon.sprite = sprite
+                        let imageString = sprites["front_shiny"] as? String
+                        guard let imageURL = URL(string: imageString ?? "") else { return }
+                        self.loadImage(url: imageURL) { (data) in
+                            pokemon.sprite = data
+                        }
                     }
                 }
             } catch {
