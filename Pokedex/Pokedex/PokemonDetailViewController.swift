@@ -20,9 +20,10 @@ import UIKit
     //MARK: - Outlets
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var abilitiesTextView: UITextView!
+    @IBOutlet weak var abilitiesLabel: UILabel!
+    
+    
     
     //MARK: - Views
     
@@ -36,7 +37,8 @@ import UIKit
     private func addObservations() {
         abilityObservation = pokemon?.observe(\.abilities, changeHandler: { (object, change) in
             DispatchQueue.main.async {
-                self.abilitiesTextView.text = self.pokemon?.abilities
+                guard let abilities = self.pokemon?.abilities else { return }
+                self.abilitiesLabel.text = abilities
             }
         })
 
