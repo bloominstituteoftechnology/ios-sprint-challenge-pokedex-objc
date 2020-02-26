@@ -42,7 +42,7 @@ void *KVOContext = &KVOContext;
     self.imageView.image = [[UIImage alloc] initWithContentsOfFile:self.pokemon.sprite];
     self.nameLabel.text = self.pokemon.name;
     self.idLabel.text = self.pokemon.id;
-    self.abilitiesTextView.text = self.pokemon.abilities.description;
+    self.abilitiesTextView.text = self.pokemon.abilities;
 }
 
 //- (void)setPokemon:(Pokemon *)pokemon

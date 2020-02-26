@@ -67,22 +67,48 @@ enum HTTPMethod: String {
             guard let data = data else { return }
 
             do {
-                guard let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any],
-                      let abilites = jsonDict["abilities"] as? [[String:Any]],
-                      let sprites = jsonDict["sprites"] as? [String:Any] else {throw NSError()}
-                
-                for ability in abilites {
-                    guard let newAbility = ability["ability"] as? [String:Any] else {return}
-                    let abilityName = newAbility["name"]
-                    pokemon.abilities?.add(abilityName ?? "No abilities")
+                if let dictionary = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
+                    
+                    if let pokemonID = dictionary["id"] as? NSNumber {
+                        pokemon.id = "\(pokemonID)"
+                    }
+                    
+                    if let abilities = dictionary["abilities"] as? [[String: Any]] {
+                        for ability in abilities {
+                            let abilityDictionary = ability["ability"] as? [String: String]
+                            guard let name = abilityDictionary?["name"] else { return }
+                            pokemon.abilities = name
+                        }
+                        
+                    }
+                    
+                    if let sprites = dictionary["sprites"] as? [String: Any] {
+                        let sprite = sprites["front_shiny"] as? String
+                        pokemon.sprite = sprite
+                    }
                 }
-                
-                pokemon.id = jsonDict["id"] as? String
-                pokemon.sprite = sprites["front_default"] as? String
             } catch {
                 print("Error decoding pokemon details: \(error)")
                 return
             }
         }.resume()
+    }
+    
+    private func loadImage(url: URL, completion: @escaping (Data) -> Void) {
+        let task = URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                print("Error loading image: \(error)")
+                return
+            }
+
+            guard let data = data else {
+                print("Image data error")
+                return
+            }
+
+            completion(data)
+        }
+
+        task.resume()
     }
 }

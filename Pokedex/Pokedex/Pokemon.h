@@ -16,7 +16,7 @@ NS_SWIFT_NAME(Pokemon)
 //MARK: - Initialization
 
 -(instancetype)initDictionary:(nullable NSDictionary *)dictionary;
--(instancetype)initWithName:(NSString *)name url:(NSString *)url id:(nullable NSString *)id abilities:(nullable NSMutableArray<NSString *> *)abilities sprite:(nullable NSString *)sprite;
+-(instancetype)initWithName:(NSString *)name url:(NSString *)url id:(nullable NSString *)id abilities:(nullable NSString *)abilities sprite:(nullable NSString *)sprite;
 
 //MARK: - Properties
 
@@ -24,7 +24,7 @@ NS_SWIFT_NAME(Pokemon)
 @property (nonnull) NSString *url;
 @property (nullable) NSString *id;
 @property (nullable) NSString *sprite;
-@property (nullable) NSMutableArray<NSString *> *abilities;
+@property (nullable) NSString *abilities;
 
 @end
 
