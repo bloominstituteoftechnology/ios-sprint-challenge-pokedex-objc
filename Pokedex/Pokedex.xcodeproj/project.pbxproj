@@ -15,7 +15,6 @@
 		373B6F702401D59E009C8169 /* PokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 373B6F6F2401D59E009C8169 /* PokemonTableViewController.m */; };
 		373B6F732401D886009C8169 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373B6F722401D886009C8169 /* PokemonController.swift */; };
 		373B6F76240339D8009C8169 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 373B6F75240339D8009C8169 /* Pokemon.m */; };
-		37C2FE6E2404405300FA234C /* PokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C2FE6D2404405300FA234C /* PokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +31,6 @@
 		373B6F722401D886009C8169 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 		373B6F74240339D8009C8169 /* Pokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
 		373B6F75240339D8009C8169 /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
-		37C2FE6C2404405300FA234C /* PokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonDetailViewController.h; sourceTree = "<group>"; };
-		37C2FE6D2404405300FA234C /* PokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +97,6 @@
 			children = (
 				373B6F6E2401D59E009C8169 /* PokemonTableViewController.h */,
 				373B6F6F2401D59E009C8169 /* PokemonTableViewController.m */,
-				37C2FE6C2404405300FA234C /* PokemonDetailViewController.h */,
-				37C2FE6D2404405300FA234C /* PokemonDetailViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -215,7 +210,6 @@
 				373B6F4F2400DB19009C8169 /* AppDelegate.swift in Sources */,
 				373B6F512400DB19009C8169 /* SceneDelegate.swift in Sources */,
 				373B6F76240339D8009C8169 /* Pokemon.m in Sources */,
-				37C2FE6E2404405300FA234C /* PokemonDetailViewController.m in Sources */,
 				373B6F702401D59E009C8169 /* PokemonTableViewController.m in Sources */,
 				373B6F732401D886009C8169 /* PokemonController.swift in Sources */,
 			);
