@@ -10,4 +10,21 @@
 
 @implementation CARPokemon
 
+- (instancetype)initWithName:(NSString *)name {
+    self = [super init];
+    if (self) {
+        _name = [name copy];
+        _pokemonId = nil;
+        _spriteURL = nil;
+        _abilities = nil;
+    }
+    return self;
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    NSString *name = dictionary[@"name"];
+    self = [self initWithName:name];
+    return self;
+}
+
 @end

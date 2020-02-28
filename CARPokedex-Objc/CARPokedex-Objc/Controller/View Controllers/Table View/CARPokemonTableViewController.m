@@ -29,7 +29,7 @@ static NSString *const reuseIdentifier = @"PokemonCell";
 }
 
 - (void)fetchPokemon {
-    [CARPokemonAPI.sharedController fetchAllPokemonWithCompletion:^(NSArray<CARListPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
+    [CARPokemonAPI.sharedController fetchAllPokemonWithCompletion:^(NSArray<CARPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
         if (error) {
             return;
         }
@@ -42,6 +42,10 @@ static NSString *const reuseIdentifier = @"PokemonCell";
 // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 // MARK: - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    PokemonDetailViewController *detailVC = segue.destinationViewController;
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    CARPokemon *pokemon = self.pokemonController.pokemon[indexPath.row];
+    detailVC.pokemon = pokemon;
 }
 
 // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
@@ -52,7 +56,7 @@ static NSString *const reuseIdentifier = @"PokemonCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-    CARListPokemon *pokemon = self.pokemonController.pokemon[indexPath.row];
+    CARPokemon *pokemon = self.pokemonController.pokemon[indexPath.row];
     cell.textLabel.text = pokemon.name;
     return cell;
 }

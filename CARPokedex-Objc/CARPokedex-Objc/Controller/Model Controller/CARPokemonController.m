@@ -10,7 +10,7 @@
 
 @interface CARPokemonController ()
 
-@property (nonatomic) NSMutableArray<CARListPokemon*> *internalPokemon;
+@property (nonatomic) NSMutableArray<CARPokemon*> *internalPokemon;
 
 @end
 
@@ -24,13 +24,13 @@
     return self;
 }
 
-- (void)addPokemonFromArray:(NSArray<CARListPokemon*> *_Nonnull)pokemon {
-    for (CARListPokemon *pokemonToAdd in pokemon) {
+- (void)addPokemonFromArray:(NSArray<CARPokemon*> *_Nonnull)pokemon {
+    for (CARPokemon *pokemonToAdd in pokemon) {
         [self.internalPokemon addObject:pokemonToAdd];
     }
 }
 
-- (NSArray<CARListPokemon*> *)pokemon {
+- (NSArray<CARPokemon*> *)pokemon {
     return [_internalPokemon copy];
 }
 @end

@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CARListPokemon.h"
+#import "CARPokemon.h"
 
 @interface CARPokemonController : NSObject
 
-@property (nonatomic, readonly, nonnull) NSArray<CARListPokemon *> *pokemon;
+@property (nonatomic, readonly, nonnull) NSArray<CARPokemon *> *pokemon;
 
-- (void)addPokemonFromArray:(NSArray<CARListPokemon*> *_Nonnull)pokemon;
+- (void)addPokemonFromArray:(NSArray<CARPokemon*> *_Nonnull)pokemon;
 
 @end

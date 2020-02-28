@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
+NS_SWIFT_NAME(Pokemon)
 @interface CARPokemon : NSObject
 
-@end
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) NSNumber *pokemonId;
+@property (nonatomic, copy) NSString *spriteURL;
+@property (nonatomic) NSArray<NSString*> *abilities;
 
-NS_ASSUME_NONNULL_END
+- (instancetype)initWithName:(NSString *)name;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
+@end
