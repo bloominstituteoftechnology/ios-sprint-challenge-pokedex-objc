@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		635615362409732F003110A6 /* CARPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635615352409732F003110A6 /* CARPokemonController.m */; };
+		6356153924097438003110A6 /* CARPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6356153824097438003110A6 /* CARPokemon.m */; };
+		6356153C2409775E003110A6 /* CARListPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6356153B2409775E003110A6 /* CARListPokemon.m */; };
+		635615402409788C003110A6 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6356153F2409788C003110A6 /* PokemonAPI.swift */; };
+		6356154324097B0C003110A6 /* CARPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6356154224097B0C003110A6 /* CARPokemonTableViewController.m */; };
 		635E93DF2409720A006AD075 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E93DE2409720A006AD075 /* AppDelegate.m */; };
 		635E93E22409720A006AD075 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 635E93E12409720A006AD075 /* SceneDelegate.m */; };
 		635E93E82409720A006AD075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635E93E62409720A006AD075 /* Main.storyboard */; };
@@ -16,6 +21,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		635615342409732F003110A6 /* CARPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARPokemonController.h; sourceTree = "<group>"; };
+		635615352409732F003110A6 /* CARPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARPokemonController.m; sourceTree = "<group>"; };
+		6356153724097438003110A6 /* CARPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARPokemon.h; sourceTree = "<group>"; };
+		6356153824097438003110A6 /* CARPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARPokemon.m; sourceTree = "<group>"; };
+		6356153A2409775E003110A6 /* CARListPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARListPokemon.h; sourceTree = "<group>"; };
+		6356153B2409775E003110A6 /* CARListPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARListPokemon.m; sourceTree = "<group>"; };
+		6356153E2409788C003110A6 /* CARPokedex-Objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CARPokedex-Objc-Bridging-Header.h"; sourceTree = "<group>"; };
+		6356153F2409788C003110A6 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		6356154124097B0C003110A6 /* CARPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CARPokemonTableViewController.h; sourceTree = "<group>"; };
+		6356154224097B0C003110A6 /* CARPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARPokemonTableViewController.m; sourceTree = "<group>"; };
 		635E93DA2409720A006AD075 /* CARPokedex-Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CARPokedex-Objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		635E93DD2409720A006AD075 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		635E93DE2409720A006AD075 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -39,6 +54,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63561532240972F9003110A6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6356154124097B0C003110A6 /* CARPokemonTableViewController.h */,
+				6356154224097B0C003110A6 /* CARPokemonTableViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6356153324097304003110A6 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				635615342409732F003110A6 /* CARPokemonController.h */,
+				635615352409732F003110A6 /* CARPokemonController.m */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		6356153D2409786D003110A6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6356153F2409788C003110A6 /* PokemonAPI.swift */,
+				6356153E2409788C003110A6 /* CARPokedex-Objc-Bridging-Header.h */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		635E93D12409720A006AD075 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +103,7 @@
 				635E93FA24097258006AD075 /* Model */,
 				635E93F924097251006AD075 /* View */,
 				635E93F72409722E006AD075 /* Controller */,
+				6356153D2409786D003110A6 /* Networking */,
 				635E93F624097217006AD075 /* Support */,
 			);
 			path = "CARPokedex-Objc";
@@ -83,6 +126,8 @@
 		635E93F72409722E006AD075 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6356153324097304003110A6 /* Model Controller */,
+				63561532240972F9003110A6 /* View Controllers */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -107,6 +152,10 @@
 		635E93FA24097258006AD075 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6356153724097438003110A6 /* CARPokemon.h */,
+				6356153824097438003110A6 /* CARPokemon.m */,
+				6356153A2409775E003110A6 /* CARListPokemon.h */,
+				6356153B2409775E003110A6 /* CARListPokemon.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,6 +191,7 @@
 				TargetAttributes = {
 					635E93D92409720A006AD075 = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -181,6 +231,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6356154324097B0C003110A6 /* CARPokemonTableViewController.m in Sources */,
+				635615362409732F003110A6 /* CARPokemonController.m in Sources */,
+				6356153924097438003110A6 /* CARPokemon.m in Sources */,
+				6356153C2409775E003110A6 /* CARListPokemon.m in Sources */,
+				635615402409788C003110A6 /* PokemonAPI.swift in Sources */,
 				635E93DF2409720A006AD075 /* AppDelegate.m in Sources */,
 				635E93F02409720B006AD075 /* main.m in Sources */,
 				635E93E22409720A006AD075 /* SceneDelegate.m in Sources */,
@@ -323,15 +378,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
-				INFOPLIST_FILE = "CARPokedex-Objc/Info.plist";
+				INFOPLIST_FILE = "CARPokedex-Objc/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaSchool.CARPokedex-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CARPokedex-Objc/Networking/CARPokedex-Objc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -340,15 +399,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
-				INFOPLIST_FILE = "CARPokedex-Objc/Info.plist";
+				INFOPLIST_FILE = "CARPokedex-Objc/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaSchool.CARPokedex-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CARPokedex-Objc/Networking/CARPokedex-Objc-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
