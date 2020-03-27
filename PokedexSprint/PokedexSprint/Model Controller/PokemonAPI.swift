@@ -15,9 +15,11 @@ class PokemonAPI: NSObject {
 
     @objc func fetchAllPokemon(completion: @escaping ([JLAPokemon]?, Error?) -> Void) {
         print("fetchAllPokemon")
+        let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     }
 
     @objc func fillInDetails(for pokemon: JLAPokemon) {
         print("fillInDetails")
+        let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     }
 }

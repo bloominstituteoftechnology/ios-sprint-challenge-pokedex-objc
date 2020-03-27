@@ -10,12 +10,18 @@
 
 @interface JLADetailViewController ()
 
+// MARK: - Outlets
+
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UITextView *textView;
+
 @end
 
 @implementation JLADetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.textView.text = @"testing";
 }
 
 @end

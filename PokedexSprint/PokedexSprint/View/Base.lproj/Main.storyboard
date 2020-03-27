@@ -51,7 +51,7 @@
         <!--#id Pokemon-->
         <scene sceneID="78a-9Q-MgF">
             <objects>
-                <viewController id="spQ-pR-BrL" sceneMemberID="viewController">
+                <viewController id="spQ-pR-BrL" customClass="JLADetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sYn-ca-u7I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,6 +85,10 @@
                         <viewLayoutGuide key="safeArea" id="TMg-gA-6rp"/>
                     </view>
                     <navigationItem key="navigationItem" title="#id Pokemon" id="Phn-a3-t2i"/>
+                    <connections>
+                        <outlet property="imageView" destination="Rbr-eC-fYZ" id="aKj-UI-pld"/>
+                        <outlet property="textView" destination="XGn-dr-xY2" id="yL2-E2-Rc4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUr-3Z-EVG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
