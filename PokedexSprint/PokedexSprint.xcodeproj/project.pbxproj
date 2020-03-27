@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		1B52A016242E4DB80077F983 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52A015242E4DB80077F983 /* AppDelegate.m */; };
 		1B52A019242E4DB80077F983 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52A018242E4DB80077F983 /* SceneDelegate.m */; };
-		1B52A01C242E4DB80077F983 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52A01B242E4DB80077F983 /* ViewController.m */; };
 		1B52A01F242E4DB80077F983 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B52A01D242E4DB80077F983 /* Main.storyboard */; };
 		1B52A021242E4DBB0077F983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B52A020242E4DBB0077F983 /* Assets.xcassets */; };
 		1B52A024242E4DBB0077F983 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B52A022242E4DBB0077F983 /* LaunchScreen.storyboard */; };
 		1B52A027242E4DBB0077F983 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52A026242E4DBB0077F983 /* main.m */; };
+		1B52A034242E501F0077F983 /* JLAPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B52A033242E501F0077F983 /* JLAPokedexTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +22,13 @@
 		1B52A015242E4DB80077F983 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1B52A017242E4DB80077F983 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		1B52A018242E4DB80077F983 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		1B52A01A242E4DB80077F983 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1B52A01B242E4DB80077F983 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1B52A01E242E4DB80077F983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B52A020242E4DBB0077F983 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B52A023242E4DBB0077F983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B52A025242E4DBB0077F983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B52A026242E4DBB0077F983 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1B52A032242E501F0077F983 /* JLAPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLAPokedexTableViewController.h; sourceTree = "<group>"; };
+		1B52A033242E501F0077F983 /* JLAPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLAPokedexTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,19 +61,59 @@
 		1B52A013242E4DB80077F983 /* PokedexSprint */ = {
 			isa = PBXGroup;
 			children = (
+				1B52A031242E4E8F0077F983 /* Model */,
+				1B52A030242E4E870077F983 /* Model Controller */,
+				1B52A02F242E4E7F0077F983 /* View Controller */,
+				1B52A02E242E4E790077F983 /* View */,
+				1B52A02D242E4E720077F983 /* Resources */,
+			);
+			path = PokedexSprint;
+			sourceTree = "<group>";
+		};
+		1B52A02D242E4E720077F983 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				1B52A014242E4DB80077F983 /* AppDelegate.h */,
 				1B52A015242E4DB80077F983 /* AppDelegate.m */,
 				1B52A017242E4DB80077F983 /* SceneDelegate.h */,
 				1B52A018242E4DB80077F983 /* SceneDelegate.m */,
-				1B52A01A242E4DB80077F983 /* ViewController.h */,
-				1B52A01B242E4DB80077F983 /* ViewController.m */,
-				1B52A01D242E4DB80077F983 /* Main.storyboard */,
 				1B52A020242E4DBB0077F983 /* Assets.xcassets */,
-				1B52A022242E4DBB0077F983 /* LaunchScreen.storyboard */,
 				1B52A025242E4DBB0077F983 /* Info.plist */,
 				1B52A026242E4DBB0077F983 /* main.m */,
 			);
-			path = PokedexSprint;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1B52A02E242E4E790077F983 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B52A01D242E4DB80077F983 /* Main.storyboard */,
+				1B52A022242E4DBB0077F983 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B52A02F242E4E7F0077F983 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1B52A032242E501F0077F983 /* JLAPokedexTableViewController.h */,
+				1B52A033242E501F0077F983 /* JLAPokedexTableViewController.m */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		1B52A030242E4E870077F983 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		1B52A031242E4E8F0077F983 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +142,7 @@
 		1B52A009242E4DB80077F983 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JLA;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Jorge Alvarez";
 				TargetAttributes = {
@@ -146,7 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B52A01C242E4DB80077F983 /* ViewController.m in Sources */,
+				1B52A034242E501F0077F983 /* JLAPokedexTableViewController.m in Sources */,
 				1B52A016242E4DB80077F983 /* AppDelegate.m in Sources */,
 				1B52A027242E4DBB0077F983 /* main.m in Sources */,
 				1B52A019242E4DB80077F983 /* SceneDelegate.m in Sources */,
@@ -291,7 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XFZ73X2DJQ;
-				INFOPLIST_FILE = PokedexSprint/Info.plist;
+				INFOPLIST_FILE = PokedexSprint/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +349,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XFZ73X2DJQ;
-				INFOPLIST_FILE = PokedexSprint/Info.plist;
+				INFOPLIST_FILE = PokedexSprint/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

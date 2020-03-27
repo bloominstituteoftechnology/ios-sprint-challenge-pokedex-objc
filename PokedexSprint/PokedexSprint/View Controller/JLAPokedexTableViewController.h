@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  JLAPokedexTableViewController.h
 //  PokedexSprint
 //
 //  Created by Jorge Alvarez on 3/27/20.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface JLAPokedexTableViewController : UITableViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
