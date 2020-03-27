@@ -93,6 +93,11 @@ import Foundation
                 print(fetchedPokemon)
                 print(selectedPokemon.name)
                 print(selectedPokemon.identifier)
+                print(selectedPokemon.frontImage)
+                print(selectedPokemon.ability.first)
+                for name in selectedPokemon.ability {
+                    print(name)
+                }
             } catch {
                 print("Error parsing pokemon: \(error)")
                 return

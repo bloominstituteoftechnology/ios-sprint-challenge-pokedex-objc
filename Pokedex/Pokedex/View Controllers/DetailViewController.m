@@ -10,6 +10,8 @@
 #import "MBMPokemon.h"
 
 
+void *KVOContext = &KVOContext;
+
 @interface DetailViewController ()
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;

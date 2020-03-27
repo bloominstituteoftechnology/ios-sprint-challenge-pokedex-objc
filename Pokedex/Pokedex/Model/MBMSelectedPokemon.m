@@ -33,10 +33,11 @@
     NSMutableArray<NSString *> *abilities = [[NSMutableArray alloc] init];
     
     for (NSDictionary *abilityDict in abilityDictionaries) {
-        NSString *name = abilityDict[@"name"];
+        NSDictionary *abilitities = abilityDict[@"ability"];
+        NSString *abilityName = abilitities[@"name"];
         
-        if (name) {
-            [abilities addObject:name];
+        if (abilityName) {
+            [abilities addObject:abilityName];
         } else {
             NSLog(@"Unable to parse abilities dictionaries: %@", abilityDictionaries);
         }
