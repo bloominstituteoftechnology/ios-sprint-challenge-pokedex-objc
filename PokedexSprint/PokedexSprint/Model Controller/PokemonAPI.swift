@@ -87,7 +87,41 @@ import Foundation
     }
 
     @objc func fillInDetails(for pokemon: JLAPokemon) {
+        
         print("fillInDetails")
-        //let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
+        
+        var baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
+        baseURL = baseURL.appendingPathComponent(pokemon.name)
+                
+        URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
+            
+            if let error = error {
+                print("ERROR: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                print("no data")
+                return
+            }
+            
+            // NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+            do {
+                let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                let fetchedPokemon = JLAPokemon(dictionary: dictionary)
+                print("dictionary: \(dictionary)")
+                
+                pokemon.name = fetchedPokemon.name
+                pokemon.identifier = fetchedPokemon.identifier
+                pokemon.sprite = fetchedPokemon.sprite
+                pokemon.abilities = fetchedPokemon.abilities
+                
+                print("pokemon now: \(pokemon.name), \(pokemon.identifier), \(pokemon.abilities), \(pokemon.sprite)")
+                
+            } catch {
+                print("DECODE error: \(error)")
+                return
+            }
+        }.resume()
     }
 }

@@ -62,6 +62,7 @@
         
         JLAPokemon *pokemon = self.pokedex[indexPath.row];
         detailVC.pokemon = pokemon;
+        [[PokemonAPI sharedController] fillInDetailsFor:pokemon];
     }
 
 }
