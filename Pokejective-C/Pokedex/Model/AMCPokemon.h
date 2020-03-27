@@ -1,6 +1,6 @@
 //
 //  AMCPokemon.h
-//  Pokejective-C
+//  Pokedex
 //
 //  Created by Aaron Cleveland on 3/27/20.
 //  Copyright © 2020 Aaron Cleveland. All rights reserved.
@@ -25,4 +25,3 @@
 - (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
 
 @end
-

@@ -1,6 +1,6 @@
 //
 //  AMCPokemon.m
-//  Pokejective-C
+//  Pokedex
 //
 //  Created by Aaron Cleveland on 3/27/20.
 //  Copyright © 2020 Aaron Cleveland. All rights reserved.
@@ -9,6 +9,7 @@
 #import "AMCPokemon.h"
 
 @implementation AMCPokemon
+
 - (nonnull instancetype)initWithName:(nullable NSString *)name
                                  url:(nullable NSString *)url
                                   id:(int)id
@@ -31,6 +32,5 @@
     NSString *url = [NSString stringWithFormat:@"%@", dictionary[@"url"]];
     return [self initWithName:name url:url id:NULL abilities:NULL sprites:NULL];
 }
-
 
 @end

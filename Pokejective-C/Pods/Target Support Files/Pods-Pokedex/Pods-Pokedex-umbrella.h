@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Pokejective_CVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Pokejective_CVersionString[];
+FOUNDATION_EXPORT double Pods_PokedexVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_PokedexVersionString[];
 
