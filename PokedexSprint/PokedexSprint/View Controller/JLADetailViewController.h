@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class JLAPokemon;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JLADetailViewController : UIViewController
+
+@property (nonatomic) JLAPokemon *pokemon;
 
 @end
 

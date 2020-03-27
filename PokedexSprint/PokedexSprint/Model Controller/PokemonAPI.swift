@@ -67,9 +67,7 @@ import Foundation
                  "url": "https://pokeapi.co/api/v2/pokemon/2/"
                },
              */
-            
-            let decoder = JSONDecoder()
-            
+                    
             // NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
             do {
                 let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
@@ -90,6 +88,6 @@ import Foundation
 
     @objc func fillInDetails(for pokemon: JLAPokemon) {
         print("fillInDetails")
-        let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
+        //let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     }
 }

@@ -9,6 +9,7 @@
 #import "JLAPokedexTableViewController.h"
 #import "PokedexSprint-Swift.h"
 #import "JLAPokemon.h"
+#import "JLADetailViewController.h"
 
 @interface JLAPokedexTableViewController ()
 
@@ -49,6 +50,21 @@
     return cell;
 }
 
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"DetailSegue"]) {
+        
+        JLADetailViewController *detailVC = segue.destinationViewController;
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        
+        JLAPokemon *pokemon = self.pokedex[indexPath.row];
+        detailVC.pokemon = pokemon;
+    }
+
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -84,14 +100,6 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

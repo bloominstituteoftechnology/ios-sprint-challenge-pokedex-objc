@@ -7,6 +7,8 @@
 //
 
 #import "JLADetailViewController.h"
+#import "JLAPokemon.h"
+#import "PokedexSprint-Swift.h"
 
 @interface JLADetailViewController ()
 
@@ -21,7 +23,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self updateViews];
     self.textView.text = @"testing";
+}
+
+- (void)updateViews {
+    
+    NSLog(@"updateViews");
+    
+    if (!self.isViewLoaded) {return;}
+    
+    if (self.pokemon) {
+    
+        self.title = self.pokemon.name;
+    }
 }
 
 @end
