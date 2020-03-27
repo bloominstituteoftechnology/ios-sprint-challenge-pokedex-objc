@@ -48,6 +48,11 @@ class PokemonAPI: NSObject {
             guard let spDict = dictionary["sprites"] as? [String:Any] else { return }
             pokemon.sprite = spDict["front_default"] as? String
             
+            guard let typeArr = dictionary["types"] as? [[String:Any]] else { return }
+            guard typeArr.count > 0 else { return }
+            guard let type = typeArr[0]["type"] as? [String:String] else { return }
+            pokemon.type = type["name"]
+            
         }.resume()
     }
 }

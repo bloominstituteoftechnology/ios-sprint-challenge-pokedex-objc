@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable)NSString *sprite;
 @property (nonatomic, nullable)NSArray<NSString *> *abilities;
 @property (nonatomic)NSString *urlString;
+@property (nonatomic, nullable)NSString *type;
 
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary;
 
