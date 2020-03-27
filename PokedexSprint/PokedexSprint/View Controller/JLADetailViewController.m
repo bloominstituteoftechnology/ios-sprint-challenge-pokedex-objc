@@ -35,7 +35,9 @@
     
     if (self.pokemon) {
     
-        self.title = self.pokemon.name;
+        // TODO: add #self.pokemon.identifier -
+        NSString *title = [NSString stringWithFormat:@"%@", self.pokemon.name];
+        self.title = title;
     }
 }
 
