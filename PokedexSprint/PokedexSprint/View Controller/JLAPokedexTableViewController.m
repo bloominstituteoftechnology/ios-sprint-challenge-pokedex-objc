@@ -12,6 +12,10 @@
 
 @interface JLAPokedexTableViewController ()
 
+// MARK: - Properties
+
+@property (nonatomic) NSArray<JLAPokemon *> *pokedex;
+
 @end
 
 @implementation JLAPokedexTableViewController
@@ -19,23 +23,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [PokemonAPI ];
     [[PokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<JLAPokemon *> *results, NSError *error) {
         NSLog(@"RESULTS = %@", results);
+        
+        self.pokedex = results;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    NSLog(@"COUNT: %lu", self.pokedex.count);
+    return self.pokedex.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    // TODO: Change text color to red
+    JLAPokemon *pokemon = self.pokedex[indexPath.row];
+    cell.textLabel.text = pokemon.name;
     
     return cell;
 }

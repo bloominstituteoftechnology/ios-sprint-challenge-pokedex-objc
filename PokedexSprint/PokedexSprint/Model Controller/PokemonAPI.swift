@@ -77,8 +77,9 @@ import Foundation
                 //self.pokemonArray.append(decodedPokemon)
                 print("dictionary: \(dictionary)")
                 print("results: \(results)")
-                let pokemonResults = results
-                completion(nil, nil) // [JLAPokemon]
+                let pokemonResults = results.map {JLAPokemon(dictionary: $0)}
+                print("pokemonResults: \(pokemonResults)")
+                completion(pokemonResults, nil) //
             } catch {
                 print("DECODE error: \(error)")
                 completion(nil, NSError())
