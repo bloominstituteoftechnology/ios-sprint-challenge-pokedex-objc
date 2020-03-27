@@ -71,6 +71,32 @@ import Foundation
     }
     
     @objc func fillInDetails(for pokemon: MBMPokemon) {
+        let url = pokemon.url
         
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                print("Error fetching selected pokemon: \(error)")
+                return
+            }
+            guard let data = data else {
+                print("Bad or No data returned from data task.")
+                return
+            }
+            do {
+                let fetchedPokemon = try JSONSerialization.jsonObject(with: data, options: [])
+                print(fetchedPokemon)
+                let selectedPokemon = MBMSelectedPokemon(dictionary: fetchedPokemon as! [AnyHashable : Any])
+                print(fetchedPokemon)
+                print(selectedPokemon.name)
+                print(selectedPokemon.identifier)
+            } catch {
+                print("Error parsing pokemon: \(error)")
+                return
+            }
+        }.resume()
     }
 }

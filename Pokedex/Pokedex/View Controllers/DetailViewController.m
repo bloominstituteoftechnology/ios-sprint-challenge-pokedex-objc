@@ -26,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.pokemonAPI fillInDetailsFor:self.aPokemon];
+    
     [self updateViews];
 }
 

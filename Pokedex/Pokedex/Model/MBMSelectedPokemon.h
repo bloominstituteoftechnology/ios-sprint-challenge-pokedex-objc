@@ -15,12 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSNumber *identifier;
 @property (nonatomic, readonly) NSArray *ability;
-@property (nonatomic, readonly) NSURL *largeImage;
+@property (nonatomic, readonly) NSURL *frontImage;
 
 - (instancetype)initWithName:(NSString *)name
                   identifier:(int)identifier
                      ability:(NSArray *)ability
-                  largeImage:(NSURL *)largeImage;
+                  frontImage:(NSURL *)frontImage;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
