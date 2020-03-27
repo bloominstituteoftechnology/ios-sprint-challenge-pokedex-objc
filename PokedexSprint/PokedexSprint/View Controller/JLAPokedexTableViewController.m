@@ -7,6 +7,8 @@
 //
 
 #import "JLAPokedexTableViewController.h"
+#import "PokedexSprint-Swift.h"
+#import "JLAPokemon.h"
 
 @interface JLAPokedexTableViewController ()
 
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    [PokemonAPI ];
+    [[PokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<JLAPokemon *> *results, NSError *error) {
+        NSLog(@"RESULTS = %@", results);
+    }];
 }
 
 #pragma mark - Table view data source
