@@ -21,25 +21,24 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateViews) name:@"pokemonDetailsSet" object:nil];
+    [self updateViews];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_controller fillInDetailsFor:_pokemon];
-    [self updateViews];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateViews) name:@"pokemonDetailsSet" object:nil];
 }
 
 - (void)updateViews {
     dispatch_async(dispatch_get_main_queue(), ^{
         self.idLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.identifier];
-        self.title = [self.pokemon.name capitalizedString];
-        NSString *abilities = [[NSString alloc] init];
+        self.title = self.pokemon.name;
+        NSString *abilities = [NSString stringWithFormat:@"Abilities:"];
         for (NSString *ability in self.pokemon.abilities) {
             abilities = [NSString stringWithFormat:@"%@\n%@", abilities, ability];
         }
         self.abilitiesLabel.text = abilities;
-        self.pokemonImageView.image = [UIImage imageWithData:self.pokemon.image];
+        self.pokemonImageView.image = self.pokemon.image;
     });
 }
 

@@ -1,66 +1,42 @@
 # Pokedex
+> Add Pokemon to your Pokedex and learn more about them
 
-## Instructions
+[![Objective-c Version][objc-image]][objc-url]
+[![Build Status][travis-image]][travis-url]
+[![License][license-image]][license-url]
+[![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat)](http://cocoapods.org/pods/LFAlertController)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-**Please read this entire README to make sure you understand what is expected of you before you begin.**
+This project uses the [PokeAPI](https://pokeapi.co/) to search for pokemon and retrieve their information.
 
-This sprint challenge is designed to ensure that you are competent with the concepts taught throughout Sprint 12, Objective-C Part 2.
+![](example_1.png)
+![](example_2.png)
+![](example_2.png)
 
-Begin by forking this repository. Clone your forked repository to your machine. There is no starter project. Create a project for this challenge in this repository and commit as appropriate while you work. Push your final project to GitHub, then create a pull request back to this original repository.
+## Features
 
-**You will have 3 hours to complete this sprint challenge**
-
-If you have any questions about the project requirements or expectations, ask your PM or instructor. Good luck!
-
-## Description
-
-1. Answer the questions in [Manual-Reference-Counting.md](Manual-Reference-Counting.md)
-2. For this project, you will build a viewer app for the [Pokedex API](https://pokeapi.co). The Pokedex API does not require an API key or any other form of authentication. 
-    1. The app will consist of two screens, a main table view, and a detail view. 
-    2. You will implement it using a mix of Objective-C and Swift.
-
-## Screen Recording
-
-Please view the screen recordings so you will know what your finished project should look like:
-
-![](https://user-images.githubusercontent.com/1057175/46853075-534d8300-cdba-11e8-8a3b-81cef61e5952.gif)
-
-(The gif is fairly large in size. It may take a few seconds for it to appear)
+- [x] Search for Pokemon
+- [x] Display Pokemon images
+- [x] Objective-C and Swift combined!
 
 ## Requirements
 
-The goal of this sprint challenge is to create a viewer for the Pokedex Pokemon API.
+- iOS 12.0+
+- Xcode 11
 
-The requirements for this project are as follows:
+## Meta
 
-1. Your model must support at least: pokemon name, identifier, sprite, and abilities.
-2. For abilities, only the name of each ability is needed.
-3. Classes must be written in Objective-C except for the networking class. **The detail view controller can be written in either Objective-C or Swift. It's your choice.**
-4. All Objective-C classes must be annotated for nullability and generics as appropriate.
-5. You must populate the table view with the results of the `https://pokeapi.co/api/v2/pokemon/` (see Hints and Tips below). Only when a Pokemon is tapped to show the detail view controller should you load the rest of its information.
-7. Your network controller must have an interface as specified below. Note that the `fillInDetails` method **does not take a completion closure**. Rather, it fills in additional details (identifier, abilities, sprite) by setting `pokemon`'s properties directly.
-8. The detail view controller must use KVO to be notified when the network controller has finished filling in details for a Pokemon, triggering a UI update.
-9. You must take care to avoid memory mangement issues. (However, to be clear, you should not use Manual Reference Counting.)
+Credit to [Awesome Labs](https://github.com/awesome-labs/) for the [README.md template](https://github.com/awesome-labs/iOS-readme-template)
 
+Distributed under the MIT license. See  [``LICENSE``](license)  for more information.
 
-#### Network class interface:  
+View some of my [other projects](https://github.com/mazjap/)
 
-```
-class PokemonAPI: NSObject {
-
-    @objc(sharedController) static let shared: PokemonAPI
-
-    @objc func fetchAllPokemon(completion: @escaping ([LSIPokemon]?, Error?) -> Void)
-
-    @objc func fillInDetails(for pokemon: LSIPokemon)
-}
-```
-
-## Hints and Tips
-
-1. Use the "Try it now!" box on [https://pokeapi.co](https://pokeapi.co) to test URLs and see the JSON returned by the API.
-2. A GET request to `https://pokeapi.co/api/v2/pokemon/` will return a list of all Pokemon supported by the API. However, this list only includes each Pokemon's name and a url to get more information about it.
-3. A GET requeset to `https://pokeapi.co/api/v2/pokemon/<pokemon_name>` (where `<pokemon_name>` is the name of the Pokemon in question), will return fullly detailed information about a specific Pokemon.
-4. If you need to use KVO in Swift, here's a primer:
-
-The KVO observation API in Swift is significantly different from Objective-C. In Swift, start observing a key path on an object by calling the `observe(_ keyPath:, changeHandler:)` method. Here, `keyPath` is a key path, which is **not** just a string in Swift. In Swift, specify a keypath by doing `\ClassName.firstKey.secondKey.etc` (you can usually leave the initial `ClassName` off). `changeHandler` is a closure that takes two arguments: the object that triggered the observation, and an `NSKeyValueObservedChange` object with information about the change that occurred. You usually don't need to worry about these arguments. Finally, the `observe` method returns a `NSKeyValueObservation` object. **You must store this object in a property, and get rid of it when you want to stop observing.** You can find the documentation for KVO in Swift [here](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift).
+[objc-image]:https://img.shields.io/badge/objective--c-2.0-green
+[objc-url]: https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html
+[license-image]: https://img.shields.io/badge/License-MIT-blue.svg
+[license-url]: LICENSE
+[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
+[codebeat-image]: https://codebeat.co/badges/c19b47ea-2f9d-45df-8458-b2d952fe9dad
+[codebeat-url]: https://codebeat.co/projects/github-com-vsouza-awesomeios-com

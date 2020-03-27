@@ -17,6 +17,7 @@
 		0EA8550D237F0C34002D4F97 /* JACPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8550C237F0C34002D4F97 /* JACPokemonDetailViewController.m */; };
 		0EA85510237F0D17002D4F97 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8550F237F0D17002D4F97 /* PokemonController.swift */; };
 		0EA85514237F0D93002D4F97 /* JACPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA85513237F0D93002D4F97 /* JACPokemon.m */; };
+		0EB06E2A242D8F9C00BF4680 /* JACCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EB06E29242D8F9C00BF4680 /* JACCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		0EA8550F237F0D17002D4F97 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 		0EA85512237F0D93002D4F97 /* JACPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JACPokemon.h; sourceTree = "<group>"; };
 		0EA85513237F0D93002D4F97 /* JACPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JACPokemon.m; sourceTree = "<group>"; };
+		0EB06E28242D8F9C00BF4680 /* JACCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JACCache.h; sourceTree = "<group>"; };
+		0EB06E29242D8F9C00BF4680 /* JACCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JACCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				0EA8550F237F0D17002D4F97 /* PokemonController.swift */,
+				0EB06E28242D8F9C00BF4680 /* JACCache.h */,
+				0EB06E29242D8F9C00BF4680 /* JACCache.m */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				0EA85506237F0BEC002D4F97 /* JACPokemonTableViewController.m in Sources */,
 				0EA854EB237F07B5002D4F97 /* AppDelegate.m in Sources */,
 				0EA854FC237F07B7002D4F97 /* main.m in Sources */,
+				0EB06E2A242D8F9C00BF4680 /* JACCache.m in Sources */,
 				0EA854EE237F07B5002D4F97 /* SceneDelegate.m in Sources */,
 				0EA8550D237F0C34002D4F97 /* JACPokemonDetailViewController.m in Sources */,
 				0EA85514237F0D93002D4F97 /* JACPokemon.m in Sources */,

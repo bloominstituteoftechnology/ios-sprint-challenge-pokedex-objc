@@ -3,3 +3,4 @@
 //
 
 #import "JACPokemon.h"
+#import "JACCache.h"
