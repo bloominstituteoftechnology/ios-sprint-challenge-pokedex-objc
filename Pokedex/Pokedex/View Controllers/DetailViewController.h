@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pokedex-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class MBMPokemon;
+
+
 @interface DetailViewController : UIViewController
+
+@property (nonatomic) PokemonAPI *pokemonAPI;
+@property (nonatomic) MBMPokemon *aPokemon;
 
 @end
 

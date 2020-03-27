@@ -70,6 +70,13 @@ Ability 3</string>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="RSe-Fe-EyD"/>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="emG-po-rRs" id="39W-dZ-x2G"/>
+                        <outlet property="actualAbilitiesLabel" destination="ojq-Ox-lWo" id="LHg-0F-POa"/>
+                        <outlet property="idLabel" destination="nYI-gv-SNh" id="xNb-I1-b2c"/>
+                        <outlet property="imageView" destination="K4L-By-nyr" id="UO6-5l-NbH"/>
+                        <outlet property="nameLabel" destination="rMB-K0-wH6" id="dmy-PM-nbE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,7 +108,7 @@ Ability 3</string>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="OKi-gw-jit"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="PokemonDetailSegue" id="OKi-gw-jit"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

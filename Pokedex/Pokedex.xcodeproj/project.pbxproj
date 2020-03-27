@@ -20,6 +20,7 @@
 		4C79C35C242E563B0017DC5D /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79C35B242E563B0017DC5D /* PokemonAPI.swift */; };
 		4C79C35F242E56B10017DC5D /* MBMPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C79C35E242E56B10017DC5D /* MBMPokemon.m */; };
 		4C79C362242E5D450017DC5D /* MBMPokemonResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C79C361242E5D450017DC5D /* MBMPokemonResults.m */; };
+		4CD50E2F242E762A003E9E2C /* MBMSelectedPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD50E2E242E762A003E9E2C /* MBMSelectedPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		4C79C35E242E56B10017DC5D /* MBMPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMPokemon.m; sourceTree = "<group>"; };
 		4C79C360242E5D450017DC5D /* MBMPokemonResults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMPokemonResults.h; sourceTree = "<group>"; };
 		4C79C361242E5D450017DC5D /* MBMPokemonResults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMPokemonResults.m; sourceTree = "<group>"; };
+		4CD50E2D242E762A003E9E2C /* MBMSelectedPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMSelectedPokemon.h; sourceTree = "<group>"; };
+		4CD50E2E242E762A003E9E2C /* MBMSelectedPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMSelectedPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,8 @@
 				4C79C35E242E56B10017DC5D /* MBMPokemon.m */,
 				4C79C360242E5D450017DC5D /* MBMPokemonResults.h */,
 				4C79C361242E5D450017DC5D /* MBMPokemonResults.m */,
+				4CD50E2D242E762A003E9E2C /* MBMSelectedPokemon.h */,
+				4CD50E2E242E762A003E9E2C /* MBMSelectedPokemon.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				4C79C358242E557E0017DC5D /* PokedexTableViewController.m in Sources */,
 				4C79C35C242E563B0017DC5D /* PokemonAPI.swift in Sources */,
 				4C79C320242E502D0017DC5D /* AppDelegate.swift in Sources */,
+				4CD50E2F242E762A003E9E2C /* MBMSelectedPokemon.m in Sources */,
 				4C79C362242E5D450017DC5D /* MBMPokemonResults.m in Sources */,
 				4C79C322242E502D0017DC5D /* SceneDelegate.swift in Sources */,
 				4C79C353242E54C50017DC5D /* DetailViewController.m in Sources */,

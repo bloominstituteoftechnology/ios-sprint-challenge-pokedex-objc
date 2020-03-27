@@ -7,8 +7,17 @@
 //
 
 #import "DetailViewController.h"
+#import "MBMPokemon.h"
+
 
 @interface DetailViewController ()
+
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *idLabel;
+@property (strong, nonatomic) IBOutlet UILabel *abilitiesLabel;
+@property (strong, nonatomic) IBOutlet UILabel *actualAbilitiesLabel;
+
 
 @end
 
@@ -16,7 +25,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self updateViews];
+}
+
+
+- (void)updateViews {
+    self.nameLabel.text = self.aPokemon.name;
 }
 
 /*
