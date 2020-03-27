@@ -25,7 +25,6 @@
     [super viewDidLoad];
     
     [[PokemonAPI sharedController] fetchAllPokemonWithCompletion:^(NSArray<JLAPokemon *> *results, NSError *error) {
-        NSLog(@"RESULTS = %@", results);
         
         self.pokedex = results;
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -34,10 +33,9 @@
     }];
 }
 
-#pragma mark - Table view data source
+// MARK: - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"COUNT: %lu", self.pokedex.count);
     return self.pokedex.count;
 }
 
@@ -50,7 +48,7 @@
     return cell;
 }
 
-#pragma mark - Navigation
+// MARK: - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     

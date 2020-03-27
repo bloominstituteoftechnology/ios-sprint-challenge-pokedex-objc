@@ -48,7 +48,7 @@
             </objects>
             <point key="canvasLocation" x="997.10144927536237" y="88.392857142857139"/>
         </scene>
-        <!--#id Pokemon-->
+        <!--Detail View Controller-->
         <scene sceneID="78a-9Q-MgF">
             <objects>
                 <viewController id="spQ-pR-BrL" customClass="JLADetailViewController" sceneMemberID="viewController">
@@ -56,21 +56,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Rbr-eC-fYZ">
-                                <rect key="frame" x="87" y="161" width="240" height="237.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rbr-eC-fYZ">
+                                <rect key="frame" x="87" y="160" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="3I1-5F-dp8"/>
                                     <constraint firstAttribute="height" constant="240" id="NTI-rK-ndV"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Abilites: " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XGn-dr-xY2">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XGn-dr-xY2">
                                 <rect key="frame" x="20" y="420" width="374" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="ZaU-9h-vYS"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -84,7 +84,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TMg-gA-6rp"/>
                     </view>
-                    <navigationItem key="navigationItem" title="#id Pokemon" id="Phn-a3-t2i"/>
+                    <navigationItem key="navigationItem" id="Phn-a3-t2i"/>
                     <connections>
                         <outlet property="imageView" destination="Rbr-eC-fYZ" id="aKj-UI-pld"/>
                         <outlet property="textView" destination="XGn-dr-xY2" id="yL2-E2-Rc4"/>
@@ -113,7 +113,4 @@
             <point key="canvasLocation" x="86.956521739130437" y="88.392857142857139"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="photo.fill" catalog="system" width="128" height="93"/>
-    </resources>
 </document>
