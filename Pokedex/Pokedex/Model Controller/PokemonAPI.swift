@@ -12,6 +12,8 @@ import Foundation
     
     @objc let baseURL = URL(string: "https://pokeapi.co/api/v2")!
     
+    @objc var pokemon: [MBMPokemon] = []
+    
     @objc func fetchAllPokemon(completion: @escaping ([MBMPokemon]?, Error?) -> Void) {
         let url = baseURL.appendingPathComponent("pokemon")
         
@@ -87,7 +89,7 @@ import Foundation
                 print(fetchedPokemon)
                 
                 
-                var updatedPokemon = pokemon.update(with: fetchedPokemon, pokemon: pokemon)
+                let updatedPokemon = pokemon.update(with: fetchedPokemon, pokemon: pokemon)
                 pokemon.frontImage = updatedPokemon.frontImage
                 pokemon.identifier = updatedPokemon.identifier
                 pokemon.ability = updatedPokemon.ability

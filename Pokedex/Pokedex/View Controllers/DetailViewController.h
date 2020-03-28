@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) PokemonAPI *pokemonAPI;
 @property (nonatomic) MBMPokemon *aPokemon;
-@property (nonatomic) MBMSelectedPokemon *selectedPokemon;
+
 
 @end
 

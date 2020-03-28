@@ -8,7 +8,7 @@
 
 #import "DetailViewController.h"
 #import "MBMPokemon.h"
-#import "MBMSelectedPokemon.h"
+
 
 
 void *KVOContext = &KVOContext;
