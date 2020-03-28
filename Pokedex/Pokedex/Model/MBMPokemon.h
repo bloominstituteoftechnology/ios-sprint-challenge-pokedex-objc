@@ -12,14 +12,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MBMPokemon : NSObject
 
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSURL *url;
-
-- (instancetype)initWithName:(NSString *)name
-                         url:(NSURL *)url;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSURL *detailURL;
+@property (nonatomic) NSNumber *_Nullable identifier;
+@property (nonatomic) NSArray *_Nullable ability;
+@property (nonatomic) NSURL * _Nullable frontImage;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
+- (MBMPokemon *)updateWithDictionary:(NSDictionary *)dictionary
+                             pokemon:(MBMPokemon *)pokemon;
+                     
 
 @end
 

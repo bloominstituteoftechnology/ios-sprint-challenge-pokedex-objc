@@ -12,10 +12,6 @@ import Foundation
     
     @objc let baseURL = URL(string: "https://pokeapi.co/api/v2")!
     
-    @objc var pokemon: [MBMPokemon] = []
-    
-//    @objc(sharedController) static let shared: PokemonAPI
-    
     @objc func fetchAllPokemon(completion: @escaping ([MBMPokemon]?, Error?) -> Void) {
         let url = baseURL.appendingPathComponent("pokemon")
         
@@ -71,7 +67,7 @@ import Foundation
     }
     
     @objc func fillInDetails(for pokemon: MBMPokemon) {
-        let url = pokemon.url
+        let url = pokemon.detailURL
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -87,17 +83,15 @@ import Foundation
                 return
             }
             do {
-                let fetchedPokemon = try JSONSerialization.jsonObject(with: data, options: [])
+                let fetchedPokemon = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String, Any>
                 print(fetchedPokemon)
-                let selectedPokemon = MBMSelectedPokemon(dictionary: fetchedPokemon as! [AnyHashable : Any])
-                print(fetchedPokemon)
-                print(selectedPokemon.name)
-                print(selectedPokemon.identifier)
-                print(selectedPokemon.frontImage)
-                print(selectedPokemon.ability.first)
-                for name in selectedPokemon.ability {
-                    print(name)
-                }
+                
+                
+                var updatedPokemon = pokemon.update(with: fetchedPokemon, pokemon: pokemon)
+                pokemon.frontImage = updatedPokemon.frontImage
+                pokemon.identifier = updatedPokemon.identifier
+                pokemon.ability = updatedPokemon.ability
+               
             } catch {
                 print("Error parsing pokemon: \(error)")
                 return

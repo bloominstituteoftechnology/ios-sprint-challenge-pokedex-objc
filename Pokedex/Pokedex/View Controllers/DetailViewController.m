@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "MBMPokemon.h"
+#import "MBMSelectedPokemon.h"
 
 
 void *KVOContext = &KVOContext;
@@ -28,15 +29,48 @@ void *KVOContext = &KVOContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.aPokemon addObserver:self forKeyPath:@"identifier" options:0 context:KVOContext];
+    [self.aPokemon addObserver:self forKeyPath:@"ability" options:0 context:KVOContext];
+    [self.aPokemon addObserver:self forKeyPath:@"frontImage" options:0 context:KVOContext];
     [self.pokemonAPI fillInDetailsFor:self.aPokemon];
     
-    [self updateViews];
+//    [self updateViews];
 }
 
 
 - (void)updateViews {
-    self.nameLabel.text = self.aPokemon.name;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.nameLabel.text = [NSString stringWithFormat:@"Name: %@", self.aPokemon.name];
+        self.idLabel.text = [NSString stringWithFormat:@"ID: %@", self.aPokemon.identifier];
+        NSString *stringAbilities = [self.aPokemon.ability componentsJoinedByString:@"\n"];
+        
+        
+        self.actualAbilitiesLabel.text = stringAbilities;
+        NSData *data = [[NSData alloc] initWithContentsOfURL:self.aPokemon.frontImage];
+        UIImage *image = [[UIImage alloc] initWithData:data];
+        
+        self.imageView.image = image;
+    });
+    
 }
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if (context == KVOContext) {
+        NSLog(@"%@: %@", keyPath, [object valueForKeyPath:keyPath]);
+        if ([keyPath isEqualToString:@"identifier"]) {
+            [self updateViews];
+        } else if ([keyPath isEqualToString:@"ability"]) {
+            [self updateViews];
+        } else if ([keyPath isEqualToString:@"frontImage"]) {
+            [self updateViews];
+        }
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        
+    }
+}
+
 
 /*
 #pragma mark - Navigation

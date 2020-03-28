@@ -12,12 +12,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class MBMPokemon;
-
+@class MBMSelectedPokemon;
 
 @interface DetailViewController : UIViewController
 
 @property (nonatomic) PokemonAPI *pokemonAPI;
 @property (nonatomic) MBMPokemon *aPokemon;
+@property (nonatomic) MBMSelectedPokemon *selectedPokemon;
 
 @end
 
