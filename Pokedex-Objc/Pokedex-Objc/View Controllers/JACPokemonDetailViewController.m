@@ -27,6 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateViews) name:@"pokemonDetailsSet" object:nil];
+    if (_pokemon.image == NULL) {
+        [_controller fetchPokemonImageFor:_pokemon];
+    }
 }
 
 - (void)updateViews {

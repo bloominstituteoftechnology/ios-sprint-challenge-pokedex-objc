@@ -53,8 +53,8 @@ class PokemonController: NSObject {
                 }
                 
                 let newPokemon = JACPokemon(dictionary: dictionary)
-                self.fetchPokemonImage(for: newPokemon)
                 newPokemon.fillInDetails(with: dictionary)
+                self.fetchPokemonImage(for: newPokemon)
                 newPokemon.name = newPokemon.name.capitalized
                 
                 completion(newPokemon, nil)

@@ -35,14 +35,37 @@
     [super viewDidLoad];
     
     _pokemonSearchBar.delegate = self;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateViews) name:@"pokemonDetailsSet" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(savePokemon) name:@"pokemonDetailsSet" object:nil];
     
+    [self updateViews];
+    
+    UIColor *top = [UIColor colorWithRed:0.93 green:0.12 blue:0.11 alpha:1.0];
+    UIColor *mid = [UIColor colorWithRed:0.14 green:0.14 blue:0.14 alpha:1.0];
+    
+    [self updateNavWithTopColor:top midColor:mid];
+}
+
+- (void)savePokemon {
+    [_controller saveWithPokemon:_pokemon];
     [self updateViews];
 }
 
 - (void)updateViews {
-    UIColor *top = [UIColor colorWithRed:0.93 green:0.12 blue:0.11 alpha:1.0];
-    UIColor *mid = [UIColor colorWithRed:0.14 green:0.14 blue:0.14 alpha:1.0];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIColor *mid = [UIColor colorWithRed:0.14 green:0.14 blue:0.14 alpha:1.0];
+        
+        [self.pokemonSearchBar setBackgroundColor:mid];
+        [self.pokemonSearchBar setBarTintColor:mid];
+        [self.pokemonSearchBar setTintColor:mid];
+        [[self.pokemonSearchBar searchTextField] setTextColor:[UIColor whiteColor]];
+        [[self.pokemonSearchBar searchTextField] setTintColor:[UIColor whiteColor]];
+        
+        [self.tableView setTableFooterView:[[UIView alloc] init]];
+        [self.tableView reloadData];
+    });
+}
+
+- (void)updateNavWithTopColor:(UIColor *)top midColor:(UIColor *)mid {
     UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
     [appearance configureWithOpaqueBackground];
     [appearance setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
@@ -54,15 +77,6 @@
     [bar setStandardAppearance:appearance];
     [bar setScrollEdgeAppearance:appearance];
     [bar setTintColor:[UIColor whiteColor]];
-    
-    [_pokemonSearchBar setBackgroundColor:mid];
-    [_pokemonSearchBar setBarTintColor:mid];
-    [_pokemonSearchBar setTintColor:mid];
-    [[_pokemonSearchBar searchTextField] setTextColor:[UIColor whiteColor]];
-    [[_pokemonSearchBar searchTextField] setTintColor:[UIColor whiteColor]];
-    
-    [self.tableView setTableFooterView:[[UIView alloc] init]];
-    [self.tableView reloadData];
 }
 
 #pragma mark - Table View Data Source
@@ -75,6 +89,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     UIColor *bot = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     JACPokemon *cellPokemon = [_pokemon objectAtIndex:[indexPath row]];
+    
+    if (cellPokemon.image == NULL) {
+        [_controller fetchPokemonImageFor:cellPokemon];
+    }
+    
     cell.textLabel.text = cellPokemon.name;
     [cell setBackgroundColor: bot];
     [cell.imageView setImage:cellPokemon.image];
@@ -111,12 +130,7 @@
         }
         
         [self.pokemon addObject:newPokemon];
-        
-        [self.controller saveWithPokemon:self.pokemon];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[self tableView] reloadData];
-        });
+        [self savePokemon];
     }];
 }
 
