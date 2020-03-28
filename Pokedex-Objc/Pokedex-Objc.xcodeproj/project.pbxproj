@@ -18,6 +18,7 @@
 		0EA85510237F0D17002D4F97 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA8550F237F0D17002D4F97 /* PokemonController.swift */; };
 		0EA85514237F0D93002D4F97 /* JACPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA85513237F0D93002D4F97 /* JACPokemon.m */; };
 		0EB06E2A242D8F9C00BF4680 /* JACCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EB06E29242D8F9C00BF4680 /* JACCache.m */; };
+		0EB06E2D242FCBAE00BF4680 /* JACPokemonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EB06E2C242FCBAE00BF4680 /* JACPokemonTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		0EA85513237F0D93002D4F97 /* JACPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JACPokemon.m; sourceTree = "<group>"; };
 		0EB06E28242D8F9C00BF4680 /* JACCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JACCache.h; sourceTree = "<group>"; };
 		0EB06E29242D8F9C00BF4680 /* JACCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JACCache.m; sourceTree = "<group>"; };
+		0EB06E2B242FCBAE00BF4680 /* JACPokemonTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JACPokemonTableViewCell.h; sourceTree = "<group>"; };
+		0EB06E2C242FCBAE00BF4680 /* JACPokemonTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JACPokemonTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 				0EA85503237F0B87002D4F97 /* Resources */,
 				0EA85502237F0B75002D4F97 /* Storyboards */,
 				0EA8550A237F0C06002D4F97 /* View Controllers */,
+				0EB06E2E242FCBB300BF4680 /* Views */,
 				0EA85511237F0D1C002D4F97 /* Model Controllers */,
 				0EA85515237F0D99002D4F97 /* Models */,
 			);
@@ -134,6 +138,15 @@
 				0EA85513237F0D93002D4F97 /* JACPokemon.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0EB06E2E242FCBB300BF4680 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0EB06E2B242FCBAE00BF4680 /* JACPokemonTableViewCell.h */,
+				0EB06E2C242FCBAE00BF4680 /* JACPokemonTableViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +228,7 @@
 				0EA854EE237F07B5002D4F97 /* SceneDelegate.m in Sources */,
 				0EA8550D237F0C34002D4F97 /* JACPokemonDetailViewController.m in Sources */,
 				0EA85514237F0D93002D4F97 /* JACPokemon.m in Sources */,
+				0EB06E2D242FCBAE00BF4680 /* JACPokemonTableViewCell.m in Sources */,
 				0EA85510237F0D17002D4F97 /* PokemonController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

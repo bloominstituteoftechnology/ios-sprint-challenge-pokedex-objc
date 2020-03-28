@@ -8,6 +8,7 @@
 
 #import "JACPokemonTableViewController.h"
 #import "JACPokemonDetailViewController.h"
+#import "JACPokemonTableViewCell.h"
 #import "Pokedex_Objc-Swift.h"
 #import "JACPokemon.h"
 
@@ -43,6 +44,8 @@
     UIColor *mid = [UIColor colorWithRed:0.14 green:0.14 blue:0.14 alpha:1.0];
     
     [self updateNavWithTopColor:top midColor:mid];
+    
+    [self.tableView setRowHeight:52];
 }
 
 - (void)savePokemon {
@@ -86,18 +89,16 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
-    UIColor *bot = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+    JACPokemonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
+    
     JACPokemon *cellPokemon = [_pokemon objectAtIndex:[indexPath row]];
     
     if (cellPokemon.image == NULL) {
         [_controller fetchPokemonImageFor:cellPokemon];
     }
     
-    cell.textLabel.text = cellPokemon.name;
-    [cell setBackgroundColor: bot];
-    [cell.imageView setImage:cellPokemon.image];
-    
+    [cell setUpCellWithPokemon:cellPokemon];
+
     return cell;
 }
 
