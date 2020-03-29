@@ -9,14 +9,12 @@
 
 This application was originally a school project that I had to complete in three hours. After reaching MVP, I decided I wanted to expand my knowledge around Objective-C, so I set off to add more features and beautify the app.
 
-![](image_1.png)
-![](image_2.png)
-![](image_3.png)
+<img src="image_1.png" alt="" width="250" />  <img src="image_2.png" alt="" width="250" />  <img src="image_3.png" alt="" width="250" />
 
 ## Features
 
 - [x] Uses [PokeAPI](https://pokeapi.co/) to search for Pokemon
-- [ ] Display Pokemon images
+- [x] Display Pokemon images
 - [x] Objective-C and Swift combined!
 
 ## Requirements
