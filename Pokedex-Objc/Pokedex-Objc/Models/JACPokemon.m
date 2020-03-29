@@ -24,10 +24,6 @@
     _abilities = abilities;
 }
 
-- (void)notify {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"pokemonDetailsSet" object:self];
-}
-
 - (instancetype)initWithName:(NSString *)name url:(NSString *)url {
     if (self = [super init]) {
         _name = name;
@@ -36,11 +32,10 @@
     return self;
 }
 
-- (instancetype)initWithName:(NSString *)name url:(NSString *)url identifier:(NSString *)identifier image:(UIImage *)image abilities:(NSArray<NSString *> *)abilities {
+- (instancetype)initWithName:(NSString *)name url:(NSString *)url identifier:(NSString *)identifier abilities:(NSArray<NSString *> *)abilities {
     if (self = [super init]) {
         _name = name;
         _identifier = identifier;
-        _image = image;
         _abilities = abilities;
     }
     return self;
@@ -56,7 +51,6 @@
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:_name forKey:@"name"];
     [encoder encodeObject:_identifier forKey:@"identifier"];
-    [encoder encodeObject:_image forKey:@"image"];
     [encoder encodeObject:_abilities forKey:@"abilities"];
     [encoder encodeObject:_url forKey:@"url"];
     [encoder encodeObject:_imageURL forKey:@"imageURL"];
@@ -66,7 +60,6 @@
     if (self = [super init]) {
         _name = [decoder decodeObjectForKey:@"name"];
         _identifier = [decoder decodeObjectForKey:@"identifier"];
-        _image = [decoder decodeObjectForKey:@"image"];
         _abilities = [decoder decodeObjectForKey:@"abilities"];
         _url = [decoder decodeObjectForKey:@"url"];
         _imageURL = [decoder decodeObjectForKey:@"imageURL"];

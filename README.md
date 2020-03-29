@@ -7,15 +7,13 @@
 [![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat)](http://cocoapods.org/pods/LFAlertController)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-This project uses the [PokeAPI](https://pokeapi.co/) to search for pokemon and retrieve their information.
+This application was originally a school project that I had to complete in three hours. After reaching MVP, I decided I wanted to expand my knowledge around Objective-C, so I set off to add more features and beautify the app.
 
-![](example_1.png)
-![](example_2.png)
-![](example_2.png)
+<img src="image_1.png" alt="" width="250" />  <img src="image_2.png" alt="" width="250" />  <img src="image_3.png" alt="" width="250" />
 
 ## Features
 
-- [x] Search for Pokemon
+- [x] Uses [PokeAPI](https://pokeapi.co/) to search for Pokemon
 - [x] Display Pokemon images
 - [x] Objective-C and Swift combined!
 
@@ -28,7 +26,7 @@ This project uses the [PokeAPI](https://pokeapi.co/) to search for pokemon and r
 
 Credit to [Awesome Labs](https://github.com/awesome-labs/) for the [README.md template](https://github.com/awesome-labs/iOS-readme-template)
 
-Distributed under the MIT license. See  [``LICENSE``](license)  for more information.
+Distributed under the MIT license. See  [``LICENSE``][license-url]  for more information.
 
 View some of my [other projects](https://github.com/mazjap/)
 
