@@ -28,6 +28,7 @@
     if (self) {
         _controller = [[PokemonController alloc] init];
         _pokemon = [NSMutableArray arrayWithArray:[_controller loadPokemon]];
+        [self sortPokemon];
     }
     return self;
 }
@@ -49,6 +50,7 @@
 }
 
 - (void)savePokemon {
+    [self sortPokemon];
     [_controller saveWithPokemon:_pokemon];
     [self updateViews];
 }
@@ -82,6 +84,13 @@
     [bar setTintColor:[UIColor whiteColor]];
 }
 
+- (void)sortPokemon {
+    NSSortDescriptor *sortByID = [[NSSortDescriptor alloc] initWithKey:@"identifier" ascending:YES];
+    NSArray *descriptors = [NSArray arrayWithObject:sortByID];
+    NSArray *sortedPokemon = [_pokemon sortedArrayUsingDescriptors:descriptors];
+    _pokemon = [NSMutableArray arrayWithArray:sortedPokemon];
+}
+
 #pragma mark - Table View Data Source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -90,14 +99,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     JACPokemonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
-    
-    JACPokemon *cellPokemon = [_pokemon objectAtIndex:[indexPath row]];
-    
-    if (cellPokemon.image == NULL) {
-        [_controller fetchPokemonImageFor:cellPokemon];
-    }
-    
-    [cell setUpCellWithPokemon:cellPokemon];
+    [cell setController:_controller];
+    [cell setUpCellWithPokemon:[_pokemon objectAtIndex:[indexPath row]]];
 
     return cell;
 }
@@ -131,6 +134,8 @@
         }
         
         [self.pokemon addObject:newPokemon];
+        [self sortPokemon];
+        
         [self savePokemon];
     }];
 }

@@ -16,15 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *url;
 @property (nullable, nonatomic, copy) NSString *identifier;
-@property (nullable, nonatomic, copy) UIImage *image;
 @property (nullable, nonatomic, copy) NSString *imageURL;
 @property (nullable, nonatomic, copy) NSArray<NSString *> *abilities;
 
 - (void)fillInDetailsWithDictionary:(NSDictionary *)dictionary;
-- (void)notify;
-
 - (instancetype)initWithName:(NSString *)name url:(NSString *)url;
-- (instancetype)initWithName:(NSString *)name url:(NSString *)url identifier:(NSNumber *)identifier image:(UIImage *)image abilities:(NSArray<NSString *> *)abilities;
+- (instancetype)initWithName:(NSString *)name url:(NSString *)url identifier:(NSNumber *)identifier abilities:(NSArray<NSString *> *)abilities;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 - (void)encodeWithCoder:(NSCoder *)encoder;

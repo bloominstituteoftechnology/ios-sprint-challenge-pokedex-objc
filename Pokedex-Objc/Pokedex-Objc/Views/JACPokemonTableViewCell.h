@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JACPokemon.h"
 
+@class JACPokemon;
+@class PokemonController;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JACPokemonTableViewCell : UITableViewCell
+@property PokemonController *controller;
+
 - (void)setUpCellWithPokemon:(JACPokemon *)pokemon;
 @end
 

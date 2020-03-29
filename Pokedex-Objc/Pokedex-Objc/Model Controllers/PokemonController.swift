@@ -54,7 +54,6 @@ class PokemonController: NSObject {
                 
                 let newPokemon = JACPokemon(dictionary: dictionary)
                 newPokemon.fillInDetails(with: dictionary)
-                self.fetchPokemonImage(for: newPokemon)
                 newPokemon.name = newPokemon.name.capitalized
                 
                 completion(newPokemon, nil)
@@ -66,12 +65,11 @@ class PokemonController: NSObject {
     }
     
     @objc
-    func fetchPokemonImage(for pokemon: JACPokemon) {
+    func fetchPokemonImage(for pokemon: JACPokemon, completion: @escaping (UIImage?) -> Void) {
         guard let imageURL = pokemon.imageURL else { return }
         
         if let image = cache.getValueWithKey(key) {
-            pokemon.image = image
-            pokemon.notify()
+            completion(image)
             return
         }
         
@@ -83,9 +81,10 @@ class PokemonController: NSObject {
             let image = UIImage(data: data)
             
             if let image = image {
-                pokemon.image = image
+                completion(image)
                 self.cache.setValue(image, withKey: imageURL)
-                pokemon.notify()
+            } else {
+                completion(nil)
             }
         }.resume()
     }

@@ -24,25 +24,19 @@
     [self updateViews];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateViews) name:@"pokemonDetailsSet" object:nil];
-    if (_pokemon.image == NULL) {
-        [_controller fetchPokemonImageFor:_pokemon];
-    }
-}
-
 - (void)updateViews {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.idLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.identifier];
-        self.title = self.pokemon.name;
-        NSString *abilities = [NSString stringWithFormat:@"Abilities:"];
-        for (NSString *ability in self.pokemon.abilities) {
-            abilities = [NSString stringWithFormat:@"%@\n%@", abilities, ability];
-        }
-        self.abilitiesLabel.text = abilities;
-        self.pokemonImageView.image = self.pokemon.image;
-    });
+    self.idLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.identifier];
+    self.title = self.pokemon.name;
+    NSString *abilities = [NSString stringWithFormat:@"Abilities:"];
+    for (NSString *ability in self.pokemon.abilities) {
+        abilities = [NSString stringWithFormat:@"%@\n%@", abilities, ability];
+    }
+    [self.abilitiesLabel setText:abilities];
+    [self.controller fetchPokemonImageFor:_pokemon completion:^(UIImage * _Nullable image) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.pokemonImageView setImage:image];
+        });
+    }];
 }
 
 @end
