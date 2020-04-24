@@ -15,6 +15,9 @@
 		B66F77FE245338A700E0727E /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F77FD245338A700E0727E /* MainTableViewController.m */; };
 		B66F7800245338C000E0727E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F77FF245338C000E0727E /* DetailViewController.swift */; };
 		B66F780424533A4000E0727E /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F780324533A4000E0727E /* PokemonAPI.swift */; };
+		B66F780824533ACF00E0727E /* NPTPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F780724533ACF00E0727E /* NPTPokemon.m */; };
+		B66F780C24533B2B00E0727E /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F780B24533B2B00E0727E /* LSILog.m */; };
+		B66F780F24533B8500E0727E /* LSIErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = B66F780D24533B8500E0727E /* LSIErrors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,12 @@
 		B66F77FD245338A700E0727E /* MainTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		B66F77FF245338C000E0727E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B66F780324533A4000E0727E /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		B66F780624533ACF00E0727E /* NPTPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NPTPokemon.h; sourceTree = "<group>"; };
+		B66F780724533ACF00E0727E /* NPTPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NPTPokemon.m; sourceTree = "<group>"; };
+		B66F780A24533B2B00E0727E /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
+		B66F780B24533B2B00E0727E /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSILog.m; sourceTree = "<group>"; };
+		B66F780D24533B8500E0727E /* LSIErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSIErrors.m; sourceTree = "<group>"; };
+		B66F780E24533B8500E0727E /* LSIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSIErrors.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,8 @@
 		B66F77E52453384000E0727E /* PokeObjC */ = {
 			isa = PBXGroup;
 			children = (
+				B66F780924533AD900E0727E /* Helper */,
+				B66F780524533ABF00E0727E /* Model */,
 				B66F780224533A2900E0727E /* Networking */,
 				B66F77FA2453384800E0727E /* Resources */,
 				B66F77EC2453384000E0727E /* Main.storyboard */,
@@ -99,6 +110,26 @@
 				B66F780324533A4000E0727E /* PokemonAPI.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		B66F780524533ABF00E0727E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B66F780624533ACF00E0727E /* NPTPokemon.h */,
+				B66F780724533ACF00E0727E /* NPTPokemon.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B66F780924533AD900E0727E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B66F780A24533B2B00E0727E /* LSILog.h */,
+				B66F780B24533B2B00E0727E /* LSILog.m */,
+				B66F780E24533B8500E0727E /* LSIErrors.h */,
+				B66F780D24533B8500E0727E /* LSIErrors.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,10 +204,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66F780C24533B2B00E0727E /* LSILog.m in Sources */,
 				B66F77E72453384000E0727E /* AppDelegate.swift in Sources */,
 				B66F77E92453384000E0727E /* SceneDelegate.swift in Sources */,
+				B66F780F24533B8500E0727E /* LSIErrors.m in Sources */,
 				B66F77FE245338A700E0727E /* MainTableViewController.m in Sources */,
 				B66F780424533A4000E0727E /* PokemonAPI.swift in Sources */,
+				B66F780824533ACF00E0727E /* NPTPokemon.m in Sources */,
 				B66F7800245338C000E0727E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
