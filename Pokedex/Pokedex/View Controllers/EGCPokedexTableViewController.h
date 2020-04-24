@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EGCPokemonController.h"
+#import "EGCPokemon.h"
+#import "EGCPokemonDetailViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
