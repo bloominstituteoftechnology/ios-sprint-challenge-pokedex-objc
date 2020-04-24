@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GgH-Pv-qV5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -10,7 +10,7 @@
         <!--PokeDex-->
         <scene sceneID="iZb-gU-T1X">
             <objects>
-                <tableViewController id="buc-Mr-9FU" sceneMemberID="viewController">
+                <tableViewController id="buc-Mr-9FU" customClass="PokedexTableViewController" customModule="PokemonObjC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="O3h-RM-9IQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,43 +51,50 @@
         <!--Pokemon-->
         <scene sceneID="6nj-ij-PBr">
             <objects>
-                <viewController id="8Vg-hq-Mop" sceneMemberID="viewController">
+                <viewController id="8Vg-hq-Mop" customClass="PokemonDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Whv-Ax-hCx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAT-BZ-Xg3">
+                                <rect key="frame" x="20" y="486" width="374" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMa-HH-m5T">
+                                <rect key="frame" x="20" y="544" width="374" height="27"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mDe-Qc-gLM">
                                 <rect key="frame" x="20" y="88" width="374" height="374"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mDe-Qc-gLM" secondAttribute="height" multiplier="1:1" id="zsY-Ku-oBi"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAT-BZ-Xg3">
-                                <rect key="frame" x="20" y="486" width="99" height="34"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMa-HH-m5T">
-                                <rect key="frame" x="20" y="544" width="76" height="27"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="mDe-Qc-gLM" firstAttribute="top" secondItem="0Le-fL-HhV" secondAttribute="top" id="2Im-M0-KU0"/>
                             <constraint firstItem="QAT-BZ-Xg3" firstAttribute="top" secondItem="mDe-Qc-gLM" secondAttribute="bottom" constant="24" id="6dE-DS-N3k"/>
+                            <constraint firstItem="0Le-fL-HhV" firstAttribute="trailing" secondItem="QAT-BZ-Xg3" secondAttribute="trailing" constant="20" id="72o-pg-aq2"/>
                             <constraint firstItem="mDe-Qc-gLM" firstAttribute="leading" secondItem="0Le-fL-HhV" secondAttribute="leading" constant="20" id="L3q-nz-Hck"/>
                             <constraint firstItem="0Le-fL-HhV" firstAttribute="trailing" secondItem="mDe-Qc-gLM" secondAttribute="trailing" constant="20" id="TD0-cK-wlH"/>
                             <constraint firstItem="PMa-HH-m5T" firstAttribute="top" secondItem="QAT-BZ-Xg3" secondAttribute="bottom" constant="24" id="aUm-hT-fLb"/>
                             <constraint firstItem="QAT-BZ-Xg3" firstAttribute="leading" secondItem="0Le-fL-HhV" secondAttribute="leading" constant="20" id="g8E-r4-Jgu"/>
+                            <constraint firstItem="0Le-fL-HhV" firstAttribute="trailing" secondItem="PMa-HH-m5T" secondAttribute="trailing" constant="20" id="mc1-LR-Nm8"/>
                             <constraint firstItem="PMa-HH-m5T" firstAttribute="leading" secondItem="0Le-fL-HhV" secondAttribute="leading" constant="20" id="nie-Tf-Ub8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Le-fL-HhV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pokemon" id="bOL-FE-2N0"/>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="PMa-HH-m5T" id="GG3-a8-YQS"/>
+                        <outlet property="idLabel" destination="QAT-BZ-Xg3" id="upe-P8-56e"/>
+                        <outlet property="imageView" destination="mDe-Qc-gLM" id="gb6-dp-U7g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnJ-Qr-XZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

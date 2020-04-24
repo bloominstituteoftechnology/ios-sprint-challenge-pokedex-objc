@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		722F8A0824534EEB00A3F10D /* CDGPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 722F8A0724534EEB00A3F10D /* CDGPokemon.m */; };
 		726F1EFB2453431A00E9BB52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 726F1EFA2453431A00E9BB52 /* AppDelegate.m */; };
 		726F1EFE2453431A00E9BB52 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 726F1EFD2453431A00E9BB52 /* SceneDelegate.m */; };
 		726F1F042453431A00E9BB52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 726F1F022453431A00E9BB52 /* Main.storyboard */; };
 		726F1F062453431B00E9BB52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726F1F052453431B00E9BB52 /* Assets.xcassets */; };
 		726F1F092453431B00E9BB52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 726F1F072453431B00E9BB52 /* LaunchScreen.storyboard */; };
 		726F1F0C2453431B00E9BB52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 726F1F0B2453431B00E9BB52 /* main.m */; };
+		726F1F1B245347D900E9BB52 /* PokedexTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F1F1A245347D900E9BB52 /* PokedexTableViewController.swift */; };
+		726F1F20245348F000E9BB52 /* PokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 726F1F1F245348F000E9BB52 /* PokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		722F8A0624534EEB00A3F10D /* CDGPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDGPokemon.h; sourceTree = "<group>"; };
+		722F8A0724534EEB00A3F10D /* CDGPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDGPokemon.m; sourceTree = "<group>"; };
 		726F1EF62453431A00E9BB52 /* PokemonObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		726F1EF92453431A00E9BB52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		726F1EFA2453431A00E9BB52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +31,10 @@
 		726F1F082453431B00E9BB52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		726F1F0A2453431B00E9BB52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		726F1F0B2453431B00E9BB52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		726F1F19245347D900E9BB52 /* PokemonObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokemonObjC-Bridging-Header.h"; sourceTree = "<group>"; };
+		726F1F1A245347D900E9BB52 /* PokedexTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexTableViewController.swift; sourceTree = "<group>"; };
+		726F1F1E245348F000E9BB52 /* PokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonDetailViewController.h; sourceTree = "<group>"; };
+		726F1F1F245348F000E9BB52 /* PokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +81,8 @@
 		726F1F12245344A000E9BB52 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				722F8A0624534EEB00A3F10D /* CDGPokemon.h */,
+				722F8A0724534EEB00A3F10D /* CDGPokemon.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -86,6 +97,8 @@
 		726F1F14245344BA00E9BB52 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				726F1F1A245347D900E9BB52 /* PokedexTableViewController.swift */,
+				726F1F21245348F400E9BB52 /* PokemonDetailVC */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -93,6 +106,7 @@
 		726F1F16245344F300E9BB52 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				726F1F19245347D900E9BB52 /* PokemonObjC-Bridging-Header.h */,
 				726F1EFC2453431A00E9BB52 /* SceneDelegate.h */,
 				726F1EFD2453431A00E9BB52 /* SceneDelegate.m */,
 				726F1F052453431B00E9BB52 /* Assets.xcassets */,
@@ -101,6 +115,15 @@
 				726F1EFA2453431A00E9BB52 /* AppDelegate.m */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		726F1F21245348F400E9BB52 /* PokemonDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				726F1F1E245348F000E9BB52 /* PokemonDetailViewController.h */,
+				726F1F1F245348F000E9BB52 /* PokemonDetailViewController.m */,
+			);
+			path = PokemonDetailVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +157,7 @@
 				TargetAttributes = {
 					726F1EF52453431A00E9BB52 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -173,7 +197,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				722F8A0824534EEB00A3F10D /* CDGPokemon.m in Sources */,
+				726F1F1B245347D900E9BB52 /* PokedexTableViewController.swift in Sources */,
 				726F1EFB2453431A00E9BB52 /* AppDelegate.m in Sources */,
+				726F1F20245348F000E9BB52 /* PokemonDetailViewController.m in Sources */,
 				726F1F0C2453431B00E9BB52 /* main.m in Sources */,
 				726F1EFE2453431A00E9BB52 /* SceneDelegate.m in Sources */,
 			);
@@ -315,6 +342,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 36JMR38FZL;
 				INFOPLIST_FILE = PokemonObjC/Info.plist;
@@ -324,6 +352,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ChrisGonzales.PokemonObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokemonObjC/Resources/PokemonObjC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -332,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 36JMR38FZL;
 				INFOPLIST_FILE = PokemonObjC/Info.plist;
@@ -341,6 +373,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ChrisGonzales.PokemonObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokemonObjC/Resources/PokemonObjC-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
