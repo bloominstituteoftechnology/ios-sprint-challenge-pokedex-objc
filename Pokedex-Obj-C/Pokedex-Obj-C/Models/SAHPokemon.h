@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) int identifier;
-@property (nonatomic) NSURL *detailsURL;
 @property (nonatomic) NSData *imageData;
 @property (nonatomic, copy) NSArray<NSString *> *abilities;
 

@@ -14,8 +14,6 @@
     self = [super init];
     if (self) {
         _name = dictionary[@"name"];
-        NSURL *details = [NSURL URLWithString:dictionary[@"url"]];
-        _detailsURL = details;
         
     }
     
