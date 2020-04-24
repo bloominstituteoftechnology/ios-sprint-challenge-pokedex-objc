@@ -16,11 +16,11 @@
 		E106125A2453387B001650BA /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10612592453387B001650BA /* PokemonDetailViewController.swift */; };
 		E106125D245338A6001650BA /* UFOPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E106125C245338A6001650BA /* UFOPokemonTableViewController.m */; };
 		E1061260245338E6001650BA /* UFOPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = E106125F245338E6001650BA /* UFOPokemon.m */; };
-		E106126224533A7E001650BA /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106126124533A7E001650BA /* APIController.swift */; };
+		E1061267245344E8001650BA /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1061266245344E8001650BA /* APIController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E106123B24533782001650BA /* PokeDex - Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PokeDex - Objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E106123B24533782001650BA /* PokeDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E106123E24533782001650BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E106123F24533782001650BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E106124124533782001650BA /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -36,7 +36,7 @@
 		E106125C245338A6001650BA /* UFOPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UFOPokemonTableViewController.m; sourceTree = "<group>"; };
 		E106125E245338E6001650BA /* UFOPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UFOPokemon.h; sourceTree = "<group>"; };
 		E106125F245338E6001650BA /* UFOPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UFOPokemon.m; sourceTree = "<group>"; };
-		E106126124533A7E001650BA /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		E1061266245344E8001650BA /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 		E106123C24533782001650BA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E106123B24533782001650BA /* PokeDex - Objc.app */,
+				E106123B24533782001650BA /* PokeDex.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,8 +74,8 @@
 				E106125B245338A6001650BA /* UFOPokemonTableViewController.h */,
 				E106125C245338A6001650BA /* UFOPokemonTableViewController.m */,
 				E106125E245338E6001650BA /* UFOPokemon.h */,
-				E106126124533A7E001650BA /* APIController.swift */,
 				E106125F245338E6001650BA /* UFOPokemon.m */,
+				E1061266245344E8001650BA /* APIController.swift */,
 				E1061257245337A9001650BA /* Resources */,
 				E106124F24533787001650BA /* Info.plist */,
 				E10612582453387A001650BA /* PokeDex - Objc-Bridging-Header.h */,
@@ -100,9 +100,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E106123A24533782001650BA /* PokeDex - Objc */ = {
+		E106123A24533782001650BA /* PokeDex */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E106125424533787001650BA /* Build configuration list for PBXNativeTarget "PokeDex - Objc" */;
+			buildConfigurationList = E106125424533787001650BA /* Build configuration list for PBXNativeTarget "PokeDex" */;
 			buildPhases = (
 				E106123724533782001650BA /* Sources */,
 				E106123824533782001650BA /* Frameworks */,
@@ -112,9 +112,9 @@
 			);
 			dependencies = (
 			);
-			name = "PokeDex - Objc";
+			name = PokeDex;
 			productName = "PokeDex - Objc";
-			productReference = E106123B24533782001650BA /* PokeDex - Objc.app */;
+			productReference = E106123B24533782001650BA /* PokeDex.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -132,7 +132,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E106123624533782001650BA /* Build configuration list for PBXProject "PokeDex - Objc" */;
+			buildConfigurationList = E106123624533782001650BA /* Build configuration list for PBXProject "PokeDex" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -145,7 +145,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E106123A24533782001650BA /* PokeDex - Objc */,
+				E106123A24533782001650BA /* PokeDex */,
 			);
 		};
 /* End PBXProject section */
@@ -168,7 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E106126224533A7E001650BA /* APIController.swift in Sources */,
+				E1061267245344E8001650BA /* APIController.swift in Sources */,
 				E106124024533782001650BA /* AppDelegate.m in Sources */,
 				E106125D245338A6001650BA /* UFOPokemonTableViewController.m in Sources */,
 				E1061260245338E6001650BA /* UFOPokemon.m in Sources */,
@@ -352,7 +352,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E106123624533782001650BA /* Build configuration list for PBXProject "PokeDex - Objc" */ = {
+		E106123624533782001650BA /* Build configuration list for PBXProject "PokeDex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E106125224533787001650BA /* Debug */,
@@ -361,7 +361,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E106125424533787001650BA /* Build configuration list for PBXNativeTarget "PokeDex - Objc" */ = {
+		E106125424533787001650BA /* Build configuration list for PBXNativeTarget "PokeDex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E106125524533787001650BA /* Debug */,

@@ -7,8 +7,13 @@
 //
 
 #import "UFOPokemonTableViewController.h"
+#import "UFOPokemon.h"
+#import "PokeDex-Swift.h"
 
 @interface UFOPokemonTableViewController ()
+
+@property (nonatomic, strong) APIController *apiController;
+@property NSArray<UFOPokemon *> *pokeList;
 
 @end
 
@@ -16,6 +21,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.apiController = [APIController sharedController];
+    _pokeList = [NSMutableArray new];
+    [self.apiController fetchAllPokemonWithCompletion:^(NSArray<UFOPokemon *> * data, NSError * error) {
+        self.pokeList = data;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -27,24 +40,21 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.pokeList.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokeCell" forIndexPath:indexPath];
+    UFOPokemon *pokemon = self.pokeList[indexPath.row];
+    cell.textLabel.text = pokemon.name.capitalizedString;
+    //cell.imageView.image = [UIImage imageWithData: [NSData dataWithContentsOfURL:pokemon.sprite]];
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -80,14 +90,15 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ShowDetailSegue"]) {
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        UFOPokemon *pokemon = self.pokeList[indexPath.row];
+        PokemonDetailViewController.pokemon = pokemon;
+    }
 }
-*/
 
 @end
