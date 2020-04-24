@@ -14,6 +14,8 @@
 		B5D2A309245338C300F046C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D2A307245338C300F046C6 /* LaunchScreen.storyboard */; };
 		B5D2A30C245338C300F046C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A30B245338C300F046C6 /* main.m */; };
 		B5D2A31524533E3B00F046C6 /* EPWPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A31424533E3B00F046C6 /* EPWPokemon.m */; };
+		B5D2A3192453466C00F046C6 /* EPWPokedoxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A3182453466C00F046C6 /* EPWPokedoxTableViewController.m */; };
+		B5D2A31C2453468700F046C6 /* EPWDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A31B2453468700F046C6 /* EPWDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		B5D2A30B245338C300F046C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B5D2A31324533E3B00F046C6 /* EPWPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPWPokemon.h; sourceTree = "<group>"; };
 		B5D2A31424533E3B00F046C6 /* EPWPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPWPokemon.m; sourceTree = "<group>"; };
+		B5D2A3172453466C00F046C6 /* EPWPokedoxTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPWPokedoxTableViewController.h; sourceTree = "<group>"; };
+		B5D2A3182453466C00F046C6 /* EPWPokedoxTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPWPokedoxTableViewController.m; sourceTree = "<group>"; };
+		B5D2A31A2453468700F046C6 /* EPWDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPWDetailViewController.h; sourceTree = "<group>"; };
+		B5D2A31B2453468700F046C6 /* EPWDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPWDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				B5D2A31224533DE100F046C6 /* Model */,
+				B5D2A316245345FA00F046C6 /* View Controllers */,
 				B5D2A2F9245338C000F046C6 /* AppDelegate.h */,
 				B5D2A2FA245338C000F046C6 /* AppDelegate.m */,
 				B5D2A2FC245338C000F046C6 /* SceneDelegate.h */,
@@ -82,6 +89,17 @@
 				B5D2A31424533E3B00F046C6 /* EPWPokemon.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B5D2A316245345FA00F046C6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B5D2A3172453466C00F046C6 /* EPWPokedoxTableViewController.h */,
+				B5D2A3182453466C00F046C6 /* EPWPokedoxTableViewController.m */,
+				B5D2A31A2453468700F046C6 /* EPWDetailViewController.h */,
+				B5D2A31B2453468700F046C6 /* EPWDetailViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D2A3192453466C00F046C6 /* EPWPokedoxTableViewController.m in Sources */,
 				B5D2A31524533E3B00F046C6 /* EPWPokemon.m in Sources */,
+				B5D2A31C2453468700F046C6 /* EPWDetailViewController.m in Sources */,
 				B5D2A2FB245338C000F046C6 /* AppDelegate.m in Sources */,
 				B5D2A30C245338C300F046C6 /* main.m in Sources */,
 				B5D2A2FE245338C000F046C6 /* SceneDelegate.m in Sources */,
