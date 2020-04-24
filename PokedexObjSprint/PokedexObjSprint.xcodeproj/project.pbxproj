@@ -13,6 +13,8 @@
 		553938CE245338D40000F29C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553938CD245338D40000F29C /* Assets.xcassets */; };
 		553938D1245338D40000F29C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553938CF245338D40000F29C /* LaunchScreen.storyboard */; };
 		553938D4245338D40000F29C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 553938D3245338D40000F29C /* main.m */; };
+		553938DF24533CD00000F29C /* KMLPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 553938DE24533CD00000F29C /* KMLPokemon.m */; };
+		553938E224533E490000F29C /* KMLPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553938E124533E490000F29C /* KMLPokemonController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		553938D0245338D40000F29C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		553938D2245338D40000F29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		553938D3245338D40000F29C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		553938DD24533CD00000F29C /* KMLPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMLPokemon.h; sourceTree = "<group>"; };
+		553938DE24533CD00000F29C /* KMLPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMLPokemon.m; sourceTree = "<group>"; };
+		553938E024533E490000F29C /* KMLPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMLPokemonController.h; sourceTree = "<group>"; };
+		553938E124533E490000F29C /* KMLPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMLPokemonController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,8 @@
 		553938DB245339860000F29C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				553938DD24533CD00000F29C /* KMLPokemon.h */,
+				553938DE24533CD00000F29C /* KMLPokemon.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -91,6 +99,8 @@
 		553938DC2453398E0000F29C /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
+				553938E024533E490000F29C /* KMLPokemonController.h */,
+				553938E124533E490000F29C /* KMLPokemonController.m */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -165,6 +175,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553938DF24533CD00000F29C /* KMLPokemon.m in Sources */,
+				553938E224533E490000F29C /* KMLPokemonController.m in Sources */,
 				553938C3245338CC0000F29C /* AppDelegate.m in Sources */,
 				553938D4245338D40000F29C /* main.m in Sources */,
 				553938C6245338CC0000F29C /* SceneDelegate.m in Sources */,
