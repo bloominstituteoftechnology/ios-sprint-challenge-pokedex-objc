@@ -58,6 +58,9 @@
 		5C29572E2452AE4E00EE6278 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				5C29574B2453315100EE6278 /* View Controllers */,
+				5C29574A2453314E00EE6278 /* Model Controller */,
+				5C2957492453314600EE6278 /* Model */,
 				5C29572F2452AE4E00EE6278 /* AppDelegate.h */,
 				5C2957302452AE4E00EE6278 /* AppDelegate.m */,
 				5C2957322452AE4E00EE6278 /* SceneDelegate.h */,
@@ -77,6 +80,27 @@
 				5C29573D2452AE4F00EE6278 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		5C2957492453314600EE6278 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C29574A2453314E00EE6278 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		5C29574B2453315100EE6278 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

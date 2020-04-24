@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="bOI-Y0-No2" kind="show" id="NLY-RE-ky1"/>
+                                    <segue destination="bOI-Y0-No2" kind="show" identifier="DetailSegue" id="NLY-RE-ky1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
