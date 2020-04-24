@@ -13,6 +13,7 @@
 		B5D2A306245338C300F046C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D2A305245338C300F046C6 /* Assets.xcassets */; };
 		B5D2A309245338C300F046C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D2A307245338C300F046C6 /* LaunchScreen.storyboard */; };
 		B5D2A30C245338C300F046C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A30B245338C300F046C6 /* main.m */; };
+		B5D2A31524533E3B00F046C6 /* EPWPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D2A31424533E3B00F046C6 /* EPWPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		B5D2A308245338C300F046C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5D2A30A245338C300F046C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5D2A30B245338C300F046C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B5D2A31324533E3B00F046C6 /* EPWPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPWPokemon.h; sourceTree = "<group>"; };
+		B5D2A31424533E3B00F046C6 /* EPWPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPWPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		B5D2A2F8245338C000F046C6 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				B5D2A31224533DE100F046C6 /* Model */,
 				B5D2A2F9245338C000F046C6 /* AppDelegate.h */,
 				B5D2A2FA245338C000F046C6 /* AppDelegate.m */,
 				B5D2A2FC245338C000F046C6 /* SceneDelegate.h */,
@@ -69,6 +73,15 @@
 				B5D2A30B245338C300F046C6 /* main.m */,
 			);
 			path = Pokedex;
+			sourceTree = "<group>";
+		};
+		B5D2A31224533DE100F046C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5D2A31324533E3B00F046C6 /* EPWPokemon.h */,
+				B5D2A31424533E3B00F046C6 /* EPWPokemon.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D2A31524533E3B00F046C6 /* EPWPokemon.m in Sources */,
 				B5D2A2FB245338C000F046C6 /* AppDelegate.m in Sources */,
 				B5D2A30C245338C300F046C6 /* main.m in Sources */,
 				B5D2A2FE245338C000F046C6 /* SceneDelegate.m in Sources */,
