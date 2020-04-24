@@ -14,6 +14,7 @@
 		5C29573F2452AE4F00EE6278 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C29573D2452AE4F00EE6278 /* LaunchScreen.storyboard */; };
 		5C2957422452AE4F00EE6278 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2957412452AE4F00EE6278 /* main.m */; };
 		5C29574E245331A100EE6278 /* EGCPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C29574D245331A100EE6278 /* EGCPokemon.m */; };
+		5C2957512453321800EE6278 /* EGCPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2957502453321800EE6278 /* EGCPokemonController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		5C2957412452AE4F00EE6278 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5C29574C245331A100EE6278 /* EGCPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGCPokemon.h; sourceTree = "<group>"; };
 		5C29574D245331A100EE6278 /* EGCPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGCPokemon.m; sourceTree = "<group>"; };
+		5C29574F2453321800EE6278 /* EGCPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGCPokemonController.h; sourceTree = "<group>"; };
+		5C2957502453321800EE6278 /* EGCPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGCPokemonController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 		5C29574A2453314E00EE6278 /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5C29574F2453321800EE6278 /* EGCPokemonController.h */,
+				5C2957502453321800EE6278 /* EGCPokemonController.m */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				5C2957422452AE4F00EE6278 /* main.m in Sources */,
 				5C2957342452AE4E00EE6278 /* SceneDelegate.m in Sources */,
 				5C29574E245331A100EE6278 /* EGCPokemon.m in Sources */,
+				5C2957512453321800EE6278 /* EGCPokemonController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
