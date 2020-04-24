@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class PokemonAPI;
+
 @interface EPWPokedoxTableViewController : UITableViewController
+
+@property (nonatomic) PokemonAPI *pokemonAPI;
 
 @end
 
