@@ -22,10 +22,17 @@
     [super viewDidLoad];    
     
     [PokemonAPI.sharedController fetchAllPokemonWithCompletion:(^(NSArray<SAHPokemon *> *pokemon, NSError *error) {
-        self.allPokemon = pokemon;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
+        if (error) {
+            NSLog(@"error getting pokemon");
+            return;
+        }
+        
+        if (pokemon) {
+            self.allPokemon = pokemon;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+        }
     })];
 }
 
@@ -41,6 +48,16 @@
     cell.textLabel.text = pokemon.name;
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ShowPokemonDetailSegue"]) {
+        PokemonDetailViewController *detailVC = [segue destinationViewController];
+        NSIndexPath *selectIndexPath = [self.tableView indexPathForSelectedRow];
+        SAHPokemon * pokemon = self.allPokemon[selectIndexPath.row];
+        detailVC.pokemon = pokemon;
+        
+    }
 }
 
 @end

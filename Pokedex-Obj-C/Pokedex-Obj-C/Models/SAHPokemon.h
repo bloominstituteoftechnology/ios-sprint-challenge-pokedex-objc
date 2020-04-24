@@ -12,13 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SAHPokemon : NSObject
 
-@property (nonatomic) NSString *name;
-@property (nonatomic) int identifier;
-@property (nonatomic) NSData *imageData;
-@property (nonatomic, copy) NSArray<NSString *> *abilities;
+@property (nonatomic, nonnull) NSString *name;
+@property (nonatomic, nullable) NSNumber *identifier;
+@property (nonatomic, nullable) NSData *imageData;
+@property (nonatomic, copy, nullable) NSArray<NSString *> *abilities;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 
 NS_ASSUME_NONNULL_END
+

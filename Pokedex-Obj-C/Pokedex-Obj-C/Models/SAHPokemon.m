@@ -14,6 +14,9 @@
     self = [super init];
     if (self) {
         _name = dictionary[@"name"];
+        _identifier = nil;
+        _imageData = nil;
+        _abilities = nil;
         
     }
     

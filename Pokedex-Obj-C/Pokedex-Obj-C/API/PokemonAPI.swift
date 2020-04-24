@@ -71,20 +71,10 @@ import Foundation
             
             do {
                 let pokemonDict = try JSONSerialization.jsonObject(with: data) as! [String: Any]
-                let flattenedPokemon = self.parsePokemon(pokemonDict, for: pokemon)
-                
-                
-//                if let pokemonDictionaryArray = pokemon["results"] as? [[String: Any]] {
-//                    for pokemanDictionary in pokemonDictionaryArray {
-//                        let pokemanObject = SAHPokemon(dictionary: pokemanDictionary)
-//                        pokemonArray.append(pokemanObject)
-//                    }
-//                }
-//                completion(pokemonArray, nil)
+                self.parsePokemon(pokemonDict, for: pokemon)
                 
             } catch {
                 print("Error parsing pokemon: \(error)")
-//                completion(nil, error)
             }
             
         }.resume()
@@ -93,14 +83,10 @@ import Foundation
     }
     
     private func parsePokemon(_ pokemonDict: [String: Any], for pokemon: SAHPokemon) {
-//        @property (nonatomic) NSString *name;
-//        @property (nonatomic) int identifier;
-//        @property (nonatomic) NSData *imageData;
-//        @property (nonatomic, copy) NSArray<NSString *> *abilities;
-        let id = pokemonDict["id"] as? Int
-        if let id = id {
-            pokemon.identifier = Int32(id)
+        if let id = pokemonDict["id"] as? Int {
+                pokemon.identifier = NSNumber(value: id)
         }
+        
         
         var abilitiesStrings: [String] = []
         guard let abilitiesArray = pokemonDict["abilities"] as? [[String: Any]] else { return }

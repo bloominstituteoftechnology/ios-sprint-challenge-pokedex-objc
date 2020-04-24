@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D24C92E92453817B00217AEC /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C92E82453817B00217AEC /* PokemonDetailViewController.swift */; };
 		D2D133462453388800A454F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D133452453388800A454F7 /* AppDelegate.m */; };
 		D2D133492453388800A454F7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D133482453388800A454F7 /* SceneDelegate.m */; };
-		D2D1334C2453388800A454F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D1334B2453388800A454F7 /* ViewController.m */; };
 		D2D1334F2453388800A454F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D1334D2453388800A454F7 /* Main.storyboard */; };
 		D2D133512453388900A454F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2D133502453388900A454F7 /* Assets.xcassets */; };
 		D2D133542453388900A454F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D133522453388900A454F7 /* LaunchScreen.storyboard */; };
@@ -20,13 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D24C92E82453817B00217AEC /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		D2D133412453388800A454F7 /* Pokedex-Obj-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex-Obj-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D133442453388800A454F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2D133452453388800A454F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D2D133472453388800A454F7 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		D2D133482453388800A454F7 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		D2D1334A2453388800A454F7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D2D1334B2453388800A454F7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D2D1334E2453388800A454F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2D133502453388900A454F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2D133532453388900A454F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,10 +105,9 @@
 		D2D1335F2453394A00A454F7 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D2D1334A2453388800A454F7 /* ViewController.h */,
-				D2D1334B2453388800A454F7 /* ViewController.m */,
 				D2D1336024533C2100A454F7 /* SAHPokemonTableViewController.h */,
 				D2D1336124533C2100A454F7 /* SAHPokemonTableViewController.m */,
+				D24C92E82453817B00217AEC /* PokemonDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -202,9 +200,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2D1334C2453388800A454F7 /* ViewController.m in Sources */,
 				D2D133462453388800A454F7 /* AppDelegate.m in Sources */,
 				D2D1336624533CA100A454F7 /* SAHPokemon.m in Sources */,
+				D24C92E92453817B00217AEC /* PokemonDetailViewController.swift in Sources */,
 				D2D1336A245344AF00A454F7 /* PokemonAPI.swift in Sources */,
 				D2D133572453388900A454F7 /* main.m in Sources */,
 				D2D1336224533C2100A454F7 /* SAHPokemonTableViewController.m in Sources */,
