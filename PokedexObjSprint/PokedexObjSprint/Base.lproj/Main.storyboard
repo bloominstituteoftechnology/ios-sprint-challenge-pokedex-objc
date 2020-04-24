@@ -10,7 +10,7 @@
         <!--Pokedex-->
         <scene sceneID="qoG-eR-26m">
             <objects>
-                <tableViewController id="o7l-xJ-oFK" customClass="KMLPokemonTableViewController" sceneMemberID="viewController">
+                <tableViewController id="o7l-xJ-oFK" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nmT-gk-00Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="185.50724637681162" y="36.830357142857139"/>
         </scene>
-        <!--Pokemon Detail View Controller-->
+        <!--View Controller-->
         <scene sceneID="reA-71-aJD">
             <objects>
-                <viewController id="Vc7-jr-vaO" customClass="KMLPokemonDetailViewController" sceneMemberID="viewController">
+                <viewController id="Vc7-jr-vaO" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dzP-h4-XdU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
