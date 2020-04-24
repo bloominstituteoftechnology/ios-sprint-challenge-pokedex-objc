@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,copy,nullable) EPWPokemon *pokemon;
 @property (nonatomic) PokemonAPI *pokemonAPI;
+
 @end
 
 NS_ASSUME_NONNULL_END

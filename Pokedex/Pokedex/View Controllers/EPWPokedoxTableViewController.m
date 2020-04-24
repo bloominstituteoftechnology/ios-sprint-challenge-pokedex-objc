@@ -50,18 +50,16 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-        if ([segue.identifier isEqualToString:@"ShowPokemonDetailSegue"]) {
+ 
+    if ([segue.identifier isEqualToString:@"ShowPokemonDetailSegue"]) {
                 
-          EPWDetailViewController *detailVC = (EPWDetailViewController *) [segue destinationViewController];
-          NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-          EPWPokemon *pokemon = self.pokemonAPI.pokemonResults[indexPath.row];
+      EPWDetailViewController *detailVC = (EPWDetailViewController *) [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        EPWPokemon *pokemon = self.pokemonAPI.pokemonResults[indexPath.row];
                 
-            [self.pokemonAPI fillInDetailsFor:pokemon];
-            detailVC.pokemon = pokemon;
+        [self.pokemonAPI fillInDetailsFor:pokemon];
+        detailVC.pokemon = pokemon;
     }
 }
 
