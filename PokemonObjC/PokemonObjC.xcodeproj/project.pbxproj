@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		722F8A0824534EEB00A3F10D /* CDGPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 722F8A0724534EEB00A3F10D /* CDGPokemon.m */; };
+		722F8A0A2453514300A3F10D /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F8A092453514300A3F10D /* PokemonAPI.swift */; };
 		726F1EFB2453431A00E9BB52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 726F1EFA2453431A00E9BB52 /* AppDelegate.m */; };
 		726F1EFE2453431A00E9BB52 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 726F1EFD2453431A00E9BB52 /* SceneDelegate.m */; };
 		726F1F042453431A00E9BB52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 726F1F022453431A00E9BB52 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		722F8A0624534EEB00A3F10D /* CDGPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDGPokemon.h; sourceTree = "<group>"; };
 		722F8A0724534EEB00A3F10D /* CDGPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDGPokemon.m; sourceTree = "<group>"; };
+		722F8A092453514300A3F10D /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 		726F1EF62453431A00E9BB52 /* PokemonObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		726F1EF92453431A00E9BB52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		726F1EFA2453431A00E9BB52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		726F1F13245344B100E9BB52 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				722F8A092453514300A3F10D /* PokemonAPI.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				722F8A0824534EEB00A3F10D /* CDGPokemon.m in Sources */,
 				726F1F1B245347D900E9BB52 /* PokedexTableViewController.swift in Sources */,
 				726F1EFB2453431A00E9BB52 /* AppDelegate.m in Sources */,
+				722F8A0A2453514300A3F10D /* PokemonAPI.swift in Sources */,
 				726F1F20245348F000E9BB52 /* PokemonDetailViewController.m in Sources */,
 				726F1F0C2453431B00E9BB52 /* main.m in Sources */,
 				726F1EFE2453431A00E9BB52 /* SceneDelegate.m in Sources */,
