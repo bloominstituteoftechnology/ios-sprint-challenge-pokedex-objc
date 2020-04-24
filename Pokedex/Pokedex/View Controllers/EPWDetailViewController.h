@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class EPWPokemon;
+@class PokemonAPI;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EPWDetailViewController : UIViewController
 
+@property (nonatomic,copy,nullable) EPWPokemon *pokemon;
+@property (nonatomic) PokemonAPI *pokemonAPI;
 @end
 
 NS_ASSUME_NONNULL_END

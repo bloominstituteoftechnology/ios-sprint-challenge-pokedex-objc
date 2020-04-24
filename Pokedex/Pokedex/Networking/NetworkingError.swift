@@ -12,4 +12,5 @@ enum NetworkingError: Error {
     case noData
     case serverError(Error)
     case badDecode
+    case unexpectedStatusCode(Int)
 }
