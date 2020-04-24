@@ -10,7 +10,6 @@ import UIKit
 
 class PokemonAPI: NSObject {
     
-    
     @objc(sharedController) static let shared = PokemonAPI()
     
     @objc func fetchAllPokemon(completion: @escaping ([CDGPokemon]?, Error?) -> Void) {
@@ -42,7 +41,29 @@ class PokemonAPI: NSObject {
     
     @objc func fillInDetails(for pokemon: CDGPokemon) {
         
+        guard let url = URL(string: pokemon.urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            guard let data = data else { return }
+            
+            guard let dictionary = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else { return }
+            
+            let idInt = dictionary["id"] as? Int
+            pokemon.identifier = String(idInt ?? 0)
+            
+            guard let abilitiesDict = dictionary["abilities"] as? [[String:Any]] else { return }
+            
+            var abilities = [String]()
+            for element in abilitiesDict {
+                let dict = element["ability"] as? [String:String]
+                guard let name = dict?["name"] else { continue }
+                abilities.append(name)
+            }
+            pokemon.abilities = abilities
+            
+            guard let spriteDict = dictionary["sprites"] as? [String:Any] else { return }
+            
+            pokemon.sprite = spriteDict["front_default"] as? String
+        }.resume()
     }
-    
-    
 }
