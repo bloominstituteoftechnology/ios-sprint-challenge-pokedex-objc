@@ -7,7 +7,7 @@
 //
 
 #import "KMLPokemonDetailViewController.h"
-#import "UIKit/UIKit.h"
+#import <UIKit/UIKit.h>
 
 void *KVOContext = &KVOContext;
 
@@ -19,17 +19,38 @@ void *KVOContext = &KVOContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.pokemonController addObserver:self
+                             forKeyPath:@"pokemon"
+                                options:kNilOptions
+                                context:KVOContext];
+    
+    [self.pokemonController fillInDetails:self.pokemon];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)dealloc
+{
+    [self.pokemonController removeObserver:self
+                                forKeyPath:@"pokemon"
+                                   context:KVOContext];
 }
-*/
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (context == KVOContext) {
+        if ([keyPath isEqualToString:@"pokemon"]) {
+            KMLPokemon *pokemon = self.pokemonController.pokemon;
+            NSData *imageData = [[NSData alloc] initWithContentsOfURL:pokemon.spriteURL];
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.imageView.image = [UIImage imageWithData:imageData];
+                self.nameLabel.text = [NSString stringWithFormat:@"Name: %@", [pokemon.name capitalizedString]];
+                self.idLabel.text = [NSString stringWithFormat:@"ID: %@", pokemon.identifier];
+                self.abilitiesLabel.text = [NSString stringWithFormat:@"Abilities: %@", [[pokemon abilities] componentsJoinedByString:@", "]];
+            });
+        }
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
 @end

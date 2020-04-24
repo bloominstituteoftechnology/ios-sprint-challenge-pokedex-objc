@@ -15,6 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface KMLPokemonDetailViewController : UIViewController
 
+@property (nonatomic) KMLPokemonController *pokemonController;
+@property (nonatomic) KMLPokemon *pokemon;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *idLabel;
+@property (weak, nonatomic) IBOutlet UILabel *abilitiesLabel;
+
 
 @end
 
