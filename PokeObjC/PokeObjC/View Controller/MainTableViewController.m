@@ -64,4 +64,14 @@
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+  
+    
+    if ([segue.identifier isEqualToString:@"MainToDetail"]) {
+        DetailViewController *detailVC = segue.destinationViewController;
+        detailVC.pokemon = self.pokemons[indexPath.row];
+    }
+}
+
 @end

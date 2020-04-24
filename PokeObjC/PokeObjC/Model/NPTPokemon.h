@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NPTPokemon : NSObject
 
 @property (nonatomic, copy, readonly )NSString *name;
-@property (nonatomic, readonly)NSNumber *identifier;
-@property (nonatomic, readonly)UIImage *pokemonImage;
-@property (nonatomic, readonly, copy)NSArray *abilities;
+@property (nonatomic, readwrite)NSNumber *identifier;
+@property (nonatomic, readwrite)UIImage *pokemonImage;
+@property (nonatomic, readwrite, copy)NSArray *abilities;
 
 
 - (instancetype)initWithName:(NSString *)name;
