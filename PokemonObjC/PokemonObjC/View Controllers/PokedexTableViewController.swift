@@ -10,9 +10,35 @@ import UIKit
 
 class PokedexTableViewController: UITableViewController {
     
+    // MARK: - Properties
+    
+    private var pokemonArray: [CDGPokemon] = []
+    
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchPokemon()
+    }
+    
+    // MARK: - Private Methods
+    
+    private func fetchPokemon() {
+        PokemonAPI.shared.fetchAllPokemon { (pokemonArray, error) in
+            if let error = error {
+             NSLog("Error fetching pokemon: \(error)")
+                return
+            }
+            
+            guard let pokemon = pokemonArray else {
+                NSLog("No pokemon")
+                return
+            }
+            self.pokemonArray.append(contentsOf: pokemon)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Table view data source
