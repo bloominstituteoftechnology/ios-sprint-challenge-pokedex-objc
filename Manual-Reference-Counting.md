@@ -58,21 +58,27 @@ Answer the following questions inline with this document.
 2. Which of these objects is autoreleased?  Why?
 
 	1. `NSDate *yesterday = [NSDate date];`
+	
 	// YES. This is autoreleased. "*yesterday* doesn't own this.  
 	
 	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];
+	
 	// NO. This isn't autoreleased. It has a "retain" at the end`
 	
 	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];`
+	
 	// NO. This isn't autoreleased. We own this because of the alloc initWithString 
 	
 	4. `NSDate *food = [NSDate new];`
+	
 	// NO. This isn't autoreleased. There is "new" after NSDate
 	
 	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];`
+	
 	// NO. This isn't autoreleased. We own this because of the alloc initWithName
 	
 	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];`
+	
 	// YES. This is autoreleased. We have an "autorelease" at the end. 
 
 3. Explain when you need to use the `NSAutoreleasePool`.
