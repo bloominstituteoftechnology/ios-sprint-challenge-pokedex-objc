@@ -30,17 +30,17 @@ Answer the following questions inline with this document.
 
 2. Which of these objects is autoreleased?  Why?
 
-	1. `NSDate *yesterday = [NSDate date];`
+1. `NSDate *yesterday = [NSDate date];`  // YES  Reason: no alloc/ init keyword
 	
-	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];`
+	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];` // NO   Reason: retain keyword
 	
-	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];`
+	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];` // NO Reason: alloc keyword
 	
-	4. `NSDate *food = [NSDate new];`
+	4. `NSDate *food = [NSDate new];` // NO Reason: new keyword
 	
-	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];`
+	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];` // NO Reason: alloc keyword
 	
-	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];`
+	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];` // YES  Reason: autorelease keyword
 
 3. Explain when you need to use the `NSAutoreleasePool`.
 
@@ -53,6 +53,18 @@ Answer the following questions inline with this document.
 @property (nonatomic, copy) NSString *name;
 
 - (instancetype)initWithName:(NSString *)name;
-
+- (instancetype)personWithName: (NSString *)name;
 @end
 ```
+@implementation 
+- (instancetpe)initWithName:(NSString *)name {
+self = [super init];
+if (self) {
+_name = [name copy];
+}
+return self;
+}
+
+- (instancetype)personWithName: (NSString *)name {
+return [[[LSIPerson alloc]initWithName: name] autorelease];
+}
