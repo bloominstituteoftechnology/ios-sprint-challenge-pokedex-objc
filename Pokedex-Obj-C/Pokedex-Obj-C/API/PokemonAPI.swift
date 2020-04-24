@@ -17,5 +17,7 @@ class PokemonAPI: NSObject {
         
     }
     
-//    @objc func fillInDetails(for pokemon: LSIPokemon)
+    @objc func fillInDetails(for pokemon: SAHPokemon) {
+        
+    }
 }
