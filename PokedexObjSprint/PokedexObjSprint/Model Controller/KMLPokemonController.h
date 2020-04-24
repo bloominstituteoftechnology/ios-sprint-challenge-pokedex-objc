@@ -7,10 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KMLPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KMLPokemonController : NSObject
+
+@property (nonatomic) KMLPokemon *pokemon;
+
+- (instancetype)init;
+
+- (void)fetchAllPokemonsCompletion:(void (^)(NSArray<KMLPokemon *> * _Nullable pokemons, NSError * _Nullable error))completion;
+
+- (void)fillInDetails:(KMLPokemon *)pokemon;
+
 
 @end
 

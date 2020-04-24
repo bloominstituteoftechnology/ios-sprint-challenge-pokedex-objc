@@ -15,6 +15,8 @@
 		553938D4245338D40000F29C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 553938D3245338D40000F29C /* main.m */; };
 		553938DF24533CD00000F29C /* KMLPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 553938DE24533CD00000F29C /* KMLPokemon.m */; };
 		553938E224533E490000F29C /* KMLPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553938E124533E490000F29C /* KMLPokemonController.m */; };
+		553938E5245346EC0000F29C /* KMLPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553938E4245346EC0000F29C /* KMLPokemonDetailViewController.m */; };
+		553938E8245347000000F29C /* KMLPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553938E7245347000000F29C /* KMLPokemonTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		553938DE24533CD00000F29C /* KMLPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMLPokemon.m; sourceTree = "<group>"; };
 		553938E024533E490000F29C /* KMLPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMLPokemonController.h; sourceTree = "<group>"; };
 		553938E124533E490000F29C /* KMLPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMLPokemonController.m; sourceTree = "<group>"; };
+		553938E3245346EC0000F29C /* KMLPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMLPokemonDetailViewController.h; sourceTree = "<group>"; };
+		553938E4245346EC0000F29C /* KMLPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMLPokemonDetailViewController.m; sourceTree = "<group>"; };
+		553938E6245347000000F29C /* KMLPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMLPokemonTableViewController.h; sourceTree = "<group>"; };
+		553938E7245347000000F29C /* KMLPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KMLPokemonTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,10 @@
 		553938DA2453397D0000F29C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				553938E3245346EC0000F29C /* KMLPokemonDetailViewController.h */,
+				553938E4245346EC0000F29C /* KMLPokemonDetailViewController.m */,
+				553938E6245347000000F29C /* KMLPokemonTableViewController.h */,
+				553938E7245347000000F29C /* KMLPokemonTableViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -175,11 +185,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553938E5245346EC0000F29C /* KMLPokemonDetailViewController.m in Sources */,
 				553938DF24533CD00000F29C /* KMLPokemon.m in Sources */,
 				553938E224533E490000F29C /* KMLPokemonController.m in Sources */,
 				553938C3245338CC0000F29C /* AppDelegate.m in Sources */,
 				553938D4245338D40000F29C /* main.m in Sources */,
 				553938C6245338CC0000F29C /* SceneDelegate.m in Sources */,
+				553938E8245347000000F29C /* KMLPokemonTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
