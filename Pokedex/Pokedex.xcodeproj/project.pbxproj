@@ -15,6 +15,8 @@
 		5C2957422452AE4F00EE6278 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2957412452AE4F00EE6278 /* main.m */; };
 		5C29574E245331A100EE6278 /* EGCPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C29574D245331A100EE6278 /* EGCPokemon.m */; };
 		5C2957512453321800EE6278 /* EGCPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2957502453321800EE6278 /* EGCPokemonController.m */; };
+		5C2957542453333900EE6278 /* EGCPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2957532453333900EE6278 /* EGCPokedexTableViewController.m */; };
+		5C2957572453335100EE6278 /* EGCPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2957562453335100EE6278 /* EGCPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		5C29574D245331A100EE6278 /* EGCPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGCPokemon.m; sourceTree = "<group>"; };
 		5C29574F2453321800EE6278 /* EGCPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGCPokemonController.h; sourceTree = "<group>"; };
 		5C2957502453321800EE6278 /* EGCPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGCPokemonController.m; sourceTree = "<group>"; };
+		5C2957522453333900EE6278 /* EGCPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGCPokedexTableViewController.h; sourceTree = "<group>"; };
+		5C2957532453333900EE6278 /* EGCPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGCPokedexTableViewController.m; sourceTree = "<group>"; };
+		5C2957552453335100EE6278 /* EGCPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGCPokemonDetailViewController.h; sourceTree = "<group>"; };
+		5C2957562453335100EE6278 /* EGCPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGCPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,10 @@
 		5C29574B2453315100EE6278 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5C2957522453333900EE6278 /* EGCPokedexTableViewController.h */,
+				5C2957532453333900EE6278 /* EGCPokedexTableViewController.m */,
+				5C2957552453335100EE6278 /* EGCPokemonDetailViewController.h */,
+				5C2957562453335100EE6278 /* EGCPokemonDetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -187,7 +197,9 @@
 				5C2957422452AE4F00EE6278 /* main.m in Sources */,
 				5C2957342452AE4E00EE6278 /* SceneDelegate.m in Sources */,
 				5C29574E245331A100EE6278 /* EGCPokemon.m in Sources */,
+				5C2957542453333900EE6278 /* EGCPokedexTableViewController.m in Sources */,
 				5C2957512453321800EE6278 /* EGCPokemonController.m in Sources */,
+				5C2957572453335100EE6278 /* EGCPokemonDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
