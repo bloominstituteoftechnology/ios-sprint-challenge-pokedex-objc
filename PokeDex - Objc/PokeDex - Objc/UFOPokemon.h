@@ -15,11 +15,15 @@ NS_SWIFT_NAME(Pokemon)
 
 @property (nonatomic, copy) NSNumber *identifier;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSURL *sprite;
+@property (nonatomic, copy) NSString *sprite;
 @property (nonatomic, copy) NSArray<NSString *> *abilities;
+@property (nonatomic) NSURL *url;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
+
+
+
 
 NS_ASSUME_NONNULL_END

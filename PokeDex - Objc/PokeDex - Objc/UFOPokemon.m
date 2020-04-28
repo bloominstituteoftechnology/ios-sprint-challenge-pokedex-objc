@@ -12,21 +12,20 @@
 
 static NSString const *idKey = @"id";
 static NSString const *nameKey = @"name";
-static NSString const *abilitiesKey =  @"ability";
+static NSString const *abilitiesKey =  @"abilities";
+static NSString const *abilityKey =  @"ability";
 static NSString const *spritesKey = @"sprites";
 static NSString const *frontDefKey = @"front_default";
+static NSString const *urlKey = @"url";
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
         
-        _identifier = dictionary[idKey];
         _name = dictionary[nameKey];
-        _abilities = dictionary[abilitiesKey];
-        
-        NSDictionary *sprites = dictionary[spritesKey];
-        NSString *spriteString = sprites[frontDefKey];
-        _sprite = [NSURL URLWithString:spriteString];
+        NSLog(@"Name: %@", _name);
+        NSString *urlString = dictionary[urlKey];
+        _url = [[NSURL alloc] initWithString:urlString];
     }
     return self;
 }

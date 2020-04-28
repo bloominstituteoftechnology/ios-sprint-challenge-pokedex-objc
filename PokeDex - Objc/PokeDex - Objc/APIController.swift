@@ -27,17 +27,10 @@ enum NetworkError: Error {
 class APIController: NSObject {
     
     @objc(sharedController) static let shared = APIController()
-    
-//    @objc(pokeList) static var pokeList: [Pokemon] = [] {
-//        didSet {
-//            print("PokeList DidSet")
-//        }
-//    }
     var pokemon: Pokemon?
     let baseURL = URL(string: "https://pokeapi.co/api/v2/")!
     
     @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
-        
         let url = baseURL.appendingPathComponent("pokemon")
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
@@ -59,7 +52,6 @@ class APIController: NSObject {
             guard let array = dictionary["results"] as? Array<[String:Any]> else {
                 completion(nil, nil)
                 return
-                
             }
             
             var pokeList = [Pokemon]()
@@ -71,5 +63,80 @@ class APIController: NSObject {
             completion(pokeList, nil)
         }.resume()
     }
-
+    
+    func fetchDetails(for pokemon: Pokemon, completion: @escaping (Result<Pokemon, NetworkError>) -> Void) {
+        
+        let pokemonURL = pokemon.url //baseURL.appendingPathComponent("pokemon/\(pokemon.name)")
+        
+        var request = URLRequest(url: pokemonURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let response = response as? HTTPURLResponse,
+                response.statusCode == 401 {
+                completion(.failure(.badRequest))
+                return
+            }
+            
+            if let error = error {
+                print("Error receiving animal names: \(error)")
+                completion(.failure(.otherError))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.badData))
+                return
+            }
+            
+            do {
+                guard let pokemonDict = try JSONSerialization.jsonObject(with: data) as? [String: Any] else { return }
+                
+                guard let id = pokemonDict["id"] as? Int else { return }
+                pokemon.identifier = id as NSNumber
+                
+                if let abilitiesArray = pokemonDict["abilities"] as? [[String: Any]] {
+                    var abilities: [String] = []
+                    for ability in abilitiesArray {
+                        let abilityDict = ability["ability"] as? [String:String]
+                        guard let abilityName = abilityDict?["name"] else { return }
+                        abilities.append(abilityName)
+                    }
+                    pokemon.abilities = abilities
+                }
+                
+                guard let spritesDict = pokemonDict["sprites"] as? [String:Any] else { return }
+                pokemon.sprite = spritesDict["front_default"] as! String
+                
+                completion(.success(pokemon))
+            } catch {
+                NSLog("Error decoding animal names details: \(error)")
+                completion(.failure(.noDecode))
+                return
+            }
+        }.resume()
+    }
+    
+    func fetchImage(at url: String, completion: @escaping (Result<UIImage, NetworkError>) -> Void ) {
+        
+        let imageURL = URL(string: url)!
+        let request = URLRequest(url: imageURL)
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let _ = error {
+                completion(.failure(.otherError))
+                return
+            }
+            
+            guard let data = data else {
+                completion( .failure(.badData))
+                return
+            }
+            
+            let image = UIImage(data: data)!
+            completion(.success(image))
+        }.resume()
+    }
+    
 }

@@ -16,41 +16,59 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var typesLabel: UILabel!
     @IBOutlet weak var abilitiesLabel: UILabel!
     
-    @objc(pokemon) static var pokemon: Pokemon? {
+    let apiController: APIController? = nil
+    
+    @objc var pokemon: Pokemon? {
         didSet{
             guard let pokemon = pokemon else { return }
-            //title = pokemon.name.capitalized
+            title = pokemon.name.capitalized
+            getDetails()
         }
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if nameLabel.text == "Pokemon" {
-            
-        }
+        guard let pokemon = pokemon else { return }
+        updateViews(with: pokemon)
         // Do any additional setup after loading the view.
     }
     
     func updateViews(with pokemon: Pokemon) {
-        guard let imageData = try? Data(contentsOf: pokemon.sprite) else { return }
         nameLabel.text = pokemon.name.capitalized
         idLabel.text  = "ID: \(String(describing: pokemon.identifier))"
-        guard let image = UIImage(data: imageData) else { return }
-        pokemonIV.image = image
         
-        var abilities: [String] = []
+        print("Abilities: \(pokemon.abilities)")
+        var abilities: String = ""
         
         for newAbility in pokemon.abilities {
-            abilities.append(newAbility.capitalized)
+            abilities.append("\(newAbility.capitalized)")
+            if newAbility != pokemon.abilities.last {
+                abilities.append(", ")
+            }
         }
         
-        abilitiesLabel.text = "Ability: \(abilities.last!)"
+    
+        abilitiesLabel.text = "Ability: \(abilities)"
+    }
+    
+    func getDetails() {
+        guard let pokemon = pokemon else { return }
+        
+        APIController.shared.fetchDetails(for: pokemon) { result in
+            if let pokemon = try? result.get() {
+                DispatchQueue.main.async {
+                    
+                    APIController.shared.fetchImage(at: pokemon.sprite) { result in
+                        if let image = try? result.get() {
+                            DispatchQueue.main.async {
+                                self.pokemonIV.image = image
+                                self.updateViews(with: pokemon)
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
 }
