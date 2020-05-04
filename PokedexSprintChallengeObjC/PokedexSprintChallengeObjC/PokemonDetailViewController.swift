@@ -60,12 +60,12 @@ class PokemonDetailViewController: UIViewController {
                                of object: Any?,
                                change: [NSKeyValueChangeKey : Any]?,
                                context: UnsafeMutableRawPointer?) {
-        if keyPath == "identifier", let id = change?[.newKey] {
+        if keyPath == "identifier", let id = change?[.newKey] as? NSNumber {
             DispatchQueue.main.async {
                 self.idLabel.text = "ID: \(id)"
             }
         } else if keyPath == "abilities" {
-            if let newAbilities = change?[.newKey] as? [String] {
+            if let newAbilities = change?[.newKey] as? [NSString] {
                 for ability in newAbilities {
                     DispatchQueue.main.async {
                         let label = UILabel()
@@ -73,6 +73,11 @@ class PokemonDetailViewController: UIViewController {
                         self.abilitiesStackView.addArrangedSubview(label)
                     }
                 }
+            }
+        } else if keyPath == "spriteImg", let data = change?[.newKey] as? Data {
+            DispatchQueue.main.async {
+                let image = UIImage(data: data)
+                self.spriteImageView.image = image
             }
         }
     }
