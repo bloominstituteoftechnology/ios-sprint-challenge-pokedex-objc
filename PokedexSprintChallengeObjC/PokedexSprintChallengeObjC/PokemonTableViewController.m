@@ -10,7 +10,11 @@
 #import "PokedexSprintChallengeObjC-Swift.h"
 #import "Pokemon.h"
 
-@interface PokemonTableViewController ()
+@interface PokemonTableViewController () <UISearchResultsUpdating>
+
+@property (nonatomic) UISearchController *searchController;
+@property (nonatomic) NSArray<Pokemon *> *filteredPokemon;
+
 
 @end
 
@@ -19,8 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.controller = PokemonController.sharedController;
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.obscuresBackgroundDuringPresentation = NO;
+    self.searchController.searchBar.placeholder = @"Search Pokemon";
+    self.navigationItem.searchController = self.searchController;
+    self.definesPresentationContext = YES;
     
+    self.controller = PokemonController.sharedController;
     [self.controller fetchAllPokemonWithCompletion:^(NSMutableArray<Pokemon *> * _Nullable allPokemon, NSError * _Nullable error) {
         if (error) {
             NSLog(@"%@", error);
@@ -28,6 +38,7 @@
         
         if (allPokemon) {
             self.allPokemon = allPokemon;
+            self.filteredPokemon = allPokemon;
             [self.tableView reloadData];
         }
     }];
@@ -36,14 +47,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.allPokemon.count;
+    return self.filteredPokemon.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pokemonCell" forIndexPath:indexPath];
-    
-    Pokemon *pokemon = self.allPokemon[indexPath.row];
+    Pokemon *pokemon = self.filteredPokemon[indexPath.row];
     
     cell.textLabel.text = [pokemon.name capitalizedString];
     
@@ -51,21 +61,44 @@
 }
 
 
-
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowPokemonDetailSegue"]) {
         PokemonDetailViewController *detailVC = segue.destinationViewController;
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Pokemon *pokemon = self.allPokemon[indexPath.row];
+        Pokemon *pokemon = self.filteredPokemon[indexPath.row];
         
         detailVC.pokemon = pokemon;
         detailVC.controller = self.controller;
     }
 }
 
+#pragma mark - Search results updating delegate methods
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
+{
+    NSString *searchText = searchController.searchBar.text;
+    if (searchText) {
+        if (searchText.length != 0) {
+            [self filterPokemonForSearchText:searchText];
+        }
+        else {
+            self.filteredPokemon = self.allPokemon;
+        }
+        [self.tableView reloadData];
+    }
+}
+
+#pragma mark - Search bar helper methods
+
+
+- (void)filterPokemonForSearchText:(NSString *)searchText
+{
+    NSString *filter = @"%K CONTAINS[cd] %@";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:filter, @"name", searchText];
+    self.filteredPokemon = [self.allPokemon filteredArrayUsingPredicate:predicate];
+}
 
 @end
