@@ -7,6 +7,8 @@
 //
 
 #import "PokemonTableViewController.h"
+#import "PokedexSprintChallengeObjC-Swift.h"
+#import "Pokemon.h"
 
 @interface PokemonTableViewController ()
 
@@ -17,11 +19,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    PokemonController *controller = PokemonController.sharedController;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [controller fetchAllPokemonWithCompletion:^(NSArray<Pokemon *> * _Nullable allPokemon, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        }
+        
+        if (allPokemon) {
+            for (Pokemon *pokemon in allPokemon) {
+                NSLog(@"%@", pokemon.name);
+                NSLog(@"%@", pokemon.url);
+            }
+        }
+    }];
 }
 
 #pragma mark - Table view data source
