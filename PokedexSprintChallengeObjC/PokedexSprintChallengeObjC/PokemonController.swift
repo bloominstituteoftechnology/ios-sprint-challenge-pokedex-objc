@@ -14,7 +14,7 @@ class PokemonController: NSObject {
     
     @objc(sharedController) static let shared = PokemonController()
     
-    @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
+    @objc func fetchAllPokemon(completion: @escaping (NSMutableArray?, Error?) -> Void) {
         let allPokemonURL = baseURL.appendingPathComponent("pokemon")
         
         var urlComponents = URLComponents(url: allPokemonURL, resolvingAgainstBaseURL: false)
@@ -42,7 +42,7 @@ class PokemonController: NSObject {
                 return
             }
             
-            var pokemonArray = [Pokemon]()
+            let pokemonArray = NSMutableArray()
             
             do {
                 if let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
@@ -50,7 +50,7 @@ class PokemonController: NSObject {
                         for item in results {
                             guard let pokemonDictionary = item as? [String: String] else { return }
                             let pokemon = Pokemon(dictionary: pokemonDictionary)
-                            pokemonArray.append(pokemon)
+                            pokemonArray.add(pokemon)
                         }
                     }
                 }
@@ -66,5 +66,59 @@ class PokemonController: NSObject {
             }
             
         }.resume()
+    }
+    
+    @objc func fillInDetails(for pokemon: Pokemon) {
+        if pokemon.abilities == nil, pokemon.identifier == nil, pokemon.spriteImg == nil {
+            let allPokemonURL = baseURL.appendingPathComponent("pokemon")
+            let singlePokemonURL = allPokemonURL.appendingPathComponent(pokemon.name.lowercased())
+            
+            var request = URLRequest(url: singlePokemonURL)
+            request.httpMethod = "GET"
+            
+            URLSession.shared.dataTask(with: request) { (data, _, error) in
+                if let error = error {
+                    print("Error fetching single pokemon: \(error)")
+                    return
+                }
+                
+                guard let data = data else {
+                    print("Error getting data for \(pokemon.name)")
+                    return
+                }
+                
+                do {
+                    if let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        if let sprites = jsonDictionary["sprites"] as? [String: Any] {
+                            if let spriteURLString = sprites["front_default"] as? String {
+                                if pokemon.spriteImg == nil {
+                                    pokemon.setValue(spriteURLString, forKey: "spriteImg")
+                                }
+                            }
+                        }
+                        
+                        if let identifier = jsonDictionary["id"] as? NSNumber  {
+                            pokemon.setValue(identifier, forKey: "identifier")
+                        }
+                        
+                        guard let allAbilities = jsonDictionary["abilities"] as? [Any] else { return }
+                        var abilties: [String] = []
+                        for item in allAbilities {
+                            guard let abilityDict = item as? [String: Any], let ability = abilityDict["ability"] as? [String: String] else { return }
+                            if let abilityName = ability["name"] {
+                                abilties.append(abilityName)
+                            }
+                        }
+                        if !allAbilities.isEmpty {
+                            pokemon.setValue(abilties, forKey: "abilities")
+                        }
+                        
+                    }
+                } catch {
+                    print("Error parsing data for pokemon")
+                    return
+                }
+            }.resume()
+        }
     }
 }
