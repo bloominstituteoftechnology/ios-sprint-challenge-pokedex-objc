@@ -24,19 +24,46 @@ class PokemonDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        guard let pokemon = pokemon else { return }
+        nameLabel.text = pokemon.name.capitalized
+        observe(pokemon: pokemon)
+        loadPokemonData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func observe(pokemon: Pokemon) {
+        pokemon.addObserver(self, forKeyPath: "identifier", options: .new, context: nil)
+        pokemon.addObserver(self, forKeyPath: "abilities", options: .new, context: nil)
+        pokemon.addObserver(self, forKeyPath: "spriteImg", options: .new, context: nil)
     }
-    */
+    
+    override func observeValue(forKeyPath keyPath: String?,
+                               of object: Any?,
+                               change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?) {
+        if keyPath == "identifier", let id = change?[.newKey] {
+            DispatchQueue.main.async {
+                self.idLabel.text = "ID: \(id)"
+            }
+        } else if keyPath == "abilities" {
+            if let newAbilities = change?[.newKey] as? [String] {
+                for ability in newAbilities {
+                    DispatchQueue.main.async {
+                        let label = UILabel()
+                        label.text = ability.capitalized
+                        self.abilitiesStackView.addArrangedSubview(label)
+                    }
+                }
+            }
+        }
+    }
+    
+    func loadPokemonData() {
+        guard let pokemon = pokemon, let controller = controller else { return }
+        
+        controller.fillInDetails(for: pokemon)
+    }
+    
+    
+    
 
 }
