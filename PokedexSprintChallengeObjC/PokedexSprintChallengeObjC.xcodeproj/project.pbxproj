@@ -16,7 +16,6 @@
 		92F81BF5245FB1FB009C8E3E /* PokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F81BF4245FB1FB009C8E3E /* PokemonTableViewController.m */; };
 		92F81BFB245FB429009C8E3E /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F81BFA245FB429009C8E3E /* PokemonDetailViewController.swift */; };
 		92F81BFE245FB602009C8E3E /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F81BFD245FB602009C8E3E /* Pokemon.m */; };
-		92F81C01245FB7E7009C8E3E /* Ability.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F81C00245FB7E7009C8E3E /* Ability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +35,6 @@
 		92F81BFA245FB429009C8E3E /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		92F81BFC245FB602009C8E3E /* Pokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
 		92F81BFD245FB602009C8E3E /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
-		92F81BFF245FB7E7009C8E3E /* Ability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ability.h; sourceTree = "<group>"; };
-		92F81C00245FB7E7009C8E3E /* Ability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +74,6 @@
 				92F81BE3245FB153009C8E3E /* Main.storyboard */,
 				92F81BFC245FB602009C8E3E /* Pokemon.h */,
 				92F81BFD245FB602009C8E3E /* Pokemon.m */,
-				92F81BFF245FB7E7009C8E3E /* Ability.h */,
-				92F81C00245FB7E7009C8E3E /* Ability.m */,
 				92F81BF3245FB1FB009C8E3E /* PokemonTableViewController.h */,
 				92F81BF4245FB1FB009C8E3E /* PokemonTableViewController.m */,
 				92F81BFA245FB429009C8E3E /* PokemonDetailViewController.swift */,
@@ -162,7 +157,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92F81C01245FB7E7009C8E3E /* Ability.m in Sources */,
 				92F81BDC245FB153009C8E3E /* AppDelegate.m in Sources */,
 				92F81BED245FB154009C8E3E /* main.m in Sources */,
 				92F81BFB245FB429009C8E3E /* PokemonDetailViewController.swift in Sources */,
