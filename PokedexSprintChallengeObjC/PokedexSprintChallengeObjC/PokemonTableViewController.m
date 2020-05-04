@@ -19,9 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    PokemonController *controller = PokemonController.sharedController;
+    self.controller = PokemonController.sharedController;
     
-    [controller fetchAllPokemonWithCompletion:^(NSArray<Pokemon *> * _Nullable allPokemon, NSError * _Nullable error) {
+    [self.controller fetchAllPokemonWithCompletion:^(NSMutableArray<Pokemon *> * _Nullable allPokemon, NSError * _Nullable error) {
         if (error) {
             NSLog(@"%@", error);
         }

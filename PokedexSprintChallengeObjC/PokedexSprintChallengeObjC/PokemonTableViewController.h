@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PokemonTableViewController : UITableViewController
 
 @property (nonatomic) PokemonController *controller;
-@property (nonatomic, copy) NSArray<Pokemon *> *allPokemon;
+@property (nonatomic, copy) NSMutableArray<Pokemon *> *allPokemon;
 
 @end
 
