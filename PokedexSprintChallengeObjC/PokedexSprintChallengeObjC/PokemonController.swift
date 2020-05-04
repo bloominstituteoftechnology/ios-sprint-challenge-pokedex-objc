@@ -28,13 +28,17 @@ class PokemonController: NSObject {
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 print(error)
-                completion(nil, error)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
                 return
             }
             
             guard let data = data else {
                 print("Error getting all pokemon data from Pokemon API")
-                completion(nil, NSError())
+                DispatchQueue.main.async {
+                    completion(nil, NSError())
+                }
                 return
             }
             
@@ -52,10 +56,14 @@ class PokemonController: NSObject {
                 }
             } catch {
                 print("Error parsing pokemon data: \(error)")
-                completion(nil, error)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
             }
             
-            completion(pokemonArray, nil)
+            DispatchQueue.main.async {
+                completion(pokemonArray, nil)
+            }
             
         }.resume()
     }
