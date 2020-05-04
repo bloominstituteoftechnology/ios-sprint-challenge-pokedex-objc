@@ -10,17 +10,6 @@
 
 @implementation Pokemon
 
-- (instancetype)initWithName:(NSString *)name identifier:(NSNumber *)identifier spriteImg:(NSData *)spriteImg abilities:(NSMutableArray<NSString *> *)abilities
-{
-    if (self = [super init]) {
-        self.name = name;
-        self.identifier = identifier;
-        self.spriteImg = spriteImg;
-        self.abilities = abilities;
-    }
-    return self;
-}
-
 - (instancetype)initWithName:(NSString *)name url:(NSString *)url
 {
     if (self = [super init]) {
