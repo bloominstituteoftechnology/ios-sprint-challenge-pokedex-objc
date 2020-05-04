@@ -16,6 +16,11 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var abilitiesStackView: UIStackView!
     @IBOutlet weak var abilitiesLabel: UILabel!
     
+    @objc dynamic var pokemon: Pokemon?
+    @objc dynamic var controller: PokemonController?
+    
+    var kvoToken: NSKeyValueObservation?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
