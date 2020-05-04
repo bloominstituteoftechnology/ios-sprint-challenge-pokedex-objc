@@ -25,9 +25,29 @@ class PokemonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let pokemon = pokemon else { return }
-        nameLabel.text = pokemon.name.capitalized
+        updateViews()
         observe(pokemon: pokemon)
         loadPokemonData()
+    }
+    
+    private func updateViews() {
+        guard let pokemon = pokemon else { return }
+        nameLabel.text = pokemon.name.capitalized
+        if let id = pokemon.identifier {
+            idLabel.text = "ID: \(id)"
+        }
+        if let abilities = pokemon.abilities as? [String] {
+            for ability in abilities {
+                let label = UILabel()
+                label.text = ability.capitalized
+                self.abilitiesStackView.addArrangedSubview(label)
+            }
+        }
+        if let imageData = pokemon.spriteImg {
+            let image = UIImage(data: imageData)
+            spriteImageView.image = image
+        }
+        
     }
     
     func observe(pokemon: Pokemon) {
