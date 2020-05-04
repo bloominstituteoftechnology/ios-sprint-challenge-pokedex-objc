@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PokedexSprintChallengeObjC-Swift.h"
+
+@class Pokemon;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PokemonTableViewController : UITableViewController
+
+@property (nonatomic) PokemonController *controller;
+@property (nonatomic, copy) NSArray<Pokemon *> *allPokemon;
 
 @end
 
