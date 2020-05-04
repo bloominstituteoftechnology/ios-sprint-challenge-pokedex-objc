@@ -10,11 +10,12 @@
 
 @implementation Pokemon
 
-- (instancetype)initWithName:(NSString *)name identifier:(NSNumber *)identifier abilities:(NSMutableArray<NSString *> *)abilities
+- (instancetype)initWithName:(NSString *)name identifier:(NSNumber *)identifier spriteImg:(NSData *)spriteImg abilities:(NSMutableArray<NSString *> *)abilities
 {
     if (self = [super init]) {
         self.name = name;
         self.identifier = identifier;
+        self.spriteImg = spriteImg;
         self.abilities = abilities;
     }
     return self;
@@ -26,6 +27,7 @@
         self.name = name;
         self.url = url;
         self.identifier = nil;
+        self.spriteImg = nil;
         self.abilities = nil;
     }
     return self;
