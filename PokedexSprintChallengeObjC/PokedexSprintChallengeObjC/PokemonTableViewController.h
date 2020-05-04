@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PokemonTableViewController.h
 //  PokedexSprintChallengeObjC
 //
 //  Created by Dillon P on 5/3/20.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface PokemonTableViewController : UITableViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

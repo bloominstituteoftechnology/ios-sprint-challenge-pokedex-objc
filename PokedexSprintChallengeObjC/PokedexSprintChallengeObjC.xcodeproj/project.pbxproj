@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		92F81BDC245FB153009C8E3E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F81BDB245FB153009C8E3E /* AppDelegate.m */; };
 		92F81BDF245FB153009C8E3E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F81BDE245FB153009C8E3E /* SceneDelegate.m */; };
-		92F81BE2245FB153009C8E3E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F81BE1245FB153009C8E3E /* ViewController.m */; };
 		92F81BE5245FB153009C8E3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F81BE3245FB153009C8E3E /* Main.storyboard */; };
 		92F81BE7245FB154009C8E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F81BE6245FB154009C8E3E /* Assets.xcassets */; };
 		92F81BEA245FB154009C8E3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F81BE8245FB154009C8E3E /* LaunchScreen.storyboard */; };
 		92F81BED245FB154009C8E3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F81BEC245FB154009C8E3E /* main.m */; };
+		92F81BF5245FB1FB009C8E3E /* PokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F81BF4245FB1FB009C8E3E /* PokemonTableViewController.m */; };
+		92F81BFB245FB429009C8E3E /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F81BFA245FB429009C8E3E /* PokemonDetailViewController.swift */; };
+		92F81BFE245FB602009C8E3E /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F81BFD245FB602009C8E3E /* Pokemon.m */; };
+		92F81C01245FB7E7009C8E3E /* Ability.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F81C00245FB7E7009C8E3E /* Ability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +25,19 @@
 		92F81BDB245FB153009C8E3E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		92F81BDD245FB153009C8E3E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		92F81BDE245FB153009C8E3E /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		92F81BE0245FB153009C8E3E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		92F81BE1245FB153009C8E3E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		92F81BE4245FB153009C8E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92F81BE6245FB154009C8E3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92F81BE9245FB154009C8E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92F81BEB245FB154009C8E3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92F81BEC245FB154009C8E3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		92F81BF3245FB1FB009C8E3E /* PokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonTableViewController.h; sourceTree = "<group>"; };
+		92F81BF4245FB1FB009C8E3E /* PokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonTableViewController.m; sourceTree = "<group>"; };
+		92F81BF9245FB429009C8E3E /* PokedexSprintChallengeObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokedexSprintChallengeObjC-Bridging-Header.h"; sourceTree = "<group>"; };
+		92F81BFA245FB429009C8E3E /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
+		92F81BFC245FB602009C8E3E /* Pokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
+		92F81BFD245FB602009C8E3E /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
+		92F81BFF245FB7E7009C8E3E /* Ability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ability.h; sourceTree = "<group>"; };
+		92F81C00245FB7E7009C8E3E /* Ability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +74,19 @@
 				92F81BDB245FB153009C8E3E /* AppDelegate.m */,
 				92F81BDD245FB153009C8E3E /* SceneDelegate.h */,
 				92F81BDE245FB153009C8E3E /* SceneDelegate.m */,
-				92F81BE0245FB153009C8E3E /* ViewController.h */,
-				92F81BE1245FB153009C8E3E /* ViewController.m */,
 				92F81BE3245FB153009C8E3E /* Main.storyboard */,
+				92F81BFC245FB602009C8E3E /* Pokemon.h */,
+				92F81BFD245FB602009C8E3E /* Pokemon.m */,
+				92F81BFF245FB7E7009C8E3E /* Ability.h */,
+				92F81C00245FB7E7009C8E3E /* Ability.m */,
+				92F81BF3245FB1FB009C8E3E /* PokemonTableViewController.h */,
+				92F81BF4245FB1FB009C8E3E /* PokemonTableViewController.m */,
+				92F81BFA245FB429009C8E3E /* PokemonDetailViewController.swift */,
 				92F81BE6245FB154009C8E3E /* Assets.xcassets */,
 				92F81BE8245FB154009C8E3E /* LaunchScreen.storyboard */,
 				92F81BEB245FB154009C8E3E /* Info.plist */,
 				92F81BEC245FB154009C8E3E /* main.m */,
+				92F81BF9245FB429009C8E3E /* PokedexSprintChallengeObjC-Bridging-Header.h */,
 			);
 			path = PokedexSprintChallengeObjC;
 			sourceTree = "<group>";
@@ -107,6 +122,7 @@
 				TargetAttributes = {
 					92F81BD6245FB153009C8E3E = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -146,10 +162,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92F81BE2245FB153009C8E3E /* ViewController.m in Sources */,
+				92F81C01245FB7E7009C8E3E /* Ability.m in Sources */,
 				92F81BDC245FB153009C8E3E /* AppDelegate.m in Sources */,
 				92F81BED245FB154009C8E3E /* main.m in Sources */,
+				92F81BFB245FB429009C8E3E /* PokemonDetailViewController.swift in Sources */,
+				92F81BFE245FB602009C8E3E /* Pokemon.m in Sources */,
 				92F81BDF245FB153009C8E3E /* SceneDelegate.m in Sources */,
+				92F81BF5245FB1FB009C8E3E /* PokemonTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +308,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B22A9UYX67;
 				INFOPLIST_FILE = PokedexSprintChallengeObjC/Info.plist;
@@ -298,6 +318,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dillonp.lambda.PokedexSprintChallengeObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokedexSprintChallengeObjC/PokedexSprintChallengeObjC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -306,6 +329,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B22A9UYX67;
 				INFOPLIST_FILE = PokedexSprintChallengeObjC/Info.plist;
@@ -315,6 +339,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dillonp.lambda.PokedexSprintChallengeObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokedexSprintChallengeObjC/PokedexSprintChallengeObjC-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
