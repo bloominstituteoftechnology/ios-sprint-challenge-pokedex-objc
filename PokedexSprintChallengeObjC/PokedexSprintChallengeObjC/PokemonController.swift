@@ -91,8 +91,16 @@ class PokemonController: NSObject {
                     if let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                         if let sprites = jsonDictionary["sprites"] as? [String: Any] {
                             if let spriteURLString = sprites["front_default"] as? String {
-                                if pokemon.spriteImg == nil {
-                                    pokemon.setValue(spriteURLString, forKey: "spriteImg")
+                                self.getSpriteImage(with: spriteURLString) { (data, error) in
+                                    if let error = error {
+                                        print("The getSpriteImage data task failed with error: \(error)")
+                                        return
+                                    }
+                                    guard let data = data else {
+                                        print("Error getting sprite image data")
+                                        return
+                                    }
+                                    pokemon.setValue(data, forKey: "spriteImg")
                                 }
                             }
                         }
@@ -120,5 +128,28 @@ class PokemonController: NSObject {
                 }
             }.resume()
         }
+    }
+    
+    private func getSpriteImage(with urlString: String, completion: @escaping (Data?, Error?) -> Void) {
+        guard let url = URL(string: urlString) else {
+            print("Error converting sprite image string to url.")
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                print("Error with data task when fetching sprite image: \(error)")
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                print("No data returned for sprite image")
+                completion(nil, NSError())
+                return
+            }
+            
+            completion(data, nil)
+        }.resume()
     }
 }
