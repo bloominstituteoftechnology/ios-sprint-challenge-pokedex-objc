@@ -10,11 +10,11 @@
 #import "PokedexSprintChallengeObjC-Swift.h"
 #import "Pokemon.h"
 
-@interface PokemonTableViewController () <UISearchResultsUpdating>
+@interface PokemonTableViewController () <UISearchResultsUpdating, UISearchBarDelegate>
 
 @property (nonatomic) UISearchController *searchController;
 @property (nonatomic) NSArray<Pokemon *> *filteredPokemon;
-
+@property (nonatomic) NSInteger selectedScopeButtonIndex;
 
 @end
 
@@ -25,20 +25,25 @@
     
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater = self;
+    self.searchController.searchBar.delegate = self;
     self.searchController.obscuresBackgroundDuringPresentation = NO;
     self.searchController.searchBar.placeholder = @"Search Pokemon";
+    self.searchController.searchBar.showsScopeBar = YES;
+    self.searchController.searchBar.scopeButtonTitles = @[@"Pokemon Name", @"Pokemon Type"];
     self.navigationItem.searchController = self.searchController;
     self.definesPresentationContext = YES;
     
     self.controller = PokemonController.sharedController;
-    [self.controller fetchAllPokemonWithCompletion:^(NSMutableArray<Pokemon *> * _Nullable allPokemon, NSError * _Nullable error) {
+    [self.controller getAllPokemonByTypeWithCompletion:^(NSMutableArray * _Nullable allPokemon, NSError * _Nullable error) {
         if (error) {
             NSLog(@"%@", error);
         }
-        
+
         if (allPokemon) {
-            self.allPokemon = allPokemon;
-            self.filteredPokemon = allPokemon;
+            NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+            NSArray *sortedArray = [allPokemon sortedArrayUsingDescriptors:@[sortDescriptor]];
+            self.allPokemon = sortedArray;
+            self.filteredPokemon = sortedArray;
             [self.tableView reloadData];
         }
     }];
@@ -91,13 +96,25 @@
     }
 }
 
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
+{
+    self.selectedScopeButtonIndex = selectedScope;
+    [self updateSearchResultsForSearchController:self.searchController];
+}
+
 #pragma mark - Search bar helper methods
 
 
 - (void)filterPokemonForSearchText:(NSString *)searchText
 {
     NSString *filter = @"%K CONTAINS[cd] %@";
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:filter, @"name", searchText];
+    NSPredicate *predicate = [NSPredicate new];
+    if (self.selectedScopeButtonIndex == 0) {
+        predicate = [NSPredicate predicateWithFormat:filter, @"name", searchText];
+    } else if (self.selectedScopeButtonIndex == 1) {
+        predicate = [NSPredicate predicateWithFormat:filter, @"type", searchText];
+    }
+    
     self.filteredPokemon = [self.allPokemon filteredArrayUsingPredicate:predicate];
 }
 
