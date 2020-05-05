@@ -152,4 +152,108 @@ class PokemonController: NSObject {
             completion(data, nil)
         }.resume()
     }
+    
+    @objc func getAllPokemonByType(completion: @escaping (NSMutableArray?, Error?) -> Void) {
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let dispatchGroup = DispatchGroup()
+            let typesURL = self.baseURL.appendingPathComponent("type")
+            let pokemonWithTypes = NSMutableArray()
+            
+            var typeID = 1
+            for _ in 1...18 {
+                let url = typesURL.appendingPathComponent("\(typeID)")
+                
+                dispatchGroup.enter()
+                
+                self.fetchPokemonForType(typeURL: url) { (type, pokemonArray, error) in
+                    if let error = error {
+                        print("Error getting pokemon types: \(error)")
+                        DispatchQueue.main.async {
+                            completion(nil, error)
+                        }
+                        return
+                    }
+                    
+                    if let type = type, let pokemonArray = pokemonArray as? [Pokemon] {
+                        for pokemon in pokemonArray {
+                            pokemon.type = type
+                            pokemonWithTypes.add(pokemon)
+                        }
+                    }
+                    
+                    dispatchGroup.leave()
+                }
+                typeID += 1
+            }
+            
+            dispatchGroup.wait()
+
+            DispatchQueue.main.async {
+                completion(pokemonWithTypes, nil)
+            }
+        }
+    }
+    
+    
+    @objc func fetchPokemonForType(typeURL: URL, completion: @escaping (String?, NSMutableArray?, Error?) -> Void) {
+        var request = URLRequest(url: typeURL)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                print(error)
+                DispatchQueue.main.async {
+                    completion(nil, nil, error)
+                }
+                return
+            }
+            
+            guard let data = data else {
+                print("Error getting all pokemon data from Pokemon API")
+                DispatchQueue.main.async {
+                    completion(nil, nil, NSError())
+                }
+                return
+            }
+            
+            let pokemonArray = NSMutableArray()
+            var typeName = String()
+            
+            
+            do {
+                if let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    if let type = jsonDictionary["name"] as? String {
+                        typeName = type
+                        
+                        if let pokemonResults = jsonDictionary["pokemon"] as? [Any] {
+                            for item in pokemonResults {
+                                guard let pokemonDictionary = item as? [String: Any] else { return }
+                                if let slot = pokemonDictionary["slot"] as? Int {
+                                    if slot == 1 {
+                                        if let pokemonDetailDict = pokemonDictionary["pokemon"] as? [String: String] {
+                                            let pokemon = Pokemon(dictionary: pokemonDetailDict)
+                                            pokemonArray.add(pokemon)
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch {
+                print("Error parsing pokemon data: \(error)")
+                DispatchQueue.main.async {
+                    completion(nil, nil, error)
+                }
+            }
+            
+            DispatchQueue.main.async {
+                completion(typeName, pokemonArray, nil)
+            }
+            
+        }.resume()
+    }
+    
 }
