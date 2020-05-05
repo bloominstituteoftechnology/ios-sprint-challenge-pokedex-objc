@@ -18,6 +18,7 @@
         self.identifier = nil;
         self.spriteImg = nil;
         self.abilities = nil;
+        self.type = nil;
     }
     return self;
 }

@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable) NSNumber *identifier;
 @property (nonatomic, copy, nullable) NSData *spriteImg;
 @property (nonatomic, retain, nullable) NSMutableArray<NSString *> *abilities;
+@property (nonatomic, retain, nullable) NSString *type;
 
 - (instancetype)initWithName:(NSString *)name url:(NSString *)url;
 
