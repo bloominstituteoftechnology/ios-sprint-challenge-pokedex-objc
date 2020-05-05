@@ -15,6 +15,7 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var abilitiesStackView: UIStackView!
     @IBOutlet weak var abilitiesLabel: UILabel!
+    @IBOutlet weak var primaryTypeLabel: UILabel!
     
     @objc dynamic var pokemon: Pokemon?
     @objc dynamic var controller: PokemonController?
@@ -31,8 +32,9 @@ class PokemonDetailViewController: UIViewController {
     }
     
     private func updateViews() {
-        guard let pokemon = pokemon else { return }
+        guard let pokemon = pokemon, let type = pokemon.type else { return }
         nameLabel.text = pokemon.name.capitalized
+        primaryTypeLabel.text = "Type: \(type.capitalized)"
         if let id = pokemon.identifier {
             idLabel.text = "ID: \(id)"
         }

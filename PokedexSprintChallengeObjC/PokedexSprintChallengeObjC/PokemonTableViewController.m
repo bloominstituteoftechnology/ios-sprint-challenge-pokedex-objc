@@ -27,10 +27,11 @@
     self.searchController.searchResultsUpdater = self;
     self.searchController.searchBar.delegate = self;
     self.searchController.obscuresBackgroundDuringPresentation = NO;
-    self.searchController.searchBar.placeholder = @"Search Pokemon";
+    self.searchController.searchBar.placeholder = @"Search Pokemon By:";
     self.searchController.searchBar.showsScopeBar = YES;
-    self.searchController.searchBar.scopeButtonTitles = @[@"Pokemon Name", @"Pokemon Type"];
+    self.searchController.searchBar.scopeButtonTitles = @[@"Name", @"Type"];
     self.navigationItem.searchController = self.searchController;
+    self.navigationItem.hidesSearchBarWhenScrolling = YES;
     self.definesPresentationContext = YES;
     
     self.controller = PokemonController.sharedController;
@@ -99,7 +100,6 @@
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
 {
     self.selectedScopeButtonIndex = selectedScope;
-    [self updateSearchResultsForSearchController:self.searchController];
 }
 
 #pragma mark - Search bar helper methods
