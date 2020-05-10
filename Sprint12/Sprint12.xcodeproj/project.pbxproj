@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A577FE2A2232CCAA000FC4A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A577FE292232CCAA000FC4A1 /* AppDelegate.m */; };
+		A577FE302232CCAA000FC4A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A577FE2E2232CCAA000FC4A1 /* Main.storyboard */; };
+		A577FE322232CCAC000FC4A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A577FE312232CCAC000FC4A1 /* Assets.xcassets */; };
+		A577FE352232CCAC000FC4A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A577FE332232CCAC000FC4A1 /* LaunchScreen.storyboard */; };
+		A577FE382232CCAC000FC4A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A577FE372232CCAC000FC4A1 /* main.m */; };
+		A577FE402232CDC5000FC4A1 /* OSIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = A577FE3F2232CDC5000FC4A1 /* OSIPokemon.m */; };
+		A577FE442232CE9C000FC4A1 /* OSIPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = A577FE432232CE9C000FC4A1 /* OSIPokemonController.m */; };
+		A577FE482232CEE9000FC4A1 /* OSIPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A577FE472232CEE9000FC4A1 /* OSIPokemonTableViewController.m */; };
+		A577FE4C2232CF44000FC4A1 /* OSIPokemonDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A577FE4B2232CF44000FC4A1 /* OSIPokemonDetailsViewController.m */; };
+		A577FE4F2232CFB9000FC4A1 /* OSIAbility.m in Sources */ = {isa = PBXBuildFile; fileRef = A577FE4E2232CFB9000FC4A1 /* OSIAbility.m */; };
+		A577FE522232D074000FC4A1 /* OSIPokemonName.m in Sources */ = {isa = PBXBuildFile; fileRef = A577FE512232D074000FC4A1 /* OSIPokemonName.m */; };
+		A577FE552232D180000FC4A1 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577FE542232D180000FC4A1 /* NetworkController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A577FE252232CCAA000FC4A1 /* Sprint12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprint12.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A577FE282232CCAA000FC4A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A577FE292232CCAA000FC4A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A577FE2F2232CCAA000FC4A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A577FE312232CCAC000FC4A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A577FE342232CCAC000FC4A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A577FE362232CCAC000FC4A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A577FE372232CCAC000FC4A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A577FE3E2232CDC5000FC4A1 /* OSIPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSIPokemon.h; sourceTree = "<group>"; };
+		A577FE3F2232CDC5000FC4A1 /* OSIPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSIPokemon.m; sourceTree = "<group>"; };
+		A577FE422232CE9C000FC4A1 /* OSIPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSIPokemonController.h; sourceTree = "<group>"; };
+		A577FE432232CE9C000FC4A1 /* OSIPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSIPokemonController.m; sourceTree = "<group>"; };
+		A577FE462232CEE9000FC4A1 /* OSIPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSIPokemonTableViewController.h; sourceTree = "<group>"; };
+		A577FE472232CEE9000FC4A1 /* OSIPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSIPokemonTableViewController.m; sourceTree = "<group>"; };
+		A577FE4A2232CF44000FC4A1 /* OSIPokemonDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSIPokemonDetailsViewController.h; sourceTree = "<group>"; };
+		A577FE4B2232CF44000FC4A1 /* OSIPokemonDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSIPokemonDetailsViewController.m; sourceTree = "<group>"; };
+		A577FE4D2232CFB9000FC4A1 /* OSIAbility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSIAbility.h; sourceTree = "<group>"; };
+		A577FE4E2232CFB9000FC4A1 /* OSIAbility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSIAbility.m; sourceTree = "<group>"; };
+		A577FE502232D074000FC4A1 /* OSIPokemonName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSIPokemonName.h; sourceTree = "<group>"; };
+		A577FE512232D074000FC4A1 /* OSIPokemonName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSIPokemonName.m; sourceTree = "<group>"; };
+		A577FE532232D17F000FC4A1 /* Sprint12-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sprint12-Bridging-Header.h"; sourceTree = "<group>"; };
+		A577FE542232D180000FC4A1 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A577FE222232CCAA000FC4A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A577FE1C2232CCA9000FC4A1 = {
+			isa = PBXGroup;
+			children = (
+				A577FE272232CCAA000FC4A1 /* Sprint12 */,
+				A577FE262232CCAA000FC4A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A577FE262232CCAA000FC4A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A577FE252232CCAA000FC4A1 /* Sprint12.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A577FE272232CCAA000FC4A1 /* Sprint12 */ = {
+			isa = PBXGroup;
+			children = (
+				A577FE282232CCAA000FC4A1 /* AppDelegate.h */,
+				A577FE292232CCAA000FC4A1 /* AppDelegate.m */,
+				A577FE412232CDC9000FC4A1 /* Model */,
+				A577FE452232CEA2000FC4A1 /* Model Controller */,
+				A577FE492232CEEE000FC4A1 /* View Controller */,
+				A577FE2E2232CCAA000FC4A1 /* Main.storyboard */,
+				A577FE312232CCAC000FC4A1 /* Assets.xcassets */,
+				A577FE332232CCAC000FC4A1 /* LaunchScreen.storyboard */,
+				A577FE362232CCAC000FC4A1 /* Info.plist */,
+				A577FE372232CCAC000FC4A1 /* main.m */,
+				A577FE532232D17F000FC4A1 /* Sprint12-Bridging-Header.h */,
+			);
+			path = Sprint12;
+			sourceTree = "<group>";
+		};
+		A577FE412232CDC9000FC4A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A577FE4D2232CFB9000FC4A1 /* OSIAbility.h */,
+				A577FE4E2232CFB9000FC4A1 /* OSIAbility.m */,
+				A577FE3E2232CDC5000FC4A1 /* OSIPokemon.h */,
+				A577FE3F2232CDC5000FC4A1 /* OSIPokemon.m */,
+				A577FE502232D074000FC4A1 /* OSIPokemonName.h */,
+				A577FE512232D074000FC4A1 /* OSIPokemonName.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A577FE452232CEA2000FC4A1 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A577FE542232D180000FC4A1 /* NetworkController.swift */,
+				A577FE422232CE9C000FC4A1 /* OSIPokemonController.h */,
+				A577FE432232CE9C000FC4A1 /* OSIPokemonController.m */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		A577FE492232CEEE000FC4A1 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A577FE462232CEE9000FC4A1 /* OSIPokemonTableViewController.h */,
+				A577FE472232CEE9000FC4A1 /* OSIPokemonTableViewController.m */,
+				A577FE4A2232CF44000FC4A1 /* OSIPokemonDetailsViewController.h */,
+				A577FE4B2232CF44000FC4A1 /* OSIPokemonDetailsViewController.m */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A577FE242232CCAA000FC4A1 /* Sprint12 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A577FE3B2232CCAC000FC4A1 /* Build configuration list for PBXNativeTarget "Sprint12" */;
+			buildPhases = (
+				A577FE212232CCAA000FC4A1 /* Sources */,
+				A577FE222232CCAA000FC4A1 /* Frameworks */,
+				A577FE232232CCAA000FC4A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sprint12;
+			productName = Sprint12;
+			productReference = A577FE252232CCAA000FC4A1 /* Sprint12.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A577FE1D2232CCAA000FC4A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Sergey Osipyan";
+				TargetAttributes = {
+					A577FE242232CCAA000FC4A1 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
+				};
+			};
+			buildConfigurationList = A577FE202232CCAA000FC4A1 /* Build configuration list for PBXProject "Sprint12" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A577FE1C2232CCA9000FC4A1;
+			productRefGroup = A577FE262232CCAA000FC4A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A577FE242232CCAA000FC4A1 /* Sprint12 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A577FE232232CCAA000FC4A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A577FE352232CCAC000FC4A1 /* LaunchScreen.storyboard in Resources */,
+				A577FE322232CCAC000FC4A1 /* Assets.xcassets in Resources */,
+				A577FE302232CCAA000FC4A1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A577FE212232CCAA000FC4A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A577FE522232D074000FC4A1 /* OSIPokemonName.m in Sources */,
+				A577FE402232CDC5000FC4A1 /* OSIPokemon.m in Sources */,
+				A577FE442232CE9C000FC4A1 /* OSIPokemonController.m in Sources */,
+				A577FE382232CCAC000FC4A1 /* main.m in Sources */,
+				A577FE4C2232CF44000FC4A1 /* OSIPokemonDetailsViewController.m in Sources */,
+				A577FE2A2232CCAA000FC4A1 /* AppDelegate.m in Sources */,
+				A577FE482232CEE9000FC4A1 /* OSIPokemonTableViewController.m in Sources */,
+				A577FE4F2232CFB9000FC4A1 /* OSIAbility.m in Sources */,
+				A577FE552232D180000FC4A1 /* NetworkController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A577FE2E2232CCAA000FC4A1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A577FE2F2232CCAA000FC4A1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A577FE332232CCAC000FC4A1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A577FE342232CCAC000FC4A1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A577FE392232CCAC000FC4A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A577FE3A2232CCAC000FC4A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A577FE3C2232CCAC000FC4A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KF4QEGAU36;
+				INFOPLIST_FILE = Sprint12/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sergey.Sprint12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sprint12/Sprint12-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A577FE3D2232CCAC000FC4A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KF4QEGAU36;
+				INFOPLIST_FILE = Sprint12/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sergey.Sprint12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sprint12/Sprint12-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A577FE202232CCAA000FC4A1 /* Build configuration list for PBXProject "Sprint12" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A577FE392232CCAC000FC4A1 /* Debug */,
+				A577FE3A2232CCAC000FC4A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A577FE3B2232CCAC000FC4A1 /* Build configuration list for PBXNativeTarget "Sprint12" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A577FE3C2232CCAC000FC4A1 /* Debug */,
+				A577FE3D2232CCAC000FC4A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A577FE1D2232CCAA000FC4A1 /* Project object */;
+}
