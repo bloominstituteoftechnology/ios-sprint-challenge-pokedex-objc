@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PokemonAPI;
 
 NS_ASSUME_NONNULL_BEGIN
 

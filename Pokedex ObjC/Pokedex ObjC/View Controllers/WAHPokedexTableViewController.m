@@ -7,6 +7,8 @@
 //
 
 #import "WAHPokedexTableViewController.h"
+#import "PokemonAPI-Swift.h"
+
 
 @interface WAHPokedexTableViewController ()
 
@@ -26,7 +28,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:"PokemonCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
     // Configure the cell...
     

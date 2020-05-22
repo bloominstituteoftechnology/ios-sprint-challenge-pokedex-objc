@@ -10,7 +10,7 @@ import Foundation
 
 class PokemonAPI: NSObject {
 
-    @objc(sharedController) static let shared = PokemonAPI()
+//    @objc(sharedController) static let shared = PokemonAPI()
 
     @objc func fetchAllPokemon(completion: @escaping ([WAHPokemon]?, Error?) -> Void) {
         
