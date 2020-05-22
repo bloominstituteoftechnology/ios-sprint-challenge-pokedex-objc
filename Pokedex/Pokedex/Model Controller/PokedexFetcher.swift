@@ -115,7 +115,9 @@ class PokemonAPI: NSObject {
             }
 
             // Get id
-            pokemon.identifier = dict["id"] as? String
+            if let id = dict["id"] as? Int {
+                pokemon.identifier = "\(id)"
+            }
 
             // Get abilities
             var abilities: [String] = []
