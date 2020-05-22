@@ -35,7 +35,7 @@ class LYDPokeDetailViewController: UIViewController {
     @objc dynamic var netWorking: Networking?
     func setUpViews(){
         guard let pokemon = pokemon, let networking = netWorking else {return}
-        
+        nameLabel.text = pokemon.name
         networking.fetchDetails(for: pokemon)
         idObserve = observe(\.pokemon?.identifier) { [weak self] object, change in
             guard let self = self, let identifier = pokemon.identifier else {return}

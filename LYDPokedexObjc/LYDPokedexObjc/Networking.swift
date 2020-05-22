@@ -11,26 +11,28 @@ import Foundation
 @objc(LYDNetworking)
 class Networking: NSObject {
     
+//    @objc(shared) static let shared =  Networking()
+    
     @objc func fetchPoke(completion: @escaping ([LYDPokemon]?, Error?) -> Void) {
-        guard let baseURL = URL(string: "https://pokeapi.co/api/v2")?.appendingPathComponent("pokemon") else { return }
+        guard let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/") else { return }
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         components?.queryItems = [
-            URLQueryItem(name: "limit", value: "10000")
+            URLQueryItem(name: "limit", value: "100")
         ]
         guard let url = components?.url else { return }
+        print("\(url)")
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 DispatchQueue.main.async {
                     completion(nil, error)
+                    return
                 }
-                return
             }
 
             if let response = response as? HTTPURLResponse, response.statusCode != 200 {
                 DispatchQueue.main.async {
                     completion(nil, NSError(domain: "Pokemon-Objc-SprintChallenge", code: response.statusCode, userInfo: nil))
                 }
-                return
             }
 
             guard let data = data else {

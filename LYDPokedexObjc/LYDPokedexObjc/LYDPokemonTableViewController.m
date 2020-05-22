@@ -11,7 +11,8 @@
 @interface LYDPokemonTableViewController ()
 
 @property (nonatomic) LYDPokemonController *pokeController;
-@property (nonnull) LYDNetworking *fetcher;
+@property (nonatomic) LYDNetworking *networking;
+@property (nonatomic) NSMutableArray *pokeMutArray;
 
 @end
 
@@ -20,12 +21,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.pokeController = [[LYDPokemonController alloc]init];
-    [self.fetcher fetchPokeWithCompletion:^(NSArray<LYDPokemon *> *_Nullable pokemon, NSError *_Nullable error){
-        
+    self.networking = [[LYDNetworking alloc]init];
+    self.pokeMutArray = [[NSMutableArray alloc] init];
+    [self.networking fetchPokeWithCompletion:^(NSArray<LYDPokemon *> *_Nullable pokemon, NSError *_Nullable error){
         if (error) {return;}
         [self.pokeController addPoke:pokemon];
+        self.pokeMutArray = [NSMutableArray arrayWithArray:pokemon];
+        NSLog(@"%lu", (unsigned long)self.pokeMutArray.count);
         [self.tableView reloadData];
         
     }];
@@ -34,13 +37,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.pokeController.pokeArray.count;
+    return self.pokeMutArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokeCell" forIndexPath:indexPath];
-    LYDPokemon *pokemon = self.pokeController.pokeArray[indexPath.row];
+    LYDPokemon *pokemon = self.pokeMutArray[indexPath.row];
     cell.textLabel.text = pokemon.name;
     return cell;
 }
@@ -50,9 +53,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     LYDPokeDetailViewController *detailVC = segue.destinationViewController;
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    LYDPokemon *pokemon = self.pokeController.pokeArray[indexPath.row];
-    detailVC.netWorking = self.fetcher;
+    LYDPokemon *pokemon = self.pokeMutArray[indexPath.row];
     detailVC.pokemon = pokemon;
+    detailVC.netWorking = self.networking;
 }
 
 
