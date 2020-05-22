@@ -65,21 +65,20 @@ class NetworkController: NSObject {
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
                 print("Error fetcihng from network: \(error)")
-                //completion(nil, error)
+                completion(nil, error)
                 return
             }
 
             guard let data = data else {
                 print("No data")
-                //completion(nil, nil)
+                completion(nil, nil)
                 return
             }
 
             do {
                 let dictionary: Dictionary = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String, Any>
                 let pokemon: Pokemon = Pokemon.init(from: dictionary)
-                print("Stop")
-                //completion(entryArray, nil)
+                completion(pokemon, nil)
             } catch {
                 print("\(error)")
             }

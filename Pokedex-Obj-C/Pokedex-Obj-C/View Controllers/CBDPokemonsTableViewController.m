@@ -47,7 +47,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     CBDPokemonShort *pokemonShort = self.networkController.pokemonList[indexPath.row];
-    cell.textLabel.text = pokemonShort.name;
+    cell.textLabel.text = pokemonShort.name.capitalizedString;
     
     return cell;
 }

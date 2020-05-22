@@ -23,7 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self updateViews];
+    NSString *name = [NSString stringWithFormat:@"Name: %@", self.pokemonShort.name.capitalizedString];
+    [self.nameLabel setText:name];
     [self.networkController fillInDetailsFor:self.pokemonShort completion:^(CBDPokemon *_Nullable pokemon, NSError *_Nullable error) {
         self.pokemon = pokemon;
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -33,9 +34,15 @@
 }
 
 - (void)updateViews {
-    NSString *name = [NSString stringWithFormat:@"Name: %@", self.pokemonShort.name];
+    NSString *name = [NSString stringWithFormat:@"Name: %@", self.pokemonShort.name.capitalizedString];
     [self.nameLabel setText:name];
-
+    NSString *identifier = [NSString stringWithFormat:@"ID: %@", self.pokemon.identifier];
+    [self.idLabel setText:identifier];
+    NSString *abilities = [[NSString alloc] initWithFormat:@""];
+    for (NSString *ability in self.pokemon.abilities) {
+        abilities = [NSString stringWithFormat:@"%@\n%@", abilities, ability.capitalizedString];
+    }
+    [self.abilitiesTextView setText:abilities];
 }
 
 @end

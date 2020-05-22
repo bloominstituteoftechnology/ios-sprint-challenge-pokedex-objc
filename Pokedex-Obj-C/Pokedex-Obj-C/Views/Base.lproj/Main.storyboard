@@ -63,7 +63,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="sLJ-3j-bV8">
-                                <rect key="frame" x="20" y="502" width="374" height="340"/>
+                                <rect key="frame" x="20" y="502" width="374" height="261.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8z-dF-nhT">
                                         <rect key="frame" x="0.0" y="0.0" width="54.5" height="20.5"/>
@@ -84,19 +84,24 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ability 1" translatesAutoresizingMaskIntoConstraints="NO" id="9Ic-3m-C0j">
-                                        <rect key="frame" x="0.0" y="61.5" width="240" height="278.5"/>
+                                        <rect key="frame" x="0.0" y="61.5" width="374" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="A9n-yU-8Ah"/>
+                                        </constraints>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9Ic-3m-C0j" secondAttribute="trailing" id="kjk-pm-YA1"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="sLJ-3j-bV8" firstAttribute="top" secondItem="Lvj-la-K8F" secondAttribute="bottom" constant="20" id="6Qn-xY-wWR"/>
-                            <constraint firstItem="8Gd-8w-g97" firstAttribute="bottom" secondItem="sLJ-3j-bV8" secondAttribute="bottom" constant="20" id="6cs-Az-vZS"/>
                             <constraint firstItem="Lvj-la-K8F" firstAttribute="top" secondItem="8Gd-8w-g97" secondAttribute="top" constant="20" id="FQZ-cP-hCx"/>
                             <constraint firstItem="8Gd-8w-g97" firstAttribute="trailing" secondItem="Lvj-la-K8F" secondAttribute="trailing" constant="20" id="QUY-VF-ZJ8"/>
                             <constraint firstItem="sLJ-3j-bV8" firstAttribute="leading" secondItem="8Gd-8w-g97" secondAttribute="leading" constant="20" id="X1t-Hy-rre"/>
