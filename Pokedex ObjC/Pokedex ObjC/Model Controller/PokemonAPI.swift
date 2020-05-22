@@ -92,13 +92,22 @@ class PokemonAPI: NSObject {
                 }
                 
                 if let sprites = json["sprites"] as? Dictionary<String,Any> {
-                    print("here")
                     if let front_default = sprites["front_default"] as? String {
                         pokemon.image = front_default
-                        print("image \(pokemon.image)")
                     }
-
                 }
+                
+                if let abilitiesArray = json["abilities"] as? [Dictionary<String,Any>] {
+                    for item in abilitiesArray {
+                        if let ability = item["ability"] as? Dictionary<String,Any> {
+                            if let name = ability["name"] as? String {
+                                print("Here. \(name)")
+                                pokemon.abilities.add(name)
+                            }
+                        }
+                    }
+                }
+                
                 
             } catch {
                 NSLog("Failed to do something with json \(error)")
