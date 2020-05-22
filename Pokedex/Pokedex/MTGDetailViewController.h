@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MTGPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MTGDetailViewController : UIViewController
+
+@property MTGPokemon *pokemon;
 
 @end
 
