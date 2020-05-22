@@ -71,4 +71,11 @@ void *KVOContext = &KVOContext;
 }
 
 
+- (void)dealloc {
+    [self.pokemon removeObserver:self forKeyPath:@"identifier" context:KVOContext];
+    [self.pokemon removeObserver:self forKeyPath:@"abilities" context:KVOContext];
+    [self.pokemon removeObserver:self forKeyPath:@"image" context:KVOContext];
+    // self.pokemon = nil;
+}
+
 @end
