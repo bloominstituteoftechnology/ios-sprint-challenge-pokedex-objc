@@ -17,23 +17,33 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet var idLabel: UILabel!
     @IBOutlet var abilitiesLabel: UILabel!
 
+    // MARK: - Properties
+
+    @objc var pokemon: Pokemon?
+
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews()
     }
-    
 
-    /*
-    // MARK: - Navigation
+    func updateViews() {
+        guard let pokemon = pokemon else { return }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        APIController.shared.fillInDetails(for: pokemon) { pokemon in
+            DispatchQueue.main.async {
+                if let pokemon = pokemon {
+                    guard
+                        let abilities = pokemon.abilities,
+                        let imageData = try? Data(contentsOf: pokemon.sprite!) else { return }
+                    let abilitiesString = abilities.componentsJoined(by: ", ").capitalized
+                    self.nameLabel.text = pokemon.name.capitalized
+                    self.imageView.image = UIImage(data: imageData)
+                    self.idLabel.text = "ID: \(pokemon.identifier.description)"
+                    self.abilitiesLabel.text = "Abilities: \(abilitiesString)"
+                }
+            }
+        }
     }
-    */
-
 }
