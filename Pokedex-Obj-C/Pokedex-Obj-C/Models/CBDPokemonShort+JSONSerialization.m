@@ -14,6 +14,10 @@
     NSString *name = dictionary[@"name"];
     NSString *url = dictionary[@"url"];
 
+    if (name == nil || url == nil) {
+        return nil;
+    }
+
     return [[CBDPokemonShort alloc] initWithName:name url:url];
 }
 

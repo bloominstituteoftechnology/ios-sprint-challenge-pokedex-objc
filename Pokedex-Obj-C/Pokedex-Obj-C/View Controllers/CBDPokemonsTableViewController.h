@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class NetworkController;
 
 NS_ASSUME_NONNULL_BEGIN
 

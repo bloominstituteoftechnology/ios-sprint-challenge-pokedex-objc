@@ -7,8 +7,11 @@
 //
 
 #import "CBDPokemonsTableViewController.h"
+#import "Pokedex_Obj_C-Swift.h"
 
 @interface CBDPokemonsTableViewController ()
+
+@property NetworkController *networkController;
 
 @end
 
@@ -16,6 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _networkController = NetworkController.sharedController;
+    [self.networkController fetchAllPokemonWithCompletion:^(NSArray<CBDPokemonShort *> * _Nullable pokemons, NSError * _Nullable error) {
+        NSLog(@"returned from fetchAllPokemon %@", pokemons);
+    }];
 }
 
 #pragma mark - Table view data source
