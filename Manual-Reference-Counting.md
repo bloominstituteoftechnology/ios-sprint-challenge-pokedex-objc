@@ -77,15 +77,15 @@ for (NSString *word in words) {
 	if (count == nil) {
 		wordFrequency[word] = [NSNumber numberWithInteger:count.integerValue + 1];
 	} else {
-		wordFrequency[word] = [[NSNumber alloc] initWithInteger:1];
+		wordFrequency[word] = [[[NSNumber alloc] initWithInteger:1] autorelease];
 	}
 }
 
 printf("Word frequency: %s", wordFrequency.description.UTF8String);
 
-[wordFrequency release];
-[quote release];
+
 [cleanQuote release]
+[punctuationSet release];
 ```
 
 
