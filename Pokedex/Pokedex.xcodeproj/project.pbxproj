@@ -86,15 +86,14 @@
 			children = (
 				92736F822478232C00DDE1E7 /* AppDelegate.h */,
 				92736F832478232C00DDE1E7 /* AppDelegate.m */,
-				92736F852478232C00DDE1E7 /* SceneDelegate.h */,
-				92736F862478232C00DDE1E7 /* SceneDelegate.m */,
-				92736F882478232C00DDE1E7 /* ViewController.h */,
-				92736F892478232C00DDE1E7 /* ViewController.m */,
-				92736F8B2478232C00DDE1E7 /* Main.storyboard */,
 				92736F8E2478232F00DDE1E7 /* Assets.xcassets */,
-				92736F902478232F00DDE1E7 /* LaunchScreen.storyboard */,
 				92736F932478232F00DDE1E7 /* Info.plist */,
 				92736F942478232F00DDE1E7 /* main.m */,
+				92736F852478232C00DDE1E7 /* SceneDelegate.h */,
+				92736F862478232C00DDE1E7 /* SceneDelegate.m */,
+				92736FA92478243600DDE1E7 /* Storyboards */,
+				92736F882478232C00DDE1E7 /* ViewController.h */,
+				92736F892478232C00DDE1E7 /* ViewController.m */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -106,6 +105,15 @@
 				92736FA02478232F00DDE1E7 /* Info.plist */,
 			);
 			path = PokedexTests;
+			sourceTree = "<group>";
+		};
+		92736FA92478243600DDE1E7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				92736F902478232F00DDE1E7 /* LaunchScreen.storyboard */,
+				92736F8B2478232C00DDE1E7 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
