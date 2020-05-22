@@ -91,6 +91,8 @@ printf("Word frequency: %s", wordFrequency.description.UTF8String);
 
 2.
 
+i, because it's init will autorelease it
+
 vi, because it is marked for autorelease
 
 3.
