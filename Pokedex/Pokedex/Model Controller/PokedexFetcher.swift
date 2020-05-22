@@ -129,7 +129,7 @@ class PokemonAPI: NSObject {
             }
             pokemon.abilities = abilities
 
-            // get sprite url
+            // Get sprite URL and load image
             let sprites = dict["sprites"] as? [String: Any]
             let imageURLString = sprites?["front_default"] as? String
             if let urlString = imageURLString,
@@ -139,6 +139,8 @@ class PokemonAPI: NSObject {
             } else {
                 NSLog("Invalid image url: \(imageURLString ?? "Missing URL")")
             }
+
+            print("Loaded Pokemon detail")
         }.resume()
     }
 
@@ -165,6 +167,7 @@ class PokemonAPI: NSObject {
                 NSLog("Error converting fetched data to sprite image")
             }
             pokemon.image = image
+            print("Loaded Pokemon image")
         }.resume()
     }
 
