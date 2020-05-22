@@ -15,6 +15,7 @@
 		13A14186247821F50019373F /* WAHPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A14185247821F50019373F /* WAHPokedexTableViewController.m */; };
 		13A14189247822060019373F /* WAHPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A14188247822060019373F /* WAHPokemon.m */; };
 		13A1418E2478224C0019373F /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A1418D2478224C0019373F /* PokemonAPI.swift */; };
+		13F0E34B247830AA0022625A /* WAHPokemonDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F0E34A247830AA0022625A /* WAHPokemonDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		13A14187247822060019373F /* WAHPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAHPokemon.h; sourceTree = "<group>"; };
 		13A14188247822060019373F /* WAHPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAHPokemon.m; sourceTree = "<group>"; };
 		13A1418D2478224C0019373F /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		13F0E349247830AA0022625A /* WAHPokemonDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAHPokemonDetailsViewController.h; sourceTree = "<group>"; };
+		13F0E34A247830AA0022625A /* WAHPokemonDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAHPokemonDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 		13A1418C247822220019373F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				13F0E349247830AA0022625A /* WAHPokemonDetailsViewController.h */,
+				13F0E34A247830AA0022625A /* WAHPokemonDetailsViewController.m */,
 				13A14184247821F50019373F /* WAHPokedexTableViewController.h */,
 				13A14185247821F50019373F /* WAHPokedexTableViewController.m */,
 			);
@@ -193,6 +198,7 @@
 			files = (
 				13A14189247822060019373F /* WAHPokemon.m in Sources */,
 				13A1416B247821750019373F /* AppDelegate.swift in Sources */,
+				13F0E34B247830AA0022625A /* WAHPokemonDetailsViewController.m in Sources */,
 				13A14186247821F50019373F /* WAHPokedexTableViewController.m in Sources */,
 				13A1418E2478224C0019373F /* PokemonAPI.swift in Sources */,
 				13A1416D247821750019373F /* SceneDelegate.swift in Sources */,
