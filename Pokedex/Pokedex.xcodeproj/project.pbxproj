@@ -160,6 +160,7 @@
 		92736F772478232C00DDE1E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MTG;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Mark Gerrior";
 				TargetAttributes = {
