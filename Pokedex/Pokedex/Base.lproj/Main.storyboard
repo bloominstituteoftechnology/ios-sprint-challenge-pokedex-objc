@@ -118,6 +118,7 @@
                     <connections>
                         <outlet property="abilitiesLabel" destination="U37-0a-g2b" id="toY-XB-Qps"/>
                         <outlet property="idLabel" destination="ee9-Pu-LCj" id="Odq-Gg-Bd6"/>
+                        <outlet property="imageView" destination="dYo-oP-aO8" id="wAO-9x-lVr"/>
                         <outlet property="nameLabel" destination="Zw6-nm-CKX" id="g6Z-tH-HZQ"/>
                     </connections>
                 </viewController>

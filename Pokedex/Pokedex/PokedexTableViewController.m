@@ -80,7 +80,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
     Pokemon *pokemon = self.pokemon[indexPath.row];
-    [self.apiClient fetchDetailsFor:pokemon];
     cell.textLabel.text = pokemon.name;
     
     return cell;
@@ -126,7 +125,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowPokemonSegue"]) {
         DetailViewController *detailVC = segue.destinationViewController;
-        detailVC.pokemon = self.pokemon[self.tableView.indexPathForSelectedRow.row];
+        Pokemon *pokemon = self.pokemon[self.tableView.indexPathForSelectedRow.row];
+        [self.apiClient fetchDetailsFor:pokemon];
+        detailVC.pokemon = pokemon;
+        detailVC.apiClient = self.apiClient;
     }
 }
 

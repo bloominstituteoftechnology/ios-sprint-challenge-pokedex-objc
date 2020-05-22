@@ -65,8 +65,8 @@ typealias ImageResultCompletion = (Result<UIImage, NetworkError>) -> Void
             pokemon.identifier = identifier
         }
         
-        if let spritesDict = dict["sprites"] as? Dictionary<String, String>,
-           let urlString = spritesDict["front_default"] {
+        if let spritesDict = dict["sprites"] as? Dictionary<String, String?>,
+           let urlString = spritesDict["front_default"] as? String {
             pokemon.spriteURL = URL(string: urlString)
         }
         
