@@ -9,15 +9,20 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    private static var kvoContext = 0
+    
+    // MARK: - Public Properties
     
     @objc var pokemon: Pokemon?
     @objc var apiClient: PokeApiClient?
+    
+    // MARK: - IBOutlets
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var idLabel: UILabel!
     @IBOutlet private var abilitiesLabel: UILabel!
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +30,8 @@ class DetailViewController: UIViewController {
     }
 
     // MARK: - Private Methods
+    
+    private static var kvoContext = 0
     
     private func addKVO() {
         guard let pokemon = pokemon else { return }
@@ -35,10 +42,11 @@ class DetailViewController: UIViewController {
         guard let pokemon = pokemon,
               isViewLoaded else { return }
         
-        nameLabel.text = "Name: \(pokemon.name)"
+        title = pokemon.name.capitalized
+        nameLabel.text = "Name: \(pokemon.name.capitalized)"
         idLabel.text = "ID: \(pokemon.identifier)"
         if let abilities = pokemon.abilities {
-            abilitiesLabel.text = "Abilities " + abilities.joined(separator: ", ")
+            abilitiesLabel.text = "Abilities: " + abilities.joined(separator: ", ")
         }
         
         updateImage()

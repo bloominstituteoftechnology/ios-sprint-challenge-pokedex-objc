@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Pokedex-->
         <scene sceneID="tnD-tD-bZH">
             <objects>
                 <tableViewController id="zjx-X4-qdi" customClass="PokedexTableViewController" sceneMemberID="viewController">
@@ -42,7 +42,7 @@
                             <outlet property="delegate" destination="zjx-X4-qdi" id="c9f-Jk-q7e"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="YGa-Cs-eoZ"/>
+                    <navigationItem key="navigationItem" title="Pokedex" id="YGa-Cs-eoZ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ths-kz-auu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -60,7 +60,13 @@ typealias ImageResultCompletion = (Result<UIImage, NetworkError>) -> Void
         }.resume()
     }
     
-    func fillInDetails(for pokemon: Pokemon, with dict:Dictionary<String, Any>) {
+    func fetchImage(url: URL, completion: @escaping ImageResultCompletion) {
+        URLSession.shared.dataResultTask(with: URLRequest(url: url)) { (result) in
+            completion(ImageResultDecoder().decode(result))
+        }.resume()
+    }
+    
+    private func fillInDetails(for pokemon: Pokemon, with dict:Dictionary<String, Any>) {
         if let identifier = dict["id"] as? Int32 {
             pokemon.identifier = identifier
         }
@@ -77,11 +83,5 @@ typealias ImageResultCompletion = (Result<UIImage, NetworkError>) -> Void
             }
             pokemon.abilities = abilities
         }
-    }
-    
-    func fetchImage(url: URL, completion: @escaping ImageResultCompletion) {
-        URLSession.shared.dataResultTask(with: URLRequest(url: url)) { (result) in
-            completion(ImageResultDecoder().decode(result))
-        }.resume()
     }
 }

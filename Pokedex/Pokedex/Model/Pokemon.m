@@ -24,4 +24,8 @@
      return self;
 }
 
+- (void)setAbilities:(NSArray<NSString *> *)abilities {
+    _abilities = [abilities copy];
+}
+
 @end

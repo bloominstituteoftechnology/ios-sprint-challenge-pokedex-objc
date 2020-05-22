@@ -71,10 +71,8 @@
 		046114752478223100B56A4E /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
-				0461147A2478223200B56A4E /* DetailViewController.swift */,
-				0461149C24782F2500B56A4E /* PokedexTableViewController.h */,
-				0461149D24782F2500B56A4E /* PokedexTableViewController.m */,
 				0461147C2478223200B56A4E /* Main.storyboard */,
+				0461149F2478474700B56A4E /* ViewControllers */,
 				04611499247825B500B56A4E /* Model */,
 				046114902478227900B56A4E /* Networking */,
 				046114932478235400B56A4E /* Resources */,
@@ -113,6 +111,16 @@
 				046114962478259E00B56A4E /* Pokemon.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0461149F2478474700B56A4E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0461147A2478223200B56A4E /* DetailViewController.swift */,
+				0461149C24782F2500B56A4E /* PokedexTableViewController.h */,
+				0461149D24782F2500B56A4E /* PokedexTableViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
