@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pokedex_ObjC-Swift.h"
+#import "WAHPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WAHPokemonDetailsViewController : UIViewController
+
+@property (nonatomic, assign) PokemonAPI *pokemonController;
+@property (nonatomic, assign) WAHPokemon *pokemon;
 
 @end
 

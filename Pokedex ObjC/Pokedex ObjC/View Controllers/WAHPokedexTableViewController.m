@@ -9,6 +9,7 @@
 #import "WAHPokedexTableViewController.h"
 #import "Pokedex_ObjC-Swift.h"
 #import "WAHPokemon.h"
+#import "WAHPokemonDetailsViewController.h"
 
 @interface WAHPokedexTableViewController ()
 
@@ -60,6 +61,14 @@
         _pokemonController = [[PokemonAPI alloc] init];
     }
     return _pokemonController;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"ShowPokemonDetailsSegue"]){
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        WAHPokemonDetailsViewController *controller = (WAHPokemonDetailsViewController *)segue.destinationViewController;
+        controller.pokemonController = self.pokemonController;
+        controller.pokemon = self.pokemon[selectedIndexPath.row];}
 }
 
 

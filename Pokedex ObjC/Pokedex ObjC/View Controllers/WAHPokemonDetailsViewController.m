@@ -10,15 +10,10 @@
 
 @interface WAHPokemonDetailsViewController ()
 
-
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
-
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *idLabel;
 @property (strong, nonatomic) IBOutlet UILabel *abilitiesLabel;
-
-
-
 
 @end
 
@@ -26,17 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    NSLog(@"POKEMON: %@", self.pokemon.name);
+    [self.pokemonController fillInDetailsFor:self.pokemon];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
