@@ -7,8 +7,12 @@
 //
 
 #import "MTGTableViewController.h"
+#import "Pokedex-Swift.h"
+#import "MTGPokemon.h"
 
 @interface MTGTableViewController ()
+
+@property (nonatomic, nonnull) NSArray<MTGPokemon *> *allPokemon;
 
 @end
 
@@ -16,30 +20,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    [PokemonAPI.sharedController fetchAllPokemonWithCompletion:^(NSArray<MTGPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
+        if (error != nil) {
+            NSLog(@"Error fetching pokemon: %@", error);
+        }
+        self.allPokemon = pokemon;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.allPokemon.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.textLabel.text = self.allPokemon[indexPath.row].name;
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

@@ -19,8 +19,6 @@ class PokemonAPI: NSObject {
     private let baseUrl = URL(string: "https://pokeapi.co/api/v2")!
     private let backupBaseUrl = URL(string: "https://lambdapokeapi.herokuapp.com/")!
 
-    var pokemon: [MTGPokemon] = []
-
     @objc(sharedController)
     static let shared = PokemonAPI()
 
