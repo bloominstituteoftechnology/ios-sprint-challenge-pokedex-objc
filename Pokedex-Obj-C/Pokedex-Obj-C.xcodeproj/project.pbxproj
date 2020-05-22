@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E290C85824786AD300C2A695 /* CBDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E290C85724786AD300C2A695 /* CBDDetailViewController.m */; };
 		E2DA48D9247821D700E2A1E6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DA48D8247821D700E2A1E6 /* AppDelegate.m */; };
 		E2DA48DC247821D700E2A1E6 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DA48DB247821D700E2A1E6 /* SceneDelegate.m */; };
 		E2DA48E2247821D700E2A1E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2DA48E0247821D700E2A1E6 /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E290C85624786AD300C2A695 /* CBDDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBDDetailViewController.h; sourceTree = "<group>"; };
+		E290C85724786AD300C2A695 /* CBDDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBDDetailViewController.m; sourceTree = "<group>"; };
 		E2DA48D4247821D700E2A1E6 /* Pokedex-Obj-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex-Obj-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2DA48D7247821D700E2A1E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E2DA48D8247821D700E2A1E6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 			children = (
 				E2DA48F8247822ED00E2A1E6 /* CBDPokemonsTableViewController.h */,
 				E2DA48F9247822ED00E2A1E6 /* CBDPokemonsTableViewController.m */,
+				E290C85624786AD300C2A695 /* CBDDetailViewController.h */,
+				E290C85724786AD300C2A695 /* CBDDetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 				E2DA48FA247822ED00E2A1E6 /* CBDPokemonsTableViewController.m in Sources */,
 				E2DA49002478260100E2A1E6 /* CBDPokemon+JSONSerialization.m in Sources */,
 				E2DA48EA247821DA00E2A1E6 /* main.m in Sources */,
+				E290C85824786AD300C2A695 /* CBDDetailViewController.m in Sources */,
 				E2DA4906247827C300E2A1E6 /* CBDPokemonShort+JSONSerialization.m in Sources */,
 				E2DA48DC247821D700E2A1E6 /* SceneDelegate.m in Sources */,
 			);

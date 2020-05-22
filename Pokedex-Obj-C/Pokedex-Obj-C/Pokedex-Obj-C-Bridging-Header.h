@@ -8,3 +8,4 @@
 #import "SceneDelegate.h"
 #import "CBDPokemonShort+JSONSerialization.h"
 #import "CBDPokemonShort.h"
+#import "CBDPokemonsTableViewController.h"

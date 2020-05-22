@@ -13,7 +13,8 @@
 -(instancetype)initFromDictionary:(NSDictionary *)dictionary {
     NSArray *abilitiesRaw = dictionary[@"abilities"];
     NSMutableArray<NSString *> *abilities = [[NSMutableArray alloc] init];
-    for (NSDictionary *ability in abilitiesRaw) {
+    for (NSDictionary *abilityDict in abilitiesRaw) {
+        NSDictionary *ability = abilityDict[@"ability"];
         NSString *name = ability[@"name"];
         [abilities addObject:name];
     }

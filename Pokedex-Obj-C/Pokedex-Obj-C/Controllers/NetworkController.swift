@@ -11,7 +11,6 @@ import Foundation
 class NetworkController: NSObject {
     // MARK: - Properties
     @objc(sharedController) static let shared: NetworkController = NetworkController()
-    @objc var pokemons: [Pokemon] = []
     @objc var pokemonList: [PokemonShort] = []
     let baseURL = "https://pokeapi.co/api/v2/pokemon/"
 
@@ -40,25 +39,51 @@ class NetworkController: NSObject {
             }
 
             do {
-//                guard let dictionary: Dictionary = try PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil) as? Dictionary<String, Any> else {
-//                    print("Error decododing data to dictionary")
-//                    return
-//                }
                 let dictionary: Dictionary = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String, Any>
-                var entryArray: [PokemonShort]
+                var entryArray: [PokemonShort] = []
                 for entry in dictionary where entry.key == "results" {
-                    let entryValues = entry.value as? [PokemonShort]
-                    print("entryValues: \(String(describing: entryValues))")
+                    let anyValues = Array(arrayLiteral: entry.value)
+                    let anyValue = anyValues[0]
+                    let entryValues = anyValue as! [[String:String]]
+                    for pokemonEntry in entryValues {
+                        let pokemon = PokemonShort(from: pokemonEntry)
+                        entryArray.append(pokemon)
+                    }
                 }
-            }
-            catch {
+                self.pokemonList = entryArray
+                completion(entryArray, nil)
+            } catch {
                 print("\(error)")
             }
         }.resume()
     }
 
-    @objc func fillInDetails(for pokemon: Pokemon) {
+    @objc func fillInDetails(for pokemon: PokemonShort, completion: @escaping (Pokemon?, Error?) -> Void) {
+        guard let url = URL(string: pokemon.url) else { return }
+        let urlRequest = URLRequest(url: url)
 
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            if let error = error {
+                print("Error fetcihng from network: \(error)")
+                //completion(nil, error)
+                return
+            }
+
+            guard let data = data else {
+                print("No data")
+                //completion(nil, nil)
+                return
+            }
+
+            do {
+                let dictionary: Dictionary = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String, Any>
+                let pokemon: Pokemon = Pokemon.init(from: dictionary)
+                print("Stop")
+                //completion(entryArray, nil)
+            } catch {
+                print("\(error)")
+            }
+        }.resume()
     }
 
     // MARK: - Helper Methods
