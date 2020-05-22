@@ -28,6 +28,10 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         self.addKVO()
     }
+    
+    deinit {
+        pokemon?.removeObserver(self, forKeyPath: "abilities", context: &DetailViewController.kvoContext)
+    }
 
     // MARK: - Private Methods
     
@@ -78,6 +82,8 @@ class DetailViewController: UIViewController {
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
     }
+    
+    
 
 }
 
