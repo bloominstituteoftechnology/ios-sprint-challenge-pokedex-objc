@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E290C85824786AD300C2A695 /* CBDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E290C85724786AD300C2A695 /* CBDDetailViewController.m */; };
+		E290C85B24788F4A00C2A695 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E290C85A24788F4A00C2A695 /* WebKit.framework */; };
 		E2DA48D9247821D700E2A1E6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DA48D8247821D700E2A1E6 /* AppDelegate.m */; };
 		E2DA48DC247821D700E2A1E6 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DA48DB247821D700E2A1E6 /* SceneDelegate.m */; };
 		E2DA48E2247821D700E2A1E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2DA48E0247821D700E2A1E6 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		E290C85624786AD300C2A695 /* CBDDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBDDetailViewController.h; sourceTree = "<group>"; };
 		E290C85724786AD300C2A695 /* CBDDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBDDetailViewController.m; sourceTree = "<group>"; };
+		E290C85A24788F4A00C2A695 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E2DA48D4247821D700E2A1E6 /* Pokedex-Obj-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex-Obj-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2DA48D7247821D700E2A1E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E2DA48D8247821D700E2A1E6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,17 +56,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E290C85B24788F4A00C2A695 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E290C85924788F4A00C2A695 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E290C85A24788F4A00C2A695 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E2DA48CB247821D700E2A1E6 = {
 			isa = PBXGroup;
 			children = (
 				E2DA48D6247821D700E2A1E6 /* Pokedex-Obj-C */,
 				E2DA48D5247821D700E2A1E6 /* Products */,
+				E290C85924788F4A00C2A695 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

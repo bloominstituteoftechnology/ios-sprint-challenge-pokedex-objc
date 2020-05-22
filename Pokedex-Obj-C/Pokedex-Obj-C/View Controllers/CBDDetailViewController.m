@@ -6,13 +6,14 @@
 //  Copyright © 2020 Christopher Devito. All rights reserved.
 //
 
+#import <WebKit/WebKit.h>
 #import "CBDDetailViewController.h"
 #import "CBDPokemonShort.h"
 #import "CBDPokemon.h"
 #import "Pokedex_Obj_C-Swift.h"
 
 @interface CBDDetailViewController ()
-@property (strong, nonatomic) IBOutlet UIImageView *spriteImageView;
+@property (strong, nonatomic) IBOutlet WKWebView *imageWebView;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *idLabel;
 @property (strong, nonatomic) IBOutlet UITextView *abilitiesTextView;
@@ -43,6 +44,11 @@
         abilities = [NSString stringWithFormat:@"%@\n%@", abilities, ability.capitalizedString];
     }
     [self.abilitiesTextView setText:abilities];
+    NSURL *url = [NSURL URLWithString:self.pokemon.spritURL];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    [self.imageWebView setClipsToBounds:YES];
+    [self.imageWebView loadRequest:urlRequest];
+    
 }
 
 @end

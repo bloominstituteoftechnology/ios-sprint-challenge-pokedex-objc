@@ -84,6 +84,4 @@ class NetworkController: NSObject {
             }
         }.resume()
     }
-
-    // MARK: - Helper Methods
 }

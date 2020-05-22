@@ -56,12 +56,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lvj-la-K8F">
+                            <wkWebView clipsSubviews="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="J6S-Z9-zka">
                                 <rect key="frame" x="20" y="108" width="374" height="374"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Lvj-la-K8F" secondAttribute="height" multiplier="1:1" id="PB9-io-ZfX"/>
+                                    <constraint firstAttribute="width" secondItem="J6S-Z9-zka" secondAttribute="height" multiplier="1:1" id="7Wa-hq-aVJ"/>
                                 </constraints>
-                            </imageView>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences" minimumFontSize="17"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="sLJ-3j-bV8">
                                 <rect key="frame" x="20" y="502" width="374" height="261.5"/>
                                 <subviews>
@@ -101,11 +106,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="sLJ-3j-bV8" firstAttribute="top" secondItem="Lvj-la-K8F" secondAttribute="bottom" constant="20" id="6Qn-xY-wWR"/>
-                            <constraint firstItem="Lvj-la-K8F" firstAttribute="top" secondItem="8Gd-8w-g97" secondAttribute="top" constant="20" id="FQZ-cP-hCx"/>
-                            <constraint firstItem="8Gd-8w-g97" firstAttribute="trailing" secondItem="Lvj-la-K8F" secondAttribute="trailing" constant="20" id="QUY-VF-ZJ8"/>
+                            <constraint firstItem="J6S-Z9-zka" firstAttribute="top" secondItem="8Gd-8w-g97" secondAttribute="top" constant="20" id="MhY-FV-jnd"/>
                             <constraint firstItem="sLJ-3j-bV8" firstAttribute="leading" secondItem="8Gd-8w-g97" secondAttribute="leading" constant="20" id="X1t-Hy-rre"/>
-                            <constraint firstItem="Lvj-la-K8F" firstAttribute="leading" secondItem="8Gd-8w-g97" secondAttribute="leading" constant="20" id="f9j-Hs-Ogl"/>
+                            <constraint firstItem="J6S-Z9-zka" firstAttribute="leading" secondItem="8Gd-8w-g97" secondAttribute="leading" constant="20" id="ZaF-fX-KYw"/>
+                            <constraint firstItem="8Gd-8w-g97" firstAttribute="trailing" secondItem="J6S-Z9-zka" secondAttribute="trailing" constant="20" id="cg0-a7-ha2"/>
+                            <constraint firstItem="sLJ-3j-bV8" firstAttribute="top" secondItem="J6S-Z9-zka" secondAttribute="bottom" constant="20" id="dii-Gj-LZT"/>
                             <constraint firstItem="8Gd-8w-g97" firstAttribute="trailing" secondItem="sLJ-3j-bV8" secondAttribute="trailing" constant="20" id="zat-6S-A4M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Gd-8w-g97"/>
@@ -114,8 +119,8 @@
                     <connections>
                         <outlet property="abilitiesTextView" destination="9Ic-3m-C0j" id="wDj-52-Xuo"/>
                         <outlet property="idLabel" destination="axO-pM-k2g" id="JgD-XW-TM8"/>
+                        <outlet property="imageWebView" destination="J6S-Z9-zka" id="WVj-d3-iex"/>
                         <outlet property="nameLabel" destination="p8z-dF-nhT" id="kFW-GF-buV"/>
-                        <outlet property="spriteImageView" destination="Lvj-la-K8F" id="AEa-ro-dGY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tP-iZ-YNa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
