@@ -93,14 +93,13 @@
 		92736F812478232C00DDE1E7 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				92736FB82478422200DDE1E7 /* Model Controller */,
+				92736FB72478420A00DDE1E7 /* Models */,
 				92736FAD2478267900DDE1E7 /* MTGDetailViewController.h */,
 				92736FAE2478267900DDE1E7 /* MTGDetailViewController.m */,
-				92736FB0247835C100DDE1E7 /* MTGPokemon.h */,
-				92736FB1247835C100DDE1E7 /* MTGPokemon.m */,
 				92736FAA2478266500DDE1E7 /* MTGTableViewController.h */,
 				92736FAB2478266500DDE1E7 /* MTGTableViewController.m */,
 				92736FB3247836DE00DDE1E7 /* Pokedex-Bridging-Header.h */,
-				92736FB4247836DE00DDE1E7 /* PokedexFetcher.swift */,
 				92736FB6247841A700DDE1E7 /* Resources */,
 				92736FA92478243600DDE1E7 /* Storyboards */,
 			);
@@ -137,6 +136,23 @@
 				92736F862478232C00DDE1E7 /* SceneDelegate.m */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		92736FB72478420A00DDE1E7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				92736FB0247835C100DDE1E7 /* MTGPokemon.h */,
+				92736FB1247835C100DDE1E7 /* MTGPokemon.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		92736FB82478422200DDE1E7 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				92736FB4247836DE00DDE1E7 /* PokedexFetcher.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
