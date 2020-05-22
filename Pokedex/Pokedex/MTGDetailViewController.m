@@ -10,23 +10,35 @@
 
 @interface MTGDetailViewController ()
 
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *idLabel;
+@property (strong, nonatomic) IBOutlet UITextView *abilityTextField;
+
 @end
 
 @implementation MTGDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self updateViews];
 }
 
-/*
-#pragma mark - Navigation
+- (void) updateViews {
+    self.nameLabel.text = self.pokemon.name;
+    self.imageView.image = self.pokemon.image;
+    self.idLabel.text = [NSString stringWithFormat:@"ID: %@", self.pokemon.identifier];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSString *abilityText = @"";
+
+    for (int i = 0; i < self.pokemon.abilities.count; i++)
+    {
+//        NSLog(@"%@", [self.pokemon.abilities objectAtIndex:i]);
+
+        [NSString stringWithFormat:@"%@%@\n", abilityText, [self.pokemon.abilities objectAtIndex:i]];
+    }
+
+    self.abilityTextField.text = abilityText;
 }
-*/
-
 @end

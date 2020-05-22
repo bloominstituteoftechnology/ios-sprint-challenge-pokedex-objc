@@ -79,12 +79,6 @@ class PokemonAPI: NSObject {
             }
             completion(pokemonArray, nil)
 
-//                // try to read out a string array
-//                let pokemon = MTGPokemon.init(dictionary: json)
-//
-//                completion([pokemon], nil)
-//            }
-
         }.resume()
     }
 
