@@ -51,18 +51,20 @@ class APIController: NSObject {
         }.resume()
     }
 
-    @objc func fillInDetails(for pokemon: Pokemon) {
+    @objc func fillInDetails(for pokemon: Pokemon, completion: @escaping (Pokemon?) -> Void) {
         let url = pokemon.url
         let request = URLRequest(url: url)
 
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
                 NSLog("Error with request for \(pokemon.name): \(error)")
+                completion(nil)
                 return
             }
 
             guard let data = data else {
                 NSLog("No data for \(pokemon.name)")
+                completion(nil)
                 return
             }
 
@@ -87,8 +89,11 @@ class APIController: NSObject {
                 }
             } catch {
                 NSLog("Error getting details for \(pokemon.name): \(error)")
+                completion(nil)
                 return
             }
+
+            completion(pokemon)
         }.resume()
     }
 }
