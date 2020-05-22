@@ -18,6 +18,7 @@
 		0461148F2478226B00B56A4E /* ResultDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461148C2478226B00B56A4E /* ResultDecoder.swift */; };
 		046114972478259E00B56A4E /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 046114962478259E00B56A4E /* Pokemon.m */; };
 		0461149B24782E6C00B56A4E /* PokeApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461149A24782E6C00B56A4E /* PokeApiClient.swift */; };
+		0461149E24782F2500B56A4E /* PokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0461149D24782F2500B56A4E /* PokedexTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		046114952478259E00B56A4E /* Pokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
 		046114962478259E00B56A4E /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
 		0461149A24782E6C00B56A4E /* PokeApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeApiClient.swift; sourceTree = "<group>"; };
+		0461149C24782F2500B56A4E /* PokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokedexTableViewController.h; sourceTree = "<group>"; };
+		0461149D24782F2500B56A4E /* PokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokedexTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				0461147A2478223200B56A4E /* DetailViewController.swift */,
+				0461149C24782F2500B56A4E /* PokedexTableViewController.h */,
+				0461149D24782F2500B56A4E /* PokedexTableViewController.m */,
 				0461147C2478223200B56A4E /* Main.storyboard */,
 				04611499247825B500B56A4E /* Model */,
 				046114902478227900B56A4E /* Networking */,
@@ -183,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0461147B2478223200B56A4E /* DetailViewController.swift in Sources */,
+				0461149E24782F2500B56A4E /* PokedexTableViewController.m in Sources */,
 				0461148F2478226B00B56A4E /* ResultDecoder.swift in Sources */,
 				0461148D2478226B00B56A4E /* NetworkingExtensions.swift in Sources */,
 				0461148E2478226B00B56A4E /* NetworkingEnums.swift in Sources */,

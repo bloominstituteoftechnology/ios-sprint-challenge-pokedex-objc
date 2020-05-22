@@ -13,7 +13,18 @@ private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon")!
 typealias PokemonResultCompletion = (Result<[Pokemon], NetworkError>) -> Void
 typealias ImageResultCompletion = (Result<UIImage, NetworkError>) -> Void
 
-class PokeApiClient {
+@objc class PokeApiClient: NSObject {
+    
+    @objc func fetchSortedPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
+        self.fetchAllPokemon { (result) in
+            switch result {
+            case .failure(let error):
+                completion(nil, NSError(domain: error.localizedDescription, code: 0))
+            case .success(let pokemon):
+                completion(pokemon.sorted(by: { $0.name < $1.name }), nil)
+            }
+        }
+    }
     
     func fetchAllPokemon(completion: @escaping PokemonResultCompletion) {
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
