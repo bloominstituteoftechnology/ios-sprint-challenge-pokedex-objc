@@ -24,10 +24,10 @@ void *KVOContext = &KVOContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSLog(@"POKEMON: %@", self.pokemon.name);
     [self.pokemonController fillInDetailsFor:self.pokemon];
     [self.pokemon addObserver:self forKeyPath:@"identifier" options:0 context:KVOContext];
     [self.pokemon addObserver:self forKeyPath:@"abilities" options:0 context:KVOContext];
+    [self.pokemon addObserver:self forKeyPath:@"image" options:0 context:KVOContext];
 
 }
 
@@ -38,6 +38,8 @@ void *KVOContext = &KVOContext;
             [self updateViews];
         } else if ([keyPath isEqualToString:@"abilities"]) {
             [self updateViews];
+        } else if ([keyPath isEqualToString:@"image"]) {
+            [self updateViews];
         }
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -45,11 +47,22 @@ void *KVOContext = &KVOContext;
 }
 
 - (void)updateViews {
+    NSMutableString *abilities = [[NSMutableString alloc] init];
+    
     dispatch_async(dispatch_get_main_queue(), ^{
-
         self.nameLabel.text = self.pokemon.name;
         self.idLabel.text = [NSString stringWithFormat:@"%i", self.pokemon.identifier];
         
+    
+//        for (int i = 0; i < [self.pokemon.abilities count]; i++) {
+//            [abilities appendString:self.pokemon.abilities[i]];
+//        }
+        
+        NSString *joinedComponents = [self.pokemon.abilities componentsJoinedByString:@", "];
+
+        
+        self.abilitiesLabel.text = joinedComponents;
+
     });
 }
 

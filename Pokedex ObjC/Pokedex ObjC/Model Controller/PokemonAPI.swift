@@ -97,17 +97,20 @@ class PokemonAPI: NSObject {
                     }
                 }
                 
+                var array: [String] = []
+                
                 if let abilitiesArray = json["abilities"] as? [Dictionary<String,Any>] {
                     for item in abilitiesArray {
                         if let ability = item["ability"] as? Dictionary<String,Any> {
                             if let name = ability["name"] as? String {
                                 print("Here. \(name)")
-                                pokemon.abilities.add(name)
+                                array.append(name)
+                                
                             }
                         }
                     }
                 }
-                
+                pokemon.abilities = array
                 
             } catch {
                 NSLog("Failed to do something with json \(error)")
