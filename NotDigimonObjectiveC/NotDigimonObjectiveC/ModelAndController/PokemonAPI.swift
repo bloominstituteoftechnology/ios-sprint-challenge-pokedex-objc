@@ -13,7 +13,7 @@ class PokemonAPI: NSObject {
     @objc func FetchAllPokemon(completion: @escaping ([MSKPokemon]?, Error?) -> Void) {
         return
     }
-    @objc fillInDetails(for pokemon: MSKPokemon) {
+    @objc func fillInDetails(for pokemon: MSKPokemon) {
         
     }
     

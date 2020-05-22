@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-@class MSKSprites
-@class MSKAbility
-@class MSKMove
-@class MSKSpcies
+@class MSKSprites;
+@class MSKAbility;
+@class MSKMove;
+@class MSKSpecies;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MSKPokemon: NSObject
@@ -18,18 +18,28 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger *identifier;
 @property (nonatomic, assign) MSKSprites *sprites;
 @property (nonatomic, copy) NSArray<MSKAbility *> *abilities;
+
+-(instancetype)initWithName:(NSString *)name
+                 identifier:(NSInteger *)identifier
+                    sprites:(MSKSprites *)sprites
+                  abilities:(NSArray<MSKAbility *> *)abilities;
+-(instancetype)InitWithDict:(NSDictionary *)dict;
 @end
 
 @interface MSKSprites: NSObject
-@@property (nonatomic, copy) NSString *frontShiny;
+@property (nonatomic, copy) NSString *frontShiny;
+-(instancetype)initwWithFrontShiny:(NSString *)frontShiny;
 @end
 
 @interface MSKAbility: NSObject
-@@property (nonatomic, strong) MSKSpecies *ability;
+@property (nonatomic, strong) MSKSpecies *ability;
+-(instancetype)initWithAbility:(MSKSpecies *)ability;
 @end
 
-@interface MSKSpecies NSObject
+@interface MSKSpecies: NSObject
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *url;
-
+-(instancetype)initWithName:(NSString *)name
+                        url:(NSString *)url;
+@end
 NS_ASSUME_NONNULL_END
