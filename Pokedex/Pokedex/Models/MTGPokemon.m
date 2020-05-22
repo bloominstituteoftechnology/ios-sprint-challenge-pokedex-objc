@@ -15,12 +15,12 @@
     self = [super init];
     if (!self) { return nil; }
 
-    _name = dictionary[@"title"];
-    _identifier = dictionary[@"alt"];
-    NSString *imageURLString = dictionary[@"img"];
-    _abilities = dictionary[@"alt"];
+    _name = dictionary[@"name"];
+    NSString *detailURLString = dictionary[@"url"];
 
-    _imageURL = [NSURL URLWithString:imageURLString];
+    _detailURL = [NSURL URLWithString:detailURLString];
+
+//    if (_name == nil || _detailURL = nil) { return nil; }
 
     return self;
 }

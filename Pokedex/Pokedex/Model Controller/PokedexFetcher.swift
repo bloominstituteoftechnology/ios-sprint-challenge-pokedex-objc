@@ -31,6 +31,8 @@ class PokemonAPI: NSObject {
         request.httpMethod = HTTPMethod.get.rawValue
 
         URLSession.shared.dataTask(with: request) { data, response, error in
+            print("URL: \(apiUrl)")
+
             if let error = error {
                 NSLog("Error receiving pokemon data: \(error)")
                 completion(nil, error)
@@ -49,20 +51,39 @@ class PokemonAPI: NSObject {
                 return
             }
 
+            var pokemonDictionary: [String: Any]?
+
             do {
-//                let pokemon = try MTGPokemon.init(dictionary: data as [AnyHashable: Any])
-
-                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-
-                    // try to read out a string array
-                    let pokemon = MTGPokemon.init(dictionary: json)
-
-                    completion([pokemon], nil)
-                }
+                pokemonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
             } catch let error as NSError {
-                print("Error decoding: \(error.localizedDescription)")
+                print("Error during JSONSerialization: \(error.localizedDescription)")
                 completion(nil, error)
             }
+
+            // This high level object contains 4 items. We only care about results.
+            guard let resultsArray = pokemonDictionary!["results"] as? [[String: String]] else {
+                    print("Error getting results")
+                    completion(nil, error)
+                    return
+            }
+
+            // We now have all the results.
+            var pokemonArray: [MTGPokemon] = []
+            for aPokemonDict in resultsArray {
+                let pokemon = MTGPokemon(dictionary: aPokemonDict)
+                if let pokemon = pokemon {
+                    pokemonArray.append(pokemon)
+                } else {
+                    print("Error decoding Pokemon")
+                }
+            }
+            completion(pokemonArray, nil)
+
+//                // try to read out a string array
+//                let pokemon = MTGPokemon.init(dictionary: json)
+//
+//                completion([pokemon], nil)
+//            }
 
         }.resume()
     }

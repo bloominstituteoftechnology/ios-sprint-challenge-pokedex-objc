@@ -12,12 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MTGPokemon : NSObject
 
-@property (nonatomic, readonly, nullable) NSString *name;
+@property (nonatomic, readonly, nonnull) NSString *name;
+@property (nonatomic, readonly, nonnull) NSURL *detailURL;
 @property (nonatomic, readonly, nullable) NSString *identifier;
 @property (nonatomic, readonly, nullable) NSURL *imageURL;
 @property (nonatomic, readonly, nullable) NSString *abilities;
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype _Nullable)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 
