@@ -39,8 +39,44 @@ typealias ImageResultCompletion = (Result<UIImage, NetworkError>) -> Void
         }.resume()
     }
     
-    func fillInDetails(for pokemon:Pokemon) {
+    @objc func fetchDetails(for pokemon:Pokemon) {
+        let request = URLRequest(url: baseURL.appendingPathComponent(pokemon.name))
         
+        URLSession.shared.dataResultTask(with: request) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let data):
+                do {
+                    guard let dict = try JSONSerialization
+                        .jsonObject(with: data, options: .fragmentsAllowed) as? Dictionary<String, Any> else {
+                        throw NetworkError.decodingError(NSError(domain: "⚠️ Error decoding pokemon details", code: 0))
+                    }
+                    self.fillInDetails(for: pokemon, with: dict)
+                } catch {
+                    print(error)
+                }
+            }
+        }.resume()
+    }
+    
+    func fillInDetails(for pokemon: Pokemon, with dict:Dictionary<String, Any>) {
+        if let identifier = dict["id"] as? Int32 {
+            pokemon.identifier = identifier
+        }
+        
+        if let spritesDict = dict["sprites"] as? Dictionary<String, String>,
+           let urlString = spritesDict["front_default"] {
+            pokemon.spriteURL = URL(string: urlString)
+        }
+        
+        if let abilitiesContainer = dict["abilities"] as? Array<Dictionary<String, Any>> {
+            let abilities = abilitiesContainer.map { (dict) -> String in
+                let abilityDict = dict["ability"] as! Dictionary<String, String>
+                return abilityDict["name"]!
+            }
+            pokemon.abilities = abilities
+        }
     }
     
     func fetchImage(url: URL, completion: @escaping ImageResultCompletion) {
@@ -48,61 +84,4 @@ typealias ImageResultCompletion = (Result<UIImage, NetworkError>) -> Void
             completion(ImageResultDecoder().decode(result))
         }.resume()
     }
-    
-//    func fetchPokemon(withName name: String, completion: @escaping (Result<Pokemon, NetworkError>) -> Void) {
-//        var pokemonURL = baseURL.appendingPathComponent("pokemon")
-//        pokemonURL.appendPathComponent(name.lowercased())
-//
-//        URLSession.shared.dataTask(with: pokemonURL) { (data, response, error) in
-//            if let error = error {
-//                NSLog("Error fetching pokemon: \(error)")
-//                completion(.failure(.clientError(error)))
-//                return
-//            }
-//
-//            guard let data = data else {
-//                NSLog("No data when trying to fetch pokemon")
-//                completion(.failure(.noData))
-//                return
-//            }
-//
-//            let decoder = JSONDecoder()
-//
-//            do {
-//                let pokemon = try decoder.decode(Pokemon.self, from: data)
-//                completion(.success(pokemon))
-//            } catch {
-//                NSLog("Unable to decode JSON into pokemon: \(error)")
-//                completion(.failure(.badData))
-//            }
-//        }.resume()
-//    }
-//
-//    func fetchImage(for urlString: String, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
-//        guard let imageUrl = URL(string: urlString) else {
-//            completion(.failure(.invalidURL))
-//            return
-//        }
-//
-//        URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
-//            if let error = error {
-//                NSLog("Error fetching image: \(error)")
-//                completion(.failure(.clientError(error)))
-//                return
-//            }
-//
-//            guard let data = data else {
-//                NSLog("No data when trying to fetch image")
-//                completion(.failure(.noData))
-//                return
-//            }
-//
-//            if let image = UIImage(data: data) {
-//                completion(.success(image))
-//            } else {
-//                NSLog("Unable to produce image from data")
-//                completion(.failure(.badData))
-//            }
-//        }.resume()
-//    }
 }

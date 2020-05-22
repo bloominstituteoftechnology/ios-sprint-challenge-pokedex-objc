@@ -80,6 +80,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
     Pokemon *pokemon = self.pokemon[indexPath.row];
+    [self.apiClient fetchDetailsFor:pokemon];
     cell.textLabel.text = pokemon.name;
     
     return cell;
