@@ -17,11 +17,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSString *quote = @"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it. - Steve Jobs";
+
+    NSCharacterSet *punctuationSet = [NSCharacterSet punctuationCharacterSet];
+
+    NSString *cleanQuote = [[quote componentsSeparatedByCharactersInSet:punctuationSet] componentsJoinedByString:@""];
+    NSArray *words = [[cleanQuote lowercaseString] componentsSeparatedByString:@" "];
+
+    NSMutableDictionary<NSString *, NSNumber *> *wordFrequency = [[NSMutableDictionary alloc] init];
+
+    for (NSString *word in words) {
+        NSNumber *count = wordFrequency[word];
+        if (count != nil) {
+            wordFrequency[word] = [NSNumber numberWithInteger:count.integerValue + 1];
+        } else {
+            wordFrequency[word] = [[[NSNumber alloc] initWithInteger:1] autorelease];
+        }
+    }
+
+    printf("Word frequency: %s", wordFrequency.description.UTF8String);
+
+    [wordFrequency release];
 }
 
 #pragma mark - Table view data source
