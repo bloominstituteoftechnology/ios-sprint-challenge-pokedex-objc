@@ -16,6 +16,8 @@
 		92736F9F2478232F00DDE1E7 /* PokedexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92736F9E2478232F00DDE1E7 /* PokedexTests.m */; };
 		92736FAC2478266500DDE1E7 /* MTGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92736FAB2478266500DDE1E7 /* MTGTableViewController.m */; };
 		92736FAF2478267900DDE1E7 /* MTGDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92736FAE2478267900DDE1E7 /* MTGDetailViewController.m */; };
+		92736FB2247835C100DDE1E7 /* MTGPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 92736FB1247835C100DDE1E7 /* MTGPokemon.m */; };
+		92736FB5247836DE00DDE1E7 /* PokedexFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92736FB4247836DE00DDE1E7 /* PokedexFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,10 @@
 		92736FAB2478266500DDE1E7 /* MTGTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGTableViewController.m; sourceTree = "<group>"; };
 		92736FAD2478267900DDE1E7 /* MTGDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGDetailViewController.h; sourceTree = "<group>"; };
 		92736FAE2478267900DDE1E7 /* MTGDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGDetailViewController.m; sourceTree = "<group>"; };
+		92736FB0247835C100DDE1E7 /* MTGPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTGPokemon.h; sourceTree = "<group>"; };
+		92736FB1247835C100DDE1E7 /* MTGPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGPokemon.m; sourceTree = "<group>"; };
+		92736FB3247836DE00DDE1E7 /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
+		92736FB4247836DE00DDE1E7 /* PokedexFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,17 +93,15 @@
 		92736F812478232C00DDE1E7 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
-				92736F822478232C00DDE1E7 /* AppDelegate.h */,
-				92736F832478232C00DDE1E7 /* AppDelegate.m */,
-				92736F8E2478232F00DDE1E7 /* Assets.xcassets */,
-				92736F932478232F00DDE1E7 /* Info.plist */,
-				92736F942478232F00DDE1E7 /* main.m */,
 				92736FAD2478267900DDE1E7 /* MTGDetailViewController.h */,
 				92736FAE2478267900DDE1E7 /* MTGDetailViewController.m */,
+				92736FB0247835C100DDE1E7 /* MTGPokemon.h */,
+				92736FB1247835C100DDE1E7 /* MTGPokemon.m */,
 				92736FAA2478266500DDE1E7 /* MTGTableViewController.h */,
 				92736FAB2478266500DDE1E7 /* MTGTableViewController.m */,
-				92736F852478232C00DDE1E7 /* SceneDelegate.h */,
-				92736F862478232C00DDE1E7 /* SceneDelegate.m */,
+				92736FB3247836DE00DDE1E7 /* Pokedex-Bridging-Header.h */,
+				92736FB4247836DE00DDE1E7 /* PokedexFetcher.swift */,
+				92736FB6247841A700DDE1E7 /* Resources */,
 				92736FA92478243600DDE1E7 /* Storyboards */,
 			);
 			path = Pokedex;
@@ -119,6 +123,20 @@
 				92736F8B2478232C00DDE1E7 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		92736FB6247841A700DDE1E7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				92736F822478232C00DDE1E7 /* AppDelegate.h */,
+				92736F832478232C00DDE1E7 /* AppDelegate.m */,
+				92736F8E2478232F00DDE1E7 /* Assets.xcassets */,
+				92736F932478232F00DDE1E7 /* Info.plist */,
+				92736F942478232F00DDE1E7 /* main.m */,
+				92736F852478232C00DDE1E7 /* SceneDelegate.h */,
+				92736F862478232C00DDE1E7 /* SceneDelegate.m */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +189,7 @@
 				TargetAttributes = {
 					92736F7E2478232C00DDE1E7 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 					92736F992478232F00DDE1E7 = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -223,7 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				92736F842478232C00DDE1E7 /* AppDelegate.m in Sources */,
+				92736FB2247835C100DDE1E7 /* MTGPokemon.m in Sources */,
 				92736F952478232F00DDE1E7 /* main.m in Sources */,
+				92736FB5247836DE00DDE1E7 /* PokedexFetcher.swift in Sources */,
 				92736FAC2478266500DDE1E7 /* MTGTableViewController.m in Sources */,
 				92736FAF2478267900DDE1E7 /* MTGDetailViewController.m in Sources */,
 				92736F872478232C00DDE1E7 /* SceneDelegate.m in Sources */,
@@ -382,6 +403,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ZDYKHFRDV;
 				INFOPLIST_FILE = Pokedex/Info.plist;
@@ -391,6 +413,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gerrior.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex/Pokedex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -399,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ZDYKHFRDV;
 				INFOPLIST_FILE = Pokedex/Info.plist;
@@ -408,6 +434,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gerrior.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex/Pokedex-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -415,6 +443,7 @@
 		92736FA72478232F00DDE1E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ZDYKHFRDV;
@@ -435,6 +464,7 @@
 		92736FA82478232F00DDE1E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ZDYKHFRDV;
