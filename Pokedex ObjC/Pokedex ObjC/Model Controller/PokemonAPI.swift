@@ -23,7 +23,6 @@ class PokemonAPI: NSObject {
     
     @objc func fetchAllPokemon(completion: @escaping ([WAHPokemon]?, Error?) -> Void) {
         let requestURL = baseURL.appendingPathComponent("pokemon")
-        print("REQUEST URL: \(requestURL)")
         
         URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
             if let error = error {
@@ -67,7 +66,6 @@ class PokemonAPI: NSObject {
     
     @objc func fillInDetails(for pokemon: WAHPokemon) {
         let requestURL: URL = URL(string: pokemon.url)!
-        print("REQUEST URL: \(requestURL)")
         
         URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
             if let error = error {
@@ -92,6 +90,16 @@ class PokemonAPI: NSObject {
                 if let id = json["id"] as? Int {
                     pokemon.identifier = Int32(id)
                 }
+                
+                if let sprites = json["sprites"] as? Dictionary<String,Any> {
+                    print("here")
+                    if let front_default = sprites["front_default"] as? String {
+                        pokemon.image = front_default
+                        print("image \(pokemon.image)")
+                    }
+
+                }
+                
             } catch {
                 NSLog("Failed to do something with json \(error)")
             }

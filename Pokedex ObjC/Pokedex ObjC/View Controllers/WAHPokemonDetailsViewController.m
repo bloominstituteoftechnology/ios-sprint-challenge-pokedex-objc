@@ -27,6 +27,7 @@ void *KVOContext = &KVOContext;
     NSLog(@"POKEMON: %@", self.pokemon.name);
     [self.pokemonController fillInDetailsFor:self.pokemon];
     [self.pokemon addObserver:self forKeyPath:@"identifier" options:0 context:KVOContext];
+    [self.pokemon addObserver:self forKeyPath:@"abilities" options:0 context:KVOContext];
 
 }
 
@@ -34,6 +35,8 @@ void *KVOContext = &KVOContext;
 {
     if (context == KVOContext) {
         if ([keyPath isEqualToString:@"identifier"]) {
+            [self updateViews];
+        } else if ([keyPath isEqualToString:@"abilities"]) {
             [self updateViews];
         }
     } else {
