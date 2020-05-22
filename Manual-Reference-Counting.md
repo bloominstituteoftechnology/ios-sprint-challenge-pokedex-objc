@@ -91,7 +91,7 @@ printf("Word frequency: %s", wordFrequency.description.UTF8String);
 
 2.
 
-vi
+vi, because it is marked for autorelease
 
 3.
 Autorelease pool blocks should be used in an application that generates many autoreleased objects. Otherwise the applications memory will continue to grow.
