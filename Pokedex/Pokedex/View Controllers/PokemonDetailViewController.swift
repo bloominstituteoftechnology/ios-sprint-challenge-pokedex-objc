@@ -19,7 +19,11 @@ class PokemonDetailViewController: UIViewController {
 
     // MARK: - Properties
 
-    @objc var pokemon: Pokemon?
+    @objc var pokemon: Pokemon? {
+        didSet {
+            fetchDetails()
+        }
+    }
 
     // MARK: - View Lifecycle
 
@@ -28,22 +32,26 @@ class PokemonDetailViewController: UIViewController {
         updateViews()
     }
 
-    func updateViews() {
+    func fetchDetails() {
         guard let pokemon = pokemon else { return }
-
         APIController.shared.fillInDetails(for: pokemon) { pokemon in
             DispatchQueue.main.async {
-                if let pokemon = pokemon {
-                    guard
-                        let abilities = pokemon.abilities,
-                        let imageData = try? Data(contentsOf: pokemon.sprite!) else { return }
-                    let abilitiesString = abilities.componentsJoined(by: ", ").capitalized
-                    self.nameLabel.text = pokemon.name.capitalized
-                    self.imageView.image = UIImage(data: imageData)
-                    self.idLabel.text = "ID: \(pokemon.identifier.description)"
-                    self.abilitiesLabel.text = "Abilities: \(abilitiesString)"
-                }
+                self.updateViews()
             }
         }
+    }
+
+    func updateViews() {
+        guard
+            isViewLoaded,
+            let pokemon = pokemon,
+            let abilities = pokemon.abilities,
+            let imageData = try? Data(contentsOf: pokemon.sprite!) else { return }
+
+        let abilitiesString = abilities.componentsJoined(by: ", ").capitalized
+        self.nameLabel.text = pokemon.name.capitalized
+        self.imageView.image = UIImage(data: imageData)
+        self.idLabel.text = "ID: \(pokemon.identifier.description)"
+        self.abilitiesLabel.text = abilitiesString
     }
 }
