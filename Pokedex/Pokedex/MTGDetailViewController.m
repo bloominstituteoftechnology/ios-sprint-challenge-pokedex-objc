@@ -38,18 +38,6 @@ void *KVOContext = &KVOContext;
 
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-
-//    [self setUpObservers];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [self tearDownObservers];
-
-    [self viewWillDisappear:animated];
-}
-
 - (void) updateViews {
     self.nameLabel.text = self.pokemon.name;
     self.imageView.image = self.pokemon.image;
@@ -73,28 +61,31 @@ void *KVOContext = &KVOContext;
 
     // Setup KVO - Add Observers
 
-    [_pokemon.image      addObserver:self forKeyPath:@"viewNeedsUpdate" options:NSKeyValueObservingOptionInitial context:KVOContext];
-//    [_pokemon.identifier addObserver:self forKeyPath:@"viewNeedsUpdate" options:NSKeyValueObservingOptionInitial context:KVOContext];
-//    [_pokemon.abilities  addObserver:self forKeyPath:@"viewNeedsUpdate" options:NSKeyValueObservingOptionInitial context:KVOContext];
+    [self.pokemon addObserver:self forKeyPath:@"image"      options:NSKeyValueObservingOptionInitial context:KVOContext];
+    [self.pokemon addObserver:self forKeyPath:@"identifier" options:NSKeyValueObservingOptionInitial context:KVOContext];
+    [self.pokemon addObserver:self forKeyPath:@"abilities"  options:NSKeyValueObservingOptionInitial context:KVOContext];
 }
 
-- (void)tearDownObservers {
+- (void)removeObservers {
 
-    NSLog(@"tearDownObservers");
+    NSLog(@"removeObservers");
 
     // Cleanup KVO - Remove Observers
-    [_pokemon.image      removeObserver:self forKeyPath:@"viewNeedsUpdate" context:KVOContext];
-//    [_pokemon.identifier removeObserver:self forKeyPath:@"viewNeedsUpdate" context:KVOContext];
-//    [_pokemon.abilities  removeObserver:self forKeyPath:@"viewNeedsUpdate" context:KVOContext];
+    [self.pokemon removeObserver:self forKeyPath:@"image"      context:KVOContext];
+    [self.pokemon removeObserver:self forKeyPath:@"identifier" context:KVOContext];
+    [self.pokemon removeObserver:self forKeyPath:@"abilities"  context:KVOContext];
 }
 
 // Review docs and implement observerValueForKeyPath
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (context == KVOContext) {
         NSLog(@"keypath: %@", keyPath);
-        if ([keyPath isEqualToString:@"viewNeedsUpdate"]) {
+        if ([keyPath isEqualToString:@"image"]) {
             // What should I do? Running changed states (NO -> YES)
-            [self updateViews];
+            NSLog(@"KVO!");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self updateViews];
+            });
         }
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -103,7 +94,7 @@ void *KVOContext = &KVOContext;
 
 - (void)dealloc {
     // Stop observing KVO (otherwise it will crash randomly)
-    [self tearDownObservers];
+    [self removeObservers];
 }
 
 @end

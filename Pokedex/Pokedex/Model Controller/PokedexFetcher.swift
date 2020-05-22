@@ -145,6 +145,7 @@ class PokemonAPI: NSObject {
     }
 
     private func fetchImage(for pokemon: MTGPokemon, with url: URL) {
+        NSLog("Load image url: \(url)")
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 NSLog("Error fetching Pokemon sprite: \(error)")
