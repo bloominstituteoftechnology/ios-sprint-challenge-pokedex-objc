@@ -7,10 +7,13 @@
 //
 
 #import "WAHPokedexTableViewController.h"
-#import "PokemonAPI-Swift.h"
-
+#import "Pokedex_ObjC-Swift.h"
+#import "WAHPokemon.h"
 
 @interface WAHPokedexTableViewController ()
+
+@property (nonatomic) PokemonAPI *pokemonController;
+@property (nonatomic, copy) NSArray<WAHPokemon *> *pokemon;
 
 @end
 
@@ -18,21 +21,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    [self.pokemonController fetchAllPokemonWithCompletion:^(NSArray<WAHPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
+        
+        if (error) {
+            NSLog(@"%@", error);
+        }
+        
+        if (pokemon) {
+            self.pokemon = pokemon;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+        }
+        
+    }];
+    
+    
 }
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.pokemon.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    WAHPokemon *pokemon = self.pokemon[indexPath.row];
+    cell.textLabel.text = pokemon.name;
     
     return cell;
 }
+
+- (PokemonAPI *)pokemonController {
+    if (!_pokemonController) {
+        _pokemonController = [[PokemonAPI alloc] init];
+    }
+    return _pokemonController;
+}
+
 
 @end

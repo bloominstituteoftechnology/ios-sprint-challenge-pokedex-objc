@@ -12,6 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WAHPokemon : NSObject
 
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy, nullable) NSString *urergherugl;
+
+- (instancetype)initWithName:(NSString *)name url:(NSString *)url;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -64,6 +64,7 @@
 		13A14169247821750019373F /* Pokedex ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				13BA0FDC24782B0800223823 /* Model Controller */,
 				13A1418C247822220019373F /* View Controllers */,
 				13A1418B247822170019373F /* Models */,
 				13A1417E247821910019373F /* Application */,
@@ -106,9 +107,16 @@
 			children = (
 				13A14184247821F50019373F /* WAHPokedexTableViewController.h */,
 				13A14185247821F50019373F /* WAHPokedexTableViewController.m */,
-				13A1418D2478224C0019373F /* PokemonAPI.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		13BA0FDC24782B0800223823 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13A1418D2478224C0019373F /* PokemonAPI.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

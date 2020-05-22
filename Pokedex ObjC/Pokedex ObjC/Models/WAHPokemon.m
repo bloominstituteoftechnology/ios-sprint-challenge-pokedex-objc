@@ -10,4 +10,13 @@
 
 @implementation WAHPokemon
 
+- (instancetype)initWithName:(NSString *)name url:(NSString *)url {
+    self = [super init];
+    if (self) {
+        _name = [name copy];
+        _url = [url copy];
+    }
+    return self;
+}
+
 @end
