@@ -84,7 +84,7 @@ for (NSString *word in words) {
 printf("Word frequency: %s", wordFrequency.description.UTF8String);
 
 
-[cleanQuote release]
+[wordFrequency release]
 [punctuationSet release];
 ```
 
