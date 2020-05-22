@@ -10,7 +10,7 @@
         <!--Pokedex-->
         <scene sceneID="BT8-YH-Q7I">
             <objects>
-                <tableViewController id="aVr-Ri-4Q2" sceneMemberID="viewController">
+                <tableViewController id="aVr-Ri-4Q2" customClass="MTGTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cW7-jI-NdW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="1026.0869565217392" y="73.660714285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="vPb-iU-dUf">
             <objects>
-                <viewController id="vmy-yR-LfH" sceneMemberID="viewController">
+                <viewController id="vmy-yR-LfH" customClass="MTGDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vqu-d5-KSB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
