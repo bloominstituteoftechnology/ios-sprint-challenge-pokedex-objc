@@ -86,12 +86,16 @@ class PokemonAPI: NSObject {
                 return
             }
             
-            
-            //
-            
-            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String,Any>
+                
+                if let id = json["id"] as? Int {
+                    pokemon.identifier = Int32(id)
+                }
+            } catch {
+                NSLog("Failed to do something with json \(error)")
+            }
             
         }.resume()
-        
     }
 }
