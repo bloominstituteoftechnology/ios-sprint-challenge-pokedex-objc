@@ -1,5 +1,5 @@
 //
-//  CBDPokemonList.h
+//  CBDPokemonShort.h
 //  Pokedex-Obj-C
 //
 //  Created by Christopher Devito on 5/22/20.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CBDPokemonList : NSObject
+@interface CBDPokemonShort : NSObject
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *url;
 

@@ -1,14 +1,14 @@
 //
-//  CBDPokemonList.m
+//  CBDPokemonShort.m
 //  Pokedex-Obj-C
 //
 //  Created by Christopher Devito on 5/22/20.
 //  Copyright © 2020 Christopher Devito. All rights reserved.
 //
 
-#import "CBDPokemonList.h"
+#import "CBDPokemonShort.h"
 
-@implementation CBDPokemonList
+@implementation CBDPokemonShort
 
 - (instancetype)initWithName:(NSString *)name
                          url:(NSString *)url {

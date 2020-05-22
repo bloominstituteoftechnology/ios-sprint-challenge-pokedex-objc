@@ -11,8 +11,18 @@
 @implementation CBDPokemon (JSONSerialization)
 
 -(instancetype)initFromDictionary:(NSDictionary *)dictionary {
+    NSArray *abilitiesRaw = dictionary[@"abilities"];
+    NSMutableArray<NSString *> *abilities = [[NSMutableArray alloc] init];
+    for (NSDictionary *ability in abilitiesRaw) {
+        NSString *name = ability[@"name"];
+        [abilities addObject:name];
+    }
+    NSString *name = dictionary[@"name"];
+    NSNumber *identifier = dictionary[@"id"];
+    NSDictionary *sprites = dictionary[@"sprites"];
+    NSString *spriteURL = sprites[@"front_default"];
 
-    return nil;
+    return [[CBDPokemon alloc] initWithName:name identifier:identifier spriteURL:spriteURL abilities:abilities];
 }
 
 @end

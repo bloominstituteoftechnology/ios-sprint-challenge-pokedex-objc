@@ -17,8 +17,8 @@
 		E2DA48FA247822ED00E2A1E6 /* CBDPokemonsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DA48F9247822ED00E2A1E6 /* CBDPokemonsTableViewController.m */; };
 		E2DA48FD247825A200E2A1E6 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DA48FC247825A200E2A1E6 /* NetworkController.swift */; };
 		E2DA49002478260100E2A1E6 /* CBDPokemon+JSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DA48FF2478260100E2A1E6 /* CBDPokemon+JSONSerialization.m */; };
-		E2DA4903247827A500E2A1E6 /* CBDPokemonList.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DA4902247827A500E2A1E6 /* CBDPokemonList.m */; };
-		E2DA4906247827C300E2A1E6 /* CBDPokemonList+JSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DA4905247827C300E2A1E6 /* CBDPokemonList+JSONSerialization.m */; };
+		E2DA4903247827A500E2A1E6 /* CBDPokemonShort.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DA4902247827A500E2A1E6 /* CBDPokemonShort.m */; };
+		E2DA4906247827C300E2A1E6 /* CBDPokemonShort+JSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DA4905247827C300E2A1E6 /* CBDPokemonShort+JSONSerialization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,10 +40,10 @@
 		E2DA48FC247825A200E2A1E6 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		E2DA48FE2478260100E2A1E6 /* CBDPokemon+JSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CBDPokemon+JSONSerialization.h"; sourceTree = "<group>"; };
 		E2DA48FF2478260100E2A1E6 /* CBDPokemon+JSONSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CBDPokemon+JSONSerialization.m"; sourceTree = "<group>"; };
-		E2DA4901247827A500E2A1E6 /* CBDPokemonList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBDPokemonList.h; sourceTree = "<group>"; };
-		E2DA4902247827A500E2A1E6 /* CBDPokemonList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBDPokemonList.m; sourceTree = "<group>"; };
-		E2DA4904247827C300E2A1E6 /* CBDPokemonList+JSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CBDPokemonList+JSONSerialization.h"; sourceTree = "<group>"; };
-		E2DA4905247827C300E2A1E6 /* CBDPokemonList+JSONSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CBDPokemonList+JSONSerialization.m"; sourceTree = "<group>"; };
+		E2DA4901247827A500E2A1E6 /* CBDPokemonShort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBDPokemonShort.h; sourceTree = "<group>"; };
+		E2DA4902247827A500E2A1E6 /* CBDPokemonShort.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBDPokemonShort.m; sourceTree = "<group>"; };
+		E2DA4904247827C300E2A1E6 /* CBDPokemonShort+JSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CBDPokemonShort+JSONSerialization.h"; sourceTree = "<group>"; };
+		E2DA4905247827C300E2A1E6 /* CBDPokemonShort+JSONSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CBDPokemonShort+JSONSerialization.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,10 +133,10 @@
 				E2DA48F62478229000E2A1E6 /* CBDPokemon.m */,
 				E2DA48FE2478260100E2A1E6 /* CBDPokemon+JSONSerialization.h */,
 				E2DA48FF2478260100E2A1E6 /* CBDPokemon+JSONSerialization.m */,
-				E2DA4901247827A500E2A1E6 /* CBDPokemonList.h */,
-				E2DA4902247827A500E2A1E6 /* CBDPokemonList.m */,
-				E2DA4904247827C300E2A1E6 /* CBDPokemonList+JSONSerialization.h */,
-				E2DA4905247827C300E2A1E6 /* CBDPokemonList+JSONSerialization.m */,
+				E2DA4901247827A500E2A1E6 /* CBDPokemonShort.h */,
+				E2DA4902247827A500E2A1E6 /* CBDPokemonShort.m */,
+				E2DA4904247827C300E2A1E6 /* CBDPokemonShort+JSONSerialization.h */,
+				E2DA4905247827C300E2A1E6 /* CBDPokemonShort+JSONSerialization.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -213,13 +213,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2DA48D9247821D700E2A1E6 /* AppDelegate.m in Sources */,
-				E2DA4903247827A500E2A1E6 /* CBDPokemonList.m in Sources */,
+				E2DA4903247827A500E2A1E6 /* CBDPokemonShort.m in Sources */,
 				E2DA48F72478229000E2A1E6 /* CBDPokemon.m in Sources */,
 				E2DA48FD247825A200E2A1E6 /* NetworkController.swift in Sources */,
 				E2DA48FA247822ED00E2A1E6 /* CBDPokemonsTableViewController.m in Sources */,
 				E2DA49002478260100E2A1E6 /* CBDPokemon+JSONSerialization.m in Sources */,
 				E2DA48EA247821DA00E2A1E6 /* main.m in Sources */,
-				E2DA4906247827C300E2A1E6 /* CBDPokemonList+JSONSerialization.m in Sources */,
+				E2DA4906247827C300E2A1E6 /* CBDPokemonShort+JSONSerialization.m in Sources */,
 				E2DA48DC247821D700E2A1E6 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

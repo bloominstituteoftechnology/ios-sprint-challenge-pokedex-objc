@@ -11,7 +11,7 @@
 @implementation CBDPokemon
 
 - (instancetype)initWithName:(NSString *)name
-                  identifier:(NSString *)identifier
+                  identifier:(NSNumber *)identifier
                    spriteURL:(NSString *)spriteURL
                    abilities:(NSArray<NSString *> *)abilities {
     self = [super init];

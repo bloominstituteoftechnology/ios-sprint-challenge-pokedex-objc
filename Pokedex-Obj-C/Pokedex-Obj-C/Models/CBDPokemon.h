@@ -13,12 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CBDPokemon : NSObject
 
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) NSNumber *identifier;
 @property (nonatomic, readonly) NSString *spritURL;
 @property (nonatomic, readonly) NSArray<NSString *> *abilities;
 
 - (instancetype)initWithName:(NSString *)name
-                  identifier:(NSString *)identifier
+                  identifier:(NSNumber *)identifier
                    spriteURL:(NSString *)spriteURL
                    abilities:(NSArray<NSString *> *)abilities;
 
