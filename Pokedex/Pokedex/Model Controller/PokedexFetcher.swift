@@ -83,8 +83,91 @@ class PokemonAPI: NSObject {
     }
 
     @objc func fillInDetails(for pokemon: MTGPokemon) {
+        URLSession.shared.dataTask(with: pokemon.detailURL) { [weak self] data, response, error in
+            print("URL: \(pokemon.detailURL)")
 
+            if let error = error {
+                NSLog("Error fetching Pokemon details: \(error)")
+                return
+            }
+            if let response = response as? HTTPURLResponse,
+                response.statusCode < 200 || response.statusCode > 299
+            {
+                NSLog("Error fetching Pokemon data; bad response: \(response)")
+                return
+            }
+            guard let data = data else {
+                NSLog("Error fetching Pokemon data; no data received")
+                return
+            }
+
+            var pokemonDictionary: [String: Any]?
+            do {
+                pokemonDictionary = try JSONSerialization
+                    .jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                NSLog("Error decoding pokemon JSON: \(error)")
+                return
+            }
+            guard let dict = pokemonDictionary else {
+                NSLog("Unknown error decoding pokemon JSON")
+                return
+            }
+
+            // Get id
+            pokemon.identifier = dict["id"] as? String
+
+            // Get abilities
+            var abilities: [String] = []
+            if let abilitiesDictionary = dict["abilities"] as? [[String: Any]] {
+                for ability in abilitiesDictionary {
+                    let abilityDetail = ability["ability"] as? [String: String]
+                    if let name = abilityDetail?["name"] {
+                        abilities.append(name)
+                    }
+                }
+            }
+            pokemon.abilities = abilities
+
+            // get sprite url
+            let sprites = dict["sprites"] as? [String: Any]
+            let imageURLString = sprites?["front_default"] as? String
+            if let urlString = imageURLString,
+                let imageURL = URL(string: urlString) {
+                pokemon.imageURL = imageURL
+                self?.fetchImage(for: pokemon, with: imageURL)
+            } else {
+                NSLog("Invalid image url: \(imageURLString ?? "Missing URL")")
+            }
+        }.resume()
     }
+
+    private func fetchImage(for pokemon: MTGPokemon, with url: URL) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                NSLog("Error fetching Pokemon sprite: \(error)")
+                return
+            }
+            if let response = response as? HTTPURLResponse,
+                response.statusCode < 200 || response.statusCode > 299
+            {
+                NSLog("Error fetching Pokemon sprite; bad response: \(response)")
+                return
+            }
+            guard let data = data else {
+                NSLog("Error fetching Pokemon sprite; no data received")
+                return
+            }
+
+            // Convert the data object to an image
+            let image = UIImage(data: data)
+            if image == nil {
+                NSLog("Error converting fetched data to sprite image")
+            }
+            pokemon.image = image
+        }.resume()
+    }
+
 }
 
 

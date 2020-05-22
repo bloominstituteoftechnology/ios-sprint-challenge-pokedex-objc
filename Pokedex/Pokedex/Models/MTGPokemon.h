@@ -15,10 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly, nonnull) NSString *name;
 @property (nonatomic, readonly, nonnull) NSURL *detailURL;
-@property (nonatomic, readonly, nullable) NSString *identifier;
-@property (nonatomic, readonly, nullable) NSURL *imageURL;
-@property (nonatomic, readonly, nullable) NSArray<NSString *> *abilities;
-@property (nonatomic, readonly, nullable) UIImage *image;
+@property (nonatomic, nullable) NSString *identifier;
+
+@property (nonatomic, nullable) NSURL *imageURL;
+@property (nonatomic, nullable) UIImage *image;
+
+@property (nonatomic, nullable) NSArray<NSString *> *abilities;
 
 - (instancetype _Nullable)initWithDictionary:(NSDictionary *)dictionary;
 

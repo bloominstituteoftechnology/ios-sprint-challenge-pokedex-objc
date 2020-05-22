@@ -7,6 +7,7 @@
 //
 
 #import "MTGDetailViewController.h"
+#import "Pokedex-Swift.h"
 
 @interface MTGDetailViewController ()
 
@@ -23,6 +24,14 @@
     [super viewDidLoad];
 
     [self updateViews];
+
+    if (self.pokemon.identifier == nil ||
+        self.pokemon.image == nil ||
+        self.pokemon.abilities == nil)
+    {
+        [PokemonAPI.sharedController fillInDetailsFor:self.pokemon];
+    }
+
 }
 
 - (void) updateViews {
