@@ -17,7 +17,6 @@ class PokemonAPI: NSObject {
     }
     
     // MARK: - Properties
-    @objc(sharedController) static let shared = PokemonAPI()
     private let baseURL: URL = URL(string: "https://pokeapi.co/api/v2/")!
     var pokemon: [WAHPokemon] = []
     
