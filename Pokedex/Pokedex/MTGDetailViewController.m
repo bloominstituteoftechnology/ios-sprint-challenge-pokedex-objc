@@ -43,14 +43,7 @@ void *KVOContext = &KVOContext;
     self.imageView.image = self.pokemon.image;
     self.idLabel.text = [NSString stringWithFormat:@"ID: %@", self.pokemon.identifier];
 
-    NSString *abilityText = @"";
-
-    for (int i = 0; i < self.pokemon.abilities.count; i++)
-    {
-//        NSLog(@"%@", [self.pokemon.abilities objectAtIndex:i]);
-
-        [NSString stringWithFormat:@"%@%@\n", abilityText, [self.pokemon.abilities objectAtIndex:i]];
-    }
+    NSString *abilityText = [self.pokemon.abilities componentsJoinedByString:@"\n"];
 
     self.abilityTextField.text = abilityText;
 }
