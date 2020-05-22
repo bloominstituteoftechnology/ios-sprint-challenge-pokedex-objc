@@ -48,10 +48,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="03d-tl-Vy2">
-                                <rect key="frame" x="20" y="108" width="374" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="hZg-G7-8TR"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="108" width="374" height="557"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Umm-4q-nxB">
                                 <rect key="frame" x="20" y="685" width="374" height="157"/>
@@ -112,6 +109,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Umm-4q-nxB" firstAttribute="top" secondItem="03d-tl-Vy2" secondAttribute="bottom" constant="20" id="47m-3z-bdK"/>
                             <constraint firstItem="oeK-pF-j5v" firstAttribute="bottom" secondItem="Umm-4q-nxB" secondAttribute="bottom" constant="20" id="8Uq-SH-So3"/>
                             <constraint firstItem="oeK-pF-j5v" firstAttribute="trailing" secondItem="Umm-4q-nxB" secondAttribute="trailing" constant="20" id="SPd-tc-yDm"/>
                             <constraint firstItem="oeK-pF-j5v" firstAttribute="trailing" secondItem="03d-tl-Vy2" secondAttribute="trailing" constant="20" id="Ugp-ds-BYG"/>

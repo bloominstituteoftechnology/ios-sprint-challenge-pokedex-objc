@@ -6,7 +6,7 @@
 //  Copyright © 2020 Wyatt Harrell. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class PokemonAPI: NSObject {
     
@@ -103,9 +103,7 @@ class PokemonAPI: NSObject {
                     for item in abilitiesArray {
                         if let ability = item["ability"] as? Dictionary<String,Any> {
                             if let name = ability["name"] as? String {
-                                print("Here. \(name)")
                                 array.append(name)
-                                
                             }
                         }
                     }
@@ -115,6 +113,34 @@ class PokemonAPI: NSObject {
             } catch {
                 NSLog("Failed to do something with json \(error)")
             }
+            
+        }.resume()
+    }
+    
+    @objc func getImage(at urlString: String, completion: @escaping (UIImage?, Error?) -> Void) {
+        let imageUrl = URL(string: urlString)
+        let request = URLRequest(url: imageUrl!)
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                NSLog("Error receiving pokemon image data: \(error)")
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("GitHub responded with no image data") // Optional to print if you want
+                completion(nil, error)
+                return
+            }
+            
+            guard let image = UIImage(data: data) else {
+                NSLog("Image data is incomplete or currupted.")
+                completion(nil, error)
+                return
+            }
+            
+            completion(image,nil)
             
         }.resume()
     }
