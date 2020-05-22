@@ -26,10 +26,33 @@ extension ResultDecoder {
     }
 }
 
-//struct CalorieEntryResultDecoder: ResultDecoder {
-//    typealias ResultType = [String: CalorieEntryRepresentation]
-//
-//    var transform = { data in
-//        try JSONDecoder().decode([String: CalorieEntryRepresentation].self, from: data)
-//    }
-//}
+struct PokemonResultDecoder: ResultDecoder {
+    typealias ResultType = [Pokemon]
+
+    var transform: (Data) throws -> ResultType = { data in
+        guard let dict = try JSONSerialization
+            .jsonObject(with: data, options: .allowFragments) as? Dictionary<AnyHashable, Any> else {
+                throw NetworkError.decodingError(NSError(domain: "Error decoding pokemon", code: 0))
+        }
+
+        guard let results = dict["results"] as? Array<Dictionary<String, String>> else {
+            throw NetworkError.decodingError(NSError(domain: "Error decoding pokemon", code: 0))
+        }
+        
+        let pokemon = results.map { Pokemon(name: $0["name"]!)}
+
+        return pokemon
+    }
+}
+
+struct ImageResultDecoder: ResultDecoder {
+    typealias ResultType = UIImage
+    
+    var transform: (Data) throws -> UIImage = { data in
+        guard let image = UIImage(data: data) else {
+            throw NetworkError.badData
+        }
+        
+        return image
+    }
+}

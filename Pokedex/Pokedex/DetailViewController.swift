@@ -9,10 +9,20 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    let apiClient = PokeApiClient()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        apiClient.fetchAllPokemon { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let pokemon):
+                print(pokemon.map { $0.name })
+            }
+        }
     }
 
 

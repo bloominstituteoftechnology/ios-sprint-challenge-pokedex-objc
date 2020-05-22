@@ -16,7 +16,8 @@
 		0461148D2478226B00B56A4E /* NetworkingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461148A2478226B00B56A4E /* NetworkingExtensions.swift */; };
 		0461148E2478226B00B56A4E /* NetworkingEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461148B2478226B00B56A4E /* NetworkingEnums.swift */; };
 		0461148F2478226B00B56A4E /* ResultDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461148C2478226B00B56A4E /* ResultDecoder.swift */; };
-		04611492247822F700B56A4E /* PokeApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04611491247822F600B56A4E /* PokeApiClient.swift */; };
+		046114972478259E00B56A4E /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 046114962478259E00B56A4E /* Pokemon.m */; };
+		0461149B24782E6C00B56A4E /* PokeApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461149A24782E6C00B56A4E /* PokeApiClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +32,10 @@
 		0461148A2478226B00B56A4E /* NetworkingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingExtensions.swift; sourceTree = "<group>"; };
 		0461148B2478226B00B56A4E /* NetworkingEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingEnums.swift; sourceTree = "<group>"; };
 		0461148C2478226B00B56A4E /* ResultDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultDecoder.swift; sourceTree = "<group>"; };
-		04611491247822F600B56A4E /* PokeApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeApiClient.swift; sourceTree = "<group>"; };
+		046114942478259D00B56A4E /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
+		046114952478259E00B56A4E /* Pokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
+		046114962478259E00B56A4E /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
+		0461149A24782E6C00B56A4E /* PokeApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeApiClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +70,10 @@
 			children = (
 				0461147A2478223200B56A4E /* DetailViewController.swift */,
 				0461147C2478223200B56A4E /* Main.storyboard */,
+				04611499247825B500B56A4E /* Model */,
 				046114902478227900B56A4E /* Networking */,
 				046114932478235400B56A4E /* Resources */,
+				046114942478259D00B56A4E /* Pokedex-Bridging-Header.h */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -75,7 +81,7 @@
 		046114902478227900B56A4E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				04611491247822F600B56A4E /* PokeApiClient.swift */,
+				0461149A24782E6C00B56A4E /* PokeApiClient.swift */,
 				0461148B2478226B00B56A4E /* NetworkingEnums.swift */,
 				0461148A2478226B00B56A4E /* NetworkingExtensions.swift */,
 				0461148C2478226B00B56A4E /* ResultDecoder.swift */,
@@ -93,6 +99,15 @@
 				046114842478223300B56A4E /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		04611499247825B500B56A4E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				046114952478259E00B56A4E /* Pokemon.h */,
+				046114962478259E00B56A4E /* Pokemon.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +142,7 @@
 				TargetAttributes = {
 					046114722478223100B56A4E = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -171,7 +187,8 @@
 				0461148D2478226B00B56A4E /* NetworkingExtensions.swift in Sources */,
 				0461148E2478226B00B56A4E /* NetworkingEnums.swift in Sources */,
 				046114772478223200B56A4E /* AppDelegate.swift in Sources */,
-				04611492247822F700B56A4E /* PokeApiClient.swift in Sources */,
+				046114972478259E00B56A4E /* Pokemon.m in Sources */,
+				0461149B24782E6C00B56A4E /* PokeApiClient.swift in Sources */,
 				046114792478223200B56A4E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94ZMA2MYR4;
 				INFOPLIST_FILE = Pokedex/Resources/Info.plist;
@@ -325,6 +343,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftstudent.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex/Pokedex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -334,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94ZMA2MYR4;
 				INFOPLIST_FILE = Pokedex/Resources/Info.plist;
@@ -343,6 +364,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftstudent.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex/Pokedex-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
