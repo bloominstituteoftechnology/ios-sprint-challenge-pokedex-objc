@@ -28,6 +28,7 @@ void *kvoContext = &kvoContext;
     [self.pokemon addObserver: self forKeyPath:@"name" options:0 context:kvoContext];
     [self.pokemon addObserver: self forKeyPath:@"abilities" options:0 context:kvoContext];
     [self.pokemon addObserver: self forKeyPath:@"url" options:0 context:kvoContext];
+    [self.pokemon addObserver: self forKeyPath:@"image" options:0 context:kvoContext];
     // Do any additional setup after loading the view.
 }
 
@@ -47,8 +48,11 @@ void *kvoContext = &kvoContext;
         }
         
         if ([keyPath isEqualToString:@"url"]){
-            [self getImage];
+            [self updateViews];
         }
+        if ([keyPath isEqualToString:@"image"]){
+                   [self getImage];
+               }
     }
 }
 -(void)updateViews {

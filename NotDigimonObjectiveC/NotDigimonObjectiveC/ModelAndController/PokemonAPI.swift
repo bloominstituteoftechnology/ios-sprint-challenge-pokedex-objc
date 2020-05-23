@@ -67,7 +67,9 @@ class PokemonAPI: NSObject {
                             pokemon.abilities?.append(ability)
                         }
                         // identifier
-                        pokemon.identifier = parentDict["id"] as? String
+                        let id = parentDict["id"]!
+                        let stringID = String(describing: id)
+                        pokemon.identifier = stringID
                         // url
                         pokemon.url = s
                 }
