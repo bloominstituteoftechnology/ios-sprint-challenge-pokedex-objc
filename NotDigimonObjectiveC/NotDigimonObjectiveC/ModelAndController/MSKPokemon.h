@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MSKPokemon: NSObject
@@ -16,12 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *sprite;
 @property (nonatomic, copy, nullable) NSArray<NSString *> *abilities;
 @property (nonatomic, copy, nullable) NSString *url;
+@property (nonatomic, copy, nullable) NSString *image;
 
 -(instancetype)initWithName:(NSString *)name url:(NSString *)url;
 
 -(instancetype)initWithName:(NSString *)name
                  identifier:(NSString *)identifier
-                     sprite:(NSString *)sprite
+                     image:(NSString *)image
                   abilities:(NSArray<NSString *> *)abilities
                         url:(NSString *)url;
 -(instancetype)initWithSpecificDict:(NSDictionary *)dict;

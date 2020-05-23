@@ -3,4 +3,5 @@
 //
 
 #import "MSKPokemon.h"
+#import "MSKPokemonDetailViewController.h"
 

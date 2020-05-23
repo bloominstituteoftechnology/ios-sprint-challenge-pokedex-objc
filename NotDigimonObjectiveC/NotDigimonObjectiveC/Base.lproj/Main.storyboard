@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="iq8-JW-M2i" kind="showDetail" id="j6E-yG-QOx"/>
+                                    <segue destination="iq8-JW-M2i" kind="showDetail" identifier="detailSegue" id="j6E-yG-QOx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -51,7 +51,7 @@
         <!--Pokemon Detail View Controller-->
         <scene sceneID="hkx-6o-cMC">
             <objects>
-                <viewController id="iq8-JW-M2i" customClass="PokemonDetailViewController" customModule="NotDigimonObjectiveC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iq8-JW-M2i" customClass="MSKPokemonDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uIq-FS-WGT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,10 +93,10 @@
                         <viewLayoutGuide key="safeArea" id="A8X-3i-A4a"/>
                     </view>
                     <connections>
-                        <outlet property="Identifier" destination="hoo-qf-C19" id="8iZ-7R-Yc9"/>
-                        <outlet property="Sprite" destination="aah-AR-lpR" id="owd-cS-Qnu"/>
-                        <outlet property="abilities" destination="UU0-MP-Qw0" id="qOp-Dq-o3w"/>
-                        <outlet property="name" destination="IyL-Ao-veY" id="97J-PE-6uC"/>
+                        <outlet property="abilities" destination="UU0-MP-Qw0" id="h9a-EX-xYC"/>
+                        <outlet property="identifier" destination="hoo-qf-C19" id="4gc-5P-h7y"/>
+                        <outlet property="name" destination="IyL-Ao-veY" id="XZ8-1R-vzw"/>
+                        <outlet property="sprite" destination="aah-AR-lpR" id="iLA-Ff-3b8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6DI-2F-vf5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

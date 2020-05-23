@@ -47,7 +47,7 @@
 -(instancetype)initWithSpecificDict:(NSDictionary *)dict {
     NSString *name = dict[@"name"];
     NSString *identifier = [dict[@"id"] stringValue];
-    NSString *frontShiny = dict[@"sprites"][@"front_shiny"];
+    NSString *image = dict[@"sprites"][@"front_shiny"];
     NSArray *abilitiesParentArray = dict[@"abilities"];
     NSMutableArray *abilitiesArray = [[NSMutableArray alloc] init];
     for (NSDictionary *dictionary  in abilitiesParentArray) {
@@ -58,7 +58,7 @@
     
     self = [self initWithName:name
                    identifier:identifier
-                       sprite:frontShiny
+                        image:image
                     abilities:abilitiesArray
                           url:url];
     return self;

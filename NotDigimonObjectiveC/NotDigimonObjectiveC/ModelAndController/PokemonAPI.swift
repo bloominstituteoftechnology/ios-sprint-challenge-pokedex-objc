@@ -27,7 +27,7 @@ class PokemonAPI: NSObject {
                 if let parentDict = json as? Dictionary<String, Any> {
                     let resultsArray: [Dictionary] = parentDict["results"] as! [Dictionary<String, Any>]
                     for dict in resultsArray {
-                        var mon = MSKPokemon(allDict: dict)
+                        let mon = MSKPokemon(allDict: dict)
                         results.append(mon)
                     }
                 }
@@ -55,9 +55,9 @@ class PokemonAPI: NSObject {
                                                                      options: [])  {
                     if let parentDict = json as? Dictionary<String, Any> {
                         // Sprite
-                        let spritesDict = parentDict["sprites"] as! Dictionary<String, String>
+                        let spritesDict = parentDict["sprites"] as! Dictionary<String, Any>
                         
-                        pokemon.sprite = spritesDict["front_shiny"]
+                        pokemon.image = spritesDict["front_shiny"] as? String
                         // Abilities
                         let abilitiesParentArray = parentDict["abilities"] as! Array<Dictionary
                         <String, Any>>
@@ -75,6 +75,36 @@ class PokemonAPI: NSObject {
             }
             
         }
+            task.resume()
+        }
+        
+    }
+    
+    @objc func getImage(front_shiny: String, completionHandler: @escaping (UIImage?, Error?) -> Void) {
+        let url = URL(string: front_shiny)
+        
+        let session = URLSession.shared
+        let request = URLRequest(url: url!)
+        print(request)
+        DispatchQueue.main.async {
+            let task = session.dataTask(with: request) {data, _, error in
+                if let error = error {
+                    print("Couldn't get image!" + String(describing: error))
+                    completionHandler(nil, error)
+                }
+                guard let data = data else {
+                    print("Nothing was received!")
+                    completionHandler(nil, error)
+                    return
+                }
+                guard let image = UIImage(data: data) else {
+                    print("There was no Image! AHHHHHH")
+                    completionHandler(nil, error)
+                    return
+                    
+                }
+                completionHandler(image, nil)
+            }
             task.resume()
         }
         

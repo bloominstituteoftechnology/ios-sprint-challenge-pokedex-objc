@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		E3E953E224783E38000A04B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E953E124783E38000A04B0 /* AppDelegate.m */; };
 		E3E953E524783E38000A04B0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E953E424783E38000A04B0 /* SceneDelegate.m */; };
-		E3E953E824783E38000A04B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E953E724783E38000A04B0 /* ViewController.m */; };
 		E3E953EB24783E38000A04B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3E953E924783E38000A04B0 /* Main.storyboard */; };
 		E3E953ED24783E3D000A04B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3E953EC24783E3D000A04B0 /* Assets.xcassets */; };
 		E3E953F024783E3D000A04B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3E953EE24783E3D000A04B0 /* LaunchScreen.storyboard */; };
 		E3E953F324783E3D000A04B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E953F224783E3D000A04B0 /* main.m */; };
 		E3E953FB2478447E000A04B0 /* MSKPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E953FA2478447E000A04B0 /* MSKPokemon.m */; };
 		E3E9540224784844000A04B0 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E9540124784844000A04B0 /* PokemonAPI.swift */; };
+		E3E9540424797A24000A04B0 /* MSKPokemonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E9540324797A24000A04B0 /* MSKPokemonTableViewController.swift */; };
+		E3E9540924799068000A04B0 /* MSKPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E9540824799068000A04B0 /* MSKPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +25,6 @@
 		E3E953E124783E38000A04B0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E3E953E324783E38000A04B0 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		E3E953E424783E38000A04B0 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		E3E953E624783E38000A04B0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E3E953E724783E38000A04B0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E3E953EA24783E38000A04B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3E953EC24783E3D000A04B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3E953EF24783E3D000A04B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +34,9 @@
 		E3E953FA2478447E000A04B0 /* MSKPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSKPokemon.m; sourceTree = "<group>"; };
 		E3E9540024784843000A04B0 /* NotDigimonObjectiveC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotDigimonObjectiveC-Bridging-Header.h"; sourceTree = "<group>"; };
 		E3E9540124784844000A04B0 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		E3E9540324797A24000A04B0 /* MSKPokemonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSKPokemonTableViewController.swift; sourceTree = "<group>"; };
+		E3E9540724799068000A04B0 /* MSKPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSKPokemonDetailViewController.h; sourceTree = "<group>"; };
+		E3E9540824799068000A04B0 /* MSKPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSKPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,13 +74,14 @@
 				E3E953E124783E38000A04B0 /* AppDelegate.m */,
 				E3E953E324783E38000A04B0 /* SceneDelegate.h */,
 				E3E953E424783E38000A04B0 /* SceneDelegate.m */,
-				E3E953E624783E38000A04B0 /* ViewController.h */,
-				E3E953E724783E38000A04B0 /* ViewController.m */,
 				E3E953E924783E38000A04B0 /* Main.storyboard */,
 				E3E953EC24783E3D000A04B0 /* Assets.xcassets */,
 				E3E953EE24783E3D000A04B0 /* LaunchScreen.storyboard */,
 				E3E953F124783E3D000A04B0 /* Info.plist */,
 				E3E953F224783E3D000A04B0 /* main.m */,
+				E3E9540324797A24000A04B0 /* MSKPokemonTableViewController.swift */,
+				E3E9540724799068000A04B0 /* MSKPokemonDetailViewController.h */,
+				E3E9540824799068000A04B0 /* MSKPokemonDetailViewController.m */,
 			);
 			path = NotDigimonObjectiveC;
 			sourceTree = "<group>";
@@ -165,10 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3E953E824783E38000A04B0 /* ViewController.m in Sources */,
 				E3E953E224783E38000A04B0 /* AppDelegate.m in Sources */,
 				E3E9540224784844000A04B0 /* PokemonAPI.swift in Sources */,
+				E3E9540924799068000A04B0 /* MSKPokemonDetailViewController.m in Sources */,
 				E3E953FB2478447E000A04B0 /* MSKPokemon.m in Sources */,
+				E3E9540424797A24000A04B0 /* MSKPokemonTableViewController.swift in Sources */,
 				E3E953F324783E3D000A04B0 /* main.m in Sources */,
 				E3E953E524783E38000A04B0 /* SceneDelegate.m in Sources */,
 			);
@@ -230,6 +234,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -288,6 +293,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
