@@ -1,18 +1,18 @@
 //
-//  PokedexTableViewController.m
+//  JAGPokedexTableViewController.m
 //  PokedexViewer
 //
 //  Created by Jessie Ann Griffin on 6/12/20.
 //  Copyright © 2020 Jessie Griffin. All rights reserved.
 //
 
-#import "PokedexTableViewController.h"
+#import "JAGPokedexTableViewController.h"
 
-@interface PokedexTableViewController ()
+@interface JAGPokedexTableViewController ()
 
 @end
 
-@implementation PokedexTableViewController
+@implementation JAGPokedexTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -13,8 +13,9 @@
 		95313A3A2494600F001A6030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95313A392494600F001A6030 /* Assets.xcassets */; };
 		95313A3D2494600F001A6030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95313A3B2494600F001A6030 /* LaunchScreen.storyboard */; };
 		95313A402494600F001A6030 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95313A3F2494600F001A6030 /* main.m */; };
-		95313A4A249461D8001A6030 /* PokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95313A49249461D8001A6030 /* PokedexTableViewController.m */; };
+		95313A4A249461D8001A6030 /* JAGPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95313A49249461D8001A6030 /* JAGPokedexTableViewController.m */; };
 		95313A4D249461F3001A6030 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95313A4C249461F3001A6030 /* DetailViewController.swift */; };
+		95313A552494643F001A6030 /* JAGPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 95313A542494643F001A6030 /* JAGPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +29,12 @@
 		95313A3C2494600F001A6030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95313A3E2494600F001A6030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95313A3F2494600F001A6030 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		95313A48249461D8001A6030 /* PokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokedexTableViewController.h; sourceTree = "<group>"; };
-		95313A49249461D8001A6030 /* PokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokedexTableViewController.m; sourceTree = "<group>"; };
+		95313A48249461D8001A6030 /* JAGPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JAGPokedexTableViewController.h; sourceTree = "<group>"; };
+		95313A49249461D8001A6030 /* JAGPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JAGPokedexTableViewController.m; sourceTree = "<group>"; };
 		95313A4B249461F2001A6030 /* PokedexViewer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokedexViewer-Bridging-Header.h"; sourceTree = "<group>"; };
 		95313A4C249461F3001A6030 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		95313A532494643F001A6030 /* JAGPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JAGPokemon.h; sourceTree = "<group>"; };
+		95313A542494643F001A6030 /* JAGPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JAGPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,29 +67,39 @@
 		95313A2C2494600E001A6030 /* PokedexViewer */ = {
 			isa = PBXGroup;
 			children = (
-				95313A2D2494600E001A6030 /* AppDelegate.h */,
-				95313A2E2494600E001A6030 /* AppDelegate.m */,
-				95313A302494600E001A6030 /* SceneDelegate.h */,
-				95313A312494600E001A6030 /* SceneDelegate.m */,
-				95313A472494614D001A6030 /* New Group */,
 				95313A362494600E001A6030 /* Main.storyboard */,
+				95313A4B249461F2001A6030 /* PokedexViewer-Bridging-Header.h */,
+				95313A532494643F001A6030 /* JAGPokemon.h */,
+				95313A542494643F001A6030 /* JAGPokemon.m */,
+				95313A472494614D001A6030 /* ViewControllers */,
 				95313A392494600F001A6030 /* Assets.xcassets */,
-				95313A3B2494600F001A6030 /* LaunchScreen.storyboard */,
+				95313A5224946350001A6030 /* Resources */,
 				95313A3E2494600F001A6030 /* Info.plist */,
 				95313A3F2494600F001A6030 /* main.m */,
 			);
 			path = PokedexViewer;
 			sourceTree = "<group>";
 		};
-		95313A472494614D001A6030 /* New Group */ = {
+		95313A472494614D001A6030 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				95313A48249461D8001A6030 /* PokedexTableViewController.h */,
-				95313A49249461D8001A6030 /* PokedexTableViewController.m */,
+				95313A48249461D8001A6030 /* JAGPokedexTableViewController.h */,
+				95313A49249461D8001A6030 /* JAGPokedexTableViewController.m */,
 				95313A4C249461F3001A6030 /* DetailViewController.swift */,
-				95313A4B249461F2001A6030 /* PokedexViewer-Bridging-Header.h */,
 			);
-			name = "New Group";
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		95313A5224946350001A6030 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95313A2D2494600E001A6030 /* AppDelegate.h */,
+				95313A2E2494600E001A6030 /* AppDelegate.m */,
+				95313A302494600E001A6030 /* SceneDelegate.h */,
+				95313A312494600E001A6030 /* SceneDelegate.m */,
+				95313A3B2494600F001A6030 /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +173,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95313A4A249461D8001A6030 /* PokedexTableViewController.m in Sources */,
+				95313A4A249461D8001A6030 /* JAGPokedexTableViewController.m in Sources */,
+				95313A552494643F001A6030 /* JAGPokemon.m in Sources */,
 				95313A2F2494600E001A6030 /* AppDelegate.m in Sources */,
 				95313A4D249461F3001A6030 /* DetailViewController.swift in Sources */,
 				95313A402494600F001A6030 /* main.m in Sources */,
