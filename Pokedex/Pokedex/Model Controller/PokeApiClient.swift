@@ -59,8 +59,9 @@ typealias PokemonResultsCompletion = (Result<[SBAPokemon], NetworkingError>) -> 
 typealias ImageResultCompletion = (Result<UIImage, NetworkingError>) -> Void
 
 
-@objc class PokeApiClient: NSObject {
-    @objc func fetchSortedPokemon(completion: @escaping ([SBAPokemon]?, Error?) -> Void) {
+@objcMembers class PokeApiClient: NSObject {
+    
+        func fetchSortedPokemon(completion: @escaping ([SBAPokemon]?, Error?) -> Void) {
         self.fetchAllPokemon { (result) in
             switch result {
             case .failure(let error):

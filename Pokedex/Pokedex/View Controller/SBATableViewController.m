@@ -7,44 +7,72 @@
 //
 
 #import "SBATableViewController.h"
+#import "SBAPokemon.h"
+#import "Pokedex-Bridging-Header.h"
+#import "Pokedex-Swift.h"
+#import <UIKit/UIKit.h>
 
 @interface SBATableViewController ()
+
+@property PokeApiClient *pokeApiClient;
+@property NSArray<SBAPokemon *> *pokemon;
+
+- (void)setUpPoke;
 
 @end
 
 @implementation SBATableViewController
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (!self) { return nil;}
+    [self setUpPoke];
+    return self;
+}
+
+- (void)setUpPoke {
+    _pokeApiClient = [[PokeApiClient alloc] init];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.pokeApiClient fetchSortedPokemonWithCompletion:^(NSArray<SBAPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else if (pokemon) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.pokemon = pokemon;
+                [self.tableView reloadData];
+            });
+        }
+    }];
+
 }
+
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.pokemon.count;
 }
 
-/*
+ 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokenameCell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    SBAPokemon *pokemon = self.pokemon[indexPath.row];
+    cell.textLabel.text = [pokemon.name capitalizedString];
     return cell;
 }
-*/
+ 
 
 /*
 // Override to support conditional editing of the table view.
