@@ -16,7 +16,7 @@ import Foundation
     
     @objc(sharedController) static let shared = PokemonController()
     
-    @objc var pokemon = [Pokemon]()
+    @objc var pokemons = [Pokemon]()
     
     
     // MARK: - Fetch Pokemon
@@ -43,9 +43,9 @@ import Foundation
                     if let results = dictionary["results"] as? [[String: String]] {
                         for pokemon in results {
                             let fetchedPokemon = Pokemon(dictionary: pokemon)
-                            self.pokemon.append(fetchedPokemon)
+                            self.pokemons.append(fetchedPokemon)
                         }
-                        completion(self.pokemon, nil)
+                        completion(self.pokemons, nil)
                     }
                 }
                 
@@ -116,11 +116,12 @@ import Foundation
     private func loadImage(url: URL, completion: @escaping (Data) -> Void) {
         
         let task = URLSession.shared.dataTask(with: url) { (data, _, error) in
-            if let error = error {
+            if let error = error { // error handeling
                 print("Error loading image: \(error)")
                 return
             }
             
+            //data
             guard let data = data else {
                 print("Image data error")
                 return

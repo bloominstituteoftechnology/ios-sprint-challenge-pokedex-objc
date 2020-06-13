@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="D4h-4f-k7Y" style="IBUITableViewCellStyleDefault" id="2LH-yJ-zgW">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokemonCell" textLabel="D4h-4f-k7Y" style="IBUITableViewCellStyleDefault" id="2LH-yJ-zgW">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2LH-yJ-zgW" id="uCB-Hj-un6">
@@ -134,6 +134,12 @@
                         <viewLayoutGuide key="safeArea" id="hTf-Vd-Euc"/>
                     </view>
                     <navigationItem key="navigationItem" id="uPN-uJ-dQs"/>
+                    <connections>
+                        <outlet property="pokemonAbilitiesTextView" destination="Rc7-rr-9gj" id="koK-R6-8gm"/>
+                        <outlet property="pokemonIDLabel" destination="Dvf-KT-eXt" id="ahs-Oi-I9N"/>
+                        <outlet property="pokemonImageView" destination="XPT-Y1-guA" id="Rew-HQ-OTd"/>
+                        <outlet property="pokemonNameLabel" destination="eF8-fi-1QY" id="pCP-62-fnb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X0c-pw-EQe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
