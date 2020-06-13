@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+NS_SWIFT_NAME(Pokemon)
 @interface TSAPokemon : NSObject
 
 @property (nonatomic, copy) NSString *name;
