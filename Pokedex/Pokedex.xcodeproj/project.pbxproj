@@ -16,6 +16,7 @@
 		E04C0FA42494628C00D2183B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E04C0FA32494628C00D2183B /* main.m */; };
 		E04C0FAF249465A000D2183B /* SBAPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = E04C0FAE249465A000D2183B /* SBAPokemon.m */; };
 		E04C0FB2249469AB00D2183B /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C0FB1249469AB00D2183B /* PokemonController.swift */; };
+		E04C0FB4249470CB00D2183B /* NetworkingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C0FB3249470CB00D2183B /* NetworkingExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		E04C0FAE249465A000D2183B /* SBAPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBAPokemon.m; sourceTree = "<group>"; };
 		E04C0FB0249469AA00D2183B /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
 		E04C0FB1249469AB00D2183B /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
+		E04C0FB3249470CB00D2183B /* NetworkingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				E04C0FB1249469AB00D2183B /* PokemonController.swift */,
 				E04C0FB0249469AA00D2183B /* Pokedex-Bridging-Header.h */,
+				E04C0FB3249470CB00D2183B /* NetworkingExtensions.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			files = (
 				E04C0F992494628900D2183B /* ViewController.m in Sources */,
 				E04C0F932494628900D2183B /* AppDelegate.m in Sources */,
+				E04C0FB4249470CB00D2183B /* NetworkingExtensions.swift in Sources */,
 				E04C0FAF249465A000D2183B /* SBAPokemon.m in Sources */,
 				E04C0FA42494628C00D2183B /* main.m in Sources */,
 				E04C0F962494628900D2183B /* SceneDelegate.m in Sources */,
