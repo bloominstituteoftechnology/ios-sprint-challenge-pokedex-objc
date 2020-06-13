@@ -8,7 +8,20 @@
 
 #import "TSAPokemonDetailViewController.h"
 
+void *KVOContext = &KVOContext;
+
 @interface TSAPokemonDetailViewController ()
+
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *idLabel;
+@property (strong, nonatomic) IBOutlet UILabel *abilitiesLabel;
+@property (strong, nonatomic) IBOutlet UIView *mainView;
+@property (strong, nonatomic) IBOutlet UIView *attributesView;
+@property (strong, nonatomic) IBOutlet UIButton *saveButton;
+@property (strong, nonatomic) IBOutlet UIButton *deleteButton;
+@property (strong, nonatomic) IBOutlet UISearchBar *search;
+
 
 @end
 
@@ -16,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
 
