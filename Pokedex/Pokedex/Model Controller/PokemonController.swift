@@ -71,7 +71,7 @@ typealias ImageResultCompletion = (Result<UIImage, NetworkingError>) -> Void
     }
 }
 
-
+    // Fetch All Pokemon ( names up to 500)
     func fetchAllPokemon(completion: @escaping PokemonResultsCompletion) {
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         components.queryItems = [
@@ -85,6 +85,38 @@ typealias ImageResultCompletion = (Result<UIImage, NetworkingError>) -> Void
     }
     
     
+    // Fetch details
     
+    @objc func fetchDetails(for pokemon: SBAPokemon) {
+        //append pokemon name to url string to get details
+        let request = URLRequest(url: baseURL.appendingPathComponent(pokemon.name))
+        
+        URLSession.shared.dataResultTask(with: request) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let data):
+                do {
+                    guard let pokeDict = try JSONSerialization
+                        .jsonObject(with: data, options: .fragmentsAllowed) as? Dictionary<String, Any> else {
+                            throw NetworkingError.decodingError(NSError(domain: "Error decoding pokemon details", code: 0))
+                    }
+                    self.fillInDetails(for: pokemon, with: pokeDict)
+                } catch {
+                    print(error)
+                }
+            }
+        }.resume()
+    }
+    
+    func fillInDetails() {
+        
+    }
+    
+    func fetchImage(url: URL, completion: @escaping ImageResultCompletion) {
+        URLSession.shared.dataResultTask(with: URLRequest(url: url)) { (result) in
+            completion(ImageResultDecoder().decode(result))
+        }.resume()
+    }
     
 }
