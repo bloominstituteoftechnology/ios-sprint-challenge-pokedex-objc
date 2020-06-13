@@ -53,6 +53,13 @@
     return cell;
 }
 
+- (TSAPokemonTableViewController *)pokemonController {
+    if (!_pokemonController) {
+        _pokemonController = [[TSAPokemonController alloc] init];
+    }
+    return _pokemonController;
+}
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

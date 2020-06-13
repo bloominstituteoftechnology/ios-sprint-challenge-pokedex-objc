@@ -16,7 +16,7 @@ NS_SWIFT_NAME(Pokemon)
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic) int identifier;
 @property (nonatomic, copy) NSString *image;
-@property (nonatomic, copy) NSArray *abilites;
+@property (nonatomic, copy) NSArray *abilities;
 
 - (instancetype)initWithName:(NSString *)name url:(NSString *)url;
 

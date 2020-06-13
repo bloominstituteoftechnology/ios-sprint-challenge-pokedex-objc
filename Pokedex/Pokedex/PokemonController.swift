@@ -108,7 +108,7 @@ import UIKit
                     }
                 }
                 
-                pokemon.abilites = array
+                pokemon.abilities = array
                 
             } catch {
                 print("Had an issue with the json: \(error)")
