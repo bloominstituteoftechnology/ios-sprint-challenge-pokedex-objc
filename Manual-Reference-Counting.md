@@ -24,23 +24,50 @@ Answer the following questions inline with this document.
 	}
 
 	printf("Word frequency: %s", wordFrequency.description.UTF8String);
-	```
+    
+	``` Yes - at the wordFrequency and punctuationSet ```
 
 	2. Rewrite the code so that it does not leak any memory with ARC disabled
 
+
+    NSCharacterSet *punctuationSet = [NSCharacterSet punctuationCharacterSet];
+
+    NSString *cleanQuote = [[quote componentsSeparatedByCharactersInSet:punctuationSet] componentsJoinedByString:@""];
+    NSArray *words = [[cleanQuote lowercaseString] componentsSeparatedByString:@" "];
+
+    NSMutableDictionary<NSString *, NSNumber *> *wordFrequency = [[[NSMutableDictionary alloc] init] autorelease]; //
+
+    for (NSString *word in words) {
+        NSNumber *count = wordFrequency[word];
+        if (count) {
+            wordFrequency[word] = [NSNumber numberWithInteger:count.integerValue + 1];
+        } else {
+            wordFrequency[word] = [[[NSNumber alloc] initWithInteger:1] autorelease]; //
+        }
+    }
+
+    printf("Word frequency: %s", wordFrequency.description.UTF8String);
+    
+
 2. Which of these objects is autoreleased?  Why?
 
-	1. `NSDate *yesterday = [NSDate date];`
+	1. `NSDate *yesterday = [NSDate date];` 
+            Yes - not created with - init, new or autorelease 
 	
 	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];`
+            Not - its retained - "retain"
 	
 	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];`
+            Not - initilized with alloc
 	
 	4. `NSDate *food = [NSDate new];`
+            Not - initilized with new
 	
 	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];`
+            Not - initilized with alloc
 	
 	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];`
+            Yes - called autorelease 
 
 3. Explain when you need to use the `NSAutoreleasePool`.
 
@@ -53,6 +80,12 @@ Answer the following questions inline with this document.
 @property (nonatomic, copy) NSString *name;
 
 - (instancetype)initWithName:(NSString *)name;
+
++ (instancetype)personWithName:(NSString *)name {
+
+    return [[[LSIPerson alloc] initWithName:name] autorelease]; //
+    
+}
 
 @end
 ```
