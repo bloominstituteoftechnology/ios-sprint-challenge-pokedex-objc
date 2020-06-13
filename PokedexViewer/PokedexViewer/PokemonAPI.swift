@@ -29,7 +29,7 @@ class PokemonAPI: NSObject {
 
     @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
         guard let baseURL = baseURL else {
-            completion(nil, nil)
+            completion(nil, NSError())
             return
         }
 
@@ -81,6 +81,64 @@ class PokemonAPI: NSObject {
     }
 
     @objc func fillInDetails(for pokemon: Pokemon) {
+        guard let baseURL = baseURL else {
+            return
+        }
 
+        let pokeURL = baseURL.appendingPathComponent("pokemon/\(pokemon.name)")
+        print(pokeURL)
+        var request = URLRequest(url: pokeURL)
+        request.httpMethod = HTTPMethods.get.rawValue
+
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                print("Error fetching data: \(error)")
+                return
+            }
+
+            guard let data = data else {
+                print("No data was returned from task.")
+                return
+            }
+
+            do {
+                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
+                    else {
+                        throw APIError.JSONDecodeError
+                }
+
+                let pokemon = Pokemon(dictionary: dictionary)
+
+            } catch {
+                print("Unable to decode data into pokemon object: \(error)")
+                return
+            }
+        }.resume()
+    }
+
+    func fetchImage(from urlString: String, completion: @escaping (UIImage?, Error?) -> Void) {
+        guard let imageURL = URL(string: urlString) else {
+            completion(nil, NSError())
+            return
+        }
+
+        var request = URLRequest(url: imageURL)
+        request.httpMethod = HTTPMethods.get.rawValue
+
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let _ = error {
+                completion(nil, error)
+                return
+            }
+
+            guard let data = data else {
+                completion(nil, error)
+                return
+            }
+
+            if let image = UIImage(data: data) {
+                completion(image, nil)
+            }
+        }.resume()
     }
 }
