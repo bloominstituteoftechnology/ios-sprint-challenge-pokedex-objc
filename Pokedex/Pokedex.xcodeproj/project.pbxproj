@@ -18,6 +18,7 @@
 		E04C0FB2249469AB00D2183B /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C0FB1249469AB00D2183B /* PokemonController.swift */; };
 		E04C0FB4249470CB00D2183B /* NetworkingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C0FB3249470CB00D2183B /* NetworkingExtensions.swift */; };
 		E04C0FB62494747F00D2183B /* ResultsDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C0FB52494747F00D2183B /* ResultsDecoder.swift */; };
+		E04C0FB924947DF200D2183B /* SBATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E04C0FB824947DF200D2183B /* SBATableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		E04C0FB1249469AB00D2183B /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 		E04C0FB3249470CB00D2183B /* NetworkingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingExtensions.swift; sourceTree = "<group>"; };
 		E04C0FB52494747F00D2183B /* ResultsDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsDecoder.swift; sourceTree = "<group>"; };
+		E04C0FB724947DF200D2183B /* SBATableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBATableViewController.h; sourceTree = "<group>"; };
+		E04C0FB824947DF200D2183B /* SBATableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBATableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		E04C0FAB249464C800D2183B /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E04C0FB724947DF200D2183B /* SBATableViewController.h */,
+				E04C0FB824947DF200D2183B /* SBATableViewController.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04C0FB924947DF200D2183B /* SBATableViewController.m in Sources */,
 				E04C0F992494628900D2183B /* ViewController.m in Sources */,
 				E04C0F932494628900D2183B /* AppDelegate.m in Sources */,
 				E04C0FB4249470CB00D2183B /* NetworkingExtensions.swift in Sources */,
