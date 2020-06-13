@@ -24,35 +24,6 @@ enum NetworkingError: Error {
     case encodingError(Error)
 }
 
-struct PokemonResultDecoder: ResultDecoder {
-    
-    typealias ResultType = [SBAPokemon]
-
-    var transform: (Data) throws -> ResultType = { data in
-        guard let dict = try JSONSerialization
-            .jsonObject(with: data, options: .allowFragments) as? Dictionary<AnyHashable, Any> else {
-                throw NetworkingError.decodingError(NSError(domain: "Error decoding pokemon", code: 0))
-        }
-        guard let results = dict["results"] as? Array<Dictionary<String, String>> else {
-            throw NetworkingError.decodingError(NSError(domain: "Error decoding pokemon", code: 0))
-        }
-        let pokemon = results.map { SBAPokemon(name: $0["name"]!)}
-        return pokemon
-    }
-}
-
-struct ImageResultDecoder: ResultDecoder {
-    typealias ResultType = UIImage
-    
-    var transform: (Data) throws -> UIImage = { data in
-        guard let image = UIImage(data: data) else {
-            throw NetworkingError.badData
-        }
-        return image
-    }
-}
-
-
 private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon")!
 
 typealias PokemonResultsCompletion = (Result<[SBAPokemon], NetworkingError>) -> Void
@@ -110,18 +81,24 @@ typealias ImageResultCompletion = (Result<UIImage, NetworkingError>) -> Void
         }.resume()
     }
     
-    func fillInDetails(for pokemon: SBAPokemon, with pokeDict: Dictionary<String, Any>) {
-        if let identifier = pokeDict["id"] as? String { // check back to see if error ( Int or String? )
+    func fetchImage(url: URL, completion: @escaping ImageResultCompletion) {
+          URLSession.shared.dataResultTask(with: URLRequest(url: url)) { (result) in
+              completion(ImageResultDecoder().decode(result))
+          }.resume()
+      }
+    
+    @objc func fillInDetails(for pokemon: SBAPokemon, with pokeDict: Dictionary<String, Any>) {
+        if let identifier = pokeDict["id"] as? NSNumber { // check back to see if error ( Int or String? )
             pokemon.identifier = identifier
         }
         
         if let imagesDict = pokeDict["sprites"] as? Dictionary<String, String?>,
             let urlString = imagesDict["front_default"] as? String {
-            pokemon.spriteURL = URL(string: urlString)!  
+            pokemon.spriteURL = URL(string: urlString)
         }
         if let abilitiesArray = pokeDict["abilities"] as? Array<Dictionary<String, Any>> {
             let abilities = abilitiesArray.map { (pokeDict) -> String in
-                let abilityDict = pokeDict["ability"] as? Dictionary<String,String>
+                let abilityDict = pokeDict["ability"] as? Dictionary<String, String>
                 return abilityDict!["name"]!
             }
             pokemon.abilities = abilities
@@ -130,10 +107,5 @@ typealias ImageResultCompletion = (Result<UIImage, NetworkingError>) -> Void
         
     }
     
-    func fetchImage(url: URL, completion: @escaping ImageResultCompletion) {
-        URLSession.shared.dataResultTask(with: URLRequest(url: url)) { (result) in
-            completion(ImageResultDecoder().decode(result))
-        }.resume()
-    }
     
 }

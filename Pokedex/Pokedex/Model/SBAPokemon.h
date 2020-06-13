@@ -15,8 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SBAPokemon : NSObject
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *identifier;
-@property (nonatomic, copy) NSURL *spriteURL;
+@property (nonatomic, copy, nullable) NSNumber *identifier;
+@property (nonatomic, nullable) NSURL *spriteURL;
 @property (nonatomic, copy) NSArray<NSString *> *abilities;
 
 - (instancetype)initWithName:(NSString *)name;

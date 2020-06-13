@@ -24,8 +24,12 @@ class PokeDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-
+    }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super .viewDidAppear(true)
+        updateViews()
+        updateImage()
     }
     
     private func updateViews() {
@@ -33,18 +37,19 @@ class PokeDetailsViewController: UIViewController {
             isViewLoaded else { return }
         title = pokemon.name.capitalized
         nameLabel.text = "Name: \(pokemon.name.capitalized)"
-        idLabel.text = "ID: \(pokemon.identifier)"
+        idLabel.text = "ID: \(pokemon.identifier ?? 1)"
         abilitiesLabel.text = "Abilities: \(pokemon.abilities.joined(separator: ","))"
         updateImage()
     }
     
     private func updateImage() {
         guard let pokemon = pokemon,
-        let pokeAPIClient = pokeAPIClient else { return }
-        let spriteURL = pokemon.spriteURL
+        let pokeAPIClient = pokeAPIClient,
+        let spriteURL = pokemon.spriteURL else { return }
             
         
         pokeAPIClient.fetchImage(url: spriteURL) { (result) in
+            print(pokemon.spriteURL)
             switch result {
             case .failure(let error):
                 print(error)
