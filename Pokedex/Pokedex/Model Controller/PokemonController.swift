@@ -8,6 +8,13 @@
 
 import UIKit
 
+enum HTTPMethod {
+    static let get = "GET"
+    static let put = "PUT"
+    static let post = "POST"
+    static let delete = "DELETE"
+}
+
 enum NetworkingError: Error {
     case transportError(Error)
     case badData
