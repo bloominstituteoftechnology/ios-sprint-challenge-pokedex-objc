@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PokedexTableViewController.h
 //  PokedexViewer
 //
 //  Created by Jessie Ann Griffin on 6/12/20.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface PokedexTableViewController : UITableViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
