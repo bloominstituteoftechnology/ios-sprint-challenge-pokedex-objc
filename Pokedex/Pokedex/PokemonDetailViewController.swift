@@ -9,6 +9,10 @@
 import UIKit
 
 class PokemonDetailViewController: UIViewController {
+    
+    // MARK: - Properties
+    // MARK: - Outlets
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
