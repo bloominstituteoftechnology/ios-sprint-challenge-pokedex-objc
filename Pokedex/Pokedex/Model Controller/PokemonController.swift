@@ -24,6 +24,34 @@ enum NetworkingError: Error {
     case encodingError(Error)
 }
 
+struct PokemonResultDecoder: ResultDecoder {
+    
+    typealias ResultType = [SBAPokemon]
+
+    var transform: (Data) throws -> ResultType = { data in
+        guard let dict = try JSONSerialization
+            .jsonObject(with: data, options: .allowFragments) as? Dictionary<AnyHashable, Any> else {
+                throw NetworkingError.decodingError(NSError(domain: "Error decoding pokemon", code: 0))
+        }
+        guard let results = dict["results"] as? Array<Dictionary<String, String>> else {
+            throw NetworkingError.decodingError(NSError(domain: "Error decoding pokemon", code: 0))
+        }
+        let pokemon = results.map { SBAPokemon(name: $0["name"]!)}
+        return pokemon
+    }
+}
+
+struct ImageResultDecoder: ResultDecoder {
+    typealias ResultType = UIImage
+    
+    var transform: (Data) throws -> UIImage = { data in
+        guard let image = UIImage(data: data) else {
+            throw NetworkingError.badData
+        }
+        return image
+    }
+}
+
 
 private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon")!
 
@@ -46,15 +74,14 @@ typealias ImageResultCompletion = (Result<UIImage, NetworkingError>) -> Void
 
     func fetchAllPokemon(completion: @escaping PokemonResultsCompletion) {
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
-        components.queryItems = {
+        components.queryItems = [
             URLQueryItem(name: "limit", value: "500")
-        }
+        ]
         let request = URLRequest(url: components.url!)
         
         URLSession.shared.dataResultTask(with: request) { (result) in
-            completion(PokemonResultsCompletion)
-        }
-        
+            completion(PokemonResultDecoder().decode(result))
+        }.resume()
     }
     
     
