@@ -114,4 +114,30 @@ class PokemonController: NSObject {
             }
         }.resume()
     }
+    
+    @objc func fetchImage(at urlString: String, completion: @escaping (UIImage?, Error?) -> Void) {
+        let imageUrl = URL(string: urlString)
+        let request = URLRequest(url: imageUrl!)
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error getting image data: \(error)")
+            }
+            
+            guard let data = data else {
+                print("No data")
+                completion(nil, error)
+                return
+            }
+            
+            guard let image = UIImage(data: data) else {
+                print("No data or currupt data")
+                completion(nil, error)
+                return
+            }
+            
+            completion(image, nil)
+            
+        }.resume()
+    }
 }
