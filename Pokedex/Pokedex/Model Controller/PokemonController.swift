@@ -109,7 +109,23 @@ typealias ImageResultCompletion = (Result<UIImage, NetworkingError>) -> Void
         }.resume()
     }
     
-    func fillInDetails() {
+    func fillInDetails(for pokemon: SBAPokemon, with pokeDict: Dictionary<String, Any>) {
+        if let identifier = pokeDict["id"] as? String { // check back to see if error ( Int or String? )
+            pokemon.identifier = identifier
+        }
+        
+        if let imagesDict = pokeDict["sprites"] as? Dictionary<String, String?>,
+            let urlString = imagesDict["front_default"] as? String {
+            pokemon.spriteURL = URL(string: urlString)!
+        }
+        if let abilitiesArray = pokeDict["abilities"] as? Array<Dictionary<String, Any>> {
+            let abilities = abilitiesArray.map { (pokeDict) -> String in
+                let abilityDict = pokeDict["ability"] as? Dictionary<String,String>
+                return abilityDict!["name"]!
+            }
+            pokemon.abilities = abilities
+        }
+        
         
     }
     
