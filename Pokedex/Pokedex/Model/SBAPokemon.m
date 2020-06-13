@@ -11,5 +11,18 @@
 
 @implementation SBAPokemon
 
+- (instancetype)initWithName:(NSString *)name
+{
+    self = [super init];
+    if (self) {
+        _name = name;
+    }
+    return self;
+}
+
+- (void)setAbilities:(NSArray<NSString *> *)abilities {
+    _abilities = [abilities copy];
+}
+
  
 @end
