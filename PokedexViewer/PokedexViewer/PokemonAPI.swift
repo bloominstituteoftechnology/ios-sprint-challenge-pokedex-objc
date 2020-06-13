@@ -8,20 +8,22 @@
 
 import UIKit
 
-enum NetworkError: Error {
-    case otherError
-    case badData
-    case noDecode
-}
-
 enum HTTPMethods: String {
     case get = "GET"
 }
 
+enum APIError: String, Error {
+    case DataNilError
+    case JSONDecodeError
+    case JSONMissingResults
+}
+
+@objc(JAGPokemonAPI)
 class PokemonAPI: NSObject {
 
-    @objc(sharedController)
-    static let shared = PokemonAPI()
+    @objc(sharedController) static let shared = PokemonAPI()
+
+//    private let baseURL = URL(string: "https://lambdapokeapi.herokuapp.com")
 
     private let baseURL = URL(string: "https://pokeapi.co/api/v2")
     var pokemon: Pokemon?
@@ -32,6 +34,8 @@ class PokemonAPI: NSObject {
             completion(nil, nil)
             return
         }
+
+//        let pokeURL = baseURL.appendingPathComponent("api/v2/pokemon/")
 
         let pokeURL = baseURL.appendingPathComponent("pokemon/")
         print(pokeURL)
@@ -56,7 +60,10 @@ class PokemonAPI: NSObject {
             }
 
             do {
-                let pokemons = try JSONSerialization.jsonObject(with: data, options: []) as? [Pokemon]
+                guard let pokemons = try JSONSerialization.jsonObject(with: data, options: []) as? [Pokemon] else {
+                    throw APIError.JSONDecodeError
+                }
+                
                 DispatchQueue.main.async {
                     completion(pokemons, nil)
                 }
@@ -75,31 +82,31 @@ class PokemonAPI: NSObject {
     }
 
 
-    func fetchImage(from urlString: String, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
-        guard let imageURL = URL(string: urlString) else {
-            completion(.failure(.otherError))
-            return
-        }
-
-        var request = URLRequest(url: imageURL)
-        request.httpMethod = HTTPMethods.get.rawValue
-
-        URLSession.shared.dataTask(with: request) { data, _, error in
-            if let _ = error {
-                completion(.failure(.otherError))
-                return
-            }
-
-            guard let data = data else {
-                completion(.failure(.badData))
-                return
-            }
-
-            if let image = UIImage(data: data) {
-                completion(.success(image))
-            }
-        }.resume()
-    }
+//    func fetchImage(from urlString: String, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
+//        guard let imageURL = URL(string: urlString) else {
+//            completion(.failure(.otherError))
+//            return
+//        }
+//
+//        var request = URLRequest(url: imageURL)
+//        request.httpMethod = HTTPMethods.get.rawValue
+//
+//        URLSession.shared.dataTask(with: request) { data, _, error in
+//            if let _ = error {
+//                completion(.failure(.otherError))
+//                return
+//            }
+//
+//            guard let data = data else {
+//                completion(.failure(.badData))
+//                return
+//            }
+//
+//            if let image = UIImage(data: data) {
+//                completion(.success(image))
+//            }
+//        }.resume()
+//    }
 
     // Persistence
 //    let userDefaults = UserDefaults.standard
