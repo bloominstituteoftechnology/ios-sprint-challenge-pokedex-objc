@@ -15,6 +15,7 @@
 		95313A402494600F001A6030 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95313A3F2494600F001A6030 /* main.m */; };
 		95313A4A249461D8001A6030 /* JAGPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95313A49249461D8001A6030 /* JAGPokedexTableViewController.m */; };
 		95313A4D249461F3001A6030 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95313A4C249461F3001A6030 /* DetailViewController.swift */; };
+		95313A4F24946330001A6030 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95313A4E24946330001A6030 /* PokemonAPI.swift */; };
 		95313A552494643F001A6030 /* JAGPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 95313A542494643F001A6030 /* JAGPokemon.m */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		95313A49249461D8001A6030 /* JAGPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JAGPokedexTableViewController.m; sourceTree = "<group>"; };
 		95313A4B249461F2001A6030 /* PokedexViewer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokedexViewer-Bridging-Header.h"; sourceTree = "<group>"; };
 		95313A4C249461F3001A6030 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		95313A4E24946330001A6030 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 		95313A532494643F001A6030 /* JAGPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JAGPokemon.h; sourceTree = "<group>"; };
 		95313A542494643F001A6030 /* JAGPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JAGPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				95313A362494600E001A6030 /* Main.storyboard */,
+				95313A4E24946330001A6030 /* PokemonAPI.swift */,
 				95313A4B249461F2001A6030 /* PokedexViewer-Bridging-Header.h */,
 				95313A532494643F001A6030 /* JAGPokemon.h */,
 				95313A542494643F001A6030 /* JAGPokemon.m */,
@@ -176,6 +179,7 @@
 				95313A4A249461D8001A6030 /* JAGPokedexTableViewController.m in Sources */,
 				95313A552494643F001A6030 /* JAGPokemon.m in Sources */,
 				95313A2F2494600E001A6030 /* AppDelegate.m in Sources */,
+				95313A4F24946330001A6030 /* PokemonAPI.swift in Sources */,
 				95313A4D249461F3001A6030 /* DetailViewController.swift in Sources */,
 				95313A402494600F001A6030 /* main.m in Sources */,
 				95313A322494600E001A6030 /* SceneDelegate.m in Sources */,
