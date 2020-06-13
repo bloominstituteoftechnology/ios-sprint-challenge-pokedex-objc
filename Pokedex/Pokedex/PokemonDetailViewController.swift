@@ -36,5 +36,12 @@ class PokemonDetailViewController: UIViewController {
 
     }
 
+    
+    // MARK: - Observations
+    private func createObservations() {
+        
+
+    }
+
 
 }
