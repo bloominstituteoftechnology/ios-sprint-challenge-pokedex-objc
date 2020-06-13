@@ -44,13 +44,7 @@
                             <outlet property="delegate" destination="6dr-gj-lKp" id="S0z-LW-P5d"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pokedex" id="OXH-hM-3uA">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="wbA-Gf-328">
-                            <connections>
-                                <segue destination="YtK-3u-Cuq" kind="show" identifier="SearchSegue" id="qiQ-uc-PPC"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Pokedex" id="OXH-hM-3uA"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKu-ou-Q1J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,10 +215,4 @@
             <point key="canvasLocation" x="-787" y="237"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="qiQ-uc-PPC"/>
-    </inferredMetricsTieBreakers>
-    <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-    </resources>
 </document>
