@@ -14,14 +14,19 @@ NS_SWIFT_NAME(Pokemon)
 @interface JAGPokemon : NSObject
 
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic) NSInteger identifier;
+@property (nonatomic) int identifier;
 @property (nonatomic, readonly, copy) NSString *spriteURLString;
 @property (nonatomic, readonly, copy) NSArray *abilities;
+@property (nonatomic, readonly, copy) NSString *pokemonURLasString;
+
+- (instancetype)initWithName:(NSString *)name andURLString:(NSString *)pokemonURLString;
 
 - (instancetype)initWithName:(NSString *)aName
-               andIdentifier:(NSInteger)anIdentifier
+               andIdentifier:(int)anIdentifier
                   withSprite:(NSString *)aSpriteURLString
                 andAbilities:(NSArray *)abilities;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 
