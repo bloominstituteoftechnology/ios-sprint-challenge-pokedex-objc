@@ -19,7 +19,7 @@ Answer the following questions inline with this document.
 		if (count) {
 			wordFrequency[word] = [NSNumber numberWithInteger:count.integerValue + 1];
 		} else {
-			wordFrequency[word] = [[NSNumber alloc] initWithInteger:1];
+			wordFrequency[word] = [[[NSNumber alloc] initWithInteger:1] autorelease];
 		}
 	}
 
@@ -27,25 +27,26 @@ Answer the following questions inline with this document.
 	```
 
 	2. Rewrite the code so that it does not leak any memory with ARC disabled
+	[wordFrequency release];
 
 2. Which of these objects is autoreleased?  Why?
 
-	1. `NSDate *yesterday = [NSDate date];`
+	1. `NSDate *yesterday = [NSDate date]; Autoreleased not creator
 	
-	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];`
+	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain]; Not Autorelease *retain
 	
-	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];`
+	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];` Not Autoreleased We are creating/alloc without release
 	
-	4. `NSDate *food = [NSDate new];`
+	4. `NSDate *food = [NSDate new];Not Autoreleased  
 	
-	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];`
+	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];` Not Autoreleased We are creating/alloc
 	
-	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];`
+	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];` Autorelased "autorelease"
 
 3. Explain when you need to use the `NSAutoreleasePool`.
+When using MRC - autorelease pool are more efficent than managing each object induvidually
 
-
-4. Implement a convenience `class` method to create a `LSIPerson` object that takes a `name` property and returns an autoreleased object.
+4. Implement a convenience `class` method to create a `LSIPerson` object that takes a `name` property and returns an autoreleased object. If a pool is not available, autoreleased objects do not get released and we leak memory
 
 ```swift
 @interface LSIPerson: NSObject
