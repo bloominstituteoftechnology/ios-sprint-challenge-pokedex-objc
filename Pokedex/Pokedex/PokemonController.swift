@@ -8,7 +8,8 @@
 
 import UIKit
 
-class PokemonController: NSObject {
+
+@objc(TSAPokemonController) class PokemonController: NSObject {
     
     private enum SomeError: Error {
         case badResponse
