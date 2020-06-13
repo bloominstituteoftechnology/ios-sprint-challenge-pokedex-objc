@@ -16,6 +16,7 @@
 		E65C5FAC24946A3700158362 /* LSIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = E65C5FAB24946A3700158362 /* LSIPokemon.m */; };
 		E65C5FAF24946B1E00158362 /* PokemonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65C5FAE24946B1E00158362 /* PokemonTableViewController.swift */; };
 		E65C5FB124946B4A00158362 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65C5FB024946B4A00158362 /* PokemonDetailViewController.swift */; };
+		E65C5FB324946F8800158362 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65C5FB224946F8800158362 /* PokemonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		E65C5FAD24946B1E00158362 /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
 		E65C5FAE24946B1E00158362 /* PokemonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewController.swift; sourceTree = "<group>"; };
 		E65C5FB024946B4A00158362 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
+		E65C5FB224946F8800158362 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				E65C5FA92494676000158362 /* Resources */,
 				E65C5FAA24946A3700158362 /* LSIPokemon.h */,
 				E65C5FAB24946A3700158362 /* LSIPokemon.m */,
+				E65C5FB224946F8800158362 /* PokemonController.swift */,
 				E65C5FAE24946B1E00158362 /* PokemonTableViewController.swift */,
 				E65C5FB024946B4A00158362 /* PokemonDetailViewController.swift */,
 				E65C5FAD24946B1E00158362 /* Pokedex-Bridging-Header.h */,
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E65C5FAC24946A3700158362 /* LSIPokemon.m in Sources */,
+				E65C5FB324946F8800158362 /* PokemonController.swift in Sources */,
 				E65C5F922494675600158362 /* AppDelegate.m in Sources */,
 				E65C5FAF24946B1E00158362 /* PokemonTableViewController.swift in Sources */,
 				E65C5FA32494675700158362 /* main.m in Sources */,

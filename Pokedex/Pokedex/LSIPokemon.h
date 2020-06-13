@@ -12,6 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIPokemon : NSObject
 
+@property (nonatomic, copy, nonnull)NSString *pokemonName;
+@property (nonatomic, copy)NSNumber *pokemonID;
+@property (nonatomic, copy)NSString *pokemonAbilities;
+@property (nonatomic, copy, nonnull)NSURL *url;
+@property (nonatomic, copy)NSData *sprite;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END

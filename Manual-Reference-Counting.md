@@ -81,5 +81,11 @@ Answer the following questions inline with this document.
 
 - (instancetype)initWithName:(NSString *)name;
 
++ (instancetype)personWithName:(NSString *)name {
+
+    return [[[LSIPerson alloc] initWithName:name] autorelease]; //
+    
+}
+
 @end
 ```
