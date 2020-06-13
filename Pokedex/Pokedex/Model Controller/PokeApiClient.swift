@@ -117,7 +117,7 @@ typealias ImageResultCompletion = (Result<UIImage, NetworkingError>) -> Void
         
         if let imagesDict = pokeDict["sprites"] as? Dictionary<String, String?>,
             let urlString = imagesDict["front_default"] as? String {
-            pokemon.spriteURL = URL(string: urlString)!
+            pokemon.spriteURL = URL(string: urlString)!  
         }
         if let abilitiesArray = pokeDict["abilities"] as? Array<Dictionary<String, Any>> {
             let abilities = abilitiesArray.map { (pokeDict) -> String in

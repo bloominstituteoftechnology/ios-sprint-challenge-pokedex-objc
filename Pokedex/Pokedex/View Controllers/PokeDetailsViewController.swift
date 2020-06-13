@@ -21,12 +21,39 @@ class PokeDetailsViewController: UIViewController {
     @IBOutlet weak var abilitiesLabel: UILabel!
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
 
-        // Do any additional setup after loading the view.
+    
+    }
+    
+    private func updateViews() {
+        guard let pokemon = pokemon,
+            isViewLoaded else { return }
+        title = pokemon.name.capitalized
+        nameLabel.text = "Name: \(pokemon.name.capitalized)"
+        idLabel.text = "ID: \(pokemon.identifier)"
+        abilitiesLabel.text = "Abilities: \(pokemon.abilities.joined(separator: ","))"
+        updateImage()
+    }
+    
+    private func updateImage() {
+        guard let pokemon = pokemon,
+        let pokeAPIClient = pokeAPIClient else { return }
+        let spriteURL = pokemon.spriteURL
+            
+        
+        pokeAPIClient.fetchImage(url: spriteURL) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                }
+            }
+        }
     }
     
 
