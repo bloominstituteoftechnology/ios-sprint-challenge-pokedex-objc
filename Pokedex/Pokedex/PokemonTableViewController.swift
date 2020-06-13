@@ -16,7 +16,7 @@ class PokemonTableViewController: UITableViewController {
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fetchPokemon()
     }
 
     // MARK: - Count
@@ -35,6 +35,30 @@ class PokemonTableViewController: UITableViewController {
 
         return cell
     }
+    
+        // MARK: - Fetching data - function
+    //    let errorFetch =
+        private func fetchPokemon() {
+            
+            PokemonController.shared.fetchAllPokemon { (pokemon, error) in
+                
+                if let error = error {
+                    print("Error fetching: \(error)")
+                    return
+                }
+                
+                guard let pokemon = pokemon else {
+                    print("Couldnt find a Pokemon")
+                    return
+                }
+                
+                self.pokemons.append(contentsOf: pokemon)
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
 
     
     // MARK: - Navigation

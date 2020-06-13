@@ -96,7 +96,7 @@ import Foundation
                     
                     if let sprites = dictionary["sprites"] as? [String: Any] {
                         
-                        let imageString = sprites["pokemon_sprites"] as? String
+                        let imageString = sprites["front_shiny"] as? String
                         guard let imageURL = URL(string: imageString ?? "") else { return }
                         self.loadImage(url: imageURL) { (data) in
                             pokemon.sprite = data
