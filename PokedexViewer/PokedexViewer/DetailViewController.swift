@@ -10,6 +10,11 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var spriteImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var abilitiesLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -57,6 +57,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="XC6-nY-vrW"/>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="Cu7-03-E7l" id="1na-th-e0d"/>
+                        <outlet property="idLabel" destination="dZt-Nd-jsl" id="dVd-Ll-05A"/>
+                        <outlet property="nameLabel" destination="DuO-1k-E20" id="bSi-IQ-8TJ"/>
+                        <outlet property="spriteImageView" destination="tOO-aE-S5s" id="9md-b2-EaA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
