@@ -7,12 +7,112 @@
 //
 
 import Foundation
+import UIKit
 
-class PokemonAPI: NSObject {
-
-    @objc(sharedController) static let shared: PokemonAPI
-
-    @objc func fetchAllPokemon(completion: @escaping ([LSIPokemon]?, Error?) -> Void)
-
-    @objc func fillInDetails(for pokemon: LSIPokemon)
+enum HTTPMethod: String {
+    case get = "GET"
 }
+
+@objc
+class PokemonAPI: NSObject {
+    
+    var pokemonArray: [DSCPokemon] = []
+    var pokemonImages: [URL] = []
+    let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=964")!
+    
+    @objc(sharedController) static let shared = PokemonAPI()
+    
+    func addPokemon(pokemon: DSCPokemon) {
+        pokemonArray.append(pokemon)
+    }
+    
+    // MARK: FetchPokemon
+    @objc func fetchAllPokemon(completion: @escaping ([DSCPokemon]?, Error?) -> Void) {
+        /*
+         {
+         "count": 964,
+         "next": "https://pokeapi.co/api/v2/pokemon?offset=890&limit=74",
+         "previous": null,
+         "results": [
+           {
+             "name": "bulbasaur",
+             "url": "https://pokeapi.co/api/v2/pokemon/1/"
+           },
+           {
+             "name": "ivysaur",
+             "url": "https://pokeapi.co/api/v2/pokemon/2/"
+           }......
+         */
+        var request = URLRequest(url: baseURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                print("Error fetching data: \(error)")
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                print("No data returned from data task.")
+                completion(nil, error)
+                return
+            }
+            
+            do {
+                if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
+                    if let results = dictionary["results"] as? [[String:String]] {
+                        for pokemon in results {
+                            let pokemonObject = DSCPokemon(dictionary: pokemon)
+                            self.addPokemon(pokemon: pokemonObject)
+                        }
+                    }
+                }
+                completion(self.pokemonArray, nil)
+            } catch {
+                print("Unable to decode data into object of type [Pokemon]: \(error)")
+                completion(nil, error)
+            }
+        }.resume()
+    }
+    
+    
+    //MARK: Fill in Details
+    
+    @objc func fillInDetails(for pokemon: DSCPokemon) {
+
+    }
+    
+    
+    // MARK: Fetch Sprite
+    
+    @objc func fetchImage(from imageURL: String, completion: @escaping(UIImage?) -> Void) {
+        
+        guard let imageURL = URL(string: imageURL) else {
+            completion(nil)
+            return }
+        
+        var request = URLRequest(url: imageURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        URLSession.shared.dataTask(with: request) { (imageData, _, error) in
+            
+            if let error = error {
+                NSLog("Error fetching image: \(error)")
+                return
+            }
+            
+            guard let data = imageData else {
+                NSLog("No data provided for image: \(imageURL)")
+                completion(nil)
+                return
+            }
+            
+            let image = UIImage(data: data)
+            
+            completion(image)
+        }.resume()
+    }
+    
+}
+
