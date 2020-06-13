@@ -24,7 +24,6 @@ class PokemonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - UpdateViews
@@ -33,13 +32,39 @@ class PokemonDetailViewController: UIViewController {
         guard let pokemon = pokemon else { return }
         PokemonController.shared.fillInDetails(for: pokemon)
         pokemonNameLabel.text = pokemon.pokemonName.capitalized
-
+        createObservations()
     }
+    
 
+    // MARK: - Arguments
+    var observationAb: NSKeyValueObservation?
+    var observationIm: NSKeyValueObservation?
+    var observationID: NSKeyValueObservation?
+    
     
     // MARK: - Observations
     private func createObservations() {
         
+        // Ability
+        observationAb = pokemon?.observe(\.pokemonAbilities, changeHandler: { (object, change) in
+            DispatchQueue.main.async {
+                self.pokemonAbilitiesTextView.text = self.pokemon?.pokemonAbilities
+            }
+        })
+        // Image
+        observationIm = pokemon?.observe(\.sprite, changeHandler: { (object, change) in
+            guard let image = self.pokemon?.sprite else { return }
+            DispatchQueue.main.async {
+                self.pokemonImageView.image = UIImage(data: image)
+            }
+        })
+        
+        // ID
+        observationID = pokemon?.observe(\.pokemonID, changeHandler: { (object, change) in
+            DispatchQueue.main.async {
+                self.pokemonIDLabel.text = self.pokemon?.pokemonID.stringValue
+            }
+        })
 
     }
 
