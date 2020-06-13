@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="484.05797101449281" y="176.78571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Poke Details View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PokeDetailsViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,6 +98,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="wTz-zg-Uxg"/>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="RCk-cB-aLs" id="rQb-t9-wjB"/>
+                        <outlet property="idLabel" destination="bKX-j7-4bh" id="uao-61-fAR"/>
+                        <outlet property="imageView" destination="Lm8-P6-gpP" id="a4b-3k-JkO"/>
+                        <outlet property="nameLabel" destination="deb-eD-Xwv" id="G0t-7H-6cH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,7 +9,20 @@
 import UIKit
 
 class PokeDetailsViewController: UIViewController {
-
+    
+    // Properties
+    @objc var pokemon: SBAPokemon?
+    @objc var pokeAPIClient: PokeApiClient?
+    
+    // Outlets
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var abilitiesLabel: UILabel!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
