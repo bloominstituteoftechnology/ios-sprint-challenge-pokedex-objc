@@ -15,6 +15,7 @@
 		1F4A75142495340400FC6993 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4A75122495340400FC6993 /* LaunchScreen.storyboard */; };
 		1F4A75172495340400FC6993 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A75162495340400FC6993 /* main.m */; };
 		1F4A751E249534D800FC6993 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F4A751D249534D800FC6993 /* README.md */; };
+		1F4A752124953D3E00FC6993 /* TSAPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A752024953D3E00FC6993 /* TSAPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		1F4A75152495340400FC6993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F4A75162495340400FC6993 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F4A751D249534D800FC6993 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1F4A751F24953D3E00FC6993 /* TSAPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSAPokemon.h; sourceTree = "<group>"; };
+		1F4A752024953D3E00FC6993 /* TSAPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSAPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,7 @@
 		1F4A75032495340300FC6993 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				1F4A752324953D5B00FC6993 /* Model */,
 				1F4A75042495340300FC6993 /* AppDelegate.h */,
 				1F4A75052495340300FC6993 /* AppDelegate.m */,
 				1F4A75072495340300FC6993 /* SceneDelegate.h */,
@@ -77,6 +81,15 @@
 				1F4A75162495340400FC6993 /* main.m */,
 			);
 			path = Pokedex;
+			sourceTree = "<group>";
+		};
+		1F4A752324953D5B00FC6993 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F4A751F24953D3E00FC6993 /* TSAPokemon.h */,
+				1F4A752024953D3E00FC6993 /* TSAPokemon.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +167,7 @@
 				1F4A75062495340300FC6993 /* AppDelegate.m in Sources */,
 				1F4A75172495340400FC6993 /* main.m in Sources */,
 				1F4A75092495340300FC6993 /* SceneDelegate.m in Sources */,
+				1F4A752124953D3E00FC6993 /* TSAPokemon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
