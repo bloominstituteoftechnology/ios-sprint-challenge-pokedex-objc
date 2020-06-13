@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PokedexOBJC-Swift.h"
 @class PokemonAPI;
 @class DSCPokemon;
 

@@ -28,21 +28,7 @@ class PokemonAPI: NSObject {
     
     // MARK: FetchPokemon
     @objc func fetchAllPokemon(completion: @escaping ([DSCPokemon]?, Error?) -> Void) {
-        /*
-         {
-         "count": 964,
-         "next": "https://pokeapi.co/api/v2/pokemon?offset=890&limit=74",
-         "previous": null,
-         "results": [
-           {
-             "name": "bulbasaur",
-             "url": "https://pokeapi.co/api/v2/pokemon/1/"
-           },
-           {
-             "name": "ivysaur",
-             "url": "https://pokeapi.co/api/v2/pokemon/2/"
-           }......
-         */
+        
         var request = URLRequest(url: baseURL)
         request.httpMethod = HTTPMethod.get.rawValue
         
@@ -65,6 +51,7 @@ class PokemonAPI: NSObject {
                         for pokemon in results {
                             let pokemonObject = DSCPokemon(dictionary: pokemon)
                             self.addPokemon(pokemon: pokemonObject)
+                            print(self.pokemonArray.count)
                         }
                     }
                 }
