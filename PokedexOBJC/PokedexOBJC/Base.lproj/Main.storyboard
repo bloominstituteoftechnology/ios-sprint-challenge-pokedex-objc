@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Pokemon Table View Controller-->
         <scene sceneID="EFx-Yl-x0m">
             <objects>
-                <tableViewController id="pSM-FO-Dya" sceneMemberID="viewController">
+                <tableViewController id="pSM-FO-Dya" customClass="DSCPokemonTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cG3-VB-ey2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="1268.1159420289855" y="93.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="e9z-o9-ahL">
             <objects>
-                <viewController id="dwV-oa-4Nn" sceneMemberID="viewController">
+                <viewController id="dwV-oa-4Nn" customClass="PokemonDetailViewController" customModule="PokedexOBJC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uMc-KP-y16">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,6 +148,14 @@
                         <viewLayoutGuide key="safeArea" id="IGe-um-qP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Yu-5T-WvQ"/>
+                    <connections>
+                        <outlet property="ability1Label" destination="UbP-Wa-1Ks" id="jjZ-r8-qSX"/>
+                        <outlet property="ability2Label" destination="dVW-2j-dRQ" id="Ck5-Rm-UyO"/>
+                        <outlet property="ability3Label" destination="edL-Th-eKP" id="uw1-iC-GSU"/>
+                        <outlet property="idLabel" destination="64W-dT-GaO" id="shU-7z-tzC"/>
+                        <outlet property="imageView" destination="ufI-Os-AEb" id="xV7-86-qV9"/>
+                        <outlet property="nameLabel" destination="yVl-ac-Ge5" id="avS-pr-LVK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FqD-v3-dB9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

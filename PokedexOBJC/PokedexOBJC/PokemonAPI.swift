@@ -16,7 +16,7 @@ enum HTTPMethod: String {
 @objc
 class PokemonAPI: NSObject {
     
-    var pokemonArray: [DSCPokemon] = []
+    @objc var pokemonArray: [DSCPokemon] = []
     var pokemonImages: [URL] = []
     let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=964")!
     

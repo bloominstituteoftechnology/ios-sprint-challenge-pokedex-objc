@@ -7,22 +7,32 @@
 //
 
 #import "DSCPokemonTableViewController.h"
+#import "DSCPokemon.h"
+
+
 
 @interface DSCPokemonTableViewController ()
 
+@property (nonatomic) NSMutableArray *pokemonArray;
+@property PokemonAPI *pController;
+
 @end
+
 
 @implementation DSCPokemonTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
+
+- (instancetype)init{
+    if (self = [super init]){
+        _pController = [[PokemonAPI alloc]init];
+    }
+    return self;
+}
+
 
 #pragma mark - Table view data source
 

@@ -17,7 +17,7 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     if (self = [super init]) {
         self.name = dictionary[@"name"];
-        self.pokemonURL = dictionary[@"url"]
+        self.pokemonURL = dictionary[@"url"];
     }
     return self;
 }
