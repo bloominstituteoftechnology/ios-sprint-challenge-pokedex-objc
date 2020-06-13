@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
 
+NS_ASSUME_NONNULL_BEGIN
+NS_SWIFT_NAME(Pokemon)
 @interface JAGPokemon : NSObject
 
 @property (nonatomic, readonly, copy) NSString *name;
