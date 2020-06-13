@@ -14,6 +14,7 @@
 		E04C0F9E2494628C00D2183B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E04C0F9D2494628C00D2183B /* Assets.xcassets */; };
 		E04C0FA12494628C00D2183B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04C0F9F2494628C00D2183B /* LaunchScreen.storyboard */; };
 		E04C0FA42494628C00D2183B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E04C0FA32494628C00D2183B /* main.m */; };
+		E04C0FAF249465A000D2183B /* SBAPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = E04C0FAE249465A000D2183B /* SBAPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		E04C0FA02494628C00D2183B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E04C0FA22494628C00D2183B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E04C0FA32494628C00D2183B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E04C0FAD249465A000D2183B /* SBAPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBAPokemon.h; sourceTree = "<group>"; };
+		E04C0FAE249465A000D2183B /* SBAPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBAPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,9 @@
 		E04C0F902494628900D2183B /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				E04C0FAC249464DB00D2183B /* Model Controller */,
+				E04C0FAB249464C800D2183B /* View Controller */,
+				E04C0FAA249464BE00D2183B /* Model */,
 				E04C0F912494628900D2183B /* AppDelegate.h */,
 				E04C0F922494628900D2183B /* AppDelegate.m */,
 				E04C0F942494628900D2183B /* SceneDelegate.h */,
@@ -74,6 +80,29 @@
 				E04C0FA32494628C00D2183B /* main.m */,
 			);
 			path = Pokedex;
+			sourceTree = "<group>";
+		};
+		E04C0FAA249464BE00D2183B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E04C0FAD249465A000D2183B /* SBAPokemon.h */,
+				E04C0FAE249465A000D2183B /* SBAPokemon.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E04C0FAB249464C800D2183B /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		E04C0FAC249464DB00D2183B /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +177,7 @@
 			files = (
 				E04C0F992494628900D2183B /* ViewController.m in Sources */,
 				E04C0F932494628900D2183B /* AppDelegate.m in Sources */,
+				E04C0FAF249465A000D2183B /* SBAPokemon.m in Sources */,
 				E04C0FA42494628C00D2183B /* main.m in Sources */,
 				E04C0F962494628900D2183B /* SceneDelegate.m in Sources */,
 			);
