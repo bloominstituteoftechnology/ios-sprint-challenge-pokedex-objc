@@ -15,6 +15,7 @@
 		63B7B77E24971A300011DBD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B77D24971A300011DBD8 /* main.m */; };
 		63B7B78C24971EE00011DBD8 /* DTWPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B78B24971EE00011DBD8 /* DTWPokemonTableViewController.m */; };
 		63B7B79024971F670011DBD8 /* DTWPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B78F24971F670011DBD8 /* DTWPokemon.m */; };
+		63B7B79324971FB00011DBD8 /* DTWPokemonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B79224971FB00011DBD8 /* DTWPokemonDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		63B7B78B24971EE00011DBD8 /* DTWPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTWPokemonTableViewController.m; sourceTree = "<group>"; };
 		63B7B78E24971F670011DBD8 /* DTWPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTWPokemon.h; sourceTree = "<group>"; };
 		63B7B78F24971F670011DBD8 /* DTWPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTWPokemon.m; sourceTree = "<group>"; };
+		63B7B79124971FB00011DBD8 /* DTWPokemonDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTWPokemonDetail.h; sourceTree = "<group>"; };
+		63B7B79224971FB00011DBD8 /* DTWPokemonDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTWPokemonDetail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 			children = (
 				63B7B78E24971F670011DBD8 /* DTWPokemon.h */,
 				63B7B78F24971F670011DBD8 /* DTWPokemon.m */,
+				63B7B79124971FB00011DBD8 /* DTWPokemonDetail.h */,
+				63B7B79224971FB00011DBD8 /* DTWPokemonDetail.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				63B7B76D24971A2F0011DBD8 /* AppDelegate.m in Sources */,
 				63B7B78C24971EE00011DBD8 /* DTWPokemonTableViewController.m in Sources */,
 				63B7B77E24971A300011DBD8 /* main.m in Sources */,
+				63B7B79324971FB00011DBD8 /* DTWPokemonDetail.m in Sources */,
 				63B7B77024971A2F0011DBD8 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
