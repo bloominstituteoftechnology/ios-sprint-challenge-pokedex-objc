@@ -58,17 +58,33 @@
 		63B7B76A24971A2F0011DBD8 /* Pokedex-Objc */ = {
 			isa = PBXGroup;
 			children = (
+				63B7B78424971A9D0011DBD8 /* Storyboards */,
+				63B7B78524971AAB0011DBD8 /* Resources */,
+			);
+			path = "Pokedex-Objc";
+			sourceTree = "<group>";
+		};
+		63B7B78424971A9D0011DBD8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				63B7B77424971A2F0011DBD8 /* Main.storyboard */,
+				63B7B77924971A300011DBD8 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		63B7B78524971AAB0011DBD8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				63B7B76B24971A2F0011DBD8 /* AppDelegate.h */,
 				63B7B76C24971A2F0011DBD8 /* AppDelegate.m */,
 				63B7B76E24971A2F0011DBD8 /* SceneDelegate.h */,
 				63B7B76F24971A2F0011DBD8 /* SceneDelegate.m */,
-				63B7B77424971A2F0011DBD8 /* Main.storyboard */,
 				63B7B77724971A300011DBD8 /* Assets.xcassets */,
-				63B7B77924971A300011DBD8 /* LaunchScreen.storyboard */,
 				63B7B77C24971A300011DBD8 /* Info.plist */,
 				63B7B77D24971A300011DBD8 /* main.m */,
 			);
-			path = "Pokedex-Objc";
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +301,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BQB6FYF6S;
-				INFOPLIST_FILE = "Pokedex-Objc/Info.plist";
+				INFOPLIST_FILE = "Pokedex-Objc/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +318,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BQB6FYF6S;
-				INFOPLIST_FILE = "Pokedex-Objc/Info.plist";
+				INFOPLIST_FILE = "Pokedex-Objc/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
