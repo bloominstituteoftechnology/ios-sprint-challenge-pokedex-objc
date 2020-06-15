@@ -118,7 +118,6 @@
 				A274B26D24970D910078C40E /* Assets.xcassets */,
 				A274B27224970D910078C40E /* Info.plist */,
 				A274B27324970D910078C40E /* main.m */,
-				A274B28724971AD80078C40E /* Pokedex-Objective-C-Bridging-Header.h */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -127,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				A274B28824971AD80078C40E /* PokemonController.swift */,
+				A274B28724971AD80078C40E /* Pokedex-Objective-C-Bridging-Header.h */,
 			);
 			name = "Model Controllers";
 			sourceTree = "<group>";
