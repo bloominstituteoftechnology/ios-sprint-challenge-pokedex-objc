@@ -15,6 +15,8 @@ class PokemonAPI: NSObject {
     @objc dynamic var pokemonImage: UIImage?
     @objc(sharedController) static let shared = PokemonAPI()
     
+    @objc dynamic var pokemon: SKIPokemon?
+    
     @objc func fetchAllPokemon(completion: @escaping ([SKIPokemon]?, Error?) -> Void) {
 
         let url = urlForFetch(searchTerm: "")
@@ -41,6 +43,27 @@ class PokemonAPI: NSObject {
             }
             print(pokemen.count)
             completion(pokemen, nil)
+        }
+    }
+    
+    @objc func fetchAllDetails(for pokemon: SKIPokemon) {
+        self.pokemon = nil
+        guard let url = pokemon.infoURL else { return }
+        
+        fetch(from: url) { (dictionary, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let dictionary = dictionary else {
+                print("No dictionary.")
+                return
+            }
+            
+            let possibleFullPokemon = SKIPokemon(dictionary: dictionary)
+            guard let fullPokemon = possibleFullPokemon else { return }
+            
+            self.pokemon = fullPokemon
         }
     }
     
