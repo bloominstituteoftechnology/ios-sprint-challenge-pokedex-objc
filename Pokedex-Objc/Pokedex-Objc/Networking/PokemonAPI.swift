@@ -1,5 +1,5 @@
 //
-//  PokemonClient.swift
+//  PokemonAPI.swift
 //  Pokedex-Objc
 //
 //  Created by David Wright on 6/14/20.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-class PokemonClient {
+class PokemonAPI {
     
 }
