@@ -18,6 +18,7 @@
 		63B7B79324971FB00011DBD8 /* DTWPokemonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B79224971FB00011DBD8 /* DTWPokemonDetail.m */; };
 		63B7B797249722E70011DBD8 /* NSURL+Secure.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B796249722E70011DBD8 /* NSURL+Secure.m */; };
 		63B7B79A249729000011DBD8 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B799249729000011DBD8 /* PokemonAPI.swift */; };
+		63B7B79D24972FE40011DBD8 /* DTWPokemonResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B79C24972FE40011DBD8 /* DTWPokemonResults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		63B7B796249722E70011DBD8 /* NSURL+Secure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Secure.m"; sourceTree = "<group>"; };
 		63B7B798249728FF0011DBD8 /* Pokedex-Objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Objc-Bridging-Header.h"; sourceTree = "<group>"; };
 		63B7B799249729000011DBD8 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		63B7B79B24972FE40011DBD8 /* DTWPokemonResults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTWPokemonResults.h; sourceTree = "<group>"; };
+		63B7B79C24972FE40011DBD8 /* DTWPokemonResults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTWPokemonResults.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 				63B7B78F24971F670011DBD8 /* DTWPokemon.m */,
 				63B7B79124971FB00011DBD8 /* DTWPokemonDetail.h */,
 				63B7B79224971FB00011DBD8 /* DTWPokemonDetail.m */,
+				63B7B79B24972FE40011DBD8 /* DTWPokemonResults.h */,
+				63B7B79C24972FE40011DBD8 /* DTWPokemonResults.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				63B7B78C24971EE00011DBD8 /* DTWPokemonTableViewController.m in Sources */,
 				63B7B77E24971A300011DBD8 /* main.m in Sources */,
 				63B7B79324971FB00011DBD8 /* DTWPokemonDetail.m in Sources */,
+				63B7B79D24972FE40011DBD8 /* DTWPokemonResults.m in Sources */,
 				63B7B79A249729000011DBD8 /* PokemonAPI.swift in Sources */,
 				63B7B77024971A2F0011DBD8 /* SceneDelegate.m in Sources */,
 			);
