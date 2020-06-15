@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class DTWPokemon;
 
 @interface DTWPokemonTableViewController : UITableViewController
 
-@end
+@property (nonatomic, copy, nonnull) NSArray<DTWPokemon *> *pokemon;
 
-NS_ASSUME_NONNULL_END
+@end
