@@ -15,6 +15,7 @@
 		A274B27424970D910078C40E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A274B27324970D910078C40E /* main.m */; };
 		A274B27C2497116C0078C40E /* WASTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A274B27B2497116C0078C40E /* WASTableViewController.m */; };
 		A274B27F249711D30078C40E /* WASDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A274B27E249711D30078C40E /* WASDetailViewController.m */; };
+		A274B282249713210078C40E /* WASPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = A274B281249713210078C40E /* WASPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		A274B27B2497116C0078C40E /* WASTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WASTableViewController.m; sourceTree = "<group>"; };
 		A274B27D249711D30078C40E /* WASDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WASDetailViewController.h; sourceTree = "<group>"; };
 		A274B27E249711D30078C40E /* WASDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WASDetailViewController.m; sourceTree = "<group>"; };
+		A274B280249713210078C40E /* WASPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WASPokemon.h; sourceTree = "<group>"; };
+		A274B281249713210078C40E /* WASPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WASPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				A274B27B2497116C0078C40E /* WASTableViewController.m */,
 				A274B27D249711D30078C40E /* WASDetailViewController.h */,
 				A274B27E249711D30078C40E /* WASDetailViewController.m */,
+				A274B280249713210078C40E /* WASPokemon.h */,
+				A274B281249713210078C40E /* WASPokemon.m */,
 			);
 			path = "Pokedex-Objective-C";
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 				A274B27F249711D30078C40E /* WASDetailViewController.m in Sources */,
 				A274B26324970D8F0078C40E /* AppDelegate.m in Sources */,
 				A274B27C2497116C0078C40E /* WASTableViewController.m in Sources */,
+				A274B282249713210078C40E /* WASPokemon.m in Sources */,
 				A274B27424970D910078C40E /* main.m in Sources */,
 				A274B26624970D8F0078C40E /* SceneDelegate.m in Sources */,
 			);
