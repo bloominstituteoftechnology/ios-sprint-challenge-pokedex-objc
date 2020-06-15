@@ -51,7 +51,7 @@
                                 <rect key="frame" x="0.0" y="135" width="414" height="447"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="83g-oQ-JJR">
-                                <rect key="frame" x="20" y="602" width="87" height="102"/>
+                                <rect key="frame" x="20" y="602" width="200" height="102"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luq-jA-mxn">
                                         <rect key="frame" x="0.0" y="0.0" width="87" height="41"/>
@@ -72,16 +72,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="e1a-3h-e4B"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="cXt-tL-IPP" firstAttribute="trailing" secondItem="83g-oQ-JJR" secondAttribute="trailing" constant="194" id="40e-9m-o7t"/>
                             <constraint firstItem="OoT-7V-tSq" firstAttribute="top" secondItem="cXt-tL-IPP" secondAttribute="top" constant="47" id="Dnp-R8-5Rz"/>
                             <constraint firstItem="cXt-tL-IPP" firstAttribute="bottom" secondItem="83g-oQ-JJR" secondAttribute="bottom" constant="158" id="LE1-Mb-ari"/>
                             <constraint firstItem="83g-oQ-JJR" firstAttribute="top" secondItem="OoT-7V-tSq" secondAttribute="bottom" constant="20" id="MML-dF-8Az"/>
                             <constraint firstItem="OoT-7V-tSq" firstAttribute="trailing" secondItem="cXt-tL-IPP" secondAttribute="trailing" id="T5P-hT-yQw"/>
                             <constraint firstItem="83g-oQ-JJR" firstAttribute="leading" secondItem="cXt-tL-IPP" secondAttribute="leading" constant="20" id="f7z-ud-rfX"/>
-                            <constraint firstItem="cXt-tL-IPP" firstAttribute="trailing" secondItem="83g-oQ-JJR" secondAttribute="trailing" constant="307" id="k7E-DT-nNv"/>
                             <constraint firstItem="OoT-7V-tSq" firstAttribute="leading" secondItem="cXt-tL-IPP" secondAttribute="leading" id="sYO-hC-7pH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cXt-tL-IPP"/>
