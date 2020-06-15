@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WASDetailViewController.h
 //  Pokedex-Objective-C
 //
 //  Created by Alex Shillingford on 6/14/20.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface WASDetailViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

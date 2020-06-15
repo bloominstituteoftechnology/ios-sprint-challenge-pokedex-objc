@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		A274B26324970D8F0078C40E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A274B26224970D8F0078C40E /* AppDelegate.m */; };
 		A274B26624970D8F0078C40E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A274B26524970D8F0078C40E /* SceneDelegate.m */; };
-		A274B26924970D8F0078C40E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A274B26824970D8F0078C40E /* ViewController.m */; };
 		A274B26C24970D8F0078C40E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A274B26A24970D8F0078C40E /* Main.storyboard */; };
 		A274B26E24970D910078C40E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A274B26D24970D910078C40E /* Assets.xcassets */; };
 		A274B27124970D910078C40E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A274B26F24970D910078C40E /* LaunchScreen.storyboard */; };
 		A274B27424970D910078C40E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A274B27324970D910078C40E /* main.m */; };
+		A274B27C2497116C0078C40E /* WASTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A274B27B2497116C0078C40E /* WASTableViewController.m */; };
+		A274B27F249711D30078C40E /* WASDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A274B27E249711D30078C40E /* WASDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +23,15 @@
 		A274B26224970D8F0078C40E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A274B26424970D8F0078C40E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		A274B26524970D8F0078C40E /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		A274B26724970D8F0078C40E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A274B26824970D8F0078C40E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A274B26B24970D8F0078C40E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A274B26D24970D910078C40E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A274B27024970D910078C40E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A274B27224970D910078C40E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A274B27324970D910078C40E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A274B27A2497116C0078C40E /* WASTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WASTableViewController.h; sourceTree = "<group>"; };
+		A274B27B2497116C0078C40E /* WASTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WASTableViewController.m; sourceTree = "<group>"; };
+		A274B27D249711D30078C40E /* WASDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WASDetailViewController.h; sourceTree = "<group>"; };
+		A274B27E249711D30078C40E /* WASDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WASDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +68,15 @@
 				A274B26224970D8F0078C40E /* AppDelegate.m */,
 				A274B26424970D8F0078C40E /* SceneDelegate.h */,
 				A274B26524970D8F0078C40E /* SceneDelegate.m */,
-				A274B26724970D8F0078C40E /* ViewController.h */,
-				A274B26824970D8F0078C40E /* ViewController.m */,
 				A274B26A24970D8F0078C40E /* Main.storyboard */,
 				A274B26D24970D910078C40E /* Assets.xcassets */,
 				A274B26F24970D910078C40E /* LaunchScreen.storyboard */,
 				A274B27224970D910078C40E /* Info.plist */,
 				A274B27324970D910078C40E /* main.m */,
+				A274B27A2497116C0078C40E /* WASTableViewController.h */,
+				A274B27B2497116C0078C40E /* WASTableViewController.m */,
+				A274B27D249711D30078C40E /* WASDetailViewController.h */,
+				A274B27E249711D30078C40E /* WASDetailViewController.m */,
 			);
 			path = "Pokedex-Objective-C";
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 		A274B25624970D8F0078C40E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WAS;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = shillwil;
 				TargetAttributes = {
@@ -146,8 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A274B26924970D8F0078C40E /* ViewController.m in Sources */,
+				A274B27F249711D30078C40E /* WASDetailViewController.m in Sources */,
 				A274B26324970D8F0078C40E /* AppDelegate.m in Sources */,
+				A274B27C2497116C0078C40E /* WASTableViewController.m in Sources */,
 				A274B27424970D910078C40E /* main.m in Sources */,
 				A274B26624970D8F0078C40E /* SceneDelegate.m in Sources */,
 			);
