@@ -73,7 +73,7 @@ Answer the following questions inline with this document.
                 `max` is autoreleased because it calls the `autorelease` method on the object as soon as it is initialized.
 
 3. Explain when you need to use the `NSAutoreleasePool`.
-
+An NSAutoreleasePool object holds onto objects that have been autoreleased until the NSAutoreleasePool object is drained--which typically happens after one or more event loop cylces--at which time the memory is freed. A custom `@autoreleasepool { }` block should be used in cases where we are allocating a large amount of memory within a single event loop cycle. For example, if our code contains a for-loop that iterates thousands of times and initializes (and autoreleases) a large object with each iteration of the loop, then none of the autoreleased objects will get released until sometime after the for-loop finishes. This would potentially casue the app to use up a significant amount of memory and might even cause the app to crash. To protect against this we could wrap the body of the for-loop inside  `@autoreleasepool { //body of for-loop }`, which will allow the compiler to drain the pool at the end of each and every interation of the for-loop as needed.
 
 4. Implement a convenience `class` method to create a `LSIPerson` object that takes a `name` property and returns an autoreleased object.
 
