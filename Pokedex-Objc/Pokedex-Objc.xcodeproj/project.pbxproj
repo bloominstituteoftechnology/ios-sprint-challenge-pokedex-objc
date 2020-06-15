@@ -17,6 +17,7 @@
 		63B7B79024971F670011DBD8 /* DTWPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B78F24971F670011DBD8 /* DTWPokemon.m */; };
 		63B7B79324971FB00011DBD8 /* DTWPokemonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B79224971FB00011DBD8 /* DTWPokemonDetail.m */; };
 		63B7B797249722E70011DBD8 /* NSURL+Secure.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B796249722E70011DBD8 /* NSURL+Secure.m */; };
+		63B7B79A249729000011DBD8 /* PokemonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B799249729000011DBD8 /* PokemonClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		63B7B79224971FB00011DBD8 /* DTWPokemonDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTWPokemonDetail.m; sourceTree = "<group>"; };
 		63B7B795249722E70011DBD8 /* NSURL+Secure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+Secure.h"; sourceTree = "<group>"; };
 		63B7B796249722E70011DBD8 /* NSURL+Secure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Secure.m"; sourceTree = "<group>"; };
+		63B7B798249728FF0011DBD8 /* Pokedex-Objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Objc-Bridging-Header.h"; sourceTree = "<group>"; };
+		63B7B799249729000011DBD8 /* PokemonClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,7 @@
 				63B7B77724971A300011DBD8 /* Assets.xcassets */,
 				63B7B77C24971A300011DBD8 /* Info.plist */,
 				63B7B77D24971A300011DBD8 /* main.m */,
+				63B7B798249728FF0011DBD8 /* Pokedex-Objc-Bridging-Header.h */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -106,6 +110,7 @@
 		63B7B78624971E430011DBD8 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				63B7B799249729000011DBD8 /* PokemonClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 				TargetAttributes = {
 					63B7B76724971A2F0011DBD8 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -215,6 +221,7 @@
 				63B7B78C24971EE00011DBD8 /* DTWPokemonTableViewController.m in Sources */,
 				63B7B77E24971A300011DBD8 /* main.m in Sources */,
 				63B7B79324971FB00011DBD8 /* DTWPokemonDetail.m in Sources */,
+				63B7B79A249729000011DBD8 /* PokemonClient.swift in Sources */,
 				63B7B77024971A2F0011DBD8 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BQB6FYF6S;
 				INFOPLIST_FILE = "Pokedex-Objc/Resources/Info.plist";
@@ -364,6 +372,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambda.davidwright.Pokedex-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex-Objc/Resources/Pokedex-Objc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -372,6 +383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BQB6FYF6S;
 				INFOPLIST_FILE = "Pokedex-Objc/Resources/Info.plist";
@@ -381,6 +393,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambda.davidwright.Pokedex-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex-Objc/Resources/Pokedex-Objc-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
