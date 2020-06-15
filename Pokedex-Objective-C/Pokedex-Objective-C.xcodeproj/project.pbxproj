@@ -67,23 +67,55 @@
 		A274B26024970D8F0078C40E /* Pokedex-Objective-C */ = {
 			isa = PBXGroup;
 			children = (
-				A274B26124970D8F0078C40E /* AppDelegate.h */,
-				A274B26224970D8F0078C40E /* AppDelegate.m */,
-				A274B26424970D8F0078C40E /* SceneDelegate.h */,
-				A274B26524970D8F0078C40E /* SceneDelegate.m */,
-				A274B26A24970D8F0078C40E /* Main.storyboard */,
-				A274B26D24970D910078C40E /* Assets.xcassets */,
-				A274B26F24970D910078C40E /* LaunchScreen.storyboard */,
-				A274B27224970D910078C40E /* Info.plist */,
-				A274B27324970D910078C40E /* main.m */,
+				A274B283249719070078C40E /* Models */,
+				A274B284249719A60078C40E /* View Controllers */,
+				A274B285249719D70078C40E /* Storyboards */,
+				A274B28624971A0E0078C40E /* Resources */,
+			);
+			path = "Pokedex-Objective-C";
+			sourceTree = "<group>";
+		};
+		A274B283249719070078C40E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A274B280249713210078C40E /* WASPokemon.h */,
+				A274B281249713210078C40E /* WASPokemon.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A274B284249719A60078C40E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				A274B27A2497116C0078C40E /* WASTableViewController.h */,
 				A274B27B2497116C0078C40E /* WASTableViewController.m */,
 				A274B27D249711D30078C40E /* WASDetailViewController.h */,
 				A274B27E249711D30078C40E /* WASDetailViewController.m */,
-				A274B280249713210078C40E /* WASPokemon.h */,
-				A274B281249713210078C40E /* WASPokemon.m */,
 			);
-			path = "Pokedex-Objective-C";
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A274B285249719D70078C40E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A274B26A24970D8F0078C40E /* Main.storyboard */,
+				A274B26F24970D910078C40E /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		A274B28624971A0E0078C40E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A274B26124970D8F0078C40E /* AppDelegate.h */,
+				A274B26224970D8F0078C40E /* AppDelegate.m */,
+				A274B26424970D8F0078C40E /* SceneDelegate.h */,
+				A274B26524970D8F0078C40E /* SceneDelegate.m */,
+				A274B26D24970D910078C40E /* Assets.xcassets */,
+				A274B27224970D910078C40E /* Info.plist */,
+				A274B27324970D910078C40E /* main.m */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
