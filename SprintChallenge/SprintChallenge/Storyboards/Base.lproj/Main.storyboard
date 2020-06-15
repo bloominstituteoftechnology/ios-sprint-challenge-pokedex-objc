@@ -90,6 +90,12 @@
                         <viewLayoutGuide key="safeArea" id="cXt-tL-IPP"/>
                     </view>
                     <navigationItem key="navigationItem" id="CKf-gD-UYK"/>
+                    <connections>
+                        <outlet property="IDLabel" destination="13G-PH-CC3" id="dXp-XW-lxO"/>
+                        <outlet property="abilitiesLabel" destination="cw7-TJ-ZJx" id="xvz-ZL-klu"/>
+                        <outlet property="imageView" destination="OoT-7V-tSq" id="JNY-qY-A9r"/>
+                        <outlet property="nameLabel" destination="luq-jA-mxn" id="l8s-Ds-7RN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DrL-k3-v4r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

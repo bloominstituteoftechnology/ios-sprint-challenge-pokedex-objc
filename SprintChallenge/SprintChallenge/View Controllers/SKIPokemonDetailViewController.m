@@ -11,6 +11,10 @@
 #import "SKIPokemon.h"
 
 @interface SKIPokemonDetailViewController ()
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *IDLabel;
+@property (strong, nonatomic) IBOutlet UILabel *abilitiesLabel;
 
 @end
 
