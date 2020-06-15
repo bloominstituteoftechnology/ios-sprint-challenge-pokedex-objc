@@ -45,7 +45,7 @@
     for (NSDictionary *abilityDictionary in abilityDictionaries) {
         
         NSString *ability = abilityDictionary[@"ability"][@"name"];
-        abilities = [abilities stringByAppendingString:[NSString stringWithFormat:@"%@\n", ability]];
+        abilities = [abilities stringByAppendingString:[NSString stringWithFormat:@"%@ ", ability]];
     }
     
     return [self initWithName:name infoURL:url identifier:identifier abilities:abilities sprite:sprite];
