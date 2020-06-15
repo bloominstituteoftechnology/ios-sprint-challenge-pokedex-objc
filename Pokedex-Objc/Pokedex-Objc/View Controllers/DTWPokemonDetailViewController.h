@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class DTWPokemonDetail;
+@class DTWPokemon;
+
 @interface DTWPokemonDetailViewController : UIViewController
+
+@property (nonatomic, nullable) DTWPokemon *pokemon;
+@property (nonatomic, nullable) DTWPokemonDetail *pokemonDetail;
+@property (nonatomic, copy, nullable) NSString *name;
+@property (nonatomic, nullable) NSURL *detailsURL;
 
 @end
