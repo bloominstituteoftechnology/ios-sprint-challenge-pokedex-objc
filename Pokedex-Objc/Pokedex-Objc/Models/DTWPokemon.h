@@ -6,12 +6,22 @@
 //  Copyright © 2020 David Wright. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class DTWPokemonDetail;
 
+NS_SWIFT_NAME(Pokemon)
 @interface DTWPokemon : NSObject
 
-@end
+@property (nonatomic, copy, readonly, nonnull) NSString *name;
+@property (nonatomic, readonly, nullable) NSURL *detailsURL;
 
-NS_ASSUME_NONNULL_END
+@property (nonatomic, readwrite, nullable) DTWPokemonDetail *details;
+@property (nonatomic, readwrite, nullable) UIImage *sprite;
+
+- (nonnull instancetype)initWithName:(nonnull NSString *)name
+                                 URL:(nullable NSURL *)detailsURL;
+
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
+
+@end
