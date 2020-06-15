@@ -83,6 +83,17 @@ An NSAutoreleasePool object holds onto objects that have been autoreleased until
 @property (nonatomic, copy) NSString *name;
 
 - (instancetype)initWithName:(NSString *)name;
++ (instancetype)personWithName:(NSString *)name;
+
+@end
+
+@implementation LSIPerson
+
++ (instancetype)personWithName:(NSString *)name
+{
+    LSIPerson *person = [[self alloc] initWithName:name];
+    return [person autorelease];
+}
 
 @end
 ```
