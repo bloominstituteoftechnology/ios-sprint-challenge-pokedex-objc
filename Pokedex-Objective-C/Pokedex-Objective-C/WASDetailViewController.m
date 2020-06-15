@@ -7,6 +7,7 @@
 //
 
 #import "WASDetailViewController.h"
+#import "Pokedex_Objective_C-Swift.h"
 
 @interface WASDetailViewController ()
 
@@ -19,19 +20,54 @@
 
 @implementation WASDetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [[WASPokemonController sharedController] fillInDetailsFor:self.pokemon];
+    [self updateViews];
+    if (!self.pokemon.identifier) {
+        [self.pokemon addObserver:self forKeyPath:@"abilities" options:0 context:nil];
+    }
+}
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [self updateViews];
+    });
+    [object removeObserver:self forKeyPath:keyPath];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)updateViews
+{
+    if (self.pokemon) {
+        self.title = [self.pokemon.name capitalizedString];
+        self.nameLabel.text = [self.pokemon.name capitalizedString];
+        if (self.pokemon.abilities) {
+            [self loadImage];
+            self.idLabel.text = [NSString stringWithFormat:@"%d", self.pokemon.identifier];
+            NSString *abilities = self.pokemon.abilities;
+            self.abilitiesLabel.text = abilities;
+        }
+    }
 }
-*/
+
+- (void)loadImage
+{
+    if (self.pokemon.frontImage) {
+        NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithURL:self.pokemon.frontImage completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"Error:  could not get sprite: %@", error);
+                return;
+            }
+            if (data) {
+                UIImage *image = [UIImage imageWithData:data];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[self pokeImageView] setImage:image];
+                });
+            }
+        }];
+        [dataTask resume];
+    }
+}
 
 @end

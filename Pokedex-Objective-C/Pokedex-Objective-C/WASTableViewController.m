@@ -9,6 +9,7 @@
 #import "WASTableViewController.h"
 #import "WASPokemon.h"
 #import "Pokedex_Objective_C-Swift.h"
+#import "WASDetailViewController.h"
 
 @interface WASTableViewController ()
 
@@ -61,7 +62,12 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
  {
-     
+     if ([segue.identifier isEqualToString:@"PokeSegue"]) {
+         WASDetailViewController *vc = segue.destinationViewController;
+         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+         WASPokemon *pokemon = self.allPokemon[indexPath.row];
+         vc.pokemon = pokemon;
+     }
 }
 
 

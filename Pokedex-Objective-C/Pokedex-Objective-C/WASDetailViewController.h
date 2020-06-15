@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WASPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WASDetailViewController : UIViewController
+
+@property (nonatomic) WASPokemon *pokemon;
 
 @end
 
