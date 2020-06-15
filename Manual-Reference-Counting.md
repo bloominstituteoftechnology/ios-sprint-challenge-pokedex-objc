@@ -53,6 +53,7 @@ Answer the following questions inline with this document.
     ```
 
 2. Which of these objects is autoreleased?  Why?
+        The LSIPerson object declared in line 6 (max) is autoreleased because it calls the autorelease method on the object as soon as it is initialized.
 
 	1. `NSDate *yesterday = [NSDate date];`
 	
