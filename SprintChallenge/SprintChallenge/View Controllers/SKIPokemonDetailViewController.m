@@ -7,6 +7,8 @@
 //
 
 #import "SKIPokemonDetailViewController.h"
+#import "SprintChallenge-Swift.h"
+#import "SKIPokemon.h"
 
 @interface SKIPokemonDetailViewController ()
 

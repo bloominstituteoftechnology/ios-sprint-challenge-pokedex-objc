@@ -48,15 +48,14 @@ return self.pokemen.count;
 
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.textLabel.text = [self.pokemen[indexPath.row].name capitalizedString];
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -92,14 +91,15 @@ return self.pokemen.count;
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    SKIPokemon *pokemon = self.pokemen[indexPath.row];
+    
+    [PokemonAPI.sharedController fetchAllDetailsFor:pokemon];
 }
-*/
 
 @end
