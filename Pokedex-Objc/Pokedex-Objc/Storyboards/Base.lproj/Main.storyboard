@@ -10,7 +10,7 @@
         <!--Pokedex-->
         <scene sceneID="EHc-Ha-aVN">
             <objects>
-                <tableViewController id="eF8-ba-PeH" sceneMemberID="viewController">
+                <tableViewController id="eF8-ba-PeH" customClass="DTWPokemonTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="s0W-nX-Ung">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="yiu-Ns-K7d" kind="show" id="w3l-qx-FXo"/>
+                                    <segue destination="yiu-Ns-K7d" kind="show" identifier="ShowPokemonDetailSegue" id="w3l-qx-FXo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="831.88405797101461" y="168.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="hwO-uP-oHR">
             <objects>
-                <viewController id="yiu-Ns-K7d" sceneMemberID="viewController">
+                <viewController id="yiu-Ns-K7d" customClass="DTWPokemonDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wmi-HS-BxV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,6 +131,12 @@
                         <viewLayoutGuide key="safeArea" id="Kby-eA-iaQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="7iQ-YD-a4F"/>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="lpK-bK-RZm" id="kMo-T7-vLE"/>
+                        <outlet property="idLabel" destination="Blg-Q2-PHm" id="Z5X-1U-u7A"/>
+                        <outlet property="nameLabel" destination="Z74-WI-BfT" id="5q6-uz-lP3"/>
+                        <outlet property="pokemonImageView" destination="Y49-qG-v0w" id="KkO-Wp-hyQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Id1-Mx-EcM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
