@@ -51,7 +51,7 @@ class PokemonAPI: NSObject {
         }
     }
     
-    @objc func fetchAllDetails(for pokemon: SKIPokemon) {
+    @objc func fillInDetails(for pokemon: SKIPokemon) {
         self.pokemon = nil
         guard let url = pokemon.infoURL else { return }
         

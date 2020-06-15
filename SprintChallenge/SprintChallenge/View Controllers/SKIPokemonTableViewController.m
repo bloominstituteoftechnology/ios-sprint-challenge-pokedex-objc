@@ -57,7 +57,7 @@ return self.pokemen.count;
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     SKIPokemon *pokemon = self.pokemen[indexPath.row];
     
-    [PokemonAPI.sharedController fetchAllDetailsFor:pokemon];
+    [PokemonAPI.sharedController fillInDetailsFor:pokemon];
 }
 
 @end
