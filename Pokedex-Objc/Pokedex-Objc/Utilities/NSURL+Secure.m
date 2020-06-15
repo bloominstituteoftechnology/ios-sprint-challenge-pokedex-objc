@@ -10,4 +10,14 @@
 
 @implementation NSURL (Secure)
 
+- (nullable NSURL *)URLUsingHTTPS
+{
+    NSURL *url = [self absoluteURL];
+    NSURLComponents *components = [[NSURLComponents alloc] initWithURL:url resolvingAgainstBaseURL:YES];
+    
+    if (!components) return nil;
+    components.scheme = @"https";
+    return components.URL;
+}
+
 @end
