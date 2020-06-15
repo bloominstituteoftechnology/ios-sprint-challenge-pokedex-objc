@@ -16,6 +16,7 @@
 		A274B27C2497116C0078C40E /* WASTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A274B27B2497116C0078C40E /* WASTableViewController.m */; };
 		A274B27F249711D30078C40E /* WASDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A274B27E249711D30078C40E /* WASDetailViewController.m */; };
 		A274B282249713210078C40E /* WASPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = A274B281249713210078C40E /* WASPokemon.m */; };
+		A274B28924971AD80078C40E /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274B28824971AD80078C40E /* PokemonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		A274B27E249711D30078C40E /* WASDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WASDetailViewController.m; sourceTree = "<group>"; };
 		A274B280249713210078C40E /* WASPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WASPokemon.h; sourceTree = "<group>"; };
 		A274B281249713210078C40E /* WASPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WASPokemon.m; sourceTree = "<group>"; };
+		A274B28724971AD80078C40E /* Pokedex-Objective-C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Objective-C-Bridging-Header.h"; sourceTree = "<group>"; };
+		A274B28824971AD80078C40E /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				A274B283249719070078C40E /* Models */,
+				A274B28A24971AE40078C40E /* Model Controllers */,
 				A274B284249719A60078C40E /* View Controllers */,
 				A274B285249719D70078C40E /* Storyboards */,
 				A274B28624971A0E0078C40E /* Resources */,
@@ -114,8 +118,17 @@
 				A274B26D24970D910078C40E /* Assets.xcassets */,
 				A274B27224970D910078C40E /* Info.plist */,
 				A274B27324970D910078C40E /* main.m */,
+				A274B28724971AD80078C40E /* Pokedex-Objective-C-Bridging-Header.h */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		A274B28A24971AE40078C40E /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A274B28824971AD80078C40E /* PokemonController.swift */,
+			);
+			name = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +163,7 @@
 				TargetAttributes = {
 					A274B25D24970D8F0078C40E = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -190,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A274B27F249711D30078C40E /* WASDetailViewController.m in Sources */,
+				A274B28924971AD80078C40E /* PokemonController.swift in Sources */,
 				A274B26324970D8F0078C40E /* AppDelegate.m in Sources */,
 				A274B27C2497116C0078C40E /* WASTableViewController.m in Sources */,
 				A274B282249713210078C40E /* WASPokemon.m in Sources */,
@@ -334,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Pokedex-Objective-C/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -342,6 +358,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.manmademillennial.Pokedex-Objective-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex-Objective-C/Pokedex-Objective-C-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -350,6 +369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Pokedex-Objective-C/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +378,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.manmademillennial.Pokedex-Objective-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex-Objective-C/Pokedex-Objective-C-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
