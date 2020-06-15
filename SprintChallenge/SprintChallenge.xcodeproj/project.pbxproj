@@ -16,6 +16,7 @@
 		42B81FA22496FFA300FA8CBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B81FA12496FFA300FA8CBF /* main.m */; };
 		42B81FAA249701FF00FA8CBF /* SKIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B81FA9249701FF00FA8CBF /* SKIPokemon.m */; };
 		42B81FB12497032700FA8CBF /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B81FB02497032700FA8CBF /* PokemonAPI.swift */; };
+		42B81FB42497069200FA8CBF /* SKIPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B81FB32497069200FA8CBF /* SKIPokemonTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		42B81FA9249701FF00FA8CBF /* SKIPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKIPokemon.m; sourceTree = "<group>"; };
 		42B81FAF2497032700FA8CBF /* SprintChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SprintChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		42B81FB02497032700FA8CBF /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		42B81FB22497069200FA8CBF /* SKIPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKIPokemonTableViewController.h; sourceTree = "<group>"; };
+		42B81FB32497069200FA8CBF /* SKIPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKIPokemonTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 			children = (
 				42B81F952496FF9D00FA8CBF /* ViewController.h */,
 				42B81F962496FF9D00FA8CBF /* ViewController.m */,
+				42B81FB22497069200FA8CBF /* SKIPokemonTableViewController.h */,
+				42B81FB32497069200FA8CBF /* SKIPokemonTableViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B81FB42497069200FA8CBF /* SKIPokemonTableViewController.m in Sources */,
 				42B81F972496FF9D00FA8CBF /* ViewController.m in Sources */,
 				42B81F912496FF9D00FA8CBF /* AppDelegate.m in Sources */,
 				42B81FB12497032700FA8CBF /* PokemonAPI.swift in Sources */,
