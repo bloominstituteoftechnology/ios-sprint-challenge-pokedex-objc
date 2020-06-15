@@ -53,19 +53,24 @@ Answer the following questions inline with this document.
     ```
 
 2. Which of these objects is autoreleased?  Why?
-        The LSIPerson object declared in line 6 (max) is autoreleased because it calls the autorelease method on the object as soon as it is initialized.
 
 	1. `NSDate *yesterday = [NSDate date];`
+                `yesterday` is autoreleased because it is initialized with a convenience initializer.
 	
 	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];`
-	
+                `theFuture` is not autoreleased because it calls the `retain` method on the object as soon as it is initialized.
+        
 	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];`
+                `name` is not autoreleased because it is initialized using `alloc` and a designated `init` initializer.
 	
 	4. `NSDate *food = [NSDate new];`
+                `food` is not autoreleased because it is initialized using `new`.
 	
 	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];`
+                 `john` is not autoreleased because it is initialized using `alloc` and a designated `init` initializer.
 	
 	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];`
+                `max` is autoreleased because it calls the `autorelease` method on the object as soon as it is initialized.
 
 3. Explain when you need to use the `NSAutoreleasePool`.
 
