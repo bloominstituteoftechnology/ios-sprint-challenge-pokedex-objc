@@ -14,6 +14,7 @@
 		42B81F9C2496FFA300FA8CBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42B81F9B2496FFA300FA8CBF /* Assets.xcassets */; };
 		42B81F9F2496FFA300FA8CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B81F9D2496FFA300FA8CBF /* LaunchScreen.storyboard */; };
 		42B81FA22496FFA300FA8CBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B81FA12496FFA300FA8CBF /* main.m */; };
+		42B81FAA249701FF00FA8CBF /* SKIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B81FA9249701FF00FA8CBF /* SKIPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		42B81F9E2496FFA300FA8CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42B81FA02496FFA300FA8CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42B81FA12496FFA300FA8CBF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		42B81FA8249701FF00FA8CBF /* SKIPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKIPokemon.h; sourceTree = "<group>"; };
+		42B81FA9249701FF00FA8CBF /* SKIPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKIPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,15 +68,41 @@
 				42B81F902496FF9D00FA8CBF /* AppDelegate.m */,
 				42B81F922496FF9D00FA8CBF /* SceneDelegate.h */,
 				42B81F932496FF9D00FA8CBF /* SceneDelegate.m */,
-				42B81F952496FF9D00FA8CBF /* ViewController.h */,
-				42B81F962496FF9D00FA8CBF /* ViewController.m */,
-				42B81F982496FF9D00FA8CBF /* Main.storyboard */,
+				42B81FAD2497021900FA8CBF /* View Controllers */,
+				42B81FAC2497021100FA8CBF /* Storyboards */,
+				42B81FAB2497020500FA8CBF /* Model */,
 				42B81F9B2496FFA300FA8CBF /* Assets.xcassets */,
-				42B81F9D2496FFA300FA8CBF /* LaunchScreen.storyboard */,
 				42B81FA02496FFA300FA8CBF /* Info.plist */,
 				42B81FA12496FFA300FA8CBF /* main.m */,
 			);
 			path = SprintChallenge;
+			sourceTree = "<group>";
+		};
+		42B81FAB2497020500FA8CBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42B81FA8249701FF00FA8CBF /* SKIPokemon.h */,
+				42B81FA9249701FF00FA8CBF /* SKIPokemon.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42B81FAC2497021100FA8CBF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				42B81F982496FF9D00FA8CBF /* Main.storyboard */,
+				42B81F9D2496FFA300FA8CBF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		42B81FAD2497021900FA8CBF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				42B81F952496FF9D00FA8CBF /* ViewController.h */,
+				42B81F962496FF9D00FA8CBF /* ViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +178,7 @@
 				42B81F972496FF9D00FA8CBF /* ViewController.m in Sources */,
 				42B81F912496FF9D00FA8CBF /* AppDelegate.m in Sources */,
 				42B81FA22496FFA300FA8CBF /* main.m in Sources */,
+				42B81FAA249701FF00FA8CBF /* SKIPokemon.m in Sources */,
 				42B81F942496FF9D00FA8CBF /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
