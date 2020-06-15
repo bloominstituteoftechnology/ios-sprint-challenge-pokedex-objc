@@ -7,8 +7,12 @@
 //
 
 #import "SKIPokemonTableViewController.h"
+#import "SprintChallenge-Swift.h"
+#import "SKIPokemon.h"
 
 @interface SKIPokemonTableViewController ()
+
+@property NSArray<SKIPokemon *> *pokemen;
 
 @end
 
@@ -16,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self loadPokemonNames];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -24,16 +28,24 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (void)loadPokemonNames {
+    [PokemonAPI.sharedController fetchAllPokemonWithCompletion:^(NSArray<SKIPokemon *> *pokemonNames, NSError *error) {
+        
+        if (error) {
+            NSLog(@"%@", error);
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.pokemen = pokemonNames;
+            [self.tableView reloadData];
+        });
+    }];
 }
 
+#pragma mark - Table view data source
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+return self.pokemen.count;
+
 }
 
 /*
