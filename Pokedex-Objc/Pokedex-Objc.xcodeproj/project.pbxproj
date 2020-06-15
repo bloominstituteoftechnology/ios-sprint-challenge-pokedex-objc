@@ -16,6 +16,7 @@
 		63B7B78C24971EE00011DBD8 /* DTWPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B78B24971EE00011DBD8 /* DTWPokemonTableViewController.m */; };
 		63B7B79024971F670011DBD8 /* DTWPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B78F24971F670011DBD8 /* DTWPokemon.m */; };
 		63B7B79324971FB00011DBD8 /* DTWPokemonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B79224971FB00011DBD8 /* DTWPokemonDetail.m */; };
+		63B7B797249722E70011DBD8 /* NSURL+Secure.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B796249722E70011DBD8 /* NSURL+Secure.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		63B7B78F24971F670011DBD8 /* DTWPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTWPokemon.m; sourceTree = "<group>"; };
 		63B7B79124971FB00011DBD8 /* DTWPokemonDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTWPokemonDetail.h; sourceTree = "<group>"; };
 		63B7B79224971FB00011DBD8 /* DTWPokemonDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTWPokemonDetail.m; sourceTree = "<group>"; };
+		63B7B795249722E70011DBD8 /* NSURL+Secure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+Secure.h"; sourceTree = "<group>"; };
+		63B7B796249722E70011DBD8 /* NSURL+Secure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Secure.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +72,8 @@
 			children = (
 				63B7B78924971E680011DBD8 /* Models */,
 				63B7B78824971E600011DBD8 /* View Controllers */,
-				63B7B78724971E500011DBD8 /* Views */,
 				63B7B78624971E430011DBD8 /* Networking */,
+				63B7B794249722CC0011DBD8 /* Utilities */,
 				63B7B78424971A9D0011DBD8 /* Storyboards */,
 				63B7B78524971AAB0011DBD8 /* Resources */,
 			);
@@ -107,13 +110,6 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		63B7B78724971E500011DBD8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		63B7B78824971E600011DBD8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +128,15 @@
 				63B7B79224971FB00011DBD8 /* DTWPokemonDetail.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		63B7B794249722CC0011DBD8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				63B7B795249722E70011DBD8 /* NSURL+Secure.h */,
+				63B7B796249722E70011DBD8 /* NSURL+Secure.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63B7B79024971F670011DBD8 /* DTWPokemon.m in Sources */,
+				63B7B797249722E70011DBD8 /* NSURL+Secure.m in Sources */,
 				63B7B76D24971A2F0011DBD8 /* AppDelegate.m in Sources */,
 				63B7B78C24971EE00011DBD8 /* DTWPokemonTableViewController.m in Sources */,
 				63B7B77E24971A300011DBD8 /* main.m in Sources */,
