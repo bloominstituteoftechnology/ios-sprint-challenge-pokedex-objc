@@ -15,7 +15,12 @@ class PokemonAPI: NSObject {
     @objc dynamic var pokemonImage: UIImage?
     @objc(sharedController) static let shared = PokemonAPI()
     
-    @objc dynamic var pokemon: SKIPokemon?
+    @objc dynamic var pokemon: SKIPokemon? {
+        didSet {
+            guard let spriteURL = pokemon?.sprite else { return }
+            PokemonAPI.shared.fetchPhoto(from: spriteURL)
+        }
+    }
     
     @objc func fetchAllPokemon(completion: @escaping ([SKIPokemon]?, Error?) -> Void) {
 
@@ -113,6 +118,27 @@ class PokemonAPI: NSObject {
                 return
                 
             }
+        }.resume()
+    }
+    
+    private func fetchPhoto(from url: URL) {
+        let session = URLSession.shared
+        session.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let data = data else {
+                print("No image data")
+                return
+            }
+            
+            guard let image = UIImage(data: data) else {
+                print("Bad image data")
+                return
+            }
+            
+            self.pokemonImage = image
         }.resume()
     }
 
