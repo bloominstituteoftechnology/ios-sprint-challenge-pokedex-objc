@@ -14,12 +14,26 @@
 
 @implementation DSCPokemon
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
     if (self = [super init]) {
         self.name = dictionary[@"name"];
         self.pokemonURL = dictionary[@"url"];
     }
     return self;
+}
+
+- (void)getAbilityArray:(NSArray *)abilityArray
+{
+    NSMutableArray<NSString *> *ability = [@[] mutableCopy];
+    
+    for (NSDictionary *dictionary in abilityArray) {
+        NSDictionary *aDictionary = dictionary[@"ability"];
+        NSString *abilityString = aDictionary[@"name"];
+        [ability addObject:abilityString];
+    }
+    
+    self.abilities = [ability componentsJoinedByString:@"\n"];
 }
 
 @end

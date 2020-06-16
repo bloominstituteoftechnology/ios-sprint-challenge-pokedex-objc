@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nonnull) UIImage *pokemonSprite;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (void)getAbilityArray:(NSArray *)abilityArray;
 
 @end
 

@@ -17,6 +17,7 @@
 		129F106924946739005CF9F6 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129F106824946739005CF9F6 /* PokemonAPI.swift */; };
 		129F106C24946786005CF9F6 /* DSCPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 129F106B24946786005CF9F6 /* DSCPokemon.m */; };
 		129F106F2494692B005CF9F6 /* DSCPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129F106E2494692B005CF9F6 /* DSCPokemonTableViewController.m */; };
+		12BE943C2494C0DB00AD1542 /* DSCDetailPokemonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BE943B2494C0DB00AD1542 /* DSCDetailPokemonViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		129F106B24946786005CF9F6 /* DSCPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSCPokemon.m; sourceTree = "<group>"; };
 		129F106D2494692B005CF9F6 /* DSCPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSCPokemonTableViewController.h; sourceTree = "<group>"; };
 		129F106E2494692B005CF9F6 /* DSCPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSCPokemonTableViewController.m; sourceTree = "<group>"; };
+		12BE943A2494C0DB00AD1542 /* DSCDetailPokemonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSCDetailPokemonViewController.h; sourceTree = "<group>"; };
+		12BE943B2494C0DB00AD1542 /* DSCDetailPokemonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSCDetailPokemonViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				129F106424946633005CF9F6 /* PokemonDetailViewController.swift */,
 				129F106D2494692B005CF9F6 /* DSCPokemonTableViewController.h */,
 				129F106E2494692B005CF9F6 /* DSCPokemonTableViewController.m */,
+				12BE943A2494C0DB00AD1542 /* DSCDetailPokemonViewController.h */,
+				12BE943B2494C0DB00AD1542 /* DSCDetailPokemonViewController.m */,
 				129F106824946739005CF9F6 /* PokemonAPI.swift */,
 				129F106A24946786005CF9F6 /* DSCPokemon.h */,
 				129F106B24946786005CF9F6 /* DSCPokemon.m */,
@@ -162,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				129F104A24946316005CF9F6 /* AppDelegate.m in Sources */,
+				12BE943C2494C0DB00AD1542 /* DSCDetailPokemonViewController.m in Sources */,
 				129F105B24946319005CF9F6 /* main.m in Sources */,
 				129F106924946739005CF9F6 /* PokemonAPI.swift in Sources */,
 				129F106524946633005CF9F6 /* PokemonDetailViewController.swift in Sources */,

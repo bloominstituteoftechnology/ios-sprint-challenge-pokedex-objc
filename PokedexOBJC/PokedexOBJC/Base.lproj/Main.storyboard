@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="1268.1159420289855" y="93.75"/>
         </scene>
-        <!--Pokemon Detail View Controller-->
+        <!--Detail Pokemon View Controller-->
         <scene sceneID="e9z-o9-ahL">
             <objects>
-                <viewController id="dwV-oa-4Nn" customClass="PokemonDetailViewController" customModule="PokedexOBJC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dwV-oa-4Nn" customClass="DSCDetailPokemonViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uMc-KP-y16">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,50 +111,40 @@
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="byu-AL-q7G">
                                                 <rect key="frame" x="88" y="0.0" width="55.5" height="77.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ability1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbP-Wa-1Ks">
-                                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ability2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVW-2j-dRQ">
-                                                        <rect key="frame" x="0.0" y="28.5" width="55.5" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ability3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edL-Th-eKP">
-                                                        <rect key="frame" x="0.0" y="57" width="55.5" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
                                             </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bTy-aW-ypt">
+                                <rect key="frame" x="11" y="695" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="IGe-um-qP3" firstAttribute="trailing" secondItem="bTy-aW-ypt" secondAttribute="trailing" constant="163" id="1nt-Vs-Zmy"/>
                             <constraint firstItem="Mth-I6-QTw" firstAttribute="top" secondItem="IGe-um-qP3" secondAttribute="top" constant="20" id="ASz-4W-22K"/>
+                            <constraint firstItem="IGe-um-qP3" firstAttribute="bottom" secondItem="bTy-aW-ypt" secondAttribute="bottom" constant="39" id="JEV-Kr-939"/>
+                            <constraint firstItem="bTy-aW-ypt" firstAttribute="top" secondItem="YAg-b8-kNj" secondAttribute="bottom" constant="7.5" id="TD2-Qp-fmK"/>
                             <constraint firstItem="YAg-b8-kNj" firstAttribute="top" secondItem="Mth-I6-QTw" secondAttribute="bottom" constant="48" id="XCR-2Q-aex"/>
                             <constraint firstItem="IGe-um-qP3" firstAttribute="trailing" secondItem="Mth-I6-QTw" secondAttribute="trailing" constant="20" id="YvC-xc-p3K"/>
                             <constraint firstItem="Mth-I6-QTw" firstAttribute="leading" secondItem="IGe-um-qP3" secondAttribute="leading" constant="20" id="c5O-3S-xBY"/>
+                            <constraint firstItem="bTy-aW-ypt" firstAttribute="leading" secondItem="IGe-um-qP3" secondAttribute="leading" constant="11" id="sQ5-cF-P9f"/>
                             <constraint firstItem="YAg-b8-kNj" firstAttribute="leading" secondItem="Mth-I6-QTw" secondAttribute="leading" id="vhg-hw-FdP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IGe-um-qP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Yu-5T-WvQ"/>
                     <connections>
-                        <outlet property="ability1Label" destination="UbP-Wa-1Ks" id="jjZ-r8-qSX"/>
-                        <outlet property="ability2Label" destination="dVW-2j-dRQ" id="Ck5-Rm-UyO"/>
-                        <outlet property="ability3Label" destination="edL-Th-eKP" id="uw1-iC-GSU"/>
-                        <outlet property="idLabel" destination="64W-dT-GaO" id="shU-7z-tzC"/>
-                        <outlet property="imageView" destination="ufI-Os-AEb" id="xV7-86-qV9"/>
-                        <outlet property="nameLabel" destination="yVl-ac-Ge5" id="avS-pr-LVK"/>
+                        <outlet property="abilityTextView" destination="bTy-aW-ypt" id="xbk-WL-zAG"/>
+                        <outlet property="idLabel" destination="64W-dT-GaO" id="Hd3-1X-w0W"/>
+                        <outlet property="imageView" destination="ufI-Os-AEb" id="J1t-U3-r7R"/>
+                        <outlet property="nameLabel" destination="yVl-ac-Ge5" id="k0Q-hH-kf5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FqD-v3-dB9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

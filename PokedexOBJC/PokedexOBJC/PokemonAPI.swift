@@ -17,7 +17,7 @@ enum HTTPMethod: String {
 class PokemonAPI: NSObject {
     
     @objc var pokemonArray: [DSCPokemon] = []
-    var pokemonImages: [URL] = []
+    var pokemonAbilities: [String] = []
     let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=964")!
     
     @objc(sharedController) static let shared = PokemonAPI()
@@ -51,7 +51,6 @@ class PokemonAPI: NSObject {
                         for pokemon in results {
                             let pokemonObject = DSCPokemon(dictionary: pokemon)
                             self.addPokemon(pokemon: pokemonObject)
-                            print(self.pokemonArray.count)
                         }
                     }
                 }
@@ -65,14 +64,83 @@ class PokemonAPI: NSObject {
     
     
     //MARK: Fill in Details
-    
     @objc func fillInDetails(for pokemon: DSCPokemon) {
-
+        
+        let url = pokemon.pokemonURL
+        guard let baseURL = URL(string: url) else { return }
+        var request = URLRequest(url: baseURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        /*
+         {
+         "abilities": [
+         {
+         "ability": {
+         "name": "overgrow",
+         "url": "https://pokeapi.co/api/v2/ability/65/"
+         },
+         "is_hidden": false,
+         "slot": 1
+         },
+         {
+         "ability": {
+         "name": "chlorophyll",
+         "url": "https://pokeapi.co/api/v2/ability/34/"
+         },
+         "is_hidden": true,
+         "slot": 3
+         }
+         ],
+         
+         
+         "sprites": {
+         "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
+         "back_female": null,
+         "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/1.png",
+         "back_shiny_female": null,
+         "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+         "front_female": null,
+         "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png",
+         "front_shiny_female": null
+         },
+         */
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                print("Error fetching data: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                print("No data returned from data task.")
+                return
+            }
+            
+            do {
+                if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
+                    if let abilities = dictionary["abilities"] as? [[String:Any]],
+                        let id = dictionary["id"] as? Int,
+                        let sprites = dictionary["sprites"] as? [String:Any],
+                        let frontSprite = sprites["front_default"] {
+                        
+                        pokemon.spriteURL = (frontSprite as? String)!
+                        pokemon.pokemonID = "\(id)"
+                        pokemon.getAbilityArray(abilities)
+                        
+                        self.fetchImage(from: pokemon.spriteURL) { image in
+                            pokemon.pokemonSprite = image!
+                        }
+                        
+                    }
+                }
+            } catch {
+                print("Unable to decode data into object of type [Pokemon]: \(error)")
+            }
+        }.resume()
     }
     
     
     // MARK: Fetch Sprite
-    
     @objc func fetchImage(from imageURL: String, completion: @escaping(UIImage?) -> Void) {
         
         guard let imageURL = URL(string: imageURL) else {
@@ -100,6 +168,5 @@ class PokemonAPI: NSObject {
             completion(image)
         }.resume()
     }
-    
 }
 

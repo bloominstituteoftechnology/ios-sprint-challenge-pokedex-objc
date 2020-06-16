@@ -8,11 +8,11 @@
 
 #import "DSCPokemonTableViewController.h"
 #import "DSCPokemon.h"
+#import "DSCDetailPokemonViewController.h"
 
 
 @interface DSCPokemonTableViewController ()
 
-@property (nonatomic) NSMutableArray *pokemonArray;
 @property PokemonAPI *pController;
 
 @end
@@ -20,14 +20,16 @@
 
 @implementation DSCPokemonTableViewController
 
-- (instancetype)initWithCoder:(NSCoder *)coder{
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
     if (self = [super initWithCoder:coder]){
         _pController = [[PokemonAPI alloc]init];
     }
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     [self.pController fetchAllPokemonWithCompletion:^(NSArray<DSCPokemon *> * _Nullable pokemonArray, NSError * _Nullable error) {
@@ -56,9 +58,17 @@
 
 #pragma mark - Navigation
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ShowDetailSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        DSCDetailPokemonViewController *detailVC = segue.destinationViewController;
+        
+        DSCPokemon *pokemon = self.pController.pokemonArray[indexPath.row];
+        detailVC.pokemon = pokemon;
+        
+        [self.pController fillInDetailsFor:pokemon];
+    }
 }
-
 
 @end
