@@ -21,9 +21,9 @@
 
 
 - (instancetype)initWithName:(NSString *)aName
-               andIdentifier:(int)anIdentifier
+               andIdentifier:(NSInteger)anIdentifier
                   withSprite:(NSString *)aSpriteURLString
-                andAbilities:(NSArray *)abilities
+                andAbilities:(NSMutableArray *)abilities
 {
     if (self = [super init]) {
         _name = aName;
@@ -36,16 +36,21 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     NSString *name = dictionary[@"name"];
-    int identifier = dictionary[@"id"];
-    NSString *spriteURLString = dictionary[@"sprites"];
-    NSArray *abilities = dictionary[@"abilities"];
+    NSInteger identifier = dictionary[@"id"];
+    NSDictionary *sprites = [dictionary objectForKey:@"sprites"];
+    NSString *spriteURLString = sprites[@"front_default"];
+    NSArray *abilitiesArray = [dictionary objectForKey:@"abilities"];
 
-    // Failable initializer will return nil if any of these required
-    // properties is missing. (It is risky to make assumptions about data)
-//    if (!name || !birthYear || !heightString || !eyeColor) {
-//        return nil;
-//    }
-    return [self initWithName:name andIdentifier:identifier withSprite:spriteURLString andAbilities:abilities];
+    for (NSDictionary *abilityObject in abilitiesArray) {
+        NSDictionary *ability = [abilityObject  objectForKey:@"ability"];
+        NSString *abilityName = ability[@"name"];
+
+#pragma mark - This may not be correct with the underscore
+        [_abilities addObject:abilityName];
+    }
+
+
+    return [self initWithName:name andIdentifier:identifier withSprite:spriteURLString andAbilities:_abilities];
 }
 
 @end

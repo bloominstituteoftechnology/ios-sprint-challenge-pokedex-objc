@@ -15,20 +15,25 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var abilitiesLabel: UILabel!
 
+    var pokemon: Pokemon?
+    var pokemonAPI: PokemonAPI?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateViews()
     }
-    
 
-    /*
-    // MARK: - Navigation
+    private func updateViews() {
+        guard let pokemon = pokemon, let pokemonAPI = pokemonAPI else { return }
+        nameLabel.text = "Name: \(pokemon.name)"
+        idLabel.text = "ID: \(pokemon.identifier)"
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        pokemonAPI.fetchImage(from: pokemon.spriteURLString) { result in
+            if let image = try? result.get() {
+                DispatchQueue.main.async {
+                    self.spriteImageView.image = image
+                }
+            }
+        }
     }
-    */
-
 }

@@ -116,9 +116,9 @@ class PokemonAPI: NSObject {
         }.resume()
     }
 
-    func fetchImage(from urlString: String, completion: @escaping (UIImage?, Error?) -> Void) {
+    func fetchImage(from urlString: String, completion: @escaping (Result<UIImage, NSError>) -> Void) {
         guard let imageURL = URL(string: urlString) else {
-            completion(nil, NSError())
+            completion(.failure(NSError()))
             return
         }
 
@@ -127,17 +127,17 @@ class PokemonAPI: NSObject {
 
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let _ = error {
-                completion(nil, error)
+                completion(.failure(NSError()))
                 return
             }
 
             guard let data = data else {
-                completion(nil, error)
+                completion(.failure(NSError()))
                 return
             }
 
             if let image = UIImage(data: data) {
-                completion(image, nil)
+                completion(.success(image))
             }
         }.resume()
     }
