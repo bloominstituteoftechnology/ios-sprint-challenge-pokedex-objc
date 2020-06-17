@@ -21,9 +21,9 @@
 
 
 - (instancetype)initWithName:(NSString *)aName
-               andIdentifier:(NSInteger)anIdentifier
+               andIdentifier:(NSNumber *)anIdentifier
                   withSprite:(NSString *)aSpriteURLString
-                andAbilities:(NSMutableArray *)abilities
+                andAbilities:(NSArray <NSString *> *)abilities
 {
     if (self = [super init]) {
         _name = aName;
@@ -36,21 +36,25 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     NSString *name = dictionary[@"name"];
-    NSInteger identifier = dictionary[@"id"];
+    NSNumber *identifier = dictionary[@"id"];
     NSDictionary *sprites = [dictionary objectForKey:@"sprites"];
     NSString *spriteURLString = sprites[@"front_default"];
     NSArray *abilitiesArray = [dictionary objectForKey:@"abilities"];
 
+    NSMutableArray *newArray = [[NSMutableArray alloc] init];
+
     for (NSDictionary *abilityObject in abilitiesArray) {
         NSDictionary *ability = [abilityObject  objectForKey:@"ability"];
+        NSLog(@"%@", ability);
         NSString *abilityName = ability[@"name"];
+        NSLog(@"%@", abilityName);
 
-#pragma mark - This may not be correct with the underscore
-        [_abilities addObject:abilityName];
+        [newArray addObject:abilityName];
     }
 
+    self.abilities = newArray.copy;
 
-    return [self initWithName:name andIdentifier:identifier withSprite:spriteURLString andAbilities:_abilities];
+    return [self initWithName:name andIdentifier:identifier withSprite:spriteURLString andAbilities:self.abilities];
 }
 
 @end

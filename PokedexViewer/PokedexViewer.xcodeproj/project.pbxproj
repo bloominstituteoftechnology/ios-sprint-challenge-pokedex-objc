@@ -17,7 +17,6 @@
 		95313A4D249461F3001A6030 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95313A4C249461F3001A6030 /* DetailViewController.swift */; };
 		95313A4F24946330001A6030 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95313A4E24946330001A6030 /* PokemonAPI.swift */; };
 		95313A552494643F001A6030 /* JAGPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 95313A542494643F001A6030 /* JAGPokemon.m */; };
-		95BF4062249974AE00FD3180 /* JAGPokemon+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BF4061249974AE00FD3180 /* JAGPokemon+NSCoding.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +37,6 @@
 		95313A4E24946330001A6030 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 		95313A532494643F001A6030 /* JAGPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JAGPokemon.h; sourceTree = "<group>"; };
 		95313A542494643F001A6030 /* JAGPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JAGPokemon.m; sourceTree = "<group>"; };
-		95BF4060249974AE00FD3180 /* JAGPokemon+NSCoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JAGPokemon+NSCoding.h"; sourceTree = "<group>"; };
-		95BF4061249974AE00FD3180 /* JAGPokemon+NSCoding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "JAGPokemon+NSCoding.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +74,6 @@
 				95313A4B249461F2001A6030 /* PokedexViewer-Bridging-Header.h */,
 				95313A532494643F001A6030 /* JAGPokemon.h */,
 				95313A542494643F001A6030 /* JAGPokemon.m */,
-				95BF4060249974AE00FD3180 /* JAGPokemon+NSCoding.h */,
-				95BF4061249974AE00FD3180 /* JAGPokemon+NSCoding.m */,
 				95313A472494614D001A6030 /* ViewControllers */,
 				95313A392494600F001A6030 /* Assets.xcassets */,
 				95313A5224946350001A6030 /* Resources */,
@@ -184,7 +179,6 @@
 				95313A4A249461D8001A6030 /* JAGPokedexTableViewController.m in Sources */,
 				95313A552494643F001A6030 /* JAGPokemon.m in Sources */,
 				95313A2F2494600E001A6030 /* AppDelegate.m in Sources */,
-				95BF4062249974AE00FD3180 /* JAGPokemon+NSCoding.m in Sources */,
 				95313A4F24946330001A6030 /* PokemonAPI.swift in Sources */,
 				95313A4D249461F3001A6030 /* DetailViewController.swift in Sources */,
 				95313A402494600F001A6030 /* main.m in Sources */,

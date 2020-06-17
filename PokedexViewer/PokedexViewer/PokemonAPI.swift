@@ -24,7 +24,7 @@ class PokemonAPI: NSObject {
     @objc(sharedController) static let shared = PokemonAPI()
 
     private let baseURL = URL(string: "https://pokeapi.co/api/v2")
-    var pokemon: Pokemon?
+    @objc dynamic var pokemon: Pokemon?
     var pokeList: [Pokemon] = []
 
     @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
@@ -106,8 +106,8 @@ class PokemonAPI: NSObject {
                     else {
                         throw APIError.JSONDecodeError
                 }
-
-                let pokemon = Pokemon(dictionary: dictionary)
+                
+                self.pokemon = Pokemon(dictionary: dictionary)
 
             } catch {
                 print("Unable to decode data into pokemon object: \(error)")

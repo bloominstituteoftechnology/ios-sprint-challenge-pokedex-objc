@@ -28,7 +28,6 @@
         self.pokemons = pokemons;
         [self.tableView reloadData];
     }];
-
 }
 
 #pragma mark - Table view data source
@@ -47,6 +46,13 @@
     return cell;
 }
 
-// TODO: This passing of information needs to be done in KVO
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier  isEqual:@"ShowDetailSegue"]) {
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        JAGPokemon *pokemon = [self.pokemons objectAtIndex:indexPath.row];
+        [JAGPokemonAPI.sharedController fillInDetailsFor:pokemon];
+    }
+}
 
 @end
