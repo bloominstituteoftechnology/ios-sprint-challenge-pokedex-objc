@@ -67,8 +67,7 @@
 				DB3EA139249D1472009B3BEA /* Resources */,
 				DB3EA126249D1463009B3BEA /* ViewController.h */,
 				DB3EA127249D1463009B3BEA /* ViewController.m */,
-				DB3EA129249D1463009B3BEA /* Main.storyboard */,
-				DB3EA12E249D1464009B3BEA /* LaunchScreen.storyboard */,
+				DB3EA13D249D17BA009B3BEA /* Storyboard */,
 				DB3EA132249D1464009B3BEA /* main.m */,
 			);
 			path = "Objc-Pokedex";
@@ -106,6 +105,15 @@
 			children = (
 			);
 			path = Networking_ModelController;
+			sourceTree = "<group>";
+		};
+		DB3EA13D249D17BA009B3BEA /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DB3EA129249D1463009B3BEA /* Main.storyboard */,
+				DB3EA12E249D1464009B3BEA /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
