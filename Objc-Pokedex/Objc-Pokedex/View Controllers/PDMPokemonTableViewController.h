@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PDMPokemonTableViewController.h
 //  Objc-Pokedex
 //
 //  Created by Patrick Millet on 6/19/20.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface PDMPokemonTableViewController : UITableViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

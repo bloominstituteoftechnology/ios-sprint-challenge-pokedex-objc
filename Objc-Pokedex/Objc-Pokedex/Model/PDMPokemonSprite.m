@@ -21,7 +21,7 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
-    NSString *defaultURLString = dictionary[@"default_URL"];
+    NSString *defaultURLString = dictionary[@"front_default"];
     if (!defaultURLString) { return nil; }
     
     NSURL *defaultURL = [NSURL URLWithString:defaultURLString];
