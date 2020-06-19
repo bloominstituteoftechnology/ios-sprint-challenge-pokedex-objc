@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
+NS_SWIFT_NAME(Pokemon)
 
 @interface HAOPokemon : NSObject
 
@@ -17,9 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *identifier;
 @property NSArray<NSString *> *abilites;
 
-- (instancetype)initWithName:(NSString *)name spriteURL:(NSURL *)spriteURL identifier:(NSString *)identifer abilities:(NSArray<NSString *> *)abilites;
+- (instancetype)initWithName:(NSString *)name;
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (void)fillInDetailsForPokemon:(HAOPokemon *)pokemon dictionary:(NSDictionary *)dictionary;
 
 @end
 

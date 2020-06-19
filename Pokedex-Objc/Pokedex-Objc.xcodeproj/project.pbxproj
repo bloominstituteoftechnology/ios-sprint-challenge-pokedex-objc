@@ -17,6 +17,7 @@
 		2B1327C8249D173B00D78C4A /* HAOPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327C7249D173B00D78C4A /* HAOPokemonDetailViewController.m */; };
 		2B1327CB249D189900D78C4A /* HAOPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327CA249D189900D78C4A /* HAOPokemon.m */; };
 		2B1327CE249D1E5600D78C4A /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327CD249D1E5600D78C4A /* PokemonController.swift */; };
+		2B1327D4249D28F900D78C4A /* HAOPokemonResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327D3249D28F900D78C4A /* HAOPokemonResults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		2B1327CA249D189900D78C4A /* HAOPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOPokemon.m; sourceTree = "<group>"; };
 		2B1327CC249D1E5600D78C4A /* Pokedex-Objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Objc-Bridging-Header.h"; sourceTree = "<group>"; };
 		2B1327CD249D1E5600D78C4A /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
+		2B1327D2249D28F900D78C4A /* HAOPokemonResults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOPokemonResults.h; sourceTree = "<group>"; };
+		2B1327D3249D28F900D78C4A /* HAOPokemonResults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOPokemonResults.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 			children = (
 				2B1327C9249D189900D78C4A /* HAOPokemon.h */,
 				2B1327CA249D189900D78C4A /* HAOPokemon.m */,
+				2B1327D2249D28F900D78C4A /* HAOPokemonResults.h */,
+				2B1327D3249D28F900D78C4A /* HAOPokemonResults.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B1327A8249D13AE00D78C4A /* AppDelegate.m in Sources */,
+				2B1327D4249D28F900D78C4A /* HAOPokemonResults.m in Sources */,
 				2B1327CE249D1E5600D78C4A /* PokemonController.swift in Sources */,
 				2B1327B9249D13B000D78C4A /* main.m in Sources */,
 				2B1327CB249D189900D78C4A /* HAOPokemon.m in Sources */,

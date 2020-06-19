@@ -10,19 +10,19 @@
 
 @implementation HAOPokemon
 
-- (instancetype)initWithName:(NSString *)name spriteURL:(NSURL *)spriteURL identifier:(NSString *)identifer abilities:(NSArray<NSString *> *)abilites
+- (instancetype)initWithName:(NSString *)name
 {
     self = [super init];
     if (self) {
         _name = name;
-        _spriteURL = spriteURL;
-        _identifier = identifer;
-        _abilites = abilites;
+        _spriteURL = [[NSURL alloc] init];
+        _identifier = [[NSString alloc] init];
+        _abilites = [[NSArray alloc] init];
     }
     return self;
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+- (void)fillInDetailsForPokemon:(HAOPokemon *)pokemon dictionary:(NSDictionary *)dictionary
 {
     NSString *name = dictionary[@"name"];
     NSString *identifier = dictionary[@"id"];
@@ -39,8 +39,10 @@
         [abilities addObject:abilityName];
     }
     
-    self = [self initWithName:name spriteURL:spriteURL identifier:identifier abilities:abilities];
-    return self;
+    pokemon.name = name;
+    pokemon.identifier = identifier;
+    pokemon.spriteURL = spriteURL;
+    pokemon.abilites = abilities;
 }
 
 @end
