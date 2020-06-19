@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		C47C0B35249D0E9E00B22E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47C0B34249D0E9E00B22E1F /* AppDelegate.swift */; };
 		C47C0B37249D0E9E00B22E1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47C0B36249D0E9E00B22E1F /* SceneDelegate.swift */; };
-		C47C0B39249D0E9E00B22E1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47C0B38249D0E9E00B22E1F /* ViewController.swift */; };
 		C47C0B3C249D0E9E00B22E1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47C0B3A249D0E9E00B22E1F /* Main.storyboard */; };
 		C47C0B3E249D0EA400B22E1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C47C0B3D249D0EA400B22E1F /* Assets.xcassets */; };
 		C47C0B41249D0EA400B22E1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47C0B3F249D0EA400B22E1F /* LaunchScreen.storyboard */; };
+		C47C0B4C249D0F2400B22E1F /* BRDPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C0B4B249D0F2400B22E1F /* BRDPokemon.m */; };
+		C47C0B4F249D0F8B00B22E1F /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47C0B4E249D0F8B00B22E1F /* PokemonAPI.swift */; };
+		C47C0B53249D119F00B22E1F /* BRDPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C0B52249D119F00B22E1F /* BRDPokemonTableViewController.m */; };
+		C47C0B56249D11CC00B22E1F /* BRDPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C0B55249D11CC00B22E1F /* BRDPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C47C0B31249D0E9E00B22E1F /* Pokedex-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47C0B34249D0E9E00B22E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C47C0B36249D0E9E00B22E1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C47C0B38249D0E9E00B22E1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C47C0B3B249D0E9E00B22E1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C47C0B3D249D0EA400B22E1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C47C0B40249D0EA400B22E1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C47C0B42249D0EA400B22E1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C47C0B49249D0F2400B22E1F /* Pokedex-2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-2-Bridging-Header.h"; sourceTree = "<group>"; };
+		C47C0B4A249D0F2400B22E1F /* BRDPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRDPokemon.h; sourceTree = "<group>"; };
+		C47C0B4B249D0F2400B22E1F /* BRDPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRDPokemon.m; sourceTree = "<group>"; };
+		C47C0B4E249D0F8B00B22E1F /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		C47C0B51249D119F00B22E1F /* BRDPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRDPokemonTableViewController.h; sourceTree = "<group>"; };
+		C47C0B52249D119F00B22E1F /* BRDPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRDPokemonTableViewController.m; sourceTree = "<group>"; };
+		C47C0B54249D11CC00B22E1F /* BRDPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRDPokemonDetailViewController.h; sourceTree = "<group>"; };
+		C47C0B55249D11CC00B22E1F /* BRDPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRDPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,46 @@
 		C47C0B33249D0E9E00B22E1F /* Pokedex-2 */ = {
 			isa = PBXGroup;
 			children = (
+				C47C0B50249D116500B22E1F /* View Controllers */,
+				C47C0B4D249D0F7700B22E1F /* Controller */,
+				C47C0B48249D0EFB00B22E1F /* Model */,
 				C47C0B34249D0E9E00B22E1F /* AppDelegate.swift */,
 				C47C0B36249D0E9E00B22E1F /* SceneDelegate.swift */,
-				C47C0B38249D0E9E00B22E1F /* ViewController.swift */,
 				C47C0B3A249D0E9E00B22E1F /* Main.storyboard */,
 				C47C0B3D249D0EA400B22E1F /* Assets.xcassets */,
 				C47C0B3F249D0EA400B22E1F /* LaunchScreen.storyboard */,
 				C47C0B42249D0EA400B22E1F /* Info.plist */,
 			);
 			path = "Pokedex-2";
+			sourceTree = "<group>";
+		};
+		C47C0B48249D0EFB00B22E1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C47C0B4A249D0F2400B22E1F /* BRDPokemon.h */,
+				C47C0B4B249D0F2400B22E1F /* BRDPokemon.m */,
+				C47C0B49249D0F2400B22E1F /* Pokedex-2-Bridging-Header.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C47C0B4D249D0F7700B22E1F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C47C0B4E249D0F8B00B22E1F /* PokemonAPI.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C47C0B50249D116500B22E1F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C47C0B51249D119F00B22E1F /* BRDPokemonTableViewController.h */,
+				C47C0B52249D119F00B22E1F /* BRDPokemonTableViewController.m */,
+				C47C0B54249D11CC00B22E1F /* BRDPokemonDetailViewController.h */,
+				C47C0B55249D11CC00B22E1F /* BRDPokemonDetailViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +140,7 @@
 				TargetAttributes = {
 					C47C0B30249D0E9E00B22E1F = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -138,8 +180,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C47C0B39249D0E9E00B22E1F /* ViewController.swift in Sources */,
+				C47C0B4C249D0F2400B22E1F /* BRDPokemon.m in Sources */,
 				C47C0B35249D0E9E00B22E1F /* AppDelegate.swift in Sources */,
+				C47C0B4F249D0F8B00B22E1F /* PokemonAPI.swift in Sources */,
+				C47C0B53249D119F00B22E1F /* BRDPokemonTableViewController.m in Sources */,
+				C47C0B56249D11CC00B22E1F /* BRDPokemonDetailViewController.m in Sources */,
 				C47C0B37249D0E9E00B22E1F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +329,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZTTC6J4225;
 				INFOPLIST_FILE = "Pokedex-2/Info.plist";
@@ -293,6 +339,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yesTime.Pokedex-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex-2/Model/Pokedex-2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZTTC6J4225;
 				INFOPLIST_FILE = "Pokedex-2/Info.plist";
@@ -311,6 +360,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yesTime.Pokedex-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex-2/Model/Pokedex-2-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

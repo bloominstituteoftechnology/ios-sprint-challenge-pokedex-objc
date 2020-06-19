@@ -6,11 +6,12 @@
 //  Copyright © 2020 Bradley Diroff. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+@class PokemonAPI;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BRDPokemonTableViewController : NSObject
+@interface BRDPokemonTableViewController : UITableViewController
 
 @end
 

@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pokedex_2-Swift.h"
+#import "BRDPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BRDPokemonDetailViewController : UIViewController
+
+@property (nonatomic, assign) PokemonAPI *pokemonController;
+@property (nonatomic, assign) BRDPokemon *pokemon;
 
 @end
 
