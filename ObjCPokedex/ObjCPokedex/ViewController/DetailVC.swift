@@ -10,6 +10,10 @@ import UIKit
 
 class DetailVC: UITableViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var abilitiesLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

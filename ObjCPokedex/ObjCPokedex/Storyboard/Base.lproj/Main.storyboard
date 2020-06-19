@@ -10,7 +10,7 @@
         <!--Pokedex-->
         <scene sceneID="MxM-aj-fEw">
             <objects>
-                <tableViewController id="PIk-bs-wWR" sceneMemberID="viewController">
+                <tableViewController id="PIk-bs-wWR" customClass="PokedexTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7ux-hw-T3K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,7 @@
         <!--Pokemon-->
         <scene sceneID="inL-fV-Hhy">
             <objects>
-                <viewController id="jLH-Ay-AiP" sceneMemberID="viewController">
+                <viewController id="jLH-Ay-AiP" customClass="DetailVC" customModule="ObjCPokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xsl-kl-Him">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +62,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRM-jA-tFF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRM-jA-tFF">
                                 <rect key="frame" x="20" y="551" width="374" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="nfL-UX-x1x"/>
@@ -97,6 +97,11 @@
                         <viewLayoutGuide key="safeArea" id="1Zj-1U-7Vw"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pokemon" id="zgF-BM-WIa"/>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="ozT-K4-j6G" id="m6U-Yx-Y7N"/>
+                        <outlet property="idLabel" destination="5pN-0B-ngv" id="6GI-W3-cN2"/>
+                        <outlet property="imageView" destination="6cH-bk-39Y" id="7b5-wA-f9f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdo-uM-sTK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
