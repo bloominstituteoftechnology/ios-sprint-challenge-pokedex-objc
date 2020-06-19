@@ -40,9 +40,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowDetail"]) {
-//        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-//        CNSPokemonDetailViewController *detailVC = segue.destinationViewController;
-//        detailVC.pokemon = [self.pokemon objectAtIndex:indexPath.row];
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        CNSPokemonDetailViewController *detailVC = segue.destinationViewController;
+        detailVC.pokemon = [self.pokemon objectAtIndex:indexPath.row];
     }
 }
 

@@ -39,14 +39,16 @@ void *KVOContext = &KVOContext;
     self.pokemonImage.image = [[UIImage alloc] initWithData:image];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
+                        change:(NSDictionary<NSKeyValueChangeKey,id> *)change
+                        context:(void *)context
+{
+    if (context == KVOContext) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateViews];
+        });
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
-*/
-
 @end
