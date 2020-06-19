@@ -22,7 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.detailViewController = (CMDPokemonDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     _pokemon = [NSMutableArray new];
     [PokemonAPI.sharedController fetchAllPokemonWithCompletion:^(NSArray<CMDPokemon *> * data, NSError * error) {
         self.pokemon = data;
@@ -33,7 +32,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
     [super viewWillAppear:animated];
 }
 
@@ -41,11 +39,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ShowPokemonDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        CMDPokemonDetailViewController *controller = (CMDPokemonDetailViewController *)[[segue destinationViewController] topViewController];
+        CMDPokemonDetailViewController *controller = (CMDPokemonDetailViewController *)[segue destinationViewController];
         controller.pokemon = _pokemon[indexPath.row];
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton = YES;
-        [self.navigationController.navigationBar setTintColor:UIColor.whiteColor];
         self.detailViewController = controller;
     }
 }
