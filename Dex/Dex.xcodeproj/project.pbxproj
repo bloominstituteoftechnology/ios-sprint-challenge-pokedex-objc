@@ -107,6 +107,7 @@
 		7FAF04E1249D27B70057BE65 /* Dex */ = {
 			isa = PBXGroup;
 			children = (
+				7FAF0521249D2E070057BE65 /* Views */,
 				7FAF051C249D29030057BE65 /* Controller */,
 				7FAF0517249D28270057BE65 /* Model */,
 				7FAF04E2249D27B70057BE65 /* AppDelegate.h */,
@@ -156,6 +157,13 @@
 				7FAF051D249D29180057BE65 /* Dex-Bridging-Header.h */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		7FAF0521249D2E070057BE65 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
