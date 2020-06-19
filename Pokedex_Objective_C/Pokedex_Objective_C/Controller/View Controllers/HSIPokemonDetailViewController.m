@@ -7,6 +7,7 @@
 //
 
 #import "HSIPokemonDetailViewController.h"
+#import "Pokedex_Objective_C-Swift.h"
 
 @interface HSIPokemonDetailViewController ()
 
@@ -14,10 +15,14 @@
 
 @implementation HSIPokemonDetailViewController
 
+NetworkService *networkService;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    networkService = [[NetworkService alloc] initWithDataLoader:NSURLSession.sharedSession];
+    [networkService getAllPokemonWithCompletion:^(NSArray<HSIPokemon *> *pokemonArray) {
+        NSLog(@"%@", pokemonArray);
+    }];
 }
-
 
 @end

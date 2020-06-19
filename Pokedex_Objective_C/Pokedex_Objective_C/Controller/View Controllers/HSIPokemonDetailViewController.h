@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface HSIPokemonDetailViewController : UIViewController
+
 
 
 @end

@@ -30,10 +30,6 @@ import Foundation
         self.dataLoader = dataLoader
     }
 
-    @objc func getAllPokemon(data: Data, completion: @escaping (_ pokemonArray: [HSIPokemon]?) -> Void = { _ in }) {
-        
-    }
-
     @objc private func createRequest(
         url: URL? = baseURL,
         method: String
@@ -46,4 +42,17 @@ import Foundation
         request.httpMethod = method
         return request
     }
+
+    @objc private var controller = PokemonController.shared
+
+    @objc private func decodeAllPokemon(data: Data) -> Data? {
+
+        return nil
+    }
+
+    @objc func getAllPokemon(completion: @escaping ([HSIPokemon]?) -> Void = { _ in } ) {
+        completion(nil)
+    }
+
+
 }
