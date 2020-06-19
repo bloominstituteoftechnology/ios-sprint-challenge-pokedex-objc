@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class HSIPokemon;
 
 @interface HSIPokemonDetailViewController : UIViewController
 
-
+@property (nonatomic) HSIPokemon *pokemon;
 
 @end
 

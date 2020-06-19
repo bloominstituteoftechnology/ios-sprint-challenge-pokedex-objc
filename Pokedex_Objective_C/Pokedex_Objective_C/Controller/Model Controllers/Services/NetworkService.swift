@@ -120,12 +120,13 @@ import Foundation
             guard let jsonData = try JSONSerialization.jsonObject(with: data) as? [String:Any] else {
                 throw error
             }
+            //get pokemon.identifier
             if let identifier = jsonData["id"] as? Int {
                 pokemon.identifier = String(identifier)
             } else {
                 throw error
             }
-
+            //get pokemon.abilities
             if let abilities = jsonData["abilities"] as? [[String:Any]] {
 
                 for ability in abilities {
@@ -139,7 +140,7 @@ import Foundation
             } else {
                 throw error
             }
-
+            //get pokemon.image
             if let sprites = jsonData["sprites"] as? [String:Any],
                 let sprite = sprites["sprite"] as? String {
                 guard let spriteURL = URL(string: sprite) else {

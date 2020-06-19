@@ -18,21 +18,16 @@
 
 NetworkService *networkService;
 
-PokemonController *pokemonController;
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //init controller layer
-    pokemonController = PokemonController.shared;
+    //init controller
     networkService = [[NetworkService alloc] initWithDataLoader:NSURLSession.sharedSession];
-
-    [networkService getAllPokemonWithCompletion:^() {
-        NSLog(@"%lu", pokemonController.pokemon.count);
-        [networkService getPokemonAbilitiesWithPokemon:pokemonController.pokemon[0] completion:^{
-            NSLog(@"%@", pokemonController.pokemon[0].abilities);
+    if (_pokemon) {
+        [networkService getPokemonAbilitiesWithPokemon: self.pokemon completion:^{
+            NSLog(@"%@", self.pokemon.abilities);
         }];
-    }];
+    }
+
 }
 
 @end

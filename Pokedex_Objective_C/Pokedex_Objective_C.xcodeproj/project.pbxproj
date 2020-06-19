@@ -18,6 +18,7 @@
 		B91921E0249D0DA300138ED4 /* HSIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = B91921DF249D0DA300138ED4 /* HSIPokemon.m */; };
 		B91921E4249D0E8E00138ED4 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91921E3249D0E8E00138ED4 /* PokemonController.swift */; };
 		B91921E7249D0EFF00138ED4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91921E6249D0EFF00138ED4 /* NetworkService.swift */; };
+		B91921EB249D2B8800138ED4 /* PokemonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91921EA249D2B8800138ED4 /* PokemonListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		B91921E2249D0E8E00138ED4 /* Pokedex_Objective_C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex_Objective_C-Bridging-Header.h"; sourceTree = "<group>"; };
 		B91921E3249D0E8E00138ED4 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 		B91921E6249D0EFF00138ED4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		B91921EA249D2B8800138ED4 /* PokemonListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				B91921B6249D0D0500138ED4 /* HSIPokemonDetailViewController.h */,
 				B91921B7249D0D0500138ED4 /* HSIPokemonDetailViewController.m */,
+				B91921EA249D2B8800138ED4 /* PokemonListTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				B91921E0249D0DA300138ED4 /* HSIPokemon.m in Sources */,
 				B91921B8249D0D0500138ED4 /* HSIPokemonDetailViewController.m in Sources */,
 				B91921B2249D0D0500138ED4 /* AppDelegate.m in Sources */,
+				B91921EB249D2B8800138ED4 /* PokemonListTableViewController.swift in Sources */,
 				B91921C3249D0D0800138ED4 /* main.m in Sources */,
 				B91921B5249D0D0500138ED4 /* SceneDelegate.m in Sources */,
 				B91921E4249D0E8E00138ED4 /* PokemonController.swift in Sources */,

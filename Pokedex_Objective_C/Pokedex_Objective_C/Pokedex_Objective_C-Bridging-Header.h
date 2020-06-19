@@ -3,3 +3,4 @@
 //
 
 #import "HSIPokemon.h"
+#import "HSIPokemonDetailViewController.h"
