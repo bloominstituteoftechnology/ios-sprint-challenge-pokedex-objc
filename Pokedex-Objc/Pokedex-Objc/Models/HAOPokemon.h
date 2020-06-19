@@ -13,10 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HAOPokemon : NSObject
 
 @property NSString *name;
+@property NSURL *spriteURL;
 @property NSString *identifier;
 @property NSArray<NSString *> *abilites;
 
-- (instancetype)initWithName:(NSString *)name identifier:(NSString *)identifer abilities:(NSArray<NSString *> *)abilites;
+- (instancetype)initWithName:(NSString *)name spriteURL:(NSURL *)spriteURL identifier:(NSString *)identifer abilities:(NSArray<NSString *> *)abilites;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
