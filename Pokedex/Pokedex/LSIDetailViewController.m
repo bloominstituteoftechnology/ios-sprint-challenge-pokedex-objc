@@ -7,8 +7,14 @@
 //
 
 #import "LSIDetailViewController.h"
+void *KVOContext = &KVOContext;
 
 @interface LSIDetailViewController ()
+
+@property (strong, nonatomic) IBOutlet UIImageView *pokemonImage;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *idLabel;
+@property (strong, nonatomic) IBOutlet UILabel *abilitiesLabel;
 
 @end
 
@@ -16,7 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.pokemonController fillInDetailsFor:self.pokemon];
+    [self.pokemon addObserver:self forKeyPath:@"identifier" options:0 context:KVOContext];
+    [self.pokemon addObserver:self forKeyPath:@"abilities" options:0 context:KVOContext];
+    [self.pokemon addObserver:self forKeyPath:@"image" options:0 context:KVOContext];
+   
 }
 
 /*

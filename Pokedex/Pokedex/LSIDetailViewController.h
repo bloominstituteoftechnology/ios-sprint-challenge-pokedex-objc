@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pokedex-Swift.h"
+#import "LSIPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIDetailViewController : UIViewController
+
+@property (nonatomic, retain) PokemonController *pokemonController;
+@property (nonatomic, retain) LSIPokemon *pokemon;
 
 @end
 
