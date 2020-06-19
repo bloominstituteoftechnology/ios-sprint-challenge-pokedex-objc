@@ -99,6 +99,7 @@ import Foundation
     @objc func getPokemonAbilities(pokemon: HSIPokemon, completion: @escaping () -> Void = { } ) {
         guard let request = createRequest(url: pokemon.url) else {
             print("\(#file) \(#function) request was nil")
+            completion()
             return
         }
         dataLoader.loadData(using: request) { [weak self] (data, _, error) in
@@ -108,12 +109,13 @@ import Foundation
                 completion()
                 return
             }
-            self.decodePokemonProperties(data: data, pokemon: pokemon)
-            completion()
+            self.decodePokemonProperties(data: data, pokemon: pokemon) {
+                completion()
+            }
         }
     }
 
-    @objc private func decodePokemonProperties(data: Data, pokemon: HSIPokemon) {
+    @objc private func decodePokemonProperties(data: Data, pokemon: HSIPokemon, completion: @escaping () -> Void) {
         do {
             let error = NSError(domain: "\(#file) \(#function) Decode.NoData", code: 404)
 
@@ -141,24 +143,35 @@ import Foundation
                 throw error
             }
             //get pokemon.image
-            if let sprites = jsonData["sprites"] as? [String:Any],
-                let sprite = sprites["front_default"] as? String {
-                guard let spriteURL = URL(string: sprite) else {
-                    throw error
+            var sprite = ""
+            if let sprites = jsonData["sprites"] as? [String:Any] {
+                if let frontSprite = sprites["front_default"] as? String {
+                    sprite = frontSprite
+                } else if let backSprite = sprites["back_default"] as? String {
+                    sprite = backSprite
                 }
-                getPokemonSprite(url: spriteURL) { (data) in
-                    guard let data = data,
-                        let image = UIImage(data: data) else {
-                            print("error fetching image")
-                            return
-                    }
-                    pokemon.image = image
+
+
+            }
+            guard let spriteURL = URL(string: sprite) else {
+                print("unable to get sprite")
+                throw error
+            }
+            getPokemonSprite(url: spriteURL) { (data) in
+                guard let data = data,
+                    let image = UIImage(data: data) else {
+                        print("error fetching image")
+                        return
                 }
+                pokemon.image = image
+                completion()
             }
         } catch {
+            completion()
             print(error)
         }
     }
+
 
     @objc func getPokemonSprite(url: URL, completion: @escaping (Data?) -> Void) {
         guard let request = createRequest(url: url) else {
