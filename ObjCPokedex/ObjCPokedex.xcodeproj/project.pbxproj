@@ -66,6 +66,8 @@
 			children = (
 				1DEFEBD4249D0D29008C33F1 /* ViewController */,
 				1DEFEBD5249D0D37008C33F1 /* Storyboard */,
+				1DEFEBDD249D11BE008C33F1 /* Controller */,
+				1DEFEBDC249D11AE008C33F1 /* Model */,
 				1DEFEBD1249D0CF2008C33F1 /* Application */,
 			);
 			path = ObjCPokedex;
@@ -103,6 +105,20 @@
 				1DEFEBC1249D0C3D008C33F1 /* Main.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1DEFEBDC249D11AE008C33F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1DEFEBDD249D11BE008C33F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
