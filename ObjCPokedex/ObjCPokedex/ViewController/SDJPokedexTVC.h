@@ -1,5 +1,5 @@
 //
-//  PokedexTVC.h
+//  SDJPokedexTVC.h
 //  ObjCPokedex
 //
 //  Created by Shawn James on 6/19/20.

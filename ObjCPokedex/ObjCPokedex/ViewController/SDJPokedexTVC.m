@@ -1,23 +1,23 @@
 //
-//  PokedexTVC.m
+//  SDJPokedexTVC.m
 //  ObjCPokedex
 //
 //  Created by Shawn James on 6/19/20.
 //  Copyright © 2020 Shawn James. All rights reserved.
 //
 
-#import "PokedexTVC.h"
+#import "SDJPokedexTVC.h"
 #import "ObjCPokedex-Swift.h"
 #import "SDJPokemon.h"
 
-@interface PokedexTVC ()
+@interface SDJPokedexTVC ()
 
 @property (nonatomic) SDJNetworkController *networkController;
 @property (nonatomic, copy) NSArray<SDJPokemon *> *pokemon;
 
 @end
 
-@implementation PokedexTVC
+@implementation SDJPokedexTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
