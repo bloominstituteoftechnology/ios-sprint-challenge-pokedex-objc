@@ -16,6 +16,7 @@
         if (self) {
             _name = [name copy];
             _url = [url copy];
+            _abilities = [NSMutableArray<NSString *> new];
         }
         return self;
     }

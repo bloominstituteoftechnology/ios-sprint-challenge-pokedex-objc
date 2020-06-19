@@ -7,6 +7,7 @@
 //
 
 #import "HSIPokemonDetailViewController.h"
+#import "HSIPokemon.h"
 #import "Pokedex_Objective_C-Swift.h"
 
 @interface HSIPokemonDetailViewController ()
@@ -28,6 +29,9 @@ PokemonController *pokemonController;
 
     [networkService getAllPokemonWithCompletion:^() {
         NSLog(@"%lu", pokemonController.pokemon.count);
+        [networkService getPokemonAbilitiesWithPokemon:pokemonController.pokemon[0] completion:^{
+            NSLog(@"%@", pokemonController.pokemon[0].abilities);
+        }];
     }];
 }
 
