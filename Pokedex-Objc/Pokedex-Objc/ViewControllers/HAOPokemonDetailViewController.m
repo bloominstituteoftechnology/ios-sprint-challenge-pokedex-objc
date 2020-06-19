@@ -48,11 +48,34 @@ static NSString *identifier = @"identifier";
     
     NSString *abilitiesString = [[self.pokemon.abilities valueForKey:@"description"] componentsJoinedByString:@", "];
     self.pokemonAbilitesLabel.text = abilitiesString;
+    
+    [self fetchAndSetImage];
 }
 
 - (void)fetchAndSetImage
 {
-    
+    [[NSURLSession.sharedSession dataTaskWithURL:self.pokemon.spriteURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+      {
+        if (error) {
+            NSLog(@"Failed to fetch image for pokemon: %@", self.pokemon.name);
+            return;
+        }
+        
+        if (data == nil) {
+            NSLog(@"Data was returned nil");
+            return;
+        }
+        
+        UIImage *sprite = [UIImage imageWithData:data];
+        
+        if (sprite) {
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                self.imageView.image = sprite;
+            });
+        } else {
+            NSLog(@"Failed to convert data into sprite");
+        }
+    }] resume];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
