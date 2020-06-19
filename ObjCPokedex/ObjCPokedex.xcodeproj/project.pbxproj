@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1DEFEBBA249D0C3D008C33F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFEBB9249D0C3D008C33F1 /* AppDelegate.m */; };
 		1DEFEBBD249D0C3D008C33F1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFEBBC249D0C3D008C33F1 /* SceneDelegate.m */; };
-		1DEFEBC0249D0C3D008C33F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFEBBF249D0C3D008C33F1 /* ViewController.m */; };
 		1DEFEBC3249D0C3D008C33F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFEBC1249D0C3D008C33F1 /* Main.storyboard */; };
 		1DEFEBC5249D0C3F008C33F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFEBC4249D0C3F008C33F1 /* Assets.xcassets */; };
 		1DEFEBC8249D0C3F008C33F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFEBC6249D0C3F008C33F1 /* LaunchScreen.storyboard */; };
@@ -22,8 +21,6 @@
 		1DEFEBB9249D0C3D008C33F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1DEFEBBB249D0C3D008C33F1 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		1DEFEBBC249D0C3D008C33F1 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		1DEFEBBE249D0C3D008C33F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1DEFEBBF249D0C3D008C33F1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1DEFEBC2249D0C3D008C33F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1DEFEBC4249D0C3F008C33F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DEFEBC7249D0C3F008C33F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,19 +58,41 @@
 		1DEFEBB7249D0C3D008C33F1 /* ObjCPokedex */ = {
 			isa = PBXGroup;
 			children = (
+				1DEFEBD4249D0D29008C33F1 /* ViewController */,
+				1DEFEBD5249D0D37008C33F1 /* Storyboard */,
+				1DEFEBD1249D0CF2008C33F1 /* Application */,
+			);
+			path = ObjCPokedex;
+			sourceTree = "<group>";
+		};
+		1DEFEBD1249D0CF2008C33F1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				1DEFEBB8249D0C3D008C33F1 /* AppDelegate.h */,
 				1DEFEBB9249D0C3D008C33F1 /* AppDelegate.m */,
 				1DEFEBBB249D0C3D008C33F1 /* SceneDelegate.h */,
 				1DEFEBBC249D0C3D008C33F1 /* SceneDelegate.m */,
-				1DEFEBBE249D0C3D008C33F1 /* ViewController.h */,
-				1DEFEBBF249D0C3D008C33F1 /* ViewController.m */,
-				1DEFEBC1249D0C3D008C33F1 /* Main.storyboard */,
 				1DEFEBC4249D0C3F008C33F1 /* Assets.xcassets */,
-				1DEFEBC6249D0C3F008C33F1 /* LaunchScreen.storyboard */,
 				1DEFEBC9249D0C3F008C33F1 /* Info.plist */,
 				1DEFEBCA249D0C3F008C33F1 /* main.m */,
 			);
-			path = ObjCPokedex;
+			name = Application;
+			sourceTree = "<group>";
+		};
+		1DEFEBD4249D0D29008C33F1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1DEFEBD5249D0D37008C33F1 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1DEFEBC6249D0C3F008C33F1 /* LaunchScreen.storyboard */,
+				1DEFEBC1249D0C3D008C33F1 /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +166,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DEFEBC0249D0C3D008C33F1 /* ViewController.m in Sources */,
 				1DEFEBBA249D0C3D008C33F1 /* AppDelegate.m in Sources */,
 				1DEFEBCB249D0C3F008C33F1 /* main.m in Sources */,
 				1DEFEBBD249D0C3D008C33F1 /* SceneDelegate.m in Sources */,
