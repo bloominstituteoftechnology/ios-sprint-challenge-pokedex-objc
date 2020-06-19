@@ -43,11 +43,14 @@ void *KVOContext = &KVOContext;
                         change:(NSDictionary<NSKeyValueChangeKey,id> *)change
                         context:(void *)context
 {
-    if (context == KVOContext) {
-        dispatch_async(dispatch_get_main_queue(), ^{
+    if (context == KVOContext)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^
+        {
             [self updateViews];
         });
-    } else {
+    } else
+    {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }

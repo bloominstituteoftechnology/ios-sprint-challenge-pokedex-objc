@@ -7,6 +7,7 @@
 //
 
 #import "CNSPokemonTableViewController.h"
+#import "DetailsViewController.h"
 #import "CNSPokemon.h"
 #import "Dex-Swift.h"
 
@@ -41,7 +42,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowDetail"]) {
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-        CNSPokemonDetailViewController *detailVC = segue.destinationViewController;
+        DetailsViewController *detailVC = segue.destinationViewController;
         detailVC.pokemon = [self.pokemon objectAtIndex:indexPath.row];
     }
 }
