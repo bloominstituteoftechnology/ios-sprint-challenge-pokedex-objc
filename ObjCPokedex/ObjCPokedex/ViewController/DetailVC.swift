@@ -20,6 +20,14 @@ class DetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        addObservers()
+    }
+    
+    private func addObservers() { // KVO
+        guard let pokemon = pokemon else { return }
+        pokemon.addObserver(self, forKeyPath: "identifier", options: .initial, context: .none)
+        pokemon.addObserver(self, forKeyPath: "abilities", options: .initial, context: .none)
+        pokemon.addObserver(self, forKeyPath: "image", options: .new, context: .none)
     }
     
     /// Updates the views with the properties of the injected pokemon object
