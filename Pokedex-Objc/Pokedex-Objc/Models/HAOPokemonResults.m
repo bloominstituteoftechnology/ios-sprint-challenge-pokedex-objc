@@ -26,7 +26,7 @@
     NSMutableArray *pokemonArray = [[NSMutableArray alloc] init];
     
     for (NSDictionary *pokemonDictionary in results) {
-        NSString *name = pokemonDictionary[@"name"];
+        NSString *name = [pokemonDictionary[@"name"] capitalizedString];
         HAOPokemon *pokemon = [[HAOPokemon alloc] initWithName:name];
         if(pokemon) {
             [pokemonArray addObject:pokemon];

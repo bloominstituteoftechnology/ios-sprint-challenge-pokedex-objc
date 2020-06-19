@@ -31,7 +31,7 @@ class PokemonAPI: NSObject {
             
             do {
                 guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? Dictionary<String, Any> else {
-                    NSLog("Yup decoding failed")
+                    NSLog("Failed to turn json into dictionary")
                     return
                 }
                 
@@ -39,9 +39,9 @@ class PokemonAPI: NSObject {
                 
                 completion(pokemonResults.pokemonArray, nil)
             } catch {
-                NSLog("Failed to turn json into dictionary")
+                NSLog("Failed to do whatever JSONSerialization does")
             }
-        }
+        }.resume()
     }
 
     @objc func fillInDetails(for pokemon: Pokemon) {

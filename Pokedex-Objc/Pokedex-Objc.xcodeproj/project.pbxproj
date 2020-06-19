@@ -112,10 +112,10 @@
 		2B1327C1249D141D00D78C4A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2B1327C9249D189900D78C4A /* HAOPokemon.h */,
-				2B1327CA249D189900D78C4A /* HAOPokemon.m */,
 				2B1327D2249D28F900D78C4A /* HAOPokemonResults.h */,
 				2B1327D3249D28F900D78C4A /* HAOPokemonResults.m */,
+				2B1327C9249D189900D78C4A /* HAOPokemon.h */,
+				2B1327CA249D189900D78C4A /* HAOPokemon.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";

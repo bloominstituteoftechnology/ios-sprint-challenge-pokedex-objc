@@ -24,7 +24,6 @@
 
 - (void)fillInDetailsForPokemon:(HAOPokemon *)pokemon dictionary:(NSDictionary *)dictionary
 {
-    NSString *name = dictionary[@"name"];
     NSString *identifier = dictionary[@"id"];
     
     NSDictionary *spriteDictionary = dictionary[@"sprites"];
@@ -39,7 +38,6 @@
         [abilities addObject:abilityName];
     }
     
-    pokemon.name = name;
     pokemon.identifier = identifier;
     pokemon.spriteURL = spriteURL;
     pokemon.abilites = abilities;

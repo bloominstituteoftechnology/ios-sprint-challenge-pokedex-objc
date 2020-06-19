@@ -13,10 +13,10 @@ NS_SWIFT_NAME(Pokemon)
 
 @interface HAOPokemon : NSObject
 
-@property NSString *name;
-@property NSURL *spriteURL;
-@property NSString *identifier;
-@property NSArray<NSString *> *abilites;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSURL *spriteURL;
+@property (nonatomic) NSString *identifier;
+@property (nonatomic) NSArray<NSString *> *abilites;
 
 - (instancetype)initWithName:(NSString *)name;
 
