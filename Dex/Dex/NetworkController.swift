@@ -48,7 +48,6 @@ class NetworkController: NSObject {
                 
                 let id = dictionary["id"] as! Int
                 pokemon.id = Int32(id)
-                
                 let abilitiesDitionaries = dictionary["abilities"] as! [[String : Any]]
                 var names: [String] = []
                 for abilityDictionary in abilitiesDitionaries {
@@ -89,20 +88,15 @@ class NetworkController: NSObject {
                    }
                    return
                }
-               
                do {
                    guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else {
                        let error = NSError(domain: "NetworkControllerErrorDomain", code: 2, userInfo: nil);
-                       
                        throw error
                    }
-                   
                    guard let pokemonDictionaries = dictionary["results"] as? [[String : Any]] else {
                        let error = NSError(domain: "NetworkControllerErrorDomain", code: 3, userInfo: nil);
-                       
                        throw error
                    }
-                   
                    let pokemon = pokemonDictionaries.compactMap { CNSPokemon(dictionary: $0) }
                    
                    DispatchQueue.main.async {
