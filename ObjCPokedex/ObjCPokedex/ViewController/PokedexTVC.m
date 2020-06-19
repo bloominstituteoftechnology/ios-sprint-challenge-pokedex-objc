@@ -7,8 +7,8 @@
 //
 
 #import "PokedexTVC.h"
-#import "PokedexPractice-Swift.h"
-
+#import "ObjCPokedex-Swift.h"
+#import "SDJPokemon.h"
 
 @interface PokedexTVC ()
 
