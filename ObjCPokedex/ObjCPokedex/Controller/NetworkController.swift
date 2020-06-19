@@ -11,5 +11,6 @@ import UIKit
 @objc(SDJNetworkController) class NetworkController: NSObject {
     
     var pokemon = [Pokemon]()
+    private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     
 }
