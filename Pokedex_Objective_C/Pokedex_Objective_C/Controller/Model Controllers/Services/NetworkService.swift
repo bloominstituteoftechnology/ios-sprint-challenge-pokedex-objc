@@ -142,14 +142,32 @@ import Foundation
             }
             //get pokemon.image
             if let sprites = jsonData["sprites"] as? [String:Any],
-                let sprite = sprites["sprite"] as? String {
+                let sprite = sprites["front_default"] as? String {
                 guard let spriteURL = URL(string: sprite) else {
                     throw error
                 }
-                //TODO: Sprite get method using this URL
+                getPokemonSprite(url: spriteURL) { (data) in
+                    guard let data = data,
+                        let image = UIImage(data: data) else {
+                            print("error fetching image")
+                            return
+                    }
+                    pokemon.image = image
+                }
             }
         } catch {
             print(error)
+        }
+    }
+
+    @objc func getPokemonSprite(url: URL, completion: @escaping (Data?) -> Void) {
+        guard let request = createRequest(url: url) else {
+            print("\(#file) \(#function) request was nil")
+            completion(nil)
+            return
+        }
+        dataLoader.loadData(using: request) { (data, _, error) in
+            completion(data)
         }
     }
 

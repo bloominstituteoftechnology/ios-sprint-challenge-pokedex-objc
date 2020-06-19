@@ -11,6 +11,8 @@
 #import "Pokedex_Objective_C-Swift.h"
 
 @interface HSIPokemonDetailViewController ()
+@property (strong, nonatomic) IBOutlet UILabel *abilitiesLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -23,8 +25,14 @@ NetworkService *networkService;
     //init controller
     networkService = [[NetworkService alloc] initWithDataLoader:NSURLSession.sharedSession];
     if (_pokemon) {
+        __weak typeof(self) weakSelf = self;
         [networkService getPokemonAbilitiesWithPokemon: self.pokemon completion:^{
-            NSLog(@"%@", self.pokemon.abilities);
+            __strong typeof(self) strongSelf = weakSelf;
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                strongSelf.abilitiesLabel.text = [self.pokemon.abilities componentsJoinedByString:@", "];
+                strongSelf.imageView.image = self.pokemon.image;
+            });
+
         }];
     }
 
