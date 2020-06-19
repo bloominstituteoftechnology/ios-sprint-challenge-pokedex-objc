@@ -15,6 +15,8 @@
 		3F2D41DF249D13F20071335D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D41DE249D13F20071335D /* main.m */; };
 		3F2D41E7249D17630071335D /* LSIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D41E6249D17630071335D /* LSIPokemon.m */; };
 		3F2D41EA249D1C2B0071335D /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D41E9249D1C2B0071335D /* PokemonController.swift */; };
+		3F2D41EF249D278A0071335D /* LSIPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D41EE249D278A0071335D /* LSIPokemonTableViewController.m */; };
+		3F2D41F2249D27A20071335D /* LSIDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D41F1249D27A20071335D /* LSIDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		3F2D41E6249D17630071335D /* LSIPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemon.m; sourceTree = "<group>"; };
 		3F2D41E8249D1C2B0071335D /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
 		3F2D41E9249D1C2B0071335D /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
+		3F2D41ED249D278A0071335D /* LSIPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIPokemonTableViewController.h; sourceTree = "<group>"; };
+		3F2D41EE249D278A0071335D /* LSIPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemonTableViewController.m; sourceTree = "<group>"; };
+		3F2D41F0249D27A20071335D /* LSIDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIDetailViewController.h; sourceTree = "<group>"; };
+		3F2D41F1249D27A20071335D /* LSIDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,10 @@
 				3F2D41E5249D17630071335D /* LSIPokemon.h */,
 				3F2D41E6249D17630071335D /* LSIPokemon.m */,
 				3F2D41E9249D1C2B0071335D /* PokemonController.swift */,
+				3F2D41ED249D278A0071335D /* LSIPokemonTableViewController.h */,
+				3F2D41EE249D278A0071335D /* LSIPokemonTableViewController.m */,
+				3F2D41F0249D27A20071335D /* LSIDetailViewController.h */,
+				3F2D41F1249D27A20071335D /* LSIDetailViewController.m */,
 				3F2D41D5249D13EE0071335D /* Main.storyboard */,
 				3F2D41D8249D13F20071335D /* Assets.xcassets */,
 				3F2D41DA249D13F20071335D /* LaunchScreen.storyboard */,
@@ -152,6 +162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2D41F2249D27A20071335D /* LSIDetailViewController.m in Sources */,
+				3F2D41EF249D278A0071335D /* LSIPokemonTableViewController.m in Sources */,
 				3F2D41E7249D17630071335D /* LSIPokemon.m in Sources */,
 				3F2D41CE249D13EE0071335D /* AppDelegate.m in Sources */,
 				3F2D41DF249D13F20071335D /* main.m in Sources */,
