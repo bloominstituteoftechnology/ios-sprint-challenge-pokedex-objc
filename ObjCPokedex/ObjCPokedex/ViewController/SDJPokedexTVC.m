@@ -50,6 +50,10 @@
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    DetailVC *detailVC = (DetailVC *)segue.destinationViewController;
+    detailVC.networkController = self.networkController;
+    detailVC.pokemon = self.pokemon[indexPath.row];
 }
 
 @end
