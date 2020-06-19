@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="fXP-Ga-suL" kind="show" id="u8V-ds-UUs"/>
+                                    <segue destination="fXP-Ga-suL" kind="show" identifier="ShowPokemonSegue" id="u8V-ds-UUs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
