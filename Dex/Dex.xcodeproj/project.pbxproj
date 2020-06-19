@@ -18,6 +18,7 @@
 		7FAF051A249D28410057BE65 /* CNSPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF0519249D28410057BE65 /* CNSPokemon.m */; };
 		7FAF051F249D29180057BE65 /* CNSNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF051E249D29180057BE65 /* CNSNetworkController.swift */; };
 		7FAF0524249D39650057BE65 /* CNSPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF0523249D39650057BE65 /* CNSPokemonTableViewController.m */; };
+		7FAF0527249D54AA0057BE65 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF0526249D54AA0057BE65 /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		7FAF051E249D29180057BE65 /* CNSNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSNetworkController.swift; sourceTree = "<group>"; };
 		7FAF0522249D39650057BE65 /* CNSPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNSPokemonTableViewController.h; sourceTree = "<group>"; };
 		7FAF0523249D39650057BE65 /* CNSPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNSPokemonTableViewController.m; sourceTree = "<group>"; };
+		7FAF0525249D54AA0057BE65 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		7FAF0526249D54AA0057BE65 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,8 @@
 			children = (
 				7FAF0522249D39650057BE65 /* CNSPokemonTableViewController.h */,
 				7FAF0523249D39650057BE65 /* CNSPokemonTableViewController.m */,
+				7FAF0525249D54AA0057BE65 /* DetailsViewController.h */,
+				7FAF0526249D54AA0057BE65 /* DetailsViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				7FAF051F249D29180057BE65 /* CNSNetworkController.swift in Sources */,
 				7FAF04F5249D27B80057BE65 /* main.m in Sources */,
 				7FAF04E7249D27B70057BE65 /* SceneDelegate.m in Sources */,
+				7FAF0527249D54AA0057BE65 /* DetailsViewController.m in Sources */,
 				7FAF0524249D39650057BE65 /* CNSPokemonTableViewController.m in Sources */,
 				7FAF051A249D28410057BE65 /* CNSPokemon.m in Sources */,
 			);
