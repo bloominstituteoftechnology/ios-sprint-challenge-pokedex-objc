@@ -10,6 +10,6 @@ import UIKit
 
 @objc(SDJNetworkController) class NetworkController: NSObject {
     
-    
+    var pokemon = [Pokemon]()
     
 }
