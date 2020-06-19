@@ -149,9 +149,9 @@ import Foundation
                     sprite = frontSprite
                 } else if let backSprite = sprites["back_default"] as? String {
                     sprite = backSprite
+                } else {
+                    throw error
                 }
-
-
             }
             guard let spriteURL = URL(string: sprite) else {
                 print("unable to get sprite")

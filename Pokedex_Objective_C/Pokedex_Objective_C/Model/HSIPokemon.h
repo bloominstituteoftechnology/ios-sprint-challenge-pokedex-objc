@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSMutableArray<NSString *> *abilities;
 @property (nonatomic, copy) NSString *identifier;
 
-
 -(instancetype) initWithName:(NSString *)name url:(NSURL *)url;
 
 @end
