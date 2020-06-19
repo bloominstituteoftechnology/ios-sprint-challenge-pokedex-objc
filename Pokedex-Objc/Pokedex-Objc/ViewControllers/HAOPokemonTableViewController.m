@@ -7,6 +7,7 @@
 //
 
 #import "HAOPokemonTableViewController.h"
+#import "HAOPokemonDetailViewController.h"
 #import "HAOPokemon.h"
 
 #import "Pokedex_Objc-Swift.h"
@@ -60,19 +61,20 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = self.pokemon[indexPath.row].name;
+    cell.textLabel.text = [self.pokemon[indexPath.row].name capitalizedString];
     
     return cell;
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"PokemonDetailSegue"]) {
+        HAOPokemonDetailViewController *detailVC = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        detailVC.pokemon = self.pokemon[indexPath.row];
+    }
 }
-*/
 
 @end

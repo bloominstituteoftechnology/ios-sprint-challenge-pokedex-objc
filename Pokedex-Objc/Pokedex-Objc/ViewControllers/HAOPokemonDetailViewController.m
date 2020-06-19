@@ -7,6 +7,11 @@
 //
 
 #import "HAOPokemonDetailViewController.h"
+#import "HAOPokemon.h"
+
+#import "Pokedex_Objc-Swift.h"
+
+static NSString *identifier = @"identifier";
 
 @interface HAOPokemonDetailViewController ()
 
@@ -15,23 +20,48 @@
 @property (strong, nonatomic) IBOutlet UILabel *pokemonIDLabel;
 @property (strong, nonatomic) IBOutlet UILabel *pokemonAbilitesLabel;
 
+- (void)fetchAndSetImage;
+
 @end
 
 @implementation HAOPokemonDetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    if (self.pokemon) {
+        [self.pokemon addObserver:self forKeyPath:identifier options:0 context:nil];
+        [PokemonAPI.sharedController fillInDetailsFor:self.pokemon];
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)dealloc
+{
+    [self.pokemon removeObserver:self forKeyPath:identifier];
 }
-*/
+
+- (void)updateViews
+{
+    self.pokemonNameLabel.text = [self.pokemon.name capitalizedString];
+    self.pokemonIDLabel.text = [[NSString alloc] initWithFormat:@"%@", self.pokemon.identifier];
+    
+    NSString *abilitiesString = [[self.pokemon.abilities valueForKey:@"description"] componentsJoinedByString:@", "];
+    self.pokemonAbilitesLabel.text = abilitiesString;
+}
+
+- (void)fetchAndSetImage
+{
+    
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:identifier]) {
+        [self updateViews];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
 
 @end

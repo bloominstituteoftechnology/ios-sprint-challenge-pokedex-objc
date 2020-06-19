@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class HAOPokemon;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HAOPokemonDetailViewController : UIViewController
+
+@property (nonatomic) HAOPokemon *pokemon;
 
 @end
 

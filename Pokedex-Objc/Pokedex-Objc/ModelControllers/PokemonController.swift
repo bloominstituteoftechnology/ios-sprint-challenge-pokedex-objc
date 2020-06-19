@@ -17,9 +17,9 @@ class PokemonAPI: NSObject {
     }
 
     @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
-        let pokemonURL = baseURL.appendingPathComponent("pokemon")
+        let allPokemonURL = baseURL.appendingPathComponent("pokemon")
         
-        URLSession.shared.dataTask(with: pokemonURL) { data, _, error in
+        URLSession.shared.dataTask(with: allPokemonURL) { data, _, error in
             if let error = error {
                 return completion(nil, error)
             }
@@ -45,6 +45,31 @@ class PokemonAPI: NSObject {
     }
 
     @objc func fillInDetails(for pokemon: Pokemon) {
+        let pokemonURL = baseURL.appendingPathComponent("pokemon").appendingPathComponent(pokemon.name)
         
+        URLSession.shared.dataTask(with: pokemonURL) { data, _, error in
+            if let error = error {
+                NSLog("Failed to fetch image with error: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("Data was nil")
+                return
+            }
+            
+            do {
+                guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? Dictionary<String, Any> else {
+                    NSLog("Failed to turn json into dictionary")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    pokemon.fillInDetails(with: json)
+                }
+            } catch {
+                NSLog("Failed to do whatever JSONSerialization does: \(data)")
+            }
+        }.resume()
     }
 }

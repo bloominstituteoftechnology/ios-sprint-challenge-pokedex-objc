@@ -15,12 +15,12 @@ NS_SWIFT_NAME(Pokemon)
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSURL *spriteURL;
-@property (nonatomic) NSString *identifier;
-@property (nonatomic) NSArray<NSString *> *abilites;
+@property (nonatomic) NSNumber *identifier;
+@property (nonatomic) NSArray<NSString *> *abilities;
 
 - (instancetype)initWithName:(NSString *)name;
 
-- (void)fillInDetailsForPokemon:(HAOPokemon *)pokemon dictionary:(NSDictionary *)dictionary;
+- (void)fillInDetailsWithDictionary:(NSDictionary *)dictionary;
 
 @end
 
