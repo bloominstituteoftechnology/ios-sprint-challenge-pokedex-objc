@@ -62,17 +62,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRM-jA-tFF">
-                                <rect key="frame" x="20" y="551" width="374" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="nfL-UX-x1x"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozT-K4-j6G">
-                                <rect key="frame" x="20" y="580" width="374" height="282"/>
+                                <rect key="frame" x="20" y="551" width="374" height="311"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -82,17 +73,14 @@
                         <constraints>
                             <constraint firstItem="ozT-K4-j6G" firstAttribute="bottom" secondItem="1Zj-1U-7Vw" secondAttribute="bottom" id="Bf0-8S-PxM"/>
                             <constraint firstItem="5pN-0B-ngv" firstAttribute="top" secondItem="6cH-bk-39Y" secondAttribute="bottom" constant="8" id="Dcu-DW-aQJ"/>
-                            <constraint firstItem="eRM-jA-tFF" firstAttribute="leading" secondItem="1Zj-1U-7Vw" secondAttribute="leading" constant="20" id="ICK-Ij-CJp"/>
+                            <constraint firstItem="ozT-K4-j6G" firstAttribute="top" secondItem="5pN-0B-ngv" secondAttribute="bottom" constant="8" id="Fh8-Pl-4Ea"/>
                             <constraint firstItem="ozT-K4-j6G" firstAttribute="leading" secondItem="1Zj-1U-7Vw" secondAttribute="leading" constant="20" id="Lqw-JG-NzU"/>
                             <constraint firstItem="6cH-bk-39Y" firstAttribute="leading" secondItem="1Zj-1U-7Vw" secondAttribute="leading" constant="20" id="Oul-rZ-O2k"/>
-                            <constraint firstItem="eRM-jA-tFF" firstAttribute="top" secondItem="5pN-0B-ngv" secondAttribute="bottom" constant="8" id="PY2-Nv-fV5"/>
                             <constraint firstItem="1Zj-1U-7Vw" firstAttribute="trailing" secondItem="5pN-0B-ngv" secondAttribute="trailing" constant="20" id="RLA-yd-ZxM"/>
                             <constraint firstItem="6cH-bk-39Y" firstAttribute="top" secondItem="1Zj-1U-7Vw" secondAttribute="top" id="S4J-Hs-P2V"/>
                             <constraint firstItem="1Zj-1U-7Vw" firstAttribute="trailing" secondItem="ozT-K4-j6G" secondAttribute="trailing" constant="20" id="c89-Bh-jbH"/>
-                            <constraint firstItem="1Zj-1U-7Vw" firstAttribute="trailing" secondItem="eRM-jA-tFF" secondAttribute="trailing" constant="20" id="h3h-dO-MrF"/>
                             <constraint firstItem="1Zj-1U-7Vw" firstAttribute="trailing" secondItem="6cH-bk-39Y" secondAttribute="trailing" constant="20" id="l0I-c9-Ue0"/>
                             <constraint firstItem="5pN-0B-ngv" firstAttribute="leading" secondItem="1Zj-1U-7Vw" secondAttribute="leading" constant="20" id="p4O-Yg-xi5"/>
-                            <constraint firstItem="ozT-K4-j6G" firstAttribute="top" secondItem="eRM-jA-tFF" secondAttribute="bottom" constant="8" id="txw-Vk-kfo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Zj-1U-7Vw"/>
                     </view>
