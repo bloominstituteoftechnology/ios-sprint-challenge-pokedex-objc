@@ -13,6 +13,8 @@
 		1DEFEBC5249D0C3F008C33F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFEBC4249D0C3F008C33F1 /* Assets.xcassets */; };
 		1DEFEBC8249D0C3F008C33F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFEBC6249D0C3F008C33F1 /* LaunchScreen.storyboard */; };
 		1DEFEBCB249D0C3F008C33F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFEBCA249D0C3F008C33F1 /* main.m */; };
+		1DEFEBD8249D0F3F008C33F1 /* PokedexTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFEBD7249D0F3F008C33F1 /* PokedexTVC.m */; };
+		1DEFEBDB249D0F5C008C33F1 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFEBDA249D0F5C008C33F1 /* DetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		1DEFEBC7249D0C3F008C33F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DEFEBC9249D0C3F008C33F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DEFEBCA249D0C3F008C33F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1DEFEBD6249D0F3F008C33F1 /* PokedexTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokedexTVC.h; sourceTree = "<group>"; };
+		1DEFEBD7249D0F3F008C33F1 /* PokedexTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokedexTVC.m; sourceTree = "<group>"; };
+		1DEFEBD9249D0F5C008C33F1 /* ObjCPokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCPokedex-Bridging-Header.h"; sourceTree = "<group>"; };
+		1DEFEBDA249D0F5C008C33F1 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,10 @@
 		1DEFEBD4249D0D29008C33F1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1DEFEBD6249D0F3F008C33F1 /* PokedexTVC.h */,
+				1DEFEBD7249D0F3F008C33F1 /* PokedexTVC.m */,
+				1DEFEBDA249D0F5C008C33F1 /* DetailVC.swift */,
+				1DEFEBD9249D0F5C008C33F1 /* ObjCPokedex-Bridging-Header.h */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -127,6 +137,7 @@
 				TargetAttributes = {
 					1DEFEBB4249D0C3D008C33F1 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -166,6 +177,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DEFEBDB249D0F5C008C33F1 /* DetailVC.swift in Sources */,
+				1DEFEBD8249D0F3F008C33F1 /* PokedexTVC.m in Sources */,
 				1DEFEBBA249D0C3D008C33F1 /* AppDelegate.m in Sources */,
 				1DEFEBCB249D0C3F008C33F1 /* main.m in Sources */,
 				1DEFEBBD249D0C3D008C33F1 /* SceneDelegate.m in Sources */,
@@ -308,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SKL49NTL5D;
 				INFOPLIST_FILE = ObjCPokedex/Info.plist;
@@ -317,6 +331,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shawnjames.ObjCPokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjCPokedex/ViewController/ObjCPokedex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -325,6 +342,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SKL49NTL5D;
 				INFOPLIST_FILE = ObjCPokedex/Info.plist;
@@ -334,6 +352,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shawnjames.ObjCPokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjCPokedex/ViewController/ObjCPokedex-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
