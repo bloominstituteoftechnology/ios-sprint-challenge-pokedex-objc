@@ -123,6 +123,33 @@ class PokemonController {
     .resume()
         
     }
-
+    
+    @objc func getImage(at urlString: String, completion: @escaping (UIImage?, Error?) -> Void) {
+           let imageUrl = URL(string: urlString)
+           let request = URLRequest(url: imageUrl!)
+           
+           URLSession.shared.dataTask(with: request) { (data, response, error) in
+               if let error = error {
+                   NSLog("Error receiving pokemon image data: \(error)")
+                   completion(nil, error)
+                   return
+               }
+               
+               guard let data = data else {
+                   NSLog("GitHub responded with no image data") // Optional to print if you want
+                   completion(nil, error)
+                   return
+               }
+               
+               guard let image = UIImage(data: data) else {
+                   NSLog("Image data is incomplete or currupted.")
+                   completion(nil, error)
+                   return
+               }
+               
+               completion(image,nil)
+               
+           }.resume()
+       }
 
 }
