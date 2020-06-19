@@ -17,6 +17,7 @@
 		7FAF04FF249D27B80057BE65 /* DexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF04FE249D27B80057BE65 /* DexTests.m */; };
 		7FAF050A249D27B80057BE65 /* DexUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF0509249D27B80057BE65 /* DexUITests.m */; };
 		7FAF051A249D28410057BE65 /* CNSPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF0519249D28410057BE65 /* CNSPokemon.m */; };
+		7FAF051F249D29180057BE65 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF051E249D29180057BE65 /* NetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		7FAF050B249D27B80057BE65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FAF0518249D28410057BE65 /* CNSPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNSPokemon.h; sourceTree = "<group>"; };
 		7FAF0519249D28410057BE65 /* CNSPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNSPokemon.m; sourceTree = "<group>"; };
+		7FAF051D249D29180057BE65 /* Dex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dex-Bridging-Header.h"; sourceTree = "<group>"; };
+		7FAF051E249D29180057BE65 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,7 @@
 		7FAF04E1249D27B70057BE65 /* Dex */ = {
 			isa = PBXGroup;
 			children = (
+				7FAF051C249D29030057BE65 /* Controller */,
 				7FAF0517249D28270057BE65 /* Model */,
 				7FAF04E2249D27B70057BE65 /* AppDelegate.h */,
 				7FAF04E3249D27B70057BE65 /* AppDelegate.m */,
@@ -148,6 +152,15 @@
 				7FAF0519249D28410057BE65 /* CNSPokemon.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		7FAF051C249D29030057BE65 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7FAF051E249D29180057BE65 /* NetworkController.swift */,
+				7FAF051D249D29180057BE65 /* Dex-Bridging-Header.h */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +230,7 @@
 				TargetAttributes = {
 					7FAF04DE249D27B70057BE65 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					7FAF04F9249D27B80057BE65 = {
 						CreatedOnToolsVersion = 11.5;
@@ -282,6 +296,7 @@
 			files = (
 				7FAF04EA249D27B70057BE65 /* ViewController.m in Sources */,
 				7FAF04E4249D27B70057BE65 /* AppDelegate.m in Sources */,
+				7FAF051F249D29180057BE65 /* NetworkController.swift in Sources */,
 				7FAF04F5249D27B80057BE65 /* main.m in Sources */,
 				7FAF04E7249D27B70057BE65 /* SceneDelegate.m in Sources */,
 				7FAF051A249D28410057BE65 /* CNSPokemon.m in Sources */,
@@ -453,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HL3XLM68NV;
 				INFOPLIST_FILE = Dex/Info.plist;
@@ -462,6 +478,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CasanovaStudios.Dex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dex/Dex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -470,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HL3XLM68NV;
 				INFOPLIST_FILE = Dex/Info.plist;
@@ -479,6 +499,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CasanovaStudios.Dex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dex/Dex-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -486,6 +508,7 @@
 		7FAF0512249D27B80057BE65 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HL3XLM68NV;
@@ -506,6 +529,7 @@
 		7FAF0513249D27B80057BE65 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HL3XLM68NV;
@@ -526,6 +550,7 @@
 		7FAF0515249D27B80057BE65 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HL3XLM68NV;
 				INFOPLIST_FILE = DexUITests/Info.plist;
@@ -544,6 +569,7 @@
 		7FAF0516249D27B80057BE65 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HL3XLM68NV;
 				INFOPLIST_FILE = DexUITests/Info.plist;
