@@ -84,6 +84,13 @@ If you write a loop that creates many temporary objects, using autorelease pool 
 @property (nonatomic, copy) NSString *name;
 
 - (instancetype)initWithName:(NSString *)name;
++ (instancetype)personWithName:(NSString *)name;
+
+@implementation LSIPerson
+
++ (instancetype)personWithName:(NSString *)name {
+    return [[[LSIPerson alloc] initWithName:name] autorelease];
+}
 
 @end
 ```
