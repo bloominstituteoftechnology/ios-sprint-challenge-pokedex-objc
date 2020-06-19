@@ -26,7 +26,7 @@ void *KVOContext = &KVOContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [CNSPokemonController.sharedController UPDATEWithPokemon: self.pokemon];
+    [CNSPokemonController.sharedController GETWithPokemon: self.pokemon];
 }
 
 - (void)updateViews
@@ -54,4 +54,49 @@ void *KVOContext = &KVOContext;
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
+
+- (void)setPokemon:(CNSPokemon *)pokemon
+{
+    if (_pokemon != pokemon)
+    {
+        [_pokemon removeObserver:self
+                      forKeyPath:@"name"
+                         context:KVOContext];
+        
+        [_pokemon removeObserver:self
+                      forKeyPath:@"id"
+                         context:KVOContext];
+        
+        [_pokemon removeObserver:self
+                      forKeyPath:@"abilities"
+                         context:KVOContext];
+        
+        [_pokemon removeObserver:self
+                      forKeyPath:@"sprites"
+                         context:KVOContext];
+        
+        _pokemon = pokemon;
+        
+        [_pokemon addObserver:self
+                   forKeyPath:@"name"
+                      options:NSKeyValueObservingOptionInitial
+                      context:KVOContext];
+        
+        [_pokemon addObserver:self
+                   forKeyPath:@"id"
+                      options:NSKeyValueObservingOptionInitial
+                      context:KVOContext];
+        
+        [_pokemon addObserver:self
+                   forKeyPath:@"abilities"
+                      options:NSKeyValueObservingOptionInitial
+                      context:KVOContext];
+        
+        [_pokemon addObserver:self
+                   forKeyPath:@"sprites"
+                      options:NSKeyValueObservingOptionInitial
+                      context:KVOContext];
+    }
+}
+
 @end
