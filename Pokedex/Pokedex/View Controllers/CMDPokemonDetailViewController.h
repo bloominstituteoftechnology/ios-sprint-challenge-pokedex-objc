@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CMDPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CMDPokemonDetailViewController : UIViewController
+
+@property (nonatomic) CMDPokemon *pokemon;
 
 @end
 

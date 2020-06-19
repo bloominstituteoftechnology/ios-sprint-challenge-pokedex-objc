@@ -12,19 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CMDPokemon : NSObject
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSURL *infoURL;
-@property (nonatomic) int idenitifier;
-@property (nonatomic, copy) NSString *abilities;
-@property (nonatomic, copy) NSURL *sprite;
+@property (nonatomic)NSString *name;
+@property (nonatomic, nullable)NSString *identifier;
+@property (nonatomic, nullable)NSString *sprite;
+@property (nonatomic, nullable)NSArray<NSString *> *abilities;
+@property (nonatomic)NSString *urlString;
+@property (nonatomic, nullable)NSString *type;
 
-- (instancetype)initWithName:(nonnull NSString *)name
-                             infoURL:(nullable NSURL *)infoURL
-                          identifier:(int)identifier
-                           abilities:(nullable NSString *)abilities
-                              sprite:(nullable NSURL *)sprite;
-
-- (instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
+- (instancetype) initWithDictionary:(NSDictionary *)dictionary;
 
 
 @end

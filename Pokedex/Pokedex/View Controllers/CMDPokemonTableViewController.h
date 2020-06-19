@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class CMDPokemonDetailViewController;
+@class PokemonAPI;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CMDPokemonTableViewController : UITableViewController
+
+@property (strong, nonatomic) CMDPokemonDetailViewController *detailViewController;
 
 @end
 
