@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class SDJNetworkController;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PokedexTVC : UITableViewController
