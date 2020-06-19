@@ -1,20 +1,23 @@
 //
-//  PokemonTableViewController.m
+//  HAOPokemonDetailViewController.m
 //  Pokedex-Objc
 //
 //  Created by Hunter Oppel on 6/19/20.
 //  Copyright © 2020 LambdaSchool. All rights reserved.
 //
 
-#import "PokemonTableViewController.h"
+#import "HAOPokemonDetailViewController.h"
 
-@interface PokemonTableViewController ()
+@interface HAOPokemonDetailViewController ()
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UILabel *pokemonNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *pokemonIDLabel;
+@property (strong, nonatomic) IBOutlet UILabel *pokemonAbilitesLabel;
 
 @end
 
-@implementation PokemonTableViewController
+@implementation HAOPokemonDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

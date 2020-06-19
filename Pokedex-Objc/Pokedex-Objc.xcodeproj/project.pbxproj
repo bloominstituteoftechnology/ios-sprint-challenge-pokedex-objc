@@ -13,8 +13,9 @@
 		2B1327B3249D13B000D78C4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B1327B2249D13B000D78C4A /* Assets.xcassets */; };
 		2B1327B6249D13B000D78C4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B1327B4249D13B000D78C4A /* LaunchScreen.storyboard */; };
 		2B1327B9249D13B000D78C4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327B8249D13B000D78C4A /* main.m */; };
-		2B1327C5249D173000D78C4A /* PokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327C4249D173000D78C4A /* PokemonTableViewController.m */; };
-		2B1327C8249D173B00D78C4A /* PokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327C7249D173B00D78C4A /* PokemonDetailViewController.m */; };
+		2B1327C5249D173000D78C4A /* HAOPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327C4249D173000D78C4A /* HAOPokemonTableViewController.m */; };
+		2B1327C8249D173B00D78C4A /* HAOPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327C7249D173B00D78C4A /* HAOPokemonDetailViewController.m */; };
+		2B1327CB249D189900D78C4A /* HAOPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1327CA249D189900D78C4A /* HAOPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +29,12 @@
 		2B1327B5249D13B000D78C4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B1327B7249D13B000D78C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B1327B8249D13B000D78C4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2B1327C3249D173000D78C4A /* PokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonTableViewController.h; sourceTree = "<group>"; };
-		2B1327C4249D173000D78C4A /* PokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonTableViewController.m; sourceTree = "<group>"; };
-		2B1327C6249D173B00D78C4A /* PokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonDetailViewController.h; sourceTree = "<group>"; };
-		2B1327C7249D173B00D78C4A /* PokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
+		2B1327C3249D173000D78C4A /* HAOPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOPokemonTableViewController.h; sourceTree = "<group>"; };
+		2B1327C4249D173000D78C4A /* HAOPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOPokemonTableViewController.m; sourceTree = "<group>"; };
+		2B1327C6249D173B00D78C4A /* HAOPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOPokemonDetailViewController.h; sourceTree = "<group>"; };
+		2B1327C7249D173B00D78C4A /* HAOPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOPokemonDetailViewController.m; sourceTree = "<group>"; };
+		2B1327C9249D189900D78C4A /* HAOPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAOPokemon.h; sourceTree = "<group>"; };
+		2B1327CA249D189900D78C4A /* HAOPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAOPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +94,10 @@
 		2B1327C0249D141000D78C4A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2B1327C3249D173000D78C4A /* PokemonTableViewController.h */,
-				2B1327C4249D173000D78C4A /* PokemonTableViewController.m */,
-				2B1327C6249D173B00D78C4A /* PokemonDetailViewController.h */,
-				2B1327C7249D173B00D78C4A /* PokemonDetailViewController.m */,
+				2B1327C3249D173000D78C4A /* HAOPokemonTableViewController.h */,
+				2B1327C4249D173000D78C4A /* HAOPokemonTableViewController.m */,
+				2B1327C6249D173B00D78C4A /* HAOPokemonDetailViewController.h */,
+				2B1327C7249D173B00D78C4A /* HAOPokemonDetailViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -102,6 +105,8 @@
 		2B1327C1249D141D00D78C4A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2B1327C9249D189900D78C4A /* HAOPokemon.h */,
+				2B1327CA249D189900D78C4A /* HAOPokemon.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,9 +190,10 @@
 			files = (
 				2B1327A8249D13AE00D78C4A /* AppDelegate.m in Sources */,
 				2B1327B9249D13B000D78C4A /* main.m in Sources */,
-				2B1327C8249D173B00D78C4A /* PokemonDetailViewController.m in Sources */,
+				2B1327CB249D189900D78C4A /* HAOPokemon.m in Sources */,
+				2B1327C8249D173B00D78C4A /* HAOPokemonDetailViewController.m in Sources */,
 				2B1327AB249D13AE00D78C4A /* SceneDelegate.m in Sources */,
-				2B1327C5249D173000D78C4A /* PokemonTableViewController.m in Sources */,
+				2B1327C5249D173000D78C4A /* HAOPokemonTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

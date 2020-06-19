@@ -1,5 +1,5 @@
 //
-//  PokemonTableViewController.h
+//  HAOPokemonDetailViewController.h
 //  Pokedex-Objc
 //
 //  Created by Hunter Oppel on 6/19/20.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PokemonTableViewController : UIViewController
+@interface HAOPokemonDetailViewController : UIViewController
 
 @end
 
