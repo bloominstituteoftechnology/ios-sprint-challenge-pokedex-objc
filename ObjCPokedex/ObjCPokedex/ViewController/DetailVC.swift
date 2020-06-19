@@ -23,11 +23,22 @@ class DetailVC: UIViewController {
         addObservers()
     }
     
+    deinit {
+        removeObservers() // clean-up
+    }
+    
     private func addObservers() { // KVO
         guard let pokemon = pokemon else { return }
         pokemon.addObserver(self, forKeyPath: "identifier", options: .initial, context: .none)
         pokemon.addObserver(self, forKeyPath: "abilities", options: .initial, context: .none)
         pokemon.addObserver(self, forKeyPath: "image", options: .new, context: .none)
+    }
+    
+    private func removeObservers() { // KVO
+        guard let pokemon = pokemon else { return }
+        pokemon.removeObserver(self, forKeyPath: "identifier")
+        pokemon.removeObserver(self, forKeyPath: "abilities")
+        pokemon.removeObserver(self, forKeyPath: "image")
     }
     
     /// Uses the KVO observers to update the UI of whatever has returned
