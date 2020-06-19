@@ -29,19 +29,16 @@ class NetworkController: NSObject {
                 NSLog("Error fetching data: \(error)")
                 return
             }
-            
             guard let data = data else {
                 NSLog("No data returned from data task");
                 return
             }
-            
             do {
                 guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else {
                     let error = NSError(domain: "NetworkControllerErrorDomain", code: 2, userInfo: nil);
                     
                     throw error
                 }
-                                                
                 let picture = dictionary["sprites"] as! [String : Any]
                 let imageString = picture["front_default"] as! String
                 pokemon.sprites = imageString
