@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		27915C34249D0D0E00002355 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27915C33249D0D0E00002355 /* AppDelegate.m */; };
 		27915C37249D0D0E00002355 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27915C36249D0D0E00002355 /* SceneDelegate.m */; };
-		27915C3A249D0D0E00002355 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27915C39249D0D0E00002355 /* ViewController.m */; };
 		27915C3D249D0D0E00002355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27915C3B249D0D0E00002355 /* Main.storyboard */; };
 		27915C3F249D0D1300002355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27915C3E249D0D1300002355 /* Assets.xcassets */; };
 		27915C42249D0D1300002355 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27915C40249D0D1300002355 /* LaunchScreen.storyboard */; };
 		27915C45249D0D1300002355 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27915C44249D0D1300002355 /* main.m */; };
+		27E8691A249D0FEE007D6A24 /* CMDPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E86919249D0FEE007D6A24 /* CMDPokemonTableViewController.m */; };
+		27E8691D249D100C007D6A24 /* CMDPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E8691C249D100C007D6A24 /* CMDPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +23,15 @@
 		27915C33249D0D0E00002355 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		27915C35249D0D0E00002355 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		27915C36249D0D0E00002355 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		27915C38249D0D0E00002355 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		27915C39249D0D0E00002355 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		27915C3C249D0D0E00002355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27915C3E249D0D1300002355 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27915C41249D0D1300002355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27915C43249D0D1300002355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27915C44249D0D1300002355 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		27E86918249D0FEE007D6A24 /* CMDPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMDPokemonTableViewController.h; sourceTree = "<group>"; };
+		27E86919249D0FEE007D6A24 /* CMDPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMDPokemonTableViewController.m; sourceTree = "<group>"; };
+		27E8691B249D100C007D6A24 /* CMDPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMDPokemonDetailViewController.h; sourceTree = "<group>"; };
+		27E8691C249D100C007D6A24 /* CMDPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMDPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +64,8 @@
 		27915C31249D0D0E00002355 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				27E86917249D0FCB007D6A24 /* View Controllers */,
 				27915C4B249D0D3100002355 /* Resources */,
-				27915C38249D0D0E00002355 /* ViewController.h */,
-				27915C39249D0D0E00002355 /* ViewController.m */,
 				27915C3B249D0D0E00002355 /* Main.storyboard */,
 			);
 			path = Pokedex;
@@ -82,6 +84,17 @@
 				27915C44249D0D1300002355 /* main.m */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		27E86917249D0FCB007D6A24 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				27E86918249D0FEE007D6A24 /* CMDPokemonTableViewController.h */,
+				27E86919249D0FEE007D6A24 /* CMDPokemonTableViewController.m */,
+				27E8691B249D100C007D6A24 /* CMDPokemonDetailViewController.h */,
+				27E8691C249D100C007D6A24 /* CMDPokemonDetailViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +123,7 @@
 		27915C27249D0D0E00002355 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CMD;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Chris Dobek";
 				TargetAttributes = {
@@ -154,10 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27915C3A249D0D0E00002355 /* ViewController.m in Sources */,
 				27915C34249D0D0E00002355 /* AppDelegate.m in Sources */,
 				27915C45249D0D1300002355 /* main.m in Sources */,
 				27915C37249D0D0E00002355 /* SceneDelegate.m in Sources */,
+				27E8691D249D100C007D6A24 /* CMDPokemonDetailViewController.m in Sources */,
+				27E8691A249D0FEE007D6A24 /* CMDPokemonTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
