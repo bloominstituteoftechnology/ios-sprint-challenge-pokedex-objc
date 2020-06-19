@@ -44,4 +44,71 @@ import UIKit
         }.resume()
     }
     
+    /// Called in the DetailVC to fetch the rest of the details for the selected pokemon
+    func fillInDetails(for pokemon: Pokemon) {
+        
+        let pokemonURL = URL(string: pokemon.url)!
+        URLSession.shared.dataTask(with: pokemonURL) { (data, response, error) in
+            if let error = error {
+                print("Error fetching details for pokemon in fillInDetails() : \(error)")
+            }
+            if let response = response as? HTTPURLResponse {
+                print("Response: \(response.statusCode)")
+            }
+            guard let data = data else {
+                print("No data returned from fillInDetails() call")
+                return
+            }
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String, Any>
+                if let id = json["id"] as? Int {
+                    pokemon.identifier = Int32(id)
+                }
+                if let sprites = json["sprites"] as? Dictionary<String, Any> {
+                    if let sprite = sprites["front_default"] as? String {
+                        pokemon.image = sprite
+                    }
+                }
+                var abilitiesArray: [String] = []
+                if let abilities = json["abilities"] as? [Dictionary<String, Any>] {
+                    for ability in abilities {
+                        if let ability = ability["ability"] as? Dictionary<String, Any> {
+                            if let abilityASString = ability["name"] as? String {
+                                abilitiesArray.append(abilityASString)
+                            }
+                        }
+                    }
+                }
+                pokemon.abilities = abilitiesArray
+            } catch {
+                print("Error Decoding json in fillInDetails() : \(error)")
+            }
+        }.resume()
+    }
+    
+    /// Called in the DetailVC to load the pokemon's image into the imageView
+    func loadImage(urlString: String, completion: @escaping (UIImage?, Error?) -> Void) {
+        
+        let imageURL = URL(string: urlString)!
+        URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
+            if let error = error {
+                print("Error fetching image data: \(error)")
+            }
+            if let response = response as? HTTPURLResponse {
+                print("Response: \(response.statusCode)")
+            }
+            guard let data = data else {
+                print("No data was return from the image request")
+                completion(nil, error)
+                return
+            }
+            guard let image = UIImage(data: data) else {
+                print("Failed to convert imageData -> UIImage")
+                completion(nil, error)
+                return
+            }
+            completion(image, nil)
+        }.resume()
+    }
+    
 }
