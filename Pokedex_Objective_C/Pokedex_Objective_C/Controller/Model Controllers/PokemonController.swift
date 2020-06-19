@@ -9,10 +9,13 @@
 import Foundation
 
 @objc class PokemonController: NSObject {
+    // MARK: - Singleton -
     @objc static let shared = PokemonController()
 
     @objc private override init() {
         super.init()
-        
     }
+    // MARK: - Properties -
+    @objc var pokemon: [HSIPokemon]?
+    
 }

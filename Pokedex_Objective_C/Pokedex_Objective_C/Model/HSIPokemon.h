@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HSIPokemon : NSObject
 
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSURL *url;
+
+-(instancetype) initWithName:(NSString *)name url:(NSURL *)url;
+
 @end
 
 NS_ASSUME_NONNULL_END

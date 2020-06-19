@@ -32,7 +32,7 @@ import Foundation
 
     @objc private func createRequest(
         url: URL? = baseURL,
-        method: String
+        method: String = "GET"
     ) -> URLRequest? {
         guard let requestUrl = url else {
             NSLog("request URL is nil")
@@ -45,14 +45,52 @@ import Foundation
 
     @objc private var controller = PokemonController.shared
 
-    @objc private func decodeAllPokemon(data: Data) -> Data? {
-
+    @objc private func decodeAllPokemon(data: Data) -> [HSIPokemon]? {
+        do {
+            let error = NSError(domain: "Decode.NoData", code: 404)
+            guard let jsonData = try JSONSerialization.jsonObject(with: data) as? [String:Any] else {
+                throw error
+            }
+            var pokemonArray = [HSIPokemon]()
+            if let results = jsonData["results"] as? [[String:String]] {
+                for (value) in results {
+                    if let name = value["name"],
+                        let urlString = value["url"],
+                        let url = URL(string: urlString) {
+                        let pokemon = HSIPokemon(name: name, url: url)
+                        pokemonArray.append(pokemon)
+                    }
+                }
+                return pokemonArray
+            } else {
+                throw error
+            }
+        } catch {
+            print(error)
+        }
         return nil
     }
 
-    @objc func getAllPokemon(completion: @escaping ([HSIPokemon]?) -> Void = { _ in } ) {
-        completion(nil)
+    @objc func getAllPokemon(completion: @escaping () -> Void = { } ) {
+        guard let request = createRequest() else {
+            completion()
+            return
+        }
+        dataLoader.loadData(using: request) { [weak self] (data, _, error) in
+            guard let self = self else {
+                print("\(#file) \(#function) self was nil")
+                completion()
+                return
+            }
+            guard let data = data,
+                let pokemonArray = self.decodeAllPokemon(data: data)
+            else {
+                completion()
+                return
+            }
+            self.controller.pokemon = pokemonArray
+            completion()
+        }
+
     }
-
-
 }

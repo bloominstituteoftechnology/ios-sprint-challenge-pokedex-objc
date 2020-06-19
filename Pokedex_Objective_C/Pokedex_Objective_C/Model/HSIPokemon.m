@@ -10,4 +10,16 @@
 
 @implementation HSIPokemon
 
+-(instancetype) initWithName:(NSString *)name url:(NSURL *)url {
+    {
+        self = [super init];
+        if (self) {
+            _name = [name copy];
+            _url = [url copy];
+        }
+        return self;
+    }
+}
+
+
 @end
