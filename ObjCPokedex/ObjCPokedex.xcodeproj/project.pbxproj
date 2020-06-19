@@ -102,6 +102,7 @@
 		1DEFEBAD249D0C3D008C33F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SDJ;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Shawn James";
 				TargetAttributes = {
