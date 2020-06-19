@@ -19,6 +19,14 @@ class DetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
+    }
+    
+    /// Updates the views with the properties of the injected pokemon object
+    private func updateViews() {
+        guard let pokemon = pokemon else { return }
+        networkController?.fillInDetails(for: pokemon)
+        title = pokemon.name.capitalized
     }
 
 }
