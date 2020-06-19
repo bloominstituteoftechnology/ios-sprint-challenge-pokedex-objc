@@ -14,6 +14,9 @@ class DetailVC: UIViewController {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var abilitiesLabel: UILabel!
     
+    @objc var networkController: NetworkController?
+    @objc var pokemon: Pokemon?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
