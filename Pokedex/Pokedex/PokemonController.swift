@@ -6,14 +6,16 @@
 //  Copyright © 2020 Bhawnish Kumar. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
-}
 
-class PokemonController {
+
+class PokemonController: NSObject {
+    
+    enum HTTPMethod: String {
+        case get = "GET"
+        case post = "POST"
+    }
     
     private enum NetworkError: Error {
            case badResponse
@@ -23,6 +25,9 @@ class PokemonController {
     
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/")!
     var pokemon: [LSIPokemon] = []
+    
+    @objc(sharedController)
+     static let shared = PokemonController()
     
     @objc func fetchAllPokemon(completion: @escaping ([LSIPokemon]?, Error?) -> Void) {
         let requestURL = baseURL.appendingPathComponent("pokemon/")

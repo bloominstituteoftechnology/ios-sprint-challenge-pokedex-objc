@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class PokemonController;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIPokemonTableViewController : UITableViewController
