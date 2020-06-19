@@ -16,6 +16,7 @@
 		7FAF04F5249D27B80057BE65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF04F4249D27B80057BE65 /* main.m */; };
 		7FAF04FF249D27B80057BE65 /* DexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF04FE249D27B80057BE65 /* DexTests.m */; };
 		7FAF050A249D27B80057BE65 /* DexUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF0509249D27B80057BE65 /* DexUITests.m */; };
+		7FAF051A249D28410057BE65 /* CNSPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF0519249D28410057BE65 /* CNSPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		7FAF0505249D27B80057BE65 /* DexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FAF0509249D27B80057BE65 /* DexUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DexUITests.m; sourceTree = "<group>"; };
 		7FAF050B249D27B80057BE65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FAF0518249D28410057BE65 /* CNSPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNSPokemon.h; sourceTree = "<group>"; };
+		7FAF0519249D28410057BE65 /* CNSPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNSPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,7 @@
 		7FAF04E1249D27B70057BE65 /* Dex */ = {
 			isa = PBXGroup;
 			children = (
+				7FAF0517249D28270057BE65 /* Model */,
 				7FAF04E2249D27B70057BE65 /* AppDelegate.h */,
 				7FAF04E3249D27B70057BE65 /* AppDelegate.m */,
 				7FAF04E5249D27B70057BE65 /* SceneDelegate.h */,
@@ -135,6 +139,15 @@
 				7FAF050B249D27B80057BE65 /* Info.plist */,
 			);
 			path = DexUITests;
+			sourceTree = "<group>";
+		};
+		7FAF0517249D28270057BE65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FAF0518249D28410057BE65 /* CNSPokemon.h */,
+				7FAF0519249D28410057BE65 /* CNSPokemon.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +284,7 @@
 				7FAF04E4249D27B70057BE65 /* AppDelegate.m in Sources */,
 				7FAF04F5249D27B80057BE65 /* main.m in Sources */,
 				7FAF04E7249D27B70057BE65 /* SceneDelegate.m in Sources */,
+				7FAF051A249D28410057BE65 /* CNSPokemon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
