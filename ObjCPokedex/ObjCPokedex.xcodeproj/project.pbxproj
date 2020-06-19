@@ -16,6 +16,7 @@
 		1DEFEBD8249D0F3F008C33F1 /* PokedexTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFEBD7249D0F3F008C33F1 /* PokedexTVC.m */; };
 		1DEFEBDB249D0F5C008C33F1 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFEBDA249D0F5C008C33F1 /* DetailVC.swift */; };
 		1DEFEBE2249D1220008C33F1 /* SDJPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFEBE1249D1220008C33F1 /* SDJPokemon.m */; };
+		1DEFEBE4249D1311008C33F1 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFEBE3249D1311008C33F1 /* NetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		1DEFEBDA249D0F5C008C33F1 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		1DEFEBE0249D1220008C33F1 /* SDJPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDJPokemon.h; sourceTree = "<group>"; };
 		1DEFEBE1249D1220008C33F1 /* SDJPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDJPokemon.m; sourceTree = "<group>"; };
+		1DEFEBE3249D1311008C33F1 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		1DEFEBDD249D11BE008C33F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1DEFEBE3249D1311008C33F1 /* NetworkController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				1DEFEBBA249D0C3D008C33F1 /* AppDelegate.m in Sources */,
 				1DEFEBCB249D0C3F008C33F1 /* main.m in Sources */,
 				1DEFEBBD249D0C3D008C33F1 /* SceneDelegate.m in Sources */,
+				1DEFEBE4249D1311008C33F1 /* NetworkController.swift in Sources */,
 				1DEFEBE2249D1220008C33F1 /* SDJPokemon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
