@@ -21,6 +21,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.networkController fetchAllPokemonWithCompletion:^(NSArray<SDJPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
+        self.pokemon = pokemon;
+        dispatch_sync(dispatch_get_main_queue(), ^ {
+            [self.tableView reloadData];
+        });
+    }];
 }
 
 #pragma mark - Table view data source
@@ -33,6 +39,13 @@
     SDJPokemon *pokemon = self.pokemon[indexPath.row];
     cell.textLabel.text = pokemon.name.capitalizedString;
     return cell;
+}
+
+- (SDJNetworkController *)networkController {
+    if (!_networkController) {
+        _networkController = [SDJNetworkController new];
+    }
+    return _networkController;
 }
 
 #pragma mark - Navigation
