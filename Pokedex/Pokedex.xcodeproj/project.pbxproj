@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		3F2D41CE249D13EE0071335D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D41CD249D13EE0071335D /* AppDelegate.m */; };
 		3F2D41D1249D13EE0071335D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D41D0249D13EE0071335D /* SceneDelegate.m */; };
-		3F2D41D4249D13EE0071335D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D41D3249D13EE0071335D /* ViewController.m */; };
 		3F2D41D7249D13EE0071335D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2D41D5249D13EE0071335D /* Main.storyboard */; };
 		3F2D41D9249D13F20071335D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2D41D8249D13F20071335D /* Assets.xcassets */; };
 		3F2D41DC249D13F20071335D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2D41DA249D13F20071335D /* LaunchScreen.storyboard */; };
 		3F2D41DF249D13F20071335D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D41DE249D13F20071335D /* main.m */; };
+		3F2D41E7249D17630071335D /* LSIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D41E6249D17630071335D /* LSIPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +22,13 @@
 		3F2D41CD249D13EE0071335D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3F2D41CF249D13EE0071335D /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		3F2D41D0249D13EE0071335D /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		3F2D41D2249D13EE0071335D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3F2D41D3249D13EE0071335D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3F2D41D6249D13EE0071335D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F2D41D8249D13F20071335D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F2D41DB249D13F20071335D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F2D41DD249D13F20071335D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F2D41DE249D13F20071335D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3F2D41E5249D17630071335D /* LSIPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIPokemon.h; sourceTree = "<group>"; };
+		3F2D41E6249D17630071335D /* LSIPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +65,8 @@
 				3F2D41CD249D13EE0071335D /* AppDelegate.m */,
 				3F2D41CF249D13EE0071335D /* SceneDelegate.h */,
 				3F2D41D0249D13EE0071335D /* SceneDelegate.m */,
-				3F2D41D2249D13EE0071335D /* ViewController.h */,
-				3F2D41D3249D13EE0071335D /* ViewController.m */,
+				3F2D41E5249D17630071335D /* LSIPokemon.h */,
+				3F2D41E6249D17630071335D /* LSIPokemon.m */,
 				3F2D41D5249D13EE0071335D /* Main.storyboard */,
 				3F2D41D8249D13F20071335D /* Assets.xcassets */,
 				3F2D41DA249D13F20071335D /* LaunchScreen.storyboard */,
@@ -146,7 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F2D41D4249D13EE0071335D /* ViewController.m in Sources */,
+				3F2D41E7249D17630071335D /* LSIPokemon.m in Sources */,
 				3F2D41CE249D13EE0071335D /* AppDelegate.m in Sources */,
 				3F2D41DF249D13F20071335D /* main.m in Sources */,
 				3F2D41D1249D13EE0071335D /* SceneDelegate.m in Sources */,
