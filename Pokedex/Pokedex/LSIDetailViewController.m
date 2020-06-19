@@ -30,6 +30,50 @@ void *KVOContext = &KVOContext;
    
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (context == KVOContext) {
+        if ([keyPath isEqualToString:@"identifier"]) {
+            [self updateViews];
+        } else if ([keyPath isEqualToString:@"abilities"]) {
+            [self updateViews];
+        } else if ([keyPath isEqualToString:@"image"]) {
+            [self fetchImage];
+        }
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
+- (void)updateViews {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.nameLabel.text = self.pokemon.name;
+        self.idLabel.text = [NSString stringWithFormat:@"%i", self.pokemon.identifier];
+
+        NSString *joinedAbilities = [self.pokemon.abilities componentsJoinedByString:@", "];
+        self.abilitiesLabel.text = joinedAbilities;
+
+    });
+}
+
+- (void)fetchImage {
+    [self.pokemonController getImageAt:self.pokemon.image completion:^(UIImage * _Nullable image, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        }
+    
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.pokemonImage setImage:image];
+        });
+        
+    }];
+}
+
+- (void)dealloc {
+    [self.pokemon removeObserver:self forKeyPath:@"identifier" context:KVOContext];
+    [self.pokemon removeObserver:self forKeyPath:@"abilities" context:KVOContext];
+    [self.pokemon removeObserver:self forKeyPath:@"image" context:KVOContext];
+}
 /*
 #pragma mark - Navigation
 
