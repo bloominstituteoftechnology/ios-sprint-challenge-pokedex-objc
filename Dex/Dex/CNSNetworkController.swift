@@ -10,12 +10,11 @@ import UIKit
 
 let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
 
-@objc (MJSPokemonController)
-
-class NetworkController: NSObject {
+@objc (CNSPokemonController)
+class CNSNetworkController: NSObject {
     typealias CompletionHandler = ([CNSPokemon]?, Error?) -> Void
     
-    @objc(sharedController) static let shared = NetworkController()
+    @objc(sharedController) static let shared = CNSNetworkController()
     
     @objc func UPDATE(pokemon: CNSPokemon) {
         let urlComponents = URLComponents(url: baseURL.appendingPathComponent(pokemon.name!), resolvingAgainstBaseURL: true)

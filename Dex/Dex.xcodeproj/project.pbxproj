@@ -16,7 +16,7 @@
 		7FAF04FF249D27B80057BE65 /* DexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF04FE249D27B80057BE65 /* DexTests.m */; };
 		7FAF050A249D27B80057BE65 /* DexUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF0509249D27B80057BE65 /* DexUITests.m */; };
 		7FAF051A249D28410057BE65 /* CNSPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF0519249D28410057BE65 /* CNSPokemon.m */; };
-		7FAF051F249D29180057BE65 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF051E249D29180057BE65 /* NetworkController.swift */; };
+		7FAF051F249D29180057BE65 /* CNSNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF051E249D29180057BE65 /* CNSNetworkController.swift */; };
 		7FAF0524249D39650057BE65 /* CNSPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF0523249D39650057BE65 /* CNSPokemonTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +57,7 @@
 		7FAF0518249D28410057BE65 /* CNSPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNSPokemon.h; sourceTree = "<group>"; };
 		7FAF0519249D28410057BE65 /* CNSPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNSPokemon.m; sourceTree = "<group>"; };
 		7FAF051D249D29180057BE65 /* Dex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dex-Bridging-Header.h"; sourceTree = "<group>"; };
-		7FAF051E249D29180057BE65 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		7FAF051E249D29180057BE65 /* CNSNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSNetworkController.swift; sourceTree = "<group>"; };
 		7FAF0522249D39650057BE65 /* CNSPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNSPokemonTableViewController.h; sourceTree = "<group>"; };
 		7FAF0523249D39650057BE65 /* CNSPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNSPokemonTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,7 +156,7 @@
 		7FAF051C249D29030057BE65 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7FAF051E249D29180057BE65 /* NetworkController.swift */,
+				7FAF051E249D29180057BE65 /* CNSNetworkController.swift */,
 				7FAF051D249D29180057BE65 /* Dex-Bridging-Header.h */,
 			);
 			name = Controller;
@@ -303,7 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FAF04E4249D27B70057BE65 /* AppDelegate.m in Sources */,
-				7FAF051F249D29180057BE65 /* NetworkController.swift in Sources */,
+				7FAF051F249D29180057BE65 /* CNSNetworkController.swift in Sources */,
 				7FAF04F5249D27B80057BE65 /* main.m in Sources */,
 				7FAF04E7249D27B70057BE65 /* SceneDelegate.m in Sources */,
 				7FAF0524249D39650057BE65 /* CNSPokemonTableViewController.m in Sources */,
