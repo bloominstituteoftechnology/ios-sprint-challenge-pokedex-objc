@@ -7,3 +7,9 @@
 //
 
 import UIKit
+
+@objc(SDJNetworkController) class NetworkController: NSObject {
+    
+    
+    
+}
