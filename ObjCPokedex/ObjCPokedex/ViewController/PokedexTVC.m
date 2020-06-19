@@ -12,6 +12,9 @@
 
 @interface PokedexTVC ()
 
+@property (nonatomic) SDJNetworkController *networkController;
+@property (nonatomic, copy) NSArray<SDJPokemon *> *pokemon;
+
 @end
 
 @implementation PokedexTVC
