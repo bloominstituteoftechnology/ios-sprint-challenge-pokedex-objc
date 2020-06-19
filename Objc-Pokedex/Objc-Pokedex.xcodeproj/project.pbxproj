@@ -14,6 +14,10 @@
 		DB3EA12D249D1464009B3BEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3EA12C249D1464009B3BEA /* Assets.xcassets */; };
 		DB3EA130249D1464009B3BEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3EA12E249D1464009B3BEA /* LaunchScreen.storyboard */; };
 		DB3EA133249D1464009B3BEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3EA132249D1464009B3BEA /* main.m */; };
+		DB3EA140249D193B009B3BEA /* PDMPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3EA13F249D193B009B3BEA /* PDMPokemon.m */; };
+		DB3EA143249D1968009B3BEA /* PDMPokemonAbility.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3EA142249D1968009B3BEA /* PDMPokemonAbility.m */; };
+		DB3EA146249D1970009B3BEA /* PDMPokemonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3EA145249D1970009B3BEA /* PDMPokemonSprite.m */; };
+		DB3EA149249D19A5009B3BEA /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3EA148249D19A5009B3BEA /* PokemonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,14 @@
 		DB3EA12F249D1464009B3BEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB3EA131249D1464009B3BEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB3EA132249D1464009B3BEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB3EA13E249D193B009B3BEA /* PDMPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMPokemon.h; sourceTree = "<group>"; };
+		DB3EA13F249D193B009B3BEA /* PDMPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMPokemon.m; sourceTree = "<group>"; };
+		DB3EA141249D1968009B3BEA /* PDMPokemonAbility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMPokemonAbility.h; sourceTree = "<group>"; };
+		DB3EA142249D1968009B3BEA /* PDMPokemonAbility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMPokemonAbility.m; sourceTree = "<group>"; };
+		DB3EA144249D1970009B3BEA /* PDMPokemonSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMPokemonSprite.h; sourceTree = "<group>"; };
+		DB3EA145249D1970009B3BEA /* PDMPokemonSprite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMPokemonSprite.m; sourceTree = "<group>"; };
+		DB3EA147249D19A4009B3BEA /* Objc-Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objc-Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
+		DB3EA148249D19A5009B3BEA /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +88,7 @@
 		DB3EA139249D1472009B3BEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DB3EA147249D19A4009B3BEA /* Objc-Pokedex-Bridging-Header.h */,
 				DB3EA120249D1463009B3BEA /* AppDelegate.h */,
 				DB3EA121249D1463009B3BEA /* AppDelegate.m */,
 				DB3EA123249D1463009B3BEA /* SceneDelegate.h */,
@@ -89,6 +102,12 @@
 		DB3EA13A249D14A2009B3BEA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DB3EA13E249D193B009B3BEA /* PDMPokemon.h */,
+				DB3EA13F249D193B009B3BEA /* PDMPokemon.m */,
+				DB3EA141249D1968009B3BEA /* PDMPokemonAbility.h */,
+				DB3EA142249D1968009B3BEA /* PDMPokemonAbility.m */,
+				DB3EA144249D1970009B3BEA /* PDMPokemonSprite.h */,
+				DB3EA145249D1970009B3BEA /* PDMPokemonSprite.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -103,6 +122,7 @@
 		DB3EA13C249D14AC009B3BEA /* Networking_ModelController */ = {
 			isa = PBXGroup;
 			children = (
+				DB3EA148249D19A5009B3BEA /* PokemonAPI.swift */,
 			);
 			path = Networking_ModelController;
 			sourceTree = "<group>";
@@ -147,6 +167,7 @@
 				TargetAttributes = {
 					DB3EA11C249D1463009B3BEA = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -186,9 +207,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB3EA143249D1968009B3BEA /* PDMPokemonAbility.m in Sources */,
 				DB3EA128249D1463009B3BEA /* ViewController.m in Sources */,
 				DB3EA122249D1463009B3BEA /* AppDelegate.m in Sources */,
+				DB3EA140249D193B009B3BEA /* PDMPokemon.m in Sources */,
 				DB3EA133249D1464009B3BEA /* main.m in Sources */,
+				DB3EA146249D1970009B3BEA /* PDMPokemonSprite.m in Sources */,
+				DB3EA149249D19A5009B3BEA /* PokemonAPI.swift in Sources */,
 				DB3EA125249D1463009B3BEA /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8A9CLJB2H;
 				INFOPLIST_FILE = "Objc-Pokedex/Resources/Info.plist";
@@ -338,6 +364,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.PatrickMillet79.Objc-Pokedex";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Objc-Pokedex/Resources/Objc-Pokedex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -346,6 +375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8A9CLJB2H;
 				INFOPLIST_FILE = "Objc-Pokedex/Resources/Info.plist";
@@ -355,6 +385,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.PatrickMillet79.Objc-Pokedex";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Objc-Pokedex/Resources/Objc-Pokedex-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
