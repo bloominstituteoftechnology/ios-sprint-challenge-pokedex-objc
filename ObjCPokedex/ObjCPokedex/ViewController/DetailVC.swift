@@ -48,7 +48,7 @@ class DetailVC: UIViewController {
         switch keyPath {
         case "identifier":
             DispatchQueue.main.async {
-                self.idLabel.text = String(self.pokemon!.identifier)
+                self.idLabel.text = "# \(self.pokemon!.identifier)"
             }
         case "abilities":
             DispatchQueue.main.async {
