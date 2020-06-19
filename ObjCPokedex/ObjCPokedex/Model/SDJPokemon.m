@@ -10,4 +10,13 @@
 
 @implementation SDJPokemon
 
+- (instancetype)initWithName:(NSString *)name url:(NSString *)url {
+    
+    if (self = [super init]) {
+        _name = [name copy];
+        _url = [url copy];
+    }
+    return self;
+}
+
 @end
