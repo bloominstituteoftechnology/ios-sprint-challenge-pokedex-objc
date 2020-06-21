@@ -31,7 +31,9 @@ void *KVOContext = &KVOContext;
 
 - (void)updateViews
 {
-    if (!self.pokemon || self.isViewLoaded) { return; }
+    //YOU CANT HAVE A POKEMON IF YOUR VIEW ISNT LOADED
+//    if (!self.pokemon || self.isViewLoaded) { return; }
+    if (!self.isViewLoaded || !self.pokemon) { return; }
     self.pokemonName.text = self.pokemon.name;
     self.pokemonId.text = [NSString stringWithFormat:@"%d", self.pokemon.id];
     self.pokemonAbilities.text = [self.pokemon.abilities componentsJoinedByString:@", "];
