@@ -15,7 +15,8 @@
 		FE16E9E524CB3908006474F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE16E9E424CB3908006474F0 /* main.m */; };
 		FE16E9F024CB39D0006474F0 /* HMRPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = FE16E9EF24CB39D0006474F0 /* HMRPokemon.m */; };
 		FE16EA2824CB3FD2006474F0 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE16EA2724CB3FD2006474F0 /* PokemonController.swift */; };
-		FE16EA2B24CB4045006474F0 /* HMRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE16EA2A24CB4045006474F0 /* HMRDetailViewController.m */; };
+		FE16EA2E24CB9371006474F0 /* HMRPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE16EA2D24CB9371006474F0 /* HMRPokedexTableViewController.m */; };
+		FE16EA3124CB9395006474F0 /* HMRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE16EA3024CB9395006474F0 /* HMRDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +34,10 @@
 		FE16E9EF24CB39D0006474F0 /* HMRPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMRPokemon.m; sourceTree = "<group>"; };
 		FE16EA2624CB3FD2006474F0 /* PokedexObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokedexObjC-Bridging-Header.h"; sourceTree = "<group>"; };
 		FE16EA2724CB3FD2006474F0 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
-		FE16EA2924CB4045006474F0 /* HMRDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMRDetailViewController.h; sourceTree = "<group>"; };
-		FE16EA2A24CB4045006474F0 /* HMRDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMRDetailViewController.m; sourceTree = "<group>"; };
+		FE16EA2C24CB9371006474F0 /* HMRPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMRPokedexTableViewController.h; sourceTree = "<group>"; };
+		FE16EA2D24CB9371006474F0 /* HMRPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMRPokedexTableViewController.m; sourceTree = "<group>"; };
+		FE16EA2F24CB9395006474F0 /* HMRDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMRDetailViewController.h; sourceTree = "<group>"; };
+		FE16EA3024CB9395006474F0 /* HMRDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMRDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,16 +70,14 @@
 		FE16E9D124CB3904006474F0 /* PokedexObjC */ = {
 			isa = PBXGroup;
 			children = (
-				FE16E9DB24CB3904006474F0 /* Main.storyboard */,
-				FE16E9E024CB3908006474F0 /* LaunchScreen.storyboard */,
+				FE16EA2624CB3FD2006474F0 /* PokedexObjC-Bridging-Header.h */,
 				FE16E9E324CB3908006474F0 /* Info.plist */,
 				FE16E9E424CB3908006474F0 /* main.m */,
-				FE16E9EE24CB39D0006474F0 /* HMRPokemon.h */,
-				FE16E9EF24CB39D0006474F0 /* HMRPokemon.m */,
-				FE16EA2724CB3FD2006474F0 /* PokemonController.swift */,
-				FE16EA2624CB3FD2006474F0 /* PokedexObjC-Bridging-Header.h */,
-				FE16EA2924CB4045006474F0 /* HMRDetailViewController.h */,
-				FE16EA2A24CB4045006474F0 /* HMRDetailViewController.m */,
+				FE16E9DB24CB3904006474F0 /* Main.storyboard */,
+				FE16E9E024CB3908006474F0 /* LaunchScreen.storyboard */,
+				FE16EA3324CB93BB006474F0 /* Model */,
+				FE16EA3224CB93AA006474F0 /* Model Controller */,
+				FE16EA3524CB93E5006474F0 /* View Controllers */,
 				FE16EA2424CB3F56006474F0 /* Recources */,
 			);
 			path = PokedexObjC;
@@ -92,6 +93,34 @@
 				FE16E9DE24CB3908006474F0 /* Assets.xcassets */,
 			);
 			path = Recources;
+			sourceTree = "<group>";
+		};
+		FE16EA3224CB93AA006474F0 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE16EA2724CB3FD2006474F0 /* PokemonController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		FE16EA3324CB93BB006474F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE16E9EE24CB39D0006474F0 /* HMRPokemon.h */,
+				FE16E9EF24CB39D0006474F0 /* HMRPokemon.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE16EA3524CB93E5006474F0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE16EA2C24CB9371006474F0 /* HMRPokedexTableViewController.h */,
+				FE16EA2D24CB9371006474F0 /* HMRPokedexTableViewController.m */,
+				FE16EA2F24CB9395006474F0 /* HMRDetailViewController.h */,
+				FE16EA3024CB9395006474F0 /* HMRDetailViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,10 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE16EA3124CB9395006474F0 /* HMRDetailViewController.m in Sources */,
 				FE16E9D424CB3904006474F0 /* AppDelegate.m in Sources */,
 				FE16E9E524CB3908006474F0 /* main.m in Sources */,
+				FE16EA2E24CB9371006474F0 /* HMRPokedexTableViewController.m in Sources */,
 				FE16E9F024CB39D0006474F0 /* HMRPokemon.m in Sources */,
-				FE16EA2B24CB4045006474F0 /* HMRDetailViewController.m in Sources */,
 				FE16E9D724CB3904006474F0 /* SceneDelegate.m in Sources */,
 				FE16EA2824CB3FD2006474F0 /* PokemonController.swift in Sources */,
 			);

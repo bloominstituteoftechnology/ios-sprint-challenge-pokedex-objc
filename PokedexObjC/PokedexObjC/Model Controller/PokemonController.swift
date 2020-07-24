@@ -10,43 +10,55 @@ import UIKit
 
 @objc class PokemonController: NSObject {
 
-    enum HTTPMethod: String {
-        case get = "GET"
-        case post = "POST"
-    }
-
     private enum NetworkError: Error {
-        case badResponse
-        case badData
-        case errorDecoding
+        case noData, noDecode, badURL, badData
     }
 
-    @objc(sharedController) static let shared = PokemonController()
-    private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon")!
+    var pokemon: [HMRPokemon] = []
+    private let baseURL: URL = URL(string: "https://pokeapi.co/api/v2/")!
 
-    @objc func fetchAllPokemon(completion: @escaping ([HMRPokemon]?, Error?) -> Void) {
+    // MARK: - Methods
 
-        URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
+    @objc func fetchPokemon(completion: @escaping ([HMRPokemon]?, Error?) -> Void) {
+        let requestURL = baseURL.appendingPathComponent("pokemon")
+
+        URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
             if let error = error {
-                completion(nil, error);
-                return }
+                NSLog("Error receiving data: \(error)")
+                completion(nil, error)
+            }
+
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                NSLog("Server did not recognize URL")
+                completion(nil, NetworkError.badURL)
+                return
+            }
 
             guard let data = data else {
-                completion(nil, nil);
-                return }
-
-            guard let dictionary = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
-                completion(nil, nil);
-                return }
-            guard let array = dictionary["results"] as? Array<[String:String]> else {
-                completion(nil, nil);
-                return }
-
-            var results = [HMRPokemon]()
-            for i in array {
-                results.append(HMRPokemon(dictionary: i))
+                NSLog("Server did not return Data")
+                completion(nil, NetworkError.noData)
+                return
             }
-            completion(results, nil)
+
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String,Any>
+
+                if let array = json["results"] as? [Dictionary<String,String>] {
+                    for i in array {
+                        let name = i["name"]
+                        let newurl = i["detailURL"]
+                        let newPokemon = HMRPokemon(name: name!, detailURL: newurl!)
+                        self.pokemon.append(newPokemon)
+                    }
+                }
+            } catch {
+                NSLog("Failed to do something with json \(error)")
+                completion(nil, NetworkError.badData)
+            }
+
+            completion(self.pokemon, nil)
+
         }.resume()
     }
 
@@ -78,7 +90,7 @@ import UIKit
 
                 if let sprites = json["sprites"] as? Dictionary<String,Any> {
                     if let frontDefault = sprites["front_default"] as? String {
-                        pokemon.sprite = frontDefault
+                        pokemon.image = frontDefault
                     }
                 }
 
@@ -107,8 +119,7 @@ import UIKit
 
         let imageURL = URL(string: imageURL)!
 
-        var request = URLRequest(url: imageURL)
-        request.httpMethod = HTTPMethod.get.rawValue
+        let request = URLRequest(url: imageURL)
 
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {

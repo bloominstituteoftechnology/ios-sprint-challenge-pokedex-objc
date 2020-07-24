@@ -3,3 +3,4 @@
 // This is for going FROM Obj-C to Swift
 
 #import "HMRPokemon.h"
+#import "HMRPokedexTableViewController.h"

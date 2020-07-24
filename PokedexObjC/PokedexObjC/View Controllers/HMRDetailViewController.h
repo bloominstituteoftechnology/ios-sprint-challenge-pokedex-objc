@@ -6,14 +6,11 @@
 //  Copyright © 2020 Harmony Radley. All rights reserved.
 //
 
-#import "HMRPokemon.h"
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HMRDetailViewController : UIViewController
-
-@property (nonatomic) HMRPokemon *pokemon;
+@interface HMRDetailViewController : NSObject
 
 @end
 

@@ -10,10 +10,11 @@
 
 @implementation HMRPokemon
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
-    if (self = [super init]) {
-        _detailURL = dictionary[@"url"];
-        _name = dictionary[@"name"];
+- (instancetype)initWithName:(NSString *)name detailURL:(NSString *)detailURL {
+    self = [super init];
+    if (self) {
+        _name = [name copy];
+        _detailURL = [detailURL copy];
     }
     return self;
 }
