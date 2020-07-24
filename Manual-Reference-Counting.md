@@ -23,7 +23,7 @@ Yes
 			wordFrequency[word] = [NSNumber numberWithInteger:count.integerValue + 1];
 		} else {
 			wordFrequency[word] = [[NSNumber alloc] initWithInteger:1];
-		} // *** Leak Here *** This alloc init is another leak b/c it hasn't been released
+		} // *** Leak Here *** This alloc init is increasing count with the alloc/init
 	}
 
 	printf("Word frequency: %s", wordFrequency.description.UTF8String);
