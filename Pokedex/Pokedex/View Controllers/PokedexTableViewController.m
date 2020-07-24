@@ -100,6 +100,15 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"ShowPokemonSegue"]) {
+        
+        PokemonDetailViewController *detailVC = segue.destinationViewController;
+        Pokemon *pokemon = self.pokemon[self.tableView.indexPathForSelectedRow.row];
+        [self.apiClient fetchDetailsFor:pokemon];
+        detailVC.pokemon = pokemon;
+        detailVC.apiClient = self.apiClient;
+    }
    
 }
 
