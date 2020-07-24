@@ -48,10 +48,11 @@ class PokedexAPIController: NSObject {
         }.resume()
     }
     
-    @objc func fillInDetails(for number: Int) -> CAMPokemon {
+    @objc func fillInDetails(for number: Int) -> CAMPokemon? {
         let url = getPokemonByID(number)
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.get.rawValue
+        var pokemonToReturn: CAMPokemon?
         
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
@@ -65,13 +66,15 @@ class PokedexAPIController: NSObject {
             }
             
             do {
-                let pokemon = try self.jsonDecoder.decode([].self, from: data)
-                NSLog("\(pokemon.name)")
+               let pokedexInfo = try JSONSerialization.jsonObject(with: data,
+                                                                  options: []) as! [String : Any]
+                pokemonToReturn = CAMPokemon.init(dictionary: pokedexInfo)
             } catch {
                 NSLog("Maybe that wasn't a pokemon? Decoding Error \(error) \(error.localizedDescription)")
                 return
             }
-        }
+        }.resume()
+        return pokemonToReturn
     }
     
     
