@@ -70,7 +70,7 @@ typealias SpriteResultCompletionHandler = (Result<UIImage, NetworkError>) -> Voi
                     
                     guard let dict = try JSONSerialization
                         .jsonObject(with: data, options: .fragmentsAllowed) as? Dictionary<String, Any> else {
-                            throw NetworkError.decodingError(NSError(domain: "⚠️ Error decoding pokemon details", code: 0))
+                            throw NetworkError.decodingError(NSError(domain: "Error decoding pokemon details", code: 0))
                     }
                     
                     self.fetchPokeDetails(for: pokemon, with: dict)

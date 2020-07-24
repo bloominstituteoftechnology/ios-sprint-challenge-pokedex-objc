@@ -19,6 +19,7 @@ class PokemonDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addKVO()
     }
     
     //MARK: IBoutlets
