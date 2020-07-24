@@ -59,5 +59,47 @@ class PokemonDetailViewController: UIViewController {
         }
     }
     
+    private func updateViews() {
+        
+        guard let pokemon = pokemon,
+            isViewLoaded else { return }
+        
+        title = pokemon.name.capitalized
+        nameLabel.text = "Name: \(pokemon.name.capitalized)"
+        idLabel.text = "ID: \(pokemon.identifier)"
+        
+        if let abilities = pokemon.abilities {
+            
+            abilitiesLabel.text = "Abilities: " + abilities.joined(separator: ", ")
+            
+        }
+        
+        updateSprite()
+        
+    }
     
-}
+    private func addKVO() {
+        
+        guard let pokemon = pokemon else { return }
+        
+        pokemon.addObserver(self, forKeyPath: "abilities", options: .initial, context: &PokemonDetailViewController.kvoContext)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        
+        if context == &PokemonDetailViewController.kvoContext, keyPath == "abilities" {
+            
+            DispatchQueue.main.async {
+                
+                self.updateViews()
+                
+            }
+            
+        } else {
+                
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+           
+            }
+        }
+    }
+
