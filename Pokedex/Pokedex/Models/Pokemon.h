@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, copy)NSArray *abilities;
 @property (nonatomic, nullable, copy)NSArray *sprite;
 
+- (instancetype)initWithDict:(NSDictionary *)dictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END

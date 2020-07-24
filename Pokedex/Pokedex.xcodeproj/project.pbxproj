@@ -18,6 +18,7 @@
 		BE4BBD5A24CB30D400F0C509 /* PokedexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBD5924CB30D400F0C509 /* PokedexTests.m */; };
 		BE4BBD6524CB30D400F0C509 /* PokedexUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBD6424CB30D400F0C509 /* PokedexUITests.m */; };
 		BE4BBD7924CB35BE00F0C509 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBD7824CB35BE00F0C509 /* Pokemon.m */; };
+		BE4BBD7C24CB3D3D00F0C509 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBD7B24CB3D3D00F0C509 /* PokemonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		BE4BBD6624CB30D400F0C509 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE4BBD7724CB35BE00F0C509 /* Pokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
 		BE4BBD7824CB35BE00F0C509 /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
+		BE4BBD7A24CB3D3D00F0C509 /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
+		BE4BBD7B24CB3D3D00F0C509 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +166,8 @@
 		BE4BBD7424CB316200F0C509 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE4BBD7B24CB3D3D00F0C509 /* PokemonController.swift */,
+				BE4BBD7A24CB3D3D00F0C509 /* Pokedex-Bridging-Header.h */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				TargetAttributes = {
 					BE4BBD3624CB30CD00F0C509 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 					BE4BBD5424CB30D400F0C509 = {
 						CreatedOnToolsVersion = 11.6;
@@ -316,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE4BBD5024CB30D400F0C509 /* main.m in Sources */,
+				BE4BBD7C24CB3D3D00F0C509 /* PokemonController.swift in Sources */,
 				BE4BBD4824CB30CD00F0C509 /* Pokedex.xcdatamodeld in Sources */,
 				BE4BBD4224CB30CD00F0C509 /* ViewController.m in Sources */,
 				BE4BBD7924CB35BE00F0C509 /* Pokemon.m in Sources */,
@@ -489,6 +496,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -497,6 +505,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = system787.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex/Controllers/Pokedex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -505,6 +516,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -513,6 +525,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = system787.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex/Controllers/Pokedex-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -520,6 +534,7 @@
 		BE4BBD6D24CB30D400F0C509 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PokedexTests/Info.plist;
@@ -539,6 +554,7 @@
 		BE4BBD6E24CB30D400F0C509 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PokedexTests/Info.plist;
@@ -558,6 +574,7 @@
 		BE4BBD7024CB30D400F0C509 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PokedexUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -575,6 +592,7 @@
 		BE4BBD7124CB30D400F0C509 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PokedexUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
