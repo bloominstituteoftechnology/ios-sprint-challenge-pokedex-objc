@@ -10,7 +10,7 @@
         <!--Pokedex-->
         <scene sceneID="jGv-pZ-40K">
             <objects>
-                <tableViewController id="DrV-58-yWJ" sceneMemberID="viewController">
+                <tableViewController id="DrV-58-yWJ" customClass="PokedexTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vhw-89-kMC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="-1399" y="130"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="Iox-d0-D6l">
             <objects>
-                <viewController id="e4A-JG-r72" sceneMemberID="viewController">
+                <viewController id="e4A-JG-r72" customClass="PokemonDetailViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1JO-Np-jAt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,10 +116,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Bmb-fD-oWx"/>
                     <connections>
-                        <outlet property="abilitiesLabel" destination="cQt-GT-NZj" id="Um5-kY-wS4"/>
-                        <outlet property="idLabel" destination="RK3-BQ-Bq8" id="ZgY-w2-quK"/>
-                        <outlet property="imageView" destination="ko0-4V-pJp" id="hhw-fh-ZXc"/>
-                        <outlet property="nameLabel" destination="ARg-5r-Bgk" id="FEP-cN-6YC"/>
+                        <outlet property="abilitiesLabel" destination="cQt-GT-NZj" id="5vm-jL-LTD"/>
+                        <outlet property="idLabel" destination="RK3-BQ-Bq8" id="3jU-J2-eA4"/>
+                        <outlet property="imageView" destination="ko0-4V-pJp" id="hLW-Ic-ToP"/>
+                        <outlet property="nameLabel" destination="ARg-5r-Bgk" id="XB4-dr-V0W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="muu-A1-z6A" sceneMemberID="firstResponder"/>
