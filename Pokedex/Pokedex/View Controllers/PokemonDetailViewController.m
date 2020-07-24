@@ -39,10 +39,13 @@
                       options:0
                       context:nil];
     
-    [PokemonController.shared getPokemonDetailFor:_pokemon];
-
-    [self updatePokemon];
+    if (!self.pokemon.sprite) {
+        [PokemonController.shared getPokemonDetailFor:_pokemon];
+    }
     
+    if (self.pokemon.sprite) {
+        [self updatePokemon];
+    }
 }
 
 /*

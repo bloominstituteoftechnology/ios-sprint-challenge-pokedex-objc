@@ -17,7 +17,7 @@
         _name = dictionary[@"name"];
         _url = dictionary[@"url"];
         _identifier = dictionary[@"id"];
-        _type = dictionary[@"type"];
+        _type = dictionary[@"types"];
         _abilities = dictionary[@"abilities"];
         _sprite = dictionary[@"sprites"];
     }
