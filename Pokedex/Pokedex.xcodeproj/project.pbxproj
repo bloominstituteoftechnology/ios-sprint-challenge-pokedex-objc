@@ -17,6 +17,7 @@
 		BE4BBD5024CB30D400F0C509 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBD4F24CB30D400F0C509 /* main.m */; };
 		BE4BBD5A24CB30D400F0C509 /* PokedexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBD5924CB30D400F0C509 /* PokedexTests.m */; };
 		BE4BBD6524CB30D400F0C509 /* PokedexUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBD6424CB30D400F0C509 /* PokedexUITests.m */; };
+		BE4BBD7924CB35BE00F0C509 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBD7824CB35BE00F0C509 /* Pokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		BE4BBD6024CB30D400F0C509 /* PokedexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokedexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4BBD6424CB30D400F0C509 /* PokedexUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokedexUITests.m; sourceTree = "<group>"; };
 		BE4BBD6624CB30D400F0C509 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE4BBD7724CB35BE00F0C509 /* Pokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
+		BE4BBD7824CB35BE00F0C509 /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,15 +109,12 @@
 		BE4BBD3924CB30CD00F0C509 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
-				BE4BBD3A24CB30CD00F0C509 /* AppDelegate.h */,
-				BE4BBD3B24CB30CD00F0C509 /* AppDelegate.m */,
-				BE4BBD3D24CB30CD00F0C509 /* SceneDelegate.h */,
-				BE4BBD3E24CB30CD00F0C509 /* SceneDelegate.m */,
-				BE4BBD4024CB30CD00F0C509 /* ViewController.h */,
-				BE4BBD4124CB30CD00F0C509 /* ViewController.m */,
-				BE4BBD4324CB30CD00F0C509 /* Main.storyboard */,
+				BE4BBD7624CB317100F0C509 /* Storyboards */,
+				BE4BBD7524CB316A00F0C509 /* Models */,
+				BE4BBD7424CB316200F0C509 /* Controllers */,
+				BE4BBD7324CB315A00F0C509 /* View Controllers */,
+				BE4BBD7224CB314B00F0C509 /* App */,
 				BE4BBD4924CB30D400F0C509 /* Assets.xcassets */,
-				BE4BBD4B24CB30D400F0C509 /* LaunchScreen.storyboard */,
 				BE4BBD4E24CB30D400F0C509 /* Info.plist */,
 				BE4BBD4F24CB30D400F0C509 /* main.m */,
 				BE4BBD4624CB30CD00F0C509 /* Pokedex.xcdatamodeld */,
@@ -138,6 +138,51 @@
 				BE4BBD6624CB30D400F0C509 /* Info.plist */,
 			);
 			path = PokedexUITests;
+			sourceTree = "<group>";
+		};
+		BE4BBD7224CB314B00F0C509 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BE4BBD3A24CB30CD00F0C509 /* AppDelegate.h */,
+				BE4BBD3B24CB30CD00F0C509 /* AppDelegate.m */,
+				BE4BBD3D24CB30CD00F0C509 /* SceneDelegate.h */,
+				BE4BBD3E24CB30CD00F0C509 /* SceneDelegate.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BE4BBD7324CB315A00F0C509 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE4BBD4024CB30CD00F0C509 /* ViewController.h */,
+				BE4BBD4124CB30CD00F0C509 /* ViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BE4BBD7424CB316200F0C509 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BE4BBD7524CB316A00F0C509 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE4BBD7724CB35BE00F0C509 /* Pokemon.h */,
+				BE4BBD7824CB35BE00F0C509 /* Pokemon.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE4BBD7624CB317100F0C509 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BE4BBD4324CB30CD00F0C509 /* Main.storyboard */,
+				BE4BBD4B24CB30D400F0C509 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +318,7 @@
 				BE4BBD5024CB30D400F0C509 /* main.m in Sources */,
 				BE4BBD4824CB30CD00F0C509 /* Pokedex.xcdatamodeld in Sources */,
 				BE4BBD4224CB30CD00F0C509 /* ViewController.m in Sources */,
+				BE4BBD7924CB35BE00F0C509 /* Pokemon.m in Sources */,
 				BE4BBD3C24CB30CD00F0C509 /* AppDelegate.m in Sources */,
 				BE4BBD3F24CB30CD00F0C509 /* SceneDelegate.m in Sources */,
 			);
