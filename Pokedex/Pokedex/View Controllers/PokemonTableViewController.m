@@ -56,7 +56,12 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         PokemonDetailViewController *vc = (PokemonDetailViewController *)[segue destinationViewController];
-        vc.pokemon = self.pokemonArray[indexPath.row];
+        
+        Pokemon *selectedPokemon = self.pokemonArray[indexPath.row];
+        
+        NSLog(@"Sending pokemon to detail: %@, URL: %@", selectedPokemon.name, selectedPokemon.sprite);
+        
+        vc.pokemon = selectedPokemon;
     }
 }
 

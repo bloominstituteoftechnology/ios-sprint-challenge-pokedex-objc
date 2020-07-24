@@ -107,9 +107,8 @@ import UIKit
             }
             
             if let sprites = dictionary["sprites"] as? [String:String] {
-                if let spriteURL = sprites["front_default"] {
-                    pokemon.sprite = spriteURL
-                    NSLog("Sprite URL: %@", spriteURL)
+                if let sprite = sprites["front_default"] {
+                    pokemon.sprite = sprite
                 }
             }
             
