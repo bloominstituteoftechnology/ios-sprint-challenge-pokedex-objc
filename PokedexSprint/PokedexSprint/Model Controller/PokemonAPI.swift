@@ -21,7 +21,7 @@ class PokemonAPI: NSObject {
     @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
         
         var components = URLComponents(url: baseURL.appendingPathComponent("pokemon", isDirectory: true), resolvingAgainstBaseURL: true)
-        components?.queryItems = [URLQueryItem(name:"limit", value: "1000")
+        components?.queryItems = [URLQueryItem(name:"limit", value: "800")
         ]
         
         guard let url = components?.url else {
