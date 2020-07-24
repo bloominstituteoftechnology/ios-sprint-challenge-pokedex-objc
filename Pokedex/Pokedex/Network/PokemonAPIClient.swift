@@ -4,7 +4,11 @@
 //
 //  Created by Joe Veverka on 7/24/20.
 //  Copyright © 2020 Joe Veverka. All rights reserved.
-//
+
+
+//MARK: - MISS YOU SWIFT. SEE YOU SOON.
+
+
 import UIKit
 private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon")!
 
@@ -92,9 +96,37 @@ typealias SpriteResultCompletionHandler = (Result<UIImage, NetworkError>) -> Voi
     
     // MARK: Private funcs
     
-    privat
-    
-    
-    
+    private func fetchPokeDetails(for pokemon: Pokemon, with dict: Dictionary<String, Any>) {
+        
+        if let identifier = dict["id"] as? Int32 {
+            
+            pokemon.identifier = identifier
+            
+        }
+        
+        if let spriteDictionary = dict["sprites"] as? Dictionary<String, String?>,
+            
+            let urlString = spriteDictionary["front_default"] as? String {
+            
+            pokemon.spriteURL = URL(string: urlString)
+            
+        }
+        
+        if let abilitiesController = dict["abilities"] as? Array<Dictionary<String, Any>> {
+            
+            let abilities = abilitiesController.map { (dict) -> String in
+                
+                let abilityDict = dict["ability"] as! Dictionary<String, String>
+                
+                return abilityDict["name"]!
+                
+            }
+            
+            pokemon.abilities = abilities
+        }
+        
+    }
     
 }
+
+
