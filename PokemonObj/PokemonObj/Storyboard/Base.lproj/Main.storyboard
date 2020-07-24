@@ -73,57 +73,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gcL-5h-CjS">
-                                <rect key="frame" x="51" y="537" width="119" height="77.5"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="eMo-pG-1Eo">
-                                        <rect key="frame" x="0.0" y="0.0" width="119" height="20.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqB-eK-5Ay">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-Jw-XjO">
-                                                <rect key="frame" x="77" y="0.0" width="42" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="EdV-L4-sHP">
-                                        <rect key="frame" x="0.0" y="28.5" width="111" height="20.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29G-ty-MWB">
-                                                <rect key="frame" x="0.0" y="0.0" width="21" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opS-vt-v6I">
-                                                <rect key="frame" x="69" y="0.0" width="42" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THB-Nf-vlj">
-                                        <rect key="frame" x="0.0" y="57" width="65" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="edL-fw-LiZ">
+                                <rect key="frame" x="20" y="528" width="374" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Aqc-YF-Afn" firstAttribute="leading" secondItem="twy-hM-6ug" secondAttribute="leading" constant="20" id="2vj-Tb-Fx8"/>
+                            <constraint firstItem="twy-hM-6ug" firstAttribute="trailing" secondItem="edL-fw-LiZ" secondAttribute="trailing" constant="20" id="7Bt-AC-Ull"/>
                             <constraint firstItem="cbu-Np-F3m" firstAttribute="centerX" secondItem="pAl-62-L5C" secondAttribute="centerX" id="ATh-wA-OZZ"/>
+                            <constraint firstItem="edL-fw-LiZ" firstAttribute="leading" secondItem="twy-hM-6ug" secondAttribute="leading" constant="20" id="F2J-6m-Nho"/>
                             <constraint firstItem="cbu-Np-F3m" firstAttribute="top" secondItem="twy-hM-6ug" secondAttribute="top" constant="75" id="FTB-Pa-6Yf"/>
+                            <constraint firstItem="edL-fw-LiZ" firstAttribute="top" secondItem="cbu-Np-F3m" secondAttribute="bottom" constant="67" id="NXh-ns-tXb"/>
+                            <constraint firstItem="Aqc-YF-Afn" firstAttribute="top" secondItem="edL-fw-LiZ" secondAttribute="bottom" constant="78" id="cUX-w3-euR"/>
                             <constraint firstItem="twy-hM-6ug" firstAttribute="trailing" secondItem="Aqc-YF-Afn" secondAttribute="trailing" constant="20" id="jRv-mK-The"/>
                             <constraint firstItem="Aqc-YF-Afn" firstAttribute="bottom" secondItem="twy-hM-6ug" secondAttribute="bottom" id="rZD-7B-ij1"/>
                         </constraints>
@@ -131,6 +97,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WX9-UH-hVb"/>
                     <connections>
+                        <outlet property="abilitiesTextView" destination="edL-fw-LiZ" id="FH7-aW-Quh"/>
                         <outlet property="imageView" destination="cbu-Np-F3m" id="rkY-4D-g6m"/>
                         <outlet property="textView" destination="Aqc-YF-Afn" id="uTM-QN-Jj7"/>
                     </connections>

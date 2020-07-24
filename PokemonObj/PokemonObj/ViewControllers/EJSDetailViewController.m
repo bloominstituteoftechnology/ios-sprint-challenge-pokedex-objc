@@ -23,6 +23,10 @@ UIImageView *imageView;
 
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 
+
+@property (weak, nonatomic) IBOutlet UITextView *abilitiesTextView;
+
+
 @end
 
 @implementation EJSDetailViewController
@@ -40,8 +44,11 @@ UIImageView *imageView;
     if (self.pokemon) {
         
         // ID and Name
+        
+        
         NSString *title = [NSString stringWithFormat:@"#%i - %@", self.pokemon.identifier.intValue, self.pokemon.name.capitalizedString];
         self.title = title;
+        
         
         // Sprite
         NSURL *url = self.pokemon.sprite;
@@ -68,6 +75,7 @@ UIImageView *imageView;
         
         // Abilities
         self.textView.text = [self.pokemon.abilities  componentsJoinedByString:@"\n"];
+        self.abilitiesTextView.text = (@"Abilities:");
     }
 }
 
