@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Pokedex Table View Controller-->
         <scene sceneID="vcH-ME-kBz">
             <objects>
-                <tableViewController id="Nnw-rH-T8p" sceneMemberID="viewController">
+                <tableViewController id="Nnw-rH-T8p" customClass="CAMPokedexTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eqi-Vc-aAG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="1114.4927536231885" y="-40.178571428571423"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="oFO-UO-gUM">
             <objects>
-                <viewController id="o2E-hN-OAr" sceneMemberID="viewController">
+                <viewController id="o2E-hN-OAr" customClass="CAMPokemonDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yE5-nH-Wyq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

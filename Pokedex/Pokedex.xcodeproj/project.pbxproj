@@ -15,6 +15,8 @@
 		5EABD47024CB344F002D9184 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EABD46F24CB344F002D9184 /* main.m */; };
 		5EABD47F24CB35E1002D9184 /* CAMPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EABD47E24CB35E1002D9184 /* CAMPokemon.m */; };
 		5EABD48224CB36A7002D9184 /* PokedexAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EABD48124CB36A7002D9184 /* PokedexAPIController.swift */; };
+		5EABD48524CB39FB002D9184 /* CAMPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EABD48424CB39FB002D9184 /* CAMPokedexTableViewController.m */; };
+		5EABD48824CB3A27002D9184 /* CAMPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EABD48724CB3A27002D9184 /* CAMPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		5EABD47E24CB35E1002D9184 /* CAMPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMPokemon.m; sourceTree = "<group>"; };
 		5EABD48024CB36A7002D9184 /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
 		5EABD48124CB36A7002D9184 /* PokedexAPIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexAPIController.swift; sourceTree = "<group>"; };
+		5EABD48324CB39FB002D9184 /* CAMPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMPokedexTableViewController.h; sourceTree = "<group>"; };
+		5EABD48424CB39FB002D9184 /* CAMPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMPokedexTableViewController.m; sourceTree = "<group>"; };
+		5EABD48624CB3A27002D9184 /* CAMPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMPokemonDetailViewController.h; sourceTree = "<group>"; };
+		5EABD48724CB3A27002D9184 /* CAMPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,10 @@
 		5EABD47A24CB3578002D9184 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5EABD48324CB39FB002D9184 /* CAMPokedexTableViewController.h */,
+				5EABD48424CB39FB002D9184 /* CAMPokedexTableViewController.m */,
+				5EABD48624CB3A27002D9184 /* CAMPokemonDetailViewController.h */,
+				5EABD48724CB3A27002D9184 /* CAMPokemonDetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -211,6 +221,8 @@
 			files = (
 				5EABD48224CB36A7002D9184 /* PokedexAPIController.swift in Sources */,
 				5EABD45F24CB343F002D9184 /* AppDelegate.m in Sources */,
+				5EABD48824CB3A27002D9184 /* CAMPokemonDetailViewController.m in Sources */,
+				5EABD48524CB39FB002D9184 /* CAMPokedexTableViewController.m in Sources */,
 				5EABD47F24CB35E1002D9184 /* CAMPokemon.m in Sources */,
 				5EABD47024CB344F002D9184 /* main.m in Sources */,
 				5EABD46224CB343F002D9184 /* SceneDelegate.m in Sources */,
