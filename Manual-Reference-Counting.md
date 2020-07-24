@@ -25,6 +25,31 @@ Answer the following questions inline with this document.
 
 	printf("Word frequency: %s", wordFrequency.description.UTF8String);
 	```
+    ----------------------------------
+    // #1 Response 
+    NSCharacterSet *punctuationSet = [[NSCharacterSet punctuationCharacterSet] retain];
+
+    NSString *cleanQuote = [[quote componentsSeparatedByCharactersInSet:punctuationSet] componentsJoinedByString:@""];
+    NSArray *words = [[cleanQuote lowercaseString] componentsSeparatedByString:@" "];
+
+    NSMutableDictionary<NSString *, NSNumber *> *wordFrequency = [[NSMutableDictionary alloc] init];
+
+    for (NSString *word in words) {
+        NSNumber *count = wordFrequency[word];
+        if (count == nil) {
+            wordFrequency[word] = [NSNumber numberWithInteger:count.integerValue + 1];
+        } else {
+            wordFrequency[word] = [[[NSNumber alloc] initWithInteger:1] autorelease];
+        }
+    }
+
+    printf("Word frequency: %s", wordFrequency.description.UTF8String);
+
+
+    [wordFrequency release]
+    [punctuationSet release];
+    ```
+-----------------------------------------------------------------------
 
 	2. Rewrite the code so that it does not leak any memory with ARC disabled
 
@@ -41,10 +66,18 @@ Answer the following questions inline with this document.
 	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];`
 	
 	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];`
+-----------------------------------------------------------------------
+    // 2 Response
+    Number 1 because it's init will autorelease it
 
+    Number 5  because it is marked for autorelease
+-----------------------------------------------------------------------
 3. Explain when you need to use the `NSAutoreleasePool`.
+-----------------------------------------------------------------------
+// 3 Response 
+Autorelease pool blocks should be used in an app that generates many autoreleased objects. Otherwise the applications memory will continue to grow.
 
-
+-----------------------------------------------------------------------
 4. Implement a convenience `class` method to create a `LSIPerson` object that takes a `name` property and returns an autoreleased object.
 
 ```swift
@@ -55,4 +88,11 @@ Answer the following questions inline with this document.
 - (instancetype)initWithName:(NSString *)name;
 
 @end
+```
+-----------------------------------------------------------------------
+// 4 Response
+```objc
++ (instanceType)personWithName(NSString *)name {
+    return [[[LSIPerson alloc] initWithName:name] autorelease];
+}
 ```
