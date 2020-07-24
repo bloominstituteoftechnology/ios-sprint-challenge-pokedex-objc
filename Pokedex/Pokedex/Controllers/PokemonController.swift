@@ -11,11 +11,13 @@ import UIKit
 @objc class PokemonController: NSObject {
     let baseURL = URL(string: "https://pokeapi.co")
 
-    @objc static let shared = PokemonController()
+    @objc (shared) static let shared = PokemonController()
     
     @objc func getAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
         let urlString = "/api/v2/pokemon/?limit=850"
         let pokemonURL = URL(string: urlString, relativeTo: baseURL)!
+        
+        NSLog("%@", pokemonURL.absoluteString)
         
         URLSession.shared.dataTask(with: pokemonURL) { data, _, error in
             if let error = error {
