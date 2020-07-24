@@ -8,16 +8,12 @@
 
 import UIKit
 
-enum NetworkError: Error {
-    case failed, noData
-}
-
 @objc class PokemonController: NSObject {
     let baseURL = URL(string: "https://pokeapi.co")
 
-    @objc(sharedController) static let shared = PokemonController()
+    @objc static let shared = PokemonController()
     
-    @objc func getAllPokeon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
+    @objc func getAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
         let urlString = "/api/v2/pokemon/?limit=850"
         let pokemonURL = URL(string: urlString, relativeTo: baseURL)!
         
@@ -52,6 +48,4 @@ enum NetworkError: Error {
             completion(pokemonArray, nil)
         }.resume()
     }
-        
-        
 }
