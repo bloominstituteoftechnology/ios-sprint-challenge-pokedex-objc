@@ -7,17 +7,17 @@ Answer the following questions inline with this document.
 	```swift
 	NSString *quote = @"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it. - Steve Jobs";
 
-	NSCharacterSet *punctuationSet = [[NSCharacterSet punctuationCharacterSet] retain];
+NSCharacterSet *punctuationSet = [[NSCharacterSet punctuationCharacterSet] retain]; // this is retained but never released
 
 	NSString *cleanQuote = [[quote componentsSeparatedByCharactersInSet:punctuationSet] componentsJoinedByString:@""];
 	NSArray *words = [[cleanQuote lowercaseString] componentsSeparatedByString:@" "];
 
-	NSMutableDictionary<NSString *, NSNumber *> *wordFrequency = [[NSMutableDictionary alloc] init];
+	NSMutableDictionary<NSString *, NSNumber *> *wordFrequency = [[NSMutableDictionary alloc] init]; // needs to be released 
 
-	for (NSString *word in words) {
+	for (NSString *word in words) {     // this is allocating in a tight loop 
 		NSNumber *count = wordFrequency[word];
 		if (count) {
-			wordFrequency[word] = [NSNumber numberWithInteger:count.integerValue + 1];
+			wordFrequency[word] = [NSNumber numberWithInteger:count.integerValue + 1]; // need to release this
 		} else {
 			wordFrequency[word] = [[NSNumber alloc] initWithInteger:1];
 		}
@@ -25,14 +25,18 @@ Answer the following questions inline with this document.
 
 	printf("Word frequency: %s", wordFrequency.description.UTF8String);
 	```
+        
+
+[punctuationSet release];
+[wordFrequency release];
 
 	2. Rewrite the code so that it does not leak any memory with ARC disabled
 
 2. Which of these objects is autoreleased?  Why?
 
-	1. `NSDate *yesterday = [NSDate date];`
+1. `NSDate *yesterday = [NSDate date];` // This is. It is a convenience method
 	
-	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];`
+	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];` // Would be but this is not retained
 	
 	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];`
 	
@@ -40,7 +44,7 @@ Answer the following questions inline with this document.
 	
 	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];`
 	
-	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];`
+	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];` // this one is explicitly autoreleased
 
 3. Explain when you need to use the `NSAutoreleasePool`.
 
@@ -52,7 +56,14 @@ Answer the following questions inline with this document.
 
 @property (nonatomic, copy) NSString *name;
 
-- (instancetype)initWithName:(NSString *)name;
+- (instancetype)initWithName:(NSString *)name; 
++ (instancetype)personWithName(NSString *)name;
+@end
 
+@implementation
+
++ (instancetype)personWithName(NSString *)name {
+return [[[self alloc] initWithName:name] autorlease];
+}
 @end
 ```
