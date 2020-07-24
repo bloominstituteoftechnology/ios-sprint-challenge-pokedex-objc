@@ -358,7 +358,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.EnzoJimenezSoto.PokemonObj-CSprint";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mainbitch/Documents/DevelopmentiOS17/ios-sprint-challenge-pokedex-objc/PokemonObj/PokemonObj/Resources/PokemonObj-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokemonObj/Resources/PokemonObj-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -379,7 +379,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.EnzoJimenezSoto.PokemonObj-CSprint";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mainbitch/Documents/DevelopmentiOS17/ios-sprint-challenge-pokedex-objc/PokemonObj/PokemonObj/Resources/PokemonObj-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokemonObj/Resources/PokemonObj-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
