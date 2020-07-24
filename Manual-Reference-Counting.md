@@ -26,7 +26,7 @@ Answer the following questions inline with this document.
 	printf("Word frequency: %s", wordFrequency.description.UTF8String);
 	```
 
-	2. Rewrite the code so that it does not leak any memory with ARC disabled
+2. Rewrite the code so that it does not leak any memory with ARC disabled
 
 2. Which of these objects is autoreleased?  Why?
 
