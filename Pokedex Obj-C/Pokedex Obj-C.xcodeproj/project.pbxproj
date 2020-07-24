@@ -17,6 +17,7 @@
 		B4BF75D624CB347A0024698F /* NNEPokdexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF75D524CB347A0024698F /* NNEPokdexTableViewController.m */; };
 		B4BF75DC24CB394A0024698F /* PokedexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF75DB24CB394A0024698F /* PokedexController.swift */; };
 		B4BF75E024CB413F0024698F /* NNEPokedexDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF75DF24CB413F0024698F /* NNEPokedexDetailsViewController.m */; };
+		B4BF75E124CB596D0024698F /* SceneDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = B4BF75B724CB324C0024698F /* SceneDelegate.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -184,6 +185,7 @@
 				B4BF75CF24CB34030024698F /* NNEPokdex.m in Sources */,
 				B4BF75E024CB413F0024698F /* NNEPokedexDetailsViewController.m in Sources */,
 				B4BF75D624CB347A0024698F /* NNEPokdexTableViewController.m in Sources */,
+				B4BF75E124CB596D0024698F /* SceneDelegate.h in Sources */,
 				B4BF75B924CB324C0024698F /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
