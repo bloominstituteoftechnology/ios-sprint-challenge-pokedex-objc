@@ -39,13 +39,15 @@
                       options:0
                       context:nil];
     
-    if (!self.pokemon.sprite) {
-        [PokemonController.shared getPokemonDetailFor:_pokemon];
-    }
+    [self.pokemon addObserver:self
+                   forKeyPath:@"type"
+                      options:0
+                      context:nil];
     
-    if (self.pokemon.sprite) {
-        [self updatePokemon];
-    }
+    [PokemonController.shared getPokemonDetailFor:_pokemon];
+    
+    [self updatePokemon];
+    
 }
 
 /*
@@ -65,7 +67,7 @@
         [self updateImage];
     }
     
-    if ([keyPath isEqualToString:@"abilities"]) {
+    if ([keyPath isEqualToString:@"abilities"] || [keyPath isEqualToString:@"type"]) {
         [self updateLabels];
     }
 }
