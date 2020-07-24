@@ -19,6 +19,7 @@
 		BE4BBD7924CB35BE00F0C509 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBD7824CB35BE00F0C509 /* Pokemon.m */; };
 		BE4BBD7C24CB3D3D00F0C509 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBD7B24CB3D3D00F0C509 /* PokemonController.swift */; };
 		BE4BBD7F24CB552300F0C509 /* PokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBD7E24CB552300F0C509 /* PokemonTableViewController.m */; };
+		BE4BBD8224CB68E800F0C509 /* PokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4BBD8124CB68E800F0C509 /* PokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		BE4BBD7B24CB3D3D00F0C509 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 		BE4BBD7D24CB552300F0C509 /* PokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonTableViewController.h; sourceTree = "<group>"; };
 		BE4BBD7E24CB552300F0C509 /* PokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonTableViewController.m; sourceTree = "<group>"; };
+		BE4BBD8024CB68E800F0C509 /* PokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonDetailViewController.h; sourceTree = "<group>"; };
+		BE4BBD8124CB68E800F0C509 /* PokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,8 @@
 			children = (
 				BE4BBD7D24CB552300F0C509 /* PokemonTableViewController.h */,
 				BE4BBD7E24CB552300F0C509 /* PokemonTableViewController.m */,
+				BE4BBD8024CB68E800F0C509 /* PokemonDetailViewController.h */,
+				BE4BBD8124CB68E800F0C509 /* PokemonDetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				BE4BBD5024CB30D400F0C509 /* main.m in Sources */,
 				BE4BBD7C24CB3D3D00F0C509 /* PokemonController.swift in Sources */,
 				BE4BBD4824CB30CD00F0C509 /* Pokedex.xcdatamodeld in Sources */,
+				BE4BBD8224CB68E800F0C509 /* PokemonDetailViewController.m in Sources */,
 				BE4BBD7F24CB552300F0C509 /* PokemonTableViewController.m in Sources */,
 				BE4BBD7924CB35BE00F0C509 /* Pokemon.m in Sources */,
 				BE4BBD3C24CB30CD00F0C509 /* AppDelegate.m in Sources */,

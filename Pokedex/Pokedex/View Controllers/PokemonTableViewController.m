@@ -10,6 +10,7 @@
 #import "Pokemon.h"
 #import "Pokedex-Bridging-Header.h"
 #import "Pokedex-Swift.h"
+#import "PokemonDetailViewController.h"
 
 @interface PokemonTableViewController ()
 
@@ -51,7 +52,12 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    if ([[segue identifier] isEqualToString:@"showDetailSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        PokemonDetailViewController *vc = (PokemonDetailViewController *)[segue destinationViewController];
+        vc.pokemon = self.pokemonArray[indexPath.row];
+    }
 }
 
 // MARK: - Utility

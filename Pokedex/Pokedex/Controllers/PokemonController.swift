@@ -50,4 +50,69 @@ import UIKit
             completion(pokemonArray, nil)
         }.resume()
     }
+    
+    @objc func getPokemonDetail(for pokemon: Pokemon) {
+        let urlString = "/api/v2/pokemon/\(pokemon.name.lowercased())"
+        let pokemonURL = URL(string: urlString, relativeTo: baseURL)!
+        
+        NSLog("Pokemon URL: %@", pokemonURL.absoluteString)
+        
+        if (pokemon.abilities != nil || pokemon.identifier != nil || pokemon.sprite != nil || pokemon.type != nil) {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: pokemonURL) { data, _, error in
+            guard let data = data else {
+                NSLog("Data from pokemon detail null")
+                return
+            }
+            
+            guard let dictionary = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
+                NSLog("JSON object unable to be deserialized")
+                return
+            }
+             
+            if let id = dictionary["id"] as? Int {
+                pokemon.identifier = NSNumber(value: id)
+            }
+            
+            if let abilities = dictionary["abilities"] as? [[String:Any]] {
+                var abilitiesString = ""
+                
+                for entry in abilities {
+                    if let ability = entry["ability"] as? [String:String] {
+                        if let name = ability["name"] {
+                            abilitiesString += "\(name.capitalized) "
+                        }
+                    }
+                }
+                
+                pokemon.abilities = abilitiesString
+                NSLog("%@", abilitiesString)
+            }
+            
+            if let types = dictionary["types"] as? [[String:Any]] {
+                var typesString = ""
+                
+                for entry in types {
+                    if let type = entry["type"] as? [String:String] {
+                        if let name = type["name"] {
+                            typesString += "\(name.capitalized) "
+                        }
+                    }
+                }
+                
+                pokemon.type = typesString
+                NSLog("%@", typesString)
+            }
+            
+            if let sprites = dictionary["sprites"] as? [String:String] {
+                if let spriteURL = sprites["front_default"] {
+                    pokemon.sprite = spriteURL
+                    NSLog("Sprite URL: %@", spriteURL)
+                }
+            }
+            
+        }.resume()
+    }
 }
