@@ -17,21 +17,61 @@ class PokedexAPIController: NSObject {
     
     //MARK: - Properties -
     @objc static let shared = PokedexAPIController()
-    @objc let pokedex = [String]
+    @objc var pokedex: [String] = []
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
+    private lazy var jsonDecoder = JSONDecoder()
     
     //MARK: - Actions -
-    func fetchAllPokemon() {
+    @objc func fetchAllPokemon() {
         let url = getAllURL()
-        let request = URLRequest(url: url)
-        request.httpMethod = HTTPMethod.get
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.get.rawValue
         
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
+        URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
-                NSLog("There was an error handling your data.")
+                NSLog("There was an error with your request. Here's what happened: \(error) \(error.localizedDescription)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("Couldn't catch 'em all. Pokeball came back empty.")
+                return
+            }
+            
+            do {
+                let results = try self.jsonDecoder.decode(AllPokemonResult.self, from: data)
+                self.pokedex = results.usableResults
+            } catch {
+                NSLog("Unable to decode incoming data from API. Here's the issue: \(error) \(error.localizedDescription)")
+                return
+            }
+        }.resume()
+    }
+    
+    @objc func fillInDetails(for number: Int) -> CAMPokemon {
+        let url = getPokemonByID(number)
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                NSLog("There was an error with your request. Here's what happened: \(error) \(error.localizedDescription)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("Couldn't catch 'em all. Pokeball came back empty.")
+                return
+            }
+            
+            do {
+                let pokemon = try self.jsonDecoder.decode([].self, from: data)
+                NSLog("\(pokemon.name)")
+            } catch {
+                NSLog("Maybe that wasn't a pokemon? Decoding Error \(error) \(error.localizedDescription)")
+                return
             }
         }
-        
     }
     
     
@@ -39,6 +79,12 @@ class PokedexAPIController: NSObject {
     private func getAllURL() -> URL {
         let allURL = baseURL.appendingPathComponent("?offset=964&limit=964")
         return allURL
+    }
+    
+    private func getPokemonByID(_ id: Int) -> URL {
+        let idString = String(id)
+        let pokemonURL = baseURL.appendingPathComponent(idString)
+        return pokemonURL
     }
     
     
