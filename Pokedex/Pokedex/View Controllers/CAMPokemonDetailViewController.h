@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) int pokemonID;
 @property (nonatomic) PokedexAPIController *pokedex;
+@property (nonatomic) CAMPokemon *pokemon;
+
+
 
 @end
 

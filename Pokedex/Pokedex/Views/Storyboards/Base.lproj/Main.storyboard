@@ -126,6 +126,12 @@
                         <viewLayoutGuide key="safeArea" id="GeR-T7-Eeh"/>
                     </view>
                     <navigationItem key="navigationItem" id="HBw-sz-OQl"/>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="QMh-eS-RZ7" id="T22-dW-lJF"/>
+                        <outlet property="idLabel" destination="hMt-gW-yuc" id="KjT-Ef-f53"/>
+                        <outlet property="nameLabel" destination="Oea-ZO-8ke" id="FGt-GE-EhR"/>
+                        <outlet property="spriteView" destination="7lP-wr-lPx" id="eW0-v1-0M0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWn-5i-ja9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

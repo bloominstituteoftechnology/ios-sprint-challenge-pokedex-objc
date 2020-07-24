@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 @objc
 class PokedexAPIController: NSObject {
@@ -77,6 +78,27 @@ class PokedexAPIController: NSObject {
         return pokemonToReturn
     }
     
+    @objc func getSprite(for pokemon: CAMPokemon) -> UIImage? {
+        var sprite: UIImage?
+        let url = pokemon.spriteURL
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                NSLog("Missed the photo of \(pokemon.name): \(error) \(error.localizedDescription)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("Pokeball came back empty. I thought we had a \(pokemon.name)")
+                return
+            }
+            
+            if let image = UIImage(data: data) {
+                sprite = image
+            }
+        }.resume()
+        return sprite
+    }
     
     //MARK: - Methods -
     private func getAllURL() -> URL {
@@ -90,8 +112,9 @@ class PokedexAPIController: NSObject {
         return pokemonURL
     }
     
-    
 }
+
+
 
 extension PokedexAPIController {
     private struct AllPokemonResult: Codable {
