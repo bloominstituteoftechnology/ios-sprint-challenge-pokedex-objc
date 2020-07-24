@@ -14,6 +14,10 @@
 		8ED997DC24CB311900D1F53B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED997DA24CB311900D1F53B /* LaunchScreen.storyboard */; };
 		8ED997DF24CB311900D1F53B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED997DE24CB311900D1F53B /* main.m */; };
 		8ED997EB24CB31B600D1F53B /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED997EA24CB31B600D1F53B /* Pokemon.m */; };
+		8ED997EE24CB346400D1F53B /* PokemonAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED997ED24CB346400D1F53B /* PokemonAPIClient.swift */; };
+		8ED997F124CB348600D1F53B /* Network Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED997F024CB348600D1F53B /* Network Enums.swift */; };
+		8ED997F324CB348F00D1F53B /* NetworkExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED997F224CB348F00D1F53B /* NetworkExtensions.swift */; };
+		8ED997F524CB34D600D1F53B /* PokeResultDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED997F424CB34D600D1F53B /* PokeResultDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,11 @@
 		8ED997DE24CB311900D1F53B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8ED997E924CB31B600D1F53B /* Pokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
 		8ED997EA24CB31B600D1F53B /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
+		8ED997EC24CB346300D1F53B /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
+		8ED997ED24CB346400D1F53B /* PokemonAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPIClient.swift; sourceTree = "<group>"; };
+		8ED997F024CB348600D1F53B /* Network Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Enums.swift"; sourceTree = "<group>"; };
+		8ED997F224CB348F00D1F53B /* NetworkExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExtensions.swift; sourceTree = "<group>"; };
+		8ED997F424CB34D600D1F53B /* PokeResultDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeResultDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +70,7 @@
 		8ED997CB24CB311700D1F53B /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				8ED997EF24CB347100D1F53B /* Helpers */,
 				8ED997E824CB31A000D1F53B /* View Controllers */,
 				8ED997E724CB315A00D1F53B /* Network */,
 				8ED997E624CB315500D1F53B /* Models */,
@@ -97,6 +107,9 @@
 		8ED997E724CB315A00D1F53B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8ED997ED24CB346400D1F53B /* PokemonAPIClient.swift */,
+				8ED997EC24CB346300D1F53B /* Pokedex-Bridging-Header.h */,
+				8ED997F424CB34D600D1F53B /* PokeResultDecoder.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -106,6 +119,15 @@
 			children = (
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8ED997EF24CB347100D1F53B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8ED997F024CB348600D1F53B /* Network Enums.swift */,
+				8ED997F224CB348F00D1F53B /* NetworkExtensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +161,7 @@
 				TargetAttributes = {
 					8ED997C824CB311700D1F53B = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -182,6 +205,10 @@
 				8ED997EB24CB31B600D1F53B /* Pokemon.m in Sources */,
 				8ED997DF24CB311900D1F53B /* main.m in Sources */,
 				8ED997D124CB311800D1F53B /* SceneDelegate.m in Sources */,
+				8ED997F124CB348600D1F53B /* Network Enums.swift in Sources */,
+				8ED997EE24CB346400D1F53B /* PokemonAPIClient.swift in Sources */,
+				8ED997F524CB34D600D1F53B /* PokeResultDecoder.swift in Sources */,
+				8ED997F324CB348F00D1F53B /* NetworkExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZLCFP6QUVG;
 				INFOPLIST_FILE = Pokedex/Info.plist;
@@ -330,6 +358,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JoeVeerka.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex/Network/Pokedex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -338,6 +369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZLCFP6QUVG;
 				INFOPLIST_FILE = Pokedex/Info.plist;
@@ -347,6 +379,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JoeVeerka.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex/Network/Pokedex-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

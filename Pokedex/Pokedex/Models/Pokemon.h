@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, nullable) NSURL *spriteURL;
 @property (nonatomic, nullable) NSArray<NSString *> *abilities;
-
+@property (nonatomic) int identifier;
 // Poke Init!
 - (instancetype)initWithName:(NSString *)name;
 
