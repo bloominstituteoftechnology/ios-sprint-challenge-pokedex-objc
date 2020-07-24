@@ -52,16 +52,14 @@ import UIKit
     }
     
     @objc func getPokemonDetail(for pokemon: Pokemon) {
-        let urlString = "/api/v2/pokemon/\(pokemon.name.lowercased())"
-        let pokemonURL = URL(string: urlString, relativeTo: baseURL)!
-        
-        NSLog("Pokemon URL: %@", pokemonURL.absoluteString)
+//        let urlString = "/api/v2/pokemon/\(pokemon.name.lowercased())"
+//        let pokemonURL = URL(string: urlString, relativeTo: baseURL)!
         
         if (pokemon.abilities != nil || pokemon.identifier != nil || pokemon.sprite != nil || pokemon.type != nil) {
             return
         }
         
-        URLSession.shared.dataTask(with: pokemonURL) { data, _, error in
+        URLSession.shared.dataTask(with: URL(string: pokemon.url!)!) { data, _, error in
             guard let data = data else {
                 NSLog("Data from pokemon detail null")
                 return
@@ -106,7 +104,7 @@ import UIKit
                 NSLog("%@", typesString)
             }
             
-            if let sprites = dictionary["sprites"] as? [String:String] {
+            if let sprites = dictionary["sprites"] as? [String:String?] {
                 if let sprite = sprites["front_default"] {
                     pokemon.sprite = sprite
                 }

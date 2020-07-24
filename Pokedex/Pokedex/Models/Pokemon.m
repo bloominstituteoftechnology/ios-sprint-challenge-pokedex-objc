@@ -16,10 +16,6 @@
     if (self) {
         _name = dictionary[@"name"];
         _url = dictionary[@"url"];
-        _identifier = dictionary[@"id"];
-        _type = dictionary[@"types"];
-        _abilities = dictionary[@"abilities"];
-        _sprite = dictionary[@"sprites"];
     }
     
     return self;
