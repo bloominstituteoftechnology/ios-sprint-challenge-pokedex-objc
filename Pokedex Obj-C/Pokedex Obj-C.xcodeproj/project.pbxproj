@@ -13,6 +13,10 @@
 		B4BF75C124CB324F0024698F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4BF75C024CB324F0024698F /* Assets.xcassets */; };
 		B4BF75C424CB324F0024698F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4BF75C224CB324F0024698F /* LaunchScreen.storyboard */; };
 		B4BF75C724CB32500024698F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF75C624CB32500024698F /* main.m */; };
+		B4BF75CF24CB34030024698F /* NNEPokdex.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF75CE24CB34030024698F /* NNEPokdex.m */; };
+		B4BF75D624CB347A0024698F /* NNEPokdexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF75D524CB347A0024698F /* NNEPokdexTableViewController.m */; };
+		B4BF75DC24CB394A0024698F /* PokedexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF75DB24CB394A0024698F /* PokedexController.swift */; };
+		B4BF75E024CB413F0024698F /* NNEPokedexDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF75DF24CB413F0024698F /* NNEPokedexDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		B4BF75C324CB324F0024698F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4BF75C524CB324F0024698F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4BF75C624CB32500024698F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B4BF75CD24CB34030024698F /* NNEPokdex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNEPokdex.h; sourceTree = "<group>"; };
+		B4BF75CE24CB34030024698F /* NNEPokdex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNEPokdex.m; sourceTree = "<group>"; };
+		B4BF75D424CB347A0024698F /* NNEPokdexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNEPokdexTableViewController.h; sourceTree = "<group>"; };
+		B4BF75D524CB347A0024698F /* NNEPokdexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNEPokdexTableViewController.m; sourceTree = "<group>"; };
+		B4BF75DA24CB394A0024698F /* Pokedex Obj-C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex Obj-C-Bridging-Header.h"; sourceTree = "<group>"; };
+		B4BF75DB24CB394A0024698F /* PokedexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexController.swift; sourceTree = "<group>"; };
+		B4BF75DE24CB413F0024698F /* NNEPokedexDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNEPokedexDetailsViewController.h; sourceTree = "<group>"; };
+		B4BF75DF24CB413F0024698F /* NNEPokedexDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNEPokedexDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +56,7 @@
 			children = (
 				B4BF75B324CB324C0024698F /* Pokedex Obj-C */,
 				B4BF75B224CB324C0024698F /* Products */,
+				B4BF75DA24CB394A0024698F /* Pokedex Obj-C-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,12 +76,35 @@
 				B4BF75B724CB324C0024698F /* SceneDelegate.h */,
 				B4BF75B824CB324C0024698F /* SceneDelegate.m */,
 				B4BF75BD24CB324C0024698F /* Main.storyboard */,
+				B4BF75DD24CB39540024698F /* Model Controller */,
+				B4BF75D024CB34070024698F /* Model */,
 				B4BF75C024CB324F0024698F /* Assets.xcassets */,
 				B4BF75C224CB324F0024698F /* LaunchScreen.storyboard */,
 				B4BF75C524CB324F0024698F /* Info.plist */,
 				B4BF75C624CB32500024698F /* main.m */,
 			);
 			path = "Pokedex Obj-C";
+			sourceTree = "<group>";
+		};
+		B4BF75D024CB34070024698F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF75CD24CB34030024698F /* NNEPokdex.h */,
+				B4BF75CE24CB34030024698F /* NNEPokdex.m */,
+				B4BF75D424CB347A0024698F /* NNEPokdexTableViewController.h */,
+				B4BF75D524CB347A0024698F /* NNEPokdexTableViewController.m */,
+				B4BF75DE24CB413F0024698F /* NNEPokedexDetailsViewController.h */,
+				B4BF75DF24CB413F0024698F /* NNEPokedexDetailsViewController.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4BF75DD24CB39540024698F /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF75DB24CB394A0024698F /* PokedexController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +138,7 @@
 				TargetAttributes = {
 					B4BF75B024CB324C0024698F = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -141,8 +178,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4BF75DC24CB394A0024698F /* PokedexController.swift in Sources */,
 				B4BF75B624CB324C0024698F /* AppDelegate.m in Sources */,
 				B4BF75C724CB32500024698F /* main.m in Sources */,
+				B4BF75CF24CB34030024698F /* NNEPokdex.m in Sources */,
+				B4BF75E024CB413F0024698F /* NNEPokedexDetailsViewController.m in Sources */,
+				B4BF75D624CB347A0024698F /* NNEPokdexTableViewController.m in Sources */,
 				B4BF75B924CB324C0024698F /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +324,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JKA99996Q5;
 				INFOPLIST_FILE = "Pokedex Obj-C/Info.plist";
@@ -292,6 +334,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nonye.Pokedex-Obj-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex Obj-C-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -300,6 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JKA99996Q5;
 				INFOPLIST_FILE = "Pokedex Obj-C/Info.plist";
@@ -309,6 +355,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nonye.Pokedex-Obj-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokedex Obj-C-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
