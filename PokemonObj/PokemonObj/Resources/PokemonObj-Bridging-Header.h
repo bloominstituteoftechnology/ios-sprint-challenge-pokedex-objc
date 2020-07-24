@@ -4,3 +4,4 @@
 
 #import "EJSPokemon.h"
 #import "EJSPokedexTableViewController.h"
+#import "EJSDetailViewController.h"

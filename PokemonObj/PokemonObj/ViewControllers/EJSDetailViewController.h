@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class EJSPokemon;
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EJSViewController : UIViewController
+@interface EJSDetailViewController : UIViewController
+
+@property (nonatomic) EJSPokemon *pokemon;
 
 @end
 

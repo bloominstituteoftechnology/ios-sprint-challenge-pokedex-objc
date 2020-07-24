@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class PokemonAPI;
+
 @interface EJSPokedexTableViewController : UITableViewController
 
 @end

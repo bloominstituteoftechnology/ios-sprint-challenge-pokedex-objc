@@ -15,12 +15,12 @@
 		7954331A24CB32DC0064CEF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7954331924CB32DC0064CEF3 /* main.m */; };
 		7954332724CB33CA0064CEF3 /* EJSPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 7954332624CB33CA0064CEF3 /* EJSPokemon.m */; };
 		7954332D24CB34090064CEF3 /* EJSPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7954332C24CB34090064CEF3 /* EJSPokedexTableViewController.m */; };
-		7954333024CB34270064CEF3 /* EJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7954332F24CB34270064CEF3 /* EJSViewController.m */; };
+		7954333024CB34270064CEF3 /* EJSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7954332F24CB34270064CEF3 /* EJSDetailViewController.m */; };
 		7954333224CB343F0064CEF3 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7954333124CB343F0064CEF3 /* PokemonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7954330424CB32D90064CEF3 /* PokemonObj-CSprint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PokemonObj-CSprint.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7954330424CB32D90064CEF3 /* PokemonObj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonObj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7954330724CB32D90064CEF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7954330824CB32D90064CEF3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7954330A24CB32D90064CEF3 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -32,11 +32,11 @@
 		7954331924CB32DC0064CEF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7954332524CB33CA0064CEF3 /* EJSPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EJSPokemon.h; sourceTree = "<group>"; };
 		7954332624CB33CA0064CEF3 /* EJSPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EJSPokemon.m; sourceTree = "<group>"; };
-		7954332824CB33E80064CEF3 /* PokemonObj-CSprint-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokemonObj-CSprint-Bridging-Header.h"; sourceTree = "<group>"; };
+		7954332824CB33E80064CEF3 /* PokemonObj-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokemonObj-Bridging-Header.h"; sourceTree = "<group>"; };
 		7954332B24CB34090064CEF3 /* EJSPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EJSPokedexTableViewController.h; sourceTree = "<group>"; };
 		7954332C24CB34090064CEF3 /* EJSPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EJSPokedexTableViewController.m; sourceTree = "<group>"; };
-		7954332E24CB34270064CEF3 /* EJSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EJSViewController.h; sourceTree = "<group>"; };
-		7954332F24CB34270064CEF3 /* EJSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EJSViewController.m; sourceTree = "<group>"; };
+		7954332E24CB34270064CEF3 /* EJSDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EJSDetailViewController.h; sourceTree = "<group>"; };
+		7954332F24CB34270064CEF3 /* EJSDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EJSDetailViewController.m; sourceTree = "<group>"; };
 		7954333124CB343F0064CEF3 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,7 +54,7 @@
 		795432FB24CB32D90064CEF3 = {
 			isa = PBXGroup;
 			children = (
-				7954330624CB32D90064CEF3 /* PokemonObj-CSprint */,
+				7954330624CB32D90064CEF3 /* PokemonObj */,
 				7954330524CB32D90064CEF3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,12 +62,12 @@
 		7954330524CB32D90064CEF3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7954330424CB32D90064CEF3 /* PokemonObj-CSprint.app */,
+				7954330424CB32D90064CEF3 /* PokemonObj.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7954330624CB32D90064CEF3 /* PokemonObj-CSprint */ = {
+		7954330624CB32D90064CEF3 /* PokemonObj */ = {
 			isa = PBXGroup;
 			children = (
 				7954332424CB33B60064CEF3 /* Model */,
@@ -76,13 +76,13 @@
 				7954332124CB331F0064CEF3 /* Storyboard */,
 				7954332024CB32ED0064CEF3 /* Resources */,
 			);
-			path = "PokemonObj-CSprint";
+			path = PokemonObj;
 			sourceTree = "<group>";
 		};
 		7954332024CB32ED0064CEF3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7954332824CB33E80064CEF3 /* PokemonObj-CSprint-Bridging-Header.h */,
+				7954332824CB33E80064CEF3 /* PokemonObj-Bridging-Header.h */,
 				7954330724CB32D90064CEF3 /* AppDelegate.h */,
 				7954330824CB32D90064CEF3 /* AppDelegate.m */,
 				7954330A24CB32D90064CEF3 /* SceneDelegate.h */,
@@ -108,8 +108,8 @@
 			children = (
 				7954332B24CB34090064CEF3 /* EJSPokedexTableViewController.h */,
 				7954332C24CB34090064CEF3 /* EJSPokedexTableViewController.m */,
-				7954332E24CB34270064CEF3 /* EJSViewController.h */,
-				7954332F24CB34270064CEF3 /* EJSViewController.m */,
+				7954332E24CB34270064CEF3 /* EJSDetailViewController.h */,
+				7954332F24CB34270064CEF3 /* EJSDetailViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -134,9 +134,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7954330324CB32D90064CEF3 /* PokemonObj-CSprint */ = {
+		7954330324CB32D90064CEF3 /* PokemonObj */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7954331D24CB32DC0064CEF3 /* Build configuration list for PBXNativeTarget "PokemonObj-CSprint" */;
+			buildConfigurationList = 7954331D24CB32DC0064CEF3 /* Build configuration list for PBXNativeTarget "PokemonObj" */;
 			buildPhases = (
 				7954330024CB32D90064CEF3 /* Sources */,
 				7954330124CB32D90064CEF3 /* Frameworks */,
@@ -146,9 +146,9 @@
 			);
 			dependencies = (
 			);
-			name = "PokemonObj-CSprint";
+			name = PokemonObj;
 			productName = "PokemonObj-CSprint";
-			productReference = 7954330424CB32D90064CEF3 /* PokemonObj-CSprint.app */;
+			productReference = 7954330424CB32D90064CEF3 /* PokemonObj.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -166,7 +166,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 795432FF24CB32D90064CEF3 /* Build configuration list for PBXProject "PokemonObj-CSprint" */;
+			buildConfigurationList = 795432FF24CB32D90064CEF3 /* Build configuration list for PBXProject "PokemonObj" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -179,7 +179,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7954330324CB32D90064CEF3 /* PokemonObj-CSprint */,
+				7954330324CB32D90064CEF3 /* PokemonObj */,
 			);
 		};
 /* End PBXProject section */
@@ -202,7 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7954333024CB34270064CEF3 /* EJSViewController.m in Sources */,
+				7954333024CB34270064CEF3 /* EJSDetailViewController.m in Sources */,
 				7954332D24CB34090064CEF3 /* EJSPokedexTableViewController.m in Sources */,
 				7954330924CB32D90064CEF3 /* AppDelegate.m in Sources */,
 				7954333224CB343F0064CEF3 /* PokemonAPI.swift in Sources */,
@@ -237,7 +237,7 @@
 		7954331B24CB32DC0064CEF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -295,7 +295,7 @@
 		7954331C24CB32DC0064CEF3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -351,14 +351,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59V75HSK6N;
-				INFOPLIST_FILE = "PokemonObj-CSprint/Resources/Info.plist";
+				INFOPLIST_FILE = PokemonObj/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.EnzoJimenezSoto.PokemonObj-CSprint";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "PokemonObj-CSprint/Resources/PokemonObj-CSprint-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mainbitch/Documents/DevelopmentiOS17/ios-sprint-challenge-pokedex-objc/PokemonObj/PokemonObj/Resources/PokemonObj-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -372,14 +372,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59V75HSK6N;
-				INFOPLIST_FILE = "PokemonObj-CSprint/Resources/Info.plist";
+				INFOPLIST_FILE = PokemonObj/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.EnzoJimenezSoto.PokemonObj-CSprint";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "PokemonObj-CSprint/Resources/PokemonObj-CSprint-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mainbitch/Documents/DevelopmentiOS17/ios-sprint-challenge-pokedex-objc/PokemonObj/PokemonObj/Resources/PokemonObj-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -388,7 +388,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		795432FF24CB32D90064CEF3 /* Build configuration list for PBXProject "PokemonObj-CSprint" */ = {
+		795432FF24CB32D90064CEF3 /* Build configuration list for PBXProject "PokemonObj" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7954331B24CB32DC0064CEF3 /* Debug */,
@@ -397,7 +397,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7954331D24CB32DC0064CEF3 /* Build configuration list for PBXNativeTarget "PokemonObj-CSprint" */ = {
+		7954331D24CB32DC0064CEF3 /* Build configuration list for PBXNativeTarget "PokemonObj" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7954331E24CB32DC0064CEF3 /* Debug */,

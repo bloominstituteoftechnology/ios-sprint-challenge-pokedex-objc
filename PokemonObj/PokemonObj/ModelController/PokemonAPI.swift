@@ -8,7 +8,9 @@
 
 import Foundation
 
+
 @objc class PokemonAPI: NSObject {
+    
     @objc (sharedController) static let shared = PokemonAPI()
     
     @objc func fetchAllPokemon(completion: @escaping ([EJSPokemon]?, Error?) -> Void) {
@@ -31,6 +33,7 @@ import Foundation
                 let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
                 let results = dictionary["results"] as! [[String: Any]]
                 let pokemonResults = results.map {EJSPokemon(dictionary: $0)}
+                completion(pokemonResults, nil)
             } catch {
                 print("Decoding Error: \(error)")
                 completion(nil, NSError())
