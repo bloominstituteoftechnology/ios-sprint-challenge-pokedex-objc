@@ -102,8 +102,8 @@ class PokedexAPIController: NSObject {
     
     //MARK: - Methods -
     private func getAllURL() -> URL {
-        let allURL = baseURL.appendingPathComponent("?offset=964&limit=964")
-        return allURL
+        //let allURL = baseURL.appendingPathComponent("?offset=0&limit=964")
+        return baseURL
     }
     
     private func getPokemonByID(_ id: Int) -> URL {
@@ -120,14 +120,10 @@ extension PokedexAPIController {
     private struct AllPokemonResult: Codable {
         enum CodingKeys: String, CodingKey {
             case count
-            case next
-            case previous
             case results
         }
         
         let count: Int
-        let next: String
-        let previous: String
         let results: [[String : String]]
         
         var usableResults: [String] {
