@@ -18,8 +18,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _pokedex = PokedexAPIController.shared;
-    [[self pokedex] fetchAllPokemon];
-    [[self tableView] reloadData];
+//    [self.pokedex addObserver:self
+//                   forKeyPath:@"pokedex"
+//                      options:0
+//                      context:nil];
+    
+    [[self pokedex] fetchAllPokemonWithCompletion:^(NSError * _Nullable error) {
+        if (!error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+        }
+    }];
+    
     
 }
 
@@ -40,6 +51,17 @@
     return cell;
 }
 
+//- (void)observeValueForKeyPath:(NSString *)keyPath
+//                      ofObject:(id)object
+//                        change:(NSDictionary<NSKeyValueChangeKey,id> *)change
+//                       context:(void *)context
+//{
+//    if ([keyPath isEqualToString:@"pokedex"]) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self.tableView reloadData];
+//        });
+//    }
+//}
 
 //MARK: - Navigation -
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -47,6 +69,7 @@
     if ([segue.identifier isEqualToString:@"DetailSegue"]) {
         CAMPokemonDetailViewController *detailVC = [segue destinationViewController];
         detailVC.pokemonID = indexPath.row;
+        
     }
     // Pass the selected object to the new view controller.
 }

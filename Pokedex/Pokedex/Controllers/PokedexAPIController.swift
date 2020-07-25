@@ -16,6 +16,8 @@ class PokedexAPIController: NSObject {
         case get = "GET"
     }
     
+    
+    
     //MARK: - Properties -
     @objc static let shared = PokedexAPIController()
     @objc var pokedex: [String] = []
@@ -23,7 +25,7 @@ class PokedexAPIController: NSObject {
     private lazy var jsonDecoder = JSONDecoder()
     
     //MARK: - Actions -
-    @objc func fetchAllPokemon() {
+    @objc func fetchAllPokemon(completion: @escaping (Error?) -> Void) {
         let url = getAllURL()
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.get.rawValue
@@ -31,6 +33,7 @@ class PokedexAPIController: NSObject {
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
                 NSLog("There was an error with your request. Here's what happened: \(error) \(error.localizedDescription)")
+                completion(error)
                 return
             }
             
@@ -42,8 +45,10 @@ class PokedexAPIController: NSObject {
             do {
                 let results = try self.jsonDecoder.decode(AllPokemonResult.self, from: data)
                 self.pokedex = results.usableResults
+                completion(nil)
             } catch {
                 NSLog("Unable to decode incoming data from API. Here's the issue: \(error) \(error.localizedDescription)")
+                completion(error)
                 return
             }
         }.resume()

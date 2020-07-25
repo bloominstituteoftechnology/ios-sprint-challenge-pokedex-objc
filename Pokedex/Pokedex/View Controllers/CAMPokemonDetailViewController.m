@@ -24,12 +24,30 @@
 //MARK: - Life Cycles -
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addObserver:self
+           forKeyPath:@"pokemon"
+              options:0
+              context:nil];
     _pokedex = PokedexAPIController.shared;
     _pokemon = [self.pokedex fillInDetailsFor: self.pokemonID];
-    [self updateViews];
+}
+
+
+//MARK: - Methods -
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSKeyValueChangeKey,id> *)change
+                       context:(void *)context
+{
+    if ([keyPath isEqualToString:@"pokedex"]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateViews];
+        });
+    }
 }
 
 -(void)updateViews {
+    
     UIImage *sprite = [self.pokedex getSpriteFor: self.pokemon];
     NSString *idString = [NSString stringWithFormat: @"%d", self.pokemon.number];
     NSString *abilitiesString = @"";
