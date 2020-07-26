@@ -23,6 +23,8 @@ class PokedexAPIController: NSObject {
     @objc var pokedex: [String] = []
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     private lazy var jsonDecoder = JSONDecoder()
+    var finished: Bool = false
+    var dispatch = DispatchGroup()
     
     //MARK: - Actions -
     @objc func fetchAllPokemon(completion: @escaping (Error?) -> Void) {
@@ -60,6 +62,7 @@ class PokedexAPIController: NSObject {
         request.httpMethod = HTTPMethod.get.rawValue
         var pokemonToReturn: CAMPokemon?
         
+        dispatch.enter()
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
                 NSLog("There was an error with your request. Here's what happened: \(error) \(error.localizedDescription)")
@@ -79,7 +82,11 @@ class PokedexAPIController: NSObject {
                 NSLog("Maybe that wasn't a pokemon? Decoding Error \(error) \(error.localizedDescription)")
                 return
             }
+            self.finished = true
+            self.dispatch.leave()
         }.resume()
+        dispatch.wait()
+        
         return pokemonToReturn
     }
     
@@ -87,6 +94,7 @@ class PokedexAPIController: NSObject {
         var sprite: UIImage?
         let url = pokemon.spriteURL
         
+        //dispatch.enter()
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 NSLog("Missed the photo of \(pokemon.name): \(error) \(error.localizedDescription)")
@@ -101,6 +109,7 @@ class PokedexAPIController: NSObject {
             if let image = UIImage(data: data) {
                 sprite = image
             }
+            //self.dispatch.resume()
         }.resume()
         return sprite
     }

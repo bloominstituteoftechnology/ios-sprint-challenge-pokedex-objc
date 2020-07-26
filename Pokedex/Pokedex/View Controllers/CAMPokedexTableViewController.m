@@ -68,7 +68,7 @@
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     if ([segue.identifier isEqualToString:@"DetailSegue"]) {
         CAMPokemonDetailViewController *detailVC = [segue destinationViewController];
-        detailVC.pokemonID = indexPath.row;
+        detailVC.pokemonID = indexPath.row + 1;
         
     }
     // Pass the selected object to the new view controller.

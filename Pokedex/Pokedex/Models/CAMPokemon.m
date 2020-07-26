@@ -34,11 +34,14 @@
     NSString *spriteString = spritesDictionary[@"front_default"];
     
     NSMutableArray *abilityStrings = [NSMutableArray new];
-    for (NSDictionary *abilityDictionary in abilitiesArray) {
-        NSString *abilityString = abilityDictionary[@"name"];
-        [abilityStrings addObject:abilityString];
+    if (abilitiesArray) {
+        for (NSDictionary<NSString *, NSString *> *abilityDictionary in abilitiesArray) {
+            NSString *abilityString = abilityDictionary[@"name"];
+            if (abilityString) {
+                [abilityStrings addObject:abilityString];
+            }
+        }
     }
-    
     NSString *name = dictionary[@"name"];
     NSNumber *number = dictionary[@"id"];
     NSURL *spriteURL = [NSURL URLWithString:spriteString];

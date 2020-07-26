@@ -29,7 +29,11 @@
               options:0
               context:nil];
     _pokedex = PokedexAPIController.shared;
-    _pokemon = [self.pokedex fillInDetailsFor: self.pokemonID];
+    self.pokemon = [self.pokedex fillInDetailsFor: self.pokemonID];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.spriteView.image = [self.pokedex getSpriteFor: self.pokemon];
+    });
 }
 
 
@@ -39,7 +43,7 @@
                         change:(NSDictionary<NSKeyValueChangeKey,id> *)change
                        context:(void *)context
 {
-    if ([keyPath isEqualToString:@"pokedex"]) {
+    if ([keyPath isEqualToString:@"pokemon"]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self updateViews];
         });
@@ -47,18 +51,20 @@
 }
 
 -(void)updateViews {
-    
-    UIImage *sprite = [self.pokedex getSpriteFor: self.pokemon];
-    NSString *idString = [NSString stringWithFormat: @"%d", self.pokemon.number];
-    NSString *abilitiesString = @"";
-    for (NSString *ability in self.pokemon.abilities) {
-        [abilitiesString stringByAppendingString:ability];
-    }
-    
-    self.spriteView.image = sprite;
-    self.nameLabel.text = self.pokemon.name;
-    self.idLabel.text = idString;
-    self.abilitiesLabel.text = abilitiesString;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        NSString *idString = [NSString stringWithFormat: @"%d", self.pokemon.number];
+        NSString *abilitiesString = @"";
+        if (!self.pokemon.abilities) {
+            for (NSString *ability in self.pokemon.abilities) {
+                [abilitiesString stringByAppendingString:ability];
+            }
+        }
+        
+        self.nameLabel.text = self.pokemon.name;
+        self.idLabel.text = idString;
+        self.abilitiesLabel.text = abilitiesString;
+    });
 }
 
 @end
