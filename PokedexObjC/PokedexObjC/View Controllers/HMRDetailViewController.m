@@ -19,7 +19,6 @@ void *KVOContext = &KVOContext;
 
 @end
 
-
 @implementation HMRDetailViewController
 
 - (void)viewDidLoad {
