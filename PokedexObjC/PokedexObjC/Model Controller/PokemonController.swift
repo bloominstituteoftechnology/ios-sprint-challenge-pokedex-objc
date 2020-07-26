@@ -73,17 +73,18 @@ import UIKit
 
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
-                NSLog("Error in getting details response")
+                NSLog("Not good response")
                 return
             }
 
             guard let data = data else {
-                NSLog("Error in getting details data")
+                NSLog("Error in data")
                 return
             }
 
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String,Any>
+
                 if let id = json["id"] as? Int {
                     pokemon.identifier = Int32(id)
                 }
@@ -107,7 +108,7 @@ import UIKit
                 }
                 pokemon.abilities = abilitiesArray
             } catch {
-                NSLog("Error decoding json serialization: \(error)")
+                NSLog("Error with decoding json serialization: \(error)")
 
             }
         }

@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HMRDetailViewController : NSObject
 
-@property (nonatomic, assign) PokemonController *pokedexController;
+@property (nonatomic, assign) PokemonController *pokemonController;
 @property (nonatomic, assign) HMRPokemon *pokemon;
 
 @end

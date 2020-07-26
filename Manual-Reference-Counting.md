@@ -73,7 +73,7 @@ printf("Word frequency: %s", wordFrequency.description.UTF8String);
 
 3. Explain when you need to use the `NSAutoreleasePool`.
 
-You need to use NSAutorealeasePool because it takes up memory through temporary objects. Like for loops. 
+ANSWER : You need to use NSAutorealeasePool because it removes the temporary objects such as in for loops. 
 
 4. Implement a convenience `class` method to create a `LSIPerson` object that takes a `name` property and returns an autoreleased object.
 
@@ -85,4 +85,9 @@ You need to use NSAutorealeasePool because it takes up memory through temporary 
 - (instancetype)initWithName:(NSString *)name;
 
 @end
+
+My Answer: 
++ (instanceType)personWithName(NSString *)name {
+    return [[[LSIPerson alloc] initWithName:name] autorelease];
+}
 ```

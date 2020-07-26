@@ -7,6 +7,7 @@
 //
 
 #import <UIkit/UIKit.h>
+#import "PokedexObjC-Swift.h"
 
 @class PokemonController;
 
