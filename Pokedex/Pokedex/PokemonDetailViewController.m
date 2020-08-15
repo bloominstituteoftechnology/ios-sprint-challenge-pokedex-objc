@@ -19,7 +19,7 @@ static NSString *identifier = @"identifier";
 @property (strong, nonatomic) IBOutlet UILabel *pokemonIDLabel;
 @property (strong, nonatomic) IBOutlet UILabel *pokemonAbilitiesLabel;
 
-
+- (void) fetchAndShowImage;
 @end
 
 @implementation PokemonDetailViewController
@@ -45,6 +45,43 @@ static NSString *identifier = @"identifier";
 
     NSString *abilitiesString = [[self.pokemon.abilites valueForKey:@"description"] componentsJoinedByString:@", "];
     self.pokemonAbilitiesLabel.text = abilitiesString;
+    
+    [self fetchAndShowImage];
+}
+
+- (void)fetchAndShowImage
+{
+    [[NSURLSession.sharedSession dataTaskWithURL:self.pokemon.spriteURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+      {
+        if (error) {
+            NSLog(@"Failed to fetch image for pokemon: %@", self.pokemon.name);
+            return;
+        }
+
+        if (data == nil) {
+            NSLog(@"Data was returned nil");
+            return;
+        }
+
+        UIImage *sprite = [UIImage imageWithData:data];
+
+        if (sprite) {
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                self.imageView.image = sprite;
+            });
+        } else {
+            NSLog(@"Failed to convert data into sprite");
+        }
+    }] resume];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:identifier]) {
+        [self updateViews];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 
 @end

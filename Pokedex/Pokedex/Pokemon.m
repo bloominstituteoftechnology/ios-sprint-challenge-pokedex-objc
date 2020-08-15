@@ -36,7 +36,7 @@
     }
     
     NSDictionary *spriteDictionary = dictionary[@"sprites"];
-    NSString *spriteURLString = spriteDictionary[@"cfront_default"];
+    NSString *spriteURLString = spriteDictionary[@"front_default"];
     NSURL *spriteURL = [[NSURL alloc] initWithString:spriteURLString];
     
     self.identifier = identifier;

@@ -68,7 +68,7 @@ class PokemonController: NSObject {
                         pokemon.fillInDetails(forPokemon: json)
                        }
                    } catch {
-                       NSLog("Failed to do whatever JSONSerialization does: \(data)")
+                       NSLog("Unable to decode \(data)")
                    }
                }.resume()
     }
