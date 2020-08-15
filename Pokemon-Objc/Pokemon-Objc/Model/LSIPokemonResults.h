@@ -7,10 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LSIPokemon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIPokemonResults : NSObject
+
+@property (nonatomic) NSNumber *count;
+@property (nonatomic, copy) NSString *next;
+@property (nonatomic, copy) NSArray<LSIPokemon *> *results;
+
+- (instancetype)initWithResults:(NSArray<LSIPokemon *> *)results count:(NSNumber *)count next:(NSString *)next;
+- (nullable instancetype)initFromData:(NSData *)data;
 
 @end
 
