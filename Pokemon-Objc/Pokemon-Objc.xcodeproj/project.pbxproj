@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6329FEEF24E7870A005A4DE9 /* LSIPokemonResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 6329FEEE24E7870A005A4DE9 /* LSIPokemonResults.m */; };
 		63A4AE3C24E76FA0004FA180 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A4AE3B24E76FA0004FA180 /* AppDelegate.m */; };
 		63A4AE3F24E76FA0004FA180 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A4AE3E24E76FA0004FA180 /* SceneDelegate.m */; };
 		63A4AE4224E76FA0004FA180 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A4AE4124E76FA0004FA180 /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6329FEED24E7870A005A4DE9 /* LSIPokemonResults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIPokemonResults.h; sourceTree = "<group>"; };
+		6329FEEE24E7870A005A4DE9 /* LSIPokemonResults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemonResults.m; sourceTree = "<group>"; };
 		63A4AE3724E76FA0004FA180 /* Pokemon-Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon-Objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A4AE3A24E76FA0004FA180 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		63A4AE3B24E76FA0004FA180 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 		63A4AE5A24E77FC2004FA180 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6329FEED24E7870A005A4DE9 /* LSIPokemonResults.h */,
+				6329FEEE24E7870A005A4DE9 /* LSIPokemonResults.m */,
 				63A4AE5B24E77FD1004FA180 /* LSIPokemon.h */,
 				63A4AE5C24E77FD1004FA180 /* LSIPokemon.m */,
 			);
@@ -177,6 +182,7 @@
 				63A4AE3C24E76FA0004FA180 /* AppDelegate.m in Sources */,
 				63A4AE4D24E76FA1004FA180 /* main.m in Sources */,
 				63A4AE3F24E76FA0004FA180 /* SceneDelegate.m in Sources */,
+				6329FEEF24E7870A005A4DE9 /* LSIPokemonResults.m in Sources */,
 				63A4AE5D24E77FD1004FA180 /* LSIPokemon.m in Sources */,
 				63A4AE5924E77D88004FA180 /* PokemonAPI.swift in Sources */,
 			);
