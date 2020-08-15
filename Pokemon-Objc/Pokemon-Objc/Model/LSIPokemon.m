@@ -10,4 +10,14 @@
 
 @implementation LSIPokemon
 
+- (instancetype)initWithName:(NSString *)name url:(NSString *)urlString
+{
+    if (self = [super init]) {
+        _name = name;
+        _urlString = urlString;
+        _abilities = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 @end

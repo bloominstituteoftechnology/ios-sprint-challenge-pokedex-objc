@@ -11,8 +11,11 @@
 @interface LSIPokemon : NSObject
 
 @property (nonatomic, nonnull) NSString *name;
+@property (nonatomic, nonnull) NSString *urlString;
 @property (nonatomic, nullable) NSNumber *identifier;
-@property (nonatomic, nullable) NSString *sprite;
-@property (nonatomic, nonnull) NSArray<NSString *> *abilities;
+@property (nonatomic, nullable) NSMutableString *sprite;
+@property (nonatomic, nonnull) NSMutableArray<NSString *> *abilities;
+
+- (nonnull instancetype)initWithName:(nonnull NSString *)name url:(nonnull NSString *)urlString;
 
 @end
