@@ -16,6 +16,7 @@
 		3AE2BC3824E76C3100E7068F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2BC3724E76C3100E7068F /* main.m */; };
 		3AE2BC4024E7722000E7068F /* PokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2BC3F24E7722000E7068F /* PokemonDetailViewController.m */; };
 		3AE2BC4624E7730E00E7068F /* PokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2BC4524E7730E00E7068F /* PokemonTableViewController.m */; };
+		3AE2BC4924E773C700E7068F /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2BC4824E773C700E7068F /* Pokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		3AE2BC3F24E7722000E7068F /* PokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
 		3AE2BC4424E7730E00E7068F /* PokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonTableViewController.h; sourceTree = "<group>"; };
 		3AE2BC4524E7730E00E7068F /* PokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonTableViewController.m; sourceTree = "<group>"; };
+		3AE2BC4724E773C700E7068F /* Pokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
+		3AE2BC4824E773C700E7068F /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 				3AE2BC4524E7730E00E7068F /* PokemonTableViewController.m */,
 				3AE2BC3E24E7722000E7068F /* PokemonDetailViewController.h */,
 				3AE2BC3F24E7722000E7068F /* PokemonDetailViewController.m */,
+				3AE2BC4724E773C700E7068F /* Pokemon.h */,
+				3AE2BC4824E773C700E7068F /* Pokemon.m */,
 				3AE2BC3124E76C3100E7068F /* Assets.xcassets */,
 				3AE2BC3324E76C3100E7068F /* LaunchScreen.storyboard */,
 				3AE2BC3624E76C3100E7068F /* Info.plist */,
@@ -161,6 +166,7 @@
 				3AE2BC4024E7722000E7068F /* PokemonDetailViewController.m in Sources */,
 				3AE2BC3824E76C3100E7068F /* main.m in Sources */,
 				3AE2BC2A24E76C2F00E7068F /* SceneDelegate.m in Sources */,
+				3AE2BC4924E773C700E7068F /* Pokemon.m in Sources */,
 				3AE2BC4624E7730E00E7068F /* PokemonTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
