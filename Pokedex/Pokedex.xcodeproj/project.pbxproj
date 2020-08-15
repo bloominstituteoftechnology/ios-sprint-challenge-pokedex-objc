@@ -18,6 +18,7 @@
 		3AE2BC4624E7730E00E7068F /* PokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2BC4524E7730E00E7068F /* PokemonTableViewController.m */; };
 		3AE2BC4924E773C700E7068F /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2BC4824E773C700E7068F /* Pokemon.m */; };
 		3AE2BC4C24E77A1A00E7068F /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2BC4B24E77A1A00E7068F /* PokemonController.swift */; };
+		3AE2BC4F24E77A7400E7068F /* PokemonResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2BC4E24E77A7400E7068F /* PokemonResults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		3AE2BC4824E773C700E7068F /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
 		3AE2BC4A24E77A1900E7068F /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
 		3AE2BC4B24E77A1A00E7068F /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
+		3AE2BC4D24E77A7400E7068F /* PokemonResults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonResults.h; sourceTree = "<group>"; };
+		3AE2BC4E24E77A7400E7068F /* PokemonResults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonResults.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,8 @@
 				3AE2BC4724E773C700E7068F /* Pokemon.h */,
 				3AE2BC4824E773C700E7068F /* Pokemon.m */,
 				3AE2BC4B24E77A1A00E7068F /* PokemonController.swift */,
+				3AE2BC4D24E77A7400E7068F /* PokemonResults.h */,
+				3AE2BC4E24E77A7400E7068F /* PokemonResults.m */,
 				3AE2BC3124E76C3100E7068F /* Assets.xcassets */,
 				3AE2BC3324E76C3100E7068F /* LaunchScreen.storyboard */,
 				3AE2BC3624E76C3100E7068F /* Info.plist */,
@@ -174,6 +179,7 @@
 				3AE2BC2A24E76C2F00E7068F /* SceneDelegate.m in Sources */,
 				3AE2BC4924E773C700E7068F /* Pokemon.m in Sources */,
 				3AE2BC4624E7730E00E7068F /* PokemonTableViewController.m in Sources */,
+				3AE2BC4F24E77A7400E7068F /* PokemonResults.m in Sources */,
 				3AE2BC4C24E77A1A00E7068F /* PokemonController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
