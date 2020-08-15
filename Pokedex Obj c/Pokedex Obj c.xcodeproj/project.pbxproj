@@ -13,6 +13,10 @@
 		11C1376724E76BDE00C87A53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C1376624E76BDE00C87A53 /* Assets.xcassets */; };
 		11C1376A24E76BDE00C87A53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C1376824E76BDE00C87A53 /* LaunchScreen.storyboard */; };
 		11C1376D24E76BDF00C87A53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C1376C24E76BDF00C87A53 /* main.m */; };
+		11C1377924E76EFD00C87A53 /* KISPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C1377824E76EFD00C87A53 /* KISPokemon.m */; };
+		11C1377C24E76F0E00C87A53 /* KISPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C1377B24E76F0E00C87A53 /* KISPokemonDetailViewController.m */; };
+		11C1378024E76F2400C87A53 /* KISPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C1377F24E76F2300C87A53 /* KISPokemonTableViewController.m */; };
+		11C1378324E76F3C00C87A53 /* KISPokemonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C1378224E76F3C00C87A53 /* KISPokemonController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		11C1376924E76BDE00C87A53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11C1376B24E76BDE00C87A53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11C1376C24E76BDF00C87A53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		11C1377724E76EFD00C87A53 /* KISPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KISPokemon.h; sourceTree = "<group>"; };
+		11C1377824E76EFD00C87A53 /* KISPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KISPokemon.m; sourceTree = "<group>"; };
+		11C1377A24E76F0E00C87A53 /* KISPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KISPokemonDetailViewController.h; sourceTree = "<group>"; };
+		11C1377B24E76F0E00C87A53 /* KISPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KISPokemonDetailViewController.m; sourceTree = "<group>"; };
+		11C1377E24E76F2300C87A53 /* KISPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KISPokemonTableViewController.h; sourceTree = "<group>"; };
+		11C1377F24E76F2300C87A53 /* KISPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KISPokemonTableViewController.m; sourceTree = "<group>"; };
+		11C1378124E76F3C00C87A53 /* KISPokemonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KISPokemonController.h; sourceTree = "<group>"; };
+		11C1378224E76F3C00C87A53 /* KISPokemonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KISPokemonController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,17 +70,65 @@
 		11C1375924E76BD500C87A53 /* Pokedex Obj c */ = {
 			isa = PBXGroup;
 			children = (
-				11C1375A24E76BD500C87A53 /* AppDelegate.h */,
-				11C1375B24E76BD500C87A53 /* AppDelegate.m */,
-				11C1375D24E76BD500C87A53 /* SceneDelegate.h */,
-				11C1375E24E76BD500C87A53 /* SceneDelegate.m */,
-				11C1376324E76BD500C87A53 /* Main.storyboard */,
-				11C1376624E76BDE00C87A53 /* Assets.xcassets */,
-				11C1376824E76BDE00C87A53 /* LaunchScreen.storyboard */,
 				11C1376B24E76BDE00C87A53 /* Info.plist */,
-				11C1376C24E76BDF00C87A53 /* main.m */,
+				11C1377524E76EE200C87A53 /* Controller */,
+				11C1377424E76EDD00C87A53 /* Model */,
+				11C1378424E76F5400C87A53 /* Resources */,
+				11C1377324E76ECF00C87A53 /* Storyboard */,
+				11C1377624E76EEC00C87A53 /* Views */,
 			);
 			path = "Pokedex Obj c";
+			sourceTree = "<group>";
+		};
+		11C1377324E76ECF00C87A53 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				11C1376824E76BDE00C87A53 /* LaunchScreen.storyboard */,
+				11C1376324E76BD500C87A53 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		11C1377424E76EDD00C87A53 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11C1377724E76EFD00C87A53 /* KISPokemon.h */,
+				11C1377824E76EFD00C87A53 /* KISPokemon.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11C1377524E76EE200C87A53 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11C1378124E76F3C00C87A53 /* KISPokemonController.h */,
+				11C1378224E76F3C00C87A53 /* KISPokemonController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		11C1377624E76EEC00C87A53 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11C1377A24E76F0E00C87A53 /* KISPokemonDetailViewController.h */,
+				11C1377B24E76F0E00C87A53 /* KISPokemonDetailViewController.m */,
+				11C1377E24E76F2300C87A53 /* KISPokemonTableViewController.h */,
+				11C1377F24E76F2300C87A53 /* KISPokemonTableViewController.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11C1378424E76F5400C87A53 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				11C1375A24E76BD500C87A53 /* AppDelegate.h */,
+				11C1375D24E76BD500C87A53 /* SceneDelegate.h */,
+				11C1375B24E76BD500C87A53 /* AppDelegate.m */,
+				11C1376C24E76BDF00C87A53 /* main.m */,
+				11C1375E24E76BD500C87A53 /* SceneDelegate.m */,
+				11C1376624E76BDE00C87A53 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +203,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				11C1375C24E76BD500C87A53 /* AppDelegate.m in Sources */,
+				11C1377C24E76F0E00C87A53 /* KISPokemonDetailViewController.m in Sources */,
+				11C1378324E76F3C00C87A53 /* KISPokemonController.m in Sources */,
 				11C1376D24E76BDF00C87A53 /* main.m in Sources */,
+				11C1378024E76F2400C87A53 /* KISPokemonTableViewController.m in Sources */,
 				11C1375F24E76BD500C87A53 /* SceneDelegate.m in Sources */,
+				11C1377924E76EFD00C87A53 /* KISPokemon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
