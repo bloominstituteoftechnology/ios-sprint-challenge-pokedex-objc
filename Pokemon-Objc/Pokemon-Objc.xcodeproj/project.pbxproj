@@ -15,6 +15,7 @@
 		63A4AE4A24E76FA1004FA180 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A4AE4824E76FA1004FA180 /* LaunchScreen.storyboard */; };
 		63A4AE4D24E76FA1004FA180 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A4AE4C24E76FA1004FA180 /* main.m */; };
 		63A4AE5924E77D88004FA180 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4AE5824E77D88004FA180 /* PokemonAPI.swift */; };
+		63A4AE5D24E77FD1004FA180 /* LSIPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A4AE5C24E77FD1004FA180 /* LSIPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		63A4AE4C24E76FA1004FA180 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		63A4AE5724E77D88004FA180 /* Pokemon-Objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokemon-Objc-Bridging-Header.h"; sourceTree = "<group>"; };
 		63A4AE5824E77D88004FA180 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		63A4AE5B24E77FD1004FA180 /* LSIPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIPokemon.h; sourceTree = "<group>"; };
+		63A4AE5C24E77FD1004FA180 /* LSIPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 				63A4AE3B24E76FA0004FA180 /* AppDelegate.m */,
 				63A4AE3D24E76FA0004FA180 /* SceneDelegate.h */,
 				63A4AE3E24E76FA0004FA180 /* SceneDelegate.m */,
+				63A4AE5A24E77FC2004FA180 /* Model */,
 				63A4AE5624E77D70004FA180 /* Networking */,
 				63A4AE4024E76FA0004FA180 /* ViewController.h */,
 				63A4AE4124E76FA0004FA180 /* ViewController.m */,
@@ -87,6 +91,15 @@
 				63A4AE5724E77D88004FA180 /* Pokemon-Objc-Bridging-Header.h */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		63A4AE5A24E77FC2004FA180 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63A4AE5B24E77FD1004FA180 /* LSIPokemon.h */,
+				63A4AE5C24E77FD1004FA180 /* LSIPokemon.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +177,7 @@
 				63A4AE3C24E76FA0004FA180 /* AppDelegate.m in Sources */,
 				63A4AE4D24E76FA1004FA180 /* main.m in Sources */,
 				63A4AE3F24E76FA0004FA180 /* SceneDelegate.m in Sources */,
+				63A4AE5D24E77FD1004FA180 /* LSIPokemon.m in Sources */,
 				63A4AE5924E77D88004FA180 /* PokemonAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

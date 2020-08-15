@@ -14,7 +14,11 @@ class PokemonAPI: NSObject {
 
     private override init() {}
 
-    @objc func fetchAllPokemon(completion: @escaping ([LSIPokemon]?, Error?) -> Void)
+    @objc func fetchAllPokemon(completion: @escaping ([LSIPokemon]?, Error?) -> Void) {
 
-    @objc func fillInDetails(for pokemon: LSIPokemon)
+    }
+
+    @objc func fillInDetails(for pokemon: LSIPokemon) {
+        
+    }
 }
