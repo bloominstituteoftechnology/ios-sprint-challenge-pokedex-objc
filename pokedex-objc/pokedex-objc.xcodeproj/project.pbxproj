@@ -14,6 +14,8 @@
 		13DAA30024E77AC200962369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DAA2FF24E77AC200962369 /* Main.storyboard */; };
 		13DAA30624E77AE200962369 /* XMPPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DAA30224E77AE200962369 /* XMPPokemon.m */; };
 		13DAA30724E77AE200962369 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DAA30424E77AE200962369 /* PokemonAPI.swift */; };
+		13DAA30D24E77B0B00962369 /* XMPPokedexDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DAA30924E77B0B00962369 /* XMPPokedexDetailViewController.m */; };
+		13DAA30E24E77B0B00962369 /* XMPPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DAA30A24E77B0B00962369 /* XMPPokedexTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,10 @@
 		13DAA30324E77AE200962369 /* XMPPokemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPokemon.h; sourceTree = "<group>"; };
 		13DAA30424E77AE200962369 /* PokemonAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 		13DAA30524E77AE200962369 /* pokedex-objc-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "pokedex-objc-Bridging-Header.h"; sourceTree = "<group>"; };
+		13DAA30924E77B0B00962369 /* XMPPokedexDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPokedexDetailViewController.m; sourceTree = "<group>"; };
+		13DAA30A24E77B0B00962369 /* XMPPokedexTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPokedexTableViewController.m; sourceTree = "<group>"; };
+		13DAA30B24E77B0B00962369 /* XMPPokedexDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPokedexDetailViewController.h; sourceTree = "<group>"; };
+		13DAA30C24E77B0B00962369 /* XMPPokedexTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPokedexTableViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 			children = (
 				13DAA2FF24E77AC200962369 /* Main.storyboard */,
 				13DAA30124E77AE200962369 /* Models */,
+				13DAA30824E77B0B00962369 /* View Controllers */,
 				13DAA2FE24E76D2600962369 /* Resources */,
 				13DAA2F624E76D1B00962369 /* Info.plist */,
 				13DAA2F724E76D1B00962369 /* main.m */,
@@ -92,6 +99,17 @@
 				13DAA30524E77AE200962369 /* pokedex-objc-Bridging-Header.h */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		13DAA30824E77B0B00962369 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				13DAA30924E77B0B00962369 /* XMPPokedexDetailViewController.m */,
+				13DAA30A24E77B0B00962369 /* XMPPokedexTableViewController.m */,
+				13DAA30B24E77B0B00962369 /* XMPPokedexDetailViewController.h */,
+				13DAA30C24E77B0B00962369 /* XMPPokedexTableViewController.h */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,7 +183,9 @@
 			files = (
 				13DAA2E724E76D1A00962369 /* AppDelegate.m in Sources */,
 				13DAA30624E77AE200962369 /* XMPPokemon.m in Sources */,
+				13DAA30D24E77B0B00962369 /* XMPPokedexDetailViewController.m in Sources */,
 				13DAA2F824E76D1B00962369 /* main.m in Sources */,
+				13DAA30E24E77B0B00962369 /* XMPPokedexTableViewController.m in Sources */,
 				13DAA30724E77AE200962369 /* PokemonAPI.swift in Sources */,
 				13DAA2EA24E76D1A00962369 /* SceneDelegate.m in Sources */,
 			);
@@ -296,6 +316,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.conner.pokedex-objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "pokedex-objc/Models/pokedex-objc-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -312,6 +334,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.conner.pokedex-objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "pokedex-objc/Models/pokedex-objc-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
