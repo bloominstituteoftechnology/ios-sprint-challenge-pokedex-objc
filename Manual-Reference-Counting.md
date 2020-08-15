@@ -25,24 +25,27 @@ Answer the following questions inline with this document.
 
 	printf("Word frequency: %s", wordFrequency.description.UTF8String);
 	```
+    
+    -
 
 	2. Rewrite the code so that it does not leak any memory with ARC disabled
 
 2. Which of these objects is autoreleased?  Why?
 
-	1. `NSDate *yesterday = [NSDate date];`
+1. `NSDate *yesterday = [NSDate date];` Autoreleased becausae the developer is not responsible.
 	
-	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];`
+	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];` Not autoreleased as we stated "retain" to specifically take control.
 	
-	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];`
+	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];` Not autoreleased as we stated "alloc" specifically.
 	
-	4. `NSDate *food = [NSDate new];`
+	4. `NSDate *food = [NSDate new];` Not autoreleased since we stated "new".
 	
-	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];`
+	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];` Autoreleased becausae the developer is not responsible.
 	
-	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];`
+	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];` Autoreleased as explicitly stated.
 
 3. Explain when you need to use the `NSAutoreleasePool`.
+- You need to use Autorelease pool when you want to relinquish ownership of an object, but want to avoid it being deallocated.
 
 
 4. Implement a convenience `class` method to create a `LSIPerson` object that takes a `name` property and returns an autoreleased object.
