@@ -10,9 +10,9 @@
 
 @interface LSIPokemon : NSObject
 
-@property (nonatomic) NSString *name;
-@property (nonatomic) int identifier;
-@property (nonatomic) NSString *sprite;
-@property (nonatomic) NSArray<NSString *> *abilities;
+@property (nonatomic, nonnull) NSString *name;
+@property (nonatomic, nullable) NSNumber *identifier;
+@property (nonatomic, nullable) NSString *sprite;
+@property (nonatomic, nonnull) NSArray<NSString *> *abilities;
 
 @end
