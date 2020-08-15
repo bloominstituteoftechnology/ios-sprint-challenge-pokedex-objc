@@ -104,10 +104,10 @@
 		13DAA30824E77B0B00962369 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				13DAA30924E77B0B00962369 /* XMPPokedexDetailViewController.m */,
+				13DAA30C24E77B0B00962369 /* XMPPokedexTableViewController.h */,
 				13DAA30A24E77B0B00962369 /* XMPPokedexTableViewController.m */,
 				13DAA30B24E77B0B00962369 /* XMPPokedexDetailViewController.h */,
-				13DAA30C24E77B0B00962369 /* XMPPokedexTableViewController.h */,
+				13DAA30924E77B0B00962369 /* XMPPokedexDetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

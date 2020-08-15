@@ -14,12 +14,8 @@ import Foundation
 
 @objc(PokemonAPI)
 class PokemonAPI: NSObject {
-    var url: URL {
-        URL(string: "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=964")!
-    }
-    
-    //@objc(sharedController) static let shared: PokemonAPI - No use for this right now
     @objc func fetchAllPokemon(completion: @escaping ([XMPPokemon]?, Error?) -> Void) {
+        let url = URL(string: "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=964")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             // Error encountered
             guard error == nil else {
@@ -28,16 +24,16 @@ class PokemonAPI: NSObject {
                 return
             }
             
-            // Bad Response
-            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
-                NSLog("Bad response code in fetchAllPokemon()")
+            // No Data
+            guard data != nil else {
+                NSLog("No data received in fetchAllPokemon()")
                 completion(nil, error)
                 return
             }
             
-            // No Data
-            guard data != nil else {
-                NSLog("No data received in fetchAllPokemon()")
+            // Bad Response
+            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+                NSLog("Bad response code in fetchAllPokemon()")
                 completion(nil, error)
                 return
             }
@@ -63,6 +59,57 @@ class PokemonAPI: NSObject {
     }
 
     @objc func fillInDetails(for pokemon: XMPPokemon) {
-        
+        let url = URL(string: "https://pokeapi.co/api/v2/pokemon/\(pokemon.name)")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            // Error encountered
+            guard error == nil else {
+                NSLog("Encounted error in fillInDetails()")
+                return
+            }
+            
+            // No Data
+            guard data != nil else {
+                NSLog("No data received in fillInDetails()")
+                return
+            }
+            
+            // Bad Response
+            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+                NSLog("Bad response code in fillInDetails()")
+                return
+            }
+            
+            // Successfully fetched all data, time to decode
+            do {
+                // Identifier
+                let json = try JSONSerialization.jsonObject(with: data!, options: []) as! Dictionary<String, Any>
+                if let id = json["id"] as? UInt {
+                    pokemon.identifier = id
+                }
+                // ImageURL
+                if let images = json["sprites"] as? Dictionary<String, Any> {
+                    if let defaultImage = images["front_default"] as? String {
+                        pokemon.imageURL = defaultImage;
+                    }
+                }
+                // Abilities
+                let abilitiesArray: NSMutableArray = []
+                if let abilities = json["abilities"] as? [Dictionary<String, Any>] {
+                    for ability in abilities {
+                        if let ability = ability["ability"] as? Dictionary<String, Any> {
+                            if let abilityName = ability["name"] as? String {
+                                abilitiesArray.add(abilityName)
+                            }
+                        }
+                    }
+                }
+                pokemon.abilities = abilitiesArray
+                print("Finished fetching details")
+            } catch {
+                print("Error Decoding json in fillInDetails(): \(error)")
+                return
+            }
+        }
+        task.resume()
     }
 }

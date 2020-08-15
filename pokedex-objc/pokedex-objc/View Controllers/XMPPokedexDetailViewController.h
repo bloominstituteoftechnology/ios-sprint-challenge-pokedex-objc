@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "XMPPokemon.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XMPPokedexDetailViewController : UIViewController
+
+@property (nonatomic) XMPPokemon *pokemon;
 
 @end
 

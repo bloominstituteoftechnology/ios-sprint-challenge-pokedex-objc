@@ -7,6 +7,7 @@
 //
 
 #import "XMPPokedexDetailViewController.h"
+#import "pokedex_objc-Swift.h"
 
 @interface XMPPokedexDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -20,19 +21,17 @@
 
 @implementation XMPPokedexDetailViewController
 
+-(void)updateViews {
+    NSLog(@"updateViews()");
+    _nameLabel.text = _pokemon.name;
+    _idLabel.text = [[NSString alloc] initWithFormat:@"%lu", (unsigned long)_pokemon.identifier];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    PokemonAPI *fetcher = [PokemonAPI new];
+    [fetcher fillInDetailsFor:_pokemon];
+    [self updateViews];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
