@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSNumber *count;
 @property (nonatomic, copy) NSString *next;
-@property (nonatomic, copy) NSArray<LSIPokemon *> *results;
+@property (nonatomic, copy) NSArray<LSIPokemon *> *pokemonArray;
 
-- (instancetype)initWithResults:(NSArray<LSIPokemon *> *)results count:(NSNumber *)count next:(NSString *)next;
+- (instancetype)initWithPokemonArray:(NSArray<LSIPokemon *> *)pokemonArray count:(NSNumber *)count next:(NSString *)next;
 - (nullable instancetype)initFromData:(NSData *)data;
 
 @end

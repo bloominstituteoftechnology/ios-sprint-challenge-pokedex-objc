@@ -7,13 +7,14 @@
 //
 
 #import "LSIPokemonResults.h"
+#import "LSIPokemon.h"
 
 @implementation LSIPokemonResults
 
-- (instancetype)initWithResults:(NSArray<LSIPokemon *> *)results count:(NSNumber *)count next:(NSString *)next
+- (instancetype)initWithPokemonArray:(NSArray<LSIPokemon *> *)pokemonArray count:(NSNumber *)count next:(NSString *)next
 {
     if (self = [super init]) {
-        _results = results;
+        _pokemonArray = pokemonArray;
         _count = count;
         _next = next;
     }
@@ -38,7 +39,20 @@
     NSArray *results = dictionary[@"results"];
     if (![results isKindOfClass:NSArray.class]) return nil;
 
-    return [self initWithResults:results count:count next:next];
+    NSMutableArray *pokemonArray = [[NSMutableArray alloc] initWithCapacity:results.count];
+
+    for (NSDictionary *pokemonDictionary in results) {
+        if (![pokemonDictionary isKindOfClass:NSDictionary.class]) continue;
+
+        LSIPokemon *pokemon = [[LSIPokemon alloc] initFromDictionary:pokemonDictionary];
+        if (pokemon) {
+            [pokemonArray addObject:pokemon];
+        } else {
+            NSLog(@"Unable to parse pokemon dictionary: %@", pokemonDictionary);
+        }
+    }
+
+    return [self initWithPokemonArray:pokemonArray count:count next:next];
 }
 
 @end
