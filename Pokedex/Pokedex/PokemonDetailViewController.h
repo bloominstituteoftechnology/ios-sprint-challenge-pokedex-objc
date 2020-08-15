@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PokemonDetailViewController : UIViewController
 
-@property Pokemon *pokemon;
+@property (nonatomic) Pokemon *pokemon;
 
 @end
 

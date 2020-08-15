@@ -15,33 +15,33 @@
     self = [super init];
     if (self) {
         _name = name;
-        _identifier = [[NSNumber alloc] init];
-        _abilites = [[NSArray alloc] init];
         _spriteURL = [[NSURL alloc] init];
+        _identifier = [[NSNumber alloc] init];
+        _abilities = [[NSArray alloc] init];
     }
     return self;
 }
 
-- (void) fillInDetailsForPokemon:(NSDictionary *)dictionary
+- (void)fillInDetailsWithDictionary:(NSDictionary *)dictionary
 {
     NSNumber *identifier = dictionary[@"id"];
-    
-    NSArray *abilitiesArray = dictionary[@"abilities"];
-    NSMutableArray<NSString *> *abilities = [[NSMutableArray<NSString *> alloc] init];
-    
-    for (NSDictionary *ability in abilitiesArray) {
-        NSDictionary *abilityDictionary = ability[@"ability"];
-        NSString *abilityName = abilityDictionary[@"name"];
-        [abilities addObject:abilityName];
-    }
     
     NSDictionary *spriteDictionary = dictionary[@"sprites"];
     NSString *spriteURLString = spriteDictionary[@"front_default"];
     NSURL *spriteURL = [[NSURL alloc] initWithString:spriteURLString];
     
-    self.identifier = identifier;
-    self.abilites = [abilities copy];
+    NSArray *abilitiesArray = dictionary[@"abilities"];
+    NSMutableArray<NSString *> *abilities = [[NSMutableArray<NSString *> alloc] init];
+    
+    for (NSDictionary *abilitiesDictionary in abilitiesArray) {
+        NSDictionary *abilityDictionary = abilitiesDictionary[@"ability"];
+        NSString *abilityName = abilityDictionary[@"name"];
+        [abilities addObject:abilityName];
+    }
+    
     self.spriteURL = spriteURL;
+    self.abilities = [abilities copy];
+    self.identifier = identifier;
 }
 
 @end

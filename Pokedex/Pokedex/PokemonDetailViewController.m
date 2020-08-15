@@ -19,8 +19,6 @@ static NSString *identifier = @"identifier";
 @property (strong, nonatomic) IBOutlet UILabel *pokemonIDLabel;
 @property (strong, nonatomic) IBOutlet UILabel *pokemonAbilitiesLabel;
 
-- (void) fetchAndShowImage;
-
 @end
 
 @implementation PokemonDetailViewController
@@ -28,11 +26,9 @@ static NSString *identifier = @"identifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (self.pokemon) {
         [self.pokemon addObserver:self forKeyPath:identifier options:0 context:nil];
         [PokemonController.sharedController fillInDetailsFor:self.pokemon];
-        [self updateViews];
-    }
+      //  [self updateViews];
 }
 
 - (void)dealloc
@@ -47,38 +43,59 @@ static NSString *identifier = @"identifier";
         self.pokemonNameLabel.text = [self.pokemon.name capitalizedString];
         self.pokemonIDLabel.text = [[NSString alloc] initWithFormat:@"%@", self.pokemon.identifier];
 
-        NSString *abilitiesString = [[self.pokemon.abilites valueForKey:@"description"] componentsJoinedByString:@", "];
+        NSString *abilitiesString = [[self.pokemon.abilities valueForKey:@"description"] componentsJoinedByString:@", "];
         self.pokemonAbilitiesLabel.text = abilitiesString;
-        NSLog(@"%@", self.pokemon.spriteURL);
-        [self fetchAndShowImage];
+        
+        if (self.pokemon.spriteURL)
+        {
+//            NSURL *url = [NSURL URLWithString:self.pokemon.spriteURL];
+            NSLog(@"%@", self.pokemon.spriteURL);
+            NSLog(@"is the URL type:%@", [self.pokemon.spriteURL isKindOfClass:[NSURL class]]? @"Yes" : @"No");
+            [[NSURLSession.sharedSession dataTaskWithURL:self.pokemon.spriteURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                if (data) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        self.imageView.image = [UIImage imageWithData:data];
+                    });
+                }
+            }] resume];
+        } else {
+            NSLog(@"URL is invalid");
+        }
     }
 }
 
 - (void)fetchAndShowImage
 {
-    NSURL *url = self.pokemon.spriteURL;
-    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
-      {
-        if (error) {
-            NSLog(@"Failed to fetch image for pokemon: %@", self.pokemon.name);
-            return;
-        }
-
-        if (data == nil) {
-            NSLog(@"Data was returned nil");
-            return;
-        }
-
-        UIImage *sprite = [UIImage imageWithData:data];
-
-        if (sprite) {
-            dispatch_async(dispatch_get_main_queue(), ^(void){
-                self.imageView.image = sprite;
-            });
-        } else {
-            NSLog(@"Failed to convert data into sprite");
-        }
-    }] resume];
+//    NSURL *url = [NSURL URLWithString:self.pokemon.spriteURL];
+//    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        if (data) {
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                self.imageView.image = [UIImage imageWithData:data];
+//            });
+//        }
+//    }] resume];
+//    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+//      {
+//        if (error) {
+//            NSLog(@"Failed to fetch image for pokemon: %@", self.pokemon.name);
+//            return;
+//        }
+//
+//        if (data == nil) {
+//            NSLog(@"Data was returned nil");
+//            return;
+//        }
+//
+//        UIImage *sprite = [UIImage imageWithData:data];
+//
+//        if (sprite) {
+//            dispatch_async(dispatch_get_main_queue(), ^(void){
+//                self.imageView.image = sprite;
+//            });
+//        } else {
+//            NSLog(@"Failed to convert data into sprite");
+//        }
+//    }] resume];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

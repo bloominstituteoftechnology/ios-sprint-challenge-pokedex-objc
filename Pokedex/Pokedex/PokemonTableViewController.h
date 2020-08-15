@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class PokemonDetailViewController;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PokemonTableViewController : UITableViewController
+
+@property (strong, nonatomic) PokemonDetailViewController *detailViewController;
 
 @end
 
