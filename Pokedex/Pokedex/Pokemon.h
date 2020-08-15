@@ -13,14 +13,14 @@ NS_SWIFT_NAME(Pokemon)
 
 @interface Pokemon : NSObject
 
-@property NSString *name;
-@property NSString *identifier;
-@property NSArray<NSString *> *abilites;
-@property NSURL *spriteURL;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSNumber *identifier;
+@property (nonatomic) NSArray<NSString *> *abilites;
+@property (nonatomic) NSURL *spriteURL;
 
 - (instancetype)initWithName:(NSString *)name;
 
-- (void)fillInDetailsForPokemon:(Pokemon *)pokemon dictionary:(NSDictionary *)dictionary;
+- (void)fillInDetailsForPokemon:(NSDictionary *)dictionary;
 
 @end
 

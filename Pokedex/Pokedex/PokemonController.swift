@@ -31,7 +31,7 @@ class PokemonController: NSObject {
 
             do {
                 guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? Dictionary<String, Any> else {
-                    NSLog("Yup decoding failed")
+                    NSLog("Unable to decode json")
                     return
                 }
 
@@ -39,12 +39,37 @@ class PokemonController: NSObject {
 
                 completion(pokemonResults.pokemonArray, nil)
             } catch {
-                NSLog("Failed to turn json into dictionary")
+                NSLog("Unable to addd to dictionary")
             }
-        }
+        }.resume()
     }
 
     @objc func fillInDetails(for pokemon: Pokemon) {
+        let singlePokemonURL = baseURL.appendingPathComponent("pokemon").appendingPathComponent(pokemon.name)
 
+               URLSession.shared.dataTask(with: singlePokemonURL) { data, _, error in
+                   if let error = error {
+                       NSLog("Failed to fetch image with error: \(error)")
+                       return
+                   }
+
+                   guard let data = data else {
+                       NSLog("Data was nil")
+                       return
+                   }
+
+                   do {
+                       guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? Dictionary<String, Any> else {
+                           NSLog("Failed to turn json into dictionary")
+                           return
+                       }
+
+                       DispatchQueue.main.async {
+                        pokemon.fillInDetails(forPokemon: json)
+                       }
+                   } catch {
+                       NSLog("Failed to do whatever JSONSerialization does: \(data)")
+                   }
+               }.resume()
     }
 }

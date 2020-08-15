@@ -7,6 +7,10 @@
 //
 
 #import "PokemonDetailViewController.h"
+#import "Pokemon.h"
+#import "Pokedex-Swift.h"
+
+static NSString *identifier = @"identifier";
 
 @interface PokemonDetailViewController ()
 
@@ -22,17 +26,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    if (self.pokemon) {
+        [self.pokemon addObserver:self forKeyPath:identifier options:0 context:nil];
+        [PokemonController.sharedController fillInDetailsFor:self.pokemon];
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)dealloc
+{
+    [self.pokemon removeObserver:self forKeyPath:identifier];
 }
-*/
+
+- (void)updateViews
+{
+    self.pokemonNameLabel.text = [self.pokemon.name capitalizedString];
+    self.pokemonIDLabel.text = [[NSString alloc] initWithFormat:@"%@", self.pokemon.identifier];
+
+    NSString *abilitiesString = [[self.pokemon.abilites valueForKey:@"description"] componentsJoinedByString:@", "];
+    self.pokemonAbilitiesLabel.text = abilitiesString;
+}
 
 @end

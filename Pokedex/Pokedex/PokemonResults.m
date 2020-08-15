@@ -30,7 +30,7 @@
     
     for (NSDictionary *pokemonDictionary in results)
     {
-        NSString *name = pokemonDictionary[@"name"];
+        NSString *name = [pokemonDictionary[@"name"] capitalizedString];
         Pokemon *pokemon = [[Pokemon alloc] initWithName:name];
         if(pokemon)
         {
