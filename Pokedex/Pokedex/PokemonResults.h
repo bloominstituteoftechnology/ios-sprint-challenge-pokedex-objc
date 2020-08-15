@@ -8,9 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class Pokemon;
+
 NS_ASSUME_NONNULL_BEGIN
+NS_SWIFT_NAME(PokemonResults)
 
 @interface PokemonResults : NSObject
+
+@property (nonatomic, readonly, copy) NSArray<Pokemon *> *pokemonArray;
+
+- (instancetype)initWithPokemonArray:(NSArray<Pokemon *> *)pokemonArray;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 
