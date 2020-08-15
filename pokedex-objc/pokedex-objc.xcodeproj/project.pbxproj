@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		13DAA2E724E76D1A00962369 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DAA2E624E76D1A00962369 /* AppDelegate.m */; };
 		13DAA2EA24E76D1A00962369 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DAA2E924E76D1A00962369 /* SceneDelegate.m */; };
-		13DAA2F024E76D1A00962369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DAA2EE24E76D1A00962369 /* Main.storyboard */; };
 		13DAA2F224E76D1B00962369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DAA2F124E76D1B00962369 /* Assets.xcassets */; };
 		13DAA2F824E76D1B00962369 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DAA2F724E76D1B00962369 /* main.m */; };
+		13DAA30024E77AC200962369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DAA2FF24E77AC200962369 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +20,10 @@
 		13DAA2E624E76D1A00962369 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		13DAA2E824E76D1A00962369 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		13DAA2E924E76D1A00962369 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		13DAA2EF24E76D1A00962369 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13DAA2F124E76D1B00962369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13DAA2F624E76D1B00962369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13DAA2F724E76D1B00962369 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		13DAA2FF24E77AC200962369 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +56,8 @@
 		13DAA2E424E76D1A00962369 /* pokedex-objc */ = {
 			isa = PBXGroup;
 			children = (
+				13DAA2FF24E77AC200962369 /* Main.storyboard */,
 				13DAA2FE24E76D2600962369 /* Resources */,
-				13DAA2EE24E76D1A00962369 /* Main.storyboard */,
 				13DAA2F624E76D1B00962369 /* Info.plist */,
 				13DAA2F724E76D1B00962369 /* main.m */,
 			);
@@ -134,7 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13DAA2F224E76D1B00962369 /* Assets.xcassets in Resources */,
-				13DAA2F024E76D1A00962369 /* Main.storyboard in Resources */,
+				13DAA30024E77AC200962369 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,17 +152,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		13DAA2EE24E76D1A00962369 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13DAA2EF24E76D1A00962369 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		13DAA2F924E76D1B00962369 /* Debug */ = {
