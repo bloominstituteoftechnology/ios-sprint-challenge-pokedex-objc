@@ -20,6 +20,7 @@ static NSString *identifier = @"identifier";
 @property (strong, nonatomic) IBOutlet UILabel *pokemonAbilitiesLabel;
 
 - (void) fetchAndShowImage;
+
 @end
 
 @implementation PokemonDetailViewController
@@ -30,6 +31,7 @@ static NSString *identifier = @"identifier";
     if (self.pokemon) {
         [self.pokemon addObserver:self forKeyPath:identifier options:0 context:nil];
         [PokemonController.sharedController fillInDetailsFor:self.pokemon];
+        [self updateViews];
     }
 }
 
@@ -40,18 +42,22 @@ static NSString *identifier = @"identifier";
 
 - (void)updateViews
 {
-    self.pokemonNameLabel.text = [self.pokemon.name capitalizedString];
-    self.pokemonIDLabel.text = [[NSString alloc] initWithFormat:@"%@", self.pokemon.identifier];
+    if(self.pokemon)
+    {
+        self.pokemonNameLabel.text = [self.pokemon.name capitalizedString];
+        self.pokemonIDLabel.text = [[NSString alloc] initWithFormat:@"%@", self.pokemon.identifier];
 
-    NSString *abilitiesString = [[self.pokemon.abilites valueForKey:@"description"] componentsJoinedByString:@", "];
-    self.pokemonAbilitiesLabel.text = abilitiesString;
-    
-    [self fetchAndShowImage];
+        NSString *abilitiesString = [[self.pokemon.abilites valueForKey:@"description"] componentsJoinedByString:@", "];
+        self.pokemonAbilitiesLabel.text = abilitiesString;
+        NSLog(@"%@", self.pokemon.spriteURL);
+        [self fetchAndShowImage];
+    }
 }
 
 - (void)fetchAndShowImage
 {
-    [[NSURLSession.sharedSession dataTaskWithURL:self.pokemon.spriteURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+    NSURL *url = self.pokemon.spriteURL;
+    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
       {
         if (error) {
             NSLog(@"Failed to fetch image for pokemon: %@", self.pokemon.name);
