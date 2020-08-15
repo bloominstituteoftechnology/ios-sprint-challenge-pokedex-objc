@@ -45,7 +45,8 @@ class PokemonController: NSObject {
     }
 
     @objc func fillInDetails(for pokemon: Pokemon) {
-        let singlePokemonURL = baseURL.appendingPathComponent("pokemon").appendingPathComponent(pokemon.name)
+        let pokemonName = pokemon.name.lowercased();
+        let singlePokemonURL = baseURL.appendingPathComponent("pokemon").appendingPathComponent(pokemonName)
 
                URLSession.shared.dataTask(with: singlePokemonURL) { data, _, error in
                    if let error = error {
