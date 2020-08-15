@@ -8,14 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface LSIPokemon : NSObject
 
-@property (nonatomic, nonnull) NSString *name;
-@property (nonatomic, nonnull) NSString *urlString;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *urlString;
 @property (nonatomic, nullable) NSNumber *identifier;
 @property (nonatomic, nullable) NSMutableString *sprite;
-@property (nonatomic, nonnull) NSMutableArray<NSString *> *abilities;
+@property (nonatomic) NSMutableArray<NSString *> *abilities;
 
-- (nonnull instancetype)initWithName:(nonnull NSString *)name url:(nonnull NSString *)urlString;
+- (instancetype)initWithName:(NSString *)name url:(NSString *)urlString;
 
 @end
+
+NS_ASSUME_NONNULL_END
