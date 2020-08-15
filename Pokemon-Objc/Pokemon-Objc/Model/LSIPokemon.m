@@ -20,4 +20,15 @@
     return self;
 }
 
+- (instancetype)initFromDictionary:(NSDictionary *)dictionary
+{
+    NSString *name = dictionary[@"name"];
+    if (![name isKindOfClass:NSString.class]) return nil;
+
+    NSString *urlString = dictionary[@"url"];
+    if (![urlString isKindOfClass:NSString.class]) return nil;
+
+    return [self initWithName:name url:urlString];
+}
+
 @end
