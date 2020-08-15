@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C39B4B7B24E77C5700CEB6BA /* JMCPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = C39B4B7A24E77C5700CEB6BA /* JMCPokemon.m */; };
 		C3A4798124E76CEB0072DCDA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A4798024E76CEB0072DCDA /* AppDelegate.m */; };
 		C3A4798424E76CEB0072DCDA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A4798324E76CEB0072DCDA /* SceneDelegate.m */; };
 		C3A4798A24E76CEB0072DCDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A4798824E76CEB0072DCDA /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C39B4B7924E77C5700CEB6BA /* JMCPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMCPokemon.h; sourceTree = "<group>"; };
+		C39B4B7A24E77C5700CEB6BA /* JMCPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMCPokemon.m; sourceTree = "<group>"; };
 		C3A4797C24E76CEB0072DCDA /* Pokedex Objc C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex Objc C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A4797F24E76CEB0072DCDA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C3A4798024E76CEB0072DCDA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 		C3A4799A24E777070072DCDA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C39B4B7924E77C5700CEB6BA /* JMCPokemon.h */,
+				C39B4B7A24E77C5700CEB6BA /* JMCPokemon.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 		C3A4797424E76CEB0072DCDA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JMC;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Jarren Campos";
 				TargetAttributes = {
@@ -183,6 +189,7 @@
 			files = (
 				C3A4798124E76CEB0072DCDA /* AppDelegate.m in Sources */,
 				C3A4799224E76CEC0072DCDA /* main.m in Sources */,
+				C39B4B7B24E77C5700CEB6BA /* JMCPokemon.m in Sources */,
 				C3A4798424E76CEB0072DCDA /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
