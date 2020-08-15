@@ -14,6 +14,7 @@
 		63A4AE4724E76FA1004FA180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63A4AE4624E76FA1004FA180 /* Assets.xcassets */; };
 		63A4AE4A24E76FA1004FA180 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A4AE4824E76FA1004FA180 /* LaunchScreen.storyboard */; };
 		63A4AE4D24E76FA1004FA180 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A4AE4C24E76FA1004FA180 /* main.m */; };
+		63A4AE5924E77D88004FA180 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4AE5824E77D88004FA180 /* PokemonAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		63A4AE4924E76FA1004FA180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63A4AE4B24E76FA1004FA180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63A4AE4C24E76FA1004FA180 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		63A4AE5724E77D88004FA180 /* Pokemon-Objc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokemon-Objc-Bridging-Header.h"; sourceTree = "<group>"; };
+		63A4AE5824E77D88004FA180 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,7 @@
 				63A4AE3B24E76FA0004FA180 /* AppDelegate.m */,
 				63A4AE3D24E76FA0004FA180 /* SceneDelegate.h */,
 				63A4AE3E24E76FA0004FA180 /* SceneDelegate.m */,
+				63A4AE5624E77D70004FA180 /* Networking */,
 				63A4AE4024E76FA0004FA180 /* ViewController.h */,
 				63A4AE4124E76FA0004FA180 /* ViewController.m */,
 				63A4AE4324E76FA0004FA180 /* Main.storyboard */,
@@ -74,6 +78,15 @@
 				63A4AE4C24E76FA1004FA180 /* main.m */,
 			);
 			path = "Pokemon-Objc";
+			sourceTree = "<group>";
+		};
+		63A4AE5624E77D70004FA180 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				63A4AE5824E77D88004FA180 /* PokemonAPI.swift */,
+				63A4AE5724E77D88004FA180 /* Pokemon-Objc-Bridging-Header.h */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +120,7 @@
 				TargetAttributes = {
 					63A4AE3624E76FA0004FA180 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -150,6 +164,7 @@
 				63A4AE3C24E76FA0004FA180 /* AppDelegate.m in Sources */,
 				63A4AE4D24E76FA1004FA180 /* main.m in Sources */,
 				63A4AE3F24E76FA0004FA180 /* SceneDelegate.m in Sources */,
+				63A4AE5924E77D88004FA180 /* PokemonAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 249LNXJ9HG;
 				INFOPLIST_FILE = "Pokemon-Objc/Info.plist";
@@ -298,6 +314,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chadparker.Pokemon-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokemon-Objc/Networking/Pokemon-Objc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -306,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 249LNXJ9HG;
 				INFOPLIST_FILE = "Pokemon-Objc/Info.plist";
@@ -315,6 +335,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chadparker.Pokemon-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pokemon-Objc/Networking/Pokemon-Objc-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
