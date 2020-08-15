@@ -3,3 +3,4 @@
 //
 
 #import "LSIPokemon.h"
+#import "LSIPokemonResults.h"
