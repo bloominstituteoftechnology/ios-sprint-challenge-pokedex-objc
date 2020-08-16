@@ -11,6 +11,11 @@
 
 @interface PokemonDetailViewController ()
 
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *abilitiesListLabel;
+@property (strong, nonatomic) IBOutlet UILabel *idNumberLabel;
+
 @end
 
 @implementation PokemonDetailViewController
