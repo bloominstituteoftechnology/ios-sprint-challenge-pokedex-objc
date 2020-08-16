@@ -31,4 +31,27 @@
     return [self initWithName:name url:urlString];
 }
 
+- (BOOL)updateWithDetailsData:(NSData *)data
+{
+    NSError *jsonError;
+    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+    
+    if (!dictionary) {
+        NSLog(@"Error decoding JSON: %@", jsonError);
+    }
+    
+    NSNumber *identifier = dictionary[@"id"];
+    if (![identifier isKindOfClass:NSNumber.class]) return nil;
+    
+    NSString *spriteURLString = dictionary[@"sprites"][@"front_default"];
+    if (![spriteURLString isKindOfClass:NSString.class]) return nil;
+    
+    // TODO: abilities
+    
+    self.spriteURLString = spriteURLString;
+    self.identifier = identifier;
+    
+    return true;
+}
+
 @end

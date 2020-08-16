@@ -15,11 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *urlString;
 @property (nonatomic, nullable) NSNumber *identifier;
-@property (nonatomic, nullable) NSMutableString *sprite;
+@property (nonatomic, nullable) NSString *spriteURLString;
 @property (nonatomic) NSMutableArray<NSString *> *abilities;
 
 - (instancetype)initWithName:(NSString *)name url:(NSString *)urlString;
 - (nullable instancetype)initFromDictionary:(NSDictionary *)dictionary;
+
+- (BOOL)updateWithDetailsData:(NSData *)data;
 
 @end
 
