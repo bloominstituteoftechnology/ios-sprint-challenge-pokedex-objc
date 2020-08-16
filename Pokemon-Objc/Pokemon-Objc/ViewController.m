@@ -11,23 +11,12 @@
 
 @interface ViewController ()
 
-@property (nonatomic) NSMutableArray<LSIPokemon *> *pokemonArray;
-
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.pokemonArray = [[NSMutableArray alloc] init];
-
-    [PokemonAPI.sharedController fetchAllPokemonWithCompletion:^(NSArray<LSIPokemon *> *pokemonArray, NSError *error) {
-        if (pokemonArray.count > 0) {
-            self.pokemonArray = [pokemonArray mutableCopy];
-            NSLog(@"Pokemon: %lu found", (unsigned long)self.pokemonArray.count);
-        }
-    }];
 }
 
 @end
