@@ -39,7 +39,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     
     LSIPokemon *pokemon = self.pokemonArray[indexPath.row];
-    cell.textLabel.text = pokemon.name;
+    cell.textLabel.text = [pokemon.name capitalizedString];
     
     return cell;
 }
