@@ -9,6 +9,7 @@
 #import "PokemonTableViewController.h"
 #import "Pokemon_Objc-Swift.h"
 #import "LSIPokemon.h"
+#import "PokemonDetailViewController.h"
 
 @interface PokemonTableViewController ()
 
@@ -45,8 +46,11 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"PokemonDetailSegue"]) {
+        PokemonDetailViewController *detailVC = segue.destinationViewController;
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        detailVC.pokemon = self.pokemonArray[selectedIndexPath.row];
+    }
 }
 
 @end

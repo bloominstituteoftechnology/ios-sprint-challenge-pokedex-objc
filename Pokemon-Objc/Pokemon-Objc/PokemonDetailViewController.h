@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class LSIPokemon;
+
 @interface PokemonDetailViewController : UIViewController
 
+@property (nonatomic) LSIPokemon *pokemon;
 
 @end
 
