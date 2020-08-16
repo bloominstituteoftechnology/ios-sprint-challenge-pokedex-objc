@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PokeDetailViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *pokemonImage;
+@property (weak, nonatomic) IBOutlet UILabel *pokemonNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pokemonIdLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pokemonAbilitiesLabel;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
