@@ -51,6 +51,17 @@ class PokemonAPI: NSObject {
     }
 
     @objc func fillInDetails(for pokemon: LSIPokemon) {
-        
+        let detailURL = baseURL.appendingPathComponent(pokemon.name)
+        URLSession.shared.dataTask(with: detailURL) { data, _, error in
+            guard error == nil else {
+                print("Error fetching data: \(error!)")
+                return
+            }
+            guard let data = data else {
+                print("Error: no data returned")
+                return
+            }
+            pokemon.update(withDetailsData: data)
+        }.resume()
     }
 }
