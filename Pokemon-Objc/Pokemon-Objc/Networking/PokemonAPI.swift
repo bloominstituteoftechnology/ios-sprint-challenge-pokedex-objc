@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum NetworkError: Error {
     case noData
@@ -62,6 +63,24 @@ class PokemonAPI: NSObject {
                 return
             }
             pokemon.update(withDetailsData: data)
+        }.resume()
+    }
+    
+    @objc func fetchImage(at urlString: String, completion: @escaping (UIImage?) -> Void) {
+        guard let url = URL(string: urlString) else {
+            completion(nil)
+            return
+        }
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            guard let data = data else {
+                completion(nil)
+                return
+            }
+            guard let image = UIImage(data: data) else {
+                completion(nil)
+                return
+            }
+            completion(image)
         }.resume()
     }
 }

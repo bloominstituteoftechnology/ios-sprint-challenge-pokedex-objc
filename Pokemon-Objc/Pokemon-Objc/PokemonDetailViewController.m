@@ -26,7 +26,7 @@ void *KVOContext = &KVOContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self clearViews];
+    [self clearLabels];
     
     if (self.pokemon) {
         [self updateViews];
@@ -35,9 +35,8 @@ void *KVOContext = &KVOContext;
     }
 }
 
-- (void)clearViews
+- (void)clearLabels
 {
-    self.imageView.image = nil;
     self.nameLabel.text = nil;
     self.abilitiesListLabel.text = nil;
     self.idNumberLabel.text = nil;
@@ -45,21 +44,30 @@ void *KVOContext = &KVOContext;
 
 - (void)updateViews
 {
-    self.nameLabel.text = [self.pokemon.name capitalizedString];
-    self.idNumberLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.identifier];
+    self.nameLabel.text = [self.pokemon.name capitalizedString] ?: @"";
+    self.idNumberLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.identifier] ?: @"";
+    // abilities
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
     if (context == KVOContext) {
-        NSLog(@"identifier: %@", self.pokemon.identifier);
-        NSLog(@"%@", self.pokemon.spriteURLString);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self updateViews];
+            [self fetchAndUpdateImage];
         });
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
+}
+
+- (void)fetchAndUpdateImage
+{
+    [PokemonAPI.sharedController fetchImageAt:self.pokemon.spriteURLString completion:^(UIImage * _Nullable image) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imageView.image = image;
+        });
+    }];
 }
 
 - (void)dealloc
