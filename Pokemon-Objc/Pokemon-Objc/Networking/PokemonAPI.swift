@@ -25,20 +25,28 @@ class PokemonAPI: NSObject {
         URLSession.shared.dataTask(with: baseURL) { data, _, error in
             guard error == nil else {
                 print("Error fetching data: \(error!)")
-                completion(nil, error!)
+                DispatchQueue.main.async {
+                    completion(nil, error!)
+                }
                 return
             }
             guard let data = data else {
                 print("Error: no data returned")
-                completion(nil, NetworkError.noData)
+                DispatchQueue.main.async {
+                    completion(nil, NetworkError.noData)
+                }
                 return
             }
             guard let results = LSIPokemonResults(from: data) else {
                 print("No pokemon results")
-                completion(nil, NetworkError.noDecode)
+                DispatchQueue.main.async {
+                    completion(nil, NetworkError.noDecode)
+                }
                 return
             }
-            completion(results.pokemonArray, nil)
+            DispatchQueue.main.async {
+                completion(results.pokemonArray, nil)
+            }
         }.resume()
     }
 
