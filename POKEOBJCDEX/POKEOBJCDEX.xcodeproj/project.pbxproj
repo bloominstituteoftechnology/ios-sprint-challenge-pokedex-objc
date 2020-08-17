@@ -16,6 +16,9 @@
 		50F85DE324EA0F5800FD4687 /* Manual-Reference-Counting.md in Resources */ = {isa = PBXBuildFile; fileRef = 50F85DE224EA0F5800FD4687 /* Manual-Reference-Counting.md */; };
 		50F85DE624EA138500FD4687 /* KRHPokemonListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F85DE524EA138500FD4687 /* KRHPokemonListTableViewController.m */; };
 		50F85DE924EA139A00FD4687 /* KRHPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F85DE824EA139A00FD4687 /* KRHPokemonDetailViewController.m */; };
+		50F85DED24EA144000FD4687 /* KRHPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F85DEC24EA144000FD4687 /* KRHPokemon.m */; };
+		50F85DF024EA150E00FD4687 /* PokemonResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F85DEF24EA150E00FD4687 /* PokemonResults.m */; };
+		50F85DF324EA158D00FD4687 /* KRHPokemonAbilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F85DF224EA158D00FD4687 /* KRHPokemonAbilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,12 @@
 		50F85DE524EA138500FD4687 /* KRHPokemonListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRHPokemonListTableViewController.m; sourceTree = "<group>"; };
 		50F85DE724EA139A00FD4687 /* KRHPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRHPokemonDetailViewController.h; sourceTree = "<group>"; };
 		50F85DE824EA139A00FD4687 /* KRHPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRHPokemonDetailViewController.m; sourceTree = "<group>"; };
+		50F85DEB24EA144000FD4687 /* KRHPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRHPokemon.h; sourceTree = "<group>"; };
+		50F85DEC24EA144000FD4687 /* KRHPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRHPokemon.m; sourceTree = "<group>"; };
+		50F85DEE24EA150E00FD4687 /* PokemonResults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonResults.h; sourceTree = "<group>"; };
+		50F85DEF24EA150E00FD4687 /* PokemonResults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonResults.m; sourceTree = "<group>"; };
+		50F85DF124EA158D00FD4687 /* KRHPokemonAbilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRHPokemonAbilities.h; sourceTree = "<group>"; };
+		50F85DF224EA158D00FD4687 /* KRHPokemonAbilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRHPokemonAbilities.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +86,12 @@
 				50F85DDA24EA0EDC00FD4687 /* Info.plist */,
 				50F85DDB24EA0EDC00FD4687 /* main.m */,
 				50F85DEA24EA13DD00FD4687 /* View Controllers */,
+				50F85DEB24EA144000FD4687 /* KRHPokemon.h */,
+				50F85DEC24EA144000FD4687 /* KRHPokemon.m */,
+				50F85DEE24EA150E00FD4687 /* PokemonResults.h */,
+				50F85DEF24EA150E00FD4687 /* PokemonResults.m */,
+				50F85DF124EA158D00FD4687 /* KRHPokemonAbilities.h */,
+				50F85DF224EA158D00FD4687 /* KRHPokemonAbilities.m */,
 			);
 			path = POKEOBJCDEX;
 			sourceTree = "<group>";
@@ -165,9 +180,12 @@
 			files = (
 				50F85DCB24EA0EDB00FD4687 /* AppDelegate.m in Sources */,
 				50F85DDC24EA0EDC00FD4687 /* main.m in Sources */,
+				50F85DF024EA150E00FD4687 /* PokemonResults.m in Sources */,
 				50F85DE924EA139A00FD4687 /* KRHPokemonDetailViewController.m in Sources */,
+				50F85DF324EA158D00FD4687 /* KRHPokemonAbilities.m in Sources */,
 				50F85DCE24EA0EDB00FD4687 /* SceneDelegate.m in Sources */,
 				50F85DE624EA138500FD4687 /* KRHPokemonListTableViewController.m in Sources */,
+				50F85DED24EA144000FD4687 /* KRHPokemon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
