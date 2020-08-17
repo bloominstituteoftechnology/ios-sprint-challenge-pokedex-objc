@@ -79,23 +79,14 @@
 			isa = PBXGroup;
 			children = (
 				50F85DE224EA0F5800FD4687 /* Manual-Reference-Counting.md */,
-				50F85DC924EA0EDB00FD4687 /* AppDelegate.h */,
-				50F85DCA24EA0EDB00FD4687 /* AppDelegate.m */,
-				50F85DCC24EA0EDB00FD4687 /* SceneDelegate.h */,
-				50F85DCD24EA0EDB00FD4687 /* SceneDelegate.m */,
-				50F85DD224EA0EDB00FD4687 /* Main.storyboard */,
+				50F85DF924EA1EB500FD4687 /* Resources */,
+				50F85DFA24EA1EC900FD4687 /* Storyboards */,
 				50F85DD524EA0EDC00FD4687 /* Assets.xcassets */,
-				50F85DD724EA0EDC00FD4687 /* LaunchScreen.storyboard */,
 				50F85DDA24EA0EDC00FD4687 /* Info.plist */,
 				50F85DDB24EA0EDC00FD4687 /* main.m */,
 				50F85DEA24EA13DD00FD4687 /* View Controllers */,
-				50F85DEB24EA144000FD4687 /* KRHPokemon.h */,
-				50F85DEC24EA144000FD4687 /* KRHPokemon.m */,
-				50F85DEE24EA150E00FD4687 /* PokemonResults.h */,
-				50F85DEF24EA150E00FD4687 /* PokemonResults.m */,
-				50F85DF124EA158D00FD4687 /* KRHPokemonAbilities.h */,
-				50F85DF224EA158D00FD4687 /* KRHPokemonAbilities.m */,
-				50F85DF524EA172500FD4687 /* PokemonAPI.swift */,
+				50F85DF724EA1E9800FD4687 /* Models */,
+				50F85DF824EA1EA600FD4687 /* Controller */,
 				50F85DF424EA172400FD4687 /* POKEOBJCDEX-Bridging-Header.h */,
 			);
 			path = POKEOBJCDEX;
@@ -110,6 +101,47 @@
 				50F85DE824EA139A00FD4687 /* KRHPokemonDetailViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		50F85DF724EA1E9800FD4687 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50F85DEB24EA144000FD4687 /* KRHPokemon.h */,
+				50F85DEC24EA144000FD4687 /* KRHPokemon.m */,
+				50F85DEE24EA150E00FD4687 /* PokemonResults.h */,
+				50F85DEF24EA150E00FD4687 /* PokemonResults.m */,
+				50F85DF124EA158D00FD4687 /* KRHPokemonAbilities.h */,
+				50F85DF224EA158D00FD4687 /* KRHPokemonAbilities.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50F85DF824EA1EA600FD4687 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				50F85DF524EA172500FD4687 /* PokemonAPI.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		50F85DF924EA1EB500FD4687 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				50F85DC924EA0EDB00FD4687 /* AppDelegate.h */,
+				50F85DCA24EA0EDB00FD4687 /* AppDelegate.m */,
+				50F85DCC24EA0EDB00FD4687 /* SceneDelegate.h */,
+				50F85DCD24EA0EDB00FD4687 /* SceneDelegate.m */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		50F85DFA24EA1EC900FD4687 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				50F85DD224EA0EDB00FD4687 /* Main.storyboard */,
+				50F85DD724EA0EDC00FD4687 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

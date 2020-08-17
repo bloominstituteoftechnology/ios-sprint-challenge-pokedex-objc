@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class KRHPokemon;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KRHPokemonListTableViewController : UITableViewController
+
+@property (nonatomic) NSArray<KRHPokemon *> *arrayOfPokemonNames;
 
 @end
 
