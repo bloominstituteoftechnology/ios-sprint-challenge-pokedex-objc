@@ -20,9 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @property(nonatomic, readonly, copy) NSString *name;
-@property(nonatomic, readonly, copy, nullable) NSString *identifier;
-@property(nonatomic, readonly, nullable) NSArray<NSString *> *abilities;
-@property(nonatomic, readonly, copy, nullable) NSString *urlString;
+@property(nonatomic, copy, nullable) NSString *identifier;
+@property(nonatomic, nullable) NSArray<NSString *> *abilities;
+@property(nonatomic, copy, nullable) NSString *urlString;
 
 @end
 
