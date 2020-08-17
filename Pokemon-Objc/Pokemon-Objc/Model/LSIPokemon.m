@@ -46,9 +46,18 @@
     NSString *spriteURLString = dictionary[@"sprites"][@"front_default"];
     if (![spriteURLString isKindOfClass:NSString.class]) return nil;
     
-    // TODO: abilities
+    NSArray *abilities = dictionary[@"abilities"];
+    if (![abilities isKindOfClass:NSArray.class]) return nil;
+    
+    NSMutableArray *abilityStrings = [[NSMutableArray alloc] init];
+    for (NSDictionary *ability in abilities) {
+        NSString *abilityName = ability[@"ability"][@"name"];
+        if (![abilityName isKindOfClass:NSString.class]) continue;
+        [abilityStrings addObject:abilityName];
+    }
     
     self.spriteURLString = spriteURLString;
+    self.abilities = abilityStrings;
     self.identifier = identifier;
     
     return true;

@@ -46,7 +46,7 @@ void *KVOContext = &KVOContext;
 {
     self.nameLabel.text = [self.pokemon.name capitalizedString] ?: @"";
     self.idNumberLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.identifier] ?: @"";
-    // abilities
+    self.abilitiesListLabel.text = [self.pokemon.abilities componentsJoinedByString:@"\n"];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
