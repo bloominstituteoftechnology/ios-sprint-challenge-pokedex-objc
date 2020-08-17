@@ -81,9 +81,7 @@
 				50F85DE224EA0F5800FD4687 /* Manual-Reference-Counting.md */,
 				50F85DF924EA1EB500FD4687 /* Resources */,
 				50F85DFA24EA1EC900FD4687 /* Storyboards */,
-				50F85DD524EA0EDC00FD4687 /* Assets.xcassets */,
 				50F85DDA24EA0EDC00FD4687 /* Info.plist */,
-				50F85DDB24EA0EDC00FD4687 /* main.m */,
 				50F85DEA24EA13DD00FD4687 /* View Controllers */,
 				50F85DF724EA1E9800FD4687 /* Models */,
 				50F85DF824EA1EA600FD4687 /* Controller */,
@@ -127,6 +125,8 @@
 		50F85DF924EA1EB500FD4687 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				50F85DDB24EA0EDC00FD4687 /* main.m */,
+				50F85DD524EA0EDC00FD4687 /* Assets.xcassets */,
 				50F85DC924EA0EDB00FD4687 /* AppDelegate.h */,
 				50F85DCA24EA0EDB00FD4687 /* AppDelegate.m */,
 				50F85DCC24EA0EDB00FD4687 /* SceneDelegate.h */,

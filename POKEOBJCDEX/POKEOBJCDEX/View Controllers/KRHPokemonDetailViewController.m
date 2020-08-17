@@ -23,6 +23,8 @@ void *KVOContext = &KVOContext;
 
 @implementation KRHPokemonDetailViewController
 
+#pragma mark - LifeCycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -32,12 +34,15 @@ void *KVOContext = &KVOContext;
     [self.pokemon addObserver:self forKeyPath:@"image" options:0 context:KVOContext];
 }
 
+
+#pragma mark - Functions
+
 -(void)updateViews {
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.title = self.pokemon.name;
+        self.title = self.pokemon.name.capitalizedString;
 
-        self.nameLabel.text = self.pokemon.name;
+        self.nameLabel.text = self.pokemon.name.capitalizedString;
         self.idLabel.text = [[NSString alloc] initWithFormat:@"%@", self.pokemon.identifier];
 
         NSString *stringOfAbilities = [self.pokemon.abilitiesArray componentsJoinedByString:@"\n"];
@@ -62,6 +67,8 @@ void *KVOContext = &KVOContext;
     
     [task resume];
 }
+
+#pragma mark - KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {

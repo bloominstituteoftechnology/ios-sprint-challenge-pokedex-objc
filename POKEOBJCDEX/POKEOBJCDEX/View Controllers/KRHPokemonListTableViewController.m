@@ -18,13 +18,15 @@
 
 @implementation KRHPokemonListTableViewController
 
+#pragma mark - LifeCycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
         
     [self updateViews];
-    
 }
 
+#pragma mark - Functions
 -(void)updateViews {
     
     [PokemonAPI.sharedController fetchAllPokemonsWithCompletion:^(NSArray<KRHPokemon *> * pokemon, NSError * error) {
@@ -77,7 +79,6 @@
         [PokemonAPI.sharedController fillInDetailsFor:selectedPokemon];
 
         destinationVC.pokemon = selectedPokemon;
-
     }
 }
 
