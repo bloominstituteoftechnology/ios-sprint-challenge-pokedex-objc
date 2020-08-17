@@ -14,6 +14,7 @@
 		50F85DD624EA0EDC00FD4687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50F85DD524EA0EDC00FD4687 /* Assets.xcassets */; };
 		50F85DD924EA0EDC00FD4687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F85DD724EA0EDC00FD4687 /* LaunchScreen.storyboard */; };
 		50F85DDC24EA0EDC00FD4687 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F85DDB24EA0EDC00FD4687 /* main.m */; };
+		50F85DE324EA0F5800FD4687 /* Manual-Reference-Counting.md in Resources */ = {isa = PBXBuildFile; fileRef = 50F85DE224EA0F5800FD4687 /* Manual-Reference-Counting.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		50F85DD824EA0EDC00FD4687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50F85DDA24EA0EDC00FD4687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50F85DDB24EA0EDC00FD4687 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		50F85DE224EA0F5800FD4687 /* Manual-Reference-Counting.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "Manual-Reference-Counting.md"; path = "../../Manual-Reference-Counting.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		50F85DC824EA0EDB00FD4687 /* POKEOBJCDEX */ = {
 			isa = PBXGroup;
 			children = (
+				50F85DE224EA0F5800FD4687 /* Manual-Reference-Counting.md */,
 				50F85DC924EA0EDB00FD4687 /* AppDelegate.h */,
 				50F85DCA24EA0EDB00FD4687 /* AppDelegate.m */,
 				50F85DCC24EA0EDB00FD4687 /* SceneDelegate.h */,
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50F85DD924EA0EDC00FD4687 /* LaunchScreen.storyboard in Resources */,
+				50F85DE324EA0F5800FD4687 /* Manual-Reference-Counting.md in Resources */,
 				50F85DD624EA0EDC00FD4687 /* Assets.xcassets in Resources */,
 				50F85DD424EA0EDB00FD4687 /* Main.storyboard in Resources */,
 			);
