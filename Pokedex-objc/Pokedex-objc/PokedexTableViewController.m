@@ -8,6 +8,7 @@
 
 #import "PokedexTableViewController.h"
 #import "Pokedex_objc-Swift.h"
+#import "MKMPokemon.h"
 
 @interface PokedexTableViewController ()
 
@@ -18,8 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [MKMPokemonAPI.sharedController fetchAllPokemon:^(NSArray<MKMPokemon *> *pokemon, NSError *error) {
-        
+    [MKMPokemonAPI.sharedController fetchAllPokemon:^(NSArray<MKMPokemon *> *pokemons, NSError *error) {
+        for (MKMPokemon *pokemon in pokemons) {
+            NSLog(@"Pokemon Names: %@, url: %@", pokemon.name, pokemon.url);
+        }
     }];
 }
 

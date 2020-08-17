@@ -11,17 +11,11 @@
 @implementation MKMPokemon
 
 - (instancetype)initWithName:(NSString *)name
-                  identifier:(int)identifier
                          url:(NSString *)url
-                   abilities:(NSArray *)abilities
-                     sprites:(NSString *)sprites
 {
     if (self = [super init]) {
         _name = name.copy;
-        _identifier = identifier;
         _url = url.copy;
-        _abilities = abilities;
-        _sprites = sprites.copy;
     }
     return self;
 }
@@ -35,10 +29,7 @@
     if (![url isKindOfClass:NSString.class]) return nil;
     
     return [self initWithName:name
-                   identifier:0
-                          url:url
-                    abilities:nil
-                      sprites:nil];
+                          url:url];
 }
 
 @end

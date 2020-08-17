@@ -16,6 +16,14 @@ enum NetworkError: Error {
     case noEncode
     case noRep
     case noURL
+    case noDictionary
+}
+
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+    case put = "PUT"
+    case delete = "DELETE"
 }
 
 @objc (MKMPokemonAPI)
@@ -35,7 +43,41 @@ class PokemonAPI: NSObject {
             return
         }
         
-        print(requestURL)
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.get.rawValue
         
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
+            
+            guard error == nil else {
+                print("Error creating DataTask")
+                completion(nil, NetworkError.otherError)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil, NetworkError.noData)
+                return
+            }
+            
+            do {
+                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else {
+                    throw NetworkError.noDictionary
+                }
+                
+                guard let pokemonDictionaries = dictionary["results"] as? [[String : Any]] else {
+                    throw NetworkError.noDecode
+                }
+                
+                let pokemon = pokemonDictionaries.compactMap{ MKMPokemon(dictionary: $0) }
+                DispatchQueue.main.async {
+                    completion(pokemon, nil)
+                }
+            } catch {
+                completion(nil, NetworkError.noDecode)
+                return
+            }
+            
+        }
+        dataTask.resume()
     }
 }
