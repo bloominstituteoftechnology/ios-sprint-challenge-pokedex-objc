@@ -7,6 +7,9 @@
 //
 
 #import "PokemonDetailViewController.h"
+#import "PokedexObjC-Swift.h"
+
+void *KVOContext = &KVOContext;
 
 @interface PokemonDetailViewController ()
 
@@ -21,7 +24,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.pokemon addObserver:self forKeyPath:@"urlString" options:0 context:KVOContext];
+    [PokemonController.sharedController fillInDetailsFor:self.pokemon];
+}
+
+- (void)updateViews
+{
+    if (self.pokemon.urlString) {
+        self.nameLabel.text = self.pokemon.name;
+        self.idLabel.text = self.pokemon.identifier;
+        self.abilitiesLabel.text = [self.pokemon.abilities componentsJoinedByString:@", "];
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (context == KVOContext) {
+        if ([keyPath isEqualToString:@"urlString"]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self updateViews];
+            });
+        }
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
+- (void)dealloc
+{
+    [self.pokemon removeObserver:self forKeyPath:@"urlString" context:KVOContext];
 }
 
 /*
