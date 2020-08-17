@@ -25,10 +25,33 @@ Answer the following questions inline with this document.
 
 	printf("Word frequency: %s", wordFrequency.description.UTF8String);
 	```
+	
+	- punctuationSet is retained but never released.
+	- wordFrequency is initiated but never released.
+	- the else statement where a number count is initiated but never released.
 
 	2. Rewrite the code so that it does not leak any memory with ARC disabled
+	
+	NSCharacterSet *punctuationSet = [[NSCharacterSet punctuationCharacterSet] autoRelease];
+
+	NSString *cleanQuote = [[quote componentsSeparatedByCharactersInSet:punctuationSet] componentsJoinedByString:@""];
+	NSArray *words = [[cleanQuote lowercaseString] componentsSeparatedByString:@" "];
+
+	NSMutableDictionary<NSString *, NSNumber *> *wordFrequency = [[[NSMutableDictionary alloc] init] autoRelease];
+
+	for (NSString *word in words) {
+		NSNumber *count = wordFrequency[word];
+		if (count) {
+			wordFrequency[word] = [NSNumber numberWithInteger:count.integerValue + 1];
+		} else {
+			wordFrequency[word] = [[[NSNumber alloc] initWithInteger:1] autoRelease];
+		}
+	}
 
 2. Which of these objects is autoreleased?  Why?
+
+Number 1. The object yesterday is initialized using a convenience init what autoreleases. 
+Number 6. There is a call after the object is initialized to autorelease and release the memory location once the reference count gets to 0.
 
 	1. `NSDate *yesterday = [NSDate date];`
 	
@@ -44,6 +67,7 @@ Answer the following questions inline with this document.
 
 3. Explain when you need to use the `NSAutoreleasePool`.
 
+If you're iterating over a loop many times, instead of calling autorelease after each run through you would use an 'AutoreleasePool'
 
 4. Implement a convenience `class` method to create a `LSIPerson` object that takes a `name` property and returns an autoreleased object.
 
@@ -53,6 +77,16 @@ Answer the following questions inline with this document.
 @property (nonatomic, copy) NSString *name;
 
 - (instancetype)initWithName:(NSString *)name;
++ (instancetype)initPersonWithName:(NSString *)name;
+
+@end
+
+@implementation Person
+
++ (instancetype)initPersonWithName:(NSString *)name
+{
+	return LSIPerson *person = [[[self alloc] initWithName:name] autoRelease];
+}
 
 @end
 ```
