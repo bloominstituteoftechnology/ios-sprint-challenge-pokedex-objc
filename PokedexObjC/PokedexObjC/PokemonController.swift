@@ -68,6 +68,47 @@ class PokemonController: NSObject {
     }
 
     @objc func fillInDetails(for pokemon: SMAPokemon) {
+        guard let pokemonURL = URL(string: pokemon.urlString!) else { return }
         
+        URLSession.shared.dataTask(with: pokemonURL) { (data, response, error) in
+            if let error = error {
+                NSLog("error fetching pokemon detail: \(error)")
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+                NSLog("bad response while fetching pokemon detail: \(response)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("No data returned from fetching pokemon detail")
+                return
+            }
+            
+            guard let dictionary = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as? [String : Any] else {
+                NSLog("error converting json to dictionary for pokemon detail")
+                return
+            }
+            
+            pokemon.identifier = dictionary["id"] as? String
+            
+            var abilities = [String]()
+            guard let abilitiesDictionary = dictionary["abilities"] as? [[String : Any]] else { return }
+            
+            for item in abilitiesDictionary {
+                if let abilityDictionary = item["ability"] as? [String : String] {
+                    if let ability = abilityDictionary["name"] {
+                        abilities.append(ability)
+                    }
+                }
+            }
+            
+            pokemon.abilities = abilities
+            
+            guard let spriteDictionary = dictionary["sprites"] as? [String : Any] else { return }
+            pokemon.urlString = spriteDictionary["front_default"] as? String
+            
+        }.resume()
     }
 }
