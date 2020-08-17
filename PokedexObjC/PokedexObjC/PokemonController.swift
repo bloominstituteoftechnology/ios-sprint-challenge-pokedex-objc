@@ -91,7 +91,9 @@ class PokemonController: NSObject {
                 return
             }
             
-            pokemon.identifier = dictionary["id"] as? String
+            let identifier = dictionary["id"] as? Int
+            let identifierString = "\(identifier ?? 0)"
+            pokemon.identifier = identifierString
             
             var abilities = [String]()
             guard let abilitiesDictionary = dictionary["abilities"] as? [[String : Any]] else { return }
