@@ -15,6 +15,7 @@
 		C9B1074C24EA1340008D6A08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B1074B24EA1340008D6A08 /* main.m */; };
 		C9B1075424EA1493008D6A08 /* PokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B1075324EA1493008D6A08 /* PokedexTableViewController.m */; };
 		C9B1075724EA14EC008D6A08 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B1075624EA14EC008D6A08 /* DetailViewController.m */; };
+		C9B1075A24EA175C008D6A08 /* MKMPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B1075924EA175C008D6A08 /* MKMPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		C9B1075324EA1493008D6A08 /* PokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokedexTableViewController.m; sourceTree = "<group>"; };
 		C9B1075524EA14EC008D6A08 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		C9B1075624EA14EC008D6A08 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C9B1075824EA175C008D6A08 /* MKMPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKMPokemon.h; sourceTree = "<group>"; };
+		C9B1075924EA175C008D6A08 /* MKMPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKMPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				C9B1075324EA1493008D6A08 /* PokedexTableViewController.m */,
 				C9B1075524EA14EC008D6A08 /* DetailViewController.h */,
 				C9B1075624EA14EC008D6A08 /* DetailViewController.m */,
+				C9B1075824EA175C008D6A08 /* MKMPokemon.h */,
+				C9B1075924EA175C008D6A08 /* MKMPokemon.m */,
 			);
 			path = "Pokedex-objc";
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				C9B1074C24EA1340008D6A08 /* main.m in Sources */,
 				C9B1075424EA1493008D6A08 /* PokedexTableViewController.m in Sources */,
 				C9B1073E24EA133A008D6A08 /* SceneDelegate.m in Sources */,
+				C9B1075A24EA175C008D6A08 /* MKMPokemon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
