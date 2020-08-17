@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		50F85DCB24EA0EDB00FD4687 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F85DCA24EA0EDB00FD4687 /* AppDelegate.m */; };
 		50F85DCE24EA0EDB00FD4687 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F85DCD24EA0EDB00FD4687 /* SceneDelegate.m */; };
-		50F85DD124EA0EDB00FD4687 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F85DD024EA0EDB00FD4687 /* ViewController.m */; };
 		50F85DD424EA0EDB00FD4687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F85DD224EA0EDB00FD4687 /* Main.storyboard */; };
 		50F85DD624EA0EDC00FD4687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50F85DD524EA0EDC00FD4687 /* Assets.xcassets */; };
 		50F85DD924EA0EDC00FD4687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F85DD724EA0EDC00FD4687 /* LaunchScreen.storyboard */; };
 		50F85DDC24EA0EDC00FD4687 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F85DDB24EA0EDC00FD4687 /* main.m */; };
 		50F85DE324EA0F5800FD4687 /* Manual-Reference-Counting.md in Resources */ = {isa = PBXBuildFile; fileRef = 50F85DE224EA0F5800FD4687 /* Manual-Reference-Counting.md */; };
+		50F85DE624EA138500FD4687 /* KRHPokemonListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F85DE524EA138500FD4687 /* KRHPokemonListTableViewController.m */; };
+		50F85DE924EA139A00FD4687 /* KRHPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F85DE824EA139A00FD4687 /* KRHPokemonDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,14 +24,16 @@
 		50F85DCA24EA0EDB00FD4687 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		50F85DCC24EA0EDB00FD4687 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		50F85DCD24EA0EDB00FD4687 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		50F85DCF24EA0EDB00FD4687 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		50F85DD024EA0EDB00FD4687 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		50F85DD324EA0EDB00FD4687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50F85DD524EA0EDC00FD4687 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50F85DD824EA0EDC00FD4687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50F85DDA24EA0EDC00FD4687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50F85DDB24EA0EDC00FD4687 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		50F85DE224EA0F5800FD4687 /* Manual-Reference-Counting.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "Manual-Reference-Counting.md"; path = "../../Manual-Reference-Counting.md"; sourceTree = "<group>"; };
+		50F85DE424EA138500FD4687 /* KRHPokemonListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRHPokemonListTableViewController.h; sourceTree = "<group>"; };
+		50F85DE524EA138500FD4687 /* KRHPokemonListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRHPokemonListTableViewController.m; sourceTree = "<group>"; };
+		50F85DE724EA139A00FD4687 /* KRHPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRHPokemonDetailViewController.h; sourceTree = "<group>"; };
+		50F85DE824EA139A00FD4687 /* KRHPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KRHPokemonDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,15 +71,25 @@
 				50F85DCA24EA0EDB00FD4687 /* AppDelegate.m */,
 				50F85DCC24EA0EDB00FD4687 /* SceneDelegate.h */,
 				50F85DCD24EA0EDB00FD4687 /* SceneDelegate.m */,
-				50F85DCF24EA0EDB00FD4687 /* ViewController.h */,
-				50F85DD024EA0EDB00FD4687 /* ViewController.m */,
 				50F85DD224EA0EDB00FD4687 /* Main.storyboard */,
 				50F85DD524EA0EDC00FD4687 /* Assets.xcassets */,
 				50F85DD724EA0EDC00FD4687 /* LaunchScreen.storyboard */,
 				50F85DDA24EA0EDC00FD4687 /* Info.plist */,
 				50F85DDB24EA0EDC00FD4687 /* main.m */,
+				50F85DEA24EA13DD00FD4687 /* View Controllers */,
 			);
 			path = POKEOBJCDEX;
+			sourceTree = "<group>";
+		};
+		50F85DEA24EA13DD00FD4687 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				50F85DE424EA138500FD4687 /* KRHPokemonListTableViewController.h */,
+				50F85DE524EA138500FD4687 /* KRHPokemonListTableViewController.m */,
+				50F85DE724EA139A00FD4687 /* KRHPokemonDetailViewController.h */,
+				50F85DE824EA139A00FD4687 /* KRHPokemonDetailViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,10 +163,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50F85DD124EA0EDB00FD4687 /* ViewController.m in Sources */,
 				50F85DCB24EA0EDB00FD4687 /* AppDelegate.m in Sources */,
 				50F85DDC24EA0EDC00FD4687 /* main.m in Sources */,
+				50F85DE924EA139A00FD4687 /* KRHPokemonDetailViewController.m in Sources */,
 				50F85DCE24EA0EDB00FD4687 /* SceneDelegate.m in Sources */,
+				50F85DE624EA138500FD4687 /* KRHPokemonListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
