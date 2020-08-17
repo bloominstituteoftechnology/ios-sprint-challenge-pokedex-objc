@@ -15,6 +15,7 @@
 		66F7333B24EA12CE009FF9C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F7333A24EA12CE009FF9C3 /* main.m */; };
 		66F7334324EA13FC009FF9C3 /* PokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F7334224EA13FC009FF9C3 /* PokemonTableViewController.m */; };
 		66F7334624EA140D009FF9C3 /* PokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F7334524EA140D009FF9C3 /* PokemonDetailViewController.m */; };
+		66F7334924EA14AC009FF9C3 /* SMAPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F7334824EA14AC009FF9C3 /* SMAPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		66F7334224EA13FC009FF9C3 /* PokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonTableViewController.m; sourceTree = "<group>"; };
 		66F7334424EA140D009FF9C3 /* PokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonDetailViewController.h; sourceTree = "<group>"; };
 		66F7334524EA140D009FF9C3 /* PokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonDetailViewController.m; sourceTree = "<group>"; };
+		66F7334724EA14AC009FF9C3 /* SMAPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMAPokemon.h; sourceTree = "<group>"; };
+		66F7334824EA14AC009FF9C3 /* SMAPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMAPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 				66F7332B24EA12CC009FF9C3 /* SceneDelegate.h */,
 				66F7332C24EA12CC009FF9C3 /* SceneDelegate.m */,
 				66F7333124EA12CC009FF9C3 /* Main.storyboard */,
+				66F7334724EA14AC009FF9C3 /* SMAPokemon.h */,
+				66F7334824EA14AC009FF9C3 /* SMAPokemon.m */,
 				66F7334124EA13FC009FF9C3 /* PokemonTableViewController.h */,
 				66F7334224EA13FC009FF9C3 /* PokemonTableViewController.m */,
 				66F7334424EA140D009FF9C3 /* PokemonDetailViewController.h */,
@@ -154,6 +159,7 @@
 				66F7332A24EA12CC009FF9C3 /* AppDelegate.m in Sources */,
 				66F7333B24EA12CE009FF9C3 /* main.m in Sources */,
 				66F7334624EA140D009FF9C3 /* PokemonDetailViewController.m in Sources */,
+				66F7334924EA14AC009FF9C3 /* SMAPokemon.m in Sources */,
 				66F7332D24EA12CC009FF9C3 /* SceneDelegate.m in Sources */,
 				66F7334324EA13FC009FF9C3 /* PokemonTableViewController.m in Sources */,
 			);
