@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PokedexTableViewController : UITableViewController
 
+@property (nonatomic) NSArray *pokemons;
+
 @end
 
 NS_ASSUME_NONNULL_END
