@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Ufu-VS-uqc" kind="show" id="Py4-dD-fzC"/>
+                                    <segue destination="Ufu-VS-uqc" kind="show" identifier="ShowPokemonDetailSegue" id="Py4-dD-fzC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
