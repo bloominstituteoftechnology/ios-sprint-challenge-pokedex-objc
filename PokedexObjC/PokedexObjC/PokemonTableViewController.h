@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PokemonTableViewController.h
 //  PokedexObjC
 //
 //  Created by Sean Acres on 8/16/20.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface PokemonTableViewController : UITableViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
