@@ -20,9 +20,9 @@
     [super viewDidLoad];
     
     [MKMPokemonAPI.sharedController fetchAllPokemon:^(NSArray<MKMPokemon *> *pokemons, NSError *error) {
-        for (MKMPokemon *pokemon in pokemons) {
-            NSLog(@"Pokemon Names: %@, url: %@", pokemon.name, pokemon.url);
-        }
+        self.pokemons = pokemons;
+        
+        [self.tableView reloadData];
     }];
 }
 
@@ -35,7 +35,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    MKMPokemon *pokemon = self.pokemons[indexPath.row];
+    cell.textLabel.text = pokemon.name;
     
     return cell;
 }
