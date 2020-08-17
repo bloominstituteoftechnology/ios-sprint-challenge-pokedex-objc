@@ -6,7 +6,7 @@
 //  Copyright © 2020 Matthew Martindale. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum NetworkError: Error {
     case noIdentifier
@@ -134,6 +134,39 @@ class PokemonAPI: NSObject {
             
         }
         
+        dataTask.resume()
+    }
+    
+    @objc func fetchImage(url: String, completion: @escaping (UIImage?, Error?) -> Void) {
+        
+        guard let imageURL = URL(string: url) else { return }
+        
+        var requestURL = URLRequest(url: imageURL)
+        requestURL.httpMethod = HTTPMethod.get.rawValue
+        
+        let dataTask = URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+            
+            guard error == nil else {
+                print("Error fetching pokemon image")
+                completion(nil, NetworkError.otherError)
+                return
+            }
+            
+            guard let data = data else {
+                print("Error: No data getting pokemon image")
+                completion(nil, NetworkError.noData)
+                return
+            }
+            
+            guard let imageData = UIImage(data: data) else {
+                print("Error: bad data getting pokemon image")
+                completion(nil, NetworkError.badData)
+                return
+            }
+            
+            completion(imageData, nil)
+            
+        }
         dataTask.resume()
     }
     

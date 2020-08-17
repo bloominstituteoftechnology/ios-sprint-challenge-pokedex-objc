@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+void *KVOContext = &KVOContext;
 
 @interface DetailViewController ()
 
@@ -21,7 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [MKMPokemonAPI.sharedController fillInDetails:self.pokemon];
+    [self.pokemon addObserver:self forKeyPath:@"identifier" options:0 context:KVOContext];
+    [self.pokemon addObserver:self forKeyPath:@"abilities" options:0 context:KVOContext];
+    [self.pokemon addObserver:self forKeyPath:@"sprite" options:0 context:KVOContext];
 }
+
+
 
 @end

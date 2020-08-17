@@ -9,6 +9,7 @@
 #import "PokedexTableViewController.h"
 #import "Pokedex_objc-Swift.h"
 #import "MKMPokemon.h"
+#import "DetailViewController.h"
 
 @interface PokedexTableViewController ()
 
@@ -39,6 +40,15 @@
     cell.textLabel.text = pokemon.name;
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"DetailSegue"]) {
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        DetailViewController *detailVC = (DetailViewController *)segue.destinationViewController;
+        detailVC.pokemon = self.pokemons[selectedIndexPath.row];
+    }
 }
 
 @end
