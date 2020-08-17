@@ -35,6 +35,7 @@ void *KVOContext = &KVOContext;
         self.nameLabel.text = self.pokemon.name;
         self.idLabel.text = self.pokemon.identifier;
         self.abilitiesLabel.text = [self.pokemon.abilities componentsJoinedByString:@", "];
+        [self setImageForURLString:self.pokemon.urlString];
     }
 }
 
@@ -54,6 +55,23 @@ void *KVOContext = &KVOContext;
 - (void)dealloc
 {
     [self.pokemon removeObserver:self forKeyPath:@"urlString" context:KVOContext];
+}
+
+- (void)setImageForURLString:(NSString *)urlString
+{
+    NSURL *imageURL = [NSURL URLWithString:urlString];
+    [[NSURLSession.sharedSession dataTaskWithURL:imageURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"error fetching image data: %@", error);
+            return;
+        }
+        
+        if (data) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.imageView.image = [UIImage imageWithData:data];
+            });
+        }
+    }] resume];
 }
 
 /*
