@@ -66,7 +66,7 @@ class PokemonController: NSObject {
     }
 
     @objc func fetchPokemonDetails(pokemon: JMCPokemon) {
-        let urlComponents = URLComponents(url: baseURL.appendingPathComponent(pokemon.name!), resolvingAgainstBaseURL: true)
+        var urlComponents = URLComponents(url: baseURL.appendingPathComponent(pokemon.name!), resolvingAgainstBaseURL: true)
 
         guard let requestURL = urlComponents?.url else { NSLog("requestURL is nil"); return }
         var request = URLRequest(url: requestURL)

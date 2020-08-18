@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C39B4B7B24E77C5700CEB6BA /* JMCPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = C39B4B7A24E77C5700CEB6BA /* JMCPokemon.m */; };
 		C39B4B7E24E781E400CEB6BA /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39B4B7D24E781E400CEB6BA /* PokemonController.swift */; };
+		C39B4B8124E7887100CEB6BA /* JMCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C39B4B8024E7887100CEB6BA /* JMCTableViewController.m */; };
+		C39B4B8424E7888400CEB6BA /* JMCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C39B4B8324E7888400CEB6BA /* JMCDetailViewController.m */; };
 		C3A4798124E76CEB0072DCDA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A4798024E76CEB0072DCDA /* AppDelegate.m */; };
 		C3A4798424E76CEB0072DCDA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A4798324E76CEB0072DCDA /* SceneDelegate.m */; };
 		C3A4798A24E76CEB0072DCDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A4798824E76CEB0072DCDA /* Main.storyboard */; };
@@ -20,8 +22,12 @@
 /* Begin PBXFileReference section */
 		C39B4B7924E77C5700CEB6BA /* JMCPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMCPokemon.h; sourceTree = "<group>"; };
 		C39B4B7A24E77C5700CEB6BA /* JMCPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMCPokemon.m; sourceTree = "<group>"; };
-		C39B4B7C24E781E300CEB6BA /* Pokedex Objc C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex Objc C-Bridging-Header.h"; sourceTree = "<group>"; };
+		C39B4B7C24E781E300CEB6BA /* Pokedex_Objc_C_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pokedex_Objc_C_Bridging_Header.h; sourceTree = "<group>"; };
 		C39B4B7D24E781E400CEB6BA /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
+		C39B4B7F24E7887100CEB6BA /* JMCTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMCTableViewController.h; sourceTree = "<group>"; };
+		C39B4B8024E7887100CEB6BA /* JMCTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMCTableViewController.m; sourceTree = "<group>"; };
+		C39B4B8224E7888400CEB6BA /* JMCDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMCDetailViewController.h; sourceTree = "<group>"; };
+		C39B4B8324E7888400CEB6BA /* JMCDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMCDetailViewController.m; sourceTree = "<group>"; };
 		C3A4797C24E76CEB0072DCDA /* Pokedex Objc C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex Objc C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A4797F24E76CEB0072DCDA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C3A4798024E76CEB0072DCDA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +96,10 @@
 		C3A4799924E776D40072DCDA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C39B4B7F24E7887100CEB6BA /* JMCTableViewController.h */,
+				C39B4B8024E7887100CEB6BA /* JMCTableViewController.m */,
+				C39B4B8224E7888400CEB6BA /* JMCDetailViewController.h */,
+				C39B4B8324E7888400CEB6BA /* JMCDetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -107,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				C39B4B7D24E781E400CEB6BA /* PokemonController.swift */,
-				C39B4B7C24E781E300CEB6BA /* Pokedex Objc C-Bridging-Header.h */,
+				C39B4B7C24E781E300CEB6BA /* Pokedex_Objc_C_Bridging_Header.h */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -193,6 +203,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C39B4B8424E7888400CEB6BA /* JMCDetailViewController.m in Sources */,
+				C39B4B8124E7887100CEB6BA /* JMCTableViewController.m in Sources */,
 				C3A4798124E76CEB0072DCDA /* AppDelegate.m in Sources */,
 				C3A4799224E76CEC0072DCDA /* main.m in Sources */,
 				C39B4B7B24E77C5700CEB6BA /* JMCPokemon.m in Sources */,
@@ -338,9 +350,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6LFYUX3T4B;
+				DEVELOPMENT_TEAM = 39WA4QS927;
 				INFOPLIST_FILE = "Pokedex Objc C/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -348,7 +360,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jcdev.Pokedex-Objc-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jarrencampos/Development/Unit_6/3. Advanced Obj-C /ios-sprint-challenge-pokedex-objc/Pokedex Objc C/Pokedex Objc C/Controllers/Pokedex Objc C-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jarrencampos/Development/Unit_6/3. Advanced Obj-C /ios-sprint-challenge-pokedex-objc/Pokedex Objc C/Pokedex Objc C/Controllers/Pokedex_Objc_C_Bridging_Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -360,9 +372,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6LFYUX3T4B;
+				DEVELOPMENT_TEAM = 39WA4QS927;
 				INFOPLIST_FILE = "Pokedex Objc C/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -370,7 +382,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jcdev.Pokedex-Objc-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jarrencampos/Development/Unit_6/3. Advanced Obj-C /ios-sprint-challenge-pokedex-objc/Pokedex Objc C/Pokedex Objc C/Controllers/Pokedex Objc C-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jarrencampos/Development/Unit_6/3. Advanced Obj-C /ios-sprint-challenge-pokedex-objc/Pokedex Objc C/Pokedex Objc C/Controllers/Pokedex_Objc_C_Bridging_Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

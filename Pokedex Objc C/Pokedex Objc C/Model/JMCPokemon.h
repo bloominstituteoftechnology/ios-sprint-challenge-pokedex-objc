@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface JMCPokemon : NSObject
 
@@ -17,15 +16,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int id;
 @property (nonatomic, copy, nullable) NSArray *abilities;
 @property (nonatomic, copy, nullable) NSString *url;
+@property (nonatomic, copy, nullable) NSArray *type;
 
 - (nonnull instancetype)initWithName:(nullable NSString *)name
                               sprite:(nullable NSString *)sprite
                                  url:(nullable NSString *)url
                                   id:(int)id
-                           abilities:(nullable NSArray *)abilities;
+                           abilities:(nullable NSArray *)abilities
+                                type:(nullable NSArray *)types;
+
 
 - (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
 
 @end
 
-NS_ASSUME_NONNULL_END

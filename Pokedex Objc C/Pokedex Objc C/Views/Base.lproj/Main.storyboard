@@ -10,7 +10,7 @@
         <!--Pokedex-->
         <scene sceneID="NN5-93-kSg">
             <objects>
-                <tableViewController id="WxD-5K-5tt" sceneMemberID="viewController">
+                <tableViewController id="WxD-5K-5tt" customClass="JMCTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9vu-Nl-gRk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="wZW-mI-d71" kind="show" id="1CM-o0-Xib"/>
+                                    <segue destination="wZW-mI-d71" kind="show" identifier="toDetailVC" id="1CM-o0-Xib"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -51,7 +51,7 @@
         <!--Pokemon-->
         <scene sceneID="ZaV-fq-911">
             <objects>
-                <viewController id="wZW-mI-d71" sceneMemberID="viewController">
+                <viewController id="wZW-mI-d71" customClass="JMCDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0aK-eR-sMF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,6 +135,12 @@
                         <viewLayoutGuide key="safeArea" id="ycN-jY-cbu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pokemon" id="4iw-O2-jxP"/>
+                    <connections>
+                        <outlet property="pokemonID" destination="DXs-Eg-ojk" id="wVM-t4-cy9"/>
+                        <outlet property="pokemonImage" destination="bq8-KU-1XR" id="Op4-Nm-SV0"/>
+                        <outlet property="pokemonName" destination="H8a-UL-K72" id="0gr-kW-dw2"/>
+                        <outlet property="pokemonType" destination="dfa-qN-VP5" id="0Yx-on-3Y4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="peo-Zy-Mp5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
