@@ -13,6 +13,7 @@ Answer the following questions inline with this document.
 	NSArray *words = [[cleanQuote lowercaseString] componentsSeparatedByString:@" "];
 
 	NSMutableDictionary<NSString *, NSNumber *> *wordFrequency = [[NSMutableDictionary alloc] init];
+    // This mutable Dictionary is going to cause memory leaks because it wasn't autoreleased.
 
 	for (NSString *word in words) {
 		NSNumber *count = wordFrequency[word];
@@ -30,19 +31,19 @@ Answer the following questions inline with this document.
 
 2. Which of these objects is autoreleased?  Why?
 
-	1. `NSDate *yesterday = [NSDate date];`
+1. `NSDate *yesterday = [NSDate date];` - Not autoreleased;
 	
-	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];`
+	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];` autoreleased;
 	
-	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];`
+	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];`autoreleased;
 	
-	4. `NSDate *food = [NSDate new];`
+	4. `NSDate *food = [NSDate new];` autoreleased;
 	
-	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];`
+	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];` autoreleased;
 	
-	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];`
+	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];` autoreleased;
 
-3. Explain when you need to use the `NSAutoreleasePool`.
+3. Explain when you need to use the `NSAutoreleasePool`. // It's the method that releases objects from memory when the pool of objects are deallocated. 
 
 
 4. Implement a convenience `class` method to create a `LSIPerson` object that takes a `name` property and returns an autoreleased object.
@@ -53,6 +54,8 @@ Answer the following questions inline with this document.
 @property (nonatomic, copy) NSString *name;
 
 - (instancetype)initWithName:(NSString *)name;
+
++ ([LSIPErson[autorelease]])addName(NSString *name);
 
 @end
 ```

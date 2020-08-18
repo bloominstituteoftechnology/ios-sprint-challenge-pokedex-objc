@@ -8,6 +8,16 @@
 
 #import "Pokemon.h"
 
+@interface Pokemon() {
+    NSMutableArray<Pokemon *> *_internalPokemon;
+}
+@end
+
 @implementation Pokemon
+
+- (instancetype)
+{
+
+}
 
 @end

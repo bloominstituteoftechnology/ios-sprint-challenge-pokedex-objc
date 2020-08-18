@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PokemonController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PokeListTableViewController : UITableViewController
+
+@property (nonatomic) PokemonController *pokemonController;
 
 @end
 

@@ -7,6 +7,7 @@
 //
 
 #import "PokeListTableViewController.h"
+#import "PokemonController.h"
 
 @interface PokeListTableViewController ()
 
@@ -26,25 +27,22 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.pokemonController.pokemon.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokeCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    Pokemon *pokemonList = self.pokemonController.pokemon[indexPath.row];
+    
+    cell.textLabel.text = pokemonList.name;
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
