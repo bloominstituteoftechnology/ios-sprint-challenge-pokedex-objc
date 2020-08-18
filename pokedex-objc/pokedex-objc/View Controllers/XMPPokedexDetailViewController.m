@@ -51,8 +51,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self startMonitoringPokemon];
-    //PokemonAPI *fetcher = [PokemonAPI new];
-    //[fetcher fillInDetailsFor:_pokemon];
     PokemonAPI * fetcher = [PokemonAPI sharedController];
     [fetcher fillInDetailsFor:_pokemon];
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100 Add 20 to offset until 964
 // {"count":964,"next":null,"previous":"https://pokeapi.co/api/v2/pokemon/?offset=930&limit=20","results":[IMPORTANT DATA]}
@@ -125,7 +126,7 @@ class PokemonAPI: NSObject {
     }
     
     @objc func loadImage(urlString: String, completion: @escaping (UIImage?, Error?) -> Void) {
-        let imageURL = URL(string: urlString)!
+        let imageURL = URL(string: urlString)!.usingHTTPS!
         URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
             if let error = error {
                 print("Error fetching data in loadImage(): \(error)")
@@ -146,5 +147,13 @@ class PokemonAPI: NSObject {
             }
             completion(image, nil)
         }.resume()
+    }
+}
+
+extension URL {
+    var usingHTTPS: URL? {
+        guard var components = URLComponents(url: self, resolvingAgainstBaseURL: true) else { return nil }
+        components.scheme = "https"
+        return components.url
     }
 }
