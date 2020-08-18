@@ -14,6 +14,9 @@ import Foundation
 
 @objc(PokemonAPI)
 class PokemonAPI: NSObject {
+    
+    @objc(sharedController) static let shared = PokemonAPI()
+    
     @objc func fetchAllPokemon(completion: @escaping ([XMPPokemon]?, Error?) -> Void) {
         let url = URL(string: "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=964")!
         URLSession.shared.dataTask(with: url) { (data, response, error) in

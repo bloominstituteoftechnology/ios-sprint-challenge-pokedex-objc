@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *firstAbilityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondAbilityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *thirdAbilityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fourthAbilityLabel;
+
 @end
 
 @implementation XMPPokedexDetailViewController
@@ -26,7 +28,7 @@
     _idLabel.text = [[NSString alloc] initWithFormat:@"ID: %lu", (unsigned long)_pokemon.identifier];
     _imageView.image = _pokemon.image;
     // Abilities
-    UILabel* abilityLabels[] = { _firstAbilityLabel, _secondAbilityLabel, _thirdAbilityLabel };
+    UILabel* abilityLabels[] = { _firstAbilityLabel, _secondAbilityLabel, _thirdAbilityLabel, _fourthAbilityLabel };
     int iteration = 0;
     for(NSString* ability in _pokemon.abilities) {
         abilityLabels[iteration].text = ability;
@@ -35,8 +37,8 @@
 }
 
 -(void)startMonitoringPokemon {
-    //[_pokemon addObserver:self forKeyPath:@"identifier" options:0 context:NULL];
-    //[_pokemon addObserver:self forKeyPath:@"abilities" options:0 context:NULL];
+    [_pokemon addObserver:self forKeyPath:@"identifier" options:0 context:NULL];
+    [_pokemon addObserver:self forKeyPath:@"abilities" options:0 context:NULL];
     [_pokemon addObserver:self forKeyPath:@"image" options:0 context:NULL];
 }
 
@@ -49,7 +51,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self startMonitoringPokemon];
-    PokemonAPI *fetcher = [PokemonAPI new];
+    //PokemonAPI *fetcher = [PokemonAPI new];
+    //[fetcher fillInDetailsFor:_pokemon];
+    PokemonAPI * fetcher = [PokemonAPI sharedController];
     [fetcher fillInDetailsFor:_pokemon];
 }
 
