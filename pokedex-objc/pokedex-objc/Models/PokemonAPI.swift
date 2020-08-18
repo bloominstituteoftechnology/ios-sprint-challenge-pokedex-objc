@@ -16,7 +16,7 @@ import Foundation
 class PokemonAPI: NSObject {
     @objc func fetchAllPokemon(completion: @escaping ([XMPPokemon]?, Error?) -> Void) {
         let url = URL(string: "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=964")!
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             // Error encountered
             guard error == nil else {
                 NSLog("Encounted error in fetchAllPokemon()")
@@ -54,13 +54,12 @@ class PokemonAPI: NSObject {
                 return
             }
             completion(pokemonArray, nil)
-        }
-        task.resume()
+        }.resume()
     }
 
     @objc func fillInDetails(for pokemon: XMPPokemon) {
         let url = URL(string: "https://pokeapi.co/api/v2/pokemon/\(pokemon.name)")!
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             // Error encountered
             guard error == nil else {
                 NSLog("Encounted error in fillInDetails()")
@@ -88,8 +87,19 @@ class PokemonAPI: NSObject {
                 }
                 // ImageURL
                 if let images = json["sprites"] as? Dictionary<String, Any> {
-                    if let defaultImage = images["front_default"] as? String {
-                        pokemon.imageURL = defaultImage;
+                    if let defaultImageURL = images["front_default"] as? String {
+                        // load image into UIImage
+                        self.loadImage(urlString: defaultImageURL, completion: { (image, error) in
+                            guard error == nil else {
+                                print("Error in fillInDetails:loadImage(): \(error!)")
+                                return
+                            }
+                            guard let image = image else {
+                                print("nil image in fillInDetails:loadImage()")
+                                return
+                            }
+                            pokemon.image = image
+                        })
                     }
                 }
                 // Abilities
@@ -104,12 +114,34 @@ class PokemonAPI: NSObject {
                     }
                 }
                 pokemon.abilities = abilitiesArray
-                print("Finished fetching details")
             } catch {
                 print("Error Decoding json in fillInDetails(): \(error)")
                 return
             }
-        }
-        task.resume()
+        }.resume()
+    }
+    
+    @objc func loadImage(urlString: String, completion: @escaping (UIImage?, Error?) -> Void) {
+        let imageURL = URL(string: urlString)!
+        URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
+            if let error = error {
+                print("Error fetching data in loadImage(): \(error)")
+            }
+            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+                NSLog("Bad response code in loadImage()")
+                return
+            }
+            guard let data = data else {
+                print("No data fetched in loadImage()")
+                completion(nil, error)
+                return
+            }
+            guard let image = UIImage(data: data) else {
+                print("Failed to convert data to Image in loadImage()")
+                completion(nil, error)
+                return
+            }
+            completion(image, nil)
+        }.resume()
     }
 }

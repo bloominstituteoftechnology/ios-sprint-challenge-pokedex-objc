@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSUInteger identifier;
 @property (nonatomic) NSMutableArray *abilities;
-@property (nonatomic) NSString *imageURL;
+@property (nonatomic) UIImage *image;
 @property (nonatomic) NSString *url;
 
 -(instancetype)initWithName:(NSString*)name url:(NSString*)url;
