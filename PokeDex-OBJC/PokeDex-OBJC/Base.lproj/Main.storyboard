@@ -99,10 +99,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="hZg-Id-Ir0"/>
                     <connections>
-                        <outlet property="pokemonAbilitiesLabel" destination="0au-bi-Wnv" id="npX-XN-90H"/>
+                        <outlet property="imageView" destination="GeJ-Fm-K8m" id="gAu-4R-ITI"/>
+                        <outlet property="pokemonAbilitiesLabel" destination="0au-bi-Wnv" id="lXt-KE-1dk"/>
+                        <outlet property="pokemonId" destination="amN-O0-DXo" id="gHF-8u-cmc"/>
                         <outlet property="pokemonIdLabel" destination="amN-O0-DXo" id="UQb-o5-TqT"/>
                         <outlet property="pokemonImage" destination="GeJ-Fm-K8m" id="yv3-mw-kX6"/>
-                        <outlet property="pokemonNameLabel" destination="A40-nf-1hc" id="UMB-tj-CMh"/>
+                        <outlet property="pokemonNameLabel" destination="A40-nf-1hc" id="msZ-z3-4Nf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCg-T6-lut" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

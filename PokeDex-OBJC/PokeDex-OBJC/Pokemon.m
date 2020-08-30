@@ -8,16 +8,32 @@
 
 #import "Pokemon.h"
 
-@interface Pokemon() {
-    NSMutableArray<Pokemon *> *_internalPokemon;
-}
-@end
-
 @implementation Pokemon
 
-- (instancetype)
-{
+- (instancetype)initWithName:(NSString *)name
+                  identifier:(NSNumber *)identifier
+                   abilities:(NSArray *)abilities
+                       image:(NSURL *)image
+                         url:(NSURL *)url; {
+    if (self = [super init]) {
+        _name = name;
+        _identifier = identifier;
+        _abilities = abilities;
+        _image = image;
+        _url = url;
+    }
+    return self;
+}
 
+
+- (instancetype)initWithDictioanryForList:(NSDictionary *)dictionary {
+    NSString *name = dictionary[@"name"];
+    NSNumber *identifier = dictionary[@"identifier"];
+    NSArray *abilities = dictionary[@"abilities"];
+    NSURL *image = dictionary[@"image"];
+    NSURL *url = dictionary[@"url"];
+    
+    return [self initWithName:name identifier:identifier abilities:abilities image:image url:url];
 }
 
 @end

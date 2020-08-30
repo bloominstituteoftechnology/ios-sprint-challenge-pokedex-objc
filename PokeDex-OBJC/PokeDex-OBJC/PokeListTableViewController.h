@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "PokemonController.h"
 
+@class NetworkController;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PokeListTableViewController : UITableViewController
 
-@property (nonatomic) PokemonController *pokemonController;
+@property (nonatomic) NetworkController *networkController;
 
 @end
 

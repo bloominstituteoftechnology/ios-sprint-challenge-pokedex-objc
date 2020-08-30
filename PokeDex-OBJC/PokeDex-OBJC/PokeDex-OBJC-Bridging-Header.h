@@ -3,3 +3,5 @@
 //
 
 #import "Pokemon.h"
+#import "PokemonController.h"
+#import "PokeListTableViewController.h"
