@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="207" y="7"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="lI5-3H-9Px">
             <objects>
-                <viewController id="JLk-be-KVR" sceneMemberID="viewController">
+                <viewController id="JLk-be-KVR" customClass="EFSPokemonDetailViewController" customModule="PokedexObjcSprint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j63-uI-le9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,6 +93,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OLv-VS-4UV"/>
+                    <connections>
+                        <outlet property="abilityLabel" destination="7lQ-TA-Xbr" id="p6l-Er-Ffj"/>
+                        <outlet property="idLabel" destination="f6l-Uq-a9k" id="2Ca-mN-rMP"/>
+                        <outlet property="imageView" destination="j1f-vC-dW3" id="vBv-3V-kxF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJ3-hq-RHm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B020282253155B500197C18 /* EFSPokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B020281253155B500197C18 /* EFSPokemonDetailViewController.swift */; };
 		0BE635C2253140BF00AB42BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE635C1253140BF00AB42BB /* AppDelegate.m */; };
 		0BE635C5253140BF00AB42BB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE635C4253140BF00AB42BB /* SceneDelegate.m */; };
 		0BE635CB253140BF00AB42BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE635C9253140BF00AB42BB /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B020281253155B500197C18 /* EFSPokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFSPokemonDetailViewController.swift; sourceTree = "<group>"; };
 		0BE635BD253140BF00AB42BB /* PokedexObjcSprint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokedexObjcSprint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BE635C0253140BF00AB42BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0BE635C1253140BF00AB42BB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				0BE635F525314AD900AB42BB /* EFSPokedexTableViewController.h */,
 				0BE635F625314AD900AB42BB /* EFSPokedexTableViewController.m */,
+				0B020281253155B500197C18 /* EFSPokemonDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B020282253155B500197C18 /* EFSPokemonDetailViewController.swift in Sources */,
 				0BE635E6253141D300AB42BB /* EFSPokemon.m in Sources */,
 				0BE635C2253140BF00AB42BB /* AppDelegate.m in Sources */,
 				0BE635D3253140C100AB42BB /* main.m in Sources */,

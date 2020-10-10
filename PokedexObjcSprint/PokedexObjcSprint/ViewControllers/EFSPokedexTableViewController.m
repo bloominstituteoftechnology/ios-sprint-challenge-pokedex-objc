@@ -38,7 +38,6 @@
     return self.pokemon.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PokemonCell" forIndexPath:indexPath];
     EFSPokemon *pokemon = self.pokemon[indexPath.row];
