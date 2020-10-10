@@ -64,49 +64,43 @@ class EFSPokemonController: NSObject {
     }
     
     @objc func fillInDetail(for pokemon: EFSPokemon) {
-        var request = URLRequest(url: fetchPokemonDetails.appendingPathComponent(pokemon.name))
+        var request = URLRequest(url: fetchPokemonDetails.appendingPathComponent(pokemon.name.lowercased()))
         request.httpMethod = "GET"
+        print(request)
         
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
-            if let error = error {
-                print("Error with datatask: \(error)")
-                return
-            }
-            
-            guard let data = data else {
-                print("Error getting data from datatask")
-                return
-            }
-            
-            var topDictionary: [String : Any]?
+        URLSession.shared.dataTask(with: request) {  (data, _, error) in
+          
+            guard let data = data else { return }
+            var topLevelDictionary : [String:Any]?
             do {
-                topDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-            } catch {
-                print("Error decoding json : \(error)")
+                topLevelDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
+            } catch let err as NSError {
+                print(err)
                 return
             }
-            
             // Getting ID
-            guard let topDict = topDictionary else { return }
-            guard let id = topDict["id"] as? NSNumber else { return }
-            pokemon.identifier = id
+            guard let topLevelDict = topLevelDictionary else { return }
+            guard let id = topLevelDict["id"] as? NSNumber else { return }
+            pokemon.identifier  = id
             
             // Getting Sprite
-            let spriteDict = topDict["sprites"] as! [String:String?]
-            let imageURLString  = spriteDict["front_default"] as? String
+            let spritesDictionary = topLevelDict["sprites"] as! [String:Any]
+            let imageURLString = spritesDictionary["front_default"] as? String
             if let imageURL = URL(string: imageURLString!) {
                 guard let data = try? Data(contentsOf: imageURL) else { return }
                 pokemon.sprite = UIImage(data: data)!
             }
-                
+            
             // Getting Abilities
-            let abilitiesArray = topDict["abilities"] as! [[String:Any]]
+            let abilitiesArray = topLevelDict["abilities"] as! [[String:Any]]
             for item in abilitiesArray {
                 let ability = item["ability"] as! [String:String]
                 let abi = ability["name"]!
                 pokemon.abilities.append(abi)
             }
+           
         }.resume()
+        
     }
     
 }

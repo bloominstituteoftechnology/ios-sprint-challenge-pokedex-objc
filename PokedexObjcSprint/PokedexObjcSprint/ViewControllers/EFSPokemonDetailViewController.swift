@@ -18,17 +18,13 @@ class EFSPokemonDetailViewController: UIViewController {
     var spriteObserver: NSKeyValueObservation?
     var idObserver: NSKeyValueObservation?
     var abilitiesObserver: NSKeyValueObservation?
-    @objc var pokemon: EFSPokemon? {
-        didSet{
-            updateViews()
-        }
-    }
+    @objc var pokemon: EFSPokemon?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         addObserver()
-        
+        updateViews()
         if (pokemon?.identifier == nil) {
             if let pokemon = pokemon {
                 EFSPokemonController.shared.fillInDetail(for: pokemon)
@@ -48,7 +44,7 @@ class EFSPokemonDetailViewController: UIViewController {
             imageView.image = pokemon.sprite
             idLabel.text = "ID: \(pokemon.identifier)"
             let abilities = pokemon.abilities as? [String]
-            abilityLabel.text = "Abilities: \(String (describing: abilities!.joined(separator: ",").capitalized))"
+            abilityLabel.text = "Abilities: \(String (describing: abilities!.joined(separator: ", ").capitalized))"
         }
     }
     

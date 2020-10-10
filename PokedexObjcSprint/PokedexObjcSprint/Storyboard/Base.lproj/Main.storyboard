@@ -34,7 +34,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="JLk-be-KVR" kind="show" id="h6I-AR-VSo"/>
+                                    <segue destination="JLk-be-KVR" kind="show" identifier="DetailSegue" id="h6I-AR-VSo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

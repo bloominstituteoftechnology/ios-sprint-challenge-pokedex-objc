@@ -49,7 +49,11 @@
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
+    if ([[segue identifier] isEqualToString:@"DetailSegue"]) {
+        EFSPokemonDetailViewController *detailVC = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        detailVC.pokemon = self.pokemon[indexPath.row];
+    }
 
 }
 
