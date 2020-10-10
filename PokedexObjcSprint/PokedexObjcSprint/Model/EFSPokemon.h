@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EFSPokemon : NSObject
 
 @property (nonatomic, copy, readonly, nonnull) NSString *name;
-@property (nonatomic, readwrite)NSNumber *identifier;
-@property (nonatomic, readwrite)UIImage *sprite;
-@property (nonatomic, readwrite, copy)NSArray *abilities;
+@property (nonatomic, nonnull)NSNumber *identifier;
+@property (nonatomic, nullable)UIImage *sprite;
+@property (nonatomic, nonnull, copy)NSArray *abilities;
 
 - (instancetype)initWithName:(NSString *)aName;
 
