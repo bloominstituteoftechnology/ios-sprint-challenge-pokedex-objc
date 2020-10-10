@@ -62,4 +62,51 @@ class EFSPokemonController: NSObject {
             }
         }.resume()
     }
+    
+    @objc func fillInDetail(for pokemon: EFSPokemon) {
+        var request = URLRequest(url: fetchPokemonDetails.appendingPathComponent(pokemon.name))
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                print("Error with datatask: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                print("Error getting data from datatask")
+                return
+            }
+            
+            var topDictionary: [String : Any]?
+            do {
+                topDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
+            } catch {
+                print("Error decoding json : \(error)")
+                return
+            }
+            
+            // Getting ID
+            guard let topDict = topDictionary else { return }
+            guard let id = topDict["id"] as? NSNumber else { return }
+            pokemon.identifier = id
+            
+            // Getting Sprite
+            let spriteDict = topDict["sprites"] as! [String:String?]
+            let imageURLString  = spriteDict["front_default"] as? String
+            if let imageURL = URL(string: imageURLString!) {
+                guard let data = try? Data(contentsOf: imageURL) else { return }
+                pokemon.sprite = UIImage(data: data)!
+            }
+                
+            // Getting Abilities
+            let abilitiesArray = topDict["abilities"] as! [[String:Any]]
+            for item in abilitiesArray {
+                let ability = item["ability"] as! [String:String]
+                let abi = ability["name"]!
+                pokemon.abilities.append(abi)
+            }
+        }.resume()
+    }
+    
 }
