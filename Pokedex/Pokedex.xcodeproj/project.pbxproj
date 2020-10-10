@@ -13,6 +13,7 @@
 		E37A9E782531424500C0CCB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E37A9E772531424500C0CCB2 /* Assets.xcassets */; };
 		E37A9E7B2531424500C0CCB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E37A9E792531424500C0CCB2 /* LaunchScreen.storyboard */; };
 		E37A9E7E2531424500C0CCB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E37A9E7D2531424500C0CCB2 /* main.m */; };
+		E37A9E8E2531434D00C0CCB2 /* BRMPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = E37A9E8D2531434D00C0CCB2 /* BRMPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		E37A9E7A2531424500C0CCB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E37A9E7C2531424500C0CCB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E37A9E7D2531424500C0CCB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E37A9E8C2531434D00C0CCB2 /* BRMPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRMPokemon.h; sourceTree = "<group>"; };
+		E37A9E8D2531434D00C0CCB2 /* BRMPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRMPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 		E37A9E892531429900C0CCB2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E37A9E8C2531434D00C0CCB2 /* BRMPokemon.h */,
+				E37A9E8D2531434D00C0CCB2 /* BRMPokemon.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E37A9E6D2531424300C0CCB2 /* AppDelegate.m in Sources */,
+				E37A9E8E2531434D00C0CCB2 /* BRMPokemon.m in Sources */,
 				E37A9E7E2531424500C0CCB2 /* main.m in Sources */,
 				E37A9E702531424300C0CCB2 /* SceneDelegate.m in Sources */,
 			);
