@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		0BE635C2253140BF00AB42BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE635C1253140BF00AB42BB /* AppDelegate.m */; };
 		0BE635C5253140BF00AB42BB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE635C4253140BF00AB42BB /* SceneDelegate.m */; };
-		0BE635C8253140BF00AB42BB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE635C7253140BF00AB42BB /* ViewController.m */; };
 		0BE635CB253140BF00AB42BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE635C9253140BF00AB42BB /* Main.storyboard */; };
 		0BE635CD253140C100AB42BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BE635CC253140C100AB42BB /* Assets.xcassets */; };
 		0BE635D0253140C100AB42BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE635CE253140C100AB42BB /* LaunchScreen.storyboard */; };
 		0BE635D3253140C100AB42BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE635D2253140C100AB42BB /* main.m */; };
+		0BE635E6253141D300AB42BB /* EFSPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE635E5253141D300AB42BB /* EFSPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +22,13 @@
 		0BE635C1253140BF00AB42BB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0BE635C3253140BF00AB42BB /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		0BE635C4253140BF00AB42BB /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		0BE635C6253140BF00AB42BB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0BE635C7253140BF00AB42BB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0BE635CA253140BF00AB42BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0BE635CC253140C100AB42BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BE635CF253140C100AB42BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BE635D1253140C100AB42BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BE635D2253140C100AB42BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0BE635E4253141D300AB42BB /* EFSPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFSPokemon.h; sourceTree = "<group>"; };
+		0BE635E5253141D300AB42BB /* EFSPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFSPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +87,6 @@
 		0BE635DC253140DE00AB42BB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0BE635C6253140BF00AB42BB /* ViewController.h */,
-				0BE635C7253140BF00AB42BB /* ViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -112,6 +110,8 @@
 		0BE635E12531411C00AB42BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0BE635E4253141D300AB42BB /* EFSPokemon.h */,
+				0BE635E5253141D300AB42BB /* EFSPokemon.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BE635C8253140BF00AB42BB /* ViewController.m in Sources */,
+				0BE635E6253141D300AB42BB /* EFSPokemon.m in Sources */,
 				0BE635C2253140BF00AB42BB /* AppDelegate.m in Sources */,
 				0BE635D3253140C100AB42BB /* main.m in Sources */,
 				0BE635C5253140BF00AB42BB /* SceneDelegate.m in Sources */,
