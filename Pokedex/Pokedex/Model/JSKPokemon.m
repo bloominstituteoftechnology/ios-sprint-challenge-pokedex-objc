@@ -25,7 +25,7 @@
     int pokemonID = [dictionary[@"id"] intValue];
     NSString *name = dictionary[@"name"];
     NSArray *abilities = dictionary[@"abilities"];
-    NSString *sprite = dictionary[@"sprties"][@"front_default"];
+    NSString *sprite = dictionary[@"sprites"][@"front_default"];
     NSMutableArray<NSString *> *abilityName = [[NSMutableArray alloc] init];
     for (NSDictionary *ability in abilities) {
         NSString *name = ability[@"ability"][@"name"];
