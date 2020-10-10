@@ -60,6 +60,6 @@ class EFSPokemonController: NSObject {
                 self.pokemon.append(pokemon)
                 completion(self.pokemon, nil)
             }
-        }
+        }.resume()
     }
 }
