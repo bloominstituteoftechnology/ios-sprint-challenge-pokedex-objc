@@ -12,10 +12,10 @@
 - (instancetype)initWithName:(NSString *)name
 {
     if (self = [super init]) {
-        _name = name;
+        _name = name.copy;
         _identifier = nil;
         _abilities = nil;
-        _spriteURL = nil;
+        _spriteURL = @"";
     }
     return self;
 }
