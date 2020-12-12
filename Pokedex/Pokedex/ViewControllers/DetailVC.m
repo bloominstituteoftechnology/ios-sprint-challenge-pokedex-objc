@@ -34,16 +34,13 @@ void *KVOContext = &KVOContext;
 - (void)updateViews
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        self->_nameLabel.text = [NSString stringWithFormat:@"Name: %@", self.pokemon.name];
+        self->_nameLabel.text = [NSString stringWithFormat:@"Name: %@", self.pokemon.name.capitalizedString];
         if (self.pokemon.identifier) {
             self->_identifierLabel.text = [NSString stringWithFormat:@"Identifier: %@", self.pokemon.identifier];
         }
         if (self.pokemon.abilities) {
             NSArray<NSString *> *abilityArray = [self.pokemon.abilities componentsSeparatedByString:@", "];
-            NSString *abilityString = @"";
-            for (NSString *ability in abilityArray) {
-                abilityString = [NSString stringWithFormat:@"%@\n%@", abilityString, ability];
-            }
+            NSString *abilityString = [abilityArray componentsJoinedByString:@"\n"];
             self->_abilitiesTextView.text = abilityString;
         }
         if (![self.pokemon.spriteURL isEqual:@""]) {
