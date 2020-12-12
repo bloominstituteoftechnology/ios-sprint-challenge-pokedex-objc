@@ -14,6 +14,7 @@
 		CAC2C6A4258539570000998D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC2C6A3258539570000998D /* Assets.xcassets */; };
 		CAC2C6A7258539570000998D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAC2C6A5258539570000998D /* LaunchScreen.storyboard */; };
 		CAC2C6AA258539580000998D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC2C6A9258539580000998D /* main.m */; };
+		CAC2C6B425853A5F0000998D /* BTPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC2C6B325853A5F0000998D /* BTPokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		CAC2C6A6258539570000998D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAC2C6A8258539580000998D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAC2C6A9258539580000998D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CAC2C6B225853A5F0000998D /* BTPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTPokemon.h; sourceTree = "<group>"; };
+		CAC2C6B325853A5F0000998D /* BTPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTPokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				CAC2C6A5258539570000998D /* LaunchScreen.storyboard */,
 				CAC2C6A8258539580000998D /* Info.plist */,
 				CAC2C6A9258539580000998D /* main.m */,
+				CAC2C6B225853A5F0000998D /* BTPokemon.h */,
+				CAC2C6B325853A5F0000998D /* BTPokemon.m */,
 			);
 			path = PokeDex;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 				CAC2C69F258539530000998D /* ViewController.m in Sources */,
 				CAC2C699258539530000998D /* AppDelegate.m in Sources */,
 				CAC2C6AA258539580000998D /* main.m in Sources */,
+				CAC2C6B425853A5F0000998D /* BTPokemon.m in Sources */,
 				CAC2C69C258539530000998D /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
