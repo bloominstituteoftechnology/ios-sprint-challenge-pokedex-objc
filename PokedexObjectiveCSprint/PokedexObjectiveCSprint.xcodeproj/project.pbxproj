@@ -17,6 +17,7 @@
 		7CBFBC1425853EB2002F5B84 /* PokedexObjectiveCSprintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CBFBC1325853EB2002F5B84 /* PokedexObjectiveCSprintTests.m */; };
 		7CBFBC1F25853EB2002F5B84 /* PokedexObjectiveCSprintUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CBFBC1E25853EB2002F5B84 /* PokedexObjectiveCSprintUITests.m */; };
 		7CBFBC3A25853F4E002F5B84 /* BRSPokemonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CBFBC3925853F4E002F5B84 /* BRSPokemonModel.m */; };
+		7CBFBC4425854386002F5B84 /* BRSPokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBFBC4325854386002F5B84 /* BRSPokemonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		7CBFBC2025853EB2002F5B84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CBFBC3825853F4E002F5B84 /* BRSPokemonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRSPokemonModel.h; sourceTree = "<group>"; };
 		7CBFBC3925853F4E002F5B84 /* BRSPokemonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRSPokemonModel.m; sourceTree = "<group>"; };
+		7CBFBC4225854385002F5B84 /* PokedexObjectiveCSprint-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokedexObjectiveCSprint-Bridging-Header.h"; sourceTree = "<group>"; };
+		7CBFBC4325854386002F5B84 /* BRSPokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRSPokemonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,19 +110,13 @@
 		7CBFBBF625853EAF002F5B84 /* PokedexObjectiveCSprint */ = {
 			isa = PBXGroup;
 			children = (
-				7CBFBBF725853EAF002F5B84 /* AppDelegate.h */,
-				7CBFBBF825853EAF002F5B84 /* AppDelegate.m */,
-				7CBFBBFA25853EAF002F5B84 /* SceneDelegate.h */,
-				7CBFBBFB25853EAF002F5B84 /* SceneDelegate.m */,
-				7CBFBBFD25853EAF002F5B84 /* ViewController.h */,
-				7CBFBBFE25853EAF002F5B84 /* ViewController.m */,
-				7CBFBC0025853EAF002F5B84 /* Main.storyboard */,
-				7CBFBC3825853F4E002F5B84 /* BRSPokemonModel.h */,
-				7CBFBC3925853F4E002F5B84 /* BRSPokemonModel.m */,
+				7CBFBC492585440E002F5B84 /* Resources */,
+				7CBFBC4A25854426002F5B84 /* ViewControllers */,
+				7CBFBC4B2585444C002F5B84 /* Storyboard */,
+				7CBFBC4C2585445D002F5B84 /* Model */,
+				7CBFBC4D25854470002F5B84 /* ModelController */,
 				7CBFBC0325853EB1002F5B84 /* Assets.xcassets */,
-				7CBFBC0525853EB1002F5B84 /* LaunchScreen.storyboard */,
 				7CBFBC0825853EB1002F5B84 /* Info.plist */,
-				7CBFBC0925853EB1002F5B84 /* main.m */,
 			);
 			path = PokedexObjectiveCSprint;
 			sourceTree = "<group>";
@@ -140,6 +137,54 @@
 				7CBFBC2025853EB2002F5B84 /* Info.plist */,
 			);
 			path = PokedexObjectiveCSprintUITests;
+			sourceTree = "<group>";
+		};
+		7CBFBC492585440E002F5B84 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7CBFBBF725853EAF002F5B84 /* AppDelegate.h */,
+				7CBFBBF825853EAF002F5B84 /* AppDelegate.m */,
+				7CBFBBFA25853EAF002F5B84 /* SceneDelegate.h */,
+				7CBFBBFB25853EAF002F5B84 /* SceneDelegate.m */,
+				7CBFBC0525853EB1002F5B84 /* LaunchScreen.storyboard */,
+				7CBFBC0925853EB1002F5B84 /* main.m */,
+				7CBFBC4225854385002F5B84 /* PokedexObjectiveCSprint-Bridging-Header.h */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7CBFBC4A25854426002F5B84 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7CBFBBFD25853EAF002F5B84 /* ViewController.h */,
+				7CBFBBFE25853EAF002F5B84 /* ViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7CBFBC4B2585444C002F5B84 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7CBFBC0025853EAF002F5B84 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		7CBFBC4C2585445D002F5B84 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7CBFBC3825853F4E002F5B84 /* BRSPokemonModel.h */,
+				7CBFBC3925853F4E002F5B84 /* BRSPokemonModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7CBFBC4D25854470002F5B84 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				7CBFBC4325854386002F5B84 /* BRSPokemonController.swift */,
+			);
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +253,7 @@
 				TargetAttributes = {
 					7CBFBBF325853EAF002F5B84 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					7CBFBC0E25853EB2002F5B84 = {
 						CreatedOnToolsVersion = 12.2;
@@ -272,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CBFBBFF25853EAF002F5B84 /* ViewController.m in Sources */,
+				7CBFBC4425854386002F5B84 /* BRSPokemonController.swift in Sources */,
 				7CBFBBF925853EAF002F5B84 /* AppDelegate.m in Sources */,
 				7CBFBC0A25853EB1002F5B84 /* main.m in Sources */,
 				7CBFBBFC25853EAF002F5B84 /* SceneDelegate.m in Sources */,
@@ -447,6 +494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2S8MH4C36K;
 				INFOPLIST_FILE = PokedexObjectiveCSprint/Info.plist;
@@ -456,6 +504,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = B.PokedexObjectiveCSprint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokedexObjectiveCSprint/PokedexObjectiveCSprint-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -465,6 +516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2S8MH4C36K;
 				INFOPLIST_FILE = PokedexObjectiveCSprint/Info.plist;
@@ -474,6 +526,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = B.PokedexObjectiveCSprint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PokedexObjectiveCSprint/PokedexObjectiveCSprint-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -481,6 +535,7 @@
 		7CBFBC2725853EB2002F5B84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2S8MH4C36K;
@@ -501,6 +556,7 @@
 		7CBFBC2825853EB2002F5B84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2S8MH4C36K;
@@ -521,6 +577,7 @@
 		7CBFBC2A25853EB2002F5B84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2S8MH4C36K;
 				INFOPLIST_FILE = PokedexObjectiveCSprintUITests/Info.plist;
@@ -539,6 +596,7 @@
 		7CBFBC2B25853EB2002F5B84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2S8MH4C36K;
 				INFOPLIST_FILE = PokedexObjectiveCSprintUITests/Info.plist;
