@@ -50,7 +50,9 @@
         DetailVC *detailVC = (DetailVC *)segue.destinationViewController;
         Pokemon *pokemon = [_pokemons objectAtIndex:[self.tableView indexPathForSelectedRow].row];
         detailVC.pokemon = pokemon;
-        [PokemonAPI.sharedController fillInDetailsFor:pokemon];
+        if (!pokemon.identifier) {
+            [PokemonAPI.sharedController fillInDetailsFor:pokemon];
+        }
     }
 }
 

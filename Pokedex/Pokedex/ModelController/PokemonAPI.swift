@@ -43,7 +43,34 @@ class PokemonAPI: NSObject {
     }
 
     @objc func fillInDetails(for pokemon: Pokemon) {
-        
+        let url = baseURL.appendingPathComponent(pokemon.name)
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                NSLog("Error fetching pokemon details: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("Error - no data returned from fetching \(pokemon)")
+                return
+            }
+            
+            do {
+                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else {
+                    NSLog("Error decoding data into dictionary")
+                    return
+                }
+                
+                let details = Details(dictionary: dictionary)
+                pokemon.identifier = details.identifier
+                pokemon.abilities = details.abilities
+                pokemon.spriteURL = details.spriteURL
+                                                                
+            } catch {
+                NSLog("Error fetching pokemon details: \(error)")
+            }
+            
+        }.resume()
     }
     
     @objc func fetchImage(url: URL, completion: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
