@@ -11,7 +11,7 @@
         <!--Pokedex-->
         <scene sceneID="a02-Gb-m1Z">
             <objects>
-                <tableViewController id="HDa-Xo-Avf" sceneMemberID="viewController">
+                <tableViewController id="HDa-Xo-Avf" customClass="PokedexTableVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bCS-jz-JbV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="827.536231884058" y="102.45535714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--DetailVC-->
         <scene sceneID="lw8-1D-dVS">
             <objects>
-                <viewController id="C2r-dq-s6b" sceneMemberID="viewController">
+                <viewController id="C2r-dq-s6b" customClass="DetailVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1OC-qM-njG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,6 +113,12 @@ Ability 3</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jAv-7I-n6L"/>
+                    <connections>
+                        <outlet property="abilitiesTextView" destination="gmy-Yy-Pfa" id="Aqy-2x-K4P"/>
+                        <outlet property="identifierLabel" destination="Ub3-G0-2t3" id="sIV-C7-crB"/>
+                        <outlet property="imageView" destination="zXt-Ec-9bX" id="Oe7-hL-ZiV"/>
+                        <outlet property="nameLabel" destination="mBV-sl-xGU" id="24a-NL-QHY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nca-qf-c9N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

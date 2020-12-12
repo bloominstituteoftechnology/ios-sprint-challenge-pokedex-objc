@@ -13,6 +13,8 @@
 		1A6CD1052585377D0076313A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A6CD1042585377D0076313A /* Assets.xcassets */; };
 		1A6CD1082585377D0076313A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6CD1062585377D0076313A /* LaunchScreen.storyboard */; };
 		1A6CD10B2585377D0076313A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6CD10A2585377D0076313A /* main.m */; };
+		1A6CD11525853A190076313A /* PokedexTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6CD11425853A190076313A /* PokedexTableVC.m */; };
+		1A6CD11925853A350076313A /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6CD11825853A350076313A /* DetailVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		1A6CD1072585377D0076313A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A6CD1092585377D0076313A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A6CD10A2585377D0076313A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1A6CD11325853A190076313A /* PokedexTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokedexTableVC.h; sourceTree = "<group>"; };
+		1A6CD11425853A190076313A /* PokedexTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokedexTableVC.m; sourceTree = "<group>"; };
+		1A6CD11725853A350076313A /* DetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
+		1A6CD11825853A350076313A /* DetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 				1A6CD0F92585377A0076313A /* AppDelegate.m */,
 				1A6CD0FB2585377A0076313A /* SceneDelegate.h */,
 				1A6CD0FC2585377A0076313A /* SceneDelegate.m */,
+				1A6CD11B25853C3F0076313A /* ViewControllers */,
 				1A6CD1012585377A0076313A /* Main.storyboard */,
 				1A6CD1042585377D0076313A /* Assets.xcassets */,
 				1A6CD1062585377D0076313A /* LaunchScreen.storyboard */,
@@ -69,6 +76,17 @@
 				1A6CD10A2585377D0076313A /* main.m */,
 			);
 			path = Pokedex;
+			sourceTree = "<group>";
+		};
+		1A6CD11B25853C3F0076313A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A6CD11325853A190076313A /* PokedexTableVC.h */,
+				1A6CD11425853A190076313A /* PokedexTableVC.m */,
+				1A6CD11725853A350076313A /* DetailVC.h */,
+				1A6CD11825853A350076313A /* DetailVC.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +158,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A6CD11525853A190076313A /* PokedexTableVC.m in Sources */,
+				1A6CD11925853A350076313A /* DetailVC.m in Sources */,
 				1A6CD0FA2585377A0076313A /* AppDelegate.m in Sources */,
 				1A6CD10B2585377D0076313A /* main.m in Sources */,
 				1A6CD0FD2585377A0076313A /* SceneDelegate.m in Sources */,
