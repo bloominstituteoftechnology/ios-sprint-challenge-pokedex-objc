@@ -51,7 +51,9 @@
         Pokemon *pokemon = [_pokemons objectAtIndex:[self.tableView indexPathForSelectedRow].row];
         detailVC.pokemon = pokemon;
         if (!pokemon.identifier) {
+            [self willChangeValueForKey:@"spriteURL"];
             [PokemonAPI.sharedController fillInDetailsFor:pokemon];
+            [self didChangeValueForKey:@"spriteURL"];
         }
     }
 }

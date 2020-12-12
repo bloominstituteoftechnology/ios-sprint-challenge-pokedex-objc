@@ -62,9 +62,7 @@ class PokemonAPI: NSObject {
                 }
                 
                 let details = Details(dictionary: dictionary)
-                pokemon.identifier = details.identifier
-                pokemon.abilities = details.abilities
-                pokemon.spriteURL = details.spriteURL
+                pokemon.update(withIdentifier: details.identifier, abilities: details.abilities, spriteURL: details.spriteURL)
                                                                 
             } catch {
                 NSLog("Error fetching pokemon details: \(error)")

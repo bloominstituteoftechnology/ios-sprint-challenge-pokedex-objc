@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithName:(NSString *)name;
 
+- (void)updateWithIdentifier:(NSNumber *)anID
+                   abilities:(NSString *)someAbilities
+                   spriteURL:(NSString *)aURL;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -20,4 +20,13 @@
     return self;
 }
 
+- (void)updateWithIdentifier:(NSNumber *)anID
+                   abilities:(NSString *)someAbilities
+                   spriteURL:(NSString *)aURL
+{
+    self.identifier = anID;
+    self.abilities = someAbilities.copy;
+    self.spriteURL = aURL.copy;
+}
+
 @end
