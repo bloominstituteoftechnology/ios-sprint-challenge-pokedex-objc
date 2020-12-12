@@ -20,6 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self updateViews];
+}
+
+- (void)updateViews {
     
 }
 

@@ -7,9 +7,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class Pokemon;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailVC : UIViewController
+
+@property (nonatomic) Pokemon *pokemon;
 
 @end
 
