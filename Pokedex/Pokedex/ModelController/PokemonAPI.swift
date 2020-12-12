@@ -13,7 +13,33 @@ class PokemonAPI: NSObject {
     @objc(sharedController) static let shared = PokemonAPI()
 
     @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
-        
+        URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil, error)
+                return
+            }
+            
+            do {
+                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else {
+                    completion(nil, error)
+                    return
+                }
+                
+                let results = Results(dictionary: dictionary)
+                let pokemonArray = results.pokemonResults
+                                                
+                completion(pokemonArray, nil)
+                
+            } catch {
+                completion(nil, error)
+            }
+            
+        }.resume()
     }
 
     @objc func fillInDetails(for pokemon: Pokemon) {

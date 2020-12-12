@@ -17,6 +17,7 @@
 		1A6CD11925853A350076313A /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6CD11825853A350076313A /* DetailVC.m */; };
 		1A6CD11F25853C9E0076313A /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6CD11E25853C9E0076313A /* Pokemon.m */; };
 		1A6CD12C258540A00076313A /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6CD12B258540A00076313A /* PokemonAPI.swift */; };
+		1A6CD1382585546C0076313A /* Results.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6CD1372585546C0076313A /* Results.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		1A6CD11E25853C9E0076313A /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
 		1A6CD12B258540A00076313A /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 		1A6CD12E258541270076313A /* Pokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Bridging-Header.h"; sourceTree = "<group>"; };
+		1A6CD1362585546C0076313A /* Results.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Results.h; sourceTree = "<group>"; };
+		1A6CD1372585546C0076313A /* Results.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Results.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 			children = (
 				1A6CD11D25853C9E0076313A /* Pokemon.h */,
 				1A6CD11E25853C9E0076313A /* Pokemon.m */,
+				1A6CD1362585546C0076313A /* Results.h */,
+				1A6CD1372585546C0076313A /* Results.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 				1A6CD12C258540A00076313A /* PokemonAPI.swift in Sources */,
 				1A6CD11F25853C9E0076313A /* Pokemon.m in Sources */,
 				1A6CD10B2585377D0076313A /* main.m in Sources */,
+				1A6CD1382585546C0076313A /* Results.m in Sources */,
 				1A6CD0FD2585377A0076313A /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

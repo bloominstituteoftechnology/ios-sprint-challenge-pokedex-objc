@@ -25,7 +25,9 @@
             NSLog(@"Error fetching pokemon list: %@", error);
         }
         self.pokemons = pokemonArray;
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }];
 }
 
