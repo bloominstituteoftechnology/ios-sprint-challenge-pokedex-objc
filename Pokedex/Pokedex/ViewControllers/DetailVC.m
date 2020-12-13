@@ -35,7 +35,7 @@ void *KVOContext = &KVOContext;
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         self->_nameLabel.text = [NSString stringWithFormat:@"Name: %@", self.pokemon.name.capitalizedString];
-        if (self.pokemon.identifier) {
+        if (self.pokemon.identifier != nil) {
             self->_identifierLabel.text = [NSString stringWithFormat:@"Identifier: %@", self.pokemon.identifier];
         }
         if (self.pokemon.abilities) {

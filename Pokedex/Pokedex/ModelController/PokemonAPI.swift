@@ -13,7 +13,11 @@ class PokemonAPI: NSObject {
     @objc(sharedController) static let shared = PokemonAPI()
 
     @objc func fetchAllPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
-        URLSession.shared.dataTask(with: baseURL) { (data, _, error) in
+        let limitQuery = URLQueryItem(name: "limit", value: "200")
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        urlComponents?.queryItems = [limitQuery]
+        guard let url = urlComponents?.url else { return }
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 completion(nil, error)
                 return
