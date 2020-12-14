@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		227CCC3725880C7E0021083E /* SAEPokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 227CCC3625880C7E0021083E /* SAEPokemon.m */; };
 		22D2247E25870272003E0C59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D2247D25870272003E0C59 /* AppDelegate.m */; };
 		22D2248125870272003E0C59 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D2248025870272003E0C59 /* SceneDelegate.m */; };
-		22D2248425870272003E0C59 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D2248325870272003E0C59 /* ViewController.m */; };
 		22D2248725870272003E0C59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D2248525870272003E0C59 /* Main.storyboard */; };
 		22D2248925870273003E0C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D2248825870273003E0C59 /* Assets.xcassets */; };
 		22D2248C25870273003E0C59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D2248A25870273003E0C59 /* LaunchScreen.storyboard */; };
@@ -17,13 +17,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		227CCC3525880C7E0021083E /* SAEPokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAEPokemon.h; sourceTree = "<group>"; };
+		227CCC3625880C7E0021083E /* SAEPokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAEPokemon.m; sourceTree = "<group>"; };
 		22D2247925870272003E0C59 /* Pokedex-Sprint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex-Sprint.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D2247C25870272003E0C59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		22D2247D25870272003E0C59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		22D2247F25870272003E0C59 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		22D2248025870272003E0C59 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		22D2248225870272003E0C59 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		22D2248325870272003E0C59 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		22D2248625870272003E0C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22D2248825870273003E0C59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22D2248B25870273003E0C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +42,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		227CCC34258809FF0021083E /* Resourses  */ = {
+			isa = PBXGroup;
+			children = (
+				22D2248825870273003E0C59 /* Assets.xcassets */,
+				22D2247C25870272003E0C59 /* AppDelegate.h */,
+				22D2247D25870272003E0C59 /* AppDelegate.m */,
+				22D2247F25870272003E0C59 /* SceneDelegate.h */,
+				22D2248025870272003E0C59 /* SceneDelegate.m */,
+			);
+			name = "Resourses ";
+			sourceTree = "<group>";
+		};
+		227CCC3925880C9C0021083E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				227CCC3525880C7E0021083E /* SAEPokemon.h */,
+				227CCC3625880C7E0021083E /* SAEPokemon.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		22D2247025870272003E0C59 = {
 			isa = PBXGroup;
 			children = (
@@ -61,15 +82,10 @@
 		22D2247B25870272003E0C59 /* Pokedex-Sprint */ = {
 			isa = PBXGroup;
 			children = (
-				22D2247C25870272003E0C59 /* AppDelegate.h */,
-				22D2247D25870272003E0C59 /* AppDelegate.m */,
-				22D2247F25870272003E0C59 /* SceneDelegate.h */,
-				22D2248025870272003E0C59 /* SceneDelegate.m */,
-				22D2248225870272003E0C59 /* ViewController.h */,
-				22D2248325870272003E0C59 /* ViewController.m */,
+				227CCC3925880C9C0021083E /* Model */,
 				22D2248525870272003E0C59 /* Main.storyboard */,
-				22D2248825870273003E0C59 /* Assets.xcassets */,
 				22D2248A25870273003E0C59 /* LaunchScreen.storyboard */,
+				227CCC34258809FF0021083E /* Resourses  */,
 				22D2248D25870273003E0C59 /* Info.plist */,
 				22D2248E25870273003E0C59 /* main.m */,
 			);
@@ -102,6 +118,7 @@
 		22D2247125870272003E0C59 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SAE;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					22D2247825870272003E0C59 = {
@@ -145,8 +162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22D2248425870272003E0C59 /* ViewController.m in Sources */,
 				22D2247E25870272003E0C59 /* AppDelegate.m in Sources */,
+				227CCC3725880C7E0021083E /* SAEPokemon.m in Sources */,
 				22D2248F25870273003E0C59 /* main.m in Sources */,
 				22D2248125870272003E0C59 /* SceneDelegate.m in Sources */,
 			);
