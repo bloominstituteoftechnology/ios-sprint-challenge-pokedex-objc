@@ -9,6 +9,13 @@
 
 @interface SAEPokemonDetialViewController ()
 
+@property (strong, nonatomic) IBOutlet UIImageView *pokemonImageView;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *idLabel;
+@property (strong, nonatomic) IBOutlet UILabel *abiliitesLabel;
+@property (strong, nonatomic) IBOutlet UITextView *abilitiesTextView;
+
+
 @end
 
 @implementation SAEPokemonDetialViewController
