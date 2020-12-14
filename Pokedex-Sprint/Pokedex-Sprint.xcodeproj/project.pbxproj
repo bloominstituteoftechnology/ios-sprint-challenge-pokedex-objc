@@ -14,6 +14,8 @@
 		22D2248925870273003E0C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D2248825870273003E0C59 /* Assets.xcassets */; };
 		22D2248C25870273003E0C59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D2248A25870273003E0C59 /* LaunchScreen.storyboard */; };
 		22D2248F25870273003E0C59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D2248E25870273003E0C59 /* main.m */; };
+		22EDABDF25881D7D003725D1 /* SAEPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EDABDE25881D7D003725D1 /* SAEPokemonTableViewController.m */; };
+		22EDABEA25881E19003725D1 /* SAEPokemonDetialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EDABE925881E19003725D1 /* SAEPokemonDetialViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		22D2248B25870273003E0C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22D2248D25870273003E0C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22D2248E25870273003E0C59 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		22EDABDD25881D7D003725D1 /* SAEPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAEPokemonTableViewController.h; sourceTree = "<group>"; };
+		22EDABDE25881D7D003725D1 /* SAEPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAEPokemonTableViewController.m; sourceTree = "<group>"; };
+		22EDABE825881E19003725D1 /* SAEPokemonDetialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAEPokemonDetialViewController.h; sourceTree = "<group>"; };
+		22EDABE925881E19003725D1 /* SAEPokemonDetialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAEPokemonDetialViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				227CCC3925880C9C0021083E /* Model */,
+				22EDABE125881D86003725D1 /* Controller */,
 				22D2248525870272003E0C59 /* Main.storyboard */,
 				22D2248A25870273003E0C59 /* LaunchScreen.storyboard */,
 				227CCC34258809FF0021083E /* Resourses  */,
@@ -90,6 +97,18 @@
 				22D2248E25870273003E0C59 /* main.m */,
 			);
 			path = "Pokedex-Sprint";
+			sourceTree = "<group>";
+		};
+		22EDABE125881D86003725D1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				22EDABDD25881D7D003725D1 /* SAEPokemonTableViewController.h */,
+				22EDABDE25881D7D003725D1 /* SAEPokemonTableViewController.m */,
+				22EDABE825881E19003725D1 /* SAEPokemonDetialViewController.h */,
+				22EDABE925881E19003725D1 /* SAEPokemonDetialViewController.m */,
+			);
+			name = Controller;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,10 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22EDABEA25881E19003725D1 /* SAEPokemonDetialViewController.m in Sources */,
 				22D2247E25870272003E0C59 /* AppDelegate.m in Sources */,
 				227CCC3725880C7E0021083E /* SAEPokemon.m in Sources */,
 				22D2248F25870273003E0C59 /* main.m in Sources */,
 				22D2248125870272003E0C59 /* SceneDelegate.m in Sources */,
+				22EDABDF25881D7D003725D1 /* SAEPokemonTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
