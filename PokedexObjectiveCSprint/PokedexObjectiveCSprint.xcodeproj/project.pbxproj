@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C56FDEF25885B110035D392 /* BRSPokedexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C56FDEE25885B110035D392 /* BRSPokedexTableViewController.m */; };
 		7CBFBBF925853EAF002F5B84 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CBFBBF825853EAF002F5B84 /* AppDelegate.m */; };
 		7CBFBBFC25853EAF002F5B84 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CBFBBFB25853EAF002F5B84 /* SceneDelegate.m */; };
-		7CBFBBFF25853EAF002F5B84 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CBFBBFE25853EAF002F5B84 /* ViewController.m */; };
+		7CBFBBFF25853EAF002F5B84 /* BRSPokemonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CBFBBFE25853EAF002F5B84 /* BRSPokemonDetailViewController.m */; };
 		7CBFBC0225853EAF002F5B84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CBFBC0025853EAF002F5B84 /* Main.storyboard */; };
 		7CBFBC0425853EB1002F5B84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CBFBC0325853EB1002F5B84 /* Assets.xcassets */; };
 		7CBFBC0725853EB1002F5B84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CBFBC0525853EB1002F5B84 /* LaunchScreen.storyboard */; };
@@ -38,13 +39,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C56FDED25885B110035D392 /* BRSPokedexTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRSPokedexTableViewController.h; sourceTree = "<group>"; };
+		7C56FDEE25885B110035D392 /* BRSPokedexTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRSPokedexTableViewController.m; sourceTree = "<group>"; };
 		7CBFBBF425853EAF002F5B84 /* PokedexObjectiveCSprint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokedexObjectiveCSprint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CBFBBF725853EAF002F5B84 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7CBFBBF825853EAF002F5B84 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7CBFBBFA25853EAF002F5B84 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		7CBFBBFB25853EAF002F5B84 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		7CBFBBFD25853EAF002F5B84 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7CBFBBFE25853EAF002F5B84 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7CBFBBFD25853EAF002F5B84 /* BRSPokemonDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRSPokemonDetailViewController.h; sourceTree = "<group>"; };
+		7CBFBBFE25853EAF002F5B84 /* BRSPokemonDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRSPokemonDetailViewController.m; sourceTree = "<group>"; };
 		7CBFBC0125853EAF002F5B84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CBFBC0325853EB1002F5B84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CBFBC0625853EB1002F5B84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -156,8 +159,10 @@
 		7CBFBC4A25854426002F5B84 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7CBFBBFD25853EAF002F5B84 /* ViewController.h */,
-				7CBFBBFE25853EAF002F5B84 /* ViewController.m */,
+				7CBFBBFD25853EAF002F5B84 /* BRSPokemonDetailViewController.h */,
+				7CBFBBFE25853EAF002F5B84 /* BRSPokemonDetailViewController.m */,
+				7C56FDED25885B110035D392 /* BRSPokedexTableViewController.h */,
+				7C56FDEE25885B110035D392 /* BRSPokedexTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -317,9 +322,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CBFBBFF25853EAF002F5B84 /* ViewController.m in Sources */,
+				7CBFBBFF25853EAF002F5B84 /* BRSPokemonDetailViewController.m in Sources */,
 				7CBFBC4425854386002F5B84 /* BRSPokemonController.swift in Sources */,
 				7CBFBBF925853EAF002F5B84 /* AppDelegate.m in Sources */,
+				7C56FDEF25885B110035D392 /* BRSPokedexTableViewController.m in Sources */,
 				7CBFBC0A25853EB1002F5B84 /* main.m in Sources */,
 				7CBFBBFC25853EAF002F5B84 /* SceneDelegate.m in Sources */,
 				7CBFBC3A25853F4E002F5B84 /* BRSPokemonModel.m in Sources */,

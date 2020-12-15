@@ -5,13 +5,13 @@
 //  Created by BrysonSaclausa on 12/12/20.
 //
 
-#import "ViewController.h"
+#import "BRSPokemonDetailViewController.h"
 
-@interface ViewController ()
+@interface BRSPokemonDetailViewController ()
 
 @end
 
-@implementation ViewController
+@implementation BRSPokemonDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

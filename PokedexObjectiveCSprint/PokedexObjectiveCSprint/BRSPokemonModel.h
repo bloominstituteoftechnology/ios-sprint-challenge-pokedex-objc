@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BRSPokemonModel : NSObject
 
-@property (nonatomic) NSString *name;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic) NSString *identifier;
 @property (nonatomic) UIImage *sprite;
 @property (nonatomic) NSArray *abilities;
