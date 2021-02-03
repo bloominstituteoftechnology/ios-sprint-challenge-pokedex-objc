@@ -14,9 +14,9 @@
 		8691239425C71FC9000FB60A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8691239225C71FC9000FB60A /* LaunchScreen.storyboard */; };
 		8691239725C71FC9000FB60A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8691239625C71FC9000FB60A /* main.m */; };
 		869123AB25C72F91000FB60A /* PokedexTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 869123AA25C72F91000FB60A /* PokedexTableView.m */; };
-		869123B025C73034000FB60A /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 869123AF25C73034000FB60A /* DetailVC.m */; };
 		869123B525C73AA0000FB60A /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 869123B425C73AA0000FB60A /* Pokemon.m */; };
 		869123BB25C75120000FB60A /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869123BA25C75120000FB60A /* PokemonController.swift */; };
+		869123D925C8EACB000FB60A /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869123D825C8EACB000FB60A /* PokemonDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +32,11 @@
 		8691239625C71FC9000FB60A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		869123A925C72F91000FB60A /* PokedexTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokedexTableView.h; sourceTree = "<group>"; };
 		869123AA25C72F91000FB60A /* PokedexTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokedexTableView.m; sourceTree = "<group>"; };
-		869123AE25C73034000FB60A /* DetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
-		869123AF25C73034000FB60A /* DetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
 		869123B325C73AA0000FB60A /* Pokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
 		869123B425C73AA0000FB60A /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
 		869123B925C75120000FB60A /* PokedexSprint-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokedexSprint-Bridging-Header.h"; sourceTree = "<group>"; };
 		869123BA25C75120000FB60A /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
+		869123D825C8EACB000FB60A /* PokemonDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +90,7 @@
 			children = (
 				869123A925C72F91000FB60A /* PokedexTableView.h */,
 				869123AA25C72F91000FB60A /* PokedexTableView.m */,
-				869123AE25C73034000FB60A /* DetailVC.h */,
-				869123AF25C73034000FB60A /* DetailVC.m */,
+				869123D825C8EACB000FB60A /* PokemonDetailVC.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -187,9 +185,9 @@
 			files = (
 				8691238625C71FC8000FB60A /* AppDelegate.m in Sources */,
 				869123BB25C75120000FB60A /* PokemonController.swift in Sources */,
-				869123B025C73034000FB60A /* DetailVC.m in Sources */,
 				869123AB25C72F91000FB60A /* PokedexTableView.m in Sources */,
 				869123B525C73AA0000FB60A /* Pokemon.m in Sources */,
+				869123D925C8EACB000FB60A /* PokemonDetailVC.swift in Sources */,
 				8691239725C71FC9000FB60A /* main.m in Sources */,
 				8691238925C71FC8000FB60A /* SceneDelegate.m in Sources */,
 			);

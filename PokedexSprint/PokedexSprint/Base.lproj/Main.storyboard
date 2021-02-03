@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="b2q-wB-y8J" style="IBUITableViewCellStyleDefault" id="jlT-w7-WoH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="b2q-wB-y8J" style="IBUITableViewCellStyleDefault" id="jlT-w7-WoH">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jlT-w7-WoH" id="XBo-at-hqo">
@@ -52,7 +52,7 @@
         <!--Pokemon-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DetailVC" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PokemonDetailVC" customModule="PokedexSprint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,6 +115,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pokemon" id="Xyi-H8-uXj"/>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="Uac-wP-j2P" id="PU4-AW-a3e"/>
+                        <outlet property="idLabel" destination="sUx-C4-Zkf" id="kZx-uy-txq"/>
+                        <outlet property="imageView" destination="Xhe-ja-b7y" id="Xce-6r-abB"/>
+                        <outlet property="nameLabel" destination="zTS-d6-vgl" id="Hme-0m-xXa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
