@@ -9,14 +9,18 @@
 
 @implementation SAEPokemon
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionary
-{
+- (instancetype)initWithName:(NSString *)aName {
     if (self = [super init]) {
-        _name = dictionary [@"name"];
-        NSString *urlString = dictionary[@"pokemonURL"];
-        _pokemonURL = [[NSURL alloc] initWithString:urlString];
+        _name = aName.copy;
     }
     return self;
+}
+
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    NSString *name = [dictionary objectForKey:@"name"];
+    if (![name isKindOfClass:NSString.class]) return nil;
+    return [self initWithName:name];
 }
 
 @end

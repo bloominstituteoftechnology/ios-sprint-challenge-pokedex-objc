@@ -34,7 +34,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="6fK-p8-Ur6" kind="show" identifier="detialViewSegue" id="gL7-KS-EfL"/>
+                                    <segue destination="6fK-p8-Ur6" kind="show" identifier="DetialViewSegue" id="gL7-KS-EfL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -111,13 +111,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oDk-5n-MCG"/>
-                    <connections>
-                        <outlet property="abiliitesLabel" destination="irF-kk-5Vw" id="umv-Ne-c4X"/>
-                        <outlet property="abilitiesTextView" destination="4TJ-98-iTc" id="Wvj-2t-KwY"/>
-                        <outlet property="idLabel" destination="ZZm-n9-Q9H" id="nNl-pv-gbK"/>
-                        <outlet property="nameLabel" destination="lb3-Ox-anO" id="A3D-Uy-ahO"/>
-                        <outlet property="pokemonImageView" destination="umd-lD-li1" id="sLl-0O-awt"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nF-XK-Ra4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
