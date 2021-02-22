@@ -11,7 +11,7 @@
         <!--Pokemon-->
         <scene sceneID="sPZ-jk-rgs">
             <objects>
-                <tableViewController id="oGM-Wu-8os" sceneMemberID="viewController">
+                <tableViewController id="oGM-Wu-8os" customClass="PokemonTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aBs-Ln-yxk">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="04t-tf-z5j" kind="show" id="tu0-qa-eEL"/>
+                                    <segue destination="04t-tf-z5j" kind="show" identifier="PokemonSegue" id="tu0-qa-eEL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="539.13043478260875" y="31.473214285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="W7W-0j-D0s">
             <objects>
-                <viewController id="04t-tf-z5j" sceneMemberID="viewController">
+                <viewController id="04t-tf-z5j" customClass="PokemonDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fdv-B0-aS6">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,6 +82,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uqQ-q5-74d"/>
+                    <connections>
+                        <outlet property="abilitiesLabel" destination="rOr-JB-iVD" id="QLa-Oh-Rb3"/>
+                        <outlet property="idLabel" destination="cWK-mm-PTc" id="NZ1-O1-lNX"/>
+                        <outlet property="spriteView" destination="icq-Em-i3U" id="0C8-63-yvd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9N6-yy-SBN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

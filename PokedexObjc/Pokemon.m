@@ -59,7 +59,7 @@
         if (![abilitiesDictionary isKindOfClass:NSDictionary.class]) return nil;
         
         NSString *ability = [abilityDictionary objectForKey:@"name"];
-        NSString *abilityString = [NSString stringWithFormat:@"%@. ", ability];
+        NSString *abilityString = [NSString stringWithFormat:@"%@. ", ability.capitalizedString];
         [abilities appendString:abilityString];
     }
     
