@@ -31,21 +31,31 @@ Answer the following questions inline with this document.
 2. Which of these objects is autoreleased?  Why?
 
 	1. `NSDate *yesterday = [NSDate date];`
+    
 	
 	2. `NSDate *theFuture = [[NSDate dateWithTimeIntervalSinceNow:60] retain];`
+    
 	
 	3. `NSString *name = [[NSString alloc] initWithString:@"John Sundell"];`
+    
 	
 	4. `NSDate *food = [NSDate new];`
+    
 	
 	5. `LSIPerson *john = [[LSIPerson alloc] initWithName:name];`
 	
+    
 	6. `LSIPerson *max = [[[LSIPerson alloc] initWithName:@"Max"] autorelease];`
+    
 
 3. Explain when you need to use the `NSAutoreleasePool`.
 
 
+
+
 4. Implement a convenience `class` method to create a `LSIPerson` object that takes a `name` property and returns an autoreleased object.
+
+
 
 ```swift
 @interface LSIPerson: NSObject
