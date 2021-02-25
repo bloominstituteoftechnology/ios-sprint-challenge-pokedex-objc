@@ -6,8 +6,17 @@
 //
 
 #import "ViewController.h"
+#import "Pokemon.h"
+#import "ObjCPokedex-Bridging-Header.h"
+#import "ObjCPokedex-Swift.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *pokemonImageView;
+@property (weak, nonatomic) IBOutlet UILabel *pokemonName;
+@property (weak, nonatomic) IBOutlet UILabel *pokemonID;
+@property (weak, nonatomic) IBOutlet UILabel *pokemonAbility;
+
 
 @end
 
@@ -15,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 

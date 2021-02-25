@@ -16,6 +16,10 @@
 		44782BB725E49A12000D6454 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44782BB625E49A12000D6454 /* main.m */; };
 		44782BC125E49A12000D6454 /* ObjCPokedexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44782BC025E49A12000D6454 /* ObjCPokedexTests.m */; };
 		44782BCC25E49A13000D6454 /* ObjCPokedexUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44782BCB25E49A13000D6454 /* ObjCPokedexUITests.m */; };
+		4485A55325E5AF6300EE2204 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4485A55225E5AF6300EE2204 /* Pokemon.m */; };
+		4485A55925E743EE00EE2204 /* PokemonResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4485A55825E743EE00EE2204 /* PokemonResults.m */; };
+		4485A5AA25E74B0200EE2204 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4485A5A925E74B0200EE2204 /* PokemonController.swift */; };
+		4485A5B625E756CE00EE2204 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4485A5B525E756CE00EE2204 /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,14 @@
 		44782BC725E49A13000D6454 /* ObjCPokedexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjCPokedexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44782BCB25E49A13000D6454 /* ObjCPokedexUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCPokedexUITests.m; sourceTree = "<group>"; };
 		44782BCD25E49A13000D6454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4485A55125E5AF6300EE2204 /* Pokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
+		4485A55225E5AF6300EE2204 /* Pokemon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
+		4485A55725E743EE00EE2204 /* PokemonResults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokemonResults.h; sourceTree = "<group>"; };
+		4485A55825E743EE00EE2204 /* PokemonResults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonResults.m; sourceTree = "<group>"; };
+		4485A5A825E74B0100EE2204 /* ObjCPokedex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCPokedex-Bridging-Header.h"; sourceTree = "<group>"; };
+		4485A5A925E74B0200EE2204 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
+		4485A5B425E756CE00EE2204 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		4485A5B525E756CE00EE2204 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +119,14 @@
 				44782BA425E49A0D000D6454 /* AppDelegate.h */,
 				44782BA525E49A0D000D6454 /* AppDelegate.m */,
 				44782BA725E49A0D000D6454 /* SceneDelegate.h */,
+				4485A55125E5AF6300EE2204 /* Pokemon.h */,
+				4485A55225E5AF6300EE2204 /* Pokemon.m */,
+				4485A55725E743EE00EE2204 /* PokemonResults.h */,
+				4485A55825E743EE00EE2204 /* PokemonResults.m */,
+				4485A5A925E74B0200EE2204 /* PokemonController.swift */,
 				44782BA825E49A0D000D6454 /* SceneDelegate.m */,
+				4485A5B425E756CE00EE2204 /* TableViewController.h */,
+				4485A5B525E756CE00EE2204 /* TableViewController.m */,
 				44782BAA25E49A0D000D6454 /* ViewController.h */,
 				44782BAB25E49A0D000D6454 /* ViewController.m */,
 				44782BAD25E49A0D000D6454 /* Main.storyboard */,
@@ -115,6 +134,7 @@
 				44782BB225E49A12000D6454 /* LaunchScreen.storyboard */,
 				44782BB525E49A12000D6454 /* Info.plist */,
 				44782BB625E49A12000D6454 /* main.m */,
+				4485A5A825E74B0100EE2204 /* ObjCPokedex-Bridging-Header.h */,
 			);
 			path = ObjCPokedex;
 			sourceTree = "<group>";
@@ -203,6 +223,7 @@
 				TargetAttributes = {
 					44782BA025E49A0C000D6454 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					44782BBB25E49A12000D6454 = {
 						CreatedOnToolsVersion = 12.4;
@@ -267,9 +288,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				44782BAC25E49A0D000D6454 /* ViewController.m in Sources */,
+				4485A5AA25E74B0200EE2204 /* PokemonController.swift in Sources */,
 				44782BA625E49A0D000D6454 /* AppDelegate.m in Sources */,
 				44782BB725E49A12000D6454 /* main.m in Sources */,
+				4485A55325E5AF6300EE2204 /* Pokemon.m in Sources */,
+				4485A55925E743EE00EE2204 /* PokemonResults.m in Sources */,
 				44782BA925E49A0D000D6454 /* SceneDelegate.m in Sources */,
+				4485A5B625E756CE00EE2204 /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ2TDS9ZTM;
 				INFOPLIST_FILE = ObjCPokedex/Info.plist;
@@ -450,6 +476,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CMB.ObjCPokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjCPokedex/ObjCPokedex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -459,6 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ2TDS9ZTM;
 				INFOPLIST_FILE = ObjCPokedex/Info.plist;
@@ -468,6 +498,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CMB.ObjCPokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjCPokedex/ObjCPokedex-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -475,6 +507,7 @@
 		44782BD425E49A13000D6454 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ2TDS9ZTM;
@@ -495,6 +528,7 @@
 		44782BD525E49A13000D6454 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ2TDS9ZTM;
@@ -515,6 +549,7 @@
 		44782BD725E49A13000D6454 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ2TDS9ZTM;
 				INFOPLIST_FILE = ObjCPokedexUITests/Info.plist;
@@ -533,6 +568,7 @@
 		44782BD825E49A13000D6454 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ2TDS9ZTM;
 				INFOPLIST_FILE = ObjCPokedexUITests/Info.plist;
