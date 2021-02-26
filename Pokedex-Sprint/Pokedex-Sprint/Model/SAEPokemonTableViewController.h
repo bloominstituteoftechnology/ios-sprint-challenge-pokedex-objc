@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class APIController;
+@class PokemonController;
 
 NS_ASSUME_NONNULL_BEGIN
 

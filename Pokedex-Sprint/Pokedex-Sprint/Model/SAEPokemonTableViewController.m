@@ -11,7 +11,7 @@
 #import "Pokedex_Sprint-Swift.h"
 
 
-@class APIController;
+@class PokemonController;
 
 @interface SAEPokemonTableViewController ()
 
@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [APIController.sharedController fetchPokemonsWithCompletion:^(NSArray<SAEPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
+    [PokemonController.sharedController fetchPokemonsWithCompletion:^(NSArray<SAEPokemon *> * _Nullable pokemon, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Error fetching Pokemons: %@", error);
         }

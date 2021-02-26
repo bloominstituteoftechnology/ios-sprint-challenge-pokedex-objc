@@ -16,7 +16,7 @@
 		22D2248C25870273003E0C59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D2248A25870273003E0C59 /* LaunchScreen.storyboard */; };
 		22D2248F25870273003E0C59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D2248E25870273003E0C59 /* main.m */; };
 		22EDABDF25881D7D003725D1 /* SAEPokemonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EDABDE25881D7D003725D1 /* SAEPokemonTableViewController.m */; };
-		22EDABEE25882EF1003725D1 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EDABED25882EF1003725D1 /* APIController.swift */; };
+		22EDABEE25882EF1003725D1 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EDABED25882EF1003725D1 /* PokemonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,7 @@
 		22EDABDD25881D7D003725D1 /* SAEPokemonTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAEPokemonTableViewController.h; sourceTree = "<group>"; };
 		22EDABDE25881D7D003725D1 /* SAEPokemonTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAEPokemonTableViewController.m; sourceTree = "<group>"; };
 		22EDABEC25882EF1003725D1 /* Pokedex-Sprint-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pokedex-Sprint-Bridging-Header.h"; sourceTree = "<group>"; };
-		22EDABED25882EF1003725D1 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		22EDABED25882EF1003725D1 /* PokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 			children = (
 				227CCC3525880C7E0021083E /* SAEPokemon.h */,
 				227CCC3625880C7E0021083E /* SAEPokemon.m */,
-				22EDABED25882EF1003725D1 /* APIController.swift */,
+				22EDABED25882EF1003725D1 /* PokemonController.swift */,
 				22EDABEC25882EF1003725D1 /* Pokedex-Sprint-Bridging-Header.h */,
 			);
 			path = Model;
@@ -185,7 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22EDABEE25882EF1003725D1 /* APIController.swift in Sources */,
+				22EDABEE25882EF1003725D1 /* PokemonController.swift in Sources */,
 				22D2247E25870272003E0C59 /* AppDelegate.m in Sources */,
 				227CCC3725880C7E0021083E /* SAEPokemon.m in Sources */,
 				22D2248F25870273003E0C59 /* main.m in Sources */,

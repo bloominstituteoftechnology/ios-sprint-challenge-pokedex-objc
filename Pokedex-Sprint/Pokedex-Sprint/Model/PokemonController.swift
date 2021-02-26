@@ -14,9 +14,9 @@ enum NetworkError: Error {
     case badURL
 }
 
-@objc class APIController: NSObject {
+@objc class PokemonController: NSObject {
     
-    @objc(sharedController) static let shared = APIController()
+    @objc(sharedController) static let shared = PokemonController()
  
     var pokemon: [Pokemon] = [] // This is where I am able to bring the SAEPokemon into the API controller with using a custom name.
     
@@ -26,6 +26,8 @@ enum NetworkError: Error {
     @objc func fetchPokemons(completion: @escaping ([Pokemon]?, Error?) -> Void) {
         var urlRequest = URLRequest(url: baseURL)
         urlRequest.httpMethod = "GET"
+        
+        
         
         URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
             if let error = error {
