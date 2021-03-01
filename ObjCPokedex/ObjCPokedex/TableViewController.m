@@ -56,17 +56,13 @@
     if ([segue.identifier isEqualToString:@"showPokemon"]) {
         ViewController *detailVC = (ViewController *)segue.destinationViewController;
         Pokemon *pokemon = [_pokemonList objectAtIndex:[self.tableView indexPathForSelectedRow].row];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [PokemonController.sharedController pokemonResultWith:pokemon];
-            detailVC.pokemon = pokemon;
-        });
+        detailVC.pokemon = pokemon;
         NSLog(@"Your name is %@", pokemon.identifier);
         
         if (pokemon.identifier == nil) {
-            [self willChangeValueForKey:@"sprites"];
+            [self willChangeValueForKey:@"name"];
             [PokemonController.sharedController pokemonResultWith:pokemon];
-            [self didChangeValueForKey:@"sprites"];
+            [self didChangeValueForKey:@"name"];
         }
     }
 }

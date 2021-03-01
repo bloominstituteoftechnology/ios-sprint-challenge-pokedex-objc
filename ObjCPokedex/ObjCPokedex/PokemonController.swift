@@ -9,7 +9,7 @@ import UIKit
 
 class PokemonController: NSObject {
     
-    private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon")!
+    private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
     let pokemonDetail = Pokemon()
     
     @objc(sharedController) static let shared = PokemonController()
@@ -18,7 +18,7 @@ class PokemonController: NSObject {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
-        print(urlComponents)
+        print(urlComponents!)
         
         urlComponents?.queryItems = [limit]
         guard let url = urlComponents?.url else { return }
@@ -88,9 +88,9 @@ class PokemonController: NSObject {
     }
     
     
-    @objc func fetchImage(completion: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
+    @objc func fetchImage(url: URL, completion: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
         
-        var request = URLRequest(url: baseURL.appendingPathComponent(pokemonDetail.sprites))
+        var request = URLRequest(url:url)
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { data, _, error in
             

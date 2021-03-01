@@ -10,6 +10,8 @@
 #import "ObjCPokedex-Bridging-Header.h"
 #import "ObjCPokedex-Swift.h"
 
+void *KVOContext = &KVOContext;
+
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *pokemonImageView;
@@ -24,37 +26,64 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_pokemon addObserver:self
+               forKeyPath:@"name"
+                  options:0
+                  context:KVOContext];
     [self updateViews];
 }
 
 - (void)updateViews
 {
     
-    [PokemonController.sharedController pokemonResultWith:_pokemon];
-   // [NSString stringWithFormat:@" %@",]
-    
     dispatch_async(dispatch_get_main_queue(), ^{
         
         self->_pokemonName.text =  self->_pokemon.name.capitalizedString;
         
-        self->_pokemonID.text = [NSString stringWithFormat:@" %@", self->_pokemon.identifier];
+        if (self.pokemon.identifier != nil) {
+            self->_pokemonID.text = [NSString stringWithFormat:@" %@", self->_pokemon.identifier];
+        }
         
-        NSArray<NSString *> *abilityArray = [self->_pokemon.abilities componentsSeparatedByString:@", "];
-        NSString *ability = [abilityArray componentsJoinedByString:@"\n"];
-        self->_pokemonAbility.text = ability;
+        if (self.pokemon.abilities) {
+            NSArray<NSString *> *abilityArray = [self->_pokemon.abilities componentsSeparatedByString:@", "];
+            NSString *ability = [abilityArray componentsJoinedByString:@"\n"];
+            self->_pokemonAbility.text = ability;
+        }
         
-        [PokemonController.sharedController fetchImageWithCompletion:^(UIImage *image, NSError *error) {
+        NSURL *url = [NSURL URLWithString:self.pokemon.sprites];
+        [PokemonController.sharedController fetchImageWithUrl:url completion:^(UIImage *image, NSError *error) {
             if (error) {
-                NSLog(@"Error loading image");
+                NSLog(@"Error: %@", error);
             }
             if (image) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.pokemonImageView.image = image;
-                    NSLog(@"Words: %@", self->_pokemon.sprites);
                 });
             }
         }];
     });
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSKeyValueChangeKey,id> *)change
+                       context:(void *)context
+{
+    if (context != KVOContext) {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        return;
+    }
+    
+    if ([keyPath isEqualToString:@"name"]) {
+        [self updateViews];
+    }
+}
+
+- (void)dealloc
+{
+    [_pokemon removeObserver:self
+                  forKeyPath:@"name"
+                     context:KVOContext];
 }
 
 
