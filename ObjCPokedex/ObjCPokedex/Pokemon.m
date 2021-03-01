@@ -13,9 +13,9 @@
 
 {
     self.identifier = anIdentifier;
-    self.name = aName.copy;
-    self.abilities = anAbility.copy;
-    self.sprites = aSpriteURL.copy;
+    self.name = aName;
+    self.abilities = anAbility;
+    self.sprites = aSpriteURL;
 }
 
 - (instancetype)initWithIdentifier:(NSNumber *)anIdentifier
@@ -25,7 +25,7 @@
 {
     if (self = [super init]) {
         _name = aName.copy;
-        _identifier = anIdentifier;
+        _identifier = anIdentifier.copy;
         _abilities = anAbility.copy;
         _sprites = aSpriteURL.copy;
     }
@@ -36,6 +36,7 @@
     
     NSNumber *identifier = [aDictionary objectForKey:@"id"];
     NSString *name = [aDictionary objectForKey:@"name"];
+    
     NSMutableArray *abilitiesArray = [aDictionary objectForKey:@"abilities"];
     NSMutableArray<NSString *> *abilityArray = [[NSMutableArray alloc] init];
     

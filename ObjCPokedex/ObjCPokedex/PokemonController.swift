@@ -10,11 +10,16 @@ import UIKit
 class PokemonController: NSObject {
     
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon")!
+    let pokemonDetail = Pokemon()
     
     @objc(sharedController) static let shared = PokemonController()
     @objc func fetchPokemon(completion: @escaping ([Pokemon]?, Error?) -> Void) {
         let limit = URLQueryItem(name: "limit", value: "500")
+        
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        
+        print(urlComponents)
+        
         urlComponents?.queryItems = [limit]
         guard let url = urlComponents?.url else { return }
         URLSession.shared.dataTask(with: url) { (data, _, error) in
@@ -34,8 +39,8 @@ class PokemonController: NSObject {
                     return
                 }
                 
-                let results = PokemonResults(dictionary: dictionary)
-                let pokemonArray = results.pokemonResults
+                let dictionaryResults = PokemonResults(dictionary: dictionary)
+                let pokemonArray = dictionaryResults.pokemonResults
                 
                 completion(pokemonArray, nil)
                 
@@ -48,8 +53,11 @@ class PokemonController: NSObject {
     }
     
     @objc func pokemonResult(with pokemon: Pokemon) {
-        let url = baseURL.appendingPathComponent(pokemon.name)
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
+        
+        var requestURL = URLRequest(url: baseURL.appendingPathComponent(pokemon.name))
+        requestURL.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
             if let error = error {
                 NSLog("Error fetching results: \(error)")
                 return
@@ -67,7 +75,10 @@ class PokemonController: NSObject {
                 }
                 
                 let results = Pokemon(dictionary: dictionary)
-                pokemon.update(withID: results.identifier!, name: results.name, abilities: results.abilities!, sprites: results.sprites)
+                
+                pokemon.update(withID: results.identifier, name: results.name, abilities: results.abilities, sprites: results.sprites)
+                print(results)
+                
                 
             } catch {
                 NSLog("Error: \(error)")
@@ -77,25 +88,26 @@ class PokemonController: NSObject {
     }
     
     
-    @objc func fetchImage(url: URL, completion: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            let task = URLSession.shared.dataTask(with: request) { data, _, error in
-                
-                if let error = error {
-                    completion(nil, error)
-                    return
-                }
-                
-                guard let data = data else {
-                    completion(nil, error)
-                    return
-                }
-                
-                if let image = UIImage(data: data) {
-                    completion(image, nil)
-                }
+    @objc func fetchImage(completion: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
+        
+        var request = URLRequest(url: baseURL.appendingPathComponent(pokemonDetail.sprites))
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            
+            if let error = error {
+                completion(nil, error)
+                return
             }
-            task.resume()
+            
+            guard let data = data else {
+                completion(nil, error)
+                return
+            }
+            
+            if let image = UIImage(data: data) {
+                completion(image, nil)
+            }
         }
+        task.resume()
+    }
 }
