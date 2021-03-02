@@ -41,7 +41,7 @@ void *KVOContext = &KVOContext;
         self->_pokemonName.text =  self->_pokemon.name.capitalizedString;
         
         if (self.pokemon.identifier != nil) {
-            self->_pokemonID.text = [NSString stringWithFormat:@" %@", self->_pokemon.identifier];
+            self->_pokemonID.text = [NSString stringWithFormat:@"%@", self->_pokemon.identifier];
         }
         
         if (self.pokemon.abilities) {
@@ -50,7 +50,12 @@ void *KVOContext = &KVOContext;
             self->_pokemonAbility.text = ability;
         }
         
-        NSURL *url = [NSURL URLWithString:self.pokemon.sprites];
+        NSString *spritesString = @"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
+        NSString *appendString = self->_pokemonID.text;
+        NSString *urlString = [NSString stringWithFormat:@"%@%@", spritesString, appendString];
+        urlString = [urlString stringByAppendingString:@".png"];
+        NSURL *url = [NSURL URLWithString: urlString];
+        
         [PokemonController.sharedController fetchImageWithUrl:url completion:^(UIImage *image, NSError *error) {
             if (error) {
                 NSLog(@"Error: %@", error);
@@ -59,9 +64,11 @@ void *KVOContext = &KVOContext;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.pokemonImageView.image = image;
                 });
+                
             }
         }];
     });
+    
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
