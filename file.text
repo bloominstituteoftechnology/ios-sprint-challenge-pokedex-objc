@@ -1,0 +1,10 @@
+Required Files - 
+
+ABCPokemon.h/m (pokemon name, url, identifier, sprite, abilities)
+
+ABCPokemonController.h/m
+
+
+ABCPokemonTableViewController.h/m
+
+PokemonDetailViewController.h/m(use KVO to be notified when the network controller has finished filling in details for a Pokemon, triggering a ui update)
